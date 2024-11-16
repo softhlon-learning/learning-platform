@@ -1,1 +1,1 @@
-# learning-plarform
+# Learning Platform
