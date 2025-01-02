@@ -13,6 +13,7 @@
 
     <modules>
         <module>accounts</module>
+        <module>authentication</module>
         <module>courses</module>
         <module>subscriptions</module>
     </modules>
@@ -55,7 +56,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>3.3.5</version>
+                    <version>3.4.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
