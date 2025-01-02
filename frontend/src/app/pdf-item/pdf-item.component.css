@@ -1,0 +1,12 @@
+* {
+  overflow: clip;
+}
+
+button {
+  width: 12em;
+}
+
+div div {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,27 @@
+<span class="main">
+  <div>
+    <button *ngIf="!course.enrolled" (click)="this.enrollCourse()">Enroll</button>
+    <button *ngIf="course.enrolled" routerLink="/course/{{course.id}}/progress">Resume</button>
+    <button [routerLink]="['/dashboard']">Back</button>
+  </div>
+
+  <h2>{{course.name}} - Table of Content</h2>
+
+  <div class="course-content">
+    <ul class="course-content-list">
+      <li *ngFor="let section of courseContent?.sections">
+      <span>
+        <span class="name">{{section.name}}</span>
+      </span>
+        <ul class="courses">
+          <li *ngFor="let chapter of section.chapters">
+            <label class="checkbox">
+              <input class="course-checked" type="checkbox" [disabled]="true" [checked]="chapter.processed"/>
+              <span class="name">{{chapter.name}}</span>
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</span>

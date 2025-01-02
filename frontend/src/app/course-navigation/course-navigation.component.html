@@ -1,0 +1,6 @@
+<div>
+  <button (click)="this.previous()" [disabled]="!navigationItems.previousItem">Previous</button>
+  <button *ngIf="!navigationItems.currentItem.processed" (click)="this.markAsViewed()">Mark As Viewed</button>
+  <button *ngIf="navigationItems.currentItem.processed" (click)="this.markAsNotViewed()">Mark As Not Viewed</button>
+  <button (click)="this.next()" [disabled]="!navigationItems.nextItem">Next</button>
+</div>

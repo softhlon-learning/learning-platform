@@ -1,0 +1,92 @@
+/* coursesComponent's private CSS styles */
+
+h2 {
+  font-size: 24px;
+}
+
+div {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.courses {
+  list-style-type: none;
+  padding: 0;
+  width: 800px;
+}
+
+.courses li {
+  display: flex;
+}
+
+.courses button {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: var(--very-light-blue);
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  height: 3em;
+}
+
+.courses button:hover {
+  color: var(--hover-blue);
+  background-color: var(--light-blue);
+}
+
+.courses button:active {
+  color: var(--light-blue);
+}
+
+.courses button.selected {
+  background-color: black;
+  color: white;
+}
+
+.courses button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.courses .badge {
+  display: inline-block;
+  color: black;
+  background-color: var(--light-blue);
+  line-height: 3em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+  width: 3em;
+}
+
+.courses .enrolled {
+  border: 1px;
+  color: black;
+  font-style: italic;
+  background-color:var(--warm-blue);
+  border-radius: 4px 0 0 4px;
+  padding-top: 0.3em;
+  margin-right: 0.5em;
+  margin-top: 0.6em;
+  height: 1.5em;
+  width: 6em;
+}
+
+.courses .name {
+  align-self: center;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.courses li button {
+  justify-content: space-between;
+}
+
+h2 {
+  margin-top: 3em;
+}

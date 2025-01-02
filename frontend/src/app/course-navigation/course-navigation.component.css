@@ -1,0 +1,8 @@
+button {
+  width: 12em;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
