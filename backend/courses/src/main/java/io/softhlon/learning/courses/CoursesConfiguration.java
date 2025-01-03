@@ -3,20 +3,20 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts;
+package io.softhlon.learning.courses;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.accounts.adapters.AdaptersConfiguration;
-import io.softhlon.learning.accounts.application.ApplicationConfiguration;
-import io.softhlon.learning.accounts.infrastructure.InfrastructureConfiguration;
+import io.softhlon.learning.courses.adapters.AdaptersConfiguration;
+import io.softhlon.learning.courses.application.ApplicationConfiguration;
+import io.softhlon.learning.courses.infrastructure.InfrastructureConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import static io.softhlon.learning.accounts.AccountsConfiguration.PACKAGE_TO_SCAN;
+import static io.softhlon.learning.courses.CoursesConfiguration.PACKAGE_TO_SCAN;
 
 @Configuration(proxyBeanMethods = false)
 @ComponentScan(PACKAGE_TO_SCAN)
@@ -25,7 +25,7 @@ import static io.softhlon.learning.accounts.AccountsConfiguration.PACKAGE_TO_SCA
       ApplicationConfiguration.class,
       InfrastructureConfiguration.class
 })
-public class AccountsConfiguration {
-    public static final String PACKAGE_TO_SCAN = "io.softhlon.learning.accounts";
-    public static final String MODULE_PREFIX = "Accounts";
+public class CoursesConfiguration {
+    public static final String PACKAGE_TO_SCAN = "io.softhlon.learning.courses";
+    public static final String MODULE_PREFIX = "Courses";
 }
