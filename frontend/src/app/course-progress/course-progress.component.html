@@ -23,7 +23,8 @@
               <span class="name">{{chapter.name}}</span>
             </label>
             <ul class="course-chapter-items">
-              <li [id]="item.id" *ngFor="let item of chapter.items" class="{{this.getClass(item)}}" (click)="this.setItem(item)">
+              <li [id]="item.id" *ngFor="let item of chapter.items" class="{{this.getClass(item)}}"
+                  (click)="this.setItem(item)">
                 <label class="checkbox">
                   <input class="course-checked" type="checkbox" [disabled]="true" [checked]="item.processed"/>
                   <span class="name">{{item.name}}</span>
@@ -36,9 +37,18 @@
       </li>
     </ul>
     <div class="course-item">
-      <video-item *ngIf="navigationItems.currentItem.name == 'Video'" [progress]="this" [navigationItems]="navigationItems"></video-item>
-      <pdf-item *ngIf="navigationItems.currentItem.name == 'PDF'" [progress]="this" [navigationItems]="navigationItems"></pdf-item>
-      <quiz-item *ngIf="navigationItems.currentItem.name == 'Quiz'" [progress]="this" [navigationItems]="navigationItems"></quiz-item>
+      <video-item *ngIf="navigationItems.currentItem.name == 'Video'"
+        [progress]="this"
+        [navigationItems]="navigationItems">
+      </video-item>
+      <pdf-item *ngIf="navigationItems.currentItem.name == 'PDF'"
+        [progress]="this"
+        [navigationItems]="navigationItems">
+      </pdf-item>
+      <quiz-item *ngIf="navigationItems.currentItem.name == 'Quiz'"
+        [progress]="this"
+        [navigationItems]="navigationItems">
+      </quiz-item>
     </div>
   </div>
 </span>
