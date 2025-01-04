@@ -11,7 +11,7 @@ package io.softhlon.learning.accounts.domain;
 
 class SignOutServiceImpl implements SignOutService {
     @Override
-    public Response signOut(Request request) {
+    public Result signOut(Request request) {
         throw new UnsupportedOperationException();
     }
 }

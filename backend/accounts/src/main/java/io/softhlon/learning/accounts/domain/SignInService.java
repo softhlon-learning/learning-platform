@@ -14,7 +14,12 @@ import io.softhlon.learning.common.hexagonal.InboundPort;
 @InboundPort
 @FunctionalInterface
 public interface SignInService {
-    Response signIn(Request request);
+    Result signIn(Request request);
+
     record Request(String email, String password) {}
-    record Response(boolean success) {}
+    sealed interface Result {
+        record Success() implements Result {}
+        record InvalidCredentials(String message) implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

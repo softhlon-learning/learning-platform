@@ -11,7 +11,7 @@ package io.softhlon.learning.accounts.domain;
 
 class SignUpServiceImpl implements SignUpService {
     @Override
-    public Response signUp(Request request) {
+    public Result signUp(Request request) {
         throw new UnsupportedOperationException();
     }
 }
