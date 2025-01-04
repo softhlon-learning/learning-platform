@@ -12,6 +12,7 @@ package io.softhlon.learning.accounts.domain;
 import io.softhlon.learning.common.hexagonal.InboundPort;
 
 @InboundPort
+@FunctionalInterface
 public interface SignInService {
     Response signIn(Request request);
     public record Request(String email, String password) {}
