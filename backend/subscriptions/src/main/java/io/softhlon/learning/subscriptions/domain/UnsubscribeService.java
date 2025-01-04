@@ -10,4 +10,7 @@ package io.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnsubscribeService {
+    Response unsubscribe(Request request);
+    record Request(String accountId) {}
+    record Response(boolean success) {}
 }
