@@ -10,7 +10,13 @@ package io.softhlon.learning.courses.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnenrollCourseService {
-    Response unenroll(Request request);
+    Result unenroll(Request request);
     record Request(String accountId, String courseId) {}
-    record Response(boolean success) {}
+
+    sealed interface Result {
+        record Success() implements Result {}
+        record CourseNotFound() implements Result {}
+        record AccountNotEnrolled() implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

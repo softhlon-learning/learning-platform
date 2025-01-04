@@ -9,8 +9,18 @@ package io.softhlon.learning.courses.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import io.softhlon.learning.common.hexagonal.InboundPort;
+
+@InboundPort
+@FunctionalInterface
 public interface EnrollCourseService {
-    Response enroll(Request request);
+    Result enroll(Request request);
+
     record Request(String accountId, String courseId) {}
-    record Response(boolean success) {}
+    sealed interface Result {
+        record Success() implements Result {}
+        record AccountNotSubscribed() implements Result {}
+        record CourseNotFound() implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

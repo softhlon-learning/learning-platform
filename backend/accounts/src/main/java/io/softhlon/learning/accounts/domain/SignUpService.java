@@ -19,7 +19,7 @@ public interface SignUpService {
     record Request(String name, String email, String password) {}
     sealed interface Result {
         record Success() implements Result {}
-        record AccountAlreadyExistsFailure(String message) implements Result {}
+        record AccountAlreadyExists(String message) implements Result {}
         record PasswordPolicyFailure(String message) implements Result {}
         record InternalFailure(Throwable cause) implements Result {}
     }

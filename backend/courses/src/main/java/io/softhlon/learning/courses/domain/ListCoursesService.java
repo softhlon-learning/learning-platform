@@ -10,7 +10,14 @@ package io.softhlon.learning.courses.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface ListCoursesService {
-    Response listCourses(Request request);
+    Result listCourses(Request request);
     record Request(String accountId, String courseId) {}
-    record Response(String courseId, String name, String description) {}
+
+    sealed interface Result {
+        record Success(
+              String courseId,
+              String name,
+              String description) implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

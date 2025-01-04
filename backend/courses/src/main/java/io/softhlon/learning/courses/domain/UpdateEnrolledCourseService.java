@@ -10,7 +10,13 @@ package io.softhlon.learning.courses.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UpdateEnrolledCourseService {
-    Response updateCourse(Request request);
+    Result updateCourse(Request request);
     record Request(String accountId, String courseId, String content) {}
-    record Response(boolean success) {}
+
+    sealed interface Result {
+        record Success() implements Result {}
+        record AccountNotEligible() implements Result {}
+        record CourseNotFound() implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

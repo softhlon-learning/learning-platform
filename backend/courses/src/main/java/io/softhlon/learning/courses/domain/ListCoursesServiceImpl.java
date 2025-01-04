@@ -11,7 +11,7 @@ package io.softhlon.learning.courses.domain;
 
 class ListCoursesServiceImpl implements ListCoursesService {
     @Override
-    public Response listCourses(Request request) {
+    public Result listCourses(Request request) {
         throw new UnsupportedOperationException();
     }
 }

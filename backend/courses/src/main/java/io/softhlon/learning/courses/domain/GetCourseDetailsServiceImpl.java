@@ -11,7 +11,7 @@ package io.softhlon.learning.courses.domain;
 
 class GetCourseDetailsServiceImpl implements GetCourseDetailsService {
     @Override
-    public Response getDetails(Request request) {
+    public Result getDetails(Request request) {
         throw new UnsupportedOperationException();
     }
 }

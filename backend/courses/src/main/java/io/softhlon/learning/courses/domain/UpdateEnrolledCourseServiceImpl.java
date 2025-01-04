@@ -11,7 +11,7 @@ package io.softhlon.learning.courses.domain;
 
 class UpdateEnrolledCourseServiceImpl implements UpdateEnrolledCourseService {
     @Override
-    public Response updateCourse(Request request) {
+    public Result updateCourse(Request request) {
         throw new UnsupportedOperationException();
     }
 }

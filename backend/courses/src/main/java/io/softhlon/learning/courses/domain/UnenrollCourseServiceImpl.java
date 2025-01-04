@@ -11,7 +11,7 @@ package io.softhlon.learning.courses.domain;
 
 class UnenrollCourseServiceImpl implements UnenrollCourseService {
     @Override
-    public Response unenroll(Request request) {
+    public Result unenroll(Request request) {
         throw new UnsupportedOperationException();
     }
 }
