@@ -1,25 +1,27 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.infrastructure;
+package io.softhlon.learning.application;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import io.softhlon.learning.accounts.AccountsConfiguration;
+import io.softhlon.learning.courses.CoursesConfiguration;
 import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
-import static io.softhlon.learning.subscriptions.infrastructure.InfrastructureConfiguration.BeanNames.APPLICATION_CONFIGURATION;
-
-@Configuration(
-      value = APPLICATION_CONFIGURATION,
-      proxyBeanMethods = false)
-public class InfrastructureConfiguration {
-    static class BeanNames {
-        public static final String APPLICATION_CONFIGURATION =
-              SubscriptionsConfiguration.MODULE_PREFIX + "InfrastructureConfiguration";
-    }
+@EnableAutoConfiguration
+@Configuration(proxyBeanMethods = false)
+@Import({
+      AccountsConfiguration.class,
+      CoursesConfiguration.class,
+      SubscriptionsConfiguration.class
+})
+class ApplicationConfiguration {
 }

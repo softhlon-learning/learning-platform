@@ -20,6 +20,6 @@ import static io.softhlon.learning.accounts.infrastructure.InfrastructureConfigu
 public class InfrastructureConfiguration {
     static class BeanNames {
         public static final String APPLICATION_CONFIGURATION =
-              MODULE_PREFIX + "ApplicationConfiguration";
+              MODULE_PREFIX + "InfrastructureConfiguration";
     }
 }

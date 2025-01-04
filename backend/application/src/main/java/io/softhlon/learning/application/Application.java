@@ -3,23 +3,18 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.infrastructure;
+package io.softhlon.learning.application;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import static io.softhlon.learning.subscriptions.infrastructure.InfrastructureConfiguration.BeanNames.APPLICATION_CONFIGURATION;
-
-@Configuration(
-      value = APPLICATION_CONFIGURATION,
-      proxyBeanMethods = false)
-public class InfrastructureConfiguration {
-    static class BeanNames {
-        public static final String APPLICATION_CONFIGURATION =
-              SubscriptionsConfiguration.MODULE_PREFIX + "InfrastructureConfiguration";
+@SpringBootApplication
+class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 }
