@@ -10,7 +10,12 @@ package io.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface SubscribeService {
-    Response subscribe(Request request);
+    Result subscribe(Request request);
+
     record Request(String accountId) {}
-    record Response(boolean success) {}
+    sealed interface Result {
+        record Success() implements Result {}
+        record AccountAlreadySubscribed() implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
 }

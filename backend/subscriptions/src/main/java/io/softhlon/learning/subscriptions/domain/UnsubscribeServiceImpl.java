@@ -11,7 +11,7 @@ package io.softhlon.learning.subscriptions.domain;
 
 class UnsubscribeServiceImpl implements UnsubscribeService {
     @Override
-    public Response unsubscribe(Request request) {
+    public Result unsubscribe(Request request) {
         throw new UnsupportedOperationException();
     }
 }

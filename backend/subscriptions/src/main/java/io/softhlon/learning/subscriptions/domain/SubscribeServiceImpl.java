@@ -11,7 +11,7 @@ package io.softhlon.learning.subscriptions.domain;
 
 class SubscribeServiceImpl implements SubscribeService {
     @Override
-    public Response subscribe(Request request) {
+    public Result subscribe(Request request) {
         throw new UnsupportedOperationException();
     }
 }
