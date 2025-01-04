@@ -9,5 +9,11 @@ package io.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import io.softhlon.learning.common.hexagonal.InboundPort;
+
+@InboundPort
 public interface SignUpService {
+    Response signUp(Request request);
+    public record Request(String name, String email, String password) {}
+    public record Response(boolean success) {}
 }

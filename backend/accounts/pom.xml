@@ -9,4 +9,12 @@
 
     <artifactId>accounts</artifactId>
     <name>Learning Platform :: Accounts</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.softhlon.learning</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
