@@ -9,8 +9,7 @@ package io.softhlon.learning.accounts;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.accounts.adapters.AdaptersConfiguration;
-import io.softhlon.learning.accounts.application.ApplicationConfiguration;
+import io.softhlon.learning.accounts.gateway.GatewayConfiguration;
 import io.softhlon.learning.accounts.infrastructure.InfrastructureConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +20,7 @@ import static io.softhlon.learning.accounts.AccountsConfiguration.PACKAGE_TO_SCA
 @Configuration(proxyBeanMethods = false)
 @ComponentScan(PACKAGE_TO_SCAN)
 @Import({
-      AdaptersConfiguration.class,
-      ApplicationConfiguration.class,
+      GatewayConfiguration.class,
       InfrastructureConfiguration.class
 })
 public class AccountsConfiguration {

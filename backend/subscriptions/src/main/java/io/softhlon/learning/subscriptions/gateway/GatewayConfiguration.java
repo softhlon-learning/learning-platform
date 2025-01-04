@@ -3,23 +3,23 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.application;
+package io.softhlon.learning.subscriptions.gateway;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 import org.springframework.context.annotation.Configuration;
 
-import static io.softhlon.learning.accounts.AccountsConfiguration.MODULE_PREFIX;
-import static io.softhlon.learning.accounts.application.ApplicationConfiguration.BeanNames.APPLICATION_CONFIGURATION;
+import static io.softhlon.learning.subscriptions.gateway.GatewayConfiguration.BeanNames.APPLICATION_CONFIGURATION;
 
 @Configuration(
       value = APPLICATION_CONFIGURATION,
       proxyBeanMethods = false)
-public class ApplicationConfiguration {
+public class GatewayConfiguration {
     static class BeanNames {
         public static final String APPLICATION_CONFIGURATION =
-              MODULE_PREFIX + "ApplicationConfiguration";
+              SubscriptionsConfiguration.MODULE_PREFIX + "GatewayConfiguration";
     }
 }

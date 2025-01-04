@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.adapters;
+package io.softhlon.learning.accounts.gateway;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -12,14 +12,14 @@ package io.softhlon.learning.accounts.adapters;
 import org.springframework.context.annotation.Configuration;
 
 import static io.softhlon.learning.accounts.AccountsConfiguration.MODULE_PREFIX;
-import static io.softhlon.learning.accounts.adapters.AdaptersConfiguration.BeanNames.APPLICATION_CONFIGURATION;
+import static io.softhlon.learning.accounts.gateway.GatewayConfiguration.BeanNames.APPLICATION_CONFIGURATION;
 
 @Configuration(
       value = APPLICATION_CONFIGURATION,
       proxyBeanMethods = false)
-public class AdaptersConfiguration {
+public class GatewayConfiguration {
     static class BeanNames {
         public static final String APPLICATION_CONFIGURATION =
-              MODULE_PREFIX + "AdaptersConfiguration";
+              MODULE_PREFIX + "GatewayConfiguration";
     }
 }

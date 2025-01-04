@@ -9,7 +9,7 @@ package io.softhlon.learning.subscriptions;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.subscriptions.adapters.AdaptersConfiguration;
+import io.softhlon.learning.subscriptions.gateway.GatewayConfiguration;
 import io.softhlon.learning.subscriptions.application.ApplicationConfiguration;
 import io.softhlon.learning.subscriptions.infrastructure.InfrastructureConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,7 +21,7 @@ import static io.softhlon.learning.subscriptions.SubscriptionsConfiguration.PACK
 @Configuration(proxyBeanMethods = false)
 @ComponentScan(PACKAGE_TO_SCAN)
 @Import({
-      AdaptersConfiguration.class,
+      GatewayConfiguration.class,
       ApplicationConfiguration.class,
       InfrastructureConfiguration.class
 })
