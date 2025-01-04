@@ -10,7 +10,7 @@ package io.softhlon.learning.accounts.gateway;
 // ---------------------------------------------------------------------------------------------------------------------
 
 import io.softhlon.learning.accounts.domain.SignInService;
-import io.softhlon.learning.common.controller.ResponseBodyHelper;
+import io.softhlon.learning.accounts.domain.SignOutService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,29 +19,26 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.InternalFailure;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.Success;
 import static io.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
-import static io.softhlon.learning.accounts.domain.SignInService.Result.*;
-
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
+import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static org.springframework.http.ResponseEntity.status;
 
 @RequestMapping(ACCOUNT)
 @RequiredArgsConstructor
-class SignInController {
-    private final SignInService signInService;
+class SignOutController {
+    private final SignOutService signOutService;
     private final HttpServletRequest servletRequest;
 
-    @PostMapping(SIGN_IN)
-    ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request) {
-        var result = signInService.signIn(request);
+    @PostMapping(SIGN_OUT)
+    ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
+        var result = signOutService.signOut(request);
 
         return switch (result) {
             case Success() -> successBody();
-            case InvalidCredentials(String message) -> badRequestBody(servletRequest, message);
             case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
         };
     }

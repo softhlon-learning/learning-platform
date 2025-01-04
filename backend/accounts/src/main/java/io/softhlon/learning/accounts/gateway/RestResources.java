@@ -12,5 +12,7 @@ package io.softhlon.learning.accounts.gateway;
 class RestResources {
     static final String API_PREFIX = "/api/v1";
     static final String ACCOUNT = API_PREFIX + "/account";
-    static final String SIGN_IN = ACCOUNT + "/auth";
+    static final String SIGN_IN = ACCOUNT + "/auth/in";
+    static final String SIGN_OUT = ACCOUNT + "/auth/out";
+    static final String SIGN_UP = ACCOUNT + "/sign-up";
 }
