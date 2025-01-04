@@ -9,5 +9,8 @@ package io.softhlon.learning.courses.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public interface UnEnrollCourseService {
+public interface UnenrollCourseService {
+    Response unenroll(Request request);
+    record Request(String accountId, String courseId) {}
+    record Response(boolean success) {}
 }

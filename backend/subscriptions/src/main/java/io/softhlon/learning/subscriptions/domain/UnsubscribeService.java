@@ -9,5 +9,5 @@ package io.softhlon.learning.subscriptions.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public interface UnSubscribeService {
+public interface UnsubscribeService {
 }

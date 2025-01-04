@@ -15,6 +15,6 @@ import io.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface SignUpService {
     Response signUp(Request request);
-    public record Request(String name, String email, String password) {}
-    public record Response(boolean success) {}
+    record Request(String name, String email, String password) {}
+    record Response(boolean success) {}
 }
