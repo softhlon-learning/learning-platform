@@ -1,0 +1,17 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package io.softhlon.learning.accounts.domain;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+class SignOutServiceImpl implements SignOutService {
+    @Override
+    public Response signOut(Request request) {
+        throw new UnsupportedOperationException();
+    }
+}
