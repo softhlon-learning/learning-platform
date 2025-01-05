@@ -19,6 +19,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
 import static io.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
@@ -27,6 +28,7 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.badReque
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static org.springframework.http.ResponseEntity.status;
 
+@RestController
 @RequestMapping(ACCOUNT)
 @RequiredArgsConstructor
 class SignUpController {
