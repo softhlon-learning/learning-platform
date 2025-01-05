@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+  * Added ResponseBodyHelper
+  * Add controllers for all modules  
+
 ## 0.0.3
   * Introduced sealed types in services 
 
