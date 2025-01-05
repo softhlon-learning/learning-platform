@@ -9,15 +9,19 @@ package io.softhlon.learning.courses.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import java.util.List;
+
 public interface ListCoursesService {
     Result listCourses(Request request);
     record Request(String accountId, String courseId) {}
 
     sealed interface Result {
-        record Success(
-              String courseId,
-              String name,
-              String description) implements Result {}
+        record Success(List<Course> courses) implements Result {}
         record InternalFailure(Throwable cause) implements Result {}
     }
+
+    record Course(
+          String courseId,
+          String name,
+          String description) {}
 }
