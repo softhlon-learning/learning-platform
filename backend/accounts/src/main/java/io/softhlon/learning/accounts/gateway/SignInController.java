@@ -31,7 +31,6 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.internal
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping(ACCOUNT)
 @RequiredArgsConstructor
 class SignInController {
     private final SignInService signInService;
