@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.5
+  * Simplified and set modules configuration
+
 ## 0.0.4
   * Added ResponseBodyHelper
   * Add controllers for all modules  
