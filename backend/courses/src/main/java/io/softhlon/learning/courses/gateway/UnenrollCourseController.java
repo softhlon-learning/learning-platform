@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,8 +32,8 @@ class UnenrollCourseController {
     private final UnenrollCourseService unenrollCourseService;
     private final HttpServletRequest servletRequest;
 
-    @PostMapping(UNENROLL_COURSE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody UnenrollCourseService.Request request) {
+    @DeleteMapping(UNENROLL_COURSE)
+    ResponseEntity<?> unenrollCourse(@Validated @RequestBody UnenrollCourseService.Request request) {
         return switch (unenrollCourseService.unenroll(request)) {
             case Success() -> successBody();
             case CourseNotFound(String message) -> badRequestBody(servletRequest, message);

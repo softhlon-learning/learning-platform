@@ -5,10 +5,13 @@
 
 package io.softhlon.learning.courses.domain;
 
+import org.springframework.stereotype.Service;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Service
 class EnrollCourseServiceImpl implements EnrollCourseService {
     @Override
     public Result enroll(Request request) {

@@ -9,6 +9,9 @@ package io.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import org.springframework.stereotype.Service;
+
+@Service
 class SignOutServiceImpl implements SignOutService {
     @Override
     public Result signOut(Request request) {

@@ -9,6 +9,9 @@ package io.softhlon.learning.subscriptions.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import org.springframework.stereotype.Service;
+
+@Service
 class SubscribeServiceImpl implements SubscribeService {
     @Override
     public Result subscribe(Request request) {

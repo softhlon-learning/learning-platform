@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,7 +32,7 @@ class UnsubscribeController {
     private final UnsubscribeService unsubscribeService;
     private final HttpServletRequest servletRequest;
 
-    @PostMapping(UNSUBSCRIBE)
+    @DeleteMapping(UNSUBSCRIBE)
     ResponseEntity<?> enrollCourse(@Validated @RequestBody UnsubscribeService.Request request) {
         return switch (unsubscribeService.unsubscribe(request)) {
             case Success() -> successBody();

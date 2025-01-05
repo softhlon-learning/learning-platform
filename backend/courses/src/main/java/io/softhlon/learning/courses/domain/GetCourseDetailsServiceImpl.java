@@ -5,10 +5,13 @@
 
 package io.softhlon.learning.courses.domain;
 
+import org.springframework.stereotype.Service;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Service
 class GetCourseDetailsServiceImpl implements GetCourseDetailsService {
     @Override
     public Result getDetails(Request request) {

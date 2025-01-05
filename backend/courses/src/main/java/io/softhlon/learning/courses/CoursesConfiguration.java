@@ -5,27 +5,14 @@
 
 package io.softhlon.learning.courses;
 
-import io.softhlon.learning.courses.application.ApplicationConfiguration;
-import io.softhlon.learning.courses.gateway.GatewayConfiguration;
-import io.softhlon.learning.courses.infrastructure.InfrastructureConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-
-import static io.softhlon.learning.courses.CoursesConfiguration.PACKAGE_TO_SCAN;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Configuration(proxyBeanMethods = false)
-@ComponentScan(PACKAGE_TO_SCAN)
-@Import({
-      GatewayConfiguration.class,
-      ApplicationConfiguration.class,
-      InfrastructureConfiguration.class
-})
+@ComponentScan("io.softhlon.learning.courses")
 public class CoursesConfiguration {
-    public static final String PACKAGE_TO_SCAN = "io.softhlon.learning.courses";
-    public static final String MODULE_PREFIX = "Courses";
 }

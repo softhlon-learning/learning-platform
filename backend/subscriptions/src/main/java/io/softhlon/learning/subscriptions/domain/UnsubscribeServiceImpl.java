@@ -9,6 +9,9 @@ package io.softhlon.learning.subscriptions.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import org.springframework.stereotype.Service;
+
+@Service
 class UnsubscribeServiceImpl implements UnsubscribeService {
     @Override
     public Result unsubscribe(Request request) {
