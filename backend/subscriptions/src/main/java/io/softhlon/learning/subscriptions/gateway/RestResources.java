@@ -3,19 +3,15 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.domain;
+package io.softhlon.learning.subscriptions.gateway;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public interface UnsubscribeService {
-    Result unsubscribe(Request request);
-
-    record Request(String accountId) {}
-    sealed interface Result {
-        record Success() implements Result {}
-        record AccountNotSubscribed(String message) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
-    }
+class RestResources {
+    static final String API_PREFIX = "/api/v1";
+    static final String SUBSCRIPTION = API_PREFIX + "/subscription";
+    static final String SUBSCRIBE = SUBSCRIPTION;
+    static final String UNSUBSCRIBE = SUBSCRIPTION;
 }

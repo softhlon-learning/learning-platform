@@ -15,7 +15,7 @@ public interface SubscribeService {
     record Request(String accountId) {}
     sealed interface Result {
         record Success() implements Result {}
-        record AccountAlreadySubscribed() implements Result {}
+        record AccountAlreadySubscribed(String message) implements Result {}
         record InternalFailure(Throwable cause) implements Result {}
     }
 }

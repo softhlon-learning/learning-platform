@@ -9,4 +9,12 @@
 
     <artifactId>subscriptions</artifactId>
     <name>Learning Platform :: Subscriptions</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.softhlon.learning</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
