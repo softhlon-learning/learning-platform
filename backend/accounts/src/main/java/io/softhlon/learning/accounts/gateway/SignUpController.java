@@ -18,11 +18,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
 import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;

@@ -9,8 +9,8 @@ package io.softhlon.learning.subscriptions;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.subscriptions.gateway.GatewayConfiguration;
 import io.softhlon.learning.subscriptions.application.ApplicationConfiguration;
+import io.softhlon.learning.subscriptions.gateway.GatewayConfiguration;
 import io.softhlon.learning.subscriptions.infrastructure.InfrastructureConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
