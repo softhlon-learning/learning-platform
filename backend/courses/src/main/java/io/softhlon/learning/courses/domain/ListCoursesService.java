@@ -5,11 +5,11 @@
 
 package io.softhlon.learning.courses.domain;
 
+import java.util.List;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
-
-import java.util.List;
 
 public interface ListCoursesService {
     Result listCourses(Request request);

@@ -5,11 +5,11 @@
 
 package io.softhlon.learning.courses.domain;
 
+import io.softhlon.learning.common.hexagonal.InboundPort;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
-
-import io.softhlon.learning.common.hexagonal.InboundPort;
 
 @InboundPort
 @FunctionalInterface

@@ -5,10 +5,6 @@
 
 package io.softhlon.learning.accounts.gateway;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import io.softhlon.learning.accounts.domain.SignInService;
 import io.softhlon.learning.accounts.domain.SignOutService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,6 +21,10 @@ import static io.softhlon.learning.accounts.domain.SignOutService.Result.Success
 import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static org.springframework.http.ResponseEntity.status;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
 
 @RestController
 @RequiredArgsConstructor

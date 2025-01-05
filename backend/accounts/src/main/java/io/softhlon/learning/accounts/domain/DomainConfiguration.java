@@ -5,14 +5,14 @@
 
 package io.softhlon.learning.accounts.domain;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import org.springframework.context.annotation.Configuration;
 
 import static io.softhlon.learning.accounts.AccountsConfiguration.MODULE_PREFIX;
 import static io.softhlon.learning.accounts.domain.DomainConfiguration.BeanNames.APPLICATION_CONFIGURATION;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
 
 @Configuration(
       value = APPLICATION_CONFIGURATION,

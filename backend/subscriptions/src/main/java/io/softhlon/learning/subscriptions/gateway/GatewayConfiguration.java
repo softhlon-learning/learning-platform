@@ -5,14 +5,14 @@
 
 package io.softhlon.learning.subscriptions.gateway;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 import static io.softhlon.learning.subscriptions.gateway.GatewayConfiguration.BeanNames.APPLICATION_CONFIGURATION;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
 
 @Configuration(
       value = APPLICATION_CONFIGURATION,

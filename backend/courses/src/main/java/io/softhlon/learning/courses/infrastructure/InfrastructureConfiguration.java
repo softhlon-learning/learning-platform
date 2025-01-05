@@ -5,14 +5,14 @@
 
 package io.softhlon.learning.courses.infrastructure;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import io.softhlon.learning.courses.CoursesConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 import static io.softhlon.learning.courses.infrastructure.InfrastructureConfiguration.BeanNames.APPLICATION_CONFIGURATION;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
 
 @Configuration(
       value = APPLICATION_CONFIGURATION,
