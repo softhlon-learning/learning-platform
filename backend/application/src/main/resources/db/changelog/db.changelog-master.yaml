@@ -1,2 +1,7 @@
 databaseChangeLog:
-
+  - changeSet:
+      id:  001
+      author:  pmarat
+      sqlFile:
+        splitStatements:  true
+        path:  db/changelog/create-tables.sql
