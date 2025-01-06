@@ -1,11 +1,16 @@
 # Changelog
 
+## 0.0.6
+ * Initial database and liquibase setup
+ * Created docker-compose for postgres
+ * Create module-info files for all modules
+
 ## 0.0.5
   * Simplified and set modules configuration
 
 ## 0.0.4
   * Added ResponseBodyHelper
-  * Add controllers for all modules  
+  * Added controllers for all modules  
 
 ## 0.0.3
   * Introduced sealed types in services 
