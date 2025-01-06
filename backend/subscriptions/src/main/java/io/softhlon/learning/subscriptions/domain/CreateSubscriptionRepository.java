@@ -8,6 +8,7 @@ package io.softhlon.learning.subscriptions.domain;
 import io.softhlon.learning.common.domain.DomainRepository;
 import io.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -17,10 +18,17 @@ import java.util.UUID;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-interface CreateSubscriptionRepository {
+public interface CreateSubscriptionRepository {
     Result execute(Request request);
 
-    record Request(UUID courseId, UUID accountId) {}
+    record Request(
+          UUID courseId,
+          UUID accountId,
+          String status,
+          OffsetDateTime startedTime,
+          OffsetDateTime createdTime,
+          OffsetDateTime updatedTime) {}
+
     sealed interface Result {
         record Success(UUID uuid) implements Result {}
         record InternalFailure(Throwable cause) implements Result {}

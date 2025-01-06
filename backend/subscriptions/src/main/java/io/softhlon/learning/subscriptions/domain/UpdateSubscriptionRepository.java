@@ -18,14 +18,17 @@ import java.util.UUID;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-interface UpdateSubscriptionRepository {
+public interface UpdateSubscriptionRepository {
     Result execute(Subscription subscription);
 
     record Subscription(
           UUID id,
           UUID accountId,
+          String status,
           OffsetDateTime startedTime,
-          OffsetDateTime cancelledTime) {}
+          OffsetDateTime cancelledTime,
+          OffsetDateTime createdTime,
+          OffsetDateTime updatedTime) {}
 
     sealed interface Result {
         record Success() implements Result {}

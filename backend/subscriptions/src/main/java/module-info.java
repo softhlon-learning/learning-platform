@@ -7,4 +7,6 @@ module subscriptions {
     requires org.slf4j;
     requires jakarta.persistence;
     requires spring.data.commons;
+    requires spring.boot.autoconfigure;
+    requires spring.data.jpa;
 }

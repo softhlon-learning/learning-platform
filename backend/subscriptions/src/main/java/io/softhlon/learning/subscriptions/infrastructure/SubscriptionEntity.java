@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -18,9 +19,10 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Getter
+@Setter
 @Builder
 @Entity(name = "subscriptions")
-public class Subscription {
+public class SubscriptionEntity {
     @Id
     private UUID id;
     private UUID accountId;
