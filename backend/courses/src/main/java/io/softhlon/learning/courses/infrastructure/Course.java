@@ -1,22 +1,32 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses;
+package io.softhlon.learning.courses.infrastructure;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Getter;
+
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@EntityScan
-@EnableJpaRepositories
-@Configuration(proxyBeanMethods = false)
-@ComponentScan("io.softhlon.learning.courses")
-public class CoursesConfiguration {
+@Getter
+@Builder
+@Entity(name = "courses")
+public class Course {
+    @Id
+    private UUID id;
+    private String name;
+    private String description;
+    private String content;
+    private String version;
+    private OffsetDateTime createdTime;
+    private OffsetDateTime updatedTime;
 }

@@ -1,22 +1,19 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses;
+package io.softhlon.learning.courses.infrastructure;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@EntityScan
-@EnableJpaRepositories
-@Configuration(proxyBeanMethods = false)
-@ComponentScan("io.softhlon.learning.courses")
-public class CoursesConfiguration {
+@Repository
+interface CoursesJpaRepository extends CrudRepository<Course, UUID> {
 }
