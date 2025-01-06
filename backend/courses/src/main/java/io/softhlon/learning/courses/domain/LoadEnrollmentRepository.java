@@ -1,0 +1,32 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package io.softhlon.learning.courses.domain;
+
+import java.time.OffsetDateTime;
+import java.util.UUID;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@FunctionalInterface
+interface LoadEnrollmentRepository {
+    Result execute(UUID id);
+
+    record Enrollment(
+          UUID id,
+          UUID accountId,
+          UUID courseId,
+          String status,
+          OffsetDateTime enrolledTime,
+          OffsetDateTime unenrolledTime,
+          OffsetDateTime completedTime) {}
+
+    sealed interface Result {
+        record Success(Enrollment enrollment) implements Result {}
+        record InternalFailure(Throwable cause) implements Result {}
+    }
+}
