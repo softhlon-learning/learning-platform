@@ -1,9 +1,13 @@
 # Changelog
 
+## 0.0.9
+ * Jpa repositories and entities for all modules
+ * New crated_time and updated_time columns for all tables
+
 ## 0.0.8
-* Repository interfaces for accounts
-* Repository interfaces for courses
-* Repository interfaces for subscriptions
+ * Repository interfaces for accounts
+ * Repository interfaces for courses
+ * Repository interfaces for subscriptions
 
 ## 0.0.7
  * Created basics database tables
