@@ -20,7 +20,7 @@ import java.util.UUID;
 @Getter
 @Builder
 @Entity(name = "accounts")
-public class Account {
+class AccountEntity {
     @Id
     private UUID id;
     private String name;

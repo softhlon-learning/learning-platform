@@ -3,24 +3,23 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package io.softhlon.learning.accounts.infrastructure;
+
+import io.softhlon.learning.accounts.domain.InvalidateAuthTokenRepository;
+import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import io.softhlon.learning.common.domain.DomainRepository;
-import io.softhlon.learning.common.hexagonal.OutboundPort;
-
-@OutboundPort
-@DomainRepository
-@FunctionalInterface
-public interface InvalidateAuthTokenRepository {
-    Result execute(Request request);
-
-    record Request(String authToken) {}
-    sealed interface Result {
-        record Success() implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+@Service
+@PersistenceAdapter
+@RequiredArgsConstructor
+class InvalidateAuthTokenRepositoryAdapter implements InvalidateAuthTokenRepository {
+    @Override
+    public Result execute(Request request) {
+        throw new UnsupportedOperationException();
     }
 }
