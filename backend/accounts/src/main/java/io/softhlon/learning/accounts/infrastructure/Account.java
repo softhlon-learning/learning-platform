@@ -1,22 +1,31 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts;
+package io.softhlon.learning.accounts.infrastructure;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Getter;
+
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@EntityScan
-@EnableJpaRepositories
-@Configuration(proxyBeanMethods = false)
-@ComponentScan("io.softhlon.learning.accounts")
-public class AccountsConfiguration {
+@Getter
+@Builder
+@Entity(name = "accounts")
+public class Account {
+    @Id
+    private UUID id;
+    private String name;
+    private String email;
+    private String password;
+    private OffsetDateTime createdTime;
+    private OffsetDateTime updatedTime;
 }

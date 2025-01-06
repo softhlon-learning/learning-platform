@@ -1,22 +1,19 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts;
+package io.softhlon.learning.accounts.infrastructure;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@EntityScan
-@EnableJpaRepositories
-@Configuration(proxyBeanMethods = false)
-@ComponentScan("io.softhlon.learning.accounts")
-public class AccountsConfiguration {
+@Repository
+interface AccountsJpaRepository extends CrudRepository<Account, UUID> {
 }
