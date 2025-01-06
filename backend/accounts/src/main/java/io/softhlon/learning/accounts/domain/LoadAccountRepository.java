@@ -5,11 +5,11 @@
 
 package io.softhlon.learning.accounts.domain;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
-
-import java.util.UUID;
 
 @FunctionalInterface
 public interface LoadAccountRepository {
