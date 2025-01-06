@@ -3,7 +3,7 @@
 ## 0.1.1
 _release date: 2025-01-07_
  * Added update_modified_column function and defaults for created and updated times
- * Removed createdTime and updateTime from code
+ * Removed createdTime and updatedTime from code
  * Fixed controller method names
 
 ## 0.1.0
