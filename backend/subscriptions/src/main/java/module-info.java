@@ -5,4 +5,6 @@ module subscriptions {
     requires spring.web;
     requires org.apache.tomcat.embed.core;
     requires org.slf4j;
+    requires jakarta.persistence;
+    requires spring.data.commons;
 }

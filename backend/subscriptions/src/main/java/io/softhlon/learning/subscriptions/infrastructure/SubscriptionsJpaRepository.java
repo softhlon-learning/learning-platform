@@ -1,0 +1,19 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) IO.SOFTHLON - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package io.softhlon.learning.subscriptions.infrastructure;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@Repository
+interface SubscriptionsJpaRepository extends CrudRepository<Subscription, UUID> {
+}
