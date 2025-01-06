@@ -5,12 +5,17 @@
 
 package io.softhlon.learning.subscriptions.domain;
 
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
+
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
 interface CreateSubscriptionRepository {
     Result execute(Request request);

@@ -9,6 +9,11 @@ package io.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
+
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
 interface InvalidateAuthTokenRepository {
     Result execute(Request request);

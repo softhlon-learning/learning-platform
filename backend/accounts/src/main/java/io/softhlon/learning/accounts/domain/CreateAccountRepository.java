@@ -5,12 +5,17 @@
 
 package io.softhlon.learning.accounts.domain;
 
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
+
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
 public interface CreateAccountRepository {
     Result execute(Request request);
