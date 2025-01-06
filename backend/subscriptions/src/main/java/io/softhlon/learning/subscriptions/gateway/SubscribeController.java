@@ -32,7 +32,7 @@ class SubscribeController {
     private final HttpServletRequest servletRequest;
 
     @PostMapping(SUBSCRIBE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody SubscribeService.Request request) {
+    ResponseEntity<?> subscribe(@Validated @RequestBody SubscribeService.Request request) {
         return switch (subscribeService.subscribe(request)) {
             case Success() -> successBody();
             case AccountAlreadySubscribed(String message) -> badRequestBody(servletRequest, message);

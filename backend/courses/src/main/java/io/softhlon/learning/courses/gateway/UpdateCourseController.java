@@ -32,10 +32,10 @@ class UpdateCourseController {
     private final HttpServletRequest servletRequest;
 
     @PutMapping(UPDATE_COURSE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody UpdateEnrolledCourseService.Request request) {
+    ResponseEntity<?> updateCourse(@Validated @RequestBody UpdateEnrolledCourseService.Request request) {
         var result = updateEnrolledCourseService.updateCourse(request);
         return switch (result) {
-            case Success() -> successBody();
+            case Success() -> status(HttpStatus.OK).build();
             case CourseNotFound(String message) -> badRequestBody(servletRequest, message);
             case AccountNotEligible(String message) -> badRequestBody(servletRequest, message);
             case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);

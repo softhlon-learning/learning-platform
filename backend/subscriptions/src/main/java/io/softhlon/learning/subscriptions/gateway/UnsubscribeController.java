@@ -33,7 +33,7 @@ class UnsubscribeController {
     private final HttpServletRequest servletRequest;
 
     @DeleteMapping(UNSUBSCRIBE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody UnsubscribeService.Request request) {
+    ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
         return switch (unsubscribeService.unsubscribe(request)) {
             case Success() -> successBody();
             case AccountNotSubscribed(String message) -> badRequestBody(servletRequest, message);

@@ -35,7 +35,7 @@ class ListCoursesController {
     private final HttpServletRequest servletRequest;
 
     @GetMapping(LIST_COURSES)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody ListCoursesService.Request request) {
+    ResponseEntity<?> listCourses(@Validated @RequestBody ListCoursesService.Request request) {
         var result = listCoursesService.listCourses(request);
         return switch (result) {
             case Success(List<Course> courses) -> successBody(courses);

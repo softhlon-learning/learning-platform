@@ -33,7 +33,7 @@ class GetCourseController {
     private final HttpServletRequest servletRequest;
 
     @GetMapping(GET_COURSE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
+    ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
         var result = getCourseDetailsService.getDetails(request);
         return switch (result) {
             case Success(CourseDetails courseDetails) -> successBody(courseDetails);
