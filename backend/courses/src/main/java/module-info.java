@@ -9,4 +9,5 @@ module courses {
     requires spring.boot.autoconfigure;
     requires jakarta.persistence;
     requires spring.data.commons;
+    requires spring.tx;
 }

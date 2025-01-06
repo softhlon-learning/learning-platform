@@ -7,7 +7,6 @@ package io.softhlon.learning.courses.infrastructure;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -20,17 +19,14 @@ import java.util.UUID;
 
 @Getter
 @Builder
-@Entity(name = "enrollments")
-public class Enrollment {
+@Entity(name = "courses")
+public class CourseEntity {
     @Id
     private UUID id;
-    @ManyToOne
-    private Course course;
-    private String status;
+    private String name;
+    private String description;
     private String content;
-    private OffsetDateTime enrolledTime;
-    private OffsetDateTime unenrolledTime;
-    private OffsetDateTime completedTime;
+    private String version;
     private OffsetDateTime createdTime;
     private OffsetDateTime updatedTime;
 }

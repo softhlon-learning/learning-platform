@@ -18,17 +18,22 @@ import java.util.UUID;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-interface LoadEnrollmentRepository {
+public interface LoadEnrollmentRepository {
     Result execute(UUID id);
 
     record Enrollment(
           UUID id,
-          UUID accountId,
-          UUID courseId,
+          Course course,
           String status,
           OffsetDateTime enrolledTime,
           OffsetDateTime unenrolledTime,
-          OffsetDateTime completedTime) {}
+          OffsetDateTime completedTime,
+          OffsetDateTime createdTime,
+          OffsetDateTime updatedTime) {}
+
+    record Course(
+          String name,
+          String description) {}
 
     sealed interface Result {
         record Success(Enrollment enrollment) implements Result {}
