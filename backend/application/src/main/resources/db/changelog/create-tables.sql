@@ -3,6 +3,9 @@ CREATE TABLE accounts (
     name VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
+    status VARCHAR NOT NULL,
+    created_time timestamp,
+    updated_time timestamp,
     PRIMARY KEY (id),
     CONSTRAINT unique_accounts_email UNIQUE (email)
 );
@@ -13,6 +16,8 @@ CREATE TABLE courses (
     description VARCHAR,
     content VARCHAR,
     version VARCHAR NOT NULL,
+    created_time timestamp,
+    updated_time timestamp,
     PRIMARY KEY (id)
 );
 
@@ -25,6 +30,8 @@ CREATE TABLE enrollments (
     enrolled_time timestamp,
     unenrolled_time timestamp,
     completed_time timestamp,
+    created_time timestamp,
+    updated_time timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_enrollments_accounts
          FOREIGN KEY (account_id)
@@ -40,6 +47,8 @@ CREATE TABLE subscriptions (
     status VARCHAR NOT NULL,
     started_time timestamp,
     cancelled_time timestamp,
+    created_time timestamp,
+    updated_time timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_subscriptions_accounts
          FOREIGN KEY (account_id)
