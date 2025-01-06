@@ -15,6 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.ResponseField.*;
+import static org.springframework.http.ResponseEntity.status;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -22,6 +23,18 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.Response
 
 @Slf4j
 public class ResponseBodyHelper {
+    public static ResponseEntity successOkBody() {
+        return status(HttpStatus.OK).build();
+    }
+
+    public static ResponseEntity successCreatedBody() {
+        return status(HttpStatus.CREATED).build();
+    }
+
+    public static ResponseEntity successAcceptedBody() {
+        return status(HttpStatus.ACCEPTED).build();
+    }
+
     public static ResponseEntity<?> internalServerBody(HttpServletRequest request, Throwable cause) {
         log.error("Unexpected error:", cause);
         return ResponseEntity.internalServerError()
