@@ -1,9 +1,9 @@
 # Changelog
 
 ## 0.0.8
-* Repostory interfaces for accounts
-* Repostory interfaces for courses
-* Repostory interfaces for subscriptions
+* Repository interfaces for accounts
+* Repository interfaces for courses
+* Repository interfaces for subscriptions
 
 ## 0.0.7
  * Created basics database tables
