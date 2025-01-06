@@ -37,8 +37,6 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
               .accountId(request.accountId())
               .status(request.status())
               .startedTime(request.startedTime())
-              .createdTime(request.createdTime())
-              .updatedTime(request.updatedTime())
               .build();
     }
 }

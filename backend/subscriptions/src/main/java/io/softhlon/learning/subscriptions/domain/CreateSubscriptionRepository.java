@@ -25,9 +25,7 @@ public interface CreateSubscriptionRepository {
           UUID courseId,
           UUID accountId,
           String status,
-          OffsetDateTime startedTime,
-          OffsetDateTime createdTime,
-          OffsetDateTime updatedTime) {}
+          OffsetDateTime startedTime) {}
 
     sealed interface Result {
         record Success(UUID uuid) implements Result {}

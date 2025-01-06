@@ -29,6 +29,4 @@ public class SubscriptionEntity {
     private String status;
     private OffsetDateTime startedTime;
     private OffsetDateTime cancelledTime;
-    private OffsetDateTime createdTime;
-    private OffsetDateTime updatedTime;
 }

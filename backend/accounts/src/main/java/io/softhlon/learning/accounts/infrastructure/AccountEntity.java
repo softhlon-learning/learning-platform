@@ -26,6 +26,4 @@ class AccountEntity {
     private String name;
     private String email;
     private String password;
-    private OffsetDateTime createdTime;
-    private OffsetDateTime updatedTime;
 }

@@ -37,6 +37,5 @@ class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepositor
     private void updateEntity(Subscription subscription, SubscriptionEntity entity) {
         entity.setStatus(subscription.status());
         entity.setCancelledTime(subscription.cancelledTime());
-        entity.setUpdatedTime(subscription.updatedTime());
     }
 }

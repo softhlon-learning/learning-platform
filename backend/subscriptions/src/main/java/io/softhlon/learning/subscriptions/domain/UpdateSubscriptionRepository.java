@@ -26,9 +26,7 @@ public interface UpdateSubscriptionRepository {
           UUID accountId,
           String status,
           OffsetDateTime startedTime,
-          OffsetDateTime cancelledTime,
-          OffsetDateTime createdTime,
-          OffsetDateTime updatedTime) {}
+          OffsetDateTime cancelledTime) {}
 
     sealed interface Result {
         record Success() implements Result {}

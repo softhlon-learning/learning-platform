@@ -27,9 +27,7 @@ public interface LoadEnrollmentRepository {
           String status,
           OffsetDateTime enrolledTime,
           OffsetDateTime unenrolledTime,
-          OffsetDateTime completedTime,
-          OffsetDateTime createdTime,
-          OffsetDateTime updatedTime) {}
+          OffsetDateTime completedTime) {}
 
     record Course(
           String name,

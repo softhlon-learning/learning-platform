@@ -27,6 +27,4 @@ public class CourseEntity {
     private String description;
     private String content;
     private String version;
-    private OffsetDateTime createdTime;
-    private OffsetDateTime updatedTime;
 }

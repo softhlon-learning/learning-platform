@@ -33,6 +33,4 @@ public class EnrollmentEntity {
     private OffsetDateTime enrolledTime;
     private OffsetDateTime unenrolledTime;
     private OffsetDateTime completedTime;
-    private OffsetDateTime createdTime;
-    private OffsetDateTime updatedTime;
 }

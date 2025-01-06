@@ -42,9 +42,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
               entity.getStatus(),
               entity.getEnrolledTime(),
               entity.getUnenrolledTime(),
-              entity.getCompletedTime(),
-              entity.getCreatedTime(),
-              entity.getUpdatedTime()
+              entity.getCompletedTime()
         );
     }
 }

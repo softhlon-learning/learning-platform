@@ -39,7 +39,5 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
         entity.setContent(enrollment.content());
         entity.setEnrolledTime(enrollment.enrolledTime());
         entity.setUnenrolledTime(enrollment.unenrolledTime());
-        entity.setCreatedTime(enrollment.createdTime());
-        entity.setUpdatedTime(enrollment.updatedTime());
     }
 }

@@ -29,9 +29,7 @@ public interface UpdateEnrollmentRepository {
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime unenrolledTime,
-          OffsetDateTime completedTime,
-          OffsetDateTime createdTime,
-          OffsetDateTime updatedTime) {}
+          OffsetDateTime completedTime) {}
 
     sealed interface Result {
         record Success(UUID id) implements Result {}
