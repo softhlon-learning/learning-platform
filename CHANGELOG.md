@@ -2,7 +2,7 @@
 
 ## 0.0.9
  * Jpa repositories and entities for all modules
- * New crated_time and updated_time columns for all tables
+ * New created_time and updated_time columns for all tables
 
 ## 0.0.8
  * Repository interfaces for accounts
