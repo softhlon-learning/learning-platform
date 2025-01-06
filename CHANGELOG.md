@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.1.1
+_release date: 2025-01-07_
+ * Added update_modified_column function and defaults for created and updated times
+ * Removed createdTime and updateTime from code
+ * Fixed controller method names
+
 ## 0.1.0
 _release date: 2025-01-06_
  * Persistence adapters for accounts
