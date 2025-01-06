@@ -3,7 +3,7 @@
 ## 0.0.6
  * Initial database and liquibase setup
  * Created docker-compose for postgres
- * Create module-info files for all modules
+ * Created module-info files for all modules
 
 ## 0.0.5
   * Simplified and set modules configuration
