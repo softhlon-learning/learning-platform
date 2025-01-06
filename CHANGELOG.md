@@ -1,4 +1,4 @@
-# Changelog
+# Learning Platform Changelog
 
 ## 0.0.9
 _release date: 2025-01-06_
