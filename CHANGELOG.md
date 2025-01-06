@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.1.0
+_release date: 2025-01-06_
+ * Persistence adapters for accounts
+ * Persistence adapters for courses
+ * Persistence adapters for subscriptions
+ * Release dates in changelog
+ * Changelog title update
+
 ## 0.0.9
 _release date: 2025-01-06_
  * Jpa repositories and entities for all modules
