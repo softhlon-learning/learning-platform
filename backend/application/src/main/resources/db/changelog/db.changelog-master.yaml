@@ -3,5 +3,5 @@ databaseChangeLog:
       id:  001
       author:  pmarat
       sqlFile:
-        splitStatements:  true
-        path:  db/changelog/create-tables.sql
+        splitStatements:  false
+        path:  db/changelog/create-schema.sql

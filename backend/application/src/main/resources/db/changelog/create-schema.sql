@@ -4,8 +4,8 @@ CREATE TABLE accounts (
     email VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
     status VARCHAR NOT NULL,
-    created_time TIMESTAMP,
-    updated_time TIMESTAMP,
+    created_time TIMESTAMP DEFAULT current_timestamp,
+    updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT unique_accounts_email UNIQUE (email)
 );
@@ -16,8 +16,8 @@ CREATE TABLE courses (
     description VARCHAR,
     content VARCHAR,
     version VARCHAR NOT NULL,
-    created_time TIMESTAMP,
-    updated_time TIMESTAMP,
+    created_time TIMESTAMP DEFAULT current_timestamp,
+    updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
@@ -30,8 +30,8 @@ CREATE TABLE enrollments (
     enrolled_time TIMESTAMP,
     unenrolled_time TIMESTAMP,
     completed_time TIMESTAMP,
-    created_time TIMESTAMP,
-    updated_time TIMESTAMP,
+    created_time TIMESTAMP DEFAULT current_timestamp,
+    updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_enrollments_accounts
          FOREIGN KEY (account_id)
@@ -47,10 +47,27 @@ CREATE TABLE subscriptions (
     status VARCHAR NOT NULL,
     started_time TIMESTAMP,
     cancelled_time TIMESTAMP,
-    created_time TIMESTAMP,
-    updated_time TIMESTAMP,
+    created_time TIMESTAMP DEFAULT current_timestamp,
+    updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_subscriptions_accounts
          FOREIGN KEY (account_id)
          REFERENCES accounts (id)
 );
+
+CREATE OR REPLACE FUNCTION update_modified_column()
+RETURNS TRIGGER AS $$
+BEGIN
+   IF row(NEW.*) IS DISTINCT FROM row(OLD.*) THEN
+      NEW.updated_time = now();
+      RETURN NEW;
+   ELSE
+      RETURN OLD;
+   END IF;
+END;
+$$ language 'plpgsql';
+
+CREATE TRIGGER update_accounts_updated_time BEFORE UPDATE ON accounts FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_courses_updated_time BEFORE UPDATE ON courses FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_enrollments_updated_time BEFORE UPDATE ON enrollments FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_subscriptions_updated_time BEFORE UPDATE ON subscriptions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
