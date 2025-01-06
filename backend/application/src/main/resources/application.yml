@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/learning
+    username: postgres
+    password: postgres
