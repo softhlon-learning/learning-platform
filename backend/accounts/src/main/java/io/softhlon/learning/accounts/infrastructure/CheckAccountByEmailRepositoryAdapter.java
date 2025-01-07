@@ -29,7 +29,7 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
                   ? new AccountExists()
                   : new AccountNotFound();
         } catch (Throwable cause) {
-            return new CheckAccountFailure(cause);
+            return new CheckAccountFailed(cause);
         }
     }
 }

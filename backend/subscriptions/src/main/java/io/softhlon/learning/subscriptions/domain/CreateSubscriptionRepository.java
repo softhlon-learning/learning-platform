@@ -22,13 +22,12 @@ public interface CreateSubscriptionRepository {
     CreateSubscriptionResult execute(CreateSubscriptionRequest request);
 
     record CreateSubscriptionRequest(
-          UUID courseId,
           UUID accountId,
           String status,
           OffsetDateTime startedTime) {}
 
     sealed interface CreateSubscriptionResult {
-        record Success(UUID uuid) implements CreateSubscriptionResult {}
-        record InternalFailure(Throwable cause) implements CreateSubscriptionResult {}
+        record SubscriptionPersisted(UUID uuid) implements CreateSubscriptionResult {}
+        record SubscriptionPersistFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
 }

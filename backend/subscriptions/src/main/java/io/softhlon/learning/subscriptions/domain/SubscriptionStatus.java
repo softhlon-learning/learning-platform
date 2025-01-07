@@ -5,19 +5,11 @@
 
 package io.softhlon.learning.subscriptions.domain;
 
-import java.util.UUID;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public interface SubscribeService {
-    Result subscribe(Request request);
-
-    record Request(UUID accountId) {}
-    sealed interface Result {
-        record Success() implements Result {}
-        record AccountAlreadySubscribed(String message) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
-    }
+enum SubscriptionStatus {
+    ACTIVE,
+    CANCELLED;
 }

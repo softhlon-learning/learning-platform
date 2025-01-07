@@ -3,10 +3,12 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package io.softhlon.learning.subscriptions.domain;
 
 import io.softhlon.learning.common.domain.DomainRepository;
 import io.softhlon.learning.common.hexagonal.OutboundPort;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -15,13 +17,13 @@ import io.softhlon.learning.common.hexagonal.OutboundPort;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-public interface CheckAccountByEmailRepository {
-    CheckAccountByEmailResult execute(CheckAccountByEmailRequest request);
+public interface CheckSubscriptionByAccountRepository {
+    CheckSubscriptionByAccountResult execute(CheckSubscriptionByAccountRequest request);
 
-    record CheckAccountByEmailRequest(String email) {}
-    sealed interface CheckAccountByEmailResult {
-        record AccountExists() implements CheckAccountByEmailResult {}
-        record AccountNotFound() implements CheckAccountByEmailResult {}
-        record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
+    record CheckSubscriptionByAccountRequest(UUID accountId) {}
+    sealed interface CheckSubscriptionByAccountResult {
+        record SubscriptionExists() implements CheckSubscriptionByAccountResult {}
+        record SubscriptionNotFound() implements CheckSubscriptionByAccountResult {}
+        record CheckSubscriptionFailure(Throwable cause) implements CheckSubscriptionByAccountResult {}
     }
 }

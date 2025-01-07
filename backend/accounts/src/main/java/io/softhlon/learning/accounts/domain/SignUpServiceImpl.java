@@ -34,7 +34,7 @@ class SignUpServiceImpl implements SignUpService {
         return switch (exists) {
             case AccountExists() -> new AccountAlreadyExists("Account with the same email already exists");
             case AccountNotFound() -> persistAccount(request);
-            case CheckAccountFailure(Throwable cause) -> new InternalFailure(cause);
+            case CheckAccountFailed(Throwable cause) -> new InternalFailure(cause);
         };
     }
 
