@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost/learning
     username: postgres
-    password: postgres
+    password: "@z9X}r6hF£>8J2r_"
 logging.level.org.zalando.logbook.Logbook: TRACE
 authentication.mocked: true
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
