@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
+import static io.softhlon.learning.subscriptions.domain.SubscribeService.Request;
 import static io.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -29,8 +32,8 @@ class SubscribeController {
     private final HttpServletRequest httpRequest;
 
     @PostMapping(SUBSCRIBE)
-    ResponseEntity<?> subscribe(@Validated @RequestBody SubscribeService.Request request) {
-        return switch (service.subscribe(request)) {
+    ResponseEntity<?> subscribe() {
+        return switch (service.subscribe(new Request(UUID.randomUUID()))) {
             case Success() -> successCreatedBody();
             case AccountAlreadySubscribed(String message) -> badRequestBody(httpRequest, message);
             case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);

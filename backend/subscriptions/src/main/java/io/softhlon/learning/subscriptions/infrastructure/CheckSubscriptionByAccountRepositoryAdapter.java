@@ -26,7 +26,7 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
     @Override
     public CheckSubscriptionByAccountResult execute(CheckSubscriptionByAccountRequest request) {
         try {
-            return subscriptionsRepo.existsByAccount(request.accountId())
+            return subscriptionsRepo.existsByAccountId(request.accountId())
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
         } catch (Throwable cause) {
