@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.1.3
+_release date: 2025-01-07_
+ * Added request/response logging
+ * Very first/draft implementation of SignUp functionality
+
 ## 0.1.2
 _release date: 2025-01-07_
  * Created success helper method for controllers
