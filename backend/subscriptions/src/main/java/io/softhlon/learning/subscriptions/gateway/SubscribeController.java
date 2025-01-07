@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.subscriptions.gateway;
 
+import io.softhlon.learning.common.security.AuthenticationContext;
 import io.softhlon.learning.subscriptions.domain.SubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +31,11 @@ import static io.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE
 class SubscribeController {
     private final SubscribeService service;
     private final HttpServletRequest httpRequest;
+    private final AuthenticationContext authContext;
 
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
-        return switch (service.subscribe(new Request(UUID.randomUUID()))) {
+        return switch (service.subscribe(new Request(authContext.accountId()))) {
             case Success() -> successCreatedBody();
             case AccountAlreadySubscribed(String message) -> badRequestBody(httpRequest, message);
             case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);

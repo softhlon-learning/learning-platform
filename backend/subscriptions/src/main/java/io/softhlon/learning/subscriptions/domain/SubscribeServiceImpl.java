@@ -32,7 +32,7 @@ class SubscribeServiceImpl implements SubscribeService {
     public Result subscribe(Request request) {
         var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
         return switch (exists) {
-            case SubscriptionExists() -> new AccountAlreadySubscribed("Account with the same email already exists");
+            case SubscriptionExists() -> new AccountAlreadySubscribed("Account already subscribed");
             case SubscriptionNotFound() -> persistSubscription(request);
             case CheckSubscriptionFailure(Throwable cause) -> new InternalFailure(cause);
         };

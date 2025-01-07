@@ -6,9 +6,11 @@
 package io.softhlon.learning.application;
 
 import io.softhlon.learning.accounts.AccountsConfiguration;
+import io.softhlon.learning.common.security.AuthenticationContext;
 import io.softhlon.learning.courses.CoursesConfiguration;
 import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -25,4 +27,8 @@ import org.springframework.context.annotation.Import;
       WebSecurityConfig.class
 })
 class ApplicationConfiguration {
+    @Bean
+    AuthenticationContext authenticationContext() {
+        return new AuthenticationContext();
+    }
 }
