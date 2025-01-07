@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.1.5
+_release date: 2025-01-07_
+ * Added basic security and password encryption
+ * Improved type naming for repository requests and results
+
 ## 0.1.4
 _release date: 2025-01-07_
  * Improved type naming for SignUp functionality
