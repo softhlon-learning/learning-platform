@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.1.8
+_release date: 2025-01-07_
+ * Improved record naming in accounts module
+ * Improved record naming in courses module
+ * Improved record naming in subscription module
+
 ## 0.1.7
 _release date: 2025-01-07_
  * Implemented controller for Subscribe
