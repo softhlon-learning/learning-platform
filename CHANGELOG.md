@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.1.7
+_release date: 2025-01-07_
+ * Implemented controller for Subscribe
+ * Created AuthenticationToken
+ * Created mocked AuthenticationContext
+ * Integrated AuthenticationContext with SubscribeController
+
 ## 0.1.6
 _release date: 2025-01-07_
  * Implemented service for Subscribe functionality
