@@ -19,16 +19,16 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateSubscriptionRepository {
-    Result execute(Request request);
+    CreateSubscriptionResult execute(CreateSubscriptionRequest request);
 
-    record Request(
+    record CreateSubscriptionRequest(
           UUID courseId,
           UUID accountId,
           String status,
           OffsetDateTime startedTime) {}
 
-    sealed interface Result {
-        record Success(UUID uuid) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    sealed interface CreateSubscriptionResult {
+        record Success(UUID uuid) implements CreateSubscriptionResult {}
+        record InternalFailure(Throwable cause) implements CreateSubscriptionResult {}
     }
 }

@@ -19,7 +19,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadEnrollmentRepository {
-    Result execute(UUID id);
+    LoadEnrollmentResult execute(UUID id);
 
     record Enrollment(
           UUID id,
@@ -33,8 +33,8 @@ public interface LoadEnrollmentRepository {
           String name,
           String description) {}
 
-    sealed interface Result {
-        record Success(Enrollment enrollment) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    sealed interface LoadEnrollmentResult {
+        record Success(Enrollment enrollment) implements LoadEnrollmentResult {}
+        record InternalFailure(Throwable cause) implements LoadEnrollmentResult {}
     }
 }

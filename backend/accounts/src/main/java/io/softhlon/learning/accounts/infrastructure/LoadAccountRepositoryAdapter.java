@@ -6,9 +6,9 @@
 package io.softhlon.learning.accounts.infrastructure;
 
 import io.softhlon.learning.accounts.domain.LoadAccountRepository;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.Result.AccountNotFound;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.Result.InternalFailure;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.Result.Success;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.InternalFailure;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.Success;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,12 +21,12 @@ import org.springframework.stereotype.Service;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadAccountRepositoryAdapter implements LoadAccountRepository {
-    private final AccountsJpaRepository accountsJpaRepository;
+    private final AccountsJpaRepository accountsRepo;
 
     @Override
-    public Result execute(Request request) {
+    public LoadAccountResult execute(LoadAccountRequest request) {
         try {
-            var accountEntity = accountsJpaRepository.findById(request.id());
+            var accountEntity = accountsRepo.findById(request.id());
             return accountEntity.isPresent()
                   ? new Success(toAccount(accountEntity.get()))
                   : new AccountNotFound();

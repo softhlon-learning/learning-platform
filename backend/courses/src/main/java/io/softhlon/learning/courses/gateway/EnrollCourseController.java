@@ -29,8 +29,8 @@ class EnrollCourseController {
     private final HttpServletRequest httpRequest;
 
     @PostMapping(ENROLL_COURSE)
-    ResponseEntity<?> enrollCourse(@Validated @RequestBody EnrollCourseService.Request request) {
-        return switch (service.enroll(request)) {
+    ResponseEntity<?> enrollCourse(@Validated @RequestBody EnrollCourseService.Request enrollCourseRequest) {
+        return switch (service.enroll(enrollCourseRequest)) {
             case Success() -> successCreatedBody();
             case AccountNotSubscribed(String message) -> badRequestBody(httpRequest, message);
             case CourseNotFound(String message) -> badRequestBody(httpRequest, message);

@@ -8,8 +8,8 @@ package io.softhlon.learning.courses.infrastructure;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
 import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository;
-import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Result.InternalFailure;
-import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Result.Success;
+import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.InternalFailure;
+import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.Success;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public Result execute() {
+    public LoadEnrollmentsResult execute() {
         try {
             var stream = StreamSupport.stream(enrollmentsRepo.findAll().spliterator(), false);
             var enrollments = stream.map(this::toEnrollment).toList();

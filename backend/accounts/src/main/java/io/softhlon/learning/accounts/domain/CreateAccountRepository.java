@@ -18,7 +18,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateAccountRepository {
-    CreateAccountResult execute(CreateAccountRequest createAccountRequest);
+    CreateAccountResult execute(CreateAccountRequest request);
 
     record CreateAccountRequest(
           String name,

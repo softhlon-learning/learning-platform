@@ -7,8 +7,8 @@ package io.softhlon.learning.courses.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
-import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Result.InternalFailure;
-import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Result.Success;
+import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.InternalFailure;
+import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.Success;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public Result execute(UUID id) {
+    public LoadEnrollmentResult execute(UUID id) {
         try {
             var entity = enrollmentsRepo.findById(id).get();
             return new Success(toEnrollment(entity));

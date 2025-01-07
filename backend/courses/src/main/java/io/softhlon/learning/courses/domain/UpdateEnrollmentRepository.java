@@ -19,7 +19,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface UpdateEnrollmentRepository {
-    Result execute(Enrollment enrollment);
+    UpdateEnrollmentResult execute(Enrollment enrollment);
 
     record Enrollment(
           UUID id,
@@ -31,8 +31,8 @@ public interface UpdateEnrollmentRepository {
           OffsetDateTime unenrolledTime,
           OffsetDateTime completedTime) {}
 
-    sealed interface Result {
-        record Success(UUID id) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    sealed interface UpdateEnrollmentResult {
+        record Success(UUID id) implements UpdateEnrollmentResult {}
+        record InternalFailure(Throwable cause) implements UpdateEnrollmentResult {}
     }
 }

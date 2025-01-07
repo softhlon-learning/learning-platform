@@ -7,8 +7,8 @@ package io.softhlon.learning.subscriptions.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.Result.InternalFailure;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.Result.Success;
+import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.InternalFailure;
+import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.Success;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepositor
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
     @Override
-    public Result execute(Subscription subscription) {
+    public UpdateSubscriptionResult execute(Subscription subscription) {
         try {
             var entity = subscriptionsRepo.findById(subscription.id()).get();
             updateEntity(subscription, entity);

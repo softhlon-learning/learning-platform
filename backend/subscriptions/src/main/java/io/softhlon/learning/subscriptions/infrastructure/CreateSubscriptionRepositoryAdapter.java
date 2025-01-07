@@ -7,8 +7,8 @@ package io.softhlon.learning.subscriptions.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository;
-import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.Result.InternalFailure;
-import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.Result.Success;
+import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.InternalFailure;
+import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.Success;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
     @Override
-    public Result execute(Request request) {
+    public CreateSubscriptionResult execute(CreateSubscriptionRequest request) {
         try {
             var createdEntity = subscriptionsRepo.save(toEntity(request));
             return new Success(createdEntity.getId());
@@ -32,7 +32,7 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
         }
     }
 
-    private SubscriptionEntity toEntity(Request request) {
+    private SubscriptionEntity toEntity(CreateSubscriptionRequest request) {
         return SubscriptionEntity.builder()
               .accountId(request.accountId())
               .status(request.status())

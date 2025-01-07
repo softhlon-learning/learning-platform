@@ -19,9 +19,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateEnrollmentRepository {
-    Result execute(Request request);
+    CreateEnrollmentResult execute(CreateEnrollmentRequest request);
 
-    record Request(
+    record CreateEnrollmentRequest(
           UUID courseId,
           UUID accountId,
           String content,
@@ -30,8 +30,8 @@ public interface CreateEnrollmentRepository {
           OffsetDateTime unenrolledTime,
           OffsetDateTime completedTime) {}
 
-    sealed interface Result {
-        record Success(UUID uuid) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    sealed interface CreateEnrollmentResult {
+        record Success(UUID uuid) implements CreateEnrollmentResult {}
+        record InternalFailure(Throwable cause) implements CreateEnrollmentResult {}
     }
 }

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class InvalidateAuthTokenRepositoryAdapter implements InvalidateAuthTokenRepository {
     @Override
-    public Result execute(Request request) {
+    public InvalidateAuthTokenResult execute(InvalidateAuthTokenRequest request) {
         throw new UnsupportedOperationException();
     }
 }

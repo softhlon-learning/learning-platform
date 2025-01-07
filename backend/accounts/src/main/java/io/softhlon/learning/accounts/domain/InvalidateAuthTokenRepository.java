@@ -5,22 +5,22 @@
 
 package io.softhlon.learning.accounts.domain;
 
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
-
-import io.softhlon.learning.common.domain.DomainRepository;
-import io.softhlon.learning.common.hexagonal.OutboundPort;
 
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
 public interface InvalidateAuthTokenRepository {
-    Result execute(Request request);
+    InvalidateAuthTokenResult execute(InvalidateAuthTokenRequest request);
 
-    record Request(String authToken) {}
-    sealed interface Result {
-        record Success() implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    record InvalidateAuthTokenRequest(String authToken) {}
+    sealed interface InvalidateAuthTokenResult {
+        record TokenInvalidated() implements InvalidateAuthTokenResult {}
+        record TokenInvalidationFailure(Throwable cause) implements InvalidateAuthTokenResult {}
     }
 }

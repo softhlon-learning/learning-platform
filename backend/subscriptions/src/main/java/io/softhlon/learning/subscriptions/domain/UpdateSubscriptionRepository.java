@@ -19,7 +19,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface UpdateSubscriptionRepository {
-    Result execute(Subscription subscription);
+    UpdateSubscriptionResult execute(Subscription subscription);
 
     record Subscription(
           UUID id,
@@ -28,8 +28,8 @@ public interface UpdateSubscriptionRepository {
           OffsetDateTime startedTime,
           OffsetDateTime cancelledTime) {}
 
-    sealed interface Result {
-        record Success() implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    sealed interface UpdateSubscriptionResult {
+        record Success() implements UpdateSubscriptionResult {}
+        record InternalFailure(Throwable cause) implements UpdateSubscriptionResult {}
     }
 }
