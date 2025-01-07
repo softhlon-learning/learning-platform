@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.courses.domain.EnrollCourseService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE;
+import static io.softhlon.learning.courses.gateway.RestResources.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

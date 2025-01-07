@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.accounts.domain.SignInService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
+import static io.softhlon.learning.accounts.gateway.RestResources.*;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------

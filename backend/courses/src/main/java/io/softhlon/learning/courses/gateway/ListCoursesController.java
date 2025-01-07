@@ -17,12 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Course;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.InternalFailure;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Success;
-import static io.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
-import static org.springframework.http.ResponseEntity.status;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static io.softhlon.learning.courses.domain.ListCoursesService.*;
+import static io.softhlon.learning.courses.domain.ListCoursesService.Result.*;
+import static io.softhlon.learning.courses.gateway.RestResources.*;
+import static org.springframework.http.ResponseEntity.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

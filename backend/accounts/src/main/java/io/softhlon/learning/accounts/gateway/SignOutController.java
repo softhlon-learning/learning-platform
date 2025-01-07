@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.InternalFailure;
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.Success;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.*;
+import static io.softhlon.learning.accounts.gateway.RestResources.*;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.*;
-import static io.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
+import static io.softhlon.learning.subscriptions.gateway.RestResources.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

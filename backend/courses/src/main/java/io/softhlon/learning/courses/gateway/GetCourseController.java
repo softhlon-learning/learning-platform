@@ -15,12 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static io.softhlon.learning.courses.domain.GetCourseDetailsService.CourseDetails;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static io.softhlon.learning.courses.domain.GetCourseDetailsService.*;
 import static io.softhlon.learning.courses.domain.GetCourseDetailsService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.GET_COURSE;
-import static org.springframework.http.ResponseEntity.status;
+import static io.softhlon.learning.courses.gateway.RestResources.*;
+import static org.springframework.http.ResponseEntity.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
