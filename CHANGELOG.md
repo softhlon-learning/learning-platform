@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.1.9
+_release date: 2025-01-07_
+ * Updated postgres password and exposed instance to localhost only
+
 ## 0.1.8
 _release date: 2025-01-07_
  * Improved record naming in accounts module
