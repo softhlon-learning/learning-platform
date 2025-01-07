@@ -4,6 +4,7 @@ module common {
     requires spring.web;
     requires org.apache.tomcat.embed.core;
     requires org.slf4j;
+    requires spring.security.core;
 
     exports io.softhlon.learning.common.domain;
     exports io.softhlon.learning.common.event;
