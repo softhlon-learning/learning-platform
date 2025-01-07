@@ -1,0 +1,50 @@
+name: Ultimate Spring Course
+sections:
+  - name: Introduction
+    chapters:
+    - name: String Boot Overview
+    - name: Setting Up Environment
+    - name: First Application
+  - name: Core Features
+    chapters:
+    - name: Spring Boot Application
+    - name: Configuration
+    - name: Profiles
+    - name: I18n
+    - name: Task Execution and Scheduling
+    - name: Testing
+  - name: Web Servlet
+    chapters:
+    - name: Spring MVC Framework
+    - name: REST
+    - name: MVC Security
+  - name: Web Reactive
+    chapters:
+    - name: Spring WebFlux Framework
+    - name: WebFlux Security
+  - name: Data Access
+    chapters:
+    - name: SQL Databases
+    - name: NoSQL Databases
+  - name: Messaging
+    chapters:
+    - name: JMS
+    - name: AMQP
+    - name: Apache Kafka
+    - name: WebSockets
+    - name: RSocket
+  - name: IO
+    chapters:
+    - name: Caching
+    - name: Hazelcast
+    - name: Quartz Scheduler
+    - name: Sending Emails
+    - name: Calling REST Services
+    - name: Calling Web Services
+    - name: Validation
+  - name: Testing
+    chapters:
+    - name: JUnit 5
+    - name: String/Spring Boot Test Utilities
+    - name: Mockito
+    - name: JsonPath
