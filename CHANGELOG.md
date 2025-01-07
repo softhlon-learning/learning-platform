@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.1.6
+_release date: 2025-01-07_
+ * Implemented service for Subscribe functionality
+
 ## 0.1.5
 _release date: 2025-01-07_
  * Added basic security and password encryption
