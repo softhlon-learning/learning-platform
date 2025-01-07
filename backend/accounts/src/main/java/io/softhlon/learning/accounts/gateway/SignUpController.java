@@ -31,7 +31,6 @@ class SignUpController {
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
         var result = signUpService.signUp(request);
-
         return switch (result) {
             case Success() -> successCreatedBody();
             case AccountAlreadyExists(String message) -> badRequestBody(servletRequest, message);

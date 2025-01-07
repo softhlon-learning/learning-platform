@@ -31,7 +31,6 @@ class SignInController {
     @PostMapping(SIGN_IN)
     ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request) {
         var result = signInService.signIn(request);
-
         return switch (result) {
             case Success() -> successOkBody();
             case InvalidCredentials(String message) -> badRequestBody(servletRequest, message);

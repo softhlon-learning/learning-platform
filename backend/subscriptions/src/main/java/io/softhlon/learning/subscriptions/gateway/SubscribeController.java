@@ -36,5 +36,4 @@ class SubscribeController {
             case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
         };
     }
-
 }
