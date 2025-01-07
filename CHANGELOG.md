@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.2.0
+_release date: 2025-01-07_
+ * Installed production server
+ * Configured domain softhlon-learning.tech
+
 ## 0.1.9
 _release date: 2025-01-07_
  * Updated postgres password and exposed instance to localhost only
