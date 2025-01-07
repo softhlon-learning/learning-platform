@@ -18,7 +18,7 @@ public interface SignOutService {
 
     record Request(String authenticationToken) {}
     sealed interface Result {
-        record Success() implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+        record Succeeded() implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 }

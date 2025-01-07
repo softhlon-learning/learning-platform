@@ -21,6 +21,6 @@ public interface InvalidateAuthTokenRepository {
     record InvalidateAuthTokenRequest(String authToken) {}
     sealed interface InvalidateAuthTokenResult {
         record TokenInvalidated() implements InvalidateAuthTokenResult {}
-        record TokenInvalidationFailure(Throwable cause) implements InvalidateAuthTokenResult {}
+        record TokenInvalidationFailed(Throwable cause) implements InvalidateAuthTokenResult {}
     }
 }

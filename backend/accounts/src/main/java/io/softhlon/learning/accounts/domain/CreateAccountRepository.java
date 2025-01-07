@@ -27,7 +27,7 @@ public interface CreateAccountRepository {
           String status) {}
 
     sealed interface CreateAccountResult {
-        record AccountPesisted(UUID uuid) implements CreateAccountResult {}
-        record AccountPersistenceFailure(Throwable cause) implements CreateAccountResult {}
+        record AccountPersisted(UUID uuid) implements CreateAccountResult {}
+        record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
     }
 }

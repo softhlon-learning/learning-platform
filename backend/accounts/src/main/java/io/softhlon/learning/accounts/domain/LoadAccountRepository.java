@@ -22,9 +22,9 @@ public interface LoadAccountRepository {
 
     record LoadAccountRequest(UUID id) {}
     sealed interface LoadAccountResult {
-        record Success(Account account) implements LoadAccountResult {}
+        record AccountLoaded(Account account) implements LoadAccountResult {}
         record AccountNotFound() implements LoadAccountResult {}
-        record InternalFailure(Throwable cause) implements LoadAccountResult {}
+        record LoadFailed(Throwable cause) implements LoadAccountResult {}
     }
 
     record Account(UUID id, String name, String email) {}

@@ -7,8 +7,8 @@ package io.softhlon.learning.accounts.infrastructure;
 
 import io.softhlon.learning.accounts.domain.LoadAccountRepository;
 import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.InternalFailure;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.Success;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.LoadFailed;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,10 +28,10 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
         try {
             var accountEntity = accountsRepo.findById(request.id());
             return accountEntity.isPresent()
-                  ? new Success(toAccount(accountEntity.get()))
+                  ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new LoadFailed(cause);
         }
     }
 

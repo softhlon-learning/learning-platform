@@ -14,8 +14,8 @@ import java.util.UUID;
 import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
 import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
 import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailure;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPesisted;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -32,9 +32,9 @@ class SignUpServiceImpl implements SignUpService {
     public Result signUp(Request request) {
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
-            case AccountExists() -> new AccountAlreadyExists("Account with the same email already exists");
+            case AccountExists() -> new AccountAlreadyExistsFailed("Account with the same email already exists");
             case AccountNotFound() -> persistAccount(request);
-            case CheckAccountFailed(Throwable cause) -> new InternalFailure(cause);
+            case CheckAccountFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
@@ -45,8 +45,8 @@ class SignUpServiceImpl implements SignUpService {
     private Result persistAccount(Request request) {
         var result = createAccountRepository.execute(prepareRequest(request));
         return switch (result) {
-            case AccountPesisted(UUID id) -> new Success(id);
-            case AccountPersistenceFailure(Throwable cause) -> new InternalFailure(cause);
+            case AccountPersisted(UUID id) -> new Succeeded(id);
+            case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
 

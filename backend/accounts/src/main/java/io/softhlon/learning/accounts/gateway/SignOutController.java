@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.InternalFailure;
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.Success;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
@@ -34,8 +34,8 @@ class SignOutController {
     ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
         var result = service.signOut(request);
         return switch (result) {
-            case Success() -> successOkBody();
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded() -> successOkBody();
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

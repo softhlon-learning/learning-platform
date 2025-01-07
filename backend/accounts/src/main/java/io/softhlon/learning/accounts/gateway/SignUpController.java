@@ -37,10 +37,10 @@ class SignUpController {
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
         var result = service.signUp(request);
         return switch (result) {
-            case Success(UUID id) -> successBody(id);
-            case AccountAlreadyExists(String message) -> badRequestBody(httpRequest, message);
-            case PasswordPolicyFailure(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded(UUID id) -> successBody(id);
+            case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
+            case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 

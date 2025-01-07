@@ -6,8 +6,8 @@
 package io.softhlon.learning.accounts.infrastructure;
 
 import io.softhlon.learning.accounts.domain.CreateAccountRepository;
-import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailure;
-import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPesisted;
+import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,9 +26,9 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
     public CreateAccountResult execute(CreateAccountRequest createAccountRequest) {
         try {
             var createdAccount = accountsRepo.save(toAccount(createAccountRequest));
-            return new AccountPesisted(createdAccount.getId());
+            return new AccountPersisted(createdAccount.getId());
         } catch (Throwable cause) {
-            return new AccountPersistenceFailure(cause);
+            return new AccountPersistenceFailed(cause);
         }
     }
 
