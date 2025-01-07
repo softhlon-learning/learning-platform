@@ -35,6 +35,10 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
         }
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private LoadAccountRepository.Account toAccount(AccountEntity entity) {
         return new Account(
               entity.getId(),

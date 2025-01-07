@@ -28,7 +28,7 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
             return accountsRepo.existsByEmail(request.email())
                   ? new AccountExists()
                   : new AccountNotFound();
-        }catch (Throwable cause) {
+        } catch (Throwable cause) {
             return new CheckAccountFailure(cause);
         }
     }

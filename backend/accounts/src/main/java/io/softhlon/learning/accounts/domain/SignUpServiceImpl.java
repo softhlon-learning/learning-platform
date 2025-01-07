@@ -38,6 +38,10 @@ class SignUpServiceImpl implements SignUpService {
         };
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private Result persistAccount(Request request) {
         var result = createAccountRepository.execute(prepareRequest(request));
         return switch (result) {
@@ -55,7 +59,7 @@ class SignUpServiceImpl implements SignUpService {
     }
 
     private String encryptPassword(String password) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        var passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
     }
 }
