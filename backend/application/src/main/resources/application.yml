@@ -3,3 +3,4 @@ spring:
     url: jdbc:postgresql://localhost/learning
     username: postgres
     password: postgres
+logging.level.org.zalando.logbook.Logbook: TRACE
