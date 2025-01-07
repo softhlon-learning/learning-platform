@@ -4,3 +4,5 @@ spring:
     username: postgres
     password: postgres
 logging.level.org.zalando.logbook.Logbook: TRACE
+authentication.mocked: true
+authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
