@@ -6,6 +6,7 @@
 package io.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -49,7 +50,12 @@ class SignUpServiceImpl implements SignUpService {
         return new CreateAccountRequest(
               request.name(),
               request.email(),
-              request.password(),
+              encryptPassword(request.password()),
               AccountStatus.ACTIVE.name());
+    }
+
+    private String encryptPassword(String password) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.encode(password);
     }
 }

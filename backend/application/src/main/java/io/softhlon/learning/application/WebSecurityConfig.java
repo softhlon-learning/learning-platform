@@ -5,24 +5,22 @@
 
 package io.softhlon.learning.application;
 
-import io.softhlon.learning.accounts.AccountsConfiguration;
-import io.softhlon.learning.courses.CoursesConfiguration;
-import io.softhlon.learning.subscriptions.SubscriptionsConfiguration;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@EnableAutoConfiguration
-@Configuration(proxyBeanMethods = false)
-@Import({
-      AccountsConfiguration.class,
-      CoursesConfiguration.class,
-      SubscriptionsConfiguration.class,
-      WebSecurityConfig.class
-})
-class ApplicationConfiguration {
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http.csrf(csrf -> csrf.disable()).build();
+    }
 }

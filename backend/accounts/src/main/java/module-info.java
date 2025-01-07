@@ -9,4 +9,5 @@ module accounts {
     requires spring.data.jpa;
     requires spring.data.commons;
     requires spring.boot.autoconfigure;
+    requires spring.security.crypto;
 }
