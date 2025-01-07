@@ -29,7 +29,7 @@ public interface UpdateSubscriptionRepository {
           OffsetDateTime cancelledTime) {}
 
     sealed interface UpdateSubscriptionResult {
-        record Success() implements UpdateSubscriptionResult {}
-        record InternalFailure(Throwable cause) implements UpdateSubscriptionResult {}
+        record SubscriptionPersisted() implements UpdateSubscriptionResult {}
+        record SubscriptionPersistenceFailed(Throwable cause) implements UpdateSubscriptionResult {}
     }
 }

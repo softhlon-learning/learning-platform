@@ -14,7 +14,7 @@ import java.util.UUID;
 import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
 import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.*;
 import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
-import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistFailed;
+import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
 import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
 import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
 
@@ -32,9 +32,9 @@ class SubscribeServiceImpl implements SubscribeService {
     public Result subscribe(Request request) {
         var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
         return switch (exists) {
-            case SubscriptionExists() -> new AccountAlreadySubscribed("Account already subscribed");
+            case SubscriptionExists() -> new AccountAlreadySubscribedFailed("Account already subscribed");
             case SubscriptionNotFound() -> persistSubscription(request);
-            case CheckSubscriptionFailure(Throwable cause) -> new InternalFailure(cause);
+            case CheckSubscriptionFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
@@ -45,8 +45,8 @@ class SubscribeServiceImpl implements SubscribeService {
     private Result persistSubscription(Request request) {
         var result = createSubscriptionRepository.execute(prepareRequest(request));
         return switch (result) {
-            case SubscriptionPersisted(UUID id) -> new Success();
-            case SubscriptionPersistFailed(Throwable cause) -> new InternalFailure(cause);
+            case SubscriptionPersisted(UUID id) -> new Succeeded();
+            case SubscriptionPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
 

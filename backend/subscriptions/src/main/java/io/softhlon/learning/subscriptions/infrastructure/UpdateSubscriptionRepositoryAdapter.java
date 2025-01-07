@@ -7,8 +7,8 @@ package io.softhlon.learning.subscriptions.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.InternalFailure;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.Success;
+import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersistenceFailed;
+import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersisted;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +28,9 @@ class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepositor
             var entity = subscriptionsRepo.findById(subscription.id()).get();
             updateEntity(subscription, entity);
             subscriptionsRepo.save(entity);
-            return new Success();
+            return new SubscriptionPersisted();
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new SubscriptionPersistenceFailed(cause);
         }
     }
 

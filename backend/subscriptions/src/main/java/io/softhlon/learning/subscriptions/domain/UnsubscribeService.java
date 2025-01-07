@@ -14,8 +14,8 @@ public interface UnsubscribeService {
 
     record Request(String accountId) {}
     sealed interface Result {
-        record Success() implements Result {}
-        record AccountNotSubscribed(String message) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+        record Succeeded() implements Result {}
+        record AccountNotSubscribedFailed(String message) implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 }

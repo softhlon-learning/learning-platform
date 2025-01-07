@@ -10,12 +10,8 @@ import io.softhlon.learning.subscriptions.domain.SubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.UUID;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
@@ -36,9 +32,9 @@ class SubscribeController {
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
         return switch (service.subscribe(new Request(authContext.accountId()))) {
-            case Success() -> successCreatedBody();
-            case AccountAlreadySubscribed(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded() -> successCreatedBody();
+            case AccountAlreadySubscribedFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

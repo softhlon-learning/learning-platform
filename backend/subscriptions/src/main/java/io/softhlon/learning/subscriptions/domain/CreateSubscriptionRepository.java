@@ -28,6 +28,6 @@ public interface CreateSubscriptionRepository {
 
     sealed interface CreateSubscriptionResult {
         record SubscriptionPersisted(UUID uuid) implements CreateSubscriptionResult {}
-        record SubscriptionPersistFailed(Throwable cause) implements CreateSubscriptionResult {}
+        record SubscriptionPersistenceFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
 }

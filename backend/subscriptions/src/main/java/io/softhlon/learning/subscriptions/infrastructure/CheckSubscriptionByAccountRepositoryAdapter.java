@@ -7,7 +7,7 @@ package io.softhlon.learning.subscriptions.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository;
-import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.CheckSubscriptionFailure;
+import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.CheckSubscriptionFailed;
 import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
 import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +30,7 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
         } catch (Throwable cause) {
-            return new CheckSubscriptionFailure(cause);
+            return new CheckSubscriptionFailed(cause);
         }
     }
 }

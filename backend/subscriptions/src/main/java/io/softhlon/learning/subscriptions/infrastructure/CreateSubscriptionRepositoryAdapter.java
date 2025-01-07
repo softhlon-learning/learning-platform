@@ -7,7 +7,7 @@ package io.softhlon.learning.subscriptions.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository;
-import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistFailed;
+import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
 import io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
             var createdEntity = subscriptionsRepo.save(toEntity(request));
             return new SubscriptionPersisted(createdEntity.getId());
         } catch (Throwable cause) {
-            return new SubscriptionPersistFailed(cause);
+            return new SubscriptionPersistenceFailed(cause);
         }
     }
 

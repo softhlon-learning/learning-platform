@@ -24,6 +24,6 @@ public interface CheckSubscriptionByAccountRepository {
     sealed interface CheckSubscriptionByAccountResult {
         record SubscriptionExists() implements CheckSubscriptionByAccountResult {}
         record SubscriptionNotFound() implements CheckSubscriptionByAccountResult {}
-        record CheckSubscriptionFailure(Throwable cause) implements CheckSubscriptionByAccountResult {}
+        record CheckSubscriptionFailed(Throwable cause) implements CheckSubscriptionByAccountResult {}
     }
 }
