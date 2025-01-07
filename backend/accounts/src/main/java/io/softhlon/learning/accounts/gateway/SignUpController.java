@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.*;
+import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,17 +25,17 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignUpController {
-    private final SignUpService signUpService;
-    private final HttpServletRequest servletRequest;
+    private final SignUpService service;
+    private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
-        var result = signUpService.signUp(request);
+        var result = service.signUp(request);
         return switch (result) {
             case Success() -> successCreatedBody();
-            case AccountAlreadyExists(String message) -> badRequestBody(servletRequest, message);
-            case PasswordPolicyFailure(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case AccountAlreadyExists(String message) -> badRequestBody(httpRequest, message);
+            case PasswordPolicyFailure(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

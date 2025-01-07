@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.accounts.domain.SignInService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.*;
+import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,16 +25,16 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignInController {
-    private final SignInService signInService;
-    private final HttpServletRequest servletRequest;
+    private final SignInService service;
+    private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_IN)
     ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request) {
-        var result = signInService.signIn(request);
+        var result = service.signIn(request);
         return switch (result) {
             case Success() -> successOkBody();
-            case InvalidCredentials(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case InvalidCredentials(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

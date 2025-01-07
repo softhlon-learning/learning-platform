@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.*;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.InternalFailure;
+import static io.softhlon.learning.accounts.domain.SignOutService.Result.Success;
+import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,15 +27,15 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignOutController {
-    private final SignOutService signOutService;
-    private final HttpServletRequest servletRequest;
+    private final SignOutService service;
+    private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_OUT)
     ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
-        var result = signOutService.signOut(request);
+        var result = service.signOut(request);
         return switch (result) {
             case Success() -> successOkBody();
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

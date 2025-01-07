@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
-import static io.softhlon.learning.subscriptions.gateway.RestResources.*;
+import static io.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,15 +25,15 @@ import static io.softhlon.learning.subscriptions.gateway.RestResources.*;
 @RestController
 @RequiredArgsConstructor
 class SubscribeController {
-    private final SubscribeService subscribeService;
-    private final HttpServletRequest servletRequest;
+    private final SubscribeService service;
+    private final HttpServletRequest httpRequest;
 
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe(@Validated @RequestBody SubscribeService.Request request) {
-        return switch (subscribeService.subscribe(request)) {
+        return switch (service.subscribe(request)) {
             case Success() -> successCreatedBody();
-            case AccountAlreadySubscribed(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case AccountAlreadySubscribed(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

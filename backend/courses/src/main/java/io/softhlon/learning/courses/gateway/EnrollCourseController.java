@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.courses.domain.EnrollCourseService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.*;
+import static io.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,16 +25,16 @@ import static io.softhlon.learning.courses.gateway.RestResources.*;
 @RestController
 @RequiredArgsConstructor
 class EnrollCourseController {
-    private final EnrollCourseService enrollCourseService;
-    private final HttpServletRequest servletRequest;
+    private final EnrollCourseService service;
+    private final HttpServletRequest httpRequest;
 
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(@Validated @RequestBody EnrollCourseService.Request request) {
-        return switch (enrollCourseService.enroll(request)) {
+        return switch (service.enroll(request)) {
             case Success() -> successCreatedBody();
-            case AccountNotSubscribed(String message) -> badRequestBody(servletRequest, message);
-            case CourseNotFound(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case AccountNotSubscribed(String message) -> badRequestBody(httpRequest, message);
+            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

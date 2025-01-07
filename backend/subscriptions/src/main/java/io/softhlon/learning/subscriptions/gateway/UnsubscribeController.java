@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.*;
-import static io.softhlon.learning.subscriptions.gateway.RestResources.*;
+import static io.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,15 +25,15 @@ import static io.softhlon.learning.subscriptions.gateway.RestResources.*;
 @RestController
 @RequiredArgsConstructor
 class UnsubscribeController {
-    private final UnsubscribeService unsubscribeService;
-    private final HttpServletRequest servletRequest;
+    private final UnsubscribeService service;
+    private final HttpServletRequest httpRequest;
 
     @DeleteMapping(UNSUBSCRIBE)
     ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
-        return switch (unsubscribeService.unsubscribe(request)) {
+        return switch (service.unsubscribe(request)) {
             case Success() -> successAcceptedBody();
-            case AccountNotSubscribed(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case AccountNotSubscribed(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

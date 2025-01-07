@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static io.softhlon.learning.courses.domain.GetCourseDetailsService.*;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
+import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static io.softhlon.learning.courses.domain.GetCourseDetailsService.CourseDetails;
 import static io.softhlon.learning.courses.domain.GetCourseDetailsService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.*;
-import static org.springframework.http.ResponseEntity.*;
+import static io.softhlon.learning.courses.gateway.RestResources.GET_COURSE;
+import static org.springframework.http.ResponseEntity.status;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -28,16 +29,16 @@ import static org.springframework.http.ResponseEntity.*;
 @RestController
 @RequiredArgsConstructor
 class GetCourseController {
-    private final GetCourseDetailsService getCourseDetailsService;
-    private final HttpServletRequest servletRequest;
+    private final GetCourseDetailsService service;
+    private final HttpServletRequest httpRequest;
 
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
-        var result = getCourseDetailsService.getDetails(request);
+        var result = service.getDetails(request);
         return switch (result) {
             case Success(CourseDetails courseDetails) -> successBody(courseDetails);
-            case CourseNotFound(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 

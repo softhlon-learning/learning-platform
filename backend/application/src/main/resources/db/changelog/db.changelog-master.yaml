@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id:  001
-      author:  pmarat
+      id: 001
+      author: pmarat
       sqlFile:
-        splitStatements:  false
-        path:  db/changelog/create-schema.sql
+        splitStatements: false
+        path: db/changelog/create-schema.sql

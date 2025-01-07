@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static io.softhlon.learning.courses.domain.UnenrollCourseService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.*;
+import static io.softhlon.learning.courses.gateway.RestResources.UNENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,16 +25,16 @@ import static io.softhlon.learning.courses.gateway.RestResources.*;
 @RestController
 @RequiredArgsConstructor
 class UnenrollCourseController {
-    private final UnenrollCourseService unenrollCourseService;
-    private final HttpServletRequest servletRequest;
+    private final UnenrollCourseService service;
+    private final HttpServletRequest httpRequest;
 
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@Validated @RequestBody UnenrollCourseService.Request request) {
-        return switch (unenrollCourseService.unenroll(request)) {
+        return switch (service.unenroll(request)) {
             case Success() -> successCreatedBody();
-            case CourseNotFound(String message) -> badRequestBody(servletRequest, message);
-            case AccountNotEnrolled(String message) -> badRequestBody(servletRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(servletRequest, cause);
+            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotEnrolled(String message) -> badRequestBody(httpRequest, message);
+            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 
