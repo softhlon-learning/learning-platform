@@ -18,11 +18,16 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateAccountRepository {
-    Result execute(Request request);
+    CreateAccountResult execute(CreateAccountRequest createAccountRequest);
 
-    record Request(String name, String email, String password, String status) {}
-    sealed interface Result {
-        record Success(UUID uuid) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+    record CreateAccountRequest(
+          String name,
+          String email,
+          String password,
+          String status) {}
+
+    sealed interface CreateAccountResult {
+        record AccountPesisted(UUID uuid) implements CreateAccountResult {}
+        record AccountPersistenceFailure(Throwable cause) implements CreateAccountResult {}
     }
 }

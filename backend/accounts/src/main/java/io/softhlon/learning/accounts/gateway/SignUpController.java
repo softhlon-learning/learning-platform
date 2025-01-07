@@ -44,11 +44,13 @@ class SignUpController {
         };
     }
 
+    record Response(UUID accountId) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private static ResponseEntity<UUID> successBody(UUID id) {
-        return status(HttpStatus.OK).body(id);
+    private static ResponseEntity<Response> successBody(UUID id) {
+        return status(HttpStatus.CREATED).body(new Response(id));
     }
 }

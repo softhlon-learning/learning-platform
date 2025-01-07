@@ -5,14 +5,20 @@
 
 package io.softhlon.learning.accounts.domain;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
+
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailure;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPesisted;
+import static io.softhlon.learning.accounts.domain.SignUpService.Result.InternalFailure;
+import static io.softhlon.learning.accounts.domain.SignUpService.Result.Success;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
 
 @Service
 @RequiredArgsConstructor
@@ -22,15 +28,14 @@ class SignUpServiceImpl implements SignUpService {
     @Override
     public Result signUp(Request request) {
         var result = createAccountRepository.execute(prepareRequest(request));
-
         return switch (result) {
-            case CreateAccountRepository.Result.Success(UUID id) -> new Result.Success(id);
-            case CreateAccountRepository.Result.InternalFailure(Throwable cause) -> new Result.InternalFailure(cause);
+            case AccountPesisted(UUID id) -> new Success(id);
+            case AccountPersistenceFailure(Throwable cause) -> new InternalFailure(cause);
         };
     }
 
-    private CreateAccountRepository.Request prepareRequest(Request request) {
-        return new CreateAccountRepository.Request(
+    private CreateAccountRequest prepareRequest(Request request) {
+        return new CreateAccountRequest(
               request.name(),
               request.email(),
               request.password(),

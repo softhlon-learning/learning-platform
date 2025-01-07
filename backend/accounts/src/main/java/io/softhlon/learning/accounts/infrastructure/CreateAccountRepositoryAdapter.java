@@ -6,8 +6,8 @@
 package io.softhlon.learning.accounts.infrastructure;
 
 import io.softhlon.learning.accounts.domain.CreateAccountRepository;
-import io.softhlon.learning.accounts.domain.CreateAccountRepository.Result.InternalFailure;
-import io.softhlon.learning.accounts.domain.CreateAccountRepository.Result.Success;
+import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailure;
+import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPesisted;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,19 +20,23 @@ import org.springframework.stereotype.Service;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CreateAccountRepositoryAdapter implements CreateAccountRepository {
-    private final AccountsJpaRepository accountsJpaRepository;
+    private final AccountsJpaRepository accountsRepo;
 
     @Override
-    public Result execute(Request request) {
+    public CreateAccountResult execute(CreateAccountRequest createAccountRequest) {
         try {
-            var createdAccount = accountsJpaRepository.save(toAccount(request));
-            return new Success(createdAccount.getId());
+            var createdAccount = accountsRepo.save(toAccount(createAccountRequest));
+            return new AccountPesisted(createdAccount.getId());
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new AccountPersistenceFailure(cause);
         }
     }
 
-    private AccountEntity toAccount(Request request) {
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private AccountEntity toAccount(CreateAccountRequest request) {
         return AccountEntity.builder()
               .name(request.name())
               .email(request.email())
