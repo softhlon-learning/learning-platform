@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.1.2
+_release date: 2025-01-07_
+ * Created success helper method for controllers
+ * Shortened field names in controllers
+
 ## 0.1.1
 _release date: 2025-01-07_
  * Added update_modified_column function and defaults for created and updated times
