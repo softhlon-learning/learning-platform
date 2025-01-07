@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.1.4
+_release date: 2025-01-07_
+ * Improved type naming for SignUp functionality
+ * Improved error handling for run.sh
+ * Implemented validation by email for SignUp functionality
+
 ## 0.1.3
 _release date: 2025-01-07_
  * Added request/response logging
