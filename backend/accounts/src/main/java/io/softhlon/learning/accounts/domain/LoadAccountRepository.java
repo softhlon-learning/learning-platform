@@ -24,7 +24,7 @@ public interface LoadAccountRepository {
     sealed interface LoadAccountResult {
         record AccountLoaded(Account account) implements LoadAccountResult {}
         record AccountNotFound() implements LoadAccountResult {}
-        record LoadFailed(Throwable cause) implements LoadAccountResult {}
+        record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
 
     record Account(UUID id, String name, String email) {}

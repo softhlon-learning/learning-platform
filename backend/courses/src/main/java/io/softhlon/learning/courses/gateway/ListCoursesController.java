@@ -19,8 +19,8 @@ import java.util.List;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static io.softhlon.learning.courses.domain.ListCoursesService.Course;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.InternalFailure;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Success;
+import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
+import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
 import static io.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
 import static org.springframework.http.ResponseEntity.status;
 
@@ -38,8 +38,8 @@ class ListCoursesController {
     ResponseEntity<?> listCourses(@Validated @RequestBody ListCoursesService.Request request) {
         var result = service.listCourses(request);
         return switch (result) {
-            case Success(List<Course> courses) -> successBody(courses);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded(List<Course> courses) -> successBody(courses);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 

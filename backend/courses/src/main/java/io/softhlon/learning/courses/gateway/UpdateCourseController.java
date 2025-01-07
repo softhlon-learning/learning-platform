@@ -32,10 +32,10 @@ class UpdateCourseController {
     ResponseEntity<?> updateCourse(@Validated @RequestBody UpdateEnrolledCourseService.Request request) {
         var result = service.updateCourse(request);
         return switch (result) {
-            case Success() -> successOkBody();
-            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
-            case AccountNotEligible(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded() -> successOkBody();
+            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotEligibleFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

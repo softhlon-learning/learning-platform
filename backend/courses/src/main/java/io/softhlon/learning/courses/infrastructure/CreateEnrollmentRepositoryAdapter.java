@@ -7,8 +7,8 @@ package io.softhlon.learning.courses.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.CreateEnrollmentRepository;
-import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.InternalFailure;
-import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.Success;
+import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
+import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +28,9 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
         try {
             var course = coursesRepo.findById(request.courseId()).get();
             var createdEnrollment = enrollmentsRepo.save(toEnrollment(request, course));
-            return new Success(createdEnrollment.getId());
+            return new EnrollmentPersisted(createdEnrollment.getId());
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new EnrollementPersistenceFailed(cause);
         }
     }
 

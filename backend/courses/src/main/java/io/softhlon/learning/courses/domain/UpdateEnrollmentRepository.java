@@ -32,7 +32,7 @@ public interface UpdateEnrollmentRepository {
           OffsetDateTime completedTime) {}
 
     sealed interface UpdateEnrollmentResult {
-        record Success(UUID id) implements UpdateEnrollmentResult {}
-        record InternalFailure(Throwable cause) implements UpdateEnrollmentResult {}
+        record EnrollmentUpdated(UUID id) implements UpdateEnrollmentResult {}
+        record EnrollmentUpdateFailed(Throwable cause) implements UpdateEnrollmentResult {}
     }
 }

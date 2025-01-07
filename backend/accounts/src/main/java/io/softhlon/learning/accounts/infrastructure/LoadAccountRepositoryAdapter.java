@@ -7,7 +7,7 @@ package io.softhlon.learning.accounts.infrastructure;
 
 import io.softhlon.learning.accounts.domain.LoadAccountRepository;
 import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
-import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.LoadFailed;
+import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
         } catch (Throwable cause) {
-            return new LoadFailed(cause);
+            return new AccountLoadFailed(cause);
         }
     }
 

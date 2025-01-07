@@ -16,8 +16,8 @@ public interface ListCoursesService {
     record Request(String accountId, String courseId) {}
 
     sealed interface Result {
-        record Success(List<Course> courses) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+        record Succeeded(List<Course> courses) implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 
     record Course(

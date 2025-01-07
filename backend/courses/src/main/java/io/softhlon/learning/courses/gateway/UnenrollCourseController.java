@@ -31,10 +31,10 @@ class UnenrollCourseController {
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@Validated @RequestBody UnenrollCourseService.Request request) {
         return switch (service.unenroll(request)) {
-            case Success() -> successCreatedBody();
-            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
-            case AccountNotEnrolled(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded() -> successCreatedBody();
+            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotEnrolledFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 

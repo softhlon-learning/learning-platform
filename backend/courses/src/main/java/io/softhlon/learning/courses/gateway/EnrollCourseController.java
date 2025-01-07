@@ -31,10 +31,10 @@ class EnrollCourseController {
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(@Validated @RequestBody EnrollCourseService.Request enrollCourseRequest) {
         return switch (service.enroll(enrollCourseRequest)) {
-            case Success() -> successCreatedBody();
-            case AccountNotSubscribed(String message) -> badRequestBody(httpRequest, message);
-            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded() -> successCreatedBody();
+            case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
+            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 }

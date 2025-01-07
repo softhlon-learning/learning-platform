@@ -8,8 +8,8 @@ package io.softhlon.learning.courses.infrastructure;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
 import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository;
-import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.InternalFailure;
-import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.Success;
+import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.EnrollmentsLoadFailed;
+import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.EnrollmentsLoaded;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,9 +30,9 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
         try {
             var stream = StreamSupport.stream(enrollmentsRepo.findAll().spliterator(), false);
             var enrollments = stream.map(this::toEnrollment).toList();
-            return new Success(enrollments);
+            return new EnrollmentsLoaded(enrollments);
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new EnrollmentsLoadFailed(cause);
         }
     }
 

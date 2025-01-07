@@ -31,7 +31,7 @@ public interface CreateEnrollmentRepository {
           OffsetDateTime completedTime) {}
 
     sealed interface CreateEnrollmentResult {
-        record Success(UUID uuid) implements CreateEnrollmentResult {}
-        record InternalFailure(Throwable cause) implements CreateEnrollmentResult {}
+        record EnrollmentPersisted(UUID uuid) implements CreateEnrollmentResult {}
+        record EnrollementPersistenceFailed(Throwable cause) implements CreateEnrollmentResult {}
     }
 }

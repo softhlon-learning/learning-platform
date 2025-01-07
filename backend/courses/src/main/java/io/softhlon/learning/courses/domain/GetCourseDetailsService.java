@@ -14,9 +14,9 @@ public interface GetCourseDetailsService {
     record Request(String accountId, String courseId) {}
 
     sealed interface Result {
-        record Success(CourseDetails courseDetails) implements Result {}
-        record CourseNotFound(String message) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+        record Succeeded(CourseDetails courseDetails) implements Result {}
+        record CourseNotFoundFailed(String message) implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 
     record CourseDetails(

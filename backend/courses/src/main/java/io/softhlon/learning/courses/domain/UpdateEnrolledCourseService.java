@@ -14,9 +14,9 @@ public interface UpdateEnrolledCourseService {
     record Request(String accountId, String courseId, String content) {}
 
     sealed interface Result {
-        record Success() implements Result {}
-        record AccountNotEligible(String message) implements Result {}
-        record CourseNotFound(String message) implements Result {}
-        record InternalFailure(Throwable cause) implements Result {}
+        record Succeeded() implements Result {}
+        record AccountNotEligibleFailed(String message) implements Result {}
+        record CourseNotFoundFailed(String message) implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 }

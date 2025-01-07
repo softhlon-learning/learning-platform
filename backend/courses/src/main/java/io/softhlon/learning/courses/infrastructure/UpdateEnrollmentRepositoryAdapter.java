@@ -7,8 +7,8 @@ package io.softhlon.learning.courses.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository;
-import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.InternalFailure;
-import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.Success;
+import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.EnrollmentUpdateFailed;
+import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.EnrollmentUpdated;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +28,9 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
             var entity = enrollmentsRepo.findById(enrollment.id()).get();
             updateEntity(enrollment, entity);
             enrollmentsRepo.save(entity);
-            return new Success(enrollment.id());
+            return new EnrollmentUpdated(enrollment.id());
         } catch (Throwable cause) {
-            return new InternalFailure(cause);
+            return new EnrollmentUpdateFailed(cause);
         }
     }
 

@@ -34,7 +34,7 @@ public interface LoadEnrollmentRepository {
           String description) {}
 
     sealed interface LoadEnrollmentResult {
-        record Success(Enrollment enrollment) implements LoadEnrollmentResult {}
-        record InternalFailure(Throwable cause) implements LoadEnrollmentResult {}
+        record EnrollmentLoaded(Enrollment enrollment) implements LoadEnrollmentResult {}
+        record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
     }
 }

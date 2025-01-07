@@ -36,9 +36,9 @@ class GetCourseController {
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
         var result = service.getDetails(request);
         return switch (result) {
-            case Success(CourseDetails courseDetails) -> successBody(courseDetails);
-            case CourseNotFound(String message) -> badRequestBody(httpRequest, message);
-            case InternalFailure(Throwable cause) -> internalServerBody(httpRequest, cause);
+            case Succeeded(CourseDetails courseDetails) -> successBody(courseDetails);
+            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 
