@@ -1,50 +1,189 @@
-name: Ultimate Spring Course
+name: Java Core Master Course
 sections:
-  - name: Introduction
+  - name: Getting Started
     chapters:
-    - name: String Boot Overview
-    - name: Setting Up Environment
-    - name: First Application
-  - name: Core Features
+      - name: Introduction
+        processed: true
+        items:
+          - name: Video
+            time: 3m15s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+      - name: Setting Up Environment
+        processed: true
+        items:
+          - name: Video
+            time: 1m20s
+            id: ultimate-java-course/intro/Introduction.mp4?v2
+            processed: true
+      - name: First Program
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Summary
+        processed: true
+        items:
+          - name: PDF
+            processed: true
+            id: ultimate-java-course/intro/Summary.pdf
+  - name: Fundamentals
     chapters:
-    - name: Spring Boot Application
-    - name: Configuration
-    - name: Profiles
-    - name: I18n
-    - name: Task Execution and Scheduling
-    - name: Testing
-  - name: Web Servlet
+      - name: Data Types
+        processed: true
+        items:
+          - name: Video
+            time: 4m10s
+            id: ultimate-java-course/intro/Introduction.mp4?v4
+            processed: true
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: true
+      - name: Operators
+        processed: false
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v5
+            time: 6m30s
+            processed: true
+      - name: Flow Control
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v6
+            time: 4m45s
+            processed: false
+      - name: Strings
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Arrays
+  - name: Objects
     chapters:
-    - name: Spring MVC Framework
-    - name: REST
-    - name: MVC Security
-  - name: Web Reactive
+      - name: Introduction to Objects
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v9
+            time: 1m05s
+            processed: false
+      - name: Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v10
+            time: 1m05s
+            processed: false
+      - name: Encapsulation
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v11
+            time: 1m05s
+            processed: false
+      - name: Interfaces
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v12
+            time: 1m05s
+            processed: false
+      - name: Inheritance
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v13
+            time: 1m05s
+            processed: false
+      - name: Polymorphism
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v14
+            time: 1m05s
+            processed: false
+      - name: Method Overriding & Overloading
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v15
+            time: 1m05s
+            processed: false
+      - name: Object Creation & Cleanup
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v16
+            time: 1m05s
+            processed: false
+      - name: Inner Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+  - name: Collections
     chapters:
-    - name: Spring WebFlux Framework
-    - name: WebFlux Security
-  - name: Data Access
+      - name: Full Taxonomy
+      - name: List
+      - name: ArrayList
+      - name: LinkedList
+      - name: Set
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v18
+            time: 1m05s
+            processed: false
+      - name: HashSet
+      - name: TreeSet
+      - name: LinkedHashSet
+      - name: Map
+      - name: HashMap
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v19
+            time: 1m05s
+            processed: false
+      - name: TreeMap
+      - name: LinkedHashMap
+      - name: Queue
+      - name: Deque
+      - name: ArrayDeque
+      - name: BlockingQueue
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v20
+            time: 1m05s
+            processed: false
+      - name: TransferQueue
+      - name: BlockingDeque
+      - name: ConcurrentMap
+      - name: ConcurrentNavigableMap
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v21
+            time: 1m05s
+            processed: false
+      - name: Utilities - Collections
+      - name: Utilities - Arrays
+  - name: Enumeration Types
     chapters:
-    - name: SQL Databases
-    - name: NoSQL Databases
-  - name: Messaging
+      - name: Introduction
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v22
+            time: 1m05s
+            processed: false
+  - name: Annotations
     chapters:
-    - name: JMS
-    - name: AMQP
-    - name: Apache Kafka
-    - name: WebSockets
-    - name: RSocket
-  - name: IO
-    chapters:
-    - name: Caching
-    - name: Hazelcast
-    - name: Quartz Scheduler
-    - name: Sending Emails
-    - name: Calling REST Services
-    - name: Calling Web Services
-    - name: Validation
-  - name: Testing
-    chapters:
-    - name: JUnit 5
-    - name: String/Spring Boot Test Utilities
-    - name: Mockito
-    - name: JsonPath
+      - name: Metadata
+      - name: Defining Annotations
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v23
+            time: 1m05s
+            processed: false
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v19
+            processed: false
+      - name: Writing Annotation Processors
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v24
+            time: 1m05s
+            processed: false
