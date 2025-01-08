@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.2.8
+_release date: 2025-01-08_
+ * Added LoadCoursesRepository and implemented its adapter
+ * Replaced IO.SOFTHLON by SOFTHLON-LEARNING.TECH
+
 ## 0.2.7
 _release date: 2025-01-08_
  * Minor error logging improvements
