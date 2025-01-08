@@ -1,10 +1,10 @@
 /** Global Colors */
 :root {
-  --h1-blue: #264D73;
-  --h2-blue: #264D73;
+  --h1-blue: black;
+  --h2-blue: black;
   --very-light-blue: #F8F8F8;
-  --light-blue: #D6EAF8;
-  --warm-blue: #AED6F1;
+  --light-blue: #D1D0CE;
+  --warm-blue: #D1D0CE;
   --hover-blue: #264D73;
   --active-blue: #01234a;
   --checked-blue: #01234a;
@@ -17,8 +17,7 @@
 }
 
 h1 {
-  color: var(--h1-blue);
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   text-align: center;
 }
 
@@ -51,7 +50,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
   color: var(--h1-blue);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 1rem;
   margin: 1rem;
 }
@@ -81,6 +80,7 @@ span {
 }
 
 .checkbox > span {
+  padding-top: 4px;
 }
 
 .checkbox > input {
