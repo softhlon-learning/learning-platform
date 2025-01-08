@@ -10,6 +10,8 @@ import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.hibernate.internal.log.SubSystemLogging;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -18,6 +20,7 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -30,6 +33,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
             var entity = enrollmentsRepo.findById(id).get();
             return new EnrollmentLoaded(toEnrollment(entity));
         } catch (Throwable cause) {
+            log.error("", cause);
             return new EnrollmentLoadFailed(cause);
         }
     }

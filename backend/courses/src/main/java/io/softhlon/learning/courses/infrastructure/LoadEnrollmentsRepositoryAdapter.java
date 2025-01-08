@@ -11,6 +11,7 @@ import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository;
 import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.EnrollmentsLoadFailed;
 import io.softhlon.learning.courses.domain.LoadEnrollmentsRepository.LoadEnrollmentsResult.EnrollmentsLoaded;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.StreamSupport;
@@ -19,6 +20,7 @@ import java.util.stream.StreamSupport;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -32,6 +34,7 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
             var enrollments = stream.map(this::toEnrollment).toList();
             return new EnrollmentsLoaded(enrollments);
         } catch (Throwable cause) {
+            log.error("", cause);
             return new EnrollmentsLoadFailed(cause);
         }
     }

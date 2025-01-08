@@ -10,12 +10,14 @@ import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository;
 import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersistenceFailed;
 import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersisted;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -30,6 +32,7 @@ class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepositor
             subscriptionsRepo.save(entity);
             return new SubscriptionPersisted();
         } catch (Throwable cause) {
+            log.error("", cause);
             return new SubscriptionPersistenceFailed(cause);
         }
     }

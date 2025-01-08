@@ -10,12 +10,14 @@ import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository;
 import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.EnrollmentUpdateFailed;
 import io.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEnrollmentResult.EnrollmentUpdated;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -30,6 +32,7 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
             enrollmentsRepo.save(entity);
             return new EnrollmentUpdated(enrollment.id());
         } catch (Throwable cause) {
+            log.error("", cause);
             return new EnrollmentUpdateFailed(cause);
         }
     }

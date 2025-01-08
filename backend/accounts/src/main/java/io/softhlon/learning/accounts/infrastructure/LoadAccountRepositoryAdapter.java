@@ -11,12 +11,14 @@ import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRes
 import io.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -31,6 +33,7 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
         } catch (Throwable cause) {
+            log.error("", cause);
             return new AccountLoadFailed(cause);
         }
     }

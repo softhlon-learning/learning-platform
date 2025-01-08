@@ -11,12 +11,14 @@ import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepos
 import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
 import io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -30,6 +32,7 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
         } catch (Throwable cause) {
+            log.error("", cause);
             return new CheckSubscriptionFailed(cause);
         }
     }

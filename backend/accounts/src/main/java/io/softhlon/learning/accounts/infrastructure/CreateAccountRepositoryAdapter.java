@@ -10,12 +10,14 @@ import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccoun
 import io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -28,6 +30,7 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
             var createdAccount = accountsRepo.save(toAccount(createAccountRequest));
             return new AccountPersisted(createdAccount.getId());
         } catch (Throwable cause) {
+            log.error("", cause);
             return new AccountPersistenceFailed(cause);
         }
     }

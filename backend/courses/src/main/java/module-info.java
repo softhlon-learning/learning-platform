@@ -14,4 +14,5 @@ module courses {
     requires spring.core;
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.dataformat.yaml;
+    requires org.hibernate.orm.core;
 }

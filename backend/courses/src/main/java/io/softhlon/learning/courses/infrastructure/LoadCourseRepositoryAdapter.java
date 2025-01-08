@@ -8,6 +8,7 @@ package io.softhlon.learning.courses.infrastructure;
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import io.softhlon.learning.courses.domain.LoadCourseRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -19,6 +20,7 @@ import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCours
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -31,6 +33,7 @@ class LoadCourseRepositoryAdapter implements LoadCourseRepository {
             var entity = coursesRepo.findById(id).get();
             return new CourseLoaded(toCourse(entity));
         } catch (Throwable cause) {
+            log.error("", cause);
             return new CourseLoadFailed(cause);
         }
     }

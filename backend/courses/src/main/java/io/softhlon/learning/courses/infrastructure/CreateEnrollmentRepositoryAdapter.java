@@ -10,12 +10,14 @@ import io.softhlon.learning.courses.domain.CreateEnrollmentRepository;
 import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
 import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
@@ -30,6 +32,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
             var createdEnrollment = enrollmentsRepo.save(toEnrollment(request, course));
             return new EnrollmentPersisted(createdEnrollment.getId());
         } catch (Throwable cause) {
+            log.error("", cause);
             return new EnrollementPersistenceFailed(cause);
         }
     }
