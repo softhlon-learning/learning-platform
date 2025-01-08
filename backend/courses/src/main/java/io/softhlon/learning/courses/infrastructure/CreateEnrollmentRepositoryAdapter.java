@@ -32,7 +32,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
             var createdEnrollment = enrollmentsRepo.save(toEnrollment(request, course));
             return new EnrollmentPersisted(createdEnrollment.getId());
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new EnrollementPersistenceFailed(cause);
         }
     }

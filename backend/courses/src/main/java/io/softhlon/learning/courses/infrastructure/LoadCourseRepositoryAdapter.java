@@ -33,7 +33,7 @@ class LoadCourseRepositoryAdapter implements LoadCourseRepository {
             var entity = coursesRepo.findById(id).get();
             return new CourseLoaded(toCourse(entity));
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new CourseLoadFailed(cause);
         }
     }

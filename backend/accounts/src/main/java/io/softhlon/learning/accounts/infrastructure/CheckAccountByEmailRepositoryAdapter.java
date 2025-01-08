@@ -31,7 +31,7 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
                   ? new AccountExists()
                   : new AccountNotFound();
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new CheckAccountFailed(cause);
         }
     }

@@ -32,7 +32,7 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
             enrollmentsRepo.save(entity);
             return new EnrollmentUpdated(enrollment.id());
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new EnrollmentUpdateFailed(cause);
         }
     }

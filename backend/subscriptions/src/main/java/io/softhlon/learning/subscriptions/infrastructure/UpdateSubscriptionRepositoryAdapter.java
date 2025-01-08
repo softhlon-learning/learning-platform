@@ -32,7 +32,7 @@ class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepositor
             subscriptionsRepo.save(entity);
             return new SubscriptionPersisted();
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new SubscriptionPersistenceFailed(cause);
         }
     }

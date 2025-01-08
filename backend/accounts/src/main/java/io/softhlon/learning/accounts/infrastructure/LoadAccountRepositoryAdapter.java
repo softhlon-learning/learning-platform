@@ -33,7 +33,7 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new AccountLoadFailed(cause);
         }
     }

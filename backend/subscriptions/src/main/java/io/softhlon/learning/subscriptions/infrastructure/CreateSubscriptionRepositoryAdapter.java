@@ -30,7 +30,7 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
             var createdEntity = subscriptionsRepo.save(toEntity(request));
             return new SubscriptionPersisted(createdEntity.getId());
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new SubscriptionPersistenceFailed(cause);
         }
     }

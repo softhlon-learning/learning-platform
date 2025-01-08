@@ -6,6 +6,7 @@
 package io.softhlon.learning.subscriptions.domain;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
@@ -14,14 +15,15 @@ import java.util.UUID;
 import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
 import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.*;
 import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
-import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
 import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
+import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
 import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 class SubscribeServiceImpl implements SubscribeService {
@@ -30,12 +32,17 @@ class SubscribeServiceImpl implements SubscribeService {
 
     @Override
     public Result subscribe(Request request) {
-        var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
-        return switch (exists) {
-            case SubscriptionExists() -> new AccountAlreadySubscribedFailed("Account already subscribed");
-            case SubscriptionNotFound() -> persistSubscription(request);
-            case CheckSubscriptionFailed(Throwable cause) -> new Failed(cause);
-        };
+        try {
+            var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
+            return switch (exists) {
+                case SubscriptionExists() -> new AccountAlreadySubscribedFailed("Account already subscribed");
+                case SubscriptionNotFound() -> persistSubscription(request);
+                case CheckSubscriptionFailed(Throwable cause) -> new Failed(cause);
+            };
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new Failed(cause);
+        }
     }
 
     // -----------------------------------------------------------------------------------------------------------------

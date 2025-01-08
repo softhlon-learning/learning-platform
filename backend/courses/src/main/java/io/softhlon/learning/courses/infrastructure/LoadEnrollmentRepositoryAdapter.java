@@ -33,7 +33,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
             var entity = enrollmentsRepo.findById(id).get();
             return new EnrollmentLoaded(toEnrollment(entity));
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);
         }
     }

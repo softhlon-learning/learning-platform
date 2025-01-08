@@ -30,7 +30,7 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
             var createdAccount = accountsRepo.save(toAccount(createAccountRequest));
             return new AccountPersisted(createdAccount.getId());
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new AccountPersistenceFailed(cause);
         }
     }

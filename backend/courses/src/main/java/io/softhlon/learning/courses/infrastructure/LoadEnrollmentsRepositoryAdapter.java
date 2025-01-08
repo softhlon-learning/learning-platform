@@ -34,7 +34,7 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
             var enrollments = stream.map(this::toEnrollment).toList();
             return new EnrollmentsLoaded(enrollments);
         } catch (Throwable cause) {
-            log.error("", cause);
+            log.error("Error", cause);
             return new EnrollmentsLoadFailed(cause);
         }
     }
