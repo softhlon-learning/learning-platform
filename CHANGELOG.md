@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.3.0
+_release date: 2025-01-08_
+ * Removed unnecessary course definitions
+ * Added orderNo to the course model
+
 ## 0.2.9
 _release date: 2025-01-08_
  * Implemented ListCoursesServiceImpl
