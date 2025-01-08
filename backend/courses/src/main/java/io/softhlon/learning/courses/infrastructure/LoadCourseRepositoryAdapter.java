@@ -3,31 +3,35 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package io.softhlon.learning.courses.infrastructure;
 
+import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import io.softhlon.learning.courses.domain.LoadCourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
-import static io.softhlon.learning.courses.domain.UploadCourseService.Result.Failed;
-import static io.softhlon.learning.courses.domain.UploadCourseService.Result.Succeeded;
+import java.util.UUID;
+
+import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCourseResult.CourseLoadFailed;
+import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCourseResult.CourseLoaded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Service
+@PersistenceAdapter
 @RequiredArgsConstructor
-class UploadCourseServiceImpl implements UploadCourseService {
-    private final PersistCourseRepository persistCourseRepository;
+class LoadCourseRepositoryAdapter implements LoadCourseRepository {
+    private final CoursesJpaRepository coursesRepo;
 
     @Override
-    public Result execute(Request request) {
+    public LoadCourseResult execute(UUID id) {
         try {
-            var course = persistCourseRepository.execute(prepareReuqest(request));
-            return new Succeeded();
+            var entity = coursesRepo.findById(id).get();
+            return new CourseLoaded(toCourse(entity));
         } catch (Throwable cause) {
-            return new Failed(cause);
+            return new CourseLoadFailed(cause);
         }
     }
 
@@ -35,13 +39,13 @@ class UploadCourseServiceImpl implements UploadCourseService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private PersistCourseRequest prepareReuqest(Request request) {
-        return new PersistCourseRequest(
-              request.courseId(),
-              request.name(),
-              request.description(),
-              request.content(),
-              request.version()
+    private Course toCourse(CourseEntity entity) {
+        return new Course(
+              entity.getId(),
+              entity.getName(),
+              entity.getDescription(),
+              entity.getContent(),
+              entity.getVersion()
         );
     }
 }

@@ -20,19 +20,15 @@ import java.util.UUID;
 public interface LoadCourseRepository {
     LoadCourseResult execute(UUID id);
 
-    record Account(
+    record Course(
           UUID courseId,
           String name,
           String description,
           String content,
           String version) {}
 
-    record Course(
-          String name,
-          String description) {}
-
     sealed interface LoadCourseResult {
-        record CourseLoaded(Account account) implements LoadCourseResult {}
+        record CourseLoaded(Course course) implements LoadCourseResult {}
         record CourseLoadFailed(Throwable cause) implements LoadCourseResult {}
     }
 }

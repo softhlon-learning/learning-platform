@@ -5,28 +5,25 @@
 
 package io.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.common.hexagonal.InboundPort;
-
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@InboundPort
-@FunctionalInterface
-public interface UploadCourseService {
-    Result execute(Request request);
+interface PersistCourseRepository {
+    PersistCourseResult execute(PersistCourseRequest course);
 
-    record Request(
+    record PersistCourseRequest(
           UUID courseId,
           String name,
           String description,
           String content,
           String version) {}
 
-    sealed interface Result {
-        record Succeeded() implements Result {}
-        record Failed(Throwable cause) implements Result {}
+    sealed interface PersistCourseResult {
+        record AccountPersisted() implements PersistCourseResult {}
+        record AccountPersistenceFailed(Throwable cause) implements PersistCourseResult {}
     }
 }
