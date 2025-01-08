@@ -10,4 +10,6 @@ module courses {
     requires jakarta.persistence;
     requires spring.data.commons;
     requires spring.tx;
+    requires spring.beans;
+    requires spring.core;
 }
