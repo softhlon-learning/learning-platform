@@ -12,18 +12,18 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-interface PersistCourseRepository {
+public interface PersistCourseRepository {
     PersistCourseResult execute(PersistCourseRequest course);
 
     record PersistCourseRequest(
-          UUID courseId,
+          UUID id,
           String name,
           String description,
           String content,
           String version) {}
 
     sealed interface PersistCourseResult {
-        record AccountPersisted() implements PersistCourseResult {}
-        record AccountPersistenceFailed(Throwable cause) implements PersistCourseResult {}
+        record CoursePersisted() implements PersistCourseResult {}
+        record CoursePersistenceFailed(Throwable cause) implements PersistCourseResult {}
     }
 }

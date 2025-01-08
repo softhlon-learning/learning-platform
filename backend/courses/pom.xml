@@ -12,6 +12,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.softhlon.learning</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>

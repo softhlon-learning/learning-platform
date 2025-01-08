@@ -6,16 +6,19 @@
 package io.softhlon.learning.courses.domain;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
 import static io.softhlon.learning.courses.domain.UploadCourseService.Result.Failed;
 import static io.softhlon.learning.courses.domain.UploadCourseService.Result.Succeeded;
+import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 class UploadCourseServiceImpl implements UploadCourseService {
@@ -24,9 +27,13 @@ class UploadCourseServiceImpl implements UploadCourseService {
     @Override
     public Result execute(Request request) {
         try {
-            var course = persistCourseRepository.execute(prepareReuqest(request));
-            return new Succeeded();
+            var result = persistCourseRepository.execute(prepareReuqest(request));
+            return switch (result) {
+                case CoursePersisted() -> new Succeeded();
+                case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
+            };
         } catch (Throwable cause) {
+            log.error("Error", cause);
             return new Failed(cause);
         }
     }

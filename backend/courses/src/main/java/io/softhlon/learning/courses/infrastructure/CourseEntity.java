@@ -6,9 +6,10 @@
 package io.softhlon.learning.courses.infrastructure;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -17,9 +18,12 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Getter
+@Setter
 @Builder
 @Entity(name = "courses")
-public class CourseEntity {
+@AllArgsConstructor
+@NoArgsConstructor
+class CourseEntity {
     @Id
     private UUID id;
     private String name;

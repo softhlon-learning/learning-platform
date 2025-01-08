@@ -12,4 +12,6 @@ module courses {
     requires spring.tx;
     requires spring.beans;
     requires spring.core;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.dataformat.yaml;
 }
