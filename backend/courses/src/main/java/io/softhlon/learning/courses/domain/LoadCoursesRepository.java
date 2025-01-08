@@ -26,6 +26,7 @@ public interface LoadCoursesRepository {
           int orderNo,
           String name,
           String description,
+          String content,
           String version) {}
 
     sealed interface LoadCoursesResult {

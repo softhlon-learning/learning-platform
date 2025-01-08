@@ -26,5 +26,6 @@ public interface ListCoursesService {
           int orderNo,
           String name,
           String description,
+          String content,
           boolean enrolled) {}
 }

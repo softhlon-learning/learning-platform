@@ -5,7 +5,9 @@
 
 package io.softhlon.learning.courses.gateway;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.softhlon.learning.courses.domain.UploadCourseService;
@@ -15,6 +17,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.Base64;
 import java.util.UUID;
 
@@ -70,7 +73,7 @@ public class CreateCoursesOperator {
           String description,
           String version) {}
 
-    private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) {
+    private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
         return new Request(
               courseDefinition.id(),
               courseDefinition.orderNo(),
@@ -81,7 +84,15 @@ public class CreateCoursesOperator {
         );
     }
 
-    private String toBase64(byte[] content) {
-        return Base64.getEncoder().encodeToString(content);
+    private String toBase64(byte[] content) throws JsonProcessingException {
+        return Base64.getEncoder().encodeToString(convertToJson(new String(content, Charset.defaultCharset())));
+    }
+
+    private byte[] convertToJson(String yamlString) throws JsonProcessingException {
+        ObjectMapper yamlMapper = new ObjectMapper(new YAMLFactory());
+        JsonNode jsonNode = yamlMapper.readTree(yamlString);
+        ObjectMapper jsonMapper = new ObjectMapper();
+
+        return mapper.writeValueAsString(jsonNode).getBytes();
     }
 }

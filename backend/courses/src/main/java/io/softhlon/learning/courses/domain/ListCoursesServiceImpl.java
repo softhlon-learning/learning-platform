@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
@@ -43,6 +44,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private List<CourseView> toCourseViews(List<Course> courses) {
         return courses.stream()
               .map(this::toCourseView)
+              .sorted(Comparator.comparing(CourseView::orderNo))
               .toList();
     }
 
@@ -52,6 +54,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
               course.orderNo(),
               course.name(),
               course.description(),
+              course.content(),
               false);
     }
 }

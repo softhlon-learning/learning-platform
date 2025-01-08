@@ -23,10 +23,17 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   getCourse(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+    const id = this.route.snapshot.paramMap.get('id')!;
     this.coursesService.getCourses()
       .subscribe(courses => {
-        this.course = courses[id - 1];
+        for (let i = 0; i < courses.length ; i++) {
+        let course = courses[i];
+          if (course.id === id) {
+            this.course = course;
+            break;
+          }
+        }
+
         this.courseContent = JSON.parse(atob(<string>this.course.content));
       })
   }

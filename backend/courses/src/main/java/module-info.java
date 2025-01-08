@@ -15,4 +15,5 @@ module courses {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.dataformat.yaml;
     requires org.hibernate.orm.core;
+    requires org.yaml.snakeyaml;
 }
