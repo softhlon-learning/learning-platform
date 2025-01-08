@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
 class EnrollCourseServiceImpl implements EnrollCourseService {
     @Override
     public Result enroll(Request request) {
-        throw new UnsupportedOperationException();
+        return new Result.Succeeded();
     }
 }

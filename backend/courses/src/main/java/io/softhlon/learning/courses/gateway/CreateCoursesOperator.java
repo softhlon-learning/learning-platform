@@ -92,7 +92,6 @@ public class CreateCoursesOperator {
         ObjectMapper yamlMapper = new ObjectMapper(new YAMLFactory());
         JsonNode jsonNode = yamlMapper.readTree(yamlString);
         ObjectMapper jsonMapper = new ObjectMapper();
-
-        return mapper.writeValueAsString(jsonNode).getBytes();
+        return jsonMapper.writeValueAsString(jsonNode).getBytes();
     }
 }
