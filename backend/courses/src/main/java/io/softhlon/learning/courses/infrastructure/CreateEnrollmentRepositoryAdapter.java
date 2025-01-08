@@ -37,6 +37,10 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
         }
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private EnrollmentEntity toEnrollment(
           CreateEnrollmentRequest request,
           CourseEntity course) {

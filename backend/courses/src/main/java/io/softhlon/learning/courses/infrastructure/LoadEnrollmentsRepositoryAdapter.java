@@ -39,6 +39,10 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
         }
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private Enrollment toEnrollment(EnrollmentEntity entity) {
         CourseEntity course = entity.getCourse();
         return new Enrollment(

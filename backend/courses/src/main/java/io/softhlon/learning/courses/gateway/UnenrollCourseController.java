@@ -37,5 +37,4 @@ class UnenrollCourseController {
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
-
 }
