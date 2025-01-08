@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.courses.gateway;
 
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import io.softhlon.learning.courses.domain.UnenrollCourseService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ import static io.softhlon.learning.courses.gateway.RestResources.UNENROLL_COURSE
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class UnenrollCourseController {

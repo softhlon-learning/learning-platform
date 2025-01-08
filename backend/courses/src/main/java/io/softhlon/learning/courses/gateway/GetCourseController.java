@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.courses.gateway;
 
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import io.softhlon.learning.courses.domain.GetCourseDetailsService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ import static org.springframework.http.ResponseEntity.status;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class GetCourseController {

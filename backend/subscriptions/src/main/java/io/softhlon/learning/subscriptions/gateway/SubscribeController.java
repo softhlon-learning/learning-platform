@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.subscriptions.gateway;
 
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import io.softhlon.learning.common.security.AuthenticationContext;
 import io.softhlon.learning.subscriptions.domain.SubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import static io.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class SubscribeController {

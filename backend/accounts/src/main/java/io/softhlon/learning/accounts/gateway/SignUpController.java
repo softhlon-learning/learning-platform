@@ -6,6 +6,7 @@
 package io.softhlon.learning.accounts.gateway;
 
 import io.softhlon.learning.accounts.domain.SignUpService;
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,7 @@ import static org.springframework.http.ResponseEntity.status;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class SignUpController {

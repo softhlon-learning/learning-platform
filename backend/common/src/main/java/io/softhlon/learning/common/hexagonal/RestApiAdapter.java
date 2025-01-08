@@ -9,5 +9,5 @@ package io.softhlon.learning.common.hexagonal;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public @interface WebAdapter {
+public @interface RestApiAdapter {
 }

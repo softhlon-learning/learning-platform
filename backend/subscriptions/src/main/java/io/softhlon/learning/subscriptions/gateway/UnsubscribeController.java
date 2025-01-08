@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.subscriptions.gateway;
 
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import io.softhlon.learning.subscriptions.domain.UnsubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ import static io.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRI
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class UnsubscribeController {

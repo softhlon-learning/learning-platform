@@ -6,6 +6,7 @@
 package io.softhlon.learning.accounts.gateway;
 
 import io.softhlon.learning.accounts.domain.SignOutService;
+import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ import static io.softhlon.learning.common.controller.ResponseBodyHelper.successO
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@RestApiAdapter
 @RestController
 @RequiredArgsConstructor
 class SignOutController {
