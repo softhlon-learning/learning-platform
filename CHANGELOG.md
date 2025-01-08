@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.2.9
+_release date: 2025-01-08_
+ * Implemented ListCoursesServiceImpl
+ * Integrated ListCoursesService with controller and frontend
+
 ## 0.2.8
 _release date: 2025-01-08_
  * Added LoadCoursesRepository and implemented its adapter
