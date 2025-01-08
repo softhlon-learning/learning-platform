@@ -20,6 +20,7 @@ public interface UploadCourseService {
 
     record Request(
           UUID courseId,
+          int orderNo,
           String name,
           String description,
           String content,

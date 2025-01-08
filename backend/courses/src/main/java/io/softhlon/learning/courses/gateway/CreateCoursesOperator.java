@@ -49,8 +49,6 @@ public class CreateCoursesOperator {
         createCourse(courseDefinitions.getMessagingDefinition());
         createCourse(courseDefinitions.getMicroservicesDefinition());
         createCourse(courseDefinitions.getSpringDefinition());
-        createCourse(courseDefinitions.getSqlDatasesDefinition());
-        createCourse(courseDefinitions.getNoSqlDatabasesDefinition());
         log.info("Create Courses operator finished");
     }
 
@@ -67,6 +65,7 @@ public class CreateCoursesOperator {
 
     private record CourseDefinition(
           UUID id,
+          int orderNo,
           String name,
           String description,
           String version) {}
@@ -74,6 +73,7 @@ public class CreateCoursesOperator {
     private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) {
         return new Request(
               courseDefinition.id(),
+              courseDefinition.orderNo(),
               courseDefinition.name(),
               courseDefinition.description(),
               toBase64(content),

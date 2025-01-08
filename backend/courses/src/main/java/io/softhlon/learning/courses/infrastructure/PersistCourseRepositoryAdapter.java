@@ -50,6 +50,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
 
     private void updateEntity(PersistCourseRequest request, CourseEntity entity) {
         entity.setName(request.name());
+        entity.setOrderNo(request.orderNo());
         entity.setDescription(request.description());
         entity.setContent(request.content());
         entity.setVersion(request.version());
@@ -58,6 +59,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
     private CourseEntity prepareEntity(PersistCourseRequest request) {
         return CourseEntity.builder()
               .id(request.id())
+              .orderNo(request.orderNo())
               .name(request.name())
               .description(request.description())
               .content(request.content())

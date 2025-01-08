@@ -24,6 +24,7 @@ import java.util.UUID;
 class CourseEntity {
     @Id
     private UUID id;
+    private int orderNo;
     private String name;
     private String description;
     private String content;

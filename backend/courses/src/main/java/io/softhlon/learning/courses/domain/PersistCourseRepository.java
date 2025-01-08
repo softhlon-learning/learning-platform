@@ -16,6 +16,7 @@ public interface PersistCourseRepository {
 
     record PersistCourseRequest(
           UUID id,
+          int orderNo,
           String name,
           String description,
           String content,

@@ -22,7 +22,9 @@ public interface ListCoursesService {
     }
 
     record CourseView(
-          UUID courseId,
+          UUID id,
+          int orderNo,
           String name,
-          String description) {}
+          String description,
+          boolean enrolled) {}
 }

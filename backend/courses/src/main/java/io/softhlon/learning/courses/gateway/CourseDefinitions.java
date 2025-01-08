@@ -32,15 +32,9 @@ class CourseDefinitions {
     @Value("classpath:courses/messaging.yml")
     private Resource messagingDefinition;
 
-    @Value("classpath:courses/messaging.yml")
+    @Value("classpath:courses/microservices.yml")
     private Resource microservicesDefinition;
 
     @Value("classpath:courses/spring.yml")
     private Resource springDefinition;
-
-    @Value("classpath:courses/sql-databases.yml")
-    private Resource sqlDatasesDefinition;
-
-    @Value("classpath:courses/no-sql-databases.yml")
-    private Resource noSqlDatabasesDefinition;
 }

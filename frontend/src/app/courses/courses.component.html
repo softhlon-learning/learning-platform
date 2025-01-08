@@ -4,7 +4,7 @@
     <li *ngFor="let course of courses">
       <button routerLink="/course/{{course.id}}" routerLinkActive="active">
         <span>
-          <span class="badge">{{course.id}}</span>
+          <span class="badge">{{course.orderNo}}</span>
           <span class="name">{{course.name}}</span>
         </span>
         <span *ngIf="course.enrolled" class="enrolled">Enrolled</span>

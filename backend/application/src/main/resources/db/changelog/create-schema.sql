@@ -12,6 +12,7 @@ CREATE TABLE accounts (
 
 CREATE TABLE courses (
     id uuid,
+    order_no INTEGER,
     name VARCHAR NOT NULL,
     description VARCHAR,
     content VARCHAR,
