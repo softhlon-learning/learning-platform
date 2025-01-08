@@ -1,3 +1,6 @@
+id: 286a67f1-4917-4ab8-8f7a-ec4b2d2ecebf
 name: Spring Course
+description: Spring Course Description
+version: 1.0.0
 sections:
   - name: Getting Started

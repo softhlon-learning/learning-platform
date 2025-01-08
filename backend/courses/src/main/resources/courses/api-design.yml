@@ -1,3 +1,6 @@
+id: 844a7d0b-4a20-42ff-a3f2-fc517d4c7b8d
 name: API Design Course
+description: API Design Course Description
+version: 1.0.0
 sections:
   - name: Getting Started

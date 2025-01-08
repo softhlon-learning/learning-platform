@@ -1,3 +1,6 @@
+id: 6f424c25-b77a-4410-b0ba-af65305f18e1
 name: Domain Driven Design Course
+description: Domain Driven Design Course Description
+version: 1.0.0
 sections:
   - name: Getting Started

@@ -1,3 +1,6 @@
+id: c5ddf18c-6da5-45d8-af33-e4e4a46d8f8a
 name: Messaging Course
+description: Messaging Course Description
+version: 1.0.0
 sections:
   - name: Getting Started

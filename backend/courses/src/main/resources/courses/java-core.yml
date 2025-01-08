@@ -1,4 +1,7 @@
+id: 2a66c142-1115-42a3-a2e4-57b6b6da416e
 name: Java Course
+description: Java Course Description
+version: 1.0.0
 sections:
   - name: Getting Started
     chapters:
