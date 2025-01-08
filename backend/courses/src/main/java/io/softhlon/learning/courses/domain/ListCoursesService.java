@@ -6,6 +6,7 @@
 package io.softhlon.learning.courses.domain;
 
 import java.util.List;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -16,12 +17,12 @@ public interface ListCoursesService {
     record Request(String accountId, String courseId) {}
 
     sealed interface Result {
-        record Succeeded(List<Course> courses) implements Result {}
+        record Succeeded(List<CourseView> courses) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Course(
-          String courseId,
+    record CourseView(
+          UUID courseId,
           String name,
           String description) {}
 }
