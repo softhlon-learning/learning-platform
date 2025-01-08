@@ -11,7 +11,7 @@ CREATE TABLE accounts (
 );
 
 CREATE TABLE courses (
-    id uuid DEFAULT gen_random_uuid(),
+    id uuid,
     name VARCHAR NOT NULL,
     description VARCHAR,
     content VARCHAR,
