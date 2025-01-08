@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.2.5
+_release date: 2025-01-08_
+ * Added id, description and version to course definitions
+ * Removed default id generation in courses table
+ * Implemented UploadCourseServiceImpl
+
 ## 0.2.4
 _release date: 2025-01-08_
  * Added UploadCourseService and related repository interfaces
