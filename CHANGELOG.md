@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.3.1
+_release date: 2025-01-08_
+ * Loading content with course list
+ * Updated app title
+ * Unlocked course in progress screen
+
 ## 0.3.0
 _release date: 2025-01-08_
  * Removed unnecessary course definitions
