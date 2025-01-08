@@ -11,7 +11,6 @@ import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollme
 import io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.internal.log.SubSystemLogging;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;

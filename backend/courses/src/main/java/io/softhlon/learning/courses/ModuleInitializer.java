@@ -9,15 +9,9 @@ import io.softhlon.learning.courses.gateway.CreateCoursesOperator;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.file.ConfigurationSource;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.nio.charset.Charset;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

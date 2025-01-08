@@ -14,8 +14,8 @@ import java.util.UUID;
 import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
 import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
 import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------

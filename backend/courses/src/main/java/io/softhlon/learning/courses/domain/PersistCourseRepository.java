@@ -5,7 +5,6 @@
 
 package io.softhlon.learning.courses.domain;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
