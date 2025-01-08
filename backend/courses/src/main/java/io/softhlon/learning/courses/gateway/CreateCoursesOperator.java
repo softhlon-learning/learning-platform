@@ -3,13 +3,9 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts;
+package io.softhlon.learning.courses.gateway;
 
-import io.softhlon.learning.accounts.gateway.CreateCoursesOperator;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -18,14 +14,8 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
-class ModuleInitializer implements ApplicationListener<ContextRefreshedEvent>  {
-    private final CreateCoursesOperator createCoursesOperator;
-
-    @Override
-    public void onApplicationEvent(ContextRefreshedEvent event) {
-        log.info("Module Initializer started");
-        createCoursesOperator.execute();
-        log.info("Module Initializer finished");
+public class CreateCoursesOperator {
+    public void execute() {
+        log.info("Create Courses operator started");
     }
 }
