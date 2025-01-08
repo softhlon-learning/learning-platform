@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-class ModuleInitializer implements ApplicationListener<ContextRefreshedEvent>  {
+class ModuleInitializer implements ApplicationListener<ContextRefreshedEvent> {
     private final CreateCoursesOperator createCoursesOperator;
 
     @Override
