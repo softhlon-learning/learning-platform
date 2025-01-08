@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.2.6
+_release date: 2025-01-08_
+ * Refactored CreateCoursesOperator
+ * Error logging in persistence adapters
+
 ## 0.2.5
 _release date: 2025-01-08_
  * Added id, description and version to course definitions
