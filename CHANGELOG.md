@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.2.7
+_release date: 2025-01-08_
+ * Minor error logging improvements
+ * CreateCoursesOperator improvements
+ * Added @RestApiAdapter to all controllers
+
 ## 0.2.6
 _release date: 2025-01-08_
  * Refactored CreateCoursesOperator
