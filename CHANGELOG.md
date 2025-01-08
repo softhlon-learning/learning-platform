@@ -1,6 +1,7 @@
 # Learning Platform Changelog
 
 ## 0.2.1
+_release date: 2025-01-08_
  * Created templates for course contents
  * Installed Postgres server on softhlon-learning.tech
  * Created SSL certificate
