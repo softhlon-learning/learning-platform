@@ -37,8 +37,8 @@ class ListCoursesController {
     private final HttpServletRequest httpRequest;
 
     @GetMapping(LIST_COURSES)
-    ResponseEntity<?> listCourses(@Validated @RequestBody ListCoursesService.Request request) {
-        var result = service.listCourses(request);
+    ResponseEntity<?> listCourses() {
+        var result = service.listCourses();
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

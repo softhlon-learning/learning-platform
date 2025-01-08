@@ -1,28 +1,22 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Copyright (C) IO.PMARAT - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package io.softhlon.learning.application;
 
-import java.util.List;
-import java.util.UUID;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public interface ListCoursesService {
-    Result listCourses();
-    record Request(String accountId, String courseId) {}
-
-    sealed interface Result {
-        record Succeeded(List<CourseView> courses) implements Result {}
-        record Failed(Throwable cause) implements Result {}
+@Configuration
+class WebConfiguration implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedMethods("*");
     }
-
-    record CourseView(
-          UUID courseId,
-          String name,
-          String description) {}
 }

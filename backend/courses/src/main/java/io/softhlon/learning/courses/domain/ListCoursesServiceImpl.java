@@ -28,7 +28,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private final LoadCoursesRepository loadCoursesRepository;
 
     @Override
-    public Result listCourses(Request request) {
+    public Result listCourses() {
         var result = loadCoursesRepository.execute();
         return switch (result) {
             case CoursesLoadFailed(Throwable cause) -> new Failed(cause);
