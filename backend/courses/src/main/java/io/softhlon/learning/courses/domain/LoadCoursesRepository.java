@@ -23,7 +23,7 @@ public interface LoadCoursesRepository {
 
     record Course(
           UUID courseId,
-          int order,
+          int orderNo,
           String name,
           String description,
           String version) {}

@@ -49,7 +49,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private CourseView toCourseView(Course course) {
         return new CourseView(
               course.courseId(),
-              course.order(),
+              course.orderNo(),
               course.name(),
               course.description(),
               false);
