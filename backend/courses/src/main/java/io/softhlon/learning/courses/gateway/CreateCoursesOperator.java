@@ -12,10 +12,8 @@ import io.softhlon.learning.courses.domain.UploadCourseService;
 import io.softhlon.learning.courses.domain.UploadCourseService.Request;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.Base64;
@@ -30,47 +28,25 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CreateCoursesOperator {
     private final UploadCourseService uploadCourseService;
-
-    @Value("classpath:courses/api-design.yml")
-    private Resource apiDesignDefinition;
-
-    @Value("classpath:courses/architecture.yml")
-    private Resource architectureDefinition;
-
-    @Value("classpath:courses/domain-driven-design.yml")
-    private Resource domainDrovenDesignDefinition;
-
-    @Value("classpath:courses/java-core.yml")
-    private Resource javaCoreDefinition;
-
-    @Value("classpath:courses/messaging.yml")
-    private Resource messagingDefinition;
-
-    @Value("classpath:courses/messaging.yml")
-    private Resource microservicesDefinition;
-
-    @Value("classpath:courses/spring.yml")
-    private Resource springDefinition;
-
-    @Value("classpath:courses/sql-databases.yml")
-    private Resource sqlDatasesDefinition;
-
-    @Value("classpath:courses/no-sql-databases.yml")
-    private Resource noSqlDatabasesDefinition;
+    private final CourseDefinitions courseDefinitions;
 
     public void execute() throws IOException {
         log.info("Create Courses operator started");
-        createCourse(apiDesignDefinition);
-        createCourse(architectureDefinition);
-        createCourse(domainDrovenDesignDefinition);
-        createCourse(javaCoreDefinition);
-        createCourse(messagingDefinition);
-        createCourse(microservicesDefinition);
-        createCourse(springDefinition);
-        createCourse(sqlDatasesDefinition);
-        createCourse(noSqlDatabasesDefinition);
+        createCourse(courseDefinitions.getApiDesignDefinition());
+        createCourse(courseDefinitions.getArchitectureDefinition());
+        createCourse(courseDefinitions.getDomainDrovenDesignDefinition());
+        createCourse(courseDefinitions.getJavaCoreDefinition());
+        createCourse(courseDefinitions.getMessagingDefinition());
+        createCourse(courseDefinitions.getMicroservicesDefinition());
+        createCourse(courseDefinitions.getSpringDefinition());
+        createCourse(courseDefinitions.getSqlDatasesDefinition());
+        createCourse(courseDefinitions.getNoSqlDatabasesDefinition());
         log.info("Create Courses operator finished");
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
 
     private void createCourse(Resource resource) throws IOException {
         log.info("Creating/Updating course from definition: {}", resource.getFilename());
@@ -88,7 +64,7 @@ public class CreateCoursesOperator {
           String description,
           String version) {}
 
-    private Request prepareRequest(CourseDefinition courseDefinition, byte [] content) {
+    private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) {
         return new Request(
               courseDefinition.id(),
               courseDefinition.name(),
