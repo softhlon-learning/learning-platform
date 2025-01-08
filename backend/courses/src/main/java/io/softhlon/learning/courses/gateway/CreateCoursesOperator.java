@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.softhlon.learning.courses.domain.UploadCourseService;
 import io.softhlon.learning.courses.domain.UploadCourseService.Request;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -25,10 +24,21 @@ import java.util.UUID;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class CreateCoursesOperator {
     private final UploadCourseService uploadCourseService;
     private final CourseDefinitions courseDefinitions;
+    private final ObjectMapper mapper;
+
+    public CreateCoursesOperator(
+          UploadCourseService uploadCourseService,
+          CourseDefinitions courseDefinitions,
+          ObjectMapper mapper) {
+        this.uploadCourseService = uploadCourseService;
+        this.courseDefinitions = courseDefinitions;
+        var objectMapper = new ObjectMapper(new YAMLFactory());
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        this.mapper = objectMapper;
+    }
 
     public void execute() throws IOException {
         log.info("Create Courses operator started");
@@ -50,12 +60,9 @@ public class CreateCoursesOperator {
 
     private void createCourse(Resource resource) throws IOException {
         log.info("Creating/Updating course from definition: {}", resource.getFilename());
-        var mapper = new ObjectMapper(new YAMLFactory());
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         var content = resource.getContentAsByteArray();
         var courseDefinition = mapper.readValue(content, CourseDefinition.class);
-        var request = prepareRequest(courseDefinition, content);
-        uploadCourseService.execute(request);
+        uploadCourseService.execute(prepareRequest(courseDefinition, content));
     }
 
     private record CourseDefinition(
@@ -69,8 +76,12 @@ public class CreateCoursesOperator {
               courseDefinition.id(),
               courseDefinition.name(),
               courseDefinition.description(),
-              Base64.getEncoder().encodeToString(content),
+              toBase64(content),
               courseDefinition.version()
         );
+    }
+
+    private String toBase64(byte[] content) {
+        return Base64.getEncoder().encodeToString(content);
     }
 }
