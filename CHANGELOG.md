@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.2.4
+_release date: 2025-01-08_
+ * Added UploadCourseService and related repository interfaces
+ * Implemented UploadCourseService
+
 ## 0.2.3
 _release date: 2025-01-08_
  * Added ModuleInitializer
