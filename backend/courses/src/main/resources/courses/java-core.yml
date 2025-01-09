@@ -313,15 +313,15 @@ sections:
           - name: PDF
             processed: false
             id: ultimate-java-course/intro/Summary.pdf
-  - name: Objects
+  - name: Object-Oriented Programming
     chapters:
-      - name: Introduction to Objects
+      - name: Classes and Objects
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v9
             time: 1m05s
             processed: false
-      - name: Classes
+      - name: Abstraction
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v10
@@ -333,34 +333,148 @@ sections:
             id: ultimate-java-course/intro/Introduction.mp4?v11
             time: 1m05s
             processed: false
-      - name: Interfaces
+      - name: Inheritance
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v12
             time: 1m05s
             processed: false
-      - name: Inheritance
+      - name: Multiple Inheritance
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v13
             time: 1m05s
             processed: false
-      - name: Polymorphism
+      - name: Packages
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v14
             time: 1m05s
             processed: false
-      - name: Method Overriding & Overloading
+      - name: Overwritting and Overloading
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v15
             time: 1m05s
             processed: false
-      - name: Object Creation & Cleanup
+      - name: Polymorhism
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v16
+            time: 1m05s
+            processed: false
+      - name: Final Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Final Methods
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Abstract Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Abstract Methods
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Declaring Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Declaring Class Members
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Declaring Class Methods
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Creating Objects
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Using Objects
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: This Keyword
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Supper Keyword
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Return Value from Method
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Access Control
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Initializing Fields
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Equals and Hashcode
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: InstanceOf Operator
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Records
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Nested Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Static Nested Class
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
             time: 1m05s
             processed: false
       - name: Inner Classes
@@ -369,6 +483,84 @@ sections:
             id: ultimate-java-course/intro/Introduction.mp4?v17
             time: 1m05s
             processed: false
+      - name: Local Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Anonymous Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Best Practices for Nested Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Modelling Application Domain
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Autoboxing and Unboxing
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Strong, Soft, and Weak References
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Immutability
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Hidden Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Sealed Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Annotations
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Declaring New Annotations
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Nested Classes
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v17
+            time: 1m05s
+            processed: false
+      - name: Wrap Up
+        processed: false
+        items:
+          - name: PDF
+            processed: false
+            id: ultimate-java-course/intro/Summary.pdf
   - name: Collections
     chapters:
       - name: Full Taxonomy
