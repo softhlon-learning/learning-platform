@@ -601,4 +601,14 @@ sections:
       - name: Sequenced Collections
       - name: Custom Implementation
       - name: Wrap Up
-
+  - name: Error Handling
+    chapters:
+      - name: Error Handling Overview
+      - name: Catching Exceptions
+      - name: Throwing Exceptions
+      - name: The try-catch-finally Statement
+      - name: The try-with-resources Statement
+      - name: Specifying Exceptions
+      - name: Checked Exceptions
+      - name: Runtime Exceptions
+      - name: Wrap Up
