@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.4.0
+_release date: 2025-01-09_
+ * Updated TOC for java course (Generics)
+ * Updated TOC for java course (Records and Pattern Matching)
+ * Updated TOC for java course (Modularization)
+ * Updated TOC for java course (Date and Time)
+ * Updated TOC for java course (Java I/O
+
 ## 0.3.9
 _release date: 2025-01-09_
  * Updated TOC for java course (Streams)
