@@ -724,9 +724,9 @@ sections:
       - name: Deleting Files or Directories
       - name: Copying Files
       - name: Moving Files or Directories
-      - name: Reading from and Writing to Small Files
+      - name: Reading and Writing Small Files
       - name: Buffered Reading and Writing Files
-      - name: Reading and Writing Files using Channels
+      - name: Using Channels
       - name: Creating Files
       - name: Creating and Reading Directories
       - name: Symbolic and Hard Links

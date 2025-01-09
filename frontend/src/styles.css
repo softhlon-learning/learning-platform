@@ -113,7 +113,7 @@ span {
   text-align: center;
   color: var(--checked-blue);
   position: absolute;
-  left: 8px;
+  left: 10px;
   top: 4px;
 }
 

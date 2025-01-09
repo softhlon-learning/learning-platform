@@ -14,13 +14,13 @@
     <ul class="course-content-list">
       <li *ngFor="let section of courseContent?.sections">
         <span>
-          <span class="name">{{section.name}}</span>
+          <span class="course-chapter-items">{{section.name}}</span>
         </span>
         <ul class="courses">
           <li *ngFor="let chapter of section.chapters">
             <label class="checkbox">
               <input class="course-checked" type="checkbox" [disabled]="true" [checked]="chapter.processed"/>
-              <span class="name">{{chapter.name}}</span>
+              <span class="course-chapter-items">{{chapter.name}}</span>
             </label>
             <ul class="course-chapter-items">
               <li [id]="item.id" *ngFor="let item of chapter.items" class="{{this.getClass(item)}}"
