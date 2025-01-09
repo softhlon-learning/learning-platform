@@ -8,8 +8,8 @@
 
 .quiz-content {
   display: flex;
-  width: 926px;
-  height: 634px;
+  width: 916px;
+  height: 604px;
   background-color: var(--very-light-blue);
   justify-content: center;
   align-items: center;

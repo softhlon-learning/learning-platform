@@ -54,7 +54,7 @@ button {
   cursor: pointer;
   color: var(--h1-blue);
   font-size: 1.3rem;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   margin: 1rem;
 }
 
@@ -120,4 +120,3 @@ span {
 .checkbox > input:active {
   border: 1px dotted gray;
 }
-
