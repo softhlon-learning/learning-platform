@@ -630,3 +630,24 @@ sections:
       - name: Primitive Function Specializations
       - name: Optional Class
       - name: Wrap Up
+  - name: Streams
+    chapters:
+      - name: Introduction to Stream API
+      - name: Stream Interface
+      - name: Terminal and Intermediate Operations
+      - name: ForEach Operation
+      - name: Filter Operation
+      - name: Map Operation
+      - name: FlatMap Operation
+      - name: AllMAtch, anyMatch, and noneMatch
+      - name: Reduce Operation
+      - name: Stream Collectors
+      - name: ToCollection
+      - name: ToList and toUnmodififiableList
+      - name: ToSet and toUnmodififiableSet
+      - name: ToMap and toUnmodififiableMap
+      - name: Joining
+      - name: GroupingBy
+      - name: Mapping
+      - name: PartitioningBy
+      - name: Wrap Up
