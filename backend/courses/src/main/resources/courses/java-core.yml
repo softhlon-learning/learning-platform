@@ -674,7 +674,7 @@ sections:
       - name: Pattern Matching
       - name: Pattern Matching for InstanceOf
       - name: Pattern Matching for Switch
-      - name: Pattern Matching for the instanceof Operator
+      - name: Pattern Matching for the instanceof
       - name: Pattern Matching for Switch
       - name: Record Patterns
       - name: Unnamed Patterns and Variables
@@ -725,7 +725,7 @@ sections:
       - name: Copying Files
       - name: Moving Files or Directories
       - name: Reading from and Writing to Small Files
-      - name: Buffered Reading and Writing from/to Files
+      - name: Buffered Reading and Writing Files
       - name: Reading and Writing Files using Channels
       - name: Creating Files
       - name: Creating and Reading Directories
