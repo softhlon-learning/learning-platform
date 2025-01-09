@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.3.6
+_release date: 2025-01-09_
+ * Prepared backend service on softhlon-learning.tech
+ * Prepared frontend service on softhlon-learning.tech
+
 ## 0.3.5
 _release date: 2025-01-09_
  * Updated TOC for java course (Object-Oriented Programming)
