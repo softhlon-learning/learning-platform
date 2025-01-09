@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.3.7
+_release date: 2025-01-09_
+ * Refreshed styling
+
 ## 0.3.6
 _release date: 2025-01-09_
  * Prepared backend service on softhlon-learning.tech
