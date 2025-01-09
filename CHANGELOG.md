@@ -1,11 +1,12 @@
 # Learning Platform Changelog
 
 ## 0.3.3
+_release date: 2025-01-09_
  * Configured nginx on localhost
  * Configured nginx on softhlon-learning.tech
 
 ## 0.3.2
-_release date: 2025-01-08_
+_release date: 2025-01-09_
  * Updated color set
  * Installed nginx
 
