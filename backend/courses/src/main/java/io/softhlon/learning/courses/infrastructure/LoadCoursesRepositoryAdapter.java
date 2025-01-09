@@ -47,6 +47,7 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
     private Course toCourse(CourseEntity entity) {
         return new Course(
               entity.getId(),
+              entity.getCode(),
               entity.getOrderNo(),
               entity.getName(),
               entity.getDescription(),

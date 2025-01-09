@@ -51,6 +51,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private CourseView toCourseView(Course course) {
         return new CourseView(
               course.courseId(),
+              course.code(),
               course.orderNo(),
               course.name(),
               course.description(),

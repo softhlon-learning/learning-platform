@@ -23,6 +23,7 @@ public interface ListCoursesService {
 
     record CourseView(
           UUID id,
+          String code,
           int orderNo,
           String name,
           String description,
