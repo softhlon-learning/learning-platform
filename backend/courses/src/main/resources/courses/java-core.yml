@@ -561,73 +561,9 @@ sections:
           - name: PDF
             processed: false
             id: ultimate-java-course/intro/Summary.pdf
-  - name: Collections
+  - name: Project
     chapters:
-      - name: Full Taxonomy
-      - name: List
-      - name: ArrayList
-      - name: LinkedList
-      - name: Set
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v18
-            time: 1m05s
-            processed: false
-      - name: HashSet
-      - name: TreeSet
-      - name: LinkedHashSet
-      - name: Map
-      - name: HashMap
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v19
-            time: 1m05s
-            processed: false
-      - name: TreeMap
-      - name: LinkedHashMap
-      - name: Queue
-      - name: Deque
-      - name: ArrayDeque
-      - name: BlockingQueue
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v20
-            time: 1m05s
-            processed: false
-      - name: TransferQueue
-      - name: BlockingDeque
-      - name: ConcurrentMap
-      - name: ConcurrentNavigableMap
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v21
-            time: 1m05s
-            processed: false
-      - name: Utilities - Collections
-      - name: Utilities - Arrays
-  - name: Enumeration Types
-    chapters:
-      - name: Introduction
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v22
-            time: 1m05s
-            processed: false
-  - name: Annotations
-    chapters:
-      - name: Metadata
-      - name: Defining Annotations
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v23
-            time: 1m05s
-            processed: false
-          - name: Quiz
-            id: ultimate-java-course/intro/Quiz.json?v19
-            processed: false
-      - name: Writing Annotation Processors
-        items:
-          - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v24
-            time: 1m05s
-            processed: false
+      - name: Project Overview
+      - name: GitHub Repository
+      - name: Basic Git Commands
+      - name: Project Skeleton
