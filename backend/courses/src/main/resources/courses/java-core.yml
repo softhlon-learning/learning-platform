@@ -567,3 +567,38 @@ sections:
       - name: GitHub Repository
       - name: Basic Git Commands
       - name: Project Skeleton
+      - name: Wrap Up
+  - name: Strings and Text Blocks
+    chapters:
+      - name: String Class
+      - name: Manipulating Characters in String
+      - name: Concatenating Strings
+      - name: Comparing Strings
+      - name: StringBuilder and StringBuffer
+      - name: Text Blocks
+      - name: Multiline Strings
+      - name: Wrap Up
+  - name: Data Structures
+    chapters:
+      - name: Overview
+      - name: Introduction to Arrays
+      - name: Array Operations
+      - name: Arrays Class
+      - name: Introduction to Collection Framework
+      - name: List Interface
+      - name: List Implementations
+      - name: Set Interface
+      - name: Set Implementations
+      - name: Queue Interface
+      - name: Queue Implementations
+      - name: Deque Interface
+      - name: Deque Implementations
+      - name: Map Interface
+      - name: Map Implementations
+      - name: Wrapper Implementations
+      - name: Ordering
+      - name: Sorted Interfaces
+      - name: Sequenced Collections
+      - name: Custom Implementation
+      - name: Wrap Up
+
