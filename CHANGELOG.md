@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.4.1
+_release date: 2025-01-09_
+ * Removed duplicate call to /api/v1/account endpoint
+ * Improved styling and positioning
+
 ## 0.4.0
 _release date: 2025-01-09_
  * Updated TOC for java course (Generics)
