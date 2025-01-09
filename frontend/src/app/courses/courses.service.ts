@@ -6,8 +6,8 @@ import {Course} from './course';
 
 @Injectable()
 export class CoursesService {
-  courseUrl = 'http://localhost:8080/api/v1/course';
-  enrollmentUrl = 'http://localhost:8080/api/v1/course/enrollment';
+  courseUrl = '/api/v1/course';
+  enrollmentUrl = '/api/v1/course/enrollment';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
