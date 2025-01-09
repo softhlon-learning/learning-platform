@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.3.2
+_release date: 2025-01-08_
+ * Updated color set
+ * Installed nginx
+
 ## 0.3.1
 _release date: 2025-01-08_
  * Loading content with course list
