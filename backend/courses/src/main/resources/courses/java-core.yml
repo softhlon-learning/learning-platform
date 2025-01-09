@@ -612,3 +612,21 @@ sections:
       - name: Checked Exceptions
       - name: Runtime Exceptions
       - name: Wrap Up
+  - name: Functional Programming
+    chapters:
+      - name: Functional Programming Introduction
+      - name: Functional Interface
+      - name: Lambda Expressions
+      - name: Method Reference
+      - name: Built-in Functional Interfaces
+      - name: Consumer
+      - name: BiConsumer
+      - name: Supplier
+      - name: Function
+      - name: BiFunction
+      - name: Predicate
+      - name: BiPredicate
+      - name: UnaryOperator
+      - name: Primitive Function Specializations
+      - name: Optional Class
+      - name: Wrap Up
