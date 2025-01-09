@@ -679,3 +679,13 @@ sections:
       - name: Record Patterns
       - name: Unnamed Patterns and Variables
       - name: Wrap Up
+  - name: Modularization
+    chapters:
+      - name: Modularization Overview
+      - name: Maven Modules
+      - name: Creating a Maven Module
+      - name: Gradle Modules
+      - name: Creating a Gradle Module
+      - name: Java Modules
+      - name: Creating a Java Module
+      - name: Glue It Together
