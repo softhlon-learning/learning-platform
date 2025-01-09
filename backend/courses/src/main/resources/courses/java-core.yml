@@ -726,7 +726,7 @@ sections:
       - name: Moving Files or Directories
       - name: Reading from and Writing to Small Files
       - name: Buffered Reading and Writing from/to Files
-      - name: Reading and Writing from/to Files Using Channels
+      - name: Reading and Writing Files using Channels
       - name: Creating Files
       - name: Creating and Reading Directories
       - name: Symbolic and Hard Links
