@@ -46,6 +46,7 @@ class UploadCourseServiceImpl implements UploadCourseService {
     private PersistCourseRequest prepareReuqest(Request request) {
         return new PersistCourseRequest(
               request.courseId(),
+              request.code(),
               request.orderNo(),
               request.name(),
               request.description(),

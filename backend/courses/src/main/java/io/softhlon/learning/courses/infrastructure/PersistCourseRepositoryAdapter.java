@@ -59,6 +59,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
     private CourseEntity prepareEntity(PersistCourseRequest request) {
         return CourseEntity.builder()
               .id(request.id())
+              .code(request.code())
               .orderNo(request.orderNo())
               .name(request.name())
               .description(request.description())

@@ -68,6 +68,7 @@ public class CreateCoursesOperator {
 
     private record CourseDefinition(
           UUID id,
+          String code,
           int orderNo,
           String name,
           String description,
@@ -76,6 +77,7 @@ public class CreateCoursesOperator {
     private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
         return new Request(
               courseDefinition.id(),
+              courseDefinition.code(),
               courseDefinition.orderNo(),
               courseDefinition.name(),
               courseDefinition.description(),
