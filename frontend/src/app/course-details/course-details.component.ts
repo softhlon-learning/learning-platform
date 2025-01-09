@@ -28,7 +28,7 @@ export class CourseDetailsComponent implements OnInit {
       .subscribe(courses => {
         for (let i = 0; i < courses.length ; i++) {
         let course = courses[i];
-          if (course.id === id) {
+          if (course.code === id) {
             this.course = course;
             break;
           }
@@ -39,7 +39,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   enrollCourse(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+    const id = parseInt(this.route.snapshot.paramMap.get('code')!);
     this.coursesService.enrollCourse(this.course).subscribe(
       item => this.ngOnInit()
     );

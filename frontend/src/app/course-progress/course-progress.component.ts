@@ -47,7 +47,7 @@ export class CourseProgressComponent implements OnInit {
       .subscribe(courses => {
         for (let i = 0; i < courses.length ; i++) {
           let course = courses[i];
-          if (course.id === id) {
+          if (course.code === id) {
             this.course = course;
             break;
           }

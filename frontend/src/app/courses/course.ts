@@ -1,5 +1,6 @@
 export interface Course {
   id?: string;
+  code?: string;
   orderNo?: string;
   externalId?: string;
   type?: string;
