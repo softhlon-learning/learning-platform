@@ -707,3 +707,29 @@ sections:
       - name: Duration
       - name: Period
       - name: Wrap Up
+  - name: Java I/O
+    chapters:
+      - name: Java I/O Introduction
+      - name: I/O Streams
+      - name: Byte Streams
+      - name: Character Streams
+      - name: Buffered Streams
+      - name: Scanning and Formatting
+      - name: Command Line I/O
+      - name: Data Streams
+      - name: Object Streams
+      - name: File I/O
+      - name: Paths
+      - name: Checking Files or Directories
+      - name: Deleting Files or Directories
+      - name: Copying Files
+      - name: Moving Files or Directories
+      - name: Reading from and Writing to Small Files
+      - name: Buffered Reading and Writing from/to Files
+      - name: Reading and Writing from/to Files Using Channels
+      - name: Creating Files
+      - name: Creating and Reading Directories
+      - name: Symbolic and Hard Links
+      - name: Finding Files
+      - name: Watching Directory for Change
+      - name: Wrap Up
