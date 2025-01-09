@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {shareReplay} from 'rxjs/operators';
 
 import {Course} from './course';
 
 @Injectable()
 export class CoursesService {
+  private courses$?: Observable<Course[]>;
   courseUrl = '/api/v1/course';
   enrollmentUrl = '/api/v1/course/enrollment';
 
@@ -18,7 +20,10 @@ export class CoursesService {
   }
 
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>(this.courseUrl).pipe();
+    if (!this.courses$) {
+      this.courses$ = this.http.get<Course[]>(this.courseUrl).pipe(shareReplay(1));
+    }
+    return this.courses$;
   }
 
   enrollCourse(course: Course): Observable<ArrayBuffer> {
