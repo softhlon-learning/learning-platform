@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.3.5
+_release date: 2025-01-09_
+ * Updated TOC for java course (Object-Oriented Programming)
+ * Updated TOC for java course (Project)
+ * Updated TOC for java course (Data Structures)
+ * Updated TOC for java course (Error Handling)
+ * Updated TOC for java course (Functional Programming)
+
 ## 0.3.4
 _release date: 2025-01-09_
  * Updated TOC for java course (Introduction, Getting Started, and Language Fundamentals)
