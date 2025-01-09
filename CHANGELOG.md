@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.3.4
+_release date: 2025-01-09_
+ * Updated TOC for java course (Introduction, Getting Started, and Language Fundamentals)
+ * Updated checked color (white)
+
 ## 0.3.3
 _release date: 2025-01-09_
  * Configured nginx on localhost
