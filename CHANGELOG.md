@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.3.9
+_release date: 2025-01-09_
+ * Updated TOC for java course (Streams)
+ * Added code to course model
+ * Added code to controller
+ * Replace course id by code in router
+
 ## 0.3.8
 _release date: 2025-01-09_
  * Changed hover color to black
