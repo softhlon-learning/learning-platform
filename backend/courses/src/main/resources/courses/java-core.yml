@@ -652,3 +652,17 @@ sections:
       - name: Mapping
       - name: PartitioningBy
       - name: Wrap Up
+  - name: Generics
+    chapters:
+      - name: Generics Overview
+      - name: Generic Types
+      - name: Generic Methods
+      - name: Bounded Type Parameters
+      - name: Inheritance and Subtypes
+      - name: Upper Bounded Wildcards
+      - name: Unbounded Wildcards
+      - name: Lower Bounded Wildcards
+      - name: Wildcard Capture and Helper Methods
+      - name: Erasure of Generic Types
+      - name: Erasure of Generic Methods
+      - name: Wrap Up
