@@ -6,7 +6,7 @@ h2 {
 
 div {
   display: flex;
-  height: 80vh;
+  height: 700px;
   justify-content: center;
   align-items: center;
 }
