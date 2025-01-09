@@ -1,7 +1,7 @@
 # Learning Platform Changelog
 
 ## 0.4.1
-_release date: 2025-01-09_
+_release date: 2025-01-10_
  * Removed duplicate call to /api/v1/account endpoint
  * Improved styling and positioning
 
