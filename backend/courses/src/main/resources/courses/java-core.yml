@@ -4,38 +4,170 @@ name: Java Course
 description: Java Course Description
 version: 1.0.0
 sections:
+  - name: Introduction
+    chapters:
+      - name: Welcome to the Course
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+      - name: Prerequisites
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+      - name: Course Structure
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+          - name: PDF
+            processed: true
+            id: ultimate-java-course/intro/Summary.pdf
   - name: Getting Started
     chapters:
-      - name: Introduction
+      - name: Introduction to the Java
         processed: true
         items:
           - name: Video
             time: 3m15s
             id: ultimate-java-course/intro/Introduction.mp4?v1
             processed: true
-      - name: Setting Up Environment
+      - name: Java Virtual Machine
         processed: true
         items:
           - name: Video
             time: 1m20s
             id: ultimate-java-course/intro/Introduction.mp4?v2
             processed: true
-      - name: First Program
+      - name: JDK and JRE
         processed: true
         items:
           - name: Video
             time: 2m55s
             id: ultimate-java-course/intro/Introduction.mp4?v3
             processed: true
-      - name: Summary
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: true
+      - name: Java on Windows
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Java on Linux
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Java on MacOS
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Intelij Idea on Windows
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Intelij Idea on Linux
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Intelij Idea on MacOS
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Basic Tools Overview
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Javac Tool
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: true
+      - name: Java Tool
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: true
+      - name: Jar Tool
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: true
+      - name: IDE Overview
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+          - name: PDF
+            processed: true
+            id: ultimate-java-course/intro/Summary.pdf
+      - name: Basic Project Configuration
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: First Introduction to the Project
+        processed: true
+        items:
+          - name: Video
+            time: 2m55s
+            id: ultimate-java-course/intro/Introduction.mp4?v3
+            processed: true
+      - name: Wrap Up
         processed: true
         items:
           - name: PDF
             processed: true
             id: ultimate-java-course/intro/Summary.pdf
-  - name: Fundamentals
+  - name: Language Fundamentals
     chapters:
-      - name: Data Types
+      - name: Basic Program Structure
         processed: true
         items:
           - name: Video
@@ -45,26 +177,142 @@ sections:
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
             processed: true
-      - name: Operators
+      - name: Packages
         processed: false
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v5
             time: 6m30s
-            processed: true
-      - name: Flow Control
+            processed: false
+      - name: Main Function
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v6
             time: 4m45s
             processed: false
-      - name: Strings
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: false
+      - name: Program Arguments
         items:
           - name: Video
             id: ultimate-java-course/intro/Introduction.mp4?v7
             time: 1m05s
             processed: false
-      - name: Arrays
+      - name: System Properties
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Envrinment Variables
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Printing to Standard Output
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Reading from Standard Input
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Instrocution to Build Automation
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Maven
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: false
+      - name: Gradle
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+          - name: Quiz
+            id: ultimate-java-course/intro/Quiz.json?v1
+            processed: false
+      - name: Local Debugging
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Remote Debugging
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Basic Profilling
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Troubleshooting
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Expressions, Statements and Blocks
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: If-Then-Else
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Switch
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: While and Do-While
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: For Loop
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Break and Continue
+        items:
+          - name: Video
+            id: ultimate-java-course/intro/Introduction.mp4?v7
+            time: 1m05s
+            processed: false
+      - name: Wrap Up
+        processed: false
+        items:
+          - name: PDF
+            processed: false
+            id: ultimate-java-course/intro/Summary.pdf
   - name: Objects
     chapters:
       - name: Introduction to Objects
