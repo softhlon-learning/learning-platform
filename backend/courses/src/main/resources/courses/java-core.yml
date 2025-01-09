@@ -689,3 +689,21 @@ sections:
       - name: Java Modules
       - name: Creating a Java Module
       - name: Glue It Together
+      - name: Wrap Up
+  - name: Date and Time
+    chapters:
+      - name: Date and Time Overview
+      - name: Instant
+      - name: LocalDate
+      - name: LocalTime
+      - name: LocalDateTime
+      - name: ZoneDateTime
+      - name: ZoneId
+      - name: ZoneOffset
+      - name: OffsetDateTime
+      - name: MonthDay
+      - name: Year
+      - name: YearMonth
+      - name: Duration
+      - name: Period
+      - name: Wrap Up
