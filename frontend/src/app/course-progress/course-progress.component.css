@@ -16,6 +16,7 @@ div.course-item {
   margin-right: 1em;
   background-color: white;
   height: 45em;
+  font-family: Verdana;
 }
 
 div button {
@@ -51,4 +52,3 @@ div.progress span span {
   font-weight: bold;
   color: var(--hover-blue);
 }
-
