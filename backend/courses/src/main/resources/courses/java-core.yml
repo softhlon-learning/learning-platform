@@ -666,3 +666,16 @@ sections:
       - name: Erasure of Generic Types
       - name: Erasure of Generic Methods
       - name: Wrap Up
+  - name: Records and Pattern Matching
+    chapters:
+      - name: Records Overview
+      - name: Canonical Constructor
+      - name: Local Record Classes
+      - name: Pattern Matching
+      - name: Pattern Matching for InstanceOf
+      - name: Pattern Matching for Switch
+      - name: Pattern Matching for the instanceof Operator
+      - name: Pattern Matching for Switch
+      - name: Record Patterns
+      - name: Unnamed Patterns and Variables
+      - name: Wrap Up
