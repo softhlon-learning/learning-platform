@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.3.8
+_release date: 2025-01-09_
+ * Changed hover color to black
+ * Fixed with of video and pdf components
+ * Readjusted components properties (to improve visual effects)
+ * Introduced black color schema on front pag
+
 ## 0.3.7
 _release date: 2025-01-09_
  * Refreshed styling
