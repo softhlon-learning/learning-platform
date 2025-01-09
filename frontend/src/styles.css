@@ -48,7 +48,7 @@ body {
 }
 
 button {
-  background-color: var(--light-blue);
+
   border: none;
   border-radius: 8px;
   cursor: pointer;

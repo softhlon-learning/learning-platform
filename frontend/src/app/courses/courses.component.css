@@ -36,8 +36,8 @@ div {
 }
 
 .courses button:hover {
-  color: var(--hover-blue);
-  background-color: var(--light-blue);
+  color: white;
+  background-color: black;
 }
 
 .courses button:active {
@@ -56,8 +56,8 @@ div {
 
 .courses .badge {
   display: inline-block;
-  color: black;
-  background-color: var(--light-blue);
+  color: white;
+  background-color: black;
   line-height: 3em;
   margin-right: .8em;
   border-radius: 8px 0 0 8px;
@@ -66,8 +66,8 @@ div {
 
 .courses .enrolled {
   border: 1px;
-  color: black;
-  background-color:var(--warm-blue);
+  color: white;
+  background-color: black;
   border-radius: 12px 0 12px 0;
   padding-top: 0.3em;
   margin-right: 0.5em;
@@ -78,8 +78,8 @@ div {
 
 .courses .name {
   align-self: center;
-  font-weight: normal;
-  font-size: 22px;
+  font-weight: bold;
+  font-size: 26px;
 }
 
 .courses li button {
