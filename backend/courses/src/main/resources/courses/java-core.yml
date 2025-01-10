@@ -781,7 +781,7 @@ sections:
       - name: Thread Local Variables
       - name: Virtual Threads
       - name: Structured Concurrency Overview
-      - name: Basic Usage of the StructiredTaskScope
+      - name: StructuredTaskScope
       - name: Shutdown Policies
       - name: Your Own StructuredTaskScope Policies
       - name: Debugging StructuredTaskScope
