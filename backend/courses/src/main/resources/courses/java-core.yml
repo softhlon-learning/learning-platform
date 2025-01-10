@@ -585,7 +585,7 @@ sections:
       - name: Introduction to Arrays
       - name: Array Operations
       - name: Arrays Class
-      - name: Introduction to Collection Framework
+      - name: Collection Framework
       - name: List Interface
       - name: List Implementations
       - name: Set Interface
