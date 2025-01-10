@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.4.5
+_release date: 2025-01-10_
+ * Disabled logbook logging
+ * Reading enrolled flag from database
+
 ## 0.4.4
 _release date: 2025-01-10_
  * Added initial chapter to all courses
