@@ -8,7 +8,7 @@ import {Course} from './course';
 @Injectable()
 export class CoursesService {
     courseUrl = '/api/v1/course';
-    enrollmentUrl = '/api/v1/course/enrollment';
+    enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
     httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
@@ -16,6 +16,11 @@ export class CoursesService {
 
     constructor(
         private http: HttpClient) {
+    }
+
+    refreshCourses(): Observable<Course[]> {
+        this.courses$ = this.http.get<Course[]>(this.courseUrl).pipe();
+        return this.courses$;
     }
 
     getCourses(): Observable<Course[]> {
@@ -26,7 +31,7 @@ export class CoursesService {
     }
 
     enrollCourse(course: Course): Observable<ArrayBuffer> {
-        const url = `${this.enrollmentUrl}`;
+        const url = `${this.enrollmentUrl.replace('{courseId}', course.id ?? '')}`;
         const request = new EnrollmentRequest(course.externalId);
         return this.http.post<ArrayBuffer>(url, request, this.httpOptions).pipe();
     }

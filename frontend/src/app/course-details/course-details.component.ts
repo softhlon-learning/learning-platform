@@ -22,6 +22,11 @@ export class CourseDetailsComponent implements OnInit {
         this.getCourse();
     }
 
+    update() {
+        console.log("Updating courses");
+        this.coursesService.refreshCourses().subscribe();
+    }
+
     getCourse(): void {
         const id = this.route.snapshot.paramMap.get('id')!;
         this.coursesService.getCourses()
@@ -39,9 +44,8 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     enrollCourse(): void {
-        const id = parseInt(this.route.snapshot.paramMap.get('code')!);
         this.coursesService.enrollCourse(this.course).subscribe(
-            item => this.ngOnInit()
+            item => this.update()
         );
     }
 }
