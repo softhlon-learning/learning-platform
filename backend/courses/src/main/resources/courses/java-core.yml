@@ -864,3 +864,7 @@ sections:
       - name: Sequence Layout
       - name: Struct Layout
       - name: Wrap Up
+  - name: Performance Tuning
+    chapters:
+      - name: Performance Tuning Overview
+      - name: Wrap Up
