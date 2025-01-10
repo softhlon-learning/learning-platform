@@ -25,6 +25,7 @@ public class EnrollmentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private UUID accountId;
     @ManyToOne
     private CourseEntity course;
     private String status;

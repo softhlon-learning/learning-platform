@@ -46,6 +46,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
           CourseEntity course) {
         return EnrollmentEntity.builder()
               .course(course)
+              .accountId(request.accountId())
               .status(request.status())
               .content(course.getContent())
               .enrolledTime(request.enrolledTime())
