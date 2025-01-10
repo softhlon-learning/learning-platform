@@ -899,3 +899,19 @@ sections:
       - name: Session Recording
       - name: Profilling with JMC
       - name: Wrap Up
+  - name: Preview and Incubator Features
+    chapters:
+      - name: Java Development Process
+      - name: Java Enhancemt Proposals
+      - name: Preview Features
+      - name: Icubator Features
+      - name: Wrap Up
+      - name: Project Amber
+      - name: Amber Preview Features
+      - name: Project Loom
+      - name: Loom Preview Features
+      - name: Project Panama
+      - name: Panama Preview Features
+      - name: Project Valhalla
+      - name: Valhalla Preview Features
+      - name: Wrap Up
