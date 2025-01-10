@@ -747,8 +747,8 @@ sections:
       - name: Wrap Up
   - name: Data-Oriented Programming
     chapters:
-      - name: Data-Oriented Programming Introduction
-      - name: Class Objects
+      - name: Data-Oriented Programming Intro
+      - name: Wrap Up
   - name: Concurrency
     chapters:
       - name: Threads
@@ -858,7 +858,7 @@ sections:
       - name: Foreign Memory API
       - name: Foreign Linker API
       - name: Arena and MemorySegment Oveview
-      - name: Allocating Arrays into Memory Segments
+      - name: Arrays into Memory Segments
       - name: Addresses
       - name: Working with SequenceLayout
       - name: Sequence Layout
