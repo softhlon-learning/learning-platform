@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.5.3
+_release date: 2025-01-10_
+ * Calling /api/v1/course/{courseId}/enrollment by frontend
+
 ## 0.5.2
 _release date: 2025-01-10_
  * Added maintenance page to nginx
