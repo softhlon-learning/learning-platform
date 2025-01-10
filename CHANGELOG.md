@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.4.9
+_release date: 2025-01-10_
+ * Added CheckCourseRepository and its adapter
+ * Implemented EnrollCourseServiceImpl (first draft)
+
 ## 0.4.8
 _release date: 2025-01-10_
  * Removed SSL cert and key
