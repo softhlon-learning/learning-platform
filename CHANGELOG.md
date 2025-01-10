@@ -3,7 +3,7 @@
 ## 0.5.5
 _release date: 2025-01-10_
  * Added CheckEnrollmentRepository
- * mplemented CheckEnrollmentRepositoryAdapter
+ * Implemented CheckEnrollmentRepositoryAdapter
 
 ## 0.5.4
 _release date: 2025-01-10_
