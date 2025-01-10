@@ -24,7 +24,9 @@ export class CourseDetailsComponent implements OnInit {
 
     update() {
         console.log("Updating courses");
-        this.coursesService.refreshCourses().subscribe();
+        this.coursesService.refreshCourses().subscribe(
+            item => this.getCourse()
+        );
     }
 
     getCourse(): void {
