@@ -837,3 +837,17 @@ sections:
       - name: Messages
       - name: Messages with Plural Forms
       - name: Wrap Up
+  - name: JDBC
+    chapters:
+      - name: JDBC Overview
+      - name: Setting Up PostgreSQL Server
+      - name: Establishing Connection
+      - name: Creating Statements
+      - name: Executing Query
+      - name: ResultSet Class
+      - name: Closing Connection
+      - name: SQL Exceptions
+      - name: Prepared Statements
+      - name: Transactions
+      - name: RowSet Objects
+      - name: Wrap Up
