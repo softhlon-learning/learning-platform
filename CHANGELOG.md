@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.4.2
+_release date: 2025-01-10_
+ * Updated TOC for java course (Reflection)
+ * Updated TOC for java course (Data-Oriented Programming)
+ * Updated TOC for java course (Concurrency)
+ * Replaced dashboard by courses
+
 ## 0.4.1
 _release date: 2025-01-10_
  * Removed duplicate call to /api/v1/account endpoint
