@@ -783,7 +783,7 @@ sections:
       - name: Structured Concurrency Overview
       - name: StructuredTaskScope
       - name: Shutdown Policies
-      - name: Your Own StructuredTaskScope Policies
+      - name: Your Own Policies
       - name: Debugging StructuredTaskScope
       - name: Wrap Up
   - name: Math Operations
