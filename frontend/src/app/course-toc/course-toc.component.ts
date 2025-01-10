@@ -6,10 +6,10 @@ import {CourseContent} from "../course-content/course-content";
 
 @Component({
     selector: 'course-toc',
-    templateUrl: './course-details.component.html',
-    styleUrls: ['./course-details.component.css']
+    templateUrl: './course-toc.component.html',
+    styleUrls: ['./course-toc.component.css']
 })
-export class CourseDetailsComponent implements OnInit {
+export class CourseTocComponent implements OnInit {
     course: Course = {};
     courseContent: CourseContent | undefined;
 
