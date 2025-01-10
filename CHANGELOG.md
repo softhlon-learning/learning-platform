@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.4.3
+_release date: 2025-01-10_
+ * Updated TOC for java course (Math Operations)
+ * Updated TOC for java course (Regular Expressions)
+ * Updated TOC for java course (Networking)
+ * Updated TOC for java course (Internationalization)
+ * Updated TOC for java course (JDBC)
+
 ## 0.4.2
 _release date: 2025-01-10_
  * Updated TOC for java course (Reflection)
