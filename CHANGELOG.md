@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.5.2
+_release date: 2025-01-10_
+ * Added maintenance page to nginx
+
 ## 0.5.1
 _release date: 2025-01-10_
  * Add UNIQUE constraint on account_id and course_id pair in enrollments table
