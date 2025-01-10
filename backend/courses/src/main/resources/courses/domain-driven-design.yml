@@ -5,4 +5,12 @@ name: Domain Driven Design Course
 description: Domain Driven Design Course Description
 version: 1.0.0
 sections:
-  - name: Getting Started
+  - name: Introduction
+    chapters:
+      - name: Welcome to the Course
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
