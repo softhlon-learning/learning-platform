@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.5.0
+_release date: 2025-01-10_
+ * Integrated EnrollCourseController with service
+ * Added NOT NULL constraints for foreign keys
+ * Improvements for 'Enroll Course' backend functionality
+
 ## 0.4.9
 _release date: 2025-01-10_
  * Added CheckCourseRepository and its adapter
