@@ -823,3 +823,17 @@ sections:
       - name: UDP Client-Server
       - name: Broadcasting
       - name: Wrap Up
+  - name: Internationalization
+    chapters:
+      - name: Internationalization Overview
+      - name: Before Internationalization
+      - name: After Internationalization
+      - name: Locale
+      - name: ResourceBundle Class
+      - name: ListResourceBundle Class
+      - name: Numbers and Currencies
+      - name: Dates and Times
+      - name: Customizing Dates and Times
+      - name: Messages
+      - name: Messages with Plural Forms
+      - name: Wrap Up
