@@ -747,7 +747,7 @@ sections:
       - name: Wrap Up
   - name: Data-Oriented Programming
     chapters:
-      - name: Data-Oriented Programming Introductionq
+      - name: Data-Oriented Programming Introduction
       - name: Class Objects
   - name: Concurrency
     chapters:
@@ -783,7 +783,7 @@ sections:
       - name: Structured Concurrency Overview
       - name: Basic Usage of the StructiredTaskScope
       - name: Shutdown Policies
-      - name: Implementing Your Own StructuredTaskScope Policies
+      - name: Your Own StructuredTaskScope Policies
       - name: Debugging StructuredTaskScope
       - name: Wrap Up
   - name: Math Operations
