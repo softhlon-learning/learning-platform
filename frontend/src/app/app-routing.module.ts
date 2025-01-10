@@ -6,8 +6,8 @@ import {CourseDetailsComponent} from './course-details/course-details.component'
 import {CourseProgressComponent} from "./course-progress/course-progress.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: CoursesComponent},
+  {path: '', redirectTo: '/courses', pathMatch: 'full'},
+  {path: 'courses', component: CoursesComponent},
   {path: 'course/:id', component: CourseDetailsComponent},
   {path: 'course/:id/progress', component: CourseProgressComponent}
 ];
