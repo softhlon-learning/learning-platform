@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.4.7
+_release date: 2025-01-10_
+ * Shortened to long names in Java course TOC
+ * Enabled virtual threads
+ * Removed unused List/Load enrollment(s) functionality
+ * Reformatted frontend code
+
 ## 0.4.6
 _release date: 2025-01-10_
  * Updated TOC for java course (External Libraries)
