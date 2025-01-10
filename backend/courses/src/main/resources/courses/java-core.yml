@@ -797,3 +797,14 @@ sections:
       - name: BigInteger Class
       - name: BigDecimal Class
       - name: Wrap Up
+  - name: Regular Expressions
+    chapters:
+      - name: Regular Expressions Overview
+      - name: String Literals
+      - name: Character Classes
+      - name: Predefined Character Classes
+      - name: Capturing Groups
+      - name: Pattern Class
+      - name: PatternSyntaxException Class
+      - name: Unicode Support
+      - name: Wrap Up
