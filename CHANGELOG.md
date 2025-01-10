@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.5.4
+_release date: 2025-01-10_
+ * Renamed courses-details to courses-toc
+ * Added Unenroll button with backend call
+
 ## 0.5.3
 _release date: 2025-01-10_
  * Calling /api/v1/course/{courseId}/enrollment by frontend
