@@ -5,16 +5,25 @@
 
 package io.softhlon.learning.courses.infrastructure;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.UUID;
+import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import io.softhlon.learning.courses.domain.CheckEnrollmentRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Repository
-interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
-    boolean existsByAccountIdAndCourseId(UUID accountId, UUID courseId);
+@Slf4j
+@Service
+@PersistenceAdapter
+@RequiredArgsConstructor
+class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
+    private final EnrollmentsJpaRepository enrollmentsRepo;
+
+    @Override
+    public CheckEnrollmentResult execute(CheckEnrollmentRequest request) {
+        return null;
+    }
 }

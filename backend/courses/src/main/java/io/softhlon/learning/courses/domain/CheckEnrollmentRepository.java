@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.infrastructure;
+package io.softhlon.learning.courses.domain;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
 
@@ -14,7 +14,16 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Repository
-interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
-    boolean existsByAccountIdAndCourseId(UUID accountId, UUID courseId);
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
+public interface CheckEnrollmentRepository {
+    CheckEnrollmentResult execute(CheckEnrollmentRequest request);
+
+    record CheckEnrollmentRequest(UUID id) {}
+    sealed interface CheckEnrollmentResult {
+        record EnrollmentExists() implements CheckEnrollmentResult {}
+        record EnrollmentNotFound() implements CheckEnrollmentResult {}
+        record CheckEnrollmentFailed(Throwable cause) implements CheckEnrollmentResult {}
+    }
 }
