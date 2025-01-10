@@ -8,9 +8,7 @@ package io.softhlon.learning.courses.infrastructure;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -23,6 +21,8 @@ import java.util.UUID;
 @Setter
 @Builder
 @Entity(name = "enrollments")
+@AllArgsConstructor
+@NoArgsConstructor
 public class EnrollmentEntity {
     @Id
     private UUID id;

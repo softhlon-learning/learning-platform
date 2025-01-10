@@ -56,6 +56,6 @@ class ListCoursesServiceImpl implements ListCoursesService {
               course.name(),
               course.description(),
               course.content(),
-              true);
+              course.enrolled());
     }
 }

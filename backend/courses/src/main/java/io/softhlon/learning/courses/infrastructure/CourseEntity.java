@@ -7,6 +7,7 @@ package io.softhlon.learning.courses.infrastructure;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 
 import java.util.UUID;
@@ -30,4 +31,6 @@ class CourseEntity {
     private String description;
     private String content;
     private String version;
+    @OneToOne(mappedBy = "course")
+    private EnrollmentEntity enrollment;
 }

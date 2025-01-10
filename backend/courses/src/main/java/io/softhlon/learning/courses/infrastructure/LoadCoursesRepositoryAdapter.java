@@ -52,7 +52,8 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
               entity.getName(),
               entity.getDescription(),
               entity.getContent(),
-              entity.getVersion()
+              entity.getVersion(),
+              entity.getEnrollment() != null ? true : false
         );
     }
 }
