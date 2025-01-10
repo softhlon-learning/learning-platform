@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {CoursesComponent} from './courses/courses.component';
-import {CourseDetailsComponent} from './course-details/course-details.component';
+import {CourseDetailsComponent} from './course-toc/course-details.component';
 import {CourseProgressComponent} from "./course-progress/course-progress.component";
 
 const routes: Routes = [

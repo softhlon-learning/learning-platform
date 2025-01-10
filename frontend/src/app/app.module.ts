@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {CoursesComponent} from './courses/courses.component';
 import {CoursesService} from "./courses/courses.service";
 import {HttpClientModule} from "@angular/common/http";
-import {CourseDetailsComponent} from "./course-details/course-details.component";
+import {CourseDetailsComponent} from "./course-toc/course-details.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseProgressComponent} from "./course-progress/course-progress.component";
 import {VideoItemComponent} from "./video-item/video-item.component";
