@@ -745,3 +745,7 @@ sections:
       - name: Arrays
       - name: Enumerated Types
       - name: Wrap Up
+  - name: Data-Oriented Programming
+    chapters:
+      - name: Data-Oriented Programming Introductionq
+      - name: Class Objects
