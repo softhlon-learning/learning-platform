@@ -49,4 +49,10 @@ export class CourseTocComponent implements OnInit {
             item => this.update()
         );
     }
+
+    unenrollCourse(): void {
+        this.coursesService.unenrollCourse(this.course).subscribe(
+            item => this.update()
+        );
+    }
 }

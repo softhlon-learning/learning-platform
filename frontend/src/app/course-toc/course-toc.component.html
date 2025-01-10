@@ -1,6 +1,7 @@
 <span class="main">
   <div>
     <button (click)="this.enrollCourse()" *ngIf="!course.enrolled">Enroll</button>
+    <button (click)="this.unenrollCourse()" *ngIf="course.enrolled">Unenroll</button>
     <button *ngIf="course.enrolled" routerLink="/course/{{course.code}}/progress">Resume</button>
     <button [routerLink]="['/courses']">Back</button>
   </div>
