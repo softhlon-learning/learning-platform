@@ -32,9 +32,9 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
 
     @Override
     public Result enroll(Request request) {
-        var accountExists = checkCourseRepository.execute(new CheckCourseRequest(request.accountId()));
+        var courseExists = checkCourseRepository.execute(new CheckCourseRequest(request.courseId()));
 
-        return switch (accountExists) {
+        return switch (courseExists) {
             case CourseExists() -> persistEnrollment(request);
             case CourseNotFound() -> new CourseNotFoundFailed("Course not found");
             case CheckCourseFailed checkCourseFailed -> null;

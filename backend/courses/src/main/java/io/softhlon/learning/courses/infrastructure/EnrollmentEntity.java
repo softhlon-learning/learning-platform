@@ -5,9 +5,7 @@
 
 package io.softhlon.learning.courses.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
@@ -25,6 +23,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class EnrollmentEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @ManyToOne
     private CourseEntity course;
