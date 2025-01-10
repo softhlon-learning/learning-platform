@@ -20,7 +20,7 @@ import java.util.UUID;
 public interface CheckEnrollmentRepository {
     CheckEnrollmentResult execute(CheckEnrollmentRequest request);
 
-    record CheckEnrollmentRequest(UUID id) {}
+    record CheckEnrollmentRequest(UUID accountId, UUID courseId) {}
     sealed interface CheckEnrollmentResult {
         record EnrollmentExists() implements CheckEnrollmentResult {}
         record EnrollmentNotFound() implements CheckEnrollmentResult {}

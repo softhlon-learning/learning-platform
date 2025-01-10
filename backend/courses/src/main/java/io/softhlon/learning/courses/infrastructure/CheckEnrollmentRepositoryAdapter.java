@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import static io.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.*;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -24,6 +26,13 @@ class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
 
     @Override
     public CheckEnrollmentResult execute(CheckEnrollmentRequest request) {
-        return null;
+        try {
+            return enrollmentsRepo.existsByAccountIdAndCourseId(request.accountId(), request.courseId())
+                  ? new EnrollmentExists()
+                  : new EnrollmentNotFound();
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new CheckEnrollmentFailed(cause);
+        }
     }
 }
