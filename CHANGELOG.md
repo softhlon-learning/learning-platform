@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.5.1
+_release date: 2025-01-10_
+ * Add UNIQUE constraint on account_id and course_id pair in enrollments table
+ * Upgrade to Angular 17.3.0
+
 ## 0.5.0
 _release date: 2025-01-10_
  * Integrated EnrollCourseController with service
