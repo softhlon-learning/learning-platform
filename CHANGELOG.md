@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.4.8
+_release date: 2025-01-10_
+ * Removed SSL cert and key
+ * Removed .editorconfig
+ * Reformatted frontend code with 4 space indentation
+
 ## 0.4.7
 _release date: 2025-01-10_
  * Shortened to long names in Java course TOC
