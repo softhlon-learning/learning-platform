@@ -851,3 +851,16 @@ sections:
       - name: Transactions
       - name: RowSet Objects
       - name: Wrap Up
+  - name: Foreign Memory API
+    chapters:
+      - name: Foreign Function & Memory (FFM) API
+      - name: FFM Architecture Overview
+      - name: Foreign Memory API
+      - name: Foreign Linker API
+      - name: Arena and MemorySegment Oveview
+      - name: Allocating Arrays into Memory Segments
+      - name: Addresses
+      - name: Working with SequenceLayout
+      - name: Sequence Layout
+      - name: Struct Layout
+      - name: Wrap Up
