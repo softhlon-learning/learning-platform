@@ -786,3 +786,14 @@ sections:
       - name: Implementing Your Own StructuredTaskScope Policies
       - name: Debugging StructuredTaskScope
       - name: Wrap Up
+  - name: Math Operations
+    chapters:
+      - name: Math Operation Overview
+      - name: Absolute Value
+      - name: Min and Max
+      - name: Square Root and Exponentiation
+      - name: Rounding, Floor, and Ceiling
+      - name: Trigonometric Functions
+      - name: BigInteger Class
+      - name: BigDecimal Class
+      - name: Wrap Up
