@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.4.4
+_release date: 2025-01-10_
+ * Added initial chapter to all courses
+ * Updated TOC for java course (Foreign Memory API)
+ * Updated TOC for java course (Performance Tuning)
+
 ## 0.4.3
 _release date: 2025-01-10_
  * Updated TOC for java course (Math Operations)
