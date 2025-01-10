@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.4.6
+_release date: 2025-01-10_
+ * Updated TOC for java course (External Libraries)
+ * Updated TOC for java course (Monitoring and Troubleshooting)
+ * Updated TOC for java course (Preview and Incubator Features)
+
 ## 0.4.5
 _release date: 2025-01-10_
  * Disabled logbook logging
