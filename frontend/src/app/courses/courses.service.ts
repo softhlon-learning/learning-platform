@@ -7,45 +7,45 @@ import {Course} from './course';
 
 @Injectable()
 export class CoursesService {
-  courseUrl = '/api/v1/course';
-  enrollmentUrl = '/api/v1/course/enrollment';
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
-  };
-  private courses$?: Observable<Course[]>;
+    courseUrl = '/api/v1/course';
+    enrollmentUrl = '/api/v1/course/enrollment';
+    httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+    private courses$?: Observable<Course[]>;
 
-  constructor(
-    private http: HttpClient) {
-  }
-
-  getCourses(): Observable<Course[]> {
-    if (!this.courses$) {
-      this.courses$ = this.http.get<Course[]>(this.courseUrl).pipe(shareReplay(1));
+    constructor(
+        private http: HttpClient) {
     }
-    return this.courses$;
-  }
 
-  enrollCourse(course: Course): Observable<ArrayBuffer> {
-    const url = `${this.enrollmentUrl}`;
-    const request = new EnrollmentRequest(course.externalId);
-    return this.http.post<ArrayBuffer>(url, request, this.httpOptions).pipe();
-  }
+    getCourses(): Observable<Course[]> {
+        if (!this.courses$) {
+            this.courses$ = this.http.get<Course[]>(this.courseUrl).pipe(shareReplay(1));
+        }
+        return this.courses$;
+    }
+
+    enrollCourse(course: Course): Observable<ArrayBuffer> {
+        const url = `${this.enrollmentUrl}`;
+        const request = new EnrollmentRequest(course.externalId);
+        return this.http.post<ArrayBuffer>(url, request, this.httpOptions).pipe();
+    }
 }
 
 class EnrollmentRequest {
-  enrollment: Enrollment;
+    enrollment: Enrollment;
 
-  constructor(courseId: string | undefined) {
-    this.enrollment = new Enrollment(courseId);
-  }
+    constructor(courseId: string | undefined) {
+        this.enrollment = new Enrollment(courseId);
+    }
 }
 
 class Enrollment {
-  courseId?: string;
+    courseId?: string;
 
-  constructor(courseId?: string) {
-    this.courseId = courseId;
-  }
+    constructor(courseId?: string) {
+        this.courseId = courseId;
+    }
 }
 
 

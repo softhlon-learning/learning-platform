@@ -1,3 +1,3 @@
 export class QuizAnswer {
-  text: string = '';
+    text: string = '';
 }

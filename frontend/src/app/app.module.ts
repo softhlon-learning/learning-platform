@@ -15,26 +15,26 @@ import {CourseNavigationComponent} from "./course-navigation/course-navigation.c
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CoursesComponent,
-    CourseDetailsComponent,
-    CourseProgressComponent,
-    CourseNavigationComponent,
-    VideoItemComponent,
-    PDFItemComponent,
-    QuizItemComponent,
-    SafePipe
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [
-    CoursesService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CoursesComponent,
+        CourseDetailsComponent,
+        CourseProgressComponent,
+        CourseNavigationComponent,
+        VideoItemComponent,
+        PDFItemComponent,
+        QuizItemComponent,
+        SafePipe
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule
+    ],
+    providers: [
+        CoursesService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

@@ -1,37 +1,37 @@
 .course-content-list {
-  list-style-type: decimal;
-  padding-inline-start: 5px;
+    list-style-type: decimal;
+    padding-inline-start: 5px;
 }
 
 .course-content-list li {
-  font-weight: bold;
-  margin-top: 15px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .course-content-list ul {
-  column-count: 3;
-  column-rule: dotted 1px #333;
-  list-style-type: none;
-  padding-inline-start: 5px;
+    column-count: 3;
+    column-rule: dotted 1px #333;
+    list-style-type: none;
+    padding-inline-start: 5px;
 }
 
 .course-content-list li li {
-  font-weight: normal;
-  margin-top: 0px;
+    font-weight: normal;
+    margin-top: 0px;
 }
 
 .course-content {
-  justify-content: center;
+    justify-content: center;
 }
 
 div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 div button {
-  width: 12em;
+    width: 12em;
 }
 
 

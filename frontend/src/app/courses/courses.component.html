@@ -1,17 +1,17 @@
 <h1>{{ title }}</h1>
 
 <div>
-  <ul class="courses">
-    <li *ngFor="let course of courses">
-      <button routerLink="/course/{{course.code}}" routerLinkActive="active">
+    <ul class="courses">
+        <li *ngFor="let course of courses">
+            <button routerLink="/course/{{course.code}}" routerLinkActive="active">
         <span>
           <span class="badge">{{ course.orderNo }}</span>
           <span class="name">{{ course.name }}</span>
         </span>
-        <span *ngIf="course.enrolled" class="enrolled">Enrolled</span>
-      </button>
-    </li>
-  </ul>
+                <span *ngIf="course.enrolled" class="enrolled">Enrolled</span>
+            </button>
+        </li>
+    </ul>
 </div>
 
 <router-outlet></router-outlet>

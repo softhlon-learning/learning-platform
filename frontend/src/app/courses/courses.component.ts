@@ -3,23 +3,23 @@ import {Course} from "./course";
 import {CoursesService} from './courses.service';
 
 @Component({
-  selector: 'courses',
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+    selector: 'courses',
+    templateUrl: './courses.component.html',
+    styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-  title = 'Softhlon Learning Platform';
-  courses: Course[] = [];
+    title = 'Softhlon Learning Platform';
+    courses: Course[] = [];
 
-  constructor(private coursesService: CoursesService) {
-  }
+    constructor(private coursesService: CoursesService) {
+    }
 
-  ngOnInit() {
-    this.getCourses();
-  }
+    ngOnInit() {
+        this.getCourses();
+    }
 
-  getCourses(): void {
-    this.coursesService.getCourses()
-      .subscribe(courses => (this.courses = courses));
-  }
+    getCourses(): void {
+        this.coursesService.getCourses()
+            .subscribe(courses => (this.courses = courses));
+    }
 }

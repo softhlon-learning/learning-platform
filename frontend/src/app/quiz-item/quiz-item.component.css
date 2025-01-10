@@ -1,21 +1,21 @@
 .quiz {
-  width: 100%;
-  flex-direction: column;
-  display: flex;
-  flex: 1;
-  background-color: white;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    background-color: white;
 }
 
 .quiz-content {
-  display: flex;
-  width: 951px;
-  height: 604px;
-  background-color: var(--very-light-blue);
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    width: 951px;
+    height: 604px;
+    background-color: var(--very-light-blue);
+    justify-content: center;
+    align-items: center;
 }
 
 button {
-  background-color: var(--warm-blue);
-  width: 16em;
+    background-color: var(--warm-blue);
+    width: 16em;
 }

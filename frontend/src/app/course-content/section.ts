@@ -1,6 +1,6 @@
 import {Chapter} from "./chapter";
 
 export class Section {
-  name: string = '';
-  chapters: Chapter[] = [];
+    name: string = '';
+    chapters: Chapter[] = [];
 }

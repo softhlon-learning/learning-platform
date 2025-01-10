@@ -1,6 +1,6 @@
 import {QuizAnswer} from "./quiz-answer";
 
 export class Quiz {
-  name: string = '';
-  questions: Array<QuizAnswer> = [];
+    name: string = '';
+    questions: Array<QuizAnswer> = [];
 }
