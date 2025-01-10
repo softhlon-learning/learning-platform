@@ -5,13 +5,15 @@
 
 package io.softhlon.learning.courses.domain;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnenrollCourseService {
     Result unenroll(Request request);
-    record Request(String accountId, String courseId) {}
+    record Request(UUID accountId, UUID courseId) {}
 
     sealed interface Result {
         record Succeeded() implements Result {}

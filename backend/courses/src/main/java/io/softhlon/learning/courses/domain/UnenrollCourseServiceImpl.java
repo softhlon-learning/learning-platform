@@ -5,13 +5,17 @@
 
 package io.softhlon.learning.courses.domain;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
+@RequiredArgsConstructor
 class UnenrollCourseServiceImpl implements UnenrollCourseService {
     @Override
     public Result unenroll(Request request) {
