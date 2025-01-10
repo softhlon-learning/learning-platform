@@ -40,7 +40,6 @@ export class CourseDetailsComponent implements OnInit {
                         break;
                     }
                 }
-
                 this.courseContent = JSON.parse(atob(<string>this.course.content));
             })
     }
