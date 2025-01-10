@@ -808,3 +808,18 @@ sections:
       - name: PatternSyntaxException Class
       - name: Unicode Support
       - name: Wrap Up
+  - name: Networking
+    chapters:
+      - name: Networking Overview
+      - name: Creating URL
+      - name: Parsing URL
+      - name: Reading from URL
+      - name: Connecting URL
+      - name: URLConnection Class
+      - name: Sockets
+      - name: Reading and Writing to a Socket
+      - name: TCP Client-Server
+      - name: Datagrams (UDP)
+      - name: UDP Client-Server
+      - name: Broadcasting
+      - name: Wrap Up
