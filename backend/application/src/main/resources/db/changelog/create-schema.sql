@@ -25,8 +25,8 @@ CREATE TABLE courses (
 
 CREATE TABLE enrollments (
     id uuid DEFAULT gen_random_uuid(),
-    account_id uuid,
-    course_id uuid,
+    account_id uuid NOT NULL,
+    course_id uuid NOT NULL,
     status VARCHAR NOT NULL,
     content VARCHAR,
     enrolled_time TIMESTAMP,
@@ -45,7 +45,7 @@ CREATE TABLE enrollments (
 
 CREATE TABLE subscriptions (
     id uuid DEFAULT gen_random_uuid(),
-    account_id uuid,
+    account_id uuid NOT NULL,
     status VARCHAR NOT NULL,
     started_time TIMESTAMP,
     cancelled_time TIMESTAMP,
