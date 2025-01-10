@@ -886,3 +886,16 @@ sections:
       - name: HttpClient (Sync API)
       - name: HttpClient (AsyncSync API)
       - name: Wrap Up
+  - name: Monitoring and Troubleshooting
+    chapters:
+      - name: Diagnostic Tools Overview
+      - name: JDK Mission Control
+      - name: JCosole Tool
+      - name: JInfo Tool
+      - name: JCmd Tool
+      - name: Detecting Memory Leaks
+      - name: Detecting High CPU Usage Issues
+      - name: Detecting Thread Allocation Issues
+      - name: Session Recording
+      - name: Profilling with JMC
+      - name: Wrap Up
