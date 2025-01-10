@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.5.5
+_release date: 2025-01-10_
+ * Added CheckEnrollmentRepository
+ * mplemented CheckEnrollmentRepositoryAdapter
+
 ## 0.5.4
 _release date: 2025-01-10_
  * Renamed courses-details to courses-toc
