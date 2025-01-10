@@ -35,6 +35,7 @@ CREATE TABLE enrollments (
     created_time TIMESTAMP DEFAULT current_timestamp,
     updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),
+    UNIQUE(account_id, course_id),
     CONSTRAINT fk_enrollments_accounts
          FOREIGN KEY (account_id)
          REFERENCES accounts (id),
