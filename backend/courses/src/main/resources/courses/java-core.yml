@@ -868,3 +868,21 @@ sections:
     chapters:
       - name: Performance Tuning Overview
       - name: Wrap Up
+  - name: External Libraries
+    chapters:
+      - name: Lombok Overview
+      - name: Lombok Annotations
+      - name: Apache Commons Lang
+      - name: Apache Commons Collections
+      - name: Apache Commons IO
+      - name: Apache Commons Validator
+      - name: Guava Overview
+      - name: Guava Common Use Cases
+      - name: Log5j Overview
+      - name: Log5j Usage
+      - name: Gson Overview
+      - name: Gson Common Use Cases
+      - name: Apache HttpComponents Overview
+      - name: HttpClient (Sync API)
+      - name: HttpClient (AsyncSync API)
+      - name: Wrap Up
