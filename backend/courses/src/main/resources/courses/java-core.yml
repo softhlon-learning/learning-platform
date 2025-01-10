@@ -733,3 +733,15 @@ sections:
       - name: Finding Files
       - name: Watching Directory for Change
       - name: Wrap Up
+  - name: Reflection
+    chapters:
+      - name: Reflection Overview
+      - name: Class Objects
+      - name: Examining Class Modifiers and Types
+      - name: Discovering Class Members
+      - name: Fields
+      - name: Methods
+      - name: Constructors
+      - name: Arrays
+      - name: Enumerated Types
+      - name: Wrap Up
