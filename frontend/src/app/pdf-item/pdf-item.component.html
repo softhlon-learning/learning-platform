@@ -1,4 +1,5 @@
 <div *ngIf="navigationItems.currentItem">
-  <object width="950" height="590" [data]="'https://storage.googleapis.com/' + navigationItems.currentItem.id | safe"></object>
-  <course-navigation  [progress] = "this.progress" [navigationItems]="navigationItems"/>
+  <object [data]="'https://storage.googleapis.com/' + navigationItems.currentItem.id | safe" height="590"
+          width="950"></object>
+  <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"/>
 </div>

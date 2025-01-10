@@ -7,4 +7,5 @@ import {Component, enableProdMode} from '@angular/core';
 })
 export class AppComponent {
 }
+
 enableProdMode();

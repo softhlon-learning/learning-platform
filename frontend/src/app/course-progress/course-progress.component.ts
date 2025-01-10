@@ -45,7 +45,7 @@ export class CourseProgressComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.coursesService.getCourses()
       .subscribe(courses => {
-        for (let i = 0; i < courses.length ; i++) {
+        for (let i = 0; i < courses.length; i++) {
           let course = courses[i];
           if (course.code === id) {
             this.course = course;
@@ -186,7 +186,7 @@ export class CourseProgressComponent implements OnInit {
     selectedItem.chapter.processed = true;
   }
 
-  courseProgress (): number {
+  courseProgress(): number {
     let allItemsCount: number = 0;
     let processedItemsCount: number = 0;
     if (this.courseContent != null) {
@@ -199,6 +199,6 @@ export class CourseProgressComponent implements OnInit {
             }
     }
 
-    return Math.round(processedItemsCount/allItemsCount * 100);
+    return Math.round(processedItemsCount / allItemsCount * 100);
   }
 }

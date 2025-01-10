@@ -1,4 +1,3 @@
-import {Chapter} from "./chapter";
 import {Section} from "./section";
 
 export class CourseContent {

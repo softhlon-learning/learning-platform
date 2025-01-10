@@ -1,34 +1,34 @@
-<span class="main" (keydown.enter)="this.next()">
+<span (keydown.enter)="this.next()" class="main">
   <div>
     <button routerLink="/reset">Reset</button>
     <button routerLink="/course/{{course.code}}">Back</button>
   </div>
 
-  <h2>{{course.name}}</h2>
+  <h2>{{ course.name }}</h2>
 
   <div class="progress">
-    <span>Progress: <span>{{this.courseProgress()}}%</span></span>
+    <span>Progress: <span>{{ this.courseProgress() }}%</span></span>
   </div>
 
   <div class="course-content">
     <ul class="course-content-list">
       <li *ngFor="let section of courseContent?.sections">
         <span>
-          <span class="course-chapter-items">{{section.name}}</span>
+          <span class="course-chapter-items">{{ section.name }}</span>
         </span>
         <ul class="courses">
           <li *ngFor="let chapter of section.chapters">
             <label class="checkbox">
-              <input class="course-checked" type="checkbox" [disabled]="true" [checked]="chapter.processed"/>
-              <span class="course-chapter-items">{{chapter.name}}</span>
+              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+              <span class="course-chapter-items">{{ chapter.name }}</span>
             </label>
             <ul class="course-chapter-items">
-              <li [id]="item.id" *ngFor="let item of chapter.items" class="{{this.getClass(item)}}"
-                  (click)="this.setItem(item)">
+              <li (click)="this.setItem(item)" *ngFor="let item of chapter.items" [id]="item.id"
+                  class="{{this.getClass(item)}}">
                 <label class="checkbox">
-                  <input class="course-checked" type="checkbox" [disabled]="true" [checked]="item.processed"/>
-                  <span class="name">{{item.name}}</span>
-                  <span *ngIf="item.time" class="name">({{item.time}})</span>
+                  <input [checked]="item.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+                  <span class="name">{{ item.name }}</span>
+                  <span *ngIf="item.time" class="name">({{ item.time }})</span>
                 </label>
               </li>
             </ul>
@@ -38,16 +38,16 @@
     </ul>
     <div class="course-item">
       <video-item *ngIf="navigationItems.currentItem.name == 'Video'"
-        [progress]="this"
-        [navigationItems]="navigationItems">
+                  [navigationItems]="navigationItems"
+                  [progress]="this">
       </video-item>
       <pdf-item *ngIf="navigationItems.currentItem.name == 'PDF'"
-        [progress]="this"
-        [navigationItems]="navigationItems">
+                [navigationItems]="navigationItems"
+                [progress]="this">
       </pdf-item>
       <quiz-item *ngIf="navigationItems.currentItem.name == 'Quiz'"
-        [progress]="this"
-        [navigationItems]="navigationItems">
+                 [navigationItems]="navigationItems"
+                 [progress]="this">
       </quiz-item>
     </div>
   </div>

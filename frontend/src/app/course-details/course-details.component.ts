@@ -26,8 +26,8 @@ export class CourseDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.coursesService.getCourses()
       .subscribe(courses => {
-        for (let i = 0; i < courses.length ; i++) {
-        let course = courses[i];
+        for (let i = 0; i < courses.length; i++) {
+          let course = courses[i];
           if (course.code === id) {
             this.course = course;
             break;

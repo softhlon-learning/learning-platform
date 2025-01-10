@@ -9,7 +9,7 @@ import {CourseProgressComponent} from "../course-progress/course-progress.compon
   styleUrls: ['./video-item.component.css']
 })
 export class VideoItemComponent implements OnInit {
-  @ViewChild('video')video?:ElementRef;
+  @ViewChild('video') video?: ElementRef;
 
   @Input()
   navigationItems: NavigationItems = new NavigationItems();
@@ -25,8 +25,8 @@ export class VideoItemComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-      if (this.video != null) {
-        this.video.nativeElement.load();
-      }
+    if (this.video != null) {
+      this.video.nativeElement.load();
+    }
   }
 }

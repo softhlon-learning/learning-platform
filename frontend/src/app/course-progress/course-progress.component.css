@@ -45,7 +45,7 @@ li li li:hover {
 
 .progress {
   display: flex;
-  flex:1;
+  flex: 1;
   justify-content: flex-end;
 }
 

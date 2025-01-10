@@ -7,13 +7,12 @@ import {Course} from './course';
 
 @Injectable()
 export class CoursesService {
-  private courses$?: Observable<Course[]>;
   courseUrl = '/api/v1/course';
   enrollmentUrl = '/api/v1/course/enrollment';
-
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
+  private courses$?: Observable<Course[]>;
 
   constructor(
     private http: HttpClient) {

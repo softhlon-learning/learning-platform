@@ -1,23 +1,23 @@
 <span class="main">
   <div>
-    <button *ngIf="!course.enrolled" (click)="this.enrollCourse()">Enroll</button>
+    <button (click)="this.enrollCourse()" *ngIf="!course.enrolled">Enroll</button>
     <button *ngIf="course.enrolled" routerLink="/course/{{course.code}}/progress">Resume</button>
     <button [routerLink]="['/courses']">Back</button>
   </div>
 
-  <h2>{{course.name}} - Table of Content</h2>
+  <h2>{{ course.name }} - Table of Content</h2>
 
   <div class="course-content">
     <ul class="course-content-list">
       <li *ngFor="let section of courseContent?.sections">
       <span>
-        <span class="name">{{section.name}}</span>
+        <span class="name">{{ section.name }}</span>
       </span>
         <ul class="courses">
           <li *ngFor="let chapter of section.chapters">
             <label class="checkbox">
-              <input class="course-checked" type="checkbox" [disabled]="true" [checked]="chapter.processed"/>
-              <span class="name">{{chapter.name}}</span>
+              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+              <span class="name">{{ chapter.name }}</span>
             </label>
           </li>
         </ul>
