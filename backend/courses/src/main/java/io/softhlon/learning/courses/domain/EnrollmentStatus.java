@@ -5,24 +5,11 @@
 
 package io.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.common.hexagonal.InboundPort;
-
-import java.util.UUID;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@InboundPort
-@FunctionalInterface
-public interface EnrollCourseService {
-    Result enroll(Request request);
-
-    record Request(UUID accountId, UUID courseId) {}
-    sealed interface Result {
-        record Succeeded() implements Result {}
-        record AccountNotSubscribedFailed(String message) implements Result {}
-        record CourseNotFoundFailed(String message) implements Result {}
-        record Failed(Throwable cause) implements Result {}
-    }
+enum EnrollmentStatus {
+    ACTIVE,
+    DELETED;
 }

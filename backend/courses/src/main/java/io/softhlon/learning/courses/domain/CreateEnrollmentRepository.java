@@ -24,11 +24,8 @@ public interface CreateEnrollmentRepository {
     record CreateEnrollmentRequest(
           UUID courseId,
           UUID accountId,
-          String content,
           String status,
-          OffsetDateTime enrolledTime,
-          OffsetDateTime unenrolledTime,
-          OffsetDateTime completedTime) {}
+          OffsetDateTime enrolledTime) {}
 
     sealed interface CreateEnrollmentResult {
         record EnrollmentPersisted(UUID uuid) implements CreateEnrollmentResult {}
