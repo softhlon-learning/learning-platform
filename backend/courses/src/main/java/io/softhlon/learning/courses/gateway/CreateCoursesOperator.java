@@ -74,7 +74,8 @@ public class CreateCoursesOperator {
           String description,
           String version) {}
 
-    private Request prepareRequest(CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
+    private Request prepareRequest(
+          CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
         return new Request(
               courseDefinition.id(),
               courseDefinition.code(),
@@ -91,9 +92,9 @@ public class CreateCoursesOperator {
     }
 
     private byte[] convertToJson(String yamlString) throws JsonProcessingException {
-        ObjectMapper yamlMapper = new ObjectMapper(new YAMLFactory());
-        JsonNode jsonNode = yamlMapper.readTree(yamlString);
-        ObjectMapper jsonMapper = new ObjectMapper();
+        var yamlMapper = new ObjectMapper(new YAMLFactory());
+        var jsonNode = yamlMapper.readTree(yamlString);
+        var jsonMapper = new ObjectMapper();
         return jsonMapper.writeValueAsString(jsonNode).getBytes();
     }
 }
