@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.5.6
+_release date: 2025-01-11_
+ * Removed MessageListenerAdapter
+ * Created DeleteEnrollmentRepository and its empty adapter
+
 ## 0.5.5
 _release date: 2025-01-10_
  * Added CheckEnrollmentRepository
