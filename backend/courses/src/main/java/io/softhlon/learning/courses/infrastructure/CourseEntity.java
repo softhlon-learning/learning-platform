@@ -5,6 +5,7 @@
 
 package io.softhlon.learning.courses.infrastructure;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -31,6 +32,9 @@ class CourseEntity {
     private String description;
     private String content;
     private String version;
-    @OneToOne(mappedBy = "course")
+    @OneToOne(
+          mappedBy = "course",
+          orphanRemoval = true,
+          cascade = CascadeType.ALL)
     private EnrollmentEntity enrollment;
 }

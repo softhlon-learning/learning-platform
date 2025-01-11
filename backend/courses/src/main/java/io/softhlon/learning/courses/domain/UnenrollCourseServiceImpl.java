@@ -8,6 +8,7 @@ package io.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import static io.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentRequest;
 import static io.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.*;
@@ -22,6 +23,7 @@ import static io.softhlon.learning.courses.domain.UnenrollCourseService.Result.*
 
 @Slf4j
 @Service
+@Transactional
 @RequiredArgsConstructor
 class UnenrollCourseServiceImpl implements UnenrollCourseService {
     private final CheckEnrollmentRepository checkEnrollmentRepository;

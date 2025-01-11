@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
+import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -20,8 +23,20 @@ import org.springframework.stereotype.Service;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
+    private final EnrollmentsJpaRepository enrollmentsRepo;
+
     @Override
     public DeleteEnrollmentResult execute(DeleteEnrollmentRequest request) {
-        return null;
+        try {
+            var entity = enrollmentsRepo.findByAccountIdAndCourseId(
+                        request.accountId(),
+                        request.courseId())
+                  .get();
+            enrollmentsRepo.delete(entity);
+            return new EnrollmentDeleted();
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new EnrollementDeletionFailed(cause);
+        }
     }
 }
