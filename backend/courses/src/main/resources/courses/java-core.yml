@@ -33,7 +33,7 @@ sections:
             id: ultimate-java-course/intro/Summary.pdf
   - name: Getting Started
     chapters:
-      - name: Introduction to the Java
+      - name: Introduction to Java
         processed: true
         items:
           - name: Video

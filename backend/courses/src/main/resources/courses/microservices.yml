@@ -14,3 +14,29 @@ sections:
             time: 2m5s
             id: ultimate-java-course/intro/Introduction.mp4?v1
             processed: true
+      - name: Prerequisites
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+      - name: Course Structure
+        processed: true
+        items:
+          - name: Video
+            time: 2m5s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
+          - name: PDF
+            processed: true
+            id: ultimate-java-course/intro/Summary.pdf
+  - name: Getting Started
+    chapters:
+      - name: Introduction to Microservices
+        processed: true
+        items:
+          - name: Video
+            time: 3m15s
+            id: ultimate-java-course/intro/Introduction.mp4?v1
+            processed: true
