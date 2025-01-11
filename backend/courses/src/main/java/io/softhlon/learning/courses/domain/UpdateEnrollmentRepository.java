@@ -27,8 +27,6 @@ public interface UpdateEnrollmentRepository {
           UUID courseId,
           String status,
           String content,
-          OffsetDateTime enrolledTime,
-          OffsetDateTime unenrolledTime,
           OffsetDateTime completedTime) {}
 
     sealed interface UpdateEnrollmentResult {

@@ -31,6 +31,5 @@ public class EnrollmentEntity {
     private String status;
     private String content;
     private OffsetDateTime enrolledTime;
-    private OffsetDateTime unenrolledTime;
     private OffsetDateTime completedTime;
 }

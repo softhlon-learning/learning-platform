@@ -30,7 +30,6 @@ CREATE TABLE enrollments (
     status VARCHAR NOT NULL,
     content VARCHAR,
     enrolled_time TIMESTAMP,
-    unenrolled_time TIMESTAMP,
     completed_time TIMESTAMP,
     created_time TIMESTAMP DEFAULT current_timestamp,
     updated_time TIMESTAMP DEFAULT current_timestamp,
