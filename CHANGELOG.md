@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.6.3
+_release date: 2025-01-11_
+ * Update Introduction and Getting Started sections to all courses
+
 ## 0.6.2
 _release date: 2025-01-11_
  * First, simple performance tests with Apache Benchmark
