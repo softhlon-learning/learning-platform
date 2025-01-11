@@ -26,7 +26,9 @@ public class EnrollmentEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID accountId;
-    @ManyToOne
+    @OneToOne(
+          orphanRemoval = true,
+          cascade = CascadeType.ALL)
     private CourseEntity course;
     private String status;
     private String content;
