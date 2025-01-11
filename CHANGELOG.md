@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.6.4
+_release date: 2025-01-11_
+ * Analyzed Hetzner servers and storage offer
+
 ## 0.6.3
 _release date: 2025-01-11_
  * Update Introduction and Getting Started sections to all courses
