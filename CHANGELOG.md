@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.6.6
+_release date: 2025-01-11_
+ * Installed new Hetzner server
+
 ## 0.6.5
 _release date: 2025-01-11_
  * Created Hetzner account and ordered new server
