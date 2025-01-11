@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.6.1
+_release date: 2025-01-11_
+ * Removed unenrolled_time from enrollments table
+ * Enabled gzip content encoding (backend)
+
 ## 0.6.0
 _release date: 2025-01-11_
  * Fixed 'Unenroll Course' persistence
