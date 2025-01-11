@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.6.2
+_release date: 2025-01-11_
+ * First, simple performance tests with Apache Benchmark
+
 ## 0.6.1
 _release date: 2025-01-11_
  * Removed unenrolled_time from enrollments table
