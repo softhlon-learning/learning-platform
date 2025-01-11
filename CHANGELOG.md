@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.5.7
+_release date: 2025-01-11_
+ * Added and configured rate limiter to nginx
+
 ## 0.5.6
 _release date: 2025-01-11_
  * Removed MessageListenerAdapter
