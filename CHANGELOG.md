@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.6.0
+_release date: 2025-01-11_
+ * Fixed 'Unenroll Course' persistence
+
 ## 0.5.9
 _release date: 2025-01-11_
  * Fixed DeleteEnrollmentRepositoryAdapter
