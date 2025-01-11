@@ -1,12 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../courses/course";
 import {CoursesService} from '../courses/courses.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
     selector: 'course-toc',
     templateUrl: './course-toc.component.html',
+    imports: [
+        RouterLink,
+        NgForOf,
+        NgIf
+    ],
     styleUrls: ['./course-toc.component.css']
 })
 export class CourseTocComponent implements OnInit {
