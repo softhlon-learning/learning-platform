@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.5.8
+_release date: 2025-01-11_
+ * Implemented UnenrollCourseServiceImpl
+ * Implemented DeleteEnrollmentRepositoryAdapter
+
 ## 0.5.7
 _release date: 2025-01-11_
  * Added and configured rate limiter to nginx
