@@ -8,7 +8,6 @@ package io.softhlon.learning.courses.domain;
 import io.softhlon.learning.common.domain.DomainRepository;
 import io.softhlon.learning.common.hexagonal.OutboundPort;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -26,7 +25,7 @@ public interface DeleteEnrollmentRepository {
           UUID accountId) {}
 
     sealed interface DeleteEnrollmentResult {
-        record EnrollmentDeleted(UUID uuid) implements DeleteEnrollmentResult {}
+        record EnrollmentDeleted() implements DeleteEnrollmentResult {}
         record EnrollementDeletionFailed(Throwable cause) implements DeleteEnrollmentResult {}
     }
 }

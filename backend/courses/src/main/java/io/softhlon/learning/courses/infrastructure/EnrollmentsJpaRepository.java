@@ -17,4 +17,5 @@ import java.util.UUID;
 @Repository
 interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
     boolean existsByAccountIdAndCourseId(UUID accountId, UUID courseId);
+    void deleteByAccountIdAndCourseId(UUID accountId, UUID courseId);
 }

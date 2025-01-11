@@ -17,8 +17,7 @@ public interface UnenrollCourseService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record CourseNotFoundFailed(String message) implements Result {}
-        record AccountNotEnrolledFailed(String message) implements Result {}
+        record EnrollmentNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 }
