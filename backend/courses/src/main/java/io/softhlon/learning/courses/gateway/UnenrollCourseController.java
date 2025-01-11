@@ -37,7 +37,7 @@ class UnenrollCourseController {
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@PathVariable("courseId") UUID courseId) {
         return switch (service.unenroll(prepareRequest(courseId))) {
-            case Succeeded() -> successCreatedBody();
+            case Succeeded() -> successAcceptedBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
