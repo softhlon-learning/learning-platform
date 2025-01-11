@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.6.8
+_release date: 2025-01-11_
+ * Added SSL cert and key
+ * Added nginx.conf
+ * Updated server setup section
+
 ## 0.6.7
 _release date: 2025-01-11_
  * Added Server Setup section in README
