@@ -1,5 +1,3 @@
-import {Chapter} from "./chapter";
-
 export class Item {
     name: string = '';
     time: string = '';
