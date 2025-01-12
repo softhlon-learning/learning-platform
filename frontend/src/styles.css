@@ -1,14 +1,15 @@
 /** Global Colors */
 :root {
-    --h1-blue: black;
-    --h2-blue: black;
+    --h1-blue: var(--black);
+    --h2-blue: var(--black);
     --very-light: #F8F8F8;
     --light: #D1D0CE;
     --warm: #D1D0CE;
-    --hover: black;
+    --hover: var(--black);
     --active: #01234a;
     --checked-dark: #01234a;
     --checked-warm: white;
+    --black: black;
 }
 
 /* Global Styles */

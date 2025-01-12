@@ -37,7 +37,7 @@ div {
 
 .courses button:hover {
     color: white;
-    background-color: black;
+    background-color: var(--black);
 }
 
 .courses button:active {
@@ -45,19 +45,19 @@ div {
 }
 
 .courses button.selected {
-    background-color: black;
+    background-color: var(--black);
     color: white;
 }
 
 .courses button.selected:active {
-    background-color: black;
+    background-color: var(--black);
     color: white;
 }
 
 .courses .badge {
     display: inline-block;
     color: white;
-    background-color: black;
+    background-color: var(--black);
     line-height: 3em;
     margin-right: .8em;
     border-radius: 8px 0 0 8px;
@@ -67,7 +67,7 @@ div {
 .courses .enrolled {
     border: 1px;
     color: white;
-    background-color: black;
+    background-color: var(--black);
     border-radius: 12px 0 12px 0;
     padding-top: 0.3em;
     margin-right: 0.5em;
