@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.7.2
+_release date: 2025-01-12_
+ * Added --black color
+ * Added UpdateCourseService and its empty implementation
+ * Implemented UpdateCourseServiceImpl
+
 ## 0.7.1
 _release date: 2025-01-12_
  * Minor styling improvements
