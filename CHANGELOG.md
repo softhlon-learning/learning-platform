@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.7.3
+_release date: 2025-01-12_
+ * Integrated UpdateCourseController with service
+ * Implemented LoadCourseRepositoryAdapter and UpdateCourseController
+
 ## 0.7.2
 _release date: 2025-01-12_
  * Added --black color
