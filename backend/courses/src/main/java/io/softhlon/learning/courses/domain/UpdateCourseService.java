@@ -16,7 +16,7 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface UpdateCourseService {
-    Result execute(Request request);
+    Result update(Request request);
 
     record Request(
           UUID courseId,
@@ -24,7 +24,8 @@ public interface UpdateCourseService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record CourseNotFoundFailed() implements Result {}
+        record AccountNotEligibleFailed(String message) implements Result {}
+        record CourseNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 }

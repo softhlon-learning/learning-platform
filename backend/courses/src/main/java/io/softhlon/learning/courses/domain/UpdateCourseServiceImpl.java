@@ -28,11 +28,11 @@ class UpdateCourseServiceImpl implements UpdateCourseService {
     private final PersistCourseRepository persistCourseRepository;
 
     @Override
-    public Result execute(Request request) {
+    public Result update(Request request) {
         var result = loadCourseRepository.execute(request.courseId());
         return switch (result) {
             case CourseLoaded(Course course) -> updateCourse(request, course);
-            case CourseNotFoundInDatabase courseNotFoundInDatabase -> new CourseNotFoundFailed();
+            case CourseNotFoundInDatabase() -> new CourseNotFoundFailed("Course not found");
             case CourseLoadFailed(Throwable cause) -> new Failed(cause);
         };
     }
