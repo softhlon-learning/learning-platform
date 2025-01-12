@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.7.4
+_release date: 2025-01-12_
+ * Updating course content from frontend
+
 ## 0.7.3
 _release date: 2025-01-12_
  * Integrated UpdateCourseController with service
