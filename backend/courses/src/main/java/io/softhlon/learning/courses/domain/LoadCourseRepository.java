@@ -1,0 +1,38 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package io.softhlon.learning.courses.domain;
+
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
+
+import java.util.List;
+import java.util.UUID;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
+public interface LoadCourseRepository {
+    LoadCourseResult execute(UUID id);
+
+    record Course(
+          UUID courseId,
+          String code,
+          int orderNo,
+          String name,
+          String description,
+          String content,
+          String version,
+          boolean enrolled) {}
+
+    sealed interface LoadCourseResult {
+        record CourseLoaded(Course course) implements LoadCourseResult {}
+        record CourseLoadFailed(Throwable cause) implements LoadCourseResult {}
+    }
+}
