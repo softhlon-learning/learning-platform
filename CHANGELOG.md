@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.7.5
+_release date: 2025-01-12_
+ * Added artificial v* tp each item. Removed most items (but not chapters) for java course
+
 ## 0.7.4
 _release date: 2025-01-12_
  * Updating course content from frontend
