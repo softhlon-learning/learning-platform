@@ -24,6 +24,7 @@ public interface UpdateCourseService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
+        record CourseNotFoundFailed() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 }

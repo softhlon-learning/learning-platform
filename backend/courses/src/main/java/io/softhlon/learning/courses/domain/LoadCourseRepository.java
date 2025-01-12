@@ -33,6 +33,7 @@ public interface LoadCourseRepository {
 
     sealed interface LoadCourseResult {
         record CourseLoaded(Course course) implements LoadCourseResult {}
+        record CourseNotFoundInDatabase() implements LoadCourseResult {}
         record CourseLoadFailed(Throwable cause) implements LoadCourseResult {}
     }
 }
