@@ -10,12 +10,12 @@
     display: flex;
     width: 1065px;
     height: 604px;
-    background-color: var(--very-light-blue);
+    background-color: var(--very-light);
     justify-content: center;
     align-items: center;
 }
 
 button {
-    background-color: var(--warm-blue);
+    background-color: var(--warm);
     width: 16em;
 }

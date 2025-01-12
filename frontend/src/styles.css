@@ -2,13 +2,13 @@
 :root {
     --h1-blue: black;
     --h2-blue: black;
-    --very-light-blue: #F8F8F8;
-    --light-blue: #D1D0CE;
-    --warm-blue: #D1D0CE;
-    --hover-blue: black;
-    --active-blue: #01234a;
-    --checked-blue: #01234a;
-    --checked: white;
+    --very-light: #F8F8F8;
+    --light: #D1D0CE;
+    --warm: #D1D0CE;
+    --hover: black;
+    --active: #01234a;
+    --checked-dark: #01234a;
+    --checked-warm: white;
 }
 
 /* Global Styles */
@@ -60,17 +60,17 @@ button {
 }
 
 button:hover {
-    background-color: var(--hover-blue);
+    background-color: var(--hover);
     color: white;
 }
 
 button:disabled {
     color: gray;
-    background-color: var(--very-light-blue);
+    background-color: var(--very-light);
 }
 
 button:active {
-    color: var(--light-blue);
+    color: var(--light);
 }
 
 span {
@@ -105,14 +105,14 @@ span {
 
 .checkbox > input:checked {
     border: 1px dotted gray;
-    background-color: var(--checked);
+    background-color: var(--checked-warm);
 }
 
 .checkbox > input:checked + span::before {
     content: '\2713';
     display: block;
     text-align: center;
-    color: var(--checked-blue);
+    color: var(--checked-dark);
     position: absolute;
     left: 10px;
     top: 4px;

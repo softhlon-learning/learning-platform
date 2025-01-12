@@ -7,7 +7,7 @@ div {
 
 div.course-content {
     justify-content: flex-start;
-    background-color: var(--very-light-blue);
+    background-color: var(--very-light);
     border-radius: 5px;
 }
 
@@ -24,13 +24,13 @@ div button {
 }
 
 li li li:hover {
-    color: var(--light-blue);
-    background-color: var(--warm-blue);
+    color: var(--light);
+    background-color: var(--warm);
 }
 
 li li li:hover {
-    color: var(--hover-blue);
-    background-color: var(--warm-blue);
+    color: var(--hover);
+    background-color: var(--warm);
 }
 
 .course-content-list {
@@ -40,8 +40,8 @@ li li li:hover {
 }
 
 .selected {
-    color: var(--light-blue);
-    background-color: var(--hover-blue);
+    color: var(--light);
+    background-color: var(--hover);
 }
 
 .progress {
@@ -52,6 +52,6 @@ li li li:hover {
 
 div.progress span span {
     font-weight: bold;
-    color: var(--hover-blue);
+    color: var(--hover);
 }
 
