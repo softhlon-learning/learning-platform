@@ -46,11 +46,11 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result persistEnrollment(Request request) {
-            var result = createEnrollmentRepository.execute(prepareRequest(request));
-            return switch (result) {
-                case EnrollmentPersisted(UUID id) -> new Succeeded();
-                case EnrollementPersistenceFailed(Throwable cause) -> new Failed(cause);
-            };
+        var result = createEnrollmentRepository.execute(prepareRequest(request));
+        return switch (result) {
+            case EnrollmentPersisted(UUID id) -> new Succeeded();
+            case EnrollementPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
     }
 
     private CreateEnrollmentRequest prepareRequest(Request request) {
