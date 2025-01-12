@@ -6,14 +6,14 @@
 package io.softhlon.learning.courses.infrastructure;
 
 import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import io.softhlon.learning.courses.domain.LoadCourseRepository;
+import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCourseResult.*;
+import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,21 +23,21 @@ import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCours
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
-class LoadCourseRepositoryAdapter implements LoadCourseRepository {
+class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
     private final CoursesJpaRepository coursesRepo;
 
     @Override
-    public LoadCourseResult execute(UUID id) {
+    public LoadEnrollmentResult execute(UUID id) {
         try {
             var entity = coursesRepo.findById(id);
             if (entity.isPresent()) {
-                return new CourseLoaded(toCourse(entity.get()));
+                return new EnrollmentLoaded(toCourse(entity.get()));
             } else {
-                return new CourseNotFoundInDatabase();
+                return new EnrollmentNotFoundInDatabase();
             }
         } catch (Throwable cause) {
             log.error("Error", cause);
-            return new CourseLoadFailed(cause);
+            return new EnrollmentLoadFailed(cause);
         }
     }
 

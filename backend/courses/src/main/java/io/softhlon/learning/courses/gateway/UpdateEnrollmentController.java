@@ -7,7 +7,7 @@ package io.softhlon.learning.courses.gateway;
 
 import io.softhlon.learning.common.hexagonal.RestApiAdapter;
 import io.softhlon.learning.common.security.AuthenticationContext;
-import io.softhlon.learning.courses.domain.UpdateCourseService;
+import io.softhlon.learning.courses.domain.UpdateEnrollmentService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static io.softhlon.learning.courses.domain.UpdateCourseService.Request;
-import static io.softhlon.learning.courses.domain.UpdateCourseService.Result.*;
+import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Request;
+import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
 import static io.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 
 
@@ -32,35 +32,35 @@ import static io.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class UpdateCourseController {
-    private final UpdateCourseService service;
+class UpdateEnrollmentController {
+    private final UpdateEnrollmentService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
     @PatchMapping(UPDATE_COURSE)
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
-          @Validated @RequestBody UpdateCourseRequest courseRequest) {
+          @Validated @RequestBody UpdateEnrollmentRequest courseRequest) {
         var result = service.update(prepareRequest(courseId, courseRequest));
         return switch (result) {
             case Succeeded() -> successOkBody();
-            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case AccountNotEligibleFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
 
-    record UpdateCourseRequest(String content) {}
+    record UpdateEnrollmentRequest(String content) {}
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
     private Request prepareRequest(
-          UUID courseId, UpdateCourseRequest updateCourseRequest) {
+          UUID courseId, UpdateEnrollmentRequest updateEnrollmentRequest) {
         return new Request(
               authContext.accountId(),
               courseId,
-              updateCourseRequest.content());
+              updateEnrollmentRequest.content());
     }
 }

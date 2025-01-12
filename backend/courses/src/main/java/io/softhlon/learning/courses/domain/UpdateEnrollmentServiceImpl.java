@@ -9,12 +9,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.courses.domain.LoadCourseRepository.Course;
-import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCourseResult.*;
+import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Course;
+import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
 import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
 import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
-import static io.softhlon.learning.courses.domain.UpdateCourseService.Result.*;
+import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,17 +23,17 @@ import static io.softhlon.learning.courses.domain.UpdateCourseService.Result.*;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class UpdateCourseServiceImpl implements UpdateCourseService {
-    private final LoadCourseRepository loadCourseRepository;
+class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
+    private final LoadEnrollmentRepository loadEnrollmentRepository;
     private final PersistCourseRepository persistCourseRepository;
 
     @Override
     public Result update(Request request) {
-        var result = loadCourseRepository.execute(request.courseId());
+        var result = loadEnrollmentRepository.execute(request.courseId());
         return switch (result) {
-            case CourseLoaded(Course course) -> updateCourse(request, course);
-            case CourseNotFoundInDatabase() -> new CourseNotFoundFailed("Course not found");
-            case CourseLoadFailed(Throwable cause) -> new Failed(cause);
+            case EnrollmentLoaded(Course course) -> updateCourse(request, course);
+            case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed("Course not found");
+            case EnrollmentLoadFailed(Throwable cause) -> new Failed(cause);
         };
     }
 

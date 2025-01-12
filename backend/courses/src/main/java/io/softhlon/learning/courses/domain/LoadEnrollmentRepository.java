@@ -5,7 +5,8 @@
 
 package io.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.common.hexagonal.InboundPort;
+import io.softhlon.learning.common.domain.DomainRepository;
+import io.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
 
@@ -13,20 +14,25 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@InboundPort
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
-public interface UpdateCourseService {
-    Result update(Request request);
+public interface LoadEnrollmentRepository {
+    LoadEnrollmentResult execute(UUID id);
 
-    record Request(
-          UUID accountId,
+    record Course(
           UUID courseId,
-          String content) {}
+          String code,
+          int orderNo,
+          String name,
+          String description,
+          String content,
+          String version,
+          boolean enrolled) {}
 
-    sealed interface Result {
-        record Succeeded() implements Result {}
-        record AccountNotEligibleFailed(String message) implements Result {}
-        record CourseNotFoundFailed(String message) implements Result {}
-        record Failed(Throwable cause) implements Result {}
+    sealed interface LoadEnrollmentResult {
+        record EnrollmentLoaded(Course course) implements LoadEnrollmentResult {}
+        record EnrollmentNotFoundInDatabase() implements LoadEnrollmentResult {}
+        record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
     }
 }
