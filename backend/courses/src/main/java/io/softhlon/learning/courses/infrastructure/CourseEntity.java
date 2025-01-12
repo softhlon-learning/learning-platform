@@ -32,9 +32,4 @@ class CourseEntity {
     private String description;
     private String content;
     private String version;
-    @OneToOne(
-          mappedBy = "course",
-          orphanRemoval = true,
-          cascade = CascadeType.ALL)
-    private EnrollmentEntity enrollment;
 }

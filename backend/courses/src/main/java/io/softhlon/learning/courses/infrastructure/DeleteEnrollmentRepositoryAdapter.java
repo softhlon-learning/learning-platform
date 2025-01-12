@@ -28,12 +28,9 @@ class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
     @Override
     public DeleteEnrollmentResult execute(DeleteEnrollmentRequest request) {
         try {
-            var entity = enrollmentsRepo.findByAccountIdAndCourseId(
+            enrollmentsRepo.deleteByAccountIdAndCourseId(
                   request.accountId(),
-                  request.courseId())
-                  .get();
-            entity.getCourse().setEnrollment(null);
-            enrollmentsRepo.save(entity);
+                  request.courseId());
             return new EnrollmentDeleted();
         } catch (Throwable cause) {
             log.error("Error", cause);
