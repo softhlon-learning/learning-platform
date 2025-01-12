@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {Item} from "../course-content/item";
 import {NavigationItems} from "../course-navigation/navigation-items";
-import {ViewportScroller} from "@angular/common";
+import {Chapter} from '../course-content/chapter';
 
 @Component({
     selector: 'course-progress',
@@ -16,10 +16,10 @@ export class CourseProgressComponent implements OnInit {
     course: Course = {};
     courseContent?: CourseContent;
     navigationItems = new NavigationItems();
+    itemToChapter = new Map<Item, Chapter>();
 
     constructor(
         private coursesService: CoursesService,
-        private scroller: ViewportScroller,
         private route: ActivatedRoute) {
     }
 
@@ -53,9 +53,9 @@ export class CourseProgressComponent implements OnInit {
                     }
                 }
                 const courseContent: CourseContent = JSON.parse(atob(<string>this.course.content));
-                this.updateStructure(courseContent);
                 this.courseContent = courseContent;
                 this.findCurrentItem(courseContent);
+                this.initializeMap();
             })
     }
 
@@ -90,14 +90,6 @@ export class CourseProgressComponent implements OnInit {
         this.navigationItems = tempNavigationItems;
     }
 
-    updateStructure(courseContent: CourseContent): void {
-        for (let section of courseContent.sections)
-            for (let chapter of section.chapters)
-                if (chapter.items != null)
-                    for (let item of chapter.items)
-                        item.chapter = chapter;
-    }
-
     findCurrentItem(courseContent: CourseContent): void {
         for (let section of courseContent.sections)
             for (let chapter of section.chapters)
@@ -124,6 +116,15 @@ export class CourseProgressComponent implements OnInit {
         return null;
     }
 
+    initializeMap(): void {
+        if (this.courseContent != null) {
+            for (let section of this.courseContent.sections)
+                for (let chapter of section.chapters)
+                    if (chapter.items != null)
+                        for (let item of chapter.items)
+                            this.itemToChapter.set(item, chapter);
+        }
+    }
 
     next(): NavigationItems {
         if (this.navigationItems.nextItem != null) {
@@ -160,6 +161,7 @@ export class CourseProgressComponent implements OnInit {
             item.processed = true;
             this.updateChapterProcessed(item);
         }
+        this.updateCourse();
     }
 
     markAsNotViewed(): void {
@@ -168,22 +170,29 @@ export class CourseProgressComponent implements OnInit {
             item.processed = false;
             this.updateChapterProcessed(item);
         }
+        this.updateCourse();
     }
 
     updateChapterProcessed(selectedItem: Item): void {
         if (!selectedItem.processed) {
-            selectedItem.chapter.processed = false;
-            return;
-        }
-
-        for (let item of selectedItem.chapter.items) {
-            if (!item.processed) {
-                selectedItem.chapter.processed = false;
+            const chapter = this["itemToChapter"].get(selectedItem);
+            if (chapter) {
+                chapter.processed = false;
                 return;
             }
         }
 
-        selectedItem.chapter.processed = true;
+        const chapter = this["itemToChapter"].get(selectedItem);
+        if (chapter) {
+            for (let item of chapter.items) {
+                if (!item.processed) {
+                    chapter.processed = false;
+                    return;
+                }
+            }
+            chapter.processed = true;
+            return;
+        }
     }
 
     courseProgress(): number {
@@ -200,5 +209,10 @@ export class CourseProgressComponent implements OnInit {
         }
 
         return Math.round(processedItemsCount / allItemsCount * 100);
+    }
+
+    updateCourse(): void {
+        let courseContentB64 = btoa(JSON.stringify(this.courseContent));
+        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
     }
 }

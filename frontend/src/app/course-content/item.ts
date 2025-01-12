@@ -6,5 +6,4 @@ export class Item {
     id: string = '';
     selected: boolean = false;
     processed: boolean = false;
-    chapter: Chapter = new Chapter();
 }

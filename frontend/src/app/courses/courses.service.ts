@@ -9,6 +9,7 @@ import {Course} from './course';
 export class CoursesService {
     private courseUrl = '/api/v1/course';
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
+    private updateCourseUrl = '/api/v1/course/{courseId}';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -41,6 +42,12 @@ export class CoursesService {
         const url = `${this.enrollmentUrl.replace('{courseId}', course.id ?? '')}`;
         return this.http.delete<ArrayBuffer>(url).pipe();
     }
+
+    updateCourse(id: string, content: string): Observable<ArrayBuffer> {
+        const url = `${this.updateCourseUrl.replace('{courseId}', id)}`;
+        const request = new UpdateCourseRequest(content);
+        return this.http.patch<ArrayBuffer>(url, request, this.httpOptions).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -48,6 +55,14 @@ class EnrollmentRequest {
 
     constructor(courseId: string | undefined) {
         this.enrollment = new Enrollment(courseId);
+    }
+}
+
+class UpdateCourseRequest {
+    content?: string;
+
+    constructor(content?: string) {
+        this.content = content;
     }
 }
 
