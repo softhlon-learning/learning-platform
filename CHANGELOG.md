@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.6.9
+_release date: 2025-01-12_
+ * Added app scripts
+ * Remove margin from title na front page
+ * Updated Server Setup section
+ * Setting up new server
+
 ## 0.6.8
 _release date: 2025-01-11_
  * Added SSL cert and key
