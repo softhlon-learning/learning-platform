@@ -41,7 +41,7 @@ class UpdateEnrollmentController {
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
           @Validated @RequestBody UpdateEnrollmentRequest courseRequest) {
-        var result = service.update(prepareRequest(courseId, courseRequest));
+        var result = service.execute(prepareRequest(courseId, courseRequest));
         return switch (result) {
             case Succeeded() -> successOkBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

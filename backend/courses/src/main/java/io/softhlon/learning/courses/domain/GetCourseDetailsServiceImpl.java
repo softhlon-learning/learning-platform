@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 class GetCourseDetailsServiceImpl implements GetCourseDetailsService {
     @Override
-    public Result getDetails(Request request) {
+    public Result execute(Request request) {
         throw new UnsupportedOperationException();
     }
 }

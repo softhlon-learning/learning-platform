@@ -10,7 +10,8 @@ package io.softhlon.learning.courses.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface GetCourseDetailsService {
-    Result getDetails(Request request);
+    Result execute(Request request);
+
     record Request(String accountId, String courseId) {}
 
     sealed interface Result {

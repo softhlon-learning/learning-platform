@@ -38,7 +38,7 @@ class ListCoursesController {
 
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
-        var result = service.listCourses(authContext.accountId());
+        var result = service.execute(authContext.accountId());
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

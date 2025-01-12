@@ -31,7 +31,7 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
     private final CreateEnrollmentRepository createEnrollmentRepository;
 
     @Override
-    public Result enroll(Request request) {
+    public Result execute(Request request) {
         var courseExists = checkCourseRepository.execute(new CheckCourseRequest(request.courseId()));
 
         return switch (courseExists) {

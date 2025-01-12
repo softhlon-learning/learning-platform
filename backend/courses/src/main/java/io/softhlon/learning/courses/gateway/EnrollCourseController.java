@@ -36,7 +36,7 @@ class EnrollCourseController {
 
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(@PathVariable("courseId") UUID courseId) {
-        return switch (service.enroll(prepareRequest(courseId))) {
+        return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successCreatedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

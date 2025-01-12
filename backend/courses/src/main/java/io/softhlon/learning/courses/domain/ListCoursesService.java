@@ -13,7 +13,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface ListCoursesService {
-    Result listCourses(UUID accountId);
+    Result execute(UUID accountId);
 
     sealed interface Result {
         record Succeeded(List<CourseView> courses) implements Result {}

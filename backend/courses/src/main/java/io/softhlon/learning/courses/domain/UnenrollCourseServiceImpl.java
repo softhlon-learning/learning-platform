@@ -30,7 +30,7 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
     private final DeleteEnrollmentRepository deleteEnrollmentRepository;
 
     @Override
-    public Result unenroll(Request request) {
+    public Result execute(Request request) {
         var enrollmentExists = checkEnrollmentRepository.execute(
               new CheckEnrollmentRequest(
                     request.accountId(),

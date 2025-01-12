@@ -28,7 +28,7 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
-    public Result update(Request request) {
+    public Result execute(Request request) {
         var result = loadEnrollmentRepository.execute(
               request.accountId(),
               request.courseId());

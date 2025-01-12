@@ -12,7 +12,8 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnenrollCourseService {
-    Result unenroll(Request request);
+    Result execute(Request request);
+
     record Request(UUID accountId, UUID courseId) {}
 
     sealed interface Result {

@@ -16,7 +16,7 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface UpdateEnrollmentService {
-    Result update(Request request);
+    Result execute(Request request);
 
     record Request(
           UUID accountId,

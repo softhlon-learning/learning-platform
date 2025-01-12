@@ -16,9 +16,10 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface EnrollCourseService {
-    Result enroll(Request request);
+    Result execute(Request request);
 
     record Request(UUID accountId, UUID courseId) {}
+
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotSubscribedFailed(String message) implements Result {}

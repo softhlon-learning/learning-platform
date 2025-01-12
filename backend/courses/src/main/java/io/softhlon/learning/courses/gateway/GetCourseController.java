@@ -36,7 +36,7 @@ class GetCourseController {
 
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
-        var result = service.getDetails(request);
+        var result = service.execute(request);
         return switch (result) {
             case Succeeded(CourseDetails courseDetails) -> successBody(courseDetails);
             case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
