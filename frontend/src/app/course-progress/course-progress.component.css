@@ -16,7 +16,7 @@ div.course-item {
     margin-right: 1em;
     background-color: white;
     height: 45em;
-    font-family: Verdana;
+    font-family: Verdana, sans-serif;
 }
 
 div button {
@@ -36,6 +36,7 @@ li li li:hover {
 .course-content-list {
     height: 45em;
     padding-inline-start: 5px;
+    width: 412px;
 }
 
 .selected {

@@ -3,9 +3,7 @@ button {
 }
 
 div {
+    margin-top: 14px;
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    justify-content: center;
 }
