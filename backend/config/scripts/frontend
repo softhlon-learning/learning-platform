@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+cd /home/debian/learning-platform/frontend
+npm install --silent
+ng serve

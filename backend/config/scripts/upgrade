@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+sudo systemctl stop frontend
+sudo systemctl stop backend
+
+cd
+rm -fr /home/debian/learning-platform
+gh repo clone softhlon-learning/learning-platform
+
+sudo systemctl start frontend
+sudo systemctl start backend
+
+sleep infinity

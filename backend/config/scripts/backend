@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+cd /home/debian/learning-platform/backend/application
+./run.sh
