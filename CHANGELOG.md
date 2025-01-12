@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.7.0
+_release date: 2025-01-12_
+ * Finished new server setup
+ * Created S3 bucket in Hetzner
+ * Switched to Hetzner S3 bucket
+ * Improvements for positioning video, pdf, and quiz
+
 ## 0.6.9
 _release date: 2025-01-12_
  * Added app scripts
