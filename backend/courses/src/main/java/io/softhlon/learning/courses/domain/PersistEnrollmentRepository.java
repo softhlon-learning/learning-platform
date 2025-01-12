@@ -5,9 +5,6 @@
 
 package io.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.common.domain.DomainRepository;
-import io.softhlon.learning.common.hexagonal.OutboundPort;
-
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -15,13 +12,10 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@OutboundPort
-@DomainRepository
-@FunctionalInterface
-public interface LoadEnrollmentRepository {
-    LoadEnrollmentResult execute(UUID courseId, UUID accountId);
+public interface PersistEnrollmentRepository {
+    PersistEnrollmentResult execute(PersistEnrollmentRequest course);
 
-    record Enrollment(
+    record PersistEnrollmentRequest(
           UUID courseId,
           UUID accountId,
           String status,
@@ -29,9 +23,8 @@ public interface LoadEnrollmentRepository {
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}
 
-    sealed interface LoadEnrollmentResult {
-        record EnrollmentLoaded(Enrollment course) implements LoadEnrollmentResult {}
-        record EnrollmentNotFoundInDatabase() implements LoadEnrollmentResult {}
-        record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
+    sealed interface PersistEnrollmentResult {
+        record EnrollmentPersisted() implements PersistEnrollmentResult {}
+        record EnrollmentPersistenceFailed(Throwable cause) implements PersistEnrollmentResult {}
     }
 }

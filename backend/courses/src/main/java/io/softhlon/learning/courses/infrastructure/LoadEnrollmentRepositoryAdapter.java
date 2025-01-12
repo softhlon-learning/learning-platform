@@ -24,14 +24,14 @@ import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadE
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
-    private final CoursesJpaRepository coursesRepo;
+    private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public LoadEnrollmentResult execute(UUID id) {
+    public LoadEnrollmentResult execute(UUID accountId, UUID courseId) {
         try {
-            var entity = coursesRepo.findById(id);
+            var entity = enrollmentsRepo.findByAccountIdAndCourseId(accountId, courseId);
             if (entity.isPresent()) {
-                return new EnrollmentLoaded(toCourse(entity.get()));
+                return new EnrollmentLoaded(toEnrollment(entity.get()));
             } else {
                 return new EnrollmentNotFoundInDatabase();
             }
@@ -45,16 +45,14 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Course toCourse(CourseEntity entity) {
-        return new Course(
+    private Enrollment toEnrollment(EnrollmentEntity entity) {
+        return new Enrollment(
               entity.getId(),
-              entity.getCode(),
-              entity.getOrderNo(),
-              entity.getName(),
-              entity.getDescription(),
+              entity.getAccountId(),
+              entity.getStatus(),
               entity.getContent(),
-              entity.getVersion(),
-              entity.getEnrollment() != null ? true : false
+              entity.getEnrolledTime(),
+              entity.getCompletedTime()
         );
     }
 }

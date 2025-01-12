@@ -9,11 +9,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Course;
+import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
 import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
+import static io.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import static io.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
+import static io.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,14 +25,16 @@ import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Result
 @RequiredArgsConstructor
 class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
     private final LoadEnrollmentRepository loadEnrollmentRepository;
-    private final PersistCourseRepository persistCourseRepository;
+    private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
     public Result update(Request request) {
-        var result = loadEnrollmentRepository.execute(request.courseId());
+        var result = loadEnrollmentRepository.execute(
+              request.accountId(),
+              request.courseId());
         return switch (result) {
-            case EnrollmentLoaded(Course course) -> updateCourse(request, course);
-            case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed("Course not found");
+            case EnrollmentLoaded(Enrollment enrollment) -> updateEnrollment(request, enrollment);
+            case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed("Enrollment not found");
             case EnrollmentLoadFailed(Throwable cause) -> new Failed(cause);
         };
     }
@@ -41,24 +43,23 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result updateCourse(Request request, Course course) {
-        var result = persistCourseRepository.execute(prepareReuqest(request, course));
+    private Result updateEnrollment(Request request, Enrollment enrollment) {
+        var result = persistEnrollmentRepository.execute(prepareReuqest(request, enrollment));
         return switch (result) {
-            case CoursePersisted() -> new Succeeded();
-            case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
+            case EnrollmentPersisted() -> new Succeeded();
+            case EnrollmentPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
-    private PersistCourseRequest prepareReuqest(
-          Request request, Course course) {
-        return new PersistCourseRequest(
+    private PersistEnrollmentRequest prepareReuqest(
+          Request request, Enrollment course) {
+        return new PersistEnrollmentRequest(
               request.courseId(),
-              course.code(),
-              course.orderNo(),
-              course.name(),
-              course.description(),
+              request.accountId(),
+              course.status(),
               request.content(),
-              course.version()
+              course.enrolledTime(),
+              course.completedTime()
         );
     }
 }
