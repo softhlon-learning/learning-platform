@@ -12,14 +12,14 @@ sections:
         items:
           - name: Video
             time: 2m5s
-            id: welcome.mp4
+            id: welcome.mp4?v1
             processed: true
       - name: Prerequisites
         processed: true
         items:
           - name: Video
             time: 2m5s
-            id: welcome.mp4
+            id: welcome.mp4?v2
             processed: true
       - name: Course Structure
         processed: true
@@ -30,7 +30,7 @@ sections:
             processed: true
           - name: PDF
             processed: true
-            id: ultimate-java-course/intro/Summary.pdf
+            id: ultimate-java-course/intro/Summary.pdf?v3
   - name: Getting Started
     chapters:
       - name: Introduction to Messaging
@@ -38,5 +38,5 @@ sections:
         items:
           - name: Video
             time: 3m15s
-            id: welcome.mp4
+            id: welcome.mp4?v4
             processed: true

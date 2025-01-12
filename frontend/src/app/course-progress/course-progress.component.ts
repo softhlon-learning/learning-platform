@@ -112,7 +112,6 @@ export class CourseProgressComponent implements OnInit {
                                 return item;
                             }
         }
-
         return null;
     }
 
