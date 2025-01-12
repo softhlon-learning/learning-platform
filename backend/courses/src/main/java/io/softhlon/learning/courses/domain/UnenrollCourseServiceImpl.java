@@ -51,7 +51,7 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
         var result = deleteEnrollmentRepository.execute(prepareRequest(request));
         return switch (result) {
             case EnrollmentDeleted() -> new Succeeded();
-            case EnrollementDeletionFailed(Throwable cause) -> new Result.Failed(cause);
+            case EnrollementDeletionFailed(Throwable cause) -> new Failed(cause);
         };
     }
 

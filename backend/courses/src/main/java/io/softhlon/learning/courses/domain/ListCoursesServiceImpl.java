@@ -33,7 +33,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private final LoadEnrollmentRepository loadEnrollmentRepository;
 
     @Override
-    public Result listCourses(UUID accountId) {
+    public Result execute(UUID accountId) {
         var result = loadCoursesRepository.execute();
         return switch (result) {
             case CoursesLoadFailed(Throwable cause) -> new Failed(cause);
