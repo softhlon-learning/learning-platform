@@ -35,6 +35,10 @@ class SignUpController {
     private final SignUpService service;
     private final HttpServletRequest httpRequest;
 
+    private static ResponseEntity<Response> successBody(UUID id) {
+        return status(HttpStatus.CREATED).body(new Response(id));
+    }
+
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
         var result = service.signUp(request);
@@ -46,13 +50,8 @@ class SignUpController {
         };
     }
 
-    record Response(UUID accountId) {}
-
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
-
-    private static ResponseEntity<Response> successBody(UUID id) {
-        return status(HttpStatus.CREATED).body(new Response(id));
-    }
+    record Response(UUID accountId) {}
 }

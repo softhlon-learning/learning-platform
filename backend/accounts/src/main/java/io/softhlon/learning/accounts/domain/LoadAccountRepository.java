@@ -20,12 +20,11 @@ import java.util.UUID;
 public interface LoadAccountRepository {
     LoadAccountResult execute(LoadAccountRequest request);
 
-    record LoadAccountRequest(UUID id) {}
     sealed interface LoadAccountResult {
         record AccountLoaded(Account account) implements LoadAccountResult {}
         record AccountNotFound() implements LoadAccountResult {}
         record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
-
+    record LoadAccountRequest(UUID id) {}
     record Account(UUID id, String name, String email) {}
 }

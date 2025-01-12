@@ -12,14 +12,12 @@ package io.softhlon.learning.courses.domain;
 public interface GetCourseDetailsService {
     Result execute(Request request);
 
-    record Request(String accountId, String courseId) {}
-
     sealed interface Result {
         record Succeeded(CourseDetails courseDetails) implements Result {}
         record CourseNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
+    record Request(String accountId, String courseId) {}
     record CourseDetails(
           String courseId,
           String name,

@@ -21,6 +21,10 @@ import java.util.UUID;
 public interface LoadCoursesRepository {
     LoadCoursesResult execute();
 
+    sealed interface LoadCoursesResult {
+        record CoursesLoaded(List<Course> course) implements LoadCoursesResult {}
+        record CoursesLoadFailed(Throwable cause) implements LoadCoursesResult {}
+    }
     record Course(
           UUID courseId,
           String code,
@@ -29,9 +33,4 @@ public interface LoadCoursesRepository {
           String description,
           String content,
           String version) {}
-
-    sealed interface LoadCoursesResult {
-        record CoursesLoaded(List<Course> course) implements LoadCoursesResult {}
-        record CoursesLoadFailed(Throwable cause) implements LoadCoursesResult {}
-    }
 }

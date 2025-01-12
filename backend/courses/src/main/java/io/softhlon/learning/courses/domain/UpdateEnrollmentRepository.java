@@ -21,6 +21,10 @@ import java.util.UUID;
 public interface UpdateEnrollmentRepository {
     UpdateEnrollmentResult execute(Enrollment enrollment);
 
+    sealed interface UpdateEnrollmentResult {
+        record EnrollmentUpdated(UUID id) implements UpdateEnrollmentResult {}
+        record EnrollmentUpdateFailed(Throwable cause) implements UpdateEnrollmentResult {}
+    }
     record Enrollment(
           UUID id,
           UUID accountId,
@@ -28,9 +32,4 @@ public interface UpdateEnrollmentRepository {
           String status,
           String content,
           OffsetDateTime completedTime) {}
-
-    sealed interface UpdateEnrollmentResult {
-        record EnrollmentUpdated(UUID id) implements UpdateEnrollmentResult {}
-        record EnrollmentUpdateFailed(Throwable cause) implements UpdateEnrollmentResult {}
-    }
 }

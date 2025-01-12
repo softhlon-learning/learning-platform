@@ -21,6 +21,11 @@ import java.util.UUID;
 public interface LoadEnrollmentRepository {
     LoadEnrollmentResult execute(UUID accountId, UUID courseId);
 
+    sealed interface LoadEnrollmentResult {
+        record EnrollmentLoaded(Enrollment course) implements LoadEnrollmentResult {}
+        record EnrollmentNotFoundInDatabase() implements LoadEnrollmentResult {}
+        record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
+    }
     record Enrollment(
           UUID courseId,
           UUID accountId,
@@ -28,10 +33,4 @@ public interface LoadEnrollmentRepository {
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}
-
-    sealed interface LoadEnrollmentResult {
-        record EnrollmentLoaded(Enrollment course) implements LoadEnrollmentResult {}
-        record EnrollmentNotFoundInDatabase() implements LoadEnrollmentResult {}
-        record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
-    }
 }

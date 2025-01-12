@@ -18,12 +18,11 @@ import java.util.UUID;
 public interface EnrollCourseService {
     Result execute(Request request);
 
-    record Request(UUID accountId, UUID courseId) {}
-
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotSubscribedFailed(String message) implements Result {}
         record CourseNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+    record Request(UUID accountId, UUID courseId) {}
 }

@@ -14,6 +14,10 @@ import java.util.UUID;
 public interface PersistCourseRepository {
     PersistCourseResult execute(PersistCourseRequest course);
 
+    sealed interface PersistCourseResult {
+        record CoursePersisted() implements PersistCourseResult {}
+        record CoursePersistenceFailed(Throwable cause) implements PersistCourseResult {}
+    }
     record PersistCourseRequest(
           UUID id,
           String code,
@@ -22,9 +26,4 @@ public interface PersistCourseRepository {
           String description,
           String content,
           String version) {}
-
-    sealed interface PersistCourseResult {
-        record CoursePersisted() implements PersistCourseResult {}
-        record CoursePersistenceFailed(Throwable cause) implements PersistCourseResult {}
-    }
 }

@@ -18,6 +18,10 @@ import java.util.UUID;
 public interface UploadCourseService {
     Result execute(Request request);
 
+    sealed interface Result {
+        record Succeeded() implements Result {}
+        record Failed(Throwable cause) implements Result {}
+    }
     record Request(
           UUID courseId,
           String code,
@@ -26,9 +30,4 @@ public interface UploadCourseService {
           String description,
           String content,
           String version) {}
-
-    sealed interface Result {
-        record Succeeded() implements Result {}
-        record Failed(Throwable cause) implements Result {}
-    }
 }

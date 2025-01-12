@@ -65,14 +65,6 @@ public class CreateCoursesOperator {
         uploadCourseService.execute(prepareRequest(courseDefinition, content));
     }
 
-    private record CourseDefinition(
-          UUID id,
-          String code,
-          int orderNo,
-          String name,
-          String description,
-          String version) {}
-
     private Request prepareRequest(
           CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
         return new Request(
@@ -96,4 +88,11 @@ public class CreateCoursesOperator {
         var jsonMapper = new ObjectMapper();
         return jsonMapper.writeValueAsString(jsonNode).getBytes();
     }
+    private record CourseDefinition(
+          UUID id,
+          String code,
+          int orderNo,
+          String name,
+          String description,
+          String version) {}
 }

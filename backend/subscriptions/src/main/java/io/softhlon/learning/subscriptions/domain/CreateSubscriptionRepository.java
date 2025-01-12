@@ -21,13 +21,12 @@ import java.util.UUID;
 public interface CreateSubscriptionRepository {
     CreateSubscriptionResult execute(CreateSubscriptionRequest request);
 
-    record CreateSubscriptionRequest(
-          UUID accountId,
-          String status,
-          OffsetDateTime startedTime) {}
-
     sealed interface CreateSubscriptionResult {
         record SubscriptionPersisted(UUID uuid) implements CreateSubscriptionResult {}
         record SubscriptionPersistenceFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
+    record CreateSubscriptionRequest(
+          UUID accountId,
+          String status,
+          OffsetDateTime startedTime) {}
 }

@@ -18,11 +18,11 @@ import java.util.UUID;
 public interface SignUpService {
     Result signUp(Request request);
 
-    record Request(String name, String email, String password) {}
     sealed interface Result {
         record Succeeded(UUID id) implements Result {}
         record AccountAlreadyExistsFailed(String message) implements Result {}
         record PasswordPolicyFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+    record Request(String name, String email, String password) {}
 }

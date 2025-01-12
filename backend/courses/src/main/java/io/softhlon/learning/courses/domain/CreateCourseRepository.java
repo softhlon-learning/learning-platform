@@ -20,15 +20,14 @@ import java.util.UUID;
 public interface CreateCourseRepository {
     CreateAccountRequest execute(CreateAccountRequest request);
 
+    sealed interface CreateAccountResult {
+        record AccountPersisted() implements CreateAccountResult {}
+        record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
+    }
     record CreateAccountRequest(
           UUID courseId,
           String name,
           String description,
           String content,
           String version) {}
-
-    sealed interface CreateAccountResult {
-        record AccountPersisted() implements CreateAccountResult {}
-        record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
-    }
 }

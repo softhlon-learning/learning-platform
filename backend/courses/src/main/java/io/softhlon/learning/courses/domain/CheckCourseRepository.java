@@ -20,10 +20,10 @@ import java.util.UUID;
 public interface CheckCourseRepository {
     CheckCourseResult execute(CheckCourseRequest request);
 
-    record CheckCourseRequest(UUID id) {}
     sealed interface CheckCourseResult {
         record CourseExists() implements CheckCourseResult {}
         record CourseNotFound() implements CheckCourseResult {}
         record CheckCourseFailed(Throwable cause) implements CheckCourseResult {}
     }
+    record CheckCourseRequest(UUID id) {}
 }

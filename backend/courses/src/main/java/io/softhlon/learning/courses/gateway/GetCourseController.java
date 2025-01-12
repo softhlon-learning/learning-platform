@@ -34,6 +34,14 @@ class GetCourseController {
     private final GetCourseDetailsService service;
     private final HttpServletRequest httpRequest;
 
+    private static ResponseEntity<CourseDetails> successBody(CourseDetails course) {
+        return status(HttpStatus.OK).body(course);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
         var result = service.execute(request);
@@ -42,13 +50,5 @@ class GetCourseController {
             case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private static ResponseEntity<CourseDetails> successBody(CourseDetails course) {
-        return status(HttpStatus.OK).body(course);
     }
 }

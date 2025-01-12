@@ -18,9 +18,9 @@ import io.softhlon.learning.common.hexagonal.OutboundPort;
 public interface InvalidateAuthTokenRepository {
     InvalidateAuthTokenResult execute(InvalidateAuthTokenRequest request);
 
-    record InvalidateAuthTokenRequest(String authToken) {}
     sealed interface InvalidateAuthTokenResult {
         record TokenInvalidated() implements InvalidateAuthTokenResult {}
         record TokenInvalidationFailed(Throwable cause) implements InvalidateAuthTokenResult {}
     }
+    record InvalidateAuthTokenRequest(String authToken) {}
 }

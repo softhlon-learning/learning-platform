@@ -16,9 +16,9 @@ import io.softhlon.learning.common.hexagonal.InboundPort;
 public interface SignOutService {
     Result signOut(Request request);
 
-    record Request(String authenticationToken) {}
     sealed interface Result {
         record Succeeded() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+    record Request(String authenticationToken) {}
 }

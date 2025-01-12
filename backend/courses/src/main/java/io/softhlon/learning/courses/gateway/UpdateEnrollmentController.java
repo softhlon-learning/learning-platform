@@ -50,12 +50,6 @@ class UpdateEnrollmentController {
         };
     }
 
-    record UpdateEnrollmentRequest(String content) {}
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
     private Request prepareRequest(
           UUID courseId, UpdateEnrollmentRequest updateEnrollmentRequest) {
         return new Request(
@@ -63,4 +57,9 @@ class UpdateEnrollmentController {
               courseId,
               updateEnrollmentRequest.content());
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+    record UpdateEnrollmentRequest(String content) {}
 }

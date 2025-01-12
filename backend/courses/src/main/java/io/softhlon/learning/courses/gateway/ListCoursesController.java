@@ -36,6 +36,14 @@ class ListCoursesController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    private static ResponseEntity<List<CourseView>> successBody(List<CourseView> courses) {
+        return status(HttpStatus.OK).body(courses);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
         var result = service.execute(authContext.accountId());
@@ -43,13 +51,5 @@ class ListCoursesController {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private static ResponseEntity<List<CourseView>> successBody(List<CourseView> courses) {
-        return status(HttpStatus.OK).body(courses);
     }
 }

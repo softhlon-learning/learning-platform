@@ -21,15 +21,14 @@ import java.util.UUID;
 public interface UpdateSubscriptionRepository {
     UpdateSubscriptionResult execute(Subscription subscription);
 
+    sealed interface UpdateSubscriptionResult {
+        record SubscriptionPersisted() implements UpdateSubscriptionResult {}
+        record SubscriptionPersistenceFailed(Throwable cause) implements UpdateSubscriptionResult {}
+    }
     record Subscription(
           UUID id,
           UUID accountId,
           String status,
           OffsetDateTime startedTime,
           OffsetDateTime cancelledTime) {}
-
-    sealed interface UpdateSubscriptionResult {
-        record SubscriptionPersisted() implements UpdateSubscriptionResult {}
-        record SubscriptionPersistenceFailed(Throwable cause) implements UpdateSubscriptionResult {}
-    }
 }

@@ -12,10 +12,10 @@ package io.softhlon.learning.subscriptions.domain;
 public interface UnsubscribeService {
     Result unsubscribe(Request request);
 
-    record Request(String accountId) {}
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotSubscribedFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+    record Request(String accountId) {}
 }

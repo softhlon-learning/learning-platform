@@ -18,10 +18,10 @@ import io.softhlon.learning.common.hexagonal.OutboundPort;
 public interface CheckAccountByEmailRepository {
     CheckAccountByEmailResult execute(CheckAccountByEmailRequest request);
 
-    record CheckAccountByEmailRequest(String email) {}
     sealed interface CheckAccountByEmailResult {
         record AccountExists() implements CheckAccountByEmailResult {}
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }
+    record CheckAccountByEmailRequest(String email) {}
 }

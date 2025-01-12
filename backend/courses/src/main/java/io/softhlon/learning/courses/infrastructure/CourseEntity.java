@@ -5,10 +5,8 @@
 
 package io.softhlon.learning.courses.infrastructure;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import lombok.*;
 
 import java.util.UUID;

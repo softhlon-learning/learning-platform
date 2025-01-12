@@ -60,25 +60,6 @@ public class ResponseBodyHelper {
                           .body());
     }
 
-    @Builder
-    static class ResponseBodyBuilder {
-        private HttpStatus status;
-        private ErrorMessage errorMessage;
-        private Object message;
-        private String path;
-
-        Map<String, Object> body() {
-            Map<String, Object> responseBody = new LinkedHashMap<>();
-            responseBody.put(TIMESTAMP.text, OffsetDateTime.now());
-            responseBody.put(STATUS.text, status.value());
-            responseBody.put(ERROR.text, errorMessage.text);
-            responseBody.put(MESSAGE.text, message);
-            responseBody.put(PATH.text, path);
-
-            return responseBody;
-        }
-    }
-
     enum ResponseField {
         TIMESTAMP("timestamp"),
         STATUS("status"),
@@ -101,6 +82,24 @@ public class ResponseBodyHelper {
 
         ErrorMessage(String text) {
             this.text = text;
+        }
+    }
+    @Builder
+    static class ResponseBodyBuilder {
+        private HttpStatus status;
+        private ErrorMessage errorMessage;
+        private Object message;
+        private String path;
+
+        Map<String, Object> body() {
+            Map<String, Object> responseBody = new LinkedHashMap<>();
+            responseBody.put(TIMESTAMP.text, OffsetDateTime.now());
+            responseBody.put(STATUS.text, status.value());
+            responseBody.put(ERROR.text, errorMessage.text);
+            responseBody.put(MESSAGE.text, message);
+            responseBody.put(PATH.text, path);
+
+            return responseBody;
         }
     }
 }

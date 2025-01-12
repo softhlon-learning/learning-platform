@@ -15,6 +15,10 @@ import java.util.UUID;
 public interface PersistEnrollmentRepository {
     PersistEnrollmentResult execute(PersistEnrollmentRequest course);
 
+    sealed interface PersistEnrollmentResult {
+        record EnrollmentPersisted() implements PersistEnrollmentResult {}
+        record EnrollmentPersistenceFailed(Throwable cause) implements PersistEnrollmentResult {}
+    }
     record PersistEnrollmentRequest(
           UUID courseId,
           UUID accountId,
@@ -22,9 +26,4 @@ public interface PersistEnrollmentRepository {
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}
-
-    sealed interface PersistEnrollmentResult {
-        record EnrollmentPersisted() implements PersistEnrollmentResult {}
-        record EnrollmentPersistenceFailed(Throwable cause) implements PersistEnrollmentResult {}
-    }
 }

@@ -18,15 +18,14 @@ import java.util.UUID;
 public interface UpdateEnrollmentService {
     Result execute(Request request);
 
-    record Request(
-          UUID accountId,
-          UUID courseId,
-          String content) {}
-
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotEligibleFailed(String message) implements Result {}
         record EnrollmentNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+    record Request(
+          UUID accountId,
+          UUID courseId,
+          String content) {}
 }
