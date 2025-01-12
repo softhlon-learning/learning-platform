@@ -12,21 +12,21 @@ sections:
         items:
           - name: Video
             time: 2m5s
-            id: ultimate-java-course/intro/Introduction.mp4?v1
+            id: welcome.mp4
             processed: true
       - name: Prerequisites
         processed: true
         items:
           - name: Video
             time: 2m5s
-            id: ultimate-java-course/intro/Introduction.mp4?v1
+            id: welcome.mp4
             processed: true
       - name: Course Structure
         processed: true
         items:
           - name: Video
             time: 2m5s
-            id: ultimate-java-course/intro/Introduction.mp4?v1
+            id: welcome.mp4
             processed: true
           - name: PDF
             processed: true
@@ -38,21 +38,21 @@ sections:
         items:
           - name: Video
             time: 3m15s
-            id: ultimate-java-course/intro/Introduction.mp4?v1
+            id: welcome.mp4
             processed: true
       - name: Java Virtual Machine
         processed: true
         items:
           - name: Video
             time: 1m20s
-            id: ultimate-java-course/intro/Introduction.mp4?v2
+            id: welcome.mp4
             processed: true
       - name: JDK and JRE
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
@@ -62,56 +62,56 @@ sections:
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Java on Linux
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Java on MacOS
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Intelij Idea on Windows
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Intelij Idea on Linux
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Intelij Idea on MacOS
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Basic Tools Overview
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Javac Tool
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
@@ -121,7 +121,7 @@ sections:
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
@@ -131,7 +131,7 @@ sections:
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
@@ -141,7 +141,7 @@ sections:
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
           - name: PDF
             processed: true
@@ -151,14 +151,14 @@ sections:
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: First Introduction to the Project
         processed: true
         items:
           - name: Video
             time: 2m55s
-            id: ultimate-java-course/intro/Introduction.mp4?v3
+            id: welcome.mp4
             processed: true
       - name: Wrap Up
         processed: true
@@ -173,7 +173,7 @@ sections:
         items:
           - name: Video
             time: 4m10s
-            id: ultimate-java-course/intro/Introduction.mp4?v4
+            id: welcome.mp4
             processed: true
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v1
@@ -182,13 +182,13 @@ sections:
         processed: false
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v5
+            id: welcome.mp4
             time: 6m30s
             processed: false
       - name: Main Function
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v6
+            id: welcome.mp4
             time: 4m45s
             processed: false
           - name: Quiz
@@ -197,43 +197,43 @@ sections:
       - name: Program Arguments
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: System Properties
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Envrinment Variables
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Printing to Standard Output
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Reading from Standard Input
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Instrocution to Build Automation
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Maven
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
           - name: Quiz
@@ -242,7 +242,7 @@ sections:
       - name: Gradle
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
           - name: Quiz
@@ -251,61 +251,61 @@ sections:
       - name: Local Debugging
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Remote Debugging
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Basic Profilling
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Troubleshooting
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Expressions, Statements and Blocks
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: If-Then-Else
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Switch
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: While and Do-While
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: For Loop
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Break and Continue
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v7
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Wrap Up
@@ -319,241 +319,241 @@ sections:
       - name: Classes and Objects
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v9
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Abstraction
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v10
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Encapsulation
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v11
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Inheritance
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v12
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Multiple Inheritance
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v13
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Packages
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v14
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Overwritting and Overloading
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v15
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Polymorhism
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v16
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Final Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Final Methods
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Abstract Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Abstract Methods
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Declaring Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Declaring Class Members
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Declaring Class Methods
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Creating Objects
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Using Objects
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: This Keyword
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Supper Keyword
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Return Value from Method
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Access Control
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Initializing Fields
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Equals and Hashcode
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: InstanceOf Operator
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Records
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Nested Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Static Nested Class
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Inner Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Local Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Anonymous Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Best Practices for Nested Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Modelling Application Domain
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Autoboxing and Unboxing
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Strong, Soft, and Weak References
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Immutability
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Hidden Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Sealed Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Annotations
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Declaring New Annotations
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Nested Classes
         items:
           - name: Video
-            id: ultimate-java-course/intro/Introduction.mp4?v17
+            id: welcome.mp4
             time: 1m05s
             processed: false
       - name: Wrap Up
