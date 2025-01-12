@@ -213,13 +213,11 @@ export class CourseProgressComponent implements OnInit {
     updateCourse(): void {
         let courseContentB64 = btoa(JSON.stringify(this.courseContent));
         this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
-        this.update();
+        this.refreshPageState();
     }
 
-    update() {
+    refreshPageState() {
         console.log("Updating courses");
-        this.coursesService.refreshCourses().subscribe(
-            item => this.getCourse()
-        );
+        this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 }
