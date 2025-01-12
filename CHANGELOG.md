@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.7.1
+_release date: 2025-01-12_
+ * Minor styling improvements
+ * Added LoadCourseRepository and its empty adapter
+ * Updated color names
+
 ## 0.7.0
 _release date: 2025-01-12_
  * Finished new server setup
