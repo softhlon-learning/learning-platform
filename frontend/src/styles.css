@@ -1,7 +1,7 @@
 /** Global Colors */
 :root {
-    --h1-blue: var(--black);
-    --h2-blue: var(--black);
+    --black: var(--black);
+    --black: var(--black);
     --very-light: #F8F8F8;
     --light: #D1D0CE;
     --warm: #D1D0CE;
@@ -25,7 +25,7 @@ h1 {
 }
 
 h2 {
-    color: var(--h2-blue);
+    color: var(--black);
     font-weight: bold;
     text-align: center;
     font-size: 44px;
@@ -48,7 +48,7 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: var(--h1-blue);
+    color: var(--black);
     font-size: 1.3rem;
     padding: 1rem 0 1rem 0;
     margin: 1rem;
