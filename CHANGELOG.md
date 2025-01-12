@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.8.0
+_release date: 2025-01-12_
+ * Small frontend refactoring
+ * Created S3 buckets for each course
+
 ## 0.7.9
 _release date: 2025-01-12_
  * Rearrangement and reformatting
