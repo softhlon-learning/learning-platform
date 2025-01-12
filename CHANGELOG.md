@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.7.7
+_release date: 2025-01-12_
+ * Fixed List Courses functionality (taking data from enrollment if needed)
+ * Removed incorrect enrollment mapping in CourseEntity
+
 ## 0.7.6
 _release date: 2025-01-12_
  * Renamed UpdateCourse* to UpdateEnrollment*
