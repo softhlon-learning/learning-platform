@@ -28,8 +28,7 @@ public interface LoadCoursesRepository {
           String name,
           String description,
           String content,
-          String version,
-          boolean enrolled) {}
+          String version) {}
 
     sealed interface LoadCoursesResult {
         record CoursesLoaded(List<Course> course) implements LoadCoursesResult {}

@@ -6,6 +6,7 @@
 package io.softhlon.learning.courses.gateway;
 
 import io.softhlon.learning.common.hexagonal.RestApiAdapter;
+import io.softhlon.learning.common.security.AuthenticationContext;
 import io.softhlon.learning.courses.domain.ListCoursesService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -33,10 +34,11 @@ import static org.springframework.http.ResponseEntity.status;
 class ListCoursesController {
     private final ListCoursesService service;
     private final HttpServletRequest httpRequest;
+    private final AuthenticationContext authContext;
 
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
-        var result = service.listCourses();
+        var result = service.listCourses(authContext.accountId());
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

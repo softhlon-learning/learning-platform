@@ -13,8 +13,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface ListCoursesService {
-    Result listCourses();
-    record Request(String accountId, String courseId) {}
+    Result listCourses(UUID accountId);
 
     sealed interface Result {
         record Succeeded(List<CourseView> courses) implements Result {}

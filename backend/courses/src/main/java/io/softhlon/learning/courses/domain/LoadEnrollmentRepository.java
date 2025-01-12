@@ -19,7 +19,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadEnrollmentRepository {
-    LoadEnrollmentResult execute(UUID courseId, UUID accountId);
+    LoadEnrollmentResult execute(UUID accountId, UUID courseId);
 
     record Enrollment(
           UUID courseId,
