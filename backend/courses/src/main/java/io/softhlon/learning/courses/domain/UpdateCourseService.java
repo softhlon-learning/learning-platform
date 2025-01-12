@@ -19,6 +19,7 @@ public interface UpdateCourseService {
     Result update(Request request);
 
     record Request(
+          UUID accountId,
           UUID courseId,
           String content) {}
 

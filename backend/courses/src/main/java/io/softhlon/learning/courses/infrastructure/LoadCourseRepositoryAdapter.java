@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static io.softhlon.learning.courses.domain.LoadCourseRepository.LoadCourseResult.*;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -22,8 +24,37 @@ import java.util.UUID;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadCourseRepositoryAdapter implements LoadCourseRepository {
+    private final CoursesJpaRepository coursesRepo;
+
     @Override
     public LoadCourseResult execute(UUID id) {
-        return null;
+        try {
+            var entity = coursesRepo.findById(id);
+            if (entity.isPresent()) {
+                return new CourseLoaded(toCourse(entity.get()));
+            } else {
+                return new CourseNotFoundInDatabase();
+            }
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new CourseLoadFailed(cause);
+        }
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Course toCourse(CourseEntity entity) {
+        return new Course(
+              entity.getId(),
+              entity.getCode(),
+              entity.getOrderNo(),
+              entity.getName(),
+              entity.getDescription(),
+              entity.getContent(),
+              entity.getVersion(),
+              entity.getEnrollment() != null ? true : false
+        );
     }
 }
