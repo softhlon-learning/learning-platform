@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.7.9
+_release date: 2025-01-12_
+ * Rearrangement and reformatting
+
 ## 0.7.8
 _release date: 2025-01-12_
  * Set interface method names to 'execute'
