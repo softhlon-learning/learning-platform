@@ -16,7 +16,7 @@
     padding: 10px;
     display: flex;
     width: 380px;
-    height: 100%;
+    font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -50,9 +50,9 @@ input {
     border-radius: 8px;
     cursor: pointer;
     color: var(--black);
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 1rem 1rem 1rem;
     margin: 1rem;
-    width: 310px;
+    width: 275px;
 }
 
 button.submit {

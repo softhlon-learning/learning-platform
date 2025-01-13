@@ -1,20 +1,9 @@
 /* coursesComponent's private CSS styles */
 
-h2 {
-    font-size: 24px;
-}
-
-div {
-    display: flex;
-    height: 700px;
-    justify-content: center;
-    align-items: center;
-}
-
 .courses {
     list-style-type: none;
     padding: 0;
-    width: 800px;
+    width: 820px;
 }
 
 .courses li {
@@ -79,13 +68,19 @@ div {
 .courses .name {
     align-self: center;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .courses li button {
     justify-content: space-between;
 }
 
-h2 {
-    margin-top: 3em;
+.course-list {
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

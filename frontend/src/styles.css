@@ -9,18 +9,17 @@
     --active: #01234a;
     --checked-dark: #01234a;
     --checked-warm: #ceffaf;
-    --enrolled: #27a9ff;
+    --enrolled: #232121;
     --black: black;
 }
 
 /* Global Styles */
 * {
     font-family: Courier, sans-serif;
-    overflow: clip;
 }
 
 h1 {
-    margin-top: 0;
+    margin-top: 25px;
     font-size: 3.2rem;
     text-align: center;
 }
@@ -29,7 +28,7 @@ h2 {
     color: var(--black);
     font-weight: bold;
     text-align: center;
-    font-size: 44px;
+    font-size: 24px;
     margin: 0;
     padding: 0;
 }
@@ -39,9 +38,16 @@ h3 {
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items:  flex-start;
+    flex-direction: row;
+    background-color: white;
     padding: .5rem;
     max-width: 1500px;
+    height: 95vh;
     margin: 0.5em auto auto;
+    overflow: overlay;
 }
 
 button {
@@ -115,4 +121,8 @@ span {
 
 .checkbox > input:active {
     border: 1px dotted gray;
+}
+
+div button {
+    width: 12em;
 }
