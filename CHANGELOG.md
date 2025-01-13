@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.8.6
+_release date: 2025-01-13_
+ * Renamed sign-up to sign-in and moved continue with google button to it
+ * Created a new google id for localhost
+ * Reconfigured local nginx to listen on 443
+
 ## 0.8.5
 _release date: 2025-01-13_
  * Eperimenting with Google SignIn
