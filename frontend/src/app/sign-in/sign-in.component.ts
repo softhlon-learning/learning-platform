@@ -12,7 +12,6 @@ export class SignInComponent implements OnInit {
     ngOnInit() {
         const button = document.querySelector("#g_id_onload") as HTMLElement | null;
         button?.setAttribute("data-client_id", environment.googleClientId);
-        alert(environment.googleClientId);
     }
 
     protected readonly environment = environment;
