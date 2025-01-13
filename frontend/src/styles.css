@@ -8,7 +8,7 @@
     --hover: var(--black);
     --active: #01234a;
     --checked-dark: #01234a;
-    --checked-warm: white;
+    --checked-warm: #ceffaf;
     --black: black;
 }
 
