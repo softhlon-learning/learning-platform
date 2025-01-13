@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+declare global {
+  interface Window {
+    google: any;
+  }
+}
+
 @Component({
   selector: 'app-google-signin',
   standalone: true,
@@ -8,5 +14,24 @@ import { Component } from '@angular/core';
   styleUrl: './google-signin.component.css'
 })
 export class GoogleSigninComponent {
+  createFakeGoogleWrapper = () => {
+    const googleLoginWrapper = document.createElement('div');
+    googleLoginWrapper.style.display = 'none';
+    googleLoginWrapper.classList.add('custom-google-button');
+    document.body.appendChild(googleLoginWrapper);
+    window.google.accounts.id.renderButton(googleLoginWrapper, {
+      type: 'icon',
+      width: '200',
+    });
 
+    const googleLoginWrapperButton = googleLoginWrapper.querySelector(
+        'div[role=button]'
+    ) as HTMLElement;
+
+    return {
+      click: () => {
+        googleLoginWrapperButton?.click();
+      },
+    };
+  };
 }
