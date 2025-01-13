@@ -67,7 +67,7 @@ div {
 .courses .enrolled {
     border: 1px;
     color: white;
-    background-color: var(--black);
+    background-color: var(--enrolled);
     border-radius: 10px 10px 10px 10px;
     padding-top: 0.3em;
     margin-right: 0.5em;
