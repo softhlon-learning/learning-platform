@@ -19,7 +19,6 @@ export class CoursesComponent implements OnInit {
     }
 
     ngOnInit() {
-        alert(window.innerWidth);
         this.getCourses();
     }
 
