@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.8.1
+_release date: 2025-01-13_
+ * Reshaped enrolled badge
+ * Improved/Fixed selecting/updating frontend items
+ * Set processed to false for initial courses
+
 ## 0.8.0
 _release date: 2025-01-12_
  * Small frontend refactoring
