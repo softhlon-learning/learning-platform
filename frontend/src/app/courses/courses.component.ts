@@ -14,7 +14,12 @@ export class CoursesComponent implements OnInit {
     constructor(private coursesService: CoursesService) {
     }
 
+    get windowRef() {
+        return window;
+    }
+
     ngOnInit() {
+        alert(window.innerWidth);
         this.getCourses();
     }
 
