@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+
 import {AppComponent} from './app.component';
 import {CoursesComponent} from './courses/courses.component';
 import {CoursesService} from "./courses/courses.service";
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseProgressComponent} from "./course-progress/course-progress.component";
@@ -12,12 +13,6 @@ import {PDFItemComponent} from "./pdf-item/pdf-item.component";
 import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
-import {
-    SocialLoginModule,
-    SocialAuthServiceConfig,
-    GoogleLoginProvider,
-} from "@abacritt/angularx-social-login";
-import {GoogleSigninComponent} from "./google-signin/google-signin.component";
 
 @NgModule({
     declarations: [
@@ -29,33 +24,17 @@ import {GoogleSigninComponent} from "./google-signin/google-signin.component";
         VideoItemComponent,
         PDFItemComponent,
         QuizItemComponent,
-        SafePipe,
-        GoogleSigninComponent
+        SafePipe
     ],
-    bootstrap: [AppComponent],
-    imports: [BrowserModule,
-        AppRoutingModule],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule
+    ],
     providers: [
-        CoursesService,
-        provideHttpClient(withInterceptorsFromDi()),
-        {
-            provide: 'SocialAuthServiceConfig',
-            useValue: {
-                autoLogin: false,
-                providers: [
-                    {
-                        id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com', {
-                            scopes: 'openid profile email',
-                        }),
-                    },
-                ],
-                onError: (err) => {
-                    console.error(err);
-                },
-            } as SocialAuthServiceConfig,
-        }
-    ]
+        CoursesService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
