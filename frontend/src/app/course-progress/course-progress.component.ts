@@ -95,10 +95,11 @@ export class CourseProgressComponent implements OnInit {
             for (let chapter of section.chapters)
                 if (chapter.items != null)
                     for (let item of chapter.items)
-                        if (item.processed) {
+                        if (item.selected) {
                             this.setItem(item);
                             return;
                         }
+        this.setItem(courseContent.sections[0].chapters[0].items[0]);
     }
 
     getCurrentItem(): Item | null {
@@ -212,8 +213,8 @@ export class CourseProgressComponent implements OnInit {
 
     updateCourse(): void {
         let courseContentB64 = btoa(JSON.stringify(this.courseContent));
-        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
-        this.refreshPageState();
+        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe(
+            () => this.refreshPageState());
     }
 
     refreshPageState() {
