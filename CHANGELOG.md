@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.8.8
+_release date: 2025-01-13_
+ * Improved sign-in styling
+
 ## 0.8.7
 _release date: 2025-01-13_
  * Sign In page design (in progress)
