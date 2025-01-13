@@ -75,10 +75,14 @@
     justify-content: space-between;
 }
 
-
 div {
     display: flex;
     height: 700px;
     justify-content: center;
+    align-items: center;
+}
+
+.button-text {
+    display: flex;
     align-items: center;
 }
