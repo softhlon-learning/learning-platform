@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.8.2
+_release date: 2025-01-13_
+ * Opening course on Enroll button click
+ * Set selected checkbox to light green
+ * Decreased body top margin
+
 ## 0.8.1
 _release date: 2025-01-13_
  * Reshaped enrolled badge
