@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
+
 @Component({
     selector: 'sign-in',
     templateUrl: './sign-in.component.html',
     styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+    protected readonly environment = environment;
+
     constructor() {
     }
 
@@ -14,6 +17,4 @@ export class SignInComponent implements OnInit {
         button?.setAttribute("data-client_id", environment.googleClientId);
         button?.setAttribute("data-login_uri", environment.loginUri);
     }
-
-    protected readonly environment = environment;
 }

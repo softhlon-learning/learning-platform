@@ -4,35 +4,40 @@
             Sign In
         </div>
         <div class="info">
-            <span>By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the <a href="#">Privacy Policy</a>.</span>
+            <span>By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the <a
+                    href="#">Privacy Policy</a>.</span>
         </div>
-        <div id="g_id_onload"
+        <div data-auto_prompt="false"
              data-client_id=""
              data-login_uri="https://localhost/api/v1/google-sign-in"
-             data-auto_prompt="false">
+             id="g_id_onload">
         </div>
         <div class="g_id_signin"
-             data-type="standard"
-             data-size="large"
-             data-theme="outline"
-             data-text="continue_with"
+             data-logo_alignment="left"
              data-shape="rectangular"
-             data-logo_alignment="left">
+             data-size="large"
+             data-text="continue_with"
+             data-theme="outline"
+             data-type="standard">
         </div>
         <div class="or">
             ------------------------------------ or ------------------------------------
         </div>
         <div class="email">
-            <input type="text" placeholder="Email">
+            <input placeholder="Email" type="text">
         </div>
         <div class="password">
-            <input type="password" placeholder="Password">
+            <input placeholder="Password" type="password">
         </div>
         <button class="submit">Sign In</button>
     </div>
 </div>
 
 <script>
-    var id = {{environment.googleClientId}}
+    var id = {
+    {
+        environment.googleClientId
+    }
+    }
 </script>
 
