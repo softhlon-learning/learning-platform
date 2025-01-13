@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.9.0
+_release date: 2025-01-13_
+ * Fixed loading Google sign-in button
+ * Set 'ng serve --live-reload=false' in package.json
+ * Scaling screen view
+
 ## 0.8.9
 _release date: 2025-01-13_
 * Improved styling (courses, sign-in)
