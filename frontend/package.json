@@ -3,8 +3,8 @@
   "version": "0.9.3",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --live-reload=falsenp --configuration=production",
-    "build": "ng build",
+    "start": "ng serve --live-reload=falsen",
+    "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
