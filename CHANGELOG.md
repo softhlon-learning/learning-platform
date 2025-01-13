@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.9.2
+_release date: 2025-01-13_
+ * Parametrized googleClientId for local and production
+
 ## 0.9.1
 _release date: 2025-01-13_
  * Set hard width on video-containe
