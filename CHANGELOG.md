@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.9.1
+_release date: 2025-01-13_
+ * Set hard width on video-containe
+ * Fixed broken styling
+ * Fixed broken button text position on safari
+ * Fixed broken checkbox on safari
+
 ## 0.9.0
 _release date: 2025-01-13_
  * Fixed loading Google sign-in button
