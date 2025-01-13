@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.8.7
+_release date: 2025-01-13_
+ * Sign In page design (in progress)
+ * Local nginx listens on 80 and 443 ports
+
 ## 0.8.6
 _release date: 2025-01-13_
  * Renamed sign-up to sign-in and moved continue with google button to it
