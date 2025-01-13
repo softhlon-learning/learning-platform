@@ -3,7 +3,7 @@
 ## 0.9.3
 _release date: 2025-01-14_
  * Parametrized loginUri
- * Parametrized loginUri
+ * Reformatting frontend
 
 ## 0.9.2
 _release date: 2025-01-13_
