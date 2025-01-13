@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.8.5
+_release date: 2025-01-13_
+ * Eperimenting with Google SignIn
+
 ## 0.8.4
 _release date: 2025-01-13_
  * Installed @abacritt/angularx-social-login
