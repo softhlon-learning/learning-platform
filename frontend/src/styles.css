@@ -16,7 +16,7 @@
 /* Global Styles */
 * {
     font-family: Courier, sans-serif;
-    overflow: overlay;
+    overflow: clip;
 }
 
 h1 {
@@ -45,7 +45,6 @@ body {
 }
 
 button {
-
     border: none;
     border-radius: 8px;
     cursor: pointer;
