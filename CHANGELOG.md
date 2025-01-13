@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.8.3
+_release date: 2025-01-13_
+ * Created empty sign-up files (html, css, ts)
+ * Upgrade to Angular 18
+
 ## 0.8.2
 _release date: 2025-01-13_
  * Opening course on Enroll button click
