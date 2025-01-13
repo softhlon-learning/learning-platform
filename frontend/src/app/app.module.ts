@@ -17,6 +17,7 @@ import {
     SocialAuthServiceConfig,
     GoogleLoginProvider,
 } from "@abacritt/angularx-social-login";
+import {GoogleSigninComponent} from "./google-signin/google-signin.component";
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import {
         VideoItemComponent,
         PDFItemComponent,
         QuizItemComponent,
-        SafePipe
+        SafePipe,
+        GoogleSigninComponent
     ],
     bootstrap: [AppComponent],
     imports: [BrowserModule,
