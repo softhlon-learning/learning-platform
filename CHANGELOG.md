@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.8.4
+_release date: 2025-01-13_
+ * Installed @abacritt/angularx-social-login
+ * Imported SocialAuthServiceConfig and set Google Client ID
+ * Created google-signin component
+
 ## 0.8.3
 _release date: 2025-01-13_
  * Created empty sign-up files (html, css, ts)
