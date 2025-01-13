@@ -75,12 +75,10 @@
     justify-content: space-between;
 }
 
-.course-list {
-    justify-content: center;
-}
 
 div {
     display: flex;
-    flex-direction: row;
+    height: 700px;
     justify-content: center;
+    align-items: center;
 }

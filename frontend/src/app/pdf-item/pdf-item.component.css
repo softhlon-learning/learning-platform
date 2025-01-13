@@ -6,6 +6,11 @@ button {
     width: 12em;
 }
 
+div {
+    text-align: center;
+    width: 1066px;
+}
+
 div div {
     display: flex;
     justify-content: space-between;

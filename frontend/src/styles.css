@@ -34,6 +34,7 @@
 /* Global Styles */
 * {
     font-family: Courier, sans-serif;
+    overflow: clip;
 }
 
 h1 {

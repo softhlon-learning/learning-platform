@@ -1,3 +1,7 @@
+* {
+    overflow: overlay;
+}
+
 div {
     flex: 1;
     display: flex;
