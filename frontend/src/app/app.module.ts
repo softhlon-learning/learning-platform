@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {CoursesComponent} from './courses/courses.component';
 import {CoursesService} from "./courses/courses.service";
-import {HttpClientModule} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseProgressComponent} from "./course-progress/course-progress.component";
@@ -14,8 +14,7 @@ import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         CoursesComponent,
         CourseTocComponent,
@@ -26,16 +25,11 @@ import {QuizItemComponent} from "./quiz-item/quiz-item.component";
         QuizItemComponent,
         SafePipe
     ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule
-    ],
-    providers: [
-        CoursesService
-    ],
-    bootstrap: [AppComponent]
-})
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule], providers: [
+        CoursesService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {
 }
 
