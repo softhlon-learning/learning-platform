@@ -8,124 +8,124 @@ sections:
   - name: Introduction
     chapters:
       - name: Welcome to the Course
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m5s
             id: welcome.mp4?v1
-            processed: true
+            processed: false
       - name: Prerequisites
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m5s
             id: welcome.mp4?v2
-            processed: true
+            processed: false
       - name: Course Structure
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m5s
             id: welcome.mp4?v3
-            processed: true
+            processed: false
           - name: PDF
-            processed: true
+            processed: false
             id: ultimate-java-course/intro/Summary.pdf?v4
   - name: Getting Started
     chapters:
       - name: Introduction to Java
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 3m15s
             id: welcome.mp4?v5
-            processed: true
+            processed: false
       - name: Java Virtual Machine
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 1m20s
             id: welcome.mp4?v6
-            processed: true
+            processed: false
       - name: JDK and JRE
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v7
-            processed: true
+            processed: false
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v8
-            processed: true
+            processed: false
       - name: Java on Windows
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v9
-            processed: true
+            processed: false
       - name: Java on Linux
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v10
-            processed: true
+            processed: false
       - name: Java on MacOS
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v11
-            processed: true
+            processed: false
       - name: Intelij Idea on Windows
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v12
-            processed: true
+            processed: false
       - name: Intelij Idea on Linux
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v13
-            processed: true
+            processed: false
       - name: Intelij Idea on MacOS
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v14
-            processed: true
+            processed: false
       - name: Basic Tools Overview
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v15
-            processed: true
+            processed: false
       - name: Javac Tool
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v16
-            processed: true
+            processed: false
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v17
-            processed: true
+            processed: false
       - name: Java Tool
-        processed: true
+        processed: false
         items:
           - name: Video
             time: 2m55s
             id: welcome.mp4?v18
-            processed: true
+            processed: false
           - name: Quiz
             id: ultimate-java-course/intro/Quiz.json?v19
-            processed: true
+            processed: false
       - name: Jar Tool
       - name: IDE Overview
       - name: Basic Project Configuration
