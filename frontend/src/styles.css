@@ -134,9 +134,8 @@ span {
     text-align: center;
     color: var(--checked-dark);
     position: absolute;
-    -moz-left: 5px;
     top: 4px;
-    left: 8px;
+    left: 9px;
 }
 
 .checkbox > input:active {
