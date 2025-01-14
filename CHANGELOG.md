@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.10.8
+_release date: 2025-01-14_
+ * Implemented CustomAuthenticationManager
+ * Generating JWT on Google Sign in
+ * Added default constructor to AccountEntity
+
 ## 0.10.7
 _release date: 2025-01-14_
  * Added JWTProcessor
