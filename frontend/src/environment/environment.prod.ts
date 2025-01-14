@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
     googleClientId: '2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com',
-    loginUri: 'https://softhlon-learning.tech/api/v1/google-sign-in'
+    loginUri: 'https://softhlon-learning.tech/api/v1/account/auth/google-sign-in'
 };
