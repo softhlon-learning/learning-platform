@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.9
+_release date: 2025-01-14_
+ * Setting Authorization cookie in Google Sign In response
+ * Added CookieService to courses.service.ts
+
 ## 0.10.8
 _release date: 2025-01-14_
  * Implemented CustomAuthenticationManager
