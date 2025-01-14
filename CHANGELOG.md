@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.9.9
+_release date: 2025-01-14_
+ * Added type to account model
+ * Removed console outputs from GoogleSignInServiceImpl
+ * Partial implementation of GoogleSignInServiceImpl
+
 ## 0.9.8
 _release date: 2025-01-14_
  * Added google-client-id to application.yml
