@@ -12,3 +12,12 @@ spring:
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: true
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
+login-redirect-uri: https://localhost/courses
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: production
+login-redirect-uri: https://softhlon-learning.tech/courses

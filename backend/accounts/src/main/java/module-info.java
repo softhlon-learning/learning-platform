@@ -12,4 +12,5 @@ module accounts {
     requires spring.security.crypto;
     requires spring.core;
     requires spring.webmvc;
+    requires spring.beans;
 }
