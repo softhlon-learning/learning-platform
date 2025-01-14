@@ -3,24 +3,27 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
-import io.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Getter;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Slf4j
-@Service
-@tech.softhlon.learning.common.hexagonal.PersistenceAdapter
-@RequiredArgsConstructor
-class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenRepository {
-    @Override
-    public CreateInvalidatedTokenResult execute(CreateInvalidatedTokenRequest request) {
-        return null;
-    }
+@Getter
+@Builder
+@Entity(name = "invalidated_tokes")
+class InvalidatedEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private String tokenHash;
 }

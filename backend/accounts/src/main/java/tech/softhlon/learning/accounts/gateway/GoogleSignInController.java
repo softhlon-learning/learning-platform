@@ -25,9 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
-import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
