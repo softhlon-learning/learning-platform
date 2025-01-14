@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.11.1
+_release date: 2025-01-15_
+ * Added 'Authenticated' cookie
+ * Checking Authenticated cookie instead of Authorization
+ * Added addAuthFailedCookies method
+ * Added CookieService to all pages
+
 ## 0.11.0
 _release date: 2025-01-14_
  * Improved sign-in styling and added Cancel button
