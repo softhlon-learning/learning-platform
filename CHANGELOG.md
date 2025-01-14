@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.9.5
+_release date: 2025-01-14_
+ * Parametrized login-redirect-uri
+ * Prepared run-local.sh and run-prod.sh scripts
+
 ## 0.9.4
 _release date: 2025-01-14_
  * Increased size of sign-in form 
