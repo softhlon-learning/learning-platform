@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.10.0
+_release date: 2025-01-14_
+ * Creating new account on Google authentication, if needed
+
 ## 0.9.9
 _release date: 2025-01-14_
  * Added type to account model
