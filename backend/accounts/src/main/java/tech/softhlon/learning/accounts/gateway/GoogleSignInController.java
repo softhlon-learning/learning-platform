@@ -20,6 +20,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import java.util.Map;
 
+import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -40,7 +41,12 @@ class GoogleSignInController {
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
         log.info("Requested, body{}", body);
-        service.execute(new GoogleSignInService.Request(body.get("credential"), null));
+        var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
+
+        if (result instanceof Succeeded(String token)) {
+            response.setHeader("Set-Cookie", "Authotization=" + token + "; Path=/; Secure; HttpOnly");
+        }
+
         response.setHeader("Location", loginRedirectUri);
         response.setStatus(HttpStatus.FOUND.value());
     }
