@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.9.6
+_release date: 2025-01-14_
+* Firewall setup
+
 ## 0.9.5
 _release date: 2025-01-14_
  * Parametrized login-redirect-uri
