@@ -60,6 +60,8 @@ class GoogleSignInController {
         response.addCookie(authorization);
 
         Cookie authenticated = new Cookie("Authenticated", "true");
+        authenticated.setPath("/");
+        authenticated.setSecure(true);
         response.addCookie(authenticated);
     }
 }
