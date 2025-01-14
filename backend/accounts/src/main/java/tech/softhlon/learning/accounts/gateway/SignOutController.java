@@ -5,8 +5,6 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
-import tech.softhlon.learning.accounts.domain.SignOutService;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +12,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import tech.softhlon.learning.accounts.domain.SignOutService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -36,7 +36,7 @@ class SignOutController {
     ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
         var result = service.signOut(request);
         return switch (result) {
-            case Succeeded() -> successOkBody();
+            case Succeeded() -> successCreatedBody();
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }

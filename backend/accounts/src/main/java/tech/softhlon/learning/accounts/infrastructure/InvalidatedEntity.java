@@ -20,7 +20,7 @@ import java.util.UUID;
 
 @Getter
 @Builder
-@Entity(name = "invalidated_tokes")
+@Entity(name = "invalidated_tokens")
 class InvalidatedEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
