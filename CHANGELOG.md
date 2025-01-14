@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.11.0
+_release date: 2025-01-14_
+ * Improved sign-in styling and added Cancel button
+ * Replaced --black by --main and slightly updated the color
+ * Primitive redirection from /courses to /sign-in when Authorization cookie is not present
+
 ## 0.10.9
 _release date: 2025-01-14_
  * Setting Authorization cookie in Google Sign In response
