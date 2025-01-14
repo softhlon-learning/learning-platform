@@ -15,7 +15,7 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-public interface InvalidateAuthTokenRepository {
+public interface InvalidateTokenRepository {
     InvalidateAuthTokenResult execute(InvalidateAuthTokenRequest request);
 
     sealed interface InvalidateAuthTokenResult {
