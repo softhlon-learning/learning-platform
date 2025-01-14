@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.10.2
+_release date: 2025-01-14_
+ * Renamed io.softhlon to tech.softhlon
+
 ## 0.10.1
 _release date: 2025-01-14_
  * Created table invalidated_tokens
