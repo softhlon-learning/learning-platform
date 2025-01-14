@@ -55,33 +55,29 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        var authorizationCookie = new Cookie("Authorization", token);
-        authorizationCookie.setPath("/");
-        authorizationCookie.setSecure(true);
-        authorizationCookie.setHttpOnly(true);
-        response.addCookie(authorizationCookie);
-
-        var authenticatedCookie = new Cookie("Authenticated", "true");
-        authenticatedCookie.setPath("/");
-        authenticatedCookie.setSecure(true);
-        response.addCookie(authenticatedCookie);
+        addCookie(response, "Authorization", token, true);
+        addCookie(response, "Authenticated", "true", false);
     }
 
     private void addAuthFailedCookies(HttpServletResponse response) {
-        var authorizationCookie = new Cookie("Authorization", null);
-        authorizationCookie.setPath("/");
-        authorizationCookie.setSecure(true);
-        authorizationCookie.setHttpOnly(true);
-        response.addCookie(authorizationCookie);
-
-        var authenticatedCookie = new Cookie("Authenticated", "false");
-        authenticatedCookie.setPath("/");
-        authenticatedCookie.setSecure(true);
-        response.addCookie(authenticatedCookie);
+        addCookie(response, "Authorization", null, true);
+        addCookie(response, "Authenticated", "false", false);
     }
 
     private void addRedirectHeaders(HttpServletResponse response) {
         response.setHeader("Location", loginRedirectUri);
         response.setStatus(HttpStatus.FOUND.value());
+    }
+
+    private void addCookie(
+          HttpServletResponse response,
+          String name,
+          String value,
+          boolean httpOnly) {
+        var cookie = new Cookie(name, value);
+        cookie.setPath("/");
+        cookie.setSecure(true);
+        cookie.setHttpOnly(httpOnly);
+        response.addCookie(cookie);
     }
 }
