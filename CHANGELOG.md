@@ -3,7 +3,7 @@
 ## 0.10.6
 _release date: 2025-01-14_
  * Refactored interface method names to execute
- * Refactored interface method names to execute
+ * Logging every controller request
 
 ## 0.10.5
 _release date: 2025-01-14_
