@@ -50,7 +50,7 @@ class SignOutServiceImpl implements SignOutService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private CheckAuthTokenRequest prepareRequest(Request request) throws NoSuchAlgorithmException {
-        return new CheckAuthTokenRequest(tokenHash(request.authenticationToken()));
+        return new CheckAuthTokenRequest(tokenHash(request.token()));
     }
 
     private String tokenHash(String token) throws NoSuchAlgorithmException {
@@ -63,7 +63,7 @@ class SignOutServiceImpl implements SignOutService {
     private Result persistInvalidatedToken(Request request) throws NoSuchAlgorithmException {
         var result = createInvalidatedTokenRepository.execute(
               new CreateInvalidatedTokenRequest(
-                    tokenHash(request.authenticationToken())));
+                    tokenHash(request.token())));
         return switch (result) {
             case InvalidatedTokenPersisted(UUID id) -> new Succeeded();
             case InvalidatedTokenPersistenceFailed(Throwable cause) -> new Failed(cause);

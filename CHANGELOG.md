@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.4
+_release date: 2025-01-14_
+ * Implemented CreateInvalidatedTokenRepositoryAdapter
+ * Implemented SignOutServiceImpl
+
 ## 0.10.3
 _release date: 2025-01-14_
  * Added CreateInvalidatedTokenRepository and its empty adapter
