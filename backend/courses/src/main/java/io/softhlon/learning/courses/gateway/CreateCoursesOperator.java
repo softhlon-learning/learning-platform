@@ -88,6 +88,7 @@ public class CreateCoursesOperator {
         var jsonMapper = new ObjectMapper();
         return jsonMapper.writeValueAsString(jsonNode).getBytes();
     }
+
     private record CourseDefinition(
           UUID id,
           String code,
