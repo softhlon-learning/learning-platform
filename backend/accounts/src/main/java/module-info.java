@@ -18,4 +18,7 @@ module accounts {
     requires com.google.api.client.json.gson;
     requires com.google.api.client.auth;
     requires java.xml.bind;
+    requires jjwt.api;
+    requires com.fasterxml.jackson.annotation;
+    requires spring.security.core;
 }
