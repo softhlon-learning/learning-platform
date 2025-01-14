@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "./course";
 import {CoursesService} from './courses.service';
+import {Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'courses',
@@ -11,7 +13,10 @@ export class CoursesComponent implements OnInit {
     title = 'Softhlon Learning Platform';
     courses: Course[] = [];
 
-    constructor(private coursesService: CoursesService) {
+    constructor(
+        private coursesService: CoursesService,
+        private cookieService: CookieService,
+        private router: Router) {
     }
 
     get windowRef() {
@@ -20,6 +25,10 @@ export class CoursesComponent implements OnInit {
 
     ngOnInit() {
         this.getCourses();
+
+        if (!this.cookieService.check('Authorization')) {
+            this.router.navigate(['/sign-in']);
+        }
     }
 
     getCourses(): void {
