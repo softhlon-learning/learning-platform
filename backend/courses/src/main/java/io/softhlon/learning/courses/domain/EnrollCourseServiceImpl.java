@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package tech.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
-import io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
+import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Service;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import static io.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.*;
-import static io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
-import static io.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
-import static io.softhlon.learning.courses.domain.EnrollCourseService.Result.*;
+import static tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.*;
+import static tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
+import static tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
+import static tech.softhlon.learning.courses.domain.EnrollCourseService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

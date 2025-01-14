@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
-import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
-import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
+import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
+import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -24,9 +24,9 @@ import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 @Service
 @RequiredArgsConstructor
-class SignUpServiceImpl implements SignUpService {
-    private final CreateAccountRepository createAccountRepository;
-    private final CheckAccountByEmailRepository checkAccountByEmailRepository;
+class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUpService {
+    private final tech.softhlon.learning.accounts.domain.CreateAccountRepository createAccountRepository;
+    private final tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository checkAccountByEmailRepository;
 
     @Override
     public Result signUp(Request request) {
@@ -52,11 +52,11 @@ class SignUpServiceImpl implements SignUpService {
 
     private CreateAccountRequest prepareRequest(Request request) {
         return new CreateAccountRequest(
-              AccountType.PASSWORD.name(),
+              tech.softhlon.learning.accounts.domain.AccountType.PASSWORD.name(),
               request.name(),
               request.email(),
               encryptPassword(request.password()),
-              AccountStatus.ACTIVE.name());
+              tech.softhlon.learning.accounts.domain.AccountStatus.ACTIVE.name());
     }
 
     private String encryptPassword(String password) {

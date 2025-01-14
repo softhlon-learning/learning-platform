@@ -3,16 +3,16 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.courses.infrastructure;
 
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import io.softhlon.learning.courses.domain.DeleteEnrollmentRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
-import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
+import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
+import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

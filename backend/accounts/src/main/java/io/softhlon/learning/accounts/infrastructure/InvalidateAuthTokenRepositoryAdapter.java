@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
-import io.softhlon.learning.accounts.domain.InvalidateAuthTokenRepository;
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.accounts.domain.InvalidateAuthTokenRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.common.event;
+package tech.softhlon.learning.common.event;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

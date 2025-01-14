@@ -3,9 +3,9 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.domain;
 
-import io.softhlon.learning.common.hexagonal.InboundPort;
+import tech.softhlon.learning.common.hexagonal.InboundPort;
 
 import java.util.UUID;
 

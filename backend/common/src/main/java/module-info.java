@@ -7,9 +7,9 @@ module common {
     requires spring.security.core;
     requires spring.beans;
 
-    exports io.softhlon.learning.common.domain;
-    exports io.softhlon.learning.common.event;
-    exports io.softhlon.learning.common.hexagonal;
-    exports io.softhlon.learning.common.controller;
-    exports io.softhlon.learning.common.security;
+    exports tech.softhlon.learning.common.domain;
+    exports tech.softhlon.learning.common.event;
+    exports tech.softhlon.learning.common.hexagonal;
+    exports tech.softhlon.learning.common.controller;
+    exports tech.softhlon.learning.common.security;
 }

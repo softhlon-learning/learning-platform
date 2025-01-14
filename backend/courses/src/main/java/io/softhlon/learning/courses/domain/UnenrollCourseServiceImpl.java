@@ -3,19 +3,19 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package tech.softhlon.learning.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static io.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentRequest;
-import static io.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.*;
-import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentRequest;
-import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
-import static io.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
-import static io.softhlon.learning.courses.domain.UnenrollCourseService.Result.*;
+import static tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentRequest;
+import static tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.*;
+import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentRequest;
+import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
+import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
+import static tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

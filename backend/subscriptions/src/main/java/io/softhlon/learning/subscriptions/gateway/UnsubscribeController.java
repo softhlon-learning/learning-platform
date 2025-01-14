@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway;
 
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
-import io.softhlon.learning.subscriptions.domain.UnsubscribeService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.subscriptions.domain.UnsubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static io.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.*;
-import static io.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.*;
+import static tech.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

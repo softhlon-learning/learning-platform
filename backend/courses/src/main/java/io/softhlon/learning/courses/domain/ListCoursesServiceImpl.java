@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package tech.softhlon.learning.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,13 +13,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
-import static io.softhlon.learning.courses.domain.LoadCoursesRepository.Course;
-import static io.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
-import static io.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
-import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
-import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
+import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
+import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
+import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.Course;
+import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
+import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
+import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
+import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

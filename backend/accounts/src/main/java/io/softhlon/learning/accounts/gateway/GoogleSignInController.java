@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway;
 
-import io.softhlon.learning.accounts.domain.GoogleSignInService;
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +25,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
-import static io.softhlon.learning.accounts.domain.GoogleSignInService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.*;
+import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

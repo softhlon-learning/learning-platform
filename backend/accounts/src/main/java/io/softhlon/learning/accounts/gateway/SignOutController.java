@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway;
 
-import io.softhlon.learning.accounts.domain.SignOutService;
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.accounts.domain.SignOutService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
-import static io.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
+import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
+import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
+import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successOkBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

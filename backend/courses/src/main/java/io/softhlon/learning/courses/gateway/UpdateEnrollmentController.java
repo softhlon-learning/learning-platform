@@ -3,11 +3,11 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway;
 
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
-import io.softhlon.learning.common.security.AuthenticationContext;
-import io.softhlon.learning.courses.domain.UpdateEnrollmentService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Request;
-import static io.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
-import static io.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Request;
+import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
+import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 
 
 // ---------------------------------------------------------------------------------------------------------------------

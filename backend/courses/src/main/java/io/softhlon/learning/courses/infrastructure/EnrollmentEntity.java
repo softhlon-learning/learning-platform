@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.courses.infrastructure;
 
 import jakarta.persistence.*;
 import lombok.*;

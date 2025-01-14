@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
-import io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository;
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
+import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

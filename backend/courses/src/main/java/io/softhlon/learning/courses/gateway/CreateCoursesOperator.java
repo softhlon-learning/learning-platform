@@ -3,14 +3,14 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import io.softhlon.learning.courses.domain.UploadCourseService;
-import io.softhlon.learning.courses.domain.UploadCourseService.Request;
+import tech.softhlon.learning.courses.domain.UploadCourseService;
+import tech.softhlon.learning.courses.domain.UploadCourseService.Request;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -28,12 +28,12 @@ import java.util.UUID;
 @Component
 public class CreateCoursesOperator {
     private final UploadCourseService uploadCourseService;
-    private final CourseDefinitions courseDefinitions;
+    private final tech.softhlon.learning.courses.gateway.CourseDefinitions courseDefinitions;
     private final ObjectMapper mapper;
 
     public CreateCoursesOperator(
           UploadCourseService uploadCourseService,
-          CourseDefinitions courseDefinitions,
+          tech.softhlon.learning.courses.gateway.CourseDefinitions courseDefinitions,
           ObjectMapper mapper) {
         this.uploadCourseService = uploadCourseService;
         this.courseDefinitions = courseDefinitions;

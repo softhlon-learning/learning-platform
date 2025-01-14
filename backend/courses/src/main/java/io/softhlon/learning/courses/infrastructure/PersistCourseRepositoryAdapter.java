@@ -3,16 +3,16 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.courses.infrastructure;
 
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import io.softhlon.learning.courses.domain.PersistCourseRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.courses.domain.PersistCourseRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
-import static io.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
+import static tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
+import static tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

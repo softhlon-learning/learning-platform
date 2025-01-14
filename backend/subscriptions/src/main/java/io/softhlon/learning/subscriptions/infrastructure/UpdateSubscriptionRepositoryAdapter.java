@@ -3,12 +3,12 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.infrastructure;
+package tech.softhlon.learning.subscriptions.infrastructure;
 
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersisted;
-import io.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersistenceFailed;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository;
+import tech.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersisted;
+import tech.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.UpdateSubscriptionResult.SubscriptionPersistenceFailed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

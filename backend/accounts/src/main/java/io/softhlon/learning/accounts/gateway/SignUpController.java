@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway;
 
-import io.softhlon.learning.accounts.domain.SignUpService;
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.accounts.domain.SignUpService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
-import static io.softhlon.learning.accounts.domain.SignUpService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
+import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static org.springframework.http.ResponseEntity.status;
 
 // ---------------------------------------------------------------------------------------------------------------------

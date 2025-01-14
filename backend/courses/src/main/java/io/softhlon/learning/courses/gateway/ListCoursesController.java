@@ -3,11 +3,11 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway;
 
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
-import io.softhlon.learning.common.security.AuthenticationContext;
-import io.softhlon.learning.courses.domain.ListCoursesService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.softhlon.learning.courses.domain.ListCoursesService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static io.softhlon.learning.courses.domain.ListCoursesService.CourseView;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
-import static io.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
-import static io.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
+import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
+import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
+import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
 import static org.springframework.http.ResponseEntity.status;
 
 // ---------------------------------------------------------------------------------------------------------------------

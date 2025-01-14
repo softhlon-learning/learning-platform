@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.domain;
+package tech.softhlon.learning.subscriptions.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
-import static io.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.*;
-import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
-import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
-import static io.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
-import static io.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
+import static tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
+import static tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.*;
+import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
+import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
+import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
+import static tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

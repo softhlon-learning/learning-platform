@@ -3,26 +3,26 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.domain;
 
 import com.google.api.client.auth.openidconnect.IdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
-import io.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
-import io.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
-import io.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.UUID;
 
-import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
-import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
-import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
+import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 
 // --------------------------------------------------------------------------------------------------------------------
 // Implementation

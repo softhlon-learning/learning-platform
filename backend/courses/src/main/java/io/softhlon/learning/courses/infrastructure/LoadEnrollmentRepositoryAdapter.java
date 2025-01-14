@@ -3,17 +3,17 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.courses.infrastructure;
 
-import io.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import io.softhlon.learning.courses.domain.LoadEnrollmentRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-import static io.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
+import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

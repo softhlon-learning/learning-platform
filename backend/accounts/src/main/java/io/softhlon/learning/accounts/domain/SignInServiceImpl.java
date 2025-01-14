@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.domain;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -12,7 +12,7 @@ package io.softhlon.learning.accounts.domain;
 import org.springframework.stereotype.Service;
 
 @Service
-class SignInServiceImpl implements SignInService {
+class SignInServiceImpl implements tech.softhlon.learning.accounts.domain.SignInService {
     @Override
     public Result signIn(Request request) {
         throw new UnsupportedOperationException();

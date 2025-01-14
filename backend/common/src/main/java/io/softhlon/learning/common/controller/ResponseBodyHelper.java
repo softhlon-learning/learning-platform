@@ -2,7 +2,7 @@
 // Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.softhlon.learning.common.controller;
+package tech.softhlon.learning.common.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Builder;
@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.ResponseField.*;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.ResponseField.*;
 import static org.springframework.http.ResponseEntity.status;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------

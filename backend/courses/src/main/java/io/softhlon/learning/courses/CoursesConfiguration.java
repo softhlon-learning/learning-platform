@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses;
+package tech.softhlon.learning.courses;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,6 +17,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan
 @EnableJpaRepositories
 @Configuration(proxyBeanMethods = false)
-@ComponentScan("io.softhlon.learning.courses")
+@ComponentScan("tech.softhlon.learning.courses")
 public class CoursesConfiguration {
 }

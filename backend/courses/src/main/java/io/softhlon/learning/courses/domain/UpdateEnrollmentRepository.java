@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses.domain;
+package tech.softhlon.learning.courses.domain;
 
-import io.softhlon.learning.common.domain.DomainRepository;
-import io.softhlon.learning.common.hexagonal.OutboundPort;
+import tech.softhlon.learning.common.domain.DomainRepository;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

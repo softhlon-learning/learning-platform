@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway;
 
-import io.softhlon.learning.accounts.domain.SignInService;
-import io.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.accounts.domain.SignInService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static io.softhlon.learning.accounts.domain.SignInService.Result.*;
-import static io.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
-import static io.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
+import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

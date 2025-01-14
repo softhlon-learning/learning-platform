@@ -3,9 +3,9 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.courses;
+package tech.softhlon.learning.courses;
 
-import io.softhlon.learning.courses.gateway.CreateCoursesOperator;
+import tech.softhlon.learning.courses.gateway.CreateCoursesOperator;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

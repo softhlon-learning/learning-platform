@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
