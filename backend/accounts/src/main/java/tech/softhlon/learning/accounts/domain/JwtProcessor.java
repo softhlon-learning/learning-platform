@@ -58,7 +58,7 @@ public class JwtProcessor {
 
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("accountId", String.valueOf(user.id()));
+        claims.put("accountId", user.accountId());
         return doGenerateToken(claims, user.getUsername());
     }
 

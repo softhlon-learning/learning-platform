@@ -29,7 +29,7 @@ import java.util.List;
 @AllArgsConstructor
 @Accessors(fluent = true)
 public class User implements UserDetails {
-    private String accoutnId;
+    private String accountId;
     private String email;
     private String name;
 
