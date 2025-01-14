@@ -35,7 +35,6 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 class GoogleSignInController {
     private final GoogleSignInService service;
     private final HttpServletRequest httpRequest;
-
     @Value("${login-redirect-uri}")
     private String loginRedirectUri;
 
@@ -43,7 +42,6 @@ class GoogleSignInController {
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
         log.info("Requested, body{}", body);
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
-
         if (result instanceof Succeeded(String token)) {
             addAuthSucceededCookies(response, token);
         } else {
@@ -57,29 +55,29 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        var authorization = new Cookie("Authorization", token);
-        authorization.setPath("/");
-        authorization.setSecure(true);
-        authorization.setHttpOnly(true);
-        response.addCookie(authorization);
+        var authorizationCookie = new Cookie("Authorization", token);
+        authorizationCookie.setPath("/");
+        authorizationCookie.setSecure(true);
+        authorizationCookie.setHttpOnly(true);
+        response.addCookie(authorizationCookie);
 
-        var authenticated = new Cookie("Authenticated", "true");
-        authenticated.setPath("/");
-        authenticated.setSecure(true);
-        response.addCookie(authenticated);
+        var authenticatedCookie = new Cookie("Authenticated", "true");
+        authenticatedCookie.setPath("/");
+        authenticatedCookie.setSecure(true);
+        response.addCookie(authenticatedCookie);
     }
 
     private void addAuthFailedCookies(HttpServletResponse response) {
-        var authorization = new Cookie("Authorization", null);
-        authorization.setPath("/");
-        authorization.setSecure(true);
-        authorization.setHttpOnly(true);
-        response.addCookie(authorization);
+        var authorizationCookie = new Cookie("Authorization", null);
+        authorizationCookie.setPath("/");
+        authorizationCookie.setSecure(true);
+        authorizationCookie.setHttpOnly(true);
+        response.addCookie(authorizationCookie);
 
-        var authenticated = new Cookie("Authenticated", "false");
-        authenticated.setPath("/");
-        authenticated.setSecure(true);
-        response.addCookie(authenticated);
+        var authenticatedCookie = new Cookie("Authenticated", "false");
+        authenticatedCookie.setPath("/");
+        authenticatedCookie.setSecure(true);
+        response.addCookie(authenticatedCookie);
     }
 
     private void addRedirectHeaders(HttpServletResponse response) {
