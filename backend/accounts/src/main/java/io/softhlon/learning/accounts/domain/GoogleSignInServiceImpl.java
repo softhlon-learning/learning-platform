@@ -28,9 +28,6 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     public GoogleSignInServiceImpl(@Value("${google-client-id}") String clientId) {
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
-
-        System.out.println("Client ID: " + clientId);
-
         verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
               .setAudience(Collections.singletonList(clientId))
               .build();
@@ -39,7 +36,6 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     @Override
     public Result signIn(Request request) {
         try {
-            System.out.println(request.credential());
             var idToken = verifier.verify(request.credential());
 
             if (idToken != null) {
