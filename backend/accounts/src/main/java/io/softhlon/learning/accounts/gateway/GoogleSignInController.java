@@ -45,6 +45,7 @@ class GoogleSignInController {
 
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
+        service.signIn(new GoogleSignInService.Request(body.get("credential"), null));
         response.setHeader("Location", loginRedirectUri);
         response.setStatus(302);
     }

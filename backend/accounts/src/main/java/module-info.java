@@ -13,4 +13,8 @@ module accounts {
     requires spring.core;
     requires spring.webmvc;
     requires spring.beans;
+    requires google.api.client;
+    requires com.google.api.client;
+    requires com.google.api.client.json.gson;
+    requires com.google.api.client.auth;
 }
