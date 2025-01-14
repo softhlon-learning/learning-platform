@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.5
+_release date: 2025-01-14_
+ * Implemented CheckTokenRepositoryAdapter
+ * AuthToken* to Token small refactoring
+
 ## 0.10.4
 _release date: 2025-01-14_
  * Implemented CreateInvalidatedTokenRepositoryAdapter
