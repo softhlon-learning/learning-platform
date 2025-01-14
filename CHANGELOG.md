@@ -2,7 +2,8 @@
 
 ## 0.9.4
 _release date: 2025-01-14_
- * 
+ * Increased size of sign-in form 
+ * Implemented simple/POC GoogleSignInController and service, with redirection
 
 ## 0.9.3
 _release date: 2025-01-14_
