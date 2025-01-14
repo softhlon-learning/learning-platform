@@ -6,6 +6,7 @@ import {CourseContent} from "../course-content/course-content";
 import {Item} from "../course-content/item";
 import {NavigationItems} from "../course-navigation/navigation-items";
 import {Chapter} from '../course-content/chapter';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'course-progress',
@@ -20,6 +21,7 @@ export class CourseProgressComponent implements OnInit {
 
     constructor(
         private coursesService: CoursesService,
+        private cookieService: CookieService,
         private route: ActivatedRoute) {
     }
 

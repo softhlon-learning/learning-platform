@@ -3,6 +3,7 @@ import {Course} from "../courses/course";
 import {CoursesService} from '../courses/courses.service';
 import {ActivatedRoute} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'course-toc',
@@ -15,6 +16,7 @@ export class CourseTocComponent implements OnInit {
 
     constructor(
         private coursesService: CoursesService,
+        private cookieService: CookieService,
         private route: ActivatedRoute) {
     }
 
