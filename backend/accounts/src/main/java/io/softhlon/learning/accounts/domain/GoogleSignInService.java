@@ -3,17 +3,25 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package io.softhlon.learning.accounts.gateway;
+package io.softhlon.learning.accounts.domain;
+
+import io.softhlon.learning.common.hexagonal.InboundPort;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-class RestResources {
-    static final String API_PREFIX = "/api/v1";
-    static final String ACCOUNT = API_PREFIX + "/account";
-    static final String SIGN_IN = ACCOUNT + "/auth/sign-in";
-    static final String GOOGLE_SIGN_IN = ACCOUNT + "/auth/google-sign-in";
-    static final String SIGN_OUT = ACCOUNT + "/auth/sign-out";
-    static final String SIGN_UP = ACCOUNT + "/sign-up";
+@InboundPort
+@FunctionalInterface
+public interface GoogleSignInService {
+    Result signIn(Request request);
+
+    sealed interface Result {
+        record Succeeded() implements Result {}
+        record InvalidCredentialsFailed(String message) implements Result {}
+        record Failed(Throwable cause) implements Result {}
+    }
+    record Request(
+          String credential,
+          String gCsrfToken) {}
 }

@@ -10,4 +10,6 @@ module accounts {
     requires spring.data.commons;
     requires spring.boot.autoconfigure;
     requires spring.security.crypto;
+    requires spring.core;
+    requires spring.webmvc;
 }
