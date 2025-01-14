@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.1
+_release date: 2025-01-14_
+ * Created table invalidated_tokens
+ * Added CheckAuthTokenRepository and its empty adapter
+
 ## 0.10.0
 _release date: 2025-01-14_
  * Creating new account on Google authentication, if needed
