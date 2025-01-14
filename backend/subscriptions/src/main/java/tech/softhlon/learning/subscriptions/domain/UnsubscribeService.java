@@ -10,7 +10,7 @@ package tech.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnsubscribeService {
-    Result unsubscribe(Request request);
+    Result execute(Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}

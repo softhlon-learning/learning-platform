@@ -29,7 +29,7 @@ class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUp
     private final tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository checkAccountByEmailRepository;
 
     @Override
-    public Result signUp(Request request) {
+    public Result execute(Request request) {
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
             case AccountExists() -> new AccountAlreadyExistsFailed("Account with the same email already exists");

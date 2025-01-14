@@ -31,7 +31,7 @@ class SubscribeServiceImpl implements SubscribeService {
     private final CreateSubscriptionRepository createSubscriptionRepository;
 
     @Override
-    public Result subscribe(Request request) {
+    public Result execute(Request request) {
         try {
             var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
             return switch (exists) {

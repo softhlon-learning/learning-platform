@@ -33,7 +33,7 @@ class SubscribeController {
 
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
-        return switch (service.subscribe(new Request(authContext.accountId()))) {
+        return switch (service.execute(new Request(authContext.accountId()))) {
             case Succeeded() -> successCreatedBody();
             case AccountAlreadySubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

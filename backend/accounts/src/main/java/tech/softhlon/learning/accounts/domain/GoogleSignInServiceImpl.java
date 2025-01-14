@@ -48,7 +48,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     }
 
     @Override
-    public Result signIn(Request request) {
+    public Result execute(Request request) {
         try {
             var idToken = verifier.verify(request.credential());
             if (idToken != null) {

@@ -16,7 +16,7 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface SignUpService {
-    Result signUp(Request request);
+    Result execute(Request request);
 
     sealed interface Result {
         record Succeeded(UUID id) implements Result {}

@@ -12,7 +12,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface SubscribeService {
-    Result subscribe(Request request);
+    Result execute(Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}

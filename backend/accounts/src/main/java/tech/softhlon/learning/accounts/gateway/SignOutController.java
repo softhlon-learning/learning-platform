@@ -34,7 +34,7 @@ class SignOutController {
 
     @PostMapping(SIGN_OUT)
     ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
-        var result = service.signOut(request);
+        var result = service.execute(request);
         return switch (result) {
             case Succeeded() -> successCreatedBody();
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

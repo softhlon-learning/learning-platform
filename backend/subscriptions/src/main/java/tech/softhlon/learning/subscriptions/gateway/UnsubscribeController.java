@@ -32,7 +32,7 @@ class UnsubscribeController {
 
     @DeleteMapping(UNSUBSCRIBE)
     ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
-        return switch (service.unsubscribe(request)) {
+        return switch (service.execute(request)) {
             case Succeeded() -> successAcceptedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

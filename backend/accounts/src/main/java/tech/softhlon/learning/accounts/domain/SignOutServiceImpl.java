@@ -32,7 +32,7 @@ class SignOutServiceImpl implements SignOutService {
     private final CreateInvalidatedTokenRepository createInvalidatedTokenRepository;
 
     @Override
-    public Result signOut(Request request) {
+    public Result execute(Request request) {
         try {
             var exists = checkTokenRepository.execute(prepareRequest(request));
             return switch (exists) {
