@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.10.7
+_release date: 2025-01-14_
+ * Added JWTProcessor
+ * Added User (for JWT)
+ * Rearranged and optimized imports
+ * Added JWT secret configuration params
+
 ## 0.10.6
 _release date: 2025-01-14_
  * Refactored interface method names to execute
