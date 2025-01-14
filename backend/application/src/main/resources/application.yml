@@ -14,6 +14,9 @@ authentication.mocked: true
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
 login-redirect-uri: https://localhost/courses
 google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercontent.com
+jwt:
+  secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
+  expiration: 28800
 ---
 
 spring:
