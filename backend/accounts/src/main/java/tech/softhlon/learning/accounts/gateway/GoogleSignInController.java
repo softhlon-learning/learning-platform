@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -44,10 +45,21 @@ class GoogleSignInController {
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
 
         if (result instanceof Succeeded(String token)) {
-            response.setHeader("Set-Cookie", "Authorization=" + token + "; Path=/; Secure;");
+            addAuthorizationCookies(response, token);
         }
 
         response.setHeader("Location", loginRedirectUri);
         response.setStatus(HttpStatus.FOUND.value());
+    }
+
+    private void addAuthorizationCookies(HttpServletResponse response, String token) {
+        Cookie authorization = new Cookie("Authorization", token);
+        authorization.setPath("/");
+        authorization.setSecure(true);
+        authorization.setHttpOnly(true);
+        response.addCookie(authorization);
+
+        Cookie authenticated = new Cookie("Authenticated", "true");
+        response.addCookie(authorization);
     }
 }
