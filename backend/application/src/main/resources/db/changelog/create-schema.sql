@@ -1,8 +1,9 @@
 CREATE TABLE accounts (
     id uuid DEFAULT gen_random_uuid(),
     name VARCHAR NOT NULL,
+    type VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
-    password VARCHAR NOT NULL,
+    password VARCHAR NULL,
     status VARCHAR NOT NULL,
     created_time TIMESTAMP DEFAULT current_timestamp,
     updated_time TIMESTAMP DEFAULT current_timestamp,

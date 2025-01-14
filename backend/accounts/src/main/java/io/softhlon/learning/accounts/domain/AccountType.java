@@ -5,29 +5,11 @@
 
 package io.softhlon.learning.accounts.domain;
 
-import io.softhlon.learning.common.domain.DomainRepository;
-import io.softhlon.learning.common.hexagonal.OutboundPort;
-
-import java.util.UUID;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@OutboundPort
-@DomainRepository
-@FunctionalInterface
-public interface CreateAccountRepository {
-    CreateAccountResult execute(CreateAccountRequest request);
-
-    sealed interface CreateAccountResult {
-        record AccountPersisted(UUID uuid) implements CreateAccountResult {}
-        record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
-    }
-    record CreateAccountRequest(
-          String type,
-          String name,
-          String email,
-          String password,
-          String status) {}
+enum AccountType {
+    PASSWORD,
+    GOOGLE;
 }

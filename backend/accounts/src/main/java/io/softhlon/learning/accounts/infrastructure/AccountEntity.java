@@ -25,6 +25,7 @@ class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private String type;
     private String name;
     private String email;
     private String status;

@@ -45,6 +45,7 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
     private LoadAccountRepository.Account toAccount(AccountEntity entity) {
         return new Account(
               entity.getId(),
+              entity.getType(),
               entity.getName(),
               entity.getEmail()
         );

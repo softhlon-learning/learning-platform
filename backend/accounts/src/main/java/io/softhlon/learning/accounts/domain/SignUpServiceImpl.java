@@ -52,6 +52,7 @@ class SignUpServiceImpl implements SignUpService {
 
     private CreateAccountRequest prepareRequest(Request request) {
         return new CreateAccountRequest(
+              AccountType.PASSWORD.name(),
               request.name(),
               request.email(),
               encryptPassword(request.password()),
