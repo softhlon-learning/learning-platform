@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.9.7
+_release date: 2025-01-14_
+ * Analyzed Google Token verification on server side
+
 ## 0.9.6
 _release date: 2025-01-14_
 * Firewall setup
