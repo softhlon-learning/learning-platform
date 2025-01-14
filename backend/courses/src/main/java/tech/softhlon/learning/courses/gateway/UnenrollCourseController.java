@@ -38,7 +38,8 @@ class UnenrollCourseController {
 
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@PathVariable("courseId") UUID courseId) {
-        log.info("Requested, courseId: {}", courseId);
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}, courseId: {}", accountId, courseId);
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successAcceptedBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

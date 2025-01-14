@@ -7,6 +7,7 @@ package tech.softhlon.learning.subscriptions.gateway;
 
 import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.UnsubscribeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -31,10 +32,12 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSC
 class UnsubscribeController {
     private final UnsubscribeService service;
     private final HttpServletRequest httpRequest;
+    private final AuthenticationContext authContext;
 
     @DeleteMapping(UNSUBSCRIBE)
     ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
-        log.info("Requested, body: {}", request);
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}, body: {}", accountId, request);
         return switch (service.execute(request)) {
             case Succeeded() -> successAcceptedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);

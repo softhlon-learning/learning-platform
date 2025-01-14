@@ -42,9 +42,10 @@ class UpdateEnrollmentController {
     @PatchMapping(UPDATE_COURSE)
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
-          @Validated @RequestBody UpdateEnrollmentRequest courseRequest) {
-        log.info("Requested, courseId: {}, body: {}", courseId, courseRequest);
-        var result = service.execute(prepareRequest(courseId, courseRequest));
+          @Validated @RequestBody UpdateEnrollmentRequest request) {
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}, courseId: {}, body: {}", accountId, courseId, request);
+        var result = service.execute(prepareRequest(courseId, request));
         return switch (result) {
             case Succeeded() -> successOkBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

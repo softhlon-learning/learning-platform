@@ -35,8 +35,9 @@ class SubscribeController {
 
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
-        log.info("Requested, body: {}");
-        return switch (service.execute(new Request(authContext.accountId()))) {
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}");
+        return switch (service.execute(new Request(accountId))) {
             case Succeeded() -> successCreatedBody();
             case AccountAlreadySubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

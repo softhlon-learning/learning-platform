@@ -48,7 +48,8 @@ class ListCoursesController {
 
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
-        log.info("Requested, body: {}");
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}", accountId);
         var result = service.execute(authContext.accountId());
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
