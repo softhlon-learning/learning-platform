@@ -60,6 +60,6 @@ class GoogleSignInController {
         response.addCookie(authorization);
 
         Cookie authenticated = new Cookie("Authenticated", "true");
-        response.addCookie(authorization);
+        response.addCookie(authenticated);
     }
 }
