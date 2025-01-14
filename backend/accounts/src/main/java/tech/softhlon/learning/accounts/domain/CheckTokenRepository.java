@@ -15,7 +15,7 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-public interface CheckAuthTokenRepository {
+public interface CheckTokenRepository {
     CheckAuthTokenResult execute(CheckAuthTokenRequest request);
 
     sealed interface CheckAuthTokenResult {

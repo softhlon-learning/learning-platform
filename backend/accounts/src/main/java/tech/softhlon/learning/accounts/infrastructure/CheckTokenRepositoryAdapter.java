@@ -5,7 +5,7 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import tech.softhlon.learning.accounts.domain.CheckAuthTokenRepository;
+import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
-class CheckAuthTokenRepositoryAdapter implements CheckAuthTokenRepository {
+class CheckTokenRepositoryAdapter implements CheckTokenRepository {
     @Override
     public CheckAuthTokenResult execute(CheckAuthTokenRequest request) {
         return null;
