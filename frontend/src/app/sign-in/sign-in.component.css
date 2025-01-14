@@ -1,13 +1,12 @@
 * {
     overflow: clip;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .main {
     margin-top: 50px;
     display: flex;
-    height: 440px;
     justify-content: center;
     align-items: center;
 }
@@ -15,7 +14,8 @@
 .container {
     padding: 10px;
     display: flex;
-    width: 380px;
+    width: 420px;
+    height: 480px;
     font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
