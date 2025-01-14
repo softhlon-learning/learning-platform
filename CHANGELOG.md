@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.9.4
+_release date: 2025-01-14_
+ * 
+
 ## 0.9.3
 _release date: 2025-01-14_
  * Parametrized loginUri
