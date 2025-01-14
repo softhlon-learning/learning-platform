@@ -44,11 +44,9 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
 
             if (idToken != null) {
                 IdToken.Payload payload = idToken.getPayload();
-                String email = (String) payload.get("email");
-                String givenName = (String) payload.get("given_name");
-                System.out.println("name: " + givenName + ", email: " + email);
+                var email = (String) payload.get("email");
+                var name = (String) payload.get("given_name");
             } else {
-                System.out.println("Invalid ID token.");
             }
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
