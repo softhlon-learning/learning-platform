@@ -17,7 +17,7 @@ public interface GoogleSignInService {
     Result execute(Request request);
 
     sealed interface Result {
-        record Succeeded() implements Result {}
+        record Succeeded(String token) implements Result {}
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }

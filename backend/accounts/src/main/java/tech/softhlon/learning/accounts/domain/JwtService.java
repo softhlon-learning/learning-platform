@@ -16,13 +16,14 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Component
-public class JwtProcessor {
+public class JwtService {
     @Value("${jwt.secret}")
     private String secret;
 
@@ -56,10 +57,10 @@ public class JwtProcessor {
         }
     }
 
-    public String generateToken(User user) {
+    public String generateToken(UUID accountId, String email) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("accountId", user.accountId());
-        return doGenerateToken(claims, user.getUsername());
+        claims.put("accountId", accountId.toString());
+        return doGenerateToken(claims, email);
     }
 
     private Boolean isTokenExpired(String token) {

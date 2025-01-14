@@ -33,11 +33,13 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     private final GoogleIdTokenVerifier verifier;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final CreateAccountRepository createAccountRepository;
+    private final JwtService jwtService;
 
     public GoogleSignInServiceImpl(
           @Value("${google-client-id}") String clientId,
           CheckAccountByEmailRepository checkAccountByEmailRepository,
-          CreateAccountRepository createAccountRepository) {
+          CreateAccountRepository createAccountRepository,
+          JwtService jwtService) {
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
         verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
@@ -45,6 +47,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
               .build();
         this.checkAccountByEmailRepository = checkAccountByEmailRepository;
         this.createAccountRepository = createAccountRepository;
+        this.jwtService = jwtService;
     }
 
     @Override
@@ -55,10 +58,9 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                 IdToken.Payload payload = idToken.getPayload();
                 var email = (String) payload.get("email");
                 var name = (String) payload.get("given_name");
-
                 var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(email));
                 return switch (exists) {
-                    case AccountExists() -> new Succeeded();
+                    case AccountExists(UUID id) -> new Succeeded(token(id, email));
                     case AccountNotFound() -> persistAccount(name, email);
                     case CheckAccountFailed(Throwable cause) -> new Result.Failed(cause);
                 };
@@ -77,7 +79,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     private Result persistAccount(String name, String email) {
         var result = createAccountRepository.execute(prepareRequest(name, email));
         return switch (result) {
-            case AccountPersisted(UUID id) -> new Succeeded();
+            case AccountPersisted(UUID id) -> new Succeeded(token(id, email));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
@@ -87,5 +89,9 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
               AccountType.GOOGLE.name(),
               name, email, null,
               AccountStatus.ACTIVE.name());
+    }
+
+    private String token(UUID accountId, String email) {
+        return jwtService.generateToken(accountId, email);
     }
 }

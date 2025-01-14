@@ -8,6 +8,8 @@ package tech.softhlon.learning.accounts.domain;
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -19,7 +21,7 @@ public interface CheckAccountByEmailRepository {
     CheckAccountByEmailResult execute(CheckAccountByEmailRequest request);
 
     sealed interface CheckAccountByEmailResult {
-        record AccountExists() implements CheckAccountByEmailResult {}
+        record AccountExists(UUID id) implements CheckAccountByEmailResult {}
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }

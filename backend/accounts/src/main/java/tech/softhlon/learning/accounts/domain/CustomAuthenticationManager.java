@@ -21,13 +21,13 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 class CustomAuthenticationManager implements AuthenticationManager {
-    private final JwtProcessor jwtProcessor;
+    private final JwtService jwtService;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         var token = authentication.getCredentials().toString();
-        if (jwtProcessor.isTokenValid(token)) {
-            var claims = jwtProcessor.getAllClaimsFromToken(token);
+        if (jwtService.isTokenValid(token)) {
+            var claims = jwtService.getAllClaimsFromToken(token);
             var name = claims.get("name", String.class);
             var accountId = claims.get("accountId", String.class);
 

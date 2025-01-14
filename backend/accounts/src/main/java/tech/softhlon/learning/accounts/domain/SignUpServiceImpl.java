@@ -32,7 +32,7 @@ class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUp
     public Result execute(Request request) {
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
-            case AccountExists() -> new AccountAlreadyExistsFailed("Account with the same email already exists");
+            case AccountExists(_) -> new AccountAlreadyExistsFailed("Account with the same email already exists");
             case AccountNotFound() -> persistAccount(request);
             case CheckAccountFailed(Throwable cause) -> new Failed(cause);
         };
