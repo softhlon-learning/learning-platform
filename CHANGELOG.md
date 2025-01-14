@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.6
+_release date: 2025-01-14_
+ * Refactored interface method names to execute
+ * Refactored interface method names to execute
+
 ## 0.10.5
 _release date: 2025-01-14_
  * Implemented CheckTokenRepositoryAdapter
