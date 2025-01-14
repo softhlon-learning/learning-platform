@@ -13,7 +13,7 @@ logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: true
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
 login-redirect-uri: https://localhost/courses
-
+google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercontent.com
 ---
 
 spring:
@@ -21,3 +21,4 @@ spring:
     activate:
       on-profile: production
 login-redirect-uri: https://softhlon-learning.tech/courses
+google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com
