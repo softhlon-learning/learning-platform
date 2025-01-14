@@ -22,7 +22,7 @@ import java.util.Map;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Component
-public class JWTProcessor {
+public class JwtProcessor {
     @Value("${jwt.secret}")
     private String secret;
 
@@ -48,7 +48,7 @@ public class JWTProcessor {
         return getAllClaimsFromToken(token).getExpiration();
     }
 
-    public Boolean validateToken(String token) {
+    public Boolean isTokenValid(String token) {
         try {
             return !isTokenExpired(token);
         } catch (Exception ex) {
