@@ -16,8 +16,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.UUID;
 
+import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
 import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import static io.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 
 // --------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -27,16 +32,19 @@ import static io.softhlon.learning.accounts.domain.CheckAccountByEmailRepository
 class GoogleSignInServiceImpl implements GoogleSignInService {
     private final GoogleIdTokenVerifier verifier;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
+    private final CreateAccountRepository createAccountRepository;
 
     public GoogleSignInServiceImpl(
-          @Value("${google-client-id}")
-          String clientId, CheckAccountByEmailRepository checkAccountByEmailRepository) {
+          @Value("${google-client-id}") String clientId,
+          CheckAccountByEmailRepository checkAccountByEmailRepository,
+          CreateAccountRepository createAccountRepository) {
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
         verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
               .setAudience(Collections.singletonList(clientId))
               .build();
         this.checkAccountByEmailRepository = checkAccountByEmailRepository;
+        this.createAccountRepository = createAccountRepository;
     }
 
     @Override
@@ -48,10 +56,10 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                 var email = (String) payload.get("email");
                 var name = (String) payload.get("given_name");
 
-                var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRepository.CheckAccountByEmailRequest(email));
+                var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(email));
                 return switch (exists) {
                     case AccountExists() -> new Succeeded();
-                    case AccountNotFound() -> null;
+                    case AccountNotFound() -> persistAccount(name, email);
                     case CheckAccountFailed(Throwable cause) -> new Result.Failed(cause);
                 };
             } else {
@@ -60,5 +68,24 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
         } catch (Throwable cause) {
             return new Failed(cause);
         }
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Result persistAccount(String name, String email) {
+        var result = createAccountRepository.execute(prepareRequest(name, email));
+        return switch (result) {
+            case AccountPersisted(UUID id) -> new Succeeded();
+            case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+    }
+
+    private CreateAccountRequest prepareRequest(String name, String email) {
+        return new CreateAccountRequest(
+              AccountType.GOOGLE.name(),
+              name, email, null,
+              AccountStatus.ACTIVE.name());
     }
 }

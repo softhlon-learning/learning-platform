@@ -41,6 +41,7 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
 
     private AccountEntity toAccount(CreateAccountRequest request) {
         return AccountEntity.builder()
+              .type(request.type())
               .name(request.name())
               .email(request.email())
               .password(request.password())
