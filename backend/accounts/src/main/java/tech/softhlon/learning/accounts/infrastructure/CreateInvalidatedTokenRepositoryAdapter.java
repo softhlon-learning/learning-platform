@@ -5,10 +5,13 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository;
+
+import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
+import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,8 +22,26 @@ import org.springframework.stereotype.Service;
 @tech.softhlon.learning.common.hexagonal.PersistenceAdapter
 @RequiredArgsConstructor
 class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenRepository {
+    private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
+
     @Override
     public CreateInvalidatedTokenResult execute(CreateInvalidatedTokenRequest request) {
-        return null;
+        try {
+            var createdAccount = invalidatedTokensRepo.save(toInvalidatedToken(request));
+            return new InvalidatedTokenPersisted(createdAccount.getId());
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new InvalidatedTokenPersistenceFailed(cause);
+        }
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private InvalidatedEntity toInvalidatedToken(CreateInvalidatedTokenRequest request) {
+        return InvalidatedEntity.builder()
+              .tokenHash(request.tokenHash())
+              .build();
     }
 }
