@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.accounts.domain.SignUpService;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,6 +29,7 @@ import static org.springframework.http.ResponseEntity.status;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -41,6 +43,7 @@ class SignUpController {
 
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
+        log.info("Requested, body: {}", request);
         var result = service.execute(request);
         return switch (result) {
             case Succeeded(UUID id) -> successBody(id);

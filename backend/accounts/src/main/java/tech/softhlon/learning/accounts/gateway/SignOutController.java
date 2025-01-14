@@ -7,6 +7,7 @@ package tech.softhlon.learning.accounts.gateway;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.succes
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -34,6 +36,7 @@ class SignOutController {
 
     @PostMapping(SIGN_OUT)
     ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request) {
+        log.info("Requested, body: {}", request);
         var result = service.execute(request);
         return switch (result) {
             case Succeeded() -> successCreatedBody();

@@ -5,6 +5,8 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,6 +26,7 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -36,8 +39,9 @@ class GoogleSignInController {
 
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
+        log.info("Requested, body{}", body);
         service.execute(new GoogleSignInService.Request(body.get("credential"), null));
         response.setHeader("Location", loginRedirectUri);
-        response.setStatus(302);
+        response.setStatus(HttpStatus.FOUND.value());
     }
 }

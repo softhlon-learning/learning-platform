@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.courses.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.UpdateEnrollmentService;
@@ -29,6 +30,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -41,6 +43,7 @@ class UpdateEnrollmentController {
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
           @Validated @RequestBody UpdateEnrollmentRequest courseRequest) {
+        log.info("Requested, courseId: {}, body: {}", courseId, courseRequest);
         var result = service.execute(prepareRequest(courseId, courseRequest));
         return switch (result) {
             case Succeeded() -> successOkBody();

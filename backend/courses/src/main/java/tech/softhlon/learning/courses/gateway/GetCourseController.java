@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.courses.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.courses.domain.GetCourseDetailsService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ import static org.springframework.http.ResponseEntity.status;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -44,6 +46,7 @@ class GetCourseController {
 
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
+        log.info("Requested, body: {}", request);
         var result = service.execute(request);
         return switch (result) {
             case Succeeded(CourseDetails courseDetails) -> successBody(courseDetails);

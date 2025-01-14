@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.courses.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.ListCoursesService;
@@ -26,8 +27,9 @@ import static org.springframework.http.ResponseEntity.status;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
-// ---------------------------------------------------------------------------------------------------------------------
+// ---------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -46,6 +48,7 @@ class ListCoursesController {
 
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
+        log.info("Requested, body: {}");
         var result = service.execute(authContext.accountId());
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);

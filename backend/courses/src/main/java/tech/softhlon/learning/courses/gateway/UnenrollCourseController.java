@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.courses.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService;
@@ -26,6 +27,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.UNENROLL_COUR
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -36,6 +38,7 @@ class UnenrollCourseController {
 
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@PathVariable("courseId") UUID courseId) {
+        log.info("Requested, courseId: {}", courseId);
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successAcceptedBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

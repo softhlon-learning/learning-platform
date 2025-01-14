@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.courses.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.EnrollCourseService;
@@ -26,6 +27,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -36,6 +38,7 @@ class EnrollCourseController {
 
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(@PathVariable("courseId") UUID courseId) {
+        log.info("Requested, courseId: {}", courseId);
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successCreatedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);

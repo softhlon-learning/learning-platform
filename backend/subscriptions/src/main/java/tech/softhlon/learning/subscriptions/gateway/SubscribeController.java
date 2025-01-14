@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.SubscribeService;
@@ -23,6 +24,7 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRI
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
@@ -33,6 +35,7 @@ class SubscribeController {
 
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
+        log.info("Requested, body: {}");
         return switch (service.execute(new Request(authContext.accountId()))) {
             case Succeeded() -> successCreatedBody();
             case AccountAlreadySubscribedFailed(String message) -> badRequestBody(httpRequest, message);
