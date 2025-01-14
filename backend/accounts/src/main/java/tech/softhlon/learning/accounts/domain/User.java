@@ -6,7 +6,6 @@
 package tech.softhlon.learning.accounts.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,35 +29,13 @@ import java.util.List;
 @AllArgsConstructor
 @Accessors(fluent = true)
 public class User implements UserDetails {
-    private Integer id;
+    private String accoutnId;
     private String email;
     private String name;
-    private String password;
-    private Boolean enabled;
 
     @Override
     public String getUsername() {
         return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return this.enabled;
     }
 
     @Override
@@ -69,11 +46,6 @@ public class User implements UserDetails {
     @JsonIgnore
     @Override
     public String getPassword() {
-        return password;
-    }
-
-    @JsonProperty
-    public void setPassword(String password) {
-        this.password = password;
+        return null;
     }
 }
