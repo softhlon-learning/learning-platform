@@ -5,21 +5,34 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+
+import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckAuthTokenResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckTokenRepositoryAdapter implements CheckTokenRepository {
+    private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
+
     @Override
     public CheckAuthTokenResult execute(CheckAuthTokenRequest request) {
-        return null;
+        try {
+            return invalidatedTokensRepo.existsByTokenHash(request.authTokenHash())
+                  ? new AuthTokenExists()
+                  : new AuthTokenNotFound();
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new CheckAuthTokenFailed(cause);
+        }
     }
 }
