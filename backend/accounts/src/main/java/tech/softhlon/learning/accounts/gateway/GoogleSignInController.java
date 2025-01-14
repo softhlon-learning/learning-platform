@@ -45,23 +45,45 @@ class GoogleSignInController {
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
 
         if (result instanceof Succeeded(String token)) {
-            addAuthorizationCookies(response, token);
+            addAuthSucceededCookies(response, token);
+        } else {
+            addAuthFailedCookies(response);
         }
-
-        response.setHeader("Location", loginRedirectUri);
-        response.setStatus(HttpStatus.FOUND.value());
+        addRedirectHeaders(response);
     }
 
-    private void addAuthorizationCookies(HttpServletResponse response, String token) {
-        Cookie authorization = new Cookie("Authorization", token);
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private void addAuthSucceededCookies(HttpServletResponse response, String token) {
+        var authorization = new Cookie("Authorization", token);
         authorization.setPath("/");
         authorization.setSecure(true);
         authorization.setHttpOnly(true);
         response.addCookie(authorization);
 
-        Cookie authenticated = new Cookie("Authenticated", "true");
+        var authenticated = new Cookie("Authenticated", "true");
         authenticated.setPath("/");
         authenticated.setSecure(true);
         response.addCookie(authenticated);
+    }
+
+    private void addAuthFailedCookies(HttpServletResponse response) {
+        var authorization = new Cookie("Authorization", null);
+        authorization.setPath("/");
+        authorization.setSecure(true);
+        authorization.setHttpOnly(true);
+        response.addCookie(authorization);
+
+        var authenticated = new Cookie("Authenticated", "false");
+        authenticated.setPath("/");
+        authenticated.setSecure(true);
+        response.addCookie(authenticated);
+    }
+
+    private void addRedirectHeaders(HttpServletResponse response) {
+        response.setHeader("Location", loginRedirectUri);
+        response.setStatus(HttpStatus.FOUND.value());
     }
 }
