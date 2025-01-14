@@ -7,14 +7,14 @@ package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckAuthTokenRequest;
+import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenRequest;
 
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
-import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckAuthTokenResult.*;
+import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.*;
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenRequest;
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
@@ -36,9 +36,9 @@ class SignOutServiceImpl implements SignOutService {
         try {
             var exists = checkTokenRepository.execute(prepareRequest(request));
             return switch (exists) {
-                case AuthTokenExists() -> new Succeeded();
-                case AuthTokenNotFound() -> persistInvalidatedToken(request);
-                case CheckAuthTokenFailed(Throwable cause) -> new Failed(cause);
+                case TokenExists() -> new Succeeded();
+                case TokenNotFound() -> persistInvalidatedToken(request);
+                case CheckTokenFailed(Throwable cause) -> new Failed(cause);
             };
         } catch (Throwable cause) {
             return new Failed(cause);
@@ -49,8 +49,8 @@ class SignOutServiceImpl implements SignOutService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private CheckAuthTokenRequest prepareRequest(Request request) throws NoSuchAlgorithmException {
-        return new CheckAuthTokenRequest(tokenHash(request.token()));
+    private CheckTokenRequest prepareRequest(Request request) throws NoSuchAlgorithmException {
+        return new CheckTokenRequest(tokenHash(request.token()));
     }
 
     private String tokenHash(String token) throws NoSuchAlgorithmException {

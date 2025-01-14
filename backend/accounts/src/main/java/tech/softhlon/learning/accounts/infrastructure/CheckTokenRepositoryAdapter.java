@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 
-import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckAuthTokenResult.*;
+import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,14 +25,14 @@ class CheckTokenRepositoryAdapter implements CheckTokenRepository {
     private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
 
     @Override
-    public CheckAuthTokenResult execute(CheckAuthTokenRequest request) {
+    public CheckTokenResult execute(CheckTokenRequest request) {
         try {
-            return invalidatedTokensRepo.existsByTokenHash(request.authTokenHash())
-                  ? new AuthTokenExists()
-                  : new AuthTokenNotFound();
+            return invalidatedTokensRepo.existsByTokenHash(request.tokenHash())
+                  ? new TokenExists()
+                  : new TokenNotFound();
         } catch (Throwable cause) {
             log.error("Error", cause);
-            return new CheckAuthTokenFailed(cause);
+            return new CheckTokenFailed(cause);
         }
     }
 }

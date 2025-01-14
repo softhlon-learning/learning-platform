@@ -16,12 +16,12 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 @DomainRepository
 @FunctionalInterface
 public interface CheckTokenRepository {
-    CheckAuthTokenResult execute(CheckAuthTokenRequest request);
+    CheckTokenResult execute(CheckTokenRequest request);
 
-    sealed interface CheckAuthTokenResult {
-        record AuthTokenExists() implements CheckAuthTokenResult {}
-        record AuthTokenNotFound() implements CheckAuthTokenResult {}
-        record CheckAuthTokenFailed(Throwable cause) implements CheckAuthTokenResult {}
+    sealed interface CheckTokenResult {
+        record TokenExists() implements CheckTokenResult {}
+        record TokenNotFound() implements CheckTokenResult {}
+        record CheckTokenFailed(Throwable cause) implements CheckTokenResult {}
     }
-    record CheckAuthTokenRequest(String authTokenHash) {}
+    record CheckTokenRequest(String tokenHash) {}
 }
