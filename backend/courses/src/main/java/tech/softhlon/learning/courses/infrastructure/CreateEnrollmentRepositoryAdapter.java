@@ -5,13 +5,13 @@
 
 package tech.softhlon.learning.courses.infrastructure;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

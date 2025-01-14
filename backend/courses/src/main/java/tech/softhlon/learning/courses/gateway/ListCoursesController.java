@@ -5,25 +5,25 @@
 
 package tech.softhlon.learning.courses.gateway;
 
-import lombok.extern.slf4j.Slf4j;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.domain.ListCoursesService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.softhlon.learning.courses.domain.ListCoursesService;
 
 import java.util.List;
 
+import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
 import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
 import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
 import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
-import static org.springframework.http.ResponseEntity.status;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

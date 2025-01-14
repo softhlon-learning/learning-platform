@@ -5,14 +5,14 @@
 
 package tech.softhlon.learning.application;
 
-import tech.softhlon.learning.accounts.AccountsConfiguration;
-import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.CoursesConfiguration;
-import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import tech.softhlon.learning.accounts.AccountsConfiguration;
+import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.softhlon.learning.courses.CoursesConfiguration;
+import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

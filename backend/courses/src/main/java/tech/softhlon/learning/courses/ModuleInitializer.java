@@ -5,13 +5,13 @@
 
 package tech.softhlon.learning.courses;
 
-import tech.softhlon.learning.courses.gateway.CreateCoursesOperator;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import tech.softhlon.learning.courses.gateway.CreateCoursesOperator;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

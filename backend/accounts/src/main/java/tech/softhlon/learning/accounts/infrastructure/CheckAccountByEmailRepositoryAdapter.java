@@ -5,11 +5,11 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository;
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 
 import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.*;
 

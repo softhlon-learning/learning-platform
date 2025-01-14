@@ -5,11 +5,11 @@
 
 package tech.softhlon.learning.courses.infrastructure;
 
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository;
 
 import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
 import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;

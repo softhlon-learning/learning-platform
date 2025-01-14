@@ -5,11 +5,11 @@
 
 package tech.softhlon.learning.courses.domain;
 
-import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
-import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
+import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
