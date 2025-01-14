@@ -44,7 +44,7 @@ class GoogleSignInController {
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
 
         if (result instanceof Succeeded(String token)) {
-            response.setHeader("Set-Cookie", "Authorization=" + token + "; Path=/; Secure; HttpOnly");
+            response.setHeader("Set-Cookie", "Authorization=" + token + "; Path=/; Secure;");
         }
 
         response.setHeader("Location", loginRedirectUri);
