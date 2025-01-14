@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.9.8
+_release date: 2025-01-14_
+ * Added google-client-id to application.yml
+ * First Google token verification on backend
+
 ## 0.9.7
 _release date: 2025-01-14_
  * Analyzed Google Token verification on server side
