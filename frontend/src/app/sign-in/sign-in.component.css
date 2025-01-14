@@ -59,7 +59,7 @@ input {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: var(--black);
+    color: var(--main);
     padding: 1rem 1rem 1rem 1rem;
     margin: 0.2rem;
     width: 275px;

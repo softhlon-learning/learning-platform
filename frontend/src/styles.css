@@ -1,16 +1,15 @@
 /** Global Colors */
 :root {
-    --black: var(--black);
-    --black: var(--black);
+    --main: var(--main);
+    --main: var(--main);
     --very-light: #F8F8F8;
     --light: #D1D0CE;
     --warm: #D1D0CE;
-    --hover: var(--black);
+    --hover: var(--main);
     --active: #01234a;
     --checked-dark: #01234a;
     --checked-warm: #ceffaf;
-    --enrolled: #232121;
-    --black: black;
+    --main: #363131;
 }
 
 @media (max-width: 1500px) {
@@ -38,13 +37,14 @@
 }
 
 h1 {
+    color: var(--main);
     margin-top: 25px;
     font-size: 3.2rem;
     text-align: center;
 }
 
 h2 {
-    color: var(--black);
+    color: var(--main);
     font-weight: bold;
     text-align: center;
     font-size: 24px;
@@ -73,7 +73,7 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: var(--black);
+    color: var(--main);
     font-size: 1.3rem;
     padding: 1rem 0 1rem 0;
     margin: 1rem;
