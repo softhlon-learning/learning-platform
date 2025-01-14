@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.10.3
+_release date: 2025-01-14_
+ * Added CreateInvalidatedTokenRepository and its empty adapter
+ * Fixed package folder names (to tech.softlon)
+
 ## 0.10.2
 _release date: 2025-01-14_
  * Renamed io.softhlon to tech.softhlon
