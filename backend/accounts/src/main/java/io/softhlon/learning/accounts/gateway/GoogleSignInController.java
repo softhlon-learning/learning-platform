@@ -40,7 +40,7 @@ class GoogleSignInController {
 
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
-        response.setHeader("Location", "http://localhost/courses");
+        response.setHeader("Location", "https://localhost/courses");
         response.setStatus(302);
     }
 }
