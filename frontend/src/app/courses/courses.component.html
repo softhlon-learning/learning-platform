@@ -6,21 +6,29 @@
                     [ngClass]="courses[0].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[0].name }}</div>
                 <div class="description">{{ courses[0].description }}</div>
+                <div *ngIf="courses[0].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[0].enrolled" class="enrolled-text"></div>
             </button>
             <button routerLink="/course/architecture" routerLinkActive="active"
                     [ngClass]="courses[1].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[1].name }}</div>
                 <div class="description">{{ courses[1].description }}</div>
+                <div *ngIf="courses[1].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[1].enrolled" class="enrolled-text"></div>
             </button>
-            <button routerLink="/course/api-design" routerLinkActive="active"
+            <button routerLink="/course/domain-driven-design" routerLinkActive="active"
                     [ngClass]="courses[2].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[2].name }}</div>
                 <div class="description">{{ courses[2].description }}</div>
+                <div *ngIf="courses[2].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[2].enrolled" class="enrolled-text"></div>
             </button>
             <button routerLink="/course/java" routerLinkActive="active"
                     [ngClass]="courses[3].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[3].name }}</div>
                 <div class="description">{{ courses[3].description }}</div>
+                <div *ngIf="courses[3].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[3].enrolled" class="enrolled-text"></div>
             </button>
         </div>
         <div class="course-box-row">
@@ -28,21 +36,29 @@
                      [ngClass]="courses[4].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[4].name }}</div>
                 <div class="description">{{ courses[4].description }}</div>
+                <div *ngIf="courses[4].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[4].enrolled" class="enrolled-text"></div>
             </button>
             <button routerLink="/course/microservices" routerLinkActive="active"
                     [ngClass]="courses[5].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[5].name }}</div>
                 <div class="description">{{ courses[5].description }}</div>
+                <div *ngIf="courses[5].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[5].enrolled" class="enrolled-text"></div>
             </button>
             <button routerLink="/course/spring" routerLinkActive="active"
                     [ngClass]="courses[6].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[6].name }}</div>
                 <div class="description">{{ courses[6].description }}</div>
+                <div *ngIf="courses[6].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[6].enrolled" class="enrolled-text"></div>
             </button>
             <button routerLink="/course/fullstack" routerLinkActive="active"
                     [ngClass]="courses[7].enrolled ? 'enrolled-item' : 'course-box-item'">
                 <div>{{ courses[7].name }}</div>
                 <div class="description">{{ courses[7].description }}</div>
+                <div *ngIf="courses[7].enrolled" class="enrolled-text">Enrolled</div>
+                <div *ngIf="!courses[7].enrolled" class="enrolled-text"></div>
             </button>
         </div>
     </div>
