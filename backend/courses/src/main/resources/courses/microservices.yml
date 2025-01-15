@@ -1,8 +1,8 @@
 id: 34fe9895-7721-473a-ba7e-b80b032b6d74
 code: microservices
 orderNo: 6
-name: Microservices Course
-description: Microservices Course Description
+name: Microservices
+description: Dive into our Microservices course to learn how to build scalable, flexible, and independently deployable services
 version: 1.0.0
 sections:
   - name: Introduction

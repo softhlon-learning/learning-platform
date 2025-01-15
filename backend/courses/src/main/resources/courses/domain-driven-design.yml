@@ -1,8 +1,8 @@
 id: 6f424c25-b77a-4410-b0ba-af65305f18e1
 code: domain-driven-domain
 orderNo: 3
-name: Domain Driven Design Course
-description: Domain Driven Design Course Description
+name: Domain Driven Design
+description: Transform your software development skills with our Domain Driven Design course, focusing on aligning your code with business needs
 version: 1.0.0
 sections:
   - name: Introduction

@@ -1,8 +1,8 @@
 id: 844a7d0b-4a20-42ff-a3f2-fc517d4c7b8d
 code: api-design
 orderNo: 1
-name: API Design Course
-description: API Design Course Description
+name: API Design
+description: Enroll in our Api Design course to master the art of creating efficient, scalable, and user-friendly APIs
 version: 1.0.0
 sections:
   - name: Introduction

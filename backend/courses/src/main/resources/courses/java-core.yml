@@ -1,8 +1,8 @@
 id: 2a66c142-1115-42a3-a2e4-57b6b6da416e
 code: java
 orderNo: 4
-name: Java Course
-description: Java Course Description
+name: Java
+description: EMaster Java programming with our comprehensive course designed for all skill levels
 version: 1.0.0
 sections:
   - name: Introduction

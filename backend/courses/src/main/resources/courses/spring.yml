@@ -1,8 +1,8 @@
 id: 286a67f1-4917-4ab8-8f7a-ec4b2d2ecebf
 code: spring
 orderNo: 7
-name: Spring Course
-description: Spring Course Description
+name: Spring Boot
+description: Learn to develop robust, production-ready applications with our Spring Boot course
 version: 1.0.0
 sections:
   - name: Introduction

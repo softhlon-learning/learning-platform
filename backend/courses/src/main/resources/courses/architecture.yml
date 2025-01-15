@@ -1,8 +1,8 @@
 id: d97cdd72-9b4d-4242-8221-d5d9fed7d8cc
 code: architecture
 orderNo: 2
-name: Architecture Course
-description: Architecture Course Description
+name: Architecture
+description:  Discover the art and science of design with our comprehensive Architecture course
 version: 1.0.0
 sections:
   - name: Introduction
