@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.11.9
+_release date: 2025-01-15_
+ * Changed 'Back' to 'Home' button
+ * Added 'Enrolled' label
+ * App-header styling improvement
+ * Fixed ddd code
+
 ## 0.11.8
 _release date: 2025-01-15_
  * Unsecured front page
