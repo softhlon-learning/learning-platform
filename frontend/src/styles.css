@@ -31,9 +31,9 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     body {
-        zoom: 55%;
+        zoom: 40%;
     }
 }
 
