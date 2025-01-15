@@ -14,6 +14,7 @@ import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
 import {AppHeaderComponent} from "./header/app-header.component";
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import {AppHeaderComponent} from "./header/app-header.component";
         PDFItemComponent,
         QuizItemComponent,
         SafePipe,
-        AppHeaderComponent
+        AppHeaderComponent,
+        SignInComponent
     ],
     imports: [
         BrowserModule,

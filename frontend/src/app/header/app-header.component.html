@@ -1,4 +1,4 @@
 <div class="header">
     <a href="#" *ngIf="this.isAuthenticated()" (click)="this.signOut()">Sign Out</a>
-    <a href="/sign-in" *ngIf="!this.isAuthenticated()">Sign In</a>
+    <a href="/sign-in" *ngIf="!this.isAuthenticated() && !this.isSignInPage()">Sign In</a>
 </div>
