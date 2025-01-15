@@ -1,3 +1,7 @@
+* {
+    overflow: clip;
+}
+
 .course-content-list {
     list-style-type: decimal;
     padding-inline-start: 5px;
