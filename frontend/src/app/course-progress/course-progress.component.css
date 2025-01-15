@@ -37,6 +37,9 @@ li li li:hover {
     background-color: var(--warm);
 }
 
+li li {
+    overflow: hidden;
+}
 .course-content-list {
     height: 45em;
     padding-inline-start: 5px;

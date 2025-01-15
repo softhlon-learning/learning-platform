@@ -17,9 +17,9 @@
           <span class="course-chapter-items">{{ section.name }}</span>
         </span>
         <ul class="courses">
-          <li *ngFor="let chapter of section.chapters">
+          <li *ngFor="let chapter of section.chapters"></li>
             <label class="checkbox">
-              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox" />
               <span class="course-chapter-items">{{ chapter.name }}</span>
             </label>
             <ul class="course-chapter-items">

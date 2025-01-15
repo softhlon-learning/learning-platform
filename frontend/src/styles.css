@@ -34,7 +34,6 @@
 /* Global Styles */
 * {
     font-family: Courier, sans-serif;
-    overflow: clip;
 }
 
 h1 {
@@ -64,8 +63,6 @@ body {
     flex-direction: row;
     background-color: white;
     padding: .5rem;
-    max-width: 1500px;
-    height: 95vh;
     margin: 0.5em auto auto;
     overflow: overlay;
 }
