@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.11.7
+_release date: 2025-01-15_
+ * Added Fullstack Development course
+
 ## 0.11.6
 _release date: 2025-01-15_
  * Updated/fix hover colors over course tiles
