@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.12.3
+_release date: 2025-01-15_
+ * Redirecting to sign-in from Enroll/UnEnroll button, when needed
+ * Added sign-in redirection also to Open button
+
 ## 0.12.2
 _release date: 2025-01-15_
  * Created SecurityConfig and updated security config
