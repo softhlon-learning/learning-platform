@@ -97,8 +97,8 @@
 
 button.course-box-item {
     background-color: var(--very-light);
-    height: 250px;
-    width: 250px;
+    height: 320px;
+    width: 320px;
     border-radius: 10px;
     margin: 10px;
     font-size: 30px;
@@ -117,8 +117,8 @@ button:hover.course-box-item {
 
 .enrolled-item {
     background-color: var(--enrolled);
-    height: 250px;
-    width: 250px;
+    height: 320px;
+    width: 320px;
     border-radius: 10px;
     margin: 10px;
     font-size: 30px;
