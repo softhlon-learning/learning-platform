@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.11.4
+_release date: 2025-01-15_
+ * Redesigned front page
+
 ## 0.11.3
 _release date: 2025-01-15_
  * Proper auth token invalidation on backend
