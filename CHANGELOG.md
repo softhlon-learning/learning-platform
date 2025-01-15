@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.11.8
+_release date: 2025-01-15_
+ * Unsecured front page
+ * Changed main page path (/home)
+ * Hiding 'Sign In' link on sign-in page
+ * Changed login-redirect-url to */home
+
 ## 0.11.7
 _release date: 2025-01-15_
  * Added Fullstack Development course
