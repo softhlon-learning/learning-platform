@@ -21,4 +21,6 @@ module accounts {
     requires jjwt.api;
     requires com.fasterxml.jackson.annotation;
     requires spring.security.core;
+    requires spring.security.web;
+    requires spring.security.config;
 }

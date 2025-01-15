@@ -30,7 +30,6 @@ class CustomAuthenticationManager implements AuthenticationManager {
             var claims = jwtService.getAllClaimsFromToken(token);
             var name = claims.get("name", String.class);
             var accountId = claims.get("accountId", String.class);
-
             return new AuthenticationToken(
                   name,
                   accountId,

@@ -23,8 +23,7 @@ import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 @Import({
       AccountsConfiguration.class,
       CoursesConfiguration.class,
-      SubscriptionsConfiguration.class,
-      WebSecurityConfig.class
+      SubscriptionsConfiguration.class
 })
 class ApplicationConfiguration {
     @Bean

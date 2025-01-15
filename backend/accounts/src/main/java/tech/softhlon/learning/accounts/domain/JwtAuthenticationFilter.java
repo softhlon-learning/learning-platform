@@ -3,23 +3,27 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.application;
+package tech.softhlon.learning.accounts.domain;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Configuration
-@EnableWebSecurity
-class WebSecurityConfig {
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrf -> csrf.disable()).build();
+@Component
+class JwtAuthenticationFilter extends OncePerRequestFilter {
+    @Override
+    protected void doFilterInternal(
+          HttpServletRequest request,
+          HttpServletResponse response,
+          FilterChain filterChain) throws ServletException, IOException {
     }
 }
