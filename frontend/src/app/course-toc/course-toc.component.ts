@@ -57,4 +57,8 @@ export class CourseTocComponent implements OnInit {
             item => this.update()
         );
     }
+
+    isAuthenticated(): boolean {
+        return this.cookieService.get('Authenticated') === 'true';
+    }
 }
