@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../courses/course";
 import {CoursesService} from '../courses/courses.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {CookieService} from "ngx-cookie-service";
 
@@ -17,6 +17,7 @@ export class CourseTocComponent implements OnInit {
     constructor(
         private coursesService: CoursesService,
         private cookieService: CookieService,
+        private router: Router,
         private route: ActivatedRoute) {
     }
 
@@ -50,6 +51,13 @@ export class CourseTocComponent implements OnInit {
         this.coursesService.enrollCourse(this.course).subscribe(
             item => this.update()
         );
+    }
+
+    redirectToSignIn(): void {
+        this.router.navigate(['/sign-in'])
+            .then(() => {
+                window.location.reload();
+            });
     }
 
     unenrollCourse(): void {

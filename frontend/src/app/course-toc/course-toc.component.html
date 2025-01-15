@@ -2,12 +2,9 @@
   <div>
     <button (click)="this.enrollCourse()" *ngIf="!course.enrolled && this.isAuthenticated()"
             routerLink="/course/{{course.code}}/progress">Enroll</button>
-
-    <button (click)="this.enrollCourse()" *ngIf="!course.enrolled && !this.isAuthenticated()"
-            routerLink="/sign-in">Enroll</button>
-
+    <button (click)="this.redirectToSignIn()" *ngIf="!course.enrolled && !this.isAuthenticated()">Enroll</button>
     <button (click)="this.unenrollCourse()" *ngIf="course.enrolled && this.isAuthenticated()">Unenroll</button>
-    <button routerLink="/sign-in" *ngIf="course.enrolled && !this.isAuthenticated()">Unenroll</button>
+    <button (click)="this.redirectToSignIn()" *ngIf="course.enrolled && !this.isAuthenticated()">Unenroll</button>
 
     <button *ngIf="course.enrolled" routerLink="/course/{{course.code}}/progress">Open</button>
     <button [routerLink]="['/home']">Home</button>
