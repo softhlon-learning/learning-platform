@@ -9,7 +9,7 @@
     --active: #01234a;
     --checked-dark: #01234a;
     --checked-warm: #ceffaf;
-    --enrolled: #ffffcc;
+    --enrolled: #ecffe6;
     --main: #363131;
 }
 
@@ -81,6 +81,7 @@ button {
     font-size: 1.3rem;
     padding: 1rem 0 1rem 0;
     margin: 1rem;
+    border: 1px darkgrey dashed;
 }
 
 button:hover {
