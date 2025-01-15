@@ -31,6 +31,12 @@
     }
 }
 
+@media (max-width: 800px) {
+    body {
+        zoom: 55%;
+    }
+}
+
 /* Global Styles */
 * {
     font-family: Courier, sans-serif;
