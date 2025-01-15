@@ -4,7 +4,7 @@
             routerLink="/course/{{course.code}}/progress">Enroll</button>
     <button (click)="this.unenrollCourse()" *ngIf="course.enrolled">Unenroll</button>
     <button *ngIf="course.enrolled" routerLink="/course/{{course.code}}/progress">Open</button>
-    <button [routerLink]="['/courses']">Back</button>
+    <button [routerLink]="['/home']">Home</button>
   </div>
 
   <h2>{{ course.name }} - Table of Content</h2>
