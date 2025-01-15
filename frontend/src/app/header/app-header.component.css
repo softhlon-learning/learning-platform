@@ -1,6 +1,6 @@
 
 .header {
-    width: 200px;
+    width: 300px;
     position: absolute;
     top: 0;
     right: 0;
@@ -20,4 +20,9 @@ div {
 
 a {
     color: var(--main);
+    margin-left: 10px;
+}
+
+a:hover {
+    font-weight: bold;
 }
