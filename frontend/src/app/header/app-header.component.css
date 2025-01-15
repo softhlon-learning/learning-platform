@@ -20,7 +20,8 @@ div {
 
 a {
     color: var(--main);
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 a:hover {
