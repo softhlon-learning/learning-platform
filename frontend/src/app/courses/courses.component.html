@@ -2,39 +2,47 @@
     <h1>{{ title }}</h1>
     <div class="course-box">
         <div class="course-box-row">
-            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[0].name}}</div>
-                <div class="description">{{courses[0].description}}</div>
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[0].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[0].name }}</div>
+                <div class="description">{{ courses[0].description }}</div>
             </button>
-            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[1].name}}</div>
-                <div class="description">{{courses[1].description}}</div>
+            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[1].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[1].name }}</div>
+                <div class="description">{{ courses[1].description }}</div>
             </button>
-            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[2].name}}</div>
-                <div class="description">{{courses[2].description}}</div>
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[2].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[2].name }}</div>
+                <div class="description">{{ courses[2].description }}</div>
             </button>
-            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[3].name}}</div>
-                <div class="description">{{courses[3].description}}</div>
+            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[3].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[3].name }}</div>
+                <div class="description">{{ courses[3].description }}</div>
             </button>
         </div>
         <div class="course-box-row">
-             <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[4].name}}</div>
-                <div class="description">{{courses[4].description}}</div>
+             <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item"
+                     [ngStyle]="{'background-color':courses[4].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[4].name }}</div>
+                <div class="description">{{ courses[4].description }}</div>
             </button>
-            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[5].name}}</div>
-                <div class="description">{{courses[5].description}}</div>
+            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[5].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[5].name }}</div>
+                <div class="description">{{ courses[5].description }}</div>
             </button>
-            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[6].name}}</div>
-                <div class="description">{{courses[6].description}}</div>
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[6].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[6].name }}</div>
+                <div class="description">{{ courses[6].description }}</div>
             </button>
-            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item">
-                <div>{{courses[7].name}}</div>
-                <div class="description">{{courses[7].description}}</div>
+            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item"
+                    [ngStyle]="{'background-color':courses[7].enrolled  ? 'var(--enrolled)' : 'var(--very-light)'}">
+                <div>{{ courses[7].name }}</div>
+                <div class="description">{{ courses[7].description }}</div>
             </button>
         </div>
     </div>
