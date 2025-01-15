@@ -108,3 +108,8 @@ button:hover.course-box-item {
     background-color: var(--hover);
     color: white;
 }
+
+.description {
+    font-size: 14px;
+    margin-top: 10px;
+}
