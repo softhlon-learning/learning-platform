@@ -7,9 +7,9 @@ import {CourseProgressComponent} from "./course-progress/course-progress.compone
 import {SignInComponent} from "./sign-in/sign-in.component";
 
 const routes: Routes = [
-    {path: '', redirectTo: '/courses', pathMatch: 'full'},
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'sign-in', component: SignInComponent},
-    {path: 'courses', component: CoursesComponent},
+    {path: 'home', component: CoursesComponent},
     {path: 'course/:id', component: CourseTocComponent},
     {path: 'course/:id/progress', component: CourseProgressComponent}
 ];
