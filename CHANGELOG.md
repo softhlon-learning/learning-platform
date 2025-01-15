@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.11.5
+_release date: 2025-01-15_
+ * Added description to each course tile
+ * Updated course definitions with cool descriptions
+ * Highlighted enrolled courses with greenish background
+
 ## 0.11.4
 _release date: 2025-01-15_
  * Redesigned front page
