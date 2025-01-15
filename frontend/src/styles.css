@@ -145,3 +145,7 @@ span {
 div button {
     width: 12em;
 }
+
+a {
+    text-decoration: none;
+}

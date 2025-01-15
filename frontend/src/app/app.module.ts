@@ -13,6 +13,7 @@ import {PDFItemComponent} from "./pdf-item/pdf-item.component";
 import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
+import {AppHeaderComponent} from "./header/app-header.component";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import {QuizItemComponent} from "./quiz-item/quiz-item.component";
         VideoItemComponent,
         PDFItemComponent,
         QuizItemComponent,
-        SafePipe
+        SafePipe,
+        AppHeaderComponent
     ],
     imports: [
         BrowserModule,

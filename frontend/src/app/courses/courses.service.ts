@@ -13,6 +13,7 @@ export class CoursesService {
     private courseUrl = '/api/v1/course';
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
     private updateCourseUrl = '/api/v1/course/{courseId}';
+    private signOutUrl = '/api/v1/account/auth/sign-out';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -52,6 +53,11 @@ export class CoursesService {
         const request = new UpdateCourseRequest(content);
         return this.http.patch<ArrayBuffer>(url, request, this.httpOptions).pipe();
     }
+
+    signOut(): Observable<ArrayBuffer> {
+        const request = new SignOutRequest('token');
+        return this.http.post<ArrayBuffer>(this.signOutUrl, request, this.httpOptions).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -75,6 +81,14 @@ class Enrollment {
 
     constructor(courseId?: string) {
         this.courseId = courseId;
+    }
+}
+
+class SignOutRequest {
+    token?: string;
+
+    constructor(token?: string) {
+        this.token = token;
     }
 }
 
