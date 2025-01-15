@@ -25,10 +25,6 @@ export class CoursesComponent implements OnInit {
 
     ngOnInit() {
         this.getCourses();
-
-        if (this.cookieService.get('Authenticated') !== 'true') {
-            this.router.navigate(['/sign-in']);
-        }
     }
 
     getCourses(): void {

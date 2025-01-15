@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../courses/course";
 import {CoursesService} from '../courses/courses.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {Item} from "../course-content/item";
 import {NavigationItems} from "../course-navigation/navigation-items";
@@ -22,7 +22,8 @@ export class CourseProgressComponent implements OnInit {
     constructor(
         private coursesService: CoursesService,
         private cookieService: CookieService,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private router: Router) {
     }
 
     @HostListener('window:keydown', ['$event'])
@@ -40,6 +41,12 @@ export class CourseProgressComponent implements OnInit {
     }
 
     ngOnInit() {
+        if (this.cookieService.get('Authenticated') !== 'true') {
+            this.router.navigate(['/sign-in'])
+                .then(() => {
+                    window.location.reload();
+                });;
+        }
         this.getCourse();
     }
 
