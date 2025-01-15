@@ -17,3 +17,7 @@ div {
     display: flex;
     justify-content: center;
 }
+
+a {
+    color: var(--main);
+}
