@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.11.6
+_release date: 2025-01-15_
+ * Updated/fix hover colors over course tiles
+
 ## 0.11.5
 _release date: 2025-01-15_
  * Added description to each course tile
