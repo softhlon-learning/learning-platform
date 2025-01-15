@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.12.2
+_release date: 2025-01-15_
+ * Created SecurityConfig and updated security config
+ * Secured backend with JWT
+ * Added add run-debug.sh script
+
 ## 0.12.1
 _release date: 2025-01-15_ 
  * Improved sign-in styling
