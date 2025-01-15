@@ -1,17 +1,33 @@
-
 <span class="main">
     <h1>{{ title }}</h1>
-    <div class="course-list">
-        <ul class="courses">
-            <li *ngFor="let course of courses">
-                <button routerLink="/course/{{course.code}}" routerLinkActive="active">
-                    <span class="button-text">
-                      <span class="badge">{{ course.orderNo }}</span>
-                      <span class="name">{{ course.name }}</span>
-                    </span>
-                    <span *ngIf="course.enrolled" class="enrolled">Enrolled</span>
-                </button>
-            </li>
-        </ul>
+    <div class="course-box">
+        <div class="course-box-row">
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
+                {{courses[0].name}}
+            </button>
+            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item">
+                {{courses[1].name}}
+            </button>
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
+                {{courses[0].name}}
+            </button>
+            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item">
+                {{courses[3].name}}
+            </button>
+        </div>
+        <div class="course-box-row">
+             <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
+                {{courses[4].name}}
+            </button>
+            <button routerLink="/course/architecture" routerLinkActive="active" class="course-box-item">
+                {{courses[5].name}}
+            </button>
+            <button routerLink="/course/api-design" routerLinkActive="active" class="course-box-item">
+                {{courses[6].name}}
+            </button>
+            <button routerLink="/course/java" routerLinkActive="active" class="course-box-item">
+                {{courses[7].name}}
+            </button>
+        </div>
     </div>
 </span>
