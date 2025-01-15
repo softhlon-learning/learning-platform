@@ -55,8 +55,7 @@ export class CoursesService {
     }
 
     signOut(): Observable<ArrayBuffer> {
-        const request = new SignOutRequest('token');
-        return this.http.post<ArrayBuffer>(this.signOutUrl, request, this.httpOptions).pipe();
+        return this.http.post<ArrayBuffer>(this.signOutUrl, this.httpOptions).pipe();
     }
 }
 
@@ -81,14 +80,6 @@ class Enrollment {
 
     constructor(courseId?: string) {
         this.courseId = courseId;
-    }
-}
-
-class SignOutRequest {
-    token?: string;
-
-    constructor(token?: string) {
-        this.token = token;
     }
 }
 

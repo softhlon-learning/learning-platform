@@ -11,13 +11,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.SignOutService;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
+import static tech.softhlon.learning.accounts.domain.SignOutService.Request;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
@@ -37,9 +36,9 @@ class SignOutController {
     private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_OUT)
-    ResponseEntity<?> signOut(@Validated @RequestBody SignOutService.Request request, HttpServletResponse response) {
-        log.info("Requested, body: {}", request);
-        var result = service.execute(request);
+    ResponseEntity<?> signOut(HttpServletResponse response) {
+        log.info("Requested");
+        var result = service.execute(new Request(extractToken()));
         return switch (result) {
             case Succeeded() -> successResponse(response);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
@@ -70,5 +69,15 @@ class SignOutController {
         cookie.setSecure(true);
         cookie.setHttpOnly(httpOnly);
         response.addCookie(cookie);
+    }
+
+    private String extractToken() {
+        var cookies = httpRequest.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("Authorization")) {
+                return cookie.getValue();
+            }
+        }
+        return null;
     }
 }
