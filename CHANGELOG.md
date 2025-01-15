@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.12.1
+_release date: 2025-01-15_ 
+ * Improved sign-in styling
+ * Added Subscribe link and bold on links hover
+
 ## 0.12.0
 _release date: 2025-01-15_
  * Fixed overflow styling
