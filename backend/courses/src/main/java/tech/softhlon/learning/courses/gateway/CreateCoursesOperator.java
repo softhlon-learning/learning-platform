@@ -51,6 +51,7 @@ public class CreateCoursesOperator {
         createCourse(courseDefinitions.getMessagingDefinition());
         createCourse(courseDefinitions.getMicroservicesDefinition());
         createCourse(courseDefinitions.getSpringDefinition());
+        createCourse(courseDefinitions.getFullstackDefinition());
         log.info("Create Courses operator finished");
     }
 

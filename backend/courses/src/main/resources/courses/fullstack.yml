@@ -1,0 +1,42 @@
+id: e5dece9a-b350-4c44-afea-7248ac8a69f3
+code: fullstack
+orderNo: 8
+name: Fullstack Development
+description: Join our Fullstack Development course to gain expertise in both front-end and back-end programming.
+version: 1.0.0
+sections:
+  - name: Introduction
+    chapters:
+      - name: Welcome to the Course
+        processed: false
+        items:
+          - name: Video
+            time: 2m5s
+            id: welcome.mp4?v1
+            processed: false
+      - name: Prerequisites
+        processed: false
+        items:
+          - name: Video
+            time: 2m5s
+            id: welcome.mp4?v2
+            processed: false
+      - name: Course Structure
+        processed: false
+        items:
+          - name: Video
+            time: 2m5s
+            id: welcome.mp4
+            processed: false
+          - name: PDF
+            processed: false
+            id: ultimate-java-course/intro/Summary.pdf?v3
+  - name: Getting Started
+    chapters:
+      - name: Introduction to Fullstack Development
+        processed: false
+        items:
+          - name: Video
+            time: 3m15s
+            id: welcome.mp4?v4
+            processed: false

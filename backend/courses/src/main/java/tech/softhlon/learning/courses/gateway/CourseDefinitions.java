@@ -37,4 +37,7 @@ class CourseDefinitions {
 
     @Value("classpath:courses/spring.yml")
     private Resource springDefinition;
+
+    @Value("classpath:courses/fullstack.yml")
+    private Resource fullstackDefinition;
 }
