@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.11.3
+_release date: 2025-01-15_
+ * Proper auth token invalidation on backend
+
 ## 0.11.2
 _release date: 2025-01-15_
  * Added app-header component
