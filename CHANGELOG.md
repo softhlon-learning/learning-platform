@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.12.0
+_release date: 2025-01-15_
+ * Fixed overflow styling
+ * Added missing html body
+ * Increased size of course tiles
+ * Fixed overlay on TOC page
+
 ## 0.11.9
 _release date: 2025-01-15_
  * Changed 'Back' to 'Home' button
