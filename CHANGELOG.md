@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.11.2
+_release date: 2025-01-15_
+ * Added app-header component
+ * Refactored/improved GoogleSignInController
+ * Sign out on frontend side
+
 ## 0.11.1
 _release date: 2025-01-15_
  * Added 'Authenticated' cookie
