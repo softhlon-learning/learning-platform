@@ -24,7 +24,7 @@ import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 @Service
 @RequiredArgsConstructor
-class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUpService {
+class SignUpServiceImpl implements SignUpService {
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final JwtService jwtService;
@@ -44,6 +44,18 @@ class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUp
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result persistAccount(Request request) {
+        if (request.name().isBlank()) {
+            return new NamePolicyFailed("Name is blank");
+        }
+
+        if (request.email().isBlank()) {
+            return new EmailPolicyFailed("Email is blank");
+        }
+
+        if (request.password().isBlank()) {
+            return new PasswordPolicyFailed("Password is blank");
+        }
+
         var result = createAccountRepository.execute(prepareRequest(request));
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(id, token(request, id));

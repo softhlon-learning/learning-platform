@@ -53,6 +53,8 @@ class SignUpController {
         return switch (result) {
             case Succeeded(UUID id, String token) -> success(response, token);
             case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
+            case NamePolicyFailed(String message) -> badRequestBody(httpRequest, message);
+            case EmailPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
