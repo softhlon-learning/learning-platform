@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.13.0
+_release date: 2025-01-16_
+ * Setting proper cookies on Sign In
+ * Added AuthCookiesService
+ * Adjusted controllers to new AuthCookiesService
+
 ## 0.12.9
 _release date: 2025-01-16_
  * Implemented SignInServiceImpl
