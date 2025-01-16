@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.12.6
+_release date: 2025-01-16_
+ * Added course-tile and used in home page
+
 ## 0.12.5
 _release date: 2025-01-16_
  * Fix NPE in extractToken
