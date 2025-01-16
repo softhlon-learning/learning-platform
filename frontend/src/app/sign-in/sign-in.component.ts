@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
-import { FormBuilder } from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
+import {PlatformService} from "../service/platform.service";
 
 @Component({
     selector: 'sign-in',
@@ -15,7 +16,9 @@ export class SignInComponent implements OnInit {
         password: ''
     });
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(
+        private formBuilder: FormBuilder,
+        private platformService: PlatformService,) {
     }
 
     ngOnInit() {
@@ -25,6 +28,9 @@ export class SignInComponent implements OnInit {
     }
 
     onSubmit(): void {
-        console.warn('Your order has been submitted', this.signInForm.value);
+        this.platformService.signIn(
+            this.signInForm.value.email ?? '',
+            this.signInForm.value.password ?? '')
+            .subscribe();
     }
 }

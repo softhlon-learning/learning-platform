@@ -59,7 +59,8 @@ export class PlatformService {
         return this.http.post<ArrayBuffer>(this.signOutUrl, this.httpOptions).pipe();
     }
 
-    signIn(signInRequest: SignInRequest): Observable<ArrayBuffer> {
+    signIn(email: string, password: string): Observable<ArrayBuffer> {
+        const signInRequest = new SignInRequest(email, password);
         return this.http.post<ArrayBuffer>(this.signInUrl, signInRequest, this.httpOptions).pipe();
     }
 }
