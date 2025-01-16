@@ -20,6 +20,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import java.util.Map;
 
+import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Request;
 import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
 
@@ -33,17 +34,39 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 @RequiredArgsConstructor
 class GoogleSignInController {
     private static final String LOCATION = "Location";
+    private static final String CREDENTIAL = "credential";
     private final GoogleSignInService service;
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
-    @Value("${login-redirect-uri}")
-    private String loginRedirectUri;
+    private final String loginRedirectUri;
+
+    public GoogleSignInController(
+          GoogleSignInService service,
+          AuthCookiesService authCookiesService,
+          HttpServletRequest httpRequest,
+          @Value("${login-redirect-uri}") String loginRedirectUri) {
+        this.service = service;
+        this.authCookiesService = authCookiesService;
+        this.httpRequest = httpRequest;
+        this.loginRedirectUri = loginRedirectUri;
+    }
 
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-    void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
-        log.info("Requested, credentials: {}...", body.get("credential").substring(0, 50));
+    void signIn(
+          @RequestParam Map<String, String> body,
+          HttpServletResponse response) {
+        log.info("Requested, credentials: {}...", body.get(CREDENTIAL).substring(0, 50));
+        processResult(body, response);
+    }
 
-        var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private void processResult(
+          Map<String, String> body,
+          HttpServletResponse response) {
+        var result = service.execute(new Request(body.get(CREDENTIAL), null));
         if (result instanceof Succeeded(String token)) {
             authCookiesService.addAuthSucceededCookies(response, token);
         } else {
@@ -51,10 +74,6 @@ class GoogleSignInController {
         }
         addRedirectHeaders(response);
     }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
 
     private void addRedirectHeaders(HttpServletResponse response) {
         response.setHeader(LOCATION, loginRedirectUri);
