@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.12.8
+_release date: 2025-01-16_
+ * Moved security related classes to infrastructure
+ * Created LoadAccountByEmailRepository and its empty adapter
+ * Implemented LoadAccountByEmailRepositoryAdapter
+
 ## 0.12.7
 _release date: 2025-01-16_
  * Displaying app version
