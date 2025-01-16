@@ -46,6 +46,9 @@ class GetCourseController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
+    /**
+     * GET /api/v1/course/{courseId}
+     */
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {
         var accountId = authContext.accountId();

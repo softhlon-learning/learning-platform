@@ -46,6 +46,9 @@ class ListCoursesController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
+    /**
+     * GET /api/v1/course
+     */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
         var accountId = authContext.accountId();

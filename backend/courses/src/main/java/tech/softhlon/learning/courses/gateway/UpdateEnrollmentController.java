@@ -25,7 +25,6 @@ import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Requ
 import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
 import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -39,6 +38,9 @@ class UpdateEnrollmentController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * PATCH /api/v1/course/{courseId}
+     */
     @PatchMapping(UPDATE_COURSE)
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
@@ -54,6 +56,10 @@ class UpdateEnrollmentController {
         };
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private Request prepareRequest(
           UUID courseId, UpdateEnrollmentRequest updateEnrollmentRequest) {
         return new Request(
@@ -62,8 +68,5 @@ class UpdateEnrollmentController {
               updateEnrollmentRequest.content());
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
     record UpdateEnrollmentRequest(String content) {}
 }

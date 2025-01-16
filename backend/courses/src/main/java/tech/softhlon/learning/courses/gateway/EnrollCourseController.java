@@ -36,6 +36,9 @@ class EnrollCourseController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * POST /api/v1/course/{courseId}/enrollment
+     */
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(@PathVariable("courseId") UUID courseId) {
         var accountId = authContext.accountId();
