@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.14.0
+_release date: 2025-01-16_
+ * Sending 'Sign Up' request to backend
+
 ## 0.13.9
 _release date: 2025-01-16_
  * Added 'Sign Up' link on 'Sing In' page

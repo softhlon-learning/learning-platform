@@ -32,8 +32,7 @@ class SecurityConfig {
               .csrf(csrf -> csrf.disable())
               .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/api/v1/account/**", "/api/v1/course").permitAll()
-                    .anyRequest().authenticated()
-              )
+                    .anyRequest().authenticated())
               .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
               .authenticationManager(authenticationManager)
               .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
