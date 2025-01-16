@@ -7,7 +7,6 @@ package tech.softhlon.learning.accounts.gateway;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -31,7 +30,6 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 @Slf4j
 @RestApiAdapter
 @RestController
-@RequiredArgsConstructor
 class GoogleSignInController {
     private static final String LOCATION = "Location";
     private static final String CREDENTIAL = "credential";
@@ -51,21 +49,12 @@ class GoogleSignInController {
         this.loginRedirectUri = loginRedirectUri;
     }
 
+    /**
+     * POST /api/v1/account/auth/google-sign-in endpoint.
+     */
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-    void signIn(
-          @RequestParam Map<String, String> body,
-          HttpServletResponse response) {
-        log.info("Requested, credentials: {}...", body.get(CREDENTIAL).substring(0, 50));
-        processResult(body, response);
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private void processResult(
-          Map<String, String> body,
-          HttpServletResponse response) {
+    void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
+        log.info("Requested");
         var result = service.execute(new Request(body.get(CREDENTIAL), null));
         if (result instanceof Succeeded(String token)) {
             authCookiesService.addAuthSucceededCookies(response, token);
@@ -74,6 +63,10 @@ class GoogleSignInController {
         }
         addRedirectHeaders(response);
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
 
     private void addRedirectHeaders(HttpServletResponse response) {
         response.setHeader(LOCATION, loginRedirectUri);
