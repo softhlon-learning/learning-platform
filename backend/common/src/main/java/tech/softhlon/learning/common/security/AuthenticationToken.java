@@ -10,6 +10,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -18,12 +19,16 @@ import java.util.Collection;
 @Getter
 public class AuthenticationToken extends UsernamePasswordAuthenticationToken {
     private final String name;
-    private final Integer accountId;
+    private final UUID accountId;
 
     public AuthenticationToken(String name, String accountId, Collection<? extends GrantedAuthority> authorities) {
         super(name, authorities);
         this.name = name;
-        this.accountId = Integer.valueOf(accountId);
+        this.accountId = UUID.fromString(accountId);
+    }
+
+    public UUID getAccountId() {
+        return accountId;
     }
 
     @Override

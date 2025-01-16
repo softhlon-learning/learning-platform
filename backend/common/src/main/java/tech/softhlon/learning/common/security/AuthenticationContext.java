@@ -6,6 +6,7 @@
 package tech.softhlon.learning.common.security;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.UUID;
 
@@ -26,7 +27,13 @@ public class AuthenticationContext {
         if (authenticationMocked) {
             return UUID.fromString(mockedAccountId);
         } else {
-            throw new UnsupportedOperationException();
+            var authentication = SecurityContextHolder.getContext().getAuthentication();
+            if (authentication instanceof AuthenticationToken) {
+                var authToken = (AuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+                return authToken.getAccountId();
+            } else {
+                return null;
+            }
         }
     }
 }

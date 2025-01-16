@@ -10,7 +10,7 @@ spring:
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
 logging.level.org.zalando.logbook.Logbook: DEBUG
-authentication.mocked: true
+authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
 login-redirect-uri: https://localhost/home
 google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercontent.com
