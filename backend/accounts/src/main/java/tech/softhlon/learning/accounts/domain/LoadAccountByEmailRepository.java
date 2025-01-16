@@ -8,6 +8,8 @@ package tech.softhlon.learning.accounts.domain;
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -24,5 +26,5 @@ public interface LoadAccountByEmailRepository {
         record LoadAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
     }
     record LoadAccountByEmailRequest(String email) {}
-    record Account(String email, String password) {}
+    record Account(UUID id, String email, String password) {}
 }

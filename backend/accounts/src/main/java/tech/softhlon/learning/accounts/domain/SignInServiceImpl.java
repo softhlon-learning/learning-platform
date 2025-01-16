@@ -22,6 +22,7 @@ import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
 @RequiredArgsConstructor
 class SignInServiceImpl implements SignInService {
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
+    private final JwtService jwtService;
 
     @Override
     public Result execute(Request request) {
@@ -33,11 +34,21 @@ class SignInServiceImpl implements SignInService {
         };
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private Result authemticate(Request request, Account account) {
         var passwordEncoder = new BCryptPasswordEncoder();
         var matches = passwordEncoder.matches(request.password(), account.password());
         return matches
-              ? new Succeeded()
+              ? new Succeeded(token(account))
               : new InvalidCredentialsFailed();
+    }
+
+    private String token(Account account) {
+        return jwtService.generateToken(
+              account.id(),
+              account.email());
     }
 }
