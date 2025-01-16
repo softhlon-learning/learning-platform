@@ -31,6 +31,9 @@ class SignUpServiceImpl implements SignUpService {
 
     @Override
     public Result execute(Request request) {
+        var validationResult = validateInput(request);
+        if (validationResult != null) return validationResult;
+
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
             case AccountExists(_) -> new AccountAlreadyExistsFailed("Account with the same email already exists");
@@ -43,7 +46,7 @@ class SignUpServiceImpl implements SignUpService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result persistAccount(Request request) {
+    private Result validateInput(Request request) {
         if (request.name().isBlank()) {
             return new NamePolicyFailed("Name is blank");
         }
@@ -55,7 +58,10 @@ class SignUpServiceImpl implements SignUpService {
         if (request.password().isBlank()) {
             return new PasswordPolicyFailed("Password is blank");
         }
+        return null;
+    }
 
+    private Result persistAccount(Request request) {
         var result = createAccountRepository.execute(prepareRequest(request));
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(id, token(request, id));
