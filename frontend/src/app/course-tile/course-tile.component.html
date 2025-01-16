@@ -1,5 +1,5 @@
 <button routerLink="/course/{{course.code}}" routerLinkActive="active"
-        [ngClass]="course.enrolled ? 'enrolled-item' : 'course-box-item'">
+        [ngClass]="this.course.enrolled ? 'enrolled-item' : 'course-box-item'">
     <div>{{ course.name }}</div>
     <div class="description">{{ course.description }}</div>
     <div *ngIf="course.enrolled" class="enrolled-text">Enrolled</div>

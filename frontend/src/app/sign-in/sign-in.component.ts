@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
-import {Router} from "@angular/router";
+import { FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'sign-in',
@@ -10,12 +10,21 @@ import {Router} from "@angular/router";
 export class SignInComponent implements OnInit {
     protected readonly environment = environment;
 
-    constructor() {
+    signInForm = this.formBuilder.group({
+        email: '',
+        password: ''
+    });
+
+    constructor(private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
         const button = document.querySelector("#g_id_onload") as HTMLElement | null;
         button?.setAttribute("data-client_id", environment.googleClientId);
         button?.setAttribute("data-login_uri", environment.loginUri);
+    }
+
+    onSubmit(): void {
+        console.warn('Your order has been submitted', this.signInForm.value);
     }
 }

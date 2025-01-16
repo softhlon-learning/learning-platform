@@ -1,6 +1,4 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {PlatformService} from "./service/platform.service";
@@ -16,6 +14,9 @@ import {QuizItemComponent} from "./quiz-item/quiz-item.component";
 import {AppHeaderComponent} from "./header/app-header.component";
 import { SignInComponent } from './sign-in/sign-in.component';
 import {CourseTileComponent} from "./course-tile/course-tile.component";
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -30,11 +31,13 @@ import {CourseTileComponent} from "./course-tile/course-tile.component";
         SafePipe,
         AppHeaderComponent,
         SignInComponent,
-        CourseTileComponent
+        CourseTileComponent,
+
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [
         PlatformService,

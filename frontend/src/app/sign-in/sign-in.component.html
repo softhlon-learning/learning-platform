@@ -23,14 +23,19 @@
         <div class="or">
             -------------------------------------------------- or --------------------------------------------------
         </div>
-        <div class="email">
-            <input placeholder="Email" type="text">
-        </div>
-        <div class="password">
-            <input placeholder="Password" type="password">
-        </div>
-        <button class="submit">Sign In</button>
-        <button routerLink="/home" class="cancel">Cancel</button>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="form">
+                <div class="email">
+                    <input placeholder="Email" type="text" formControlName="email">
+                </div>
+                <div class="password">
+                    <input placeholder="Password" type="password" formControlName="password">
+                </div>
+                <button class="submit" type="submit">Sign In</button>
+                <button routerLink="/home" class="cancel">Cancel</button>
+            </div>
+
+        </form>
     </div>
 </div>
 

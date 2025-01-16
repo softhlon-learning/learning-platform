@@ -82,3 +82,10 @@ button.cancel {
     width: 340px;
     border: 1px darkgrey dashed;
 }
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
