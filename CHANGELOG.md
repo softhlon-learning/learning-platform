@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.14.2
+_release date: 2025-01-16_
+ * Added simple Sign Up validation
+ * Improved Sign Up error handling on frontend
+
 ## 0.14.1
 _release date: 2025-01-16_
  * Hiding 'Sign In' link on 'Sign Up' page
