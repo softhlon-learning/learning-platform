@@ -47,7 +47,8 @@
 
 span a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    color: blue;
 }
 
 .or {
@@ -94,8 +95,4 @@ button.cancel {
     padding: 10px;
     height: 20px;
     color: red;
-}
-
-a {
-    color: blue;
 }
