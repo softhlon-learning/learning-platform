@@ -54,6 +54,10 @@ export class SignInComponent implements OnInit {
             });
     }
     private handleSignInError(signInError: any, defaultErrorMessage: string) {
+        if (signInError?.status === 401) {
+            this.error = 'Invalid email or password';
+            return;
+        }
         this.error = signInError?.error?.message || defaultErrorMessage;
     }
 }
