@@ -21,9 +21,10 @@ public interface LoadAccountByEmailRepository {
     LoadAccountByEmailResult execute(LoadAccountByEmailRequest request);
 
     sealed interface LoadAccountByEmailResult {
-        record AccountExists(UUID id) implements LoadAccountByEmailResult {}
+        record AccountFoud(Account account) implements LoadAccountByEmailResult {}
         record AccountNotFound() implements LoadAccountByEmailResult {}
-        record CheckAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
+        record LoadAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
     }
     record LoadAccountByEmailRequest(String email) {}
+    record Account(String email, String password) {}
 }
