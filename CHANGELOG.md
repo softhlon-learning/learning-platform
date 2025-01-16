@@ -1,7 +1,11 @@
 # Learning Platform Changelog
 
 ## 0.12.3
-_release date: 2025-01-15_
+_release date: 2025-01-16_
+ * Using real auth context instead of mocked one
+
+## 0.12.3
+_release date: 2025-01-16_
  * Redirecting to sign-in from Enroll/UnEnroll button, when needed
  * Added sign-in redirection also to Open button
 
