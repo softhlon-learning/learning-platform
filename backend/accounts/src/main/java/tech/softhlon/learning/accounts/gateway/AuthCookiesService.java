@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.gateway;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,13 +19,13 @@ class AuthCookiesService {
     private static final String AUTHENTICATED = "Authenticated";
     private static final int MAX_AGE = 86400;
 
-    public void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        addCookie(response, AUTHORIZATION, token, true, 0);
-        addCookie(response, AUTHENTICATED, "true", false, Integer.MAX_VALUE);
+    void addAuthSucceededCookies(HttpServletResponse response, String token) {
+        addCookie(response, AUTHORIZATION, token, true, MAX_AGE);
+        addCookie(response, AUTHENTICATED, "true", false, MAX_AGE);
     }
 
-    public void addAuthFailedCookies(HttpServletResponse response) {
-        addCookie(response, AUTHORIZATION, null, true, MAX_AGE);
+    void addAuthFailedCookies(HttpServletResponse response) {
+        addCookie(response, AUTHORIZATION, null, true, 0);
         addCookie(response, AUTHENTICATED, "false", false, Integer.MAX_VALUE);
     }
 

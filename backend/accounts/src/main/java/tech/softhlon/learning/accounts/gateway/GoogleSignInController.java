@@ -5,7 +5,6 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +32,9 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 @RestController
 @RequiredArgsConstructor
 class GoogleSignInController {
+    private static final String LOCATION = "Location";
     private final GoogleSignInService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
     @Value("${login-redirect-uri}")
     private String loginRedirectUri;
@@ -43,9 +44,9 @@ class GoogleSignInController {
         log.info("Requested, body{}", body);
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
         if (result instanceof Succeeded(String token)) {
-            addAuthSucceededCookies(response, token);
+            authCookiesService.addAuthSucceededCookies(response, token);
         } else {
-            addAuthFailedCookies(response);
+            authCookiesService.addAuthFailedCookies(response);
         }
         addRedirectHeaders(response);
     }
@@ -54,30 +55,9 @@ class GoogleSignInController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        addCookie(response, "Authorization", token, true);
-        addCookie(response, "Authenticated", "true", false);
-    }
-
-    private void addAuthFailedCookies(HttpServletResponse response) {
-        addCookie(response, "Authorization", null, true);
-        addCookie(response, "Authenticated", "false", false);
-    }
 
     private void addRedirectHeaders(HttpServletResponse response) {
-        response.setHeader("Location", loginRedirectUri);
+        response.setHeader(LOCATION, loginRedirectUri);
         response.setStatus(HttpStatus.FOUND.value());
-    }
-
-    private void addCookie(
-          HttpServletResponse response,
-          String name,
-          String value,
-          boolean httpOnly) {
-        var cookie = new Cookie(name, value);
-        cookie.setPath("/");
-        cookie.setSecure(true);
-        cookie.setHttpOnly(httpOnly);
-        response.addCookie(cookie);
     }
 }

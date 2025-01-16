@@ -5,12 +5,10 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,10 +31,11 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RequiredArgsConstructor
 class SignInController {
     private final SignInService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_IN)
-    ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request,HttpServletResponse response) {
+    ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request, HttpServletResponse response) {
         log.info("Requested, body: {}", request);
         var result = service.execute(request);
         return switch (result) {
@@ -51,34 +50,12 @@ class SignInController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private ResponseEntity<?> success(HttpServletResponse response, String token) {
-        addAuthSucceededCookies(response, token);
+        authCookiesService.addAuthSucceededCookies(response, token);
         return successOkBody();
     }
 
     private ResponseEntity<?> fail(HttpServletResponse response) {
-        addAuthFailedCookies(response);
+        authCookiesService.addAuthFailedCookies(response);
         return unauthorizedBody();
-    }
-
-    private void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        addCookie(response, "Authorization", token, true);
-        addCookie(response, "Authenticated", "true", false);
-    }
-
-    private void addAuthFailedCookies(HttpServletResponse response) {
-        addCookie(response, "Authorization", null, true);
-        addCookie(response, "Authenticated", "false", false);
-    }
-
-    private void addCookie(
-          HttpServletResponse response,
-          String name,
-          String value,
-          boolean httpOnly) {
-        var cookie = new Cookie(name, value);
-        cookie.setPath("/");
-        cookie.setSecure(true);
-        cookie.setHttpOnly(httpOnly);
-        response.addCookie(cookie);
     }
 }
