@@ -41,7 +41,8 @@ class GoogleSignInController {
 
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
-        log.info("Requested, body{}", body);
+        log.info("Requested, credentials: {}...", body.get("credential").substring(0, 50));
+
         var result = service.execute(new GoogleSignInService.Request(body.get("credential"), null));
         if (result instanceof Succeeded(String token)) {
             authCookiesService.addAuthSucceededCookies(response, token);
@@ -54,7 +55,6 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
-
 
     private void addRedirectHeaders(HttpServletResponse response) {
         response.setHeader(LOCATION, loginRedirectUri);
