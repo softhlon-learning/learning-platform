@@ -38,7 +38,7 @@ export class SignInComponent implements OnInit {
             return;
         }
 
-        const { email = '', password = '' } = this.signInForm.value;
+        const {email = '', password = ''} = this.signInForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
         this.platformService.signIn(email || '', password || '').subscribe({
@@ -53,11 +53,12 @@ export class SignInComponent implements OnInit {
                 window.location.reload();
             });
     }
+
     private handleSignInError(signInError: any, defaultErrorMessage: string) {
         if (signInError?.status === 401) {
-            this.error = 'Sign in failed. Invalid email or password';
-            return;
+            this.error = signInError?.error || defaultErrorMessage;
+        } else {
+            this.error = defaultErrorMessage;
         }
-        this.error = signInError?.error?.message || defaultErrorMessage;
     }
 }
