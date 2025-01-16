@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.13.3
+_release date: 2025-01-16_
+ * Added redirection to the right page after sign-in
+
 ## 0.13.2
 _release date: 2025-01-16_
  * Renamed course.service.ts to platform.service.ts nad moved to dedicated folder
