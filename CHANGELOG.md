@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.12.9
+_release date: 2025-01-16_
+ * Implemented SignInServiceImpl
+ * Returning 401 when authentication failed
+
 ## 0.12.8
 _release date: 2025-01-16_
  * Moved security related classes to infrastructure
