@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
