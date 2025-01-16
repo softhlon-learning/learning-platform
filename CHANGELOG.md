@@ -1,6 +1,6 @@
 # Learning Platform Changelog
 
-## 0.12.3
+## 0.12.4
 _release date: 2025-01-16_
  * Using real auth context instead of mocked one
 
