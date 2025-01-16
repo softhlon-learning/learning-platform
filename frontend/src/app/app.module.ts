@@ -17,6 +17,7 @@ import {CourseTileComponent} from "./course-tile/course-tile.component";
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {SignUpComponent} from "./sign-up/sign-up.component";
+import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
 
 @NgModule({
     declarations: [
@@ -32,8 +33,8 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
         AppHeaderComponent,
         SignInComponent,
         CourseTileComponent,
-        SignUpComponent
-
+        SignUpComponent,
+        PasswordRecoveryComponent
     ],
     imports: [
         BrowserModule,
