@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.13.6
+_release date: 2025-01-16_
+ * Updated sigh-in form color and error message styling
+ * Rendering home only when data is loaded
+
 ## 0.13.5
 _release date: 2025-01-16_
  * Redirecting to /home after success
