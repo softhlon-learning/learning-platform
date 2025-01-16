@@ -25,8 +25,8 @@ import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 @Service
 @RequiredArgsConstructor
 class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUpService {
-    private final tech.softhlon.learning.accounts.domain.CreateAccountRepository createAccountRepository;
-    private final tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository checkAccountByEmailRepository;
+    private final CreateAccountRepository createAccountRepository;
+    private final CheckAccountByEmailRepository checkAccountByEmailRepository;
 
     @Override
     public Result execute(Request request) {

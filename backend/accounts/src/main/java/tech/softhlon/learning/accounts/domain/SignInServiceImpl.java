@@ -5,16 +5,39 @@
 
 package tech.softhlon.learning.accounts.domain;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.Account;
+import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailRequest;
+import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
+import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import org.springframework.stereotype.Service;
-
 @Service
-class SignInServiceImpl implements tech.softhlon.learning.accounts.domain.SignInService {
+@RequiredArgsConstructor
+class SignInServiceImpl implements SignInService {
+    private final LoadAccountByEmailRepository loadAccountByEmailRepository;
+
     @Override
     public Result execute(Request request) {
-        throw new UnsupportedOperationException();
+        var exists = loadAccountByEmailRepository.execute(new LoadAccountByEmailRequest(request.email()));
+        return switch (exists) {
+            case AccountFound(Account account) -> authemticate(request, account);
+            case AccountNotFound() -> new InvalidCredentialsFailed("Incorrect credentials");
+            case LoadAccountFailed(Throwable cause) -> new Failed(cause);
+        };
+    }
+
+    private Result authemticate(Request request, Account account) {
+        var passwordEncoder = new BCryptPasswordEncoder();
+        var matches = passwordEncoder.matches(request.password(), account.password());
+        return matches
+              ? new Succeeded()
+              : new InvalidCredentialsFailed("Incorrect credentials");
     }
 }

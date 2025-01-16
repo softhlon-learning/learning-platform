@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFoud;
+import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
@@ -30,7 +30,7 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
         try {
             var entity = accountsRepo.findByEmail(request.email());
             return entity.isPresent()
-                  ? new AccountFoud(toAccunt(entity.get()))
+                  ? new AccountFound(toAccunt(entity.get()))
                   : new AccountNotFound();
         } catch (Throwable cause) {
             log.error("Error", cause);
