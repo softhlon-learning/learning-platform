@@ -11,7 +11,7 @@ import {CookieService} from "ngx-cookie-service";
 })
 export class HomeComponent implements OnInit {
     title = 'Softhlon Learning Platform';
-    courses: Course[] = [];
+    courses?: Course[];
 
     constructor(
         private coursesService: PlatformService,
