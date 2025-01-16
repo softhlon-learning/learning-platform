@@ -4,8 +4,8 @@
             Sign Up
         </div>
         <div class="info">
-            <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the <a
-                    href="#">Privacy Policy</a>.</span>
+            <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the
+                <a href="#">Privacy Policy</a>.</span>
         </div>
         <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
             <div class="form">
@@ -20,7 +20,7 @@
                 </div>
                 <button class="submit" type="submit">Submit</button>
                 <button routerLink="/home" class="cancel">Cancel</button>
-                <div class="error">{{error}}</div>
+                <div class="error">{{ error }}</div>
             </div>
         </form>
     </div>
