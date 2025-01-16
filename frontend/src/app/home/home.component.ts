@@ -25,6 +25,11 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.getCourses();
+        const redirect = this.cookieService.get('Redirect') || '';
+        if (redirect != '') {
+            this.router.navigate([redirect]);
+            this.cookieService.delete('Redirect');
+        }
     }
 
     getCourses(): void {

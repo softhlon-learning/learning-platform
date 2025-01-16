@@ -6,24 +6,17 @@
         Enroll
     </button>
     <button (click)="this.redirectToSignIn()"
-            *ngIf="!course.enrolled && !this.isAuthenticated()">
+            *ngIf="!this.isAuthenticated()">
         Enroll
     </button>
+
     <button (click)="this.unenrollCourse()"
             *ngIf="course.enrolled && this.isAuthenticated()">
-        Unenroll
-    </button>
-    <button (click)="this.redirectToSignIn()"
-            *ngIf="course.enrolled && !this.isAuthenticated()">
         Unenroll
     </button>
 
     <button *ngIf="course.enrolled && this.isAuthenticated()"
             routerLink="/course/{{course.code}}/progress">
-        Open
-    </button>
-      <button (click)="this.redirectToSignIn()"
-              *ngIf="course.enrolled && !this.isAuthenticated()">
         Open
     </button>
 

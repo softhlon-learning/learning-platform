@@ -54,6 +54,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     redirectToSignIn(): void {
+        this.cookieService.set('Redirect', '/course/' + this.course.code);
         this.router.navigate(['/sign-in'])
             .then(() => {
                 window.location.reload();
