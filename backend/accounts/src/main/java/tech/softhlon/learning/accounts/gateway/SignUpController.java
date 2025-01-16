@@ -6,6 +6,7 @@
 package tech.softhlon.learning.accounts.gateway;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ import java.util.UUID;
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.unauthorizedBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -35,6 +36,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.intern
 @RequiredArgsConstructor
 class SignUpController {
     private final SignUpService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
     private static ResponseEntity<Response> successBody(UUID id) {
@@ -45,11 +47,11 @@ class SignUpController {
      * POST /api/v1/account/sign-up endpoint.
      */
     @PostMapping(SIGN_UP)
-    ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
+    ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request, HttpServletResponse response) {
         log.info("Requested, body: {}", request);
         var result = service.execute(request);
         return switch (result) {
-            case Succeeded(UUID id) -> successBody(id);
+            case Succeeded(UUID id, String token) -> success(response, token);
             case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
@@ -60,4 +62,13 @@ class SignUpController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
     record Response(UUID accountId) {}
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private ResponseEntity<?> success(HttpServletResponse response, String token) {
+        authCookiesService.addAuthSucceededCookies(response, token);
+        return successCreatedBody();
+    }
 }

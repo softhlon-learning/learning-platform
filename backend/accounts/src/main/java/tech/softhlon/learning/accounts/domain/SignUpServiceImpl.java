@@ -27,6 +27,7 @@ import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUpService {
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
+    private final JwtService jwtService;
 
     @Override
     public Result execute(Request request) {
@@ -45,7 +46,7 @@ class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUp
     private Result persistAccount(Request request) {
         var result = createAccountRepository.execute(prepareRequest(request));
         return switch (result) {
-            case AccountPersisted(UUID id) -> new Succeeded(id);
+            case AccountPersisted(UUID id) -> new Succeeded(id, token(request, id));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
@@ -62,5 +63,10 @@ class SignUpServiceImpl implements tech.softhlon.learning.accounts.domain.SignUp
     private String encryptPassword(String password) {
         var passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
+    }
+
+    private String token(Request request, UUID id) {
+        return jwtService.generateToken(
+              id, request.email());
     }
 }

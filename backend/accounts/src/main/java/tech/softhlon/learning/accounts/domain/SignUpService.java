@@ -19,7 +19,7 @@ public interface SignUpService {
     Result execute(Request request);
 
     sealed interface Result {
-        record Succeeded(UUID id) implements Result {}
+        record Succeeded(UUID id, String token) implements Result {}
         record AccountAlreadyExistsFailed(String message) implements Result {}
         record PasswordPolicyFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
