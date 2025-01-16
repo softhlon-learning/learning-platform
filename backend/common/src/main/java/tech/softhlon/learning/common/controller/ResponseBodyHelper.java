@@ -35,8 +35,8 @@ public class ResponseBodyHelper {
         return status(HttpStatus.ACCEPTED).build();
     }
 
-    public static ResponseEntity unauthorizedBody() {
-        return status(HttpStatus.UNAUTHORIZED).build();
+    public static ResponseEntity unauthorizedBody(String message) {
+        return status(HttpStatus.UNAUTHORIZED).body(message);
     }
 
     public static ResponseEntity<?> internalServerBody(HttpServletRequest request, Throwable cause) {

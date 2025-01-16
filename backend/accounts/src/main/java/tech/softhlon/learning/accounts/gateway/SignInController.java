@@ -40,7 +40,7 @@ class SignInController {
         var result = service.execute(request);
         return switch (result) {
             case Succeeded(String token) -> success(response, token);
-            case InvalidCredentialsFailed() -> fail(response);
+            case InvalidCredentialsFailed(String message) -> fail(response, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
@@ -54,8 +54,8 @@ class SignInController {
         return successOkBody();
     }
 
-    private ResponseEntity<?> fail(HttpServletResponse response) {
+    private ResponseEntity<?> fail(HttpServletResponse response, String message) {
         authCookiesService.addAuthFailedCookies(response);
-        return unauthorizedBody();
+        return unauthorizedBody(message);
     }
 }
