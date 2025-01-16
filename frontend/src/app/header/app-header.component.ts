@@ -29,8 +29,8 @@ export class AppHeaderComponent implements OnInit {
         this.coursesService.signOut().subscribe();
     }
 
-    isSignInPage() {
-        return this.router.url === '/sign-in';
+    isSignInUpPage() {
+        return this.router.url === '/sign-in' || this.router.url === '/sign-up';
     }
 
     protected readonly version = version.version;
