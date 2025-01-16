@@ -34,6 +34,9 @@ class UnsubscribeController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * DELETE /api/v1/subscription.
+     */
     @DeleteMapping(UNSUBSCRIBE)
     ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
         var accountId = authContext.accountId();

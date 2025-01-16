@@ -33,6 +33,9 @@ class SubscribeController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * POST /api/v1/subscription.
+     */
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
         var accountId = authContext.accountId();
