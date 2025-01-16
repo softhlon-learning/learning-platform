@@ -14,6 +14,7 @@ export class PlatformService {
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
     private updateCourseUrl = '/api/v1/course/{courseId}';
     private signOutUrl = '/api/v1/account/auth/sign-out';
+    private signInUrl = '/api/v1/account/auth/sign-in';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -57,6 +58,10 @@ export class PlatformService {
     signOut(): Observable<ArrayBuffer> {
         return this.http.post<ArrayBuffer>(this.signOutUrl, this.httpOptions).pipe();
     }
+
+    signIn(signInRequest: SignInRequest): Observable<ArrayBuffer> {
+        return this.http.post<ArrayBuffer>(this.signInUrl, signInRequest, this.httpOptions).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -83,4 +88,13 @@ class Enrollment {
     }
 }
 
+class SignInRequest {
+    email: string;
+    password: string;
+
+    constructor(email: string, password: string) {
+        this.email = email;
+        this.password = password;
+    }
+}
 
