@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.13.7
+_release date: 2025-01-16_
+ * Added error message to 401 response
+ * Displaying sign-in error message from backend
+
 ## 0.13.6
 _release date: 2025-01-16_
  * Updated sigh-in form color and error message styling

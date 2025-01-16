@@ -6,7 +6,7 @@
 
     <groupId>tech.softhlon.learning</groupId>
     <artifactId>backend</artifactId>
-    <version>0.13.7-SNAPSHOT</version>
+    <version>0.13.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Learning Platform</name>
