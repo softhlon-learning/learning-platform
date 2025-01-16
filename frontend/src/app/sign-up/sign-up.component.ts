@@ -14,6 +14,7 @@ export class SignUpComponent implements OnInit {
     error: string | undefined;
 
     signInForm = this.formBuilder.group({
+        name: '',
         email: '',
         password: ''
     });
@@ -38,10 +39,10 @@ export class SignUpComponent implements OnInit {
             return;
         }
 
-        const {email = '', password = ''} = this.signInForm.value;
+        const {name = '', email = '', password = ''} = this.signInForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.signIn(email || '', password || '').subscribe({
+        this.platformService.signUp(name || '', email || '', password || '').subscribe({
             next: () => this.handleSignInSuccess(),
             error: (signInError) => this.handleSignInError(signInError, DEFAULT_ERROR_MESSAGE),
         });

@@ -5,6 +5,9 @@
         </div>
         <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
             <div class="form">
+                <div class="name">
+                    <input placeholder="Name" type="text" formControlName="name">
+                </div>
                 <div class="email">
                     <input placeholder="Email" type="text" formControlName="email">
                 </div>
