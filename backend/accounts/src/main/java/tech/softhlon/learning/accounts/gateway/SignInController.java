@@ -34,6 +34,9 @@ class SignInController {
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/account/auth/sign-in endpoint.
+     */
     @PostMapping(SIGN_IN)
     ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request, HttpServletResponse response) {
         log.info("Requested, body: {}", request);

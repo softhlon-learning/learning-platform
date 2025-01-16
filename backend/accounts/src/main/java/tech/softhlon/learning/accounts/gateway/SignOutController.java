@@ -36,6 +36,9 @@ class SignOutController {
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/account/auth/sign-out endpoint.
+     */
     @PostMapping(SIGN_OUT)
     ResponseEntity<?> signOut(HttpServletResponse response) {
         log.info("Requested");

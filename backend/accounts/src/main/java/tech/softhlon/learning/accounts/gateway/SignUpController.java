@@ -41,6 +41,9 @@ class SignUpController {
         return status(HttpStatus.CREATED).body(new Response(id));
     }
 
+    /**
+     * POST /api/v1/account/sign-up endpoint.
+     */
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request) {
         log.info("Requested, body: {}", request);
