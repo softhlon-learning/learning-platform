@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.13.8
+_release date: 2025-01-16_
+ * Improved request logging in GoogleSignInController
+ * Added simple comments to accounts controllers
+ * Added simple comments to courses controllers
+ * Added simple comments to subscriptions controllers
+
 ## 0.13.7
 _release date: 2025-01-16_
  * Added error message to 401 response
