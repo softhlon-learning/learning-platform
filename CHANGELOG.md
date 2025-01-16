@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.12.5
+_release date: 2025-01-16_
+ * Fix NPE in extractToken
+ * Reformatting and optimized imports
+ * Refactored courses to home
+
 ## 0.12.4
 _release date: 2025-01-16_
  * Using real auth context instead of mocked one
