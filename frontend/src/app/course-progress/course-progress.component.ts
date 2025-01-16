@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {Course} from "../courses/course";
-import {CoursesService} from '../courses/courses.service';
+import {Course} from "../home/course";
+import {HomeService} from '../home/home.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {Item} from "../course-content/item";
@@ -20,7 +20,7 @@ export class CourseProgressComponent implements OnInit {
     itemToChapter = new Map<Item, Chapter>();
 
     constructor(
-        private coursesService: CoursesService,
+        private coursesService: HomeService,
         private cookieService: CookieService,
         private route: ActivatedRoute,
         private router: Router) {
@@ -227,7 +227,7 @@ export class CourseProgressComponent implements OnInit {
     }
 
     refreshPageState() {
-        console.log("Updating courses");
+        console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 }

@@ -1,20 +1,20 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "./course";
-import {CoursesService} from './courses.service';
+import {HomeService} from './home.service';
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 
 @Component({
-    selector: 'courses',
-    templateUrl: './courses.component.html',
-    styleUrls: ['./courses.component.css']
+    selector: 'home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
-export class CoursesComponent implements OnInit {
+export class HomeComponent implements OnInit {
     title = 'Softhlon Learning Platform';
     courses: Course[] = [];
 
     constructor(
-        private coursesService: CoursesService,
+        private coursesService: HomeService,
         private cookieService: CookieService,
         private router: Router) {
     }

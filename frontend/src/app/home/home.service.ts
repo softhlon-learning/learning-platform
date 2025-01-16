@@ -9,7 +9,7 @@ import {Course} from './course';
 @Injectable({
     providedIn: 'root',
 })
-export class CoursesService {
+export class HomeService {
     private courseUrl = '/api/v1/course';
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
     private updateCourseUrl = '/api/v1/course/{courseId}';

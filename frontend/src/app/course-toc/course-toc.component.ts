@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from "../courses/course";
-import {CoursesService} from '../courses/courses.service';
+import {Course} from "../home/course";
+import {HomeService} from '../home/home.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {CookieService} from "ngx-cookie-service";
@@ -15,7 +15,7 @@ export class CourseTocComponent implements OnInit {
     courseContent: CourseContent | undefined;
 
     constructor(
-        private coursesService: CoursesService,
+        private coursesService: HomeService,
         private cookieService: CookieService,
         private router: Router,
         private route: ActivatedRoute) {
@@ -26,7 +26,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     update() {
-        console.log("Updating courses");
+        console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(
             item => this.getCourse()
         );
