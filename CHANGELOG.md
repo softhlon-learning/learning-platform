@@ -1,4 +1,8 @@
 # Learning Platform Changelog
+## 0.13.1
+_release date: 2025-01-16_
+ * Repaired broken routerLink in course-tile
+ * Integrated SignOutController with AuthCookiesService
 
 ## 0.13.0
 _release date: 2025-01-16_
