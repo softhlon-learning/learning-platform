@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.13.4
+_release date: 2025-01-16_
+ * Submitting sign-in form
+ * Sending sign-in request to backend
+
 ## 0.13.3
 _release date: 2025-01-16_
  * Added redirection to the right page after sign-in
