@@ -33,6 +33,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.succes
 @RequiredArgsConstructor
 class SignOutController {
     private final SignOutService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
     @PostMapping(SIGN_OUT)
@@ -50,25 +51,8 @@ class SignOutController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private ResponseEntity<?> successResponse(HttpServletResponse response) {
-        resetAuthCookies(response);
+        authCookiesService.resetAuthCookies(response);
         return successCreatedBody();
-    }
-
-    private void resetAuthCookies(HttpServletResponse response) {
-        addCookie(response, "Authorization", null, true);
-        addCookie(response, "Authenticated", "false", false);
-    }
-
-    private void addCookie(
-          HttpServletResponse response,
-          String name,
-          String value,
-          boolean httpOnly) {
-        var cookie = new Cookie(name, value);
-        cookie.setPath("/");
-        cookie.setSecure(true);
-        cookie.setHttpOnly(httpOnly);
-        response.addCookie(cookie);
     }
 
     private String extractToken() {

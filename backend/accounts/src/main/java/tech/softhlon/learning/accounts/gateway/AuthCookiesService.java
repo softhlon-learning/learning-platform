@@ -29,6 +29,11 @@ class AuthCookiesService {
         addCookie(response, AUTHENTICATED, "false", false, Integer.MAX_VALUE);
     }
 
+    void resetAuthCookies(HttpServletResponse response) {
+        addCookie(response, AUTHORIZATION, null, true, 0);
+        addCookie(response, AUTHENTICATED, "false", false, Integer.MAX_VALUE);
+    }
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
