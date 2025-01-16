@@ -95,3 +95,7 @@ button.cancel {
     height: 20px;
     color: red;
 }
+
+a {
+    color: blue;
+}
