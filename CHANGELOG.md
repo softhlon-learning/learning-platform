@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.14.3
+_release date: 2025-01-16_
+ * Enabled autoplay for video
+ * Added link to Password Recovery page
+ * Added Password Recovery page
+
 ## 0.14.2
 _release date: 2025-01-16_
  * Added simple Sign Up validation
