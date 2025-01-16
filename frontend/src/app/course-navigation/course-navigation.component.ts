@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HomeService} from '../home/home.service';
+import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute} from "@angular/router";
 import {NavigationItems} from "./navigation-items";
 import {CourseProgressComponent} from "../course-progress/course-progress.component";
@@ -17,7 +17,7 @@ export class CourseNavigationComponent implements OnInit {
     progress?: CourseProgressComponent;
 
     constructor(
-        private coursesService: HomeService,
+        private coursesService: PlatformService,
         private route: ActivatedRoute) {
     }
 

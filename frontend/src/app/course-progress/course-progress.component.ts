@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
-import {HomeService} from '../home/home.service';
+import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {Item} from "../course-content/item";
@@ -20,7 +20,7 @@ export class CourseProgressComponent implements OnInit {
     itemToChapter = new Map<Item, Chapter>();
 
     constructor(
-        private coursesService: HomeService,
+        private coursesService: PlatformService,
         private cookieService: CookieService,
         private route: ActivatedRoute,
         private router: Router) {

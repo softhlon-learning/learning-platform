@@ -4,12 +4,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {shareReplay} from 'rxjs/operators';
 
-import {Course} from './course';
+import {Course} from '../home/course';
 
 @Injectable({
     providedIn: 'root',
 })
-export class HomeService {
+export class PlatformService {
     private courseUrl = '/api/v1/course';
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
     private updateCourseUrl = '/api/v1/course/{courseId}';

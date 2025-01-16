@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HomeService} from "../home/home.service";
+import {PlatformService} from "../service/platform.service";
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
 // @ts-ignore
@@ -17,7 +17,7 @@ export class AppHeaderComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private coursesService: HomeService,
+        private coursesService: PlatformService,
         private cookieService: CookieService) {
     }
 

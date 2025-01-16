@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../home/course";
-import {HomeService} from '../home/home.service';
+import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {CookieService} from "ngx-cookie-service";
@@ -15,7 +15,7 @@ export class CourseTocComponent implements OnInit {
     courseContent: CourseContent | undefined;
 
     constructor(
-        private coursesService: HomeService,
+        private coursesService: PlatformService,
         private cookieService: CookieService,
         private router: Router,
         private route: ActivatedRoute) {

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "./course";
-import {HomeService} from './home.service';
+import {PlatformService} from '../service/platform.service';
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     courses: Course[] = [];
 
     constructor(
-        private coursesService: HomeService,
+        private coursesService: PlatformService,
         private cookieService: CookieService,
         private router: Router) {
     }
