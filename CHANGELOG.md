@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.13.9
+_release date: 2025-01-16_
+ * Added 'Sign Up' link on 'Sing In' page
+ * Added 'sign-up' page
+
 ## 0.13.8
 _release date: 2025-01-16_
  * Improved request logging in GoogleSignInController
