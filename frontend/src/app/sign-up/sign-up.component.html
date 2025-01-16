@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="container">
+        <div class="title">
+            Sign Up
+        </div>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="form">
+                <div class="email">
+                    <input placeholder="Email" type="text" formControlName="email">
+                </div>
+                <div class="password">
+                    <input placeholder="Password" type="password" formControlName="password">
+                </div>
+                <button class="submit" type="submit">Submit</button>
+                <button routerLink="/home" class="cancel">Cancel</button>
+                <div class="error">{{error}}</div>
+            </div>
+        </form>
+    </div>
+</div>
+

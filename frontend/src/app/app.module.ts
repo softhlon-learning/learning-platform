@@ -12,11 +12,11 @@ import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-item/quiz-item.component";
 import {AppHeaderComponent} from "./header/app-header.component";
-import { SignInComponent } from './sign-in/sign-in.component';
+import {SignInComponent} from './sign-in/sign-in.component';
 import {CourseTileComponent} from "./course-tile/course-tile.component";
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {SignUpComponent} from "./sign-up/sign-up.component";
 
 @NgModule({
     declarations: [
@@ -32,6 +32,7 @@ import { BrowserModule } from '@angular/platform-browser';
         AppHeaderComponent,
         SignInComponent,
         CourseTileComponent,
+        SignUpComponent
 
     ],
     imports: [
