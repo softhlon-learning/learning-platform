@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.14.1
+_release date: 2025-01-16_
+ * Hiding 'Sign In' link on 'Sign Up' page
+ * Added info text on Sign Up page
+ *  Creating Authorization cookies on Sign Up
+
 ## 0.14.0
 _release date: 2025-01-16_
  * Sending 'Sign Up' request to backend
