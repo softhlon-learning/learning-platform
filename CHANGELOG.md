@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.13.5
+_release date: 2025-01-16_
+ * Redirecting to /home after success
+ * Displaying error message when 401
+
 ## 0.13.4
 _release date: 2025-01-16_
  * Submitting sign-in form
