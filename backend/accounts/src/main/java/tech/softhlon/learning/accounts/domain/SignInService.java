@@ -18,7 +18,7 @@ public interface SignInService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record InvalidCredentialsFailed(String message) implements Result {}
+        record InvalidCredentialsFailed() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
     record Request(

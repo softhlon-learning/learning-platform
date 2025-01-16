@@ -35,6 +35,10 @@ public class ResponseBodyHelper {
         return status(HttpStatus.ACCEPTED).build();
     }
 
+    public static ResponseEntity unauthorizedBody() {
+        return status(HttpStatus.UNAUTHORIZED).build();
+    }
+
     public static ResponseEntity<?> internalServerBody(HttpServletRequest request, Throwable cause) {
         log.error("Unexpected error:", cause);
         return ResponseEntity.internalServerError()

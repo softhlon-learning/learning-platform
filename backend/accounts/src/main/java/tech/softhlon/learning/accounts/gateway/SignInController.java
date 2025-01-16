@@ -38,7 +38,7 @@ class SignInController {
         var result = service.execute(request);
         return switch (result) {
             case Succeeded() -> successOkBody();
-            case InvalidCredentialsFailed(String message) -> badRequestBody(httpRequest, message);
+            case InvalidCredentialsFailed() -> unauthorizedBody();
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }

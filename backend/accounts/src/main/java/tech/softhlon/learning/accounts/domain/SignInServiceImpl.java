@@ -28,7 +28,7 @@ class SignInServiceImpl implements SignInService {
         var exists = loadAccountByEmailRepository.execute(new LoadAccountByEmailRequest(request.email()));
         return switch (exists) {
             case AccountFound(Account account) -> authemticate(request, account);
-            case AccountNotFound() -> new InvalidCredentialsFailed("Incorrect credentials");
+            case AccountNotFound() -> new InvalidCredentialsFailed();
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
     }
@@ -38,6 +38,6 @@ class SignInServiceImpl implements SignInService {
         var matches = passwordEncoder.matches(request.password(), account.password());
         return matches
               ? new Succeeded()
-              : new InvalidCredentialsFailed("Incorrect credentials");
+              : new InvalidCredentialsFailed();
     }
 }
