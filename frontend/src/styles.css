@@ -11,6 +11,7 @@
     --checked-warm: #ceffaf;
     --enrolled: #ecffe6;
     --main: #363131;
+    --gray: #808080;
 }
 
 @media (max-width: 1500px) {

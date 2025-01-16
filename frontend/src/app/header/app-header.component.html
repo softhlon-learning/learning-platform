@@ -4,3 +4,6 @@
     <a href="#/sign-out" *ngIf="this.isAuthenticated()" (click)="this.signOut()">Sign Out</a>
     <a href="/sign-in" *ngIf="!this.isAuthenticated() && !this.isSignInPage()">Sign In</a>
 </div>
+<div class="footer">
+    v{{version}}
+</div>

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../home/home.service";
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
+// @ts-ignore
+import version from "../../../package.json";
 
 @Component({
     selector: 'app-header',
@@ -30,4 +32,6 @@ export class AppHeaderComponent implements OnInit {
     isSignInPage() {
         return this.router.url === '/sign-in';
     }
+
+    protected readonly version = version.version;
 }

@@ -8,6 +8,16 @@
     font-size: 20px;
 }
 
+.footer {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    text-align: left;
+    font-size: 20px;
+    color: var(--gray);
+}
+
 button {
     width: 12em;
 }
