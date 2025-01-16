@@ -47,7 +47,7 @@ class GetCourseController {
     // -----------------------------------------------------------------------------------------------------------------
 
     /**
-     * GET /api/v1/course/{courseId}
+     * GET /api/v1/course/{courseId}.
      */
     @GetMapping(GET_COURSE)
     ResponseEntity<?> getCourse(@Validated @RequestBody GetCourseDetailsService.Request request) {

@@ -47,7 +47,7 @@ class ListCoursesController {
     // -----------------------------------------------------------------------------------------------------------------
 
     /**
-     * GET /api/v1/course
+     * GET /api/v1/course.
      */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {

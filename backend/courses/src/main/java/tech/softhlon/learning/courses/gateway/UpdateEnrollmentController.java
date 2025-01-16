@@ -39,7 +39,7 @@ class UpdateEnrollmentController {
     private final AuthenticationContext authContext;
 
     /**
-     * PATCH /api/v1/course/{courseId}
+     * PATCH /api/v1/course/{courseId}.
      */
     @PatchMapping(UPDATE_COURSE)
     ResponseEntity<?> updateCourse(

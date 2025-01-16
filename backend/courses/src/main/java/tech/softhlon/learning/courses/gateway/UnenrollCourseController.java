@@ -37,7 +37,7 @@ class UnenrollCourseController {
     private final AuthenticationContext authContext;
 
     /**
-     * DEELTE /api/v1/course/{courseId}/enrollment
+     * DEELTE /api/v1/course/{courseId}/enrollment.
      */
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(@PathVariable("courseId") UUID courseId) {
