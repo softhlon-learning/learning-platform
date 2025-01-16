@@ -24,7 +24,6 @@ import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.unauthorizedBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -60,17 +59,16 @@ class SignUpController {
         };
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-    record Response(UUID accountId) {}
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
     private ResponseEntity<?> success(HttpServletResponse response, String token) {
         authCookiesService.addAuthSucceededCookies(response, token);
         return successCreatedBody();
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+    record Response(UUID accountId) {}
 }
