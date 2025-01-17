@@ -12,19 +12,19 @@
 
   <div class="course-content">
     <ul class="course-content-list">
-      <li *ngFor="let section of courseContent?.sections">
+      <li *ngFor="let chapter of courseContent?.chapters">
         <span>
-          <span class="course-chapter-items">{{ section.name }}</span>
+          <span class="course-chapter-items">{{ chapter.name }}</span>
         </span>
         <ul class="courses">
-          <li *ngFor="let chapter of section.chapters">
+          <li *ngFor="let lecture of chapter.lectures">
             <ul class="course-chapter-items">
-              <li (click)="this.setItem(item)" *ngFor="let item of chapter.items" [id]="item.id"
-                  class="{{this.getClass(item)}}">
+              <li (click)="this.setLecture(lecture)" [id]="lecture.id"
+                  class="{{this.getClass(lecture)}}">
                 <label class="checkbox">
-                  <input [checked]="item.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-                  <span class="name">{{ chapter.name }}&nbsp;({{item.name}}) </span>
-                  <span *ngIf="item.time" class="name">&nbsp;- {{ item.time }}</span>
+                  <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+                  <span class="name">{{ lecture.name }} </span>
+                  <span *ngIf="lecture.time" class="name">&nbsp;- {{ lecture.time }}</span>
                 </label>
               </li>
             </ul>
@@ -33,18 +33,19 @@
       </li>
     </ul>
     <div class="course-item">
-      <video-item *ngIf="navigationItems.currentItem.name == 'Video'"
-                  [navigationItems]="navigationItems"
+      <video-item *ngIf="navigationLectures.currentLecture.type == 'Video'"
+                  [navigationItems]="navigationLectures"
                   [progress]="this">
       </video-item>
-      <pdf-item *ngIf="navigationItems.currentItem.name == 'PDF'"
-                [navigationItems]="navigationItems"
+      <pdf-item *ngIf="navigationLectures.currentLecture.type == 'PDF'"
+                [navigationItems]="navigationLectures"
                 [progress]="this">
       </pdf-item>
-      <quiz-item *ngIf="navigationItems.currentItem.name == 'Quiz'"
-                 [navigationItems]="navigationItems"
+      <quiz-item *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
+                 [navigationItems]="navigationLectures"
                  [progress]="this">
       </quiz-item>
     </div>
   </div>
 </span>
+

@@ -27,15 +27,15 @@
 
   <div class="course-content">
     <ul class="course-content-list">
-      <li *ngFor="let section of courseContent?.sections">
+      <li *ngFor="let chapter of courseContent?.chapters">
       <span>
-        <span class="name">{{ section.name }}</span>
+        <span class="name">{{ chapter.name }}</span>
       </span>
         <ul class="courses">
-          <li *ngFor="let chapter of section.chapters">
+          <li *ngFor="let lecture of chapter.lectures">
             <label class="checkbox">
-              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-              <span class="name">{{ chapter.name }}</span>
+              <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
+              <span class="name">{{ lecture.name }}</span>
             </label>
           </li>
         </ul>

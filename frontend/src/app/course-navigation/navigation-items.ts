@@ -1,7 +1,7 @@
-import {Item} from "../course-content/item";
+import { Lecture } from "../course-content/lecture";
 
 export class NavigationItems {
-    previousItem?: Item;
-    currentItem: Item = new Item();
-    nextItem?: Item;
+    previousLecture?: Lecture;
+    currentLecture: Lecture = new Lecture();
+    nextLecture?: Lecture;
 }
