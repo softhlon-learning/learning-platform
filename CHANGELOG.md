@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.14.8
+_release date: 2025-01-17_
+ * Refactored frontend to the new course model
+
 ## 0.14.7
 _release date: 2025-01-17_
  * Redesigned course content structure
