@@ -1,6 +1,6 @@
-import {Section} from "./section";
+import {Chapter} from "./chapter";
 
 export class CourseContent {
     name: string = '';
-    sections: Section[] = [];
+    chapters: Chapter[] = [];
 }

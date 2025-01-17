@@ -1,7 +1,6 @@
-import {Item} from "./item";
+import {Lecture} from "./lecture";
 
 export class Chapter {
     name: string = '';
-    processed: boolean = false;
-    items: Item[] = [];
+    lectures: Lecture[] = [];
 }
