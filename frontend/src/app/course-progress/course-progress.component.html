@@ -23,8 +23,9 @@
                   class="{{this.getClass(lecture)}}">
                 <label class="checkbox">
                   <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-                  <span class="name">{{ lecture.name }}&nbsp;({{ lecture.type }})</span>
-                  <span *ngIf="lecture.time" class="name">&nbsp;- {{ lecture.time }}</span>
+                  <span class="name">{{ lecture.name }}</span>
+                  <span *ngIf="lecture.type" class="type">&nbsp;{{ this.typeVerb(lecture) }}</span>
+                  <span *ngIf="lecture.time" class="type">&nbsp;({{ lecture.time }})</span>
                 </label>
               </li>
             </ul>

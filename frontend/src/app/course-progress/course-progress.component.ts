@@ -184,4 +184,17 @@ export class CourseProgressComponent implements OnInit {
         console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
+
+    typeVerb(lecture: Lecture): string {
+        if (lecture.type === "Video") {
+            return "Watch";
+        }
+        if (lecture.type === "PDF") {
+            return "Read";
+        }
+        if (lecture.type === "Quiz") {
+            return "Interact";
+        }
+        return lecture.type;
+    }
 }
