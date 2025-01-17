@@ -8,7 +8,7 @@ chapters:
   - name: Introduction
     lectures:
       - name: Welcome to the Course
-        id: welcome.mp4?v1
+        id: java-welcome.mov
         type: Video
         time: 1m57s
       - name: Prerequisites
