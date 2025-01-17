@@ -18,17 +18,13 @@
         </span>
         <ul class="courses">
           <li *ngFor="let chapter of section.chapters">
-            <label class="checkbox">
-              <input [checked]="chapter.processed" [disabled]="true" class="course-checked" type="checkbox" />
-              <span class="course-chapter-items">{{ chapter.name }}</span>
-            </label>
             <ul class="course-chapter-items">
               <li (click)="this.setItem(item)" *ngFor="let item of chapter.items" [id]="item.id"
                   class="{{this.getClass(item)}}">
                 <label class="checkbox">
                   <input [checked]="item.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-                  <span class="name">{{ item.name }}</span>
-                  <span *ngIf="item.time" class="name">({{ item.time }})</span>
+                  <span class="name">{{ chapter.name }}({{item.name}}) </span>
+                  <span *ngIf="item.time" class="name">&nbsp;- {{ item.time }}</span>
                 </label>
               </li>
             </ul>

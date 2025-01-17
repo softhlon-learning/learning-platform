@@ -38,6 +38,7 @@ li li li:hover {
 }
 
 li li {
+    padding-inline-start: 0px;
     overflow: hidden;
 }
 .course-content-list {
@@ -62,3 +63,21 @@ div.progress span span {
     color: var(--hover);
 }
 
+.course-section-name {
+    font-weight: bold;
+}
+
+ul {
+    padding-inline-start: 10px;
+}
+
+.name {
+    font-size: 13px;
+    font-weight: normal;
+    font-family: Verdana;
+}
+
+.course-chapter-items {
+    font-size: 13px;
+    font-weight: bold;
+}
