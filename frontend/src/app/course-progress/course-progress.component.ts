@@ -27,7 +27,7 @@ export class CourseProgressComponent implements OnInit {
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
         // event.preventDefault();
-        event.stopPropagation();
+        event.stopPropagation()
 
         if (event.code == 'ArrowDown' || event.code == 'ArrowRight') {
             this.next();
@@ -35,6 +35,10 @@ export class CourseProgressComponent implements OnInit {
 
         if (event.code == 'ArrowUp' || event.code == 'ArrowLeft') {
             this.previous()
+        }
+
+        if (event.code == 'KeyM') {
+            this.switchLectureViewedFlag();
         }
     }
 
@@ -157,6 +161,19 @@ export class CourseProgressComponent implements OnInit {
         let lecture: Lecture | null = this.getCurrentLecture();
         if (lecture != null) {
             lecture.processed = viewed;
+        }
+        this.next();
+        this.updateCourse();
+    }
+
+    switchLectureViewedFlag(): void {
+        let lecture: Lecture | null = this.getCurrentLecture();
+        if (lecture != null) {
+            if (lecture.processed) {
+                lecture.processed = false
+            } else {
+                lecture.processed = true;
+            }
         }
         this.next();
         this.updateCourse();
