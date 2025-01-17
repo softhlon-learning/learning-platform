@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.15.4
+_release date: 2025-01-17_
+ * Tuning PDF viewer
+
 ## 0.15.3
 _release date: 2025-01-17_
  * Optimized marking as viewed/not viewed flag
