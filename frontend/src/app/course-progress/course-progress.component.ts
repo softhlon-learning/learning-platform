@@ -146,18 +146,19 @@ export class CourseProgressComponent implements OnInit {
     }
 
     markAsViewed(): void {
-        let lecture: Lecture | null = this.getCurrentLecture();
-        if (lecture != null) {
-            lecture.processed = true;
-        }
-        this.updateCourse();
+        this.markLectureViewedFlag(true);
     }
 
     markAsNotViewed(): void {
+        this.markLectureViewedFlag(false);
+    }
+
+    markLectureViewedFlag(viewed: boolean): void {
         let lecture: Lecture | null = this.getCurrentLecture();
         if (lecture != null) {
-            lecture.processed = false;
+            lecture.processed = viewed;
         }
+        this.next();
         this.updateCourse();
     }
 
