@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.15.6
+_release date: 2025-01-17_
+ * Created new Java welcome video
+ * Created new Api Design welcome video 
+
 ## 0.15.5
 _release date: 2025-01-17_
  * Reseaching/Innovation session (new html viewer component)
