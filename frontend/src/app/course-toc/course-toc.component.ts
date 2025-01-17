@@ -11,7 +11,7 @@ import {CookieService} from "ngx-cookie-service";
     styleUrls: ['./course-toc.component.css']
 })
 export class CourseTocComponent implements OnInit {
-    course: Course = {};
+    course?: Course;
     courseContent: CourseContent | undefined;
 
     constructor(
@@ -22,6 +22,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.getCourse()
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 
@@ -43,18 +44,18 @@ export class CourseTocComponent implements OnInit {
                         break;
                     }
                 }
-                this.courseContent = JSON.parse(atob(<string>this.course.content));
+                this.courseContent = JSON.parse(atob(<string>this.course?.content));
             })
     }
 
     enrollCourse(): void {
-        this.coursesService.enrollCourse(this.course).subscribe(
+        this.coursesService.enrollCourse(this.course || {}).subscribe(
             item => this.update()
         );
     }
 
     redirectToSignIn(): void {
-        this.cookieService.set('Redirect', '/course/' + this.course.code);
+        this.cookieService.set('Redirect', '/course/' + this.course?.code);
         this.router.navigate(['/sign-in'])
             .then(() => {
                 window.location.reload();
@@ -62,7 +63,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     unenrollCourse(): void {
-        this.coursesService.unenrollCourse(this.course).subscribe(
+        this.coursesService.unenrollCourse(this.course || {}).subscribe(
             item => this.update()
         );
     }

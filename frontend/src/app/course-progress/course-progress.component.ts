@@ -50,7 +50,6 @@ export class CourseProgressComponent implements OnInit {
                 });
             ;
         }
-        this.refreshPageState();
         this.getCourse();
     }
 
