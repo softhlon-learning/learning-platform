@@ -1,7 +1,7 @@
 # Learning Platform Changelog
 
 ## 0.15.6
-_release date: 2025-01-17_
+_release date: 2025-01-18_
  * Created new Java welcome video
  * Created new Api Design welcome video 
 
