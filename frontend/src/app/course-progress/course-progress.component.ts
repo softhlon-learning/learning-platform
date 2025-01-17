@@ -3,10 +3,9 @@ import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
-import {Item} from "../course-content/item";
 import {NavigationItems} from "../course-navigation/navigation-items";
-import {Chapter} from '../course-content/chapter';
 import {CookieService} from "ngx-cookie-service";
+import {Lecture} from "../course-content/lecture";
 
 @Component({
     selector: 'course-progress',
@@ -16,8 +15,7 @@ import {CookieService} from "ngx-cookie-service";
 export class CourseProgressComponent implements OnInit {
     course: Course = {};
     courseContent?: CourseContent;
-    navigationItems = new NavigationItems();
-    itemToChapter = new Map<Item, Chapter>();
+    navigationLectures = new NavigationItems();
 
     constructor(
         private coursesService: PlatformService,
@@ -45,7 +43,8 @@ export class CourseProgressComponent implements OnInit {
             this.router.navigate(['/sign-in'])
                 .then(() => {
                     window.location.reload();
-                });;
+                });
+            ;
         }
         this.getCourse();
     }
@@ -64,95 +63,77 @@ export class CourseProgressComponent implements OnInit {
                 const courseContent: CourseContent = JSON.parse(atob(<string>this.course.content));
                 this.courseContent = courseContent;
                 this.findCurrentItem(courseContent);
-                this.initializeMap();
             })
     }
 
-    setItem(selectedItem: Item): void {
-        let tempNavigationItems: NavigationItems = new NavigationItems();
-        let currentItem: Item;
+    setLecture(selectedLecture: Lecture): void {
+        let tempNavigationLectures: NavigationItems = new NavigationItems();
+        let currentLecture: Lecture;
 
         if (this.courseContent) {
-            for (let section of this.courseContent.sections)
-                for (let chapter of section.chapters)
-                    if (chapter.items != null)
-                        for (let item of chapter.items) {
-                            item.selected = false;
-
-                            if (tempNavigationItems.nextItem != null) {
-                                continue;
-                            }
-
-                            // @ts-ignore
-                            if (currentItem != null) {
-                                tempNavigationItems.nextItem = item;
-                                this.navigationItems = tempNavigationItems;
-                            } else if (item != selectedItem) {
-                                tempNavigationItems.previousItem = item;
-                            } else {
-                                currentItem = item;
-                                tempNavigationItems.currentItem = item;
-                                tempNavigationItems.currentItem.selected = true;
-                            }
-                        }
+            for (let chapter of this.courseContent.chapters)
+                for (let lecture of chapter.lectures) {
+                    lecture.selected = false;
+                    if (tempNavigationLectures.nextLecture != null) {
+                        continue;
+                    }
+                    // @ts-ignore
+                    if (currentLecture != null) {
+                        tempNavigationLectures.nextLecture = lecture;
+                        this.navigationLectures = tempNavigationLectures;
+                    } else if (lecture != selectedLecture) {
+                        tempNavigationLectures.previousLecture = lecture;
+                    } else {
+                        currentLecture = lecture;
+                        tempNavigationLectures.currentLecture = lecture;
+                        tempNavigationLectures.currentLecture.selected = true;
+                    }
+                }
         }
-        this.navigationItems = tempNavigationItems;
+        this.navigationLectures = tempNavigationLectures;
     }
 
     findCurrentItem(courseContent: CourseContent): void {
-        for (let section of courseContent.sections)
-            for (let chapter of section.chapters)
-                if (chapter.items != null)
-                    for (let item of chapter.items)
-                        if (item.selected) {
-                            this.setItem(item);
-                            return;
-                        }
-        this.setItem(courseContent.sections[0].chapters[0].items[0]);
+        for (let chapter of courseContent.chapters)
+            for (let lecture of chapter.lectures)
+                if (lecture.selected) {
+                    this.setLecture(lecture);
+                    return;
+                }
+        this.setLecture(courseContent.chapters[0].lectures[0]);
     }
 
-    getCurrentItem(): Item | null {
+    getCurrentLecture(): Lecture | null {
         if (this.courseContent != null) {
-            for (let section of this.courseContent.sections)
-                for (let chapter of section.chapters)
-                    if (chapter.items != null)
-                        for (let item of chapter.items)
-                            if (item.id == this.navigationItems.currentItem.id) {
-                                this.setItem(item);
-                                return item;
-                            }
+            for (let chapter of this.courseContent.chapters)
+                for (let lecture of chapter.lectures) {
+                    if (lecture.id == this.navigationLectures.currentLecture.id) {
+                        this.setLecture(lecture);
+                        return lecture;
+                    }
+                }
         }
         return null;
     }
 
-    initializeMap(): void {
-        if (this.courseContent != null) {
-            for (let section of this.courseContent.sections)
-                for (let chapter of section.chapters)
-                    if (chapter.items != null)
-                        for (let item of chapter.items)
-                            this.itemToChapter.set(item, chapter);
-        }
-    }
-
     next(): NavigationItems {
-        if (this.navigationItems.nextItem != null) {
-            this.setItem(this.navigationItems.nextItem);
+        if (this.navigationLectures.nextLecture != null) {
+            this.setLecture(this.navigationLectures.nextLecture);
         }
-        this.scrollToElement(this.navigationItems.currentItem.id);
-        return this.navigationItems;
+        this.scrollToElement(this.navigationLectures.currentLecture.id);
+        return this.navigationLectures;
     }
 
     previous(): NavigationItems {
-        if (this.navigationItems.previousItem != null) {
-            this.setItem(this.navigationItems.previousItem);
+        if (this.navigationLectures.previousLecture != null) {
+            this.setLecture(this.navigationLectures.previousLecture);
         }
-        this.scrollToElement(this.navigationItems.currentItem.id);
-        return this.navigationItems;
+        this.scrollToElement(this.navigationLectures.currentLecture.id);
+        return this.navigationLectures;
     }
 
-    getClass(item: Item): string {
-        return item.selected ? 'selected' : '';
+    getClass(lecture: Lecture): string {
+        return lecture.selected ? 'selected' : '';
     }
 
     scrollToElement(id: string): void {
@@ -165,59 +146,32 @@ export class CourseProgressComponent implements OnInit {
     }
 
     markAsViewed(): void {
-        let item: Item | null = this.getCurrentItem();
-        if (item != null) {
-            item.processed = true;
-            this.updateChapterProcessed(item);
+        let lecture: Lecture | null = this.getCurrentLecture();
+        if (lecture != null) {
+            lecture.processed = true;
         }
         this.updateCourse();
     }
 
     markAsNotViewed(): void {
-        let item: Item | null = this.getCurrentItem();
-        if (item != null) {
-            item.processed = false;
-            this.updateChapterProcessed(item);
+        let lecture: Lecture | null = this.getCurrentLecture();
+        if (lecture != null) {
+            lecture.processed = false;
         }
         this.updateCourse();
     }
 
-    updateChapterProcessed(selectedItem: Item): void {
-        if (!selectedItem.processed) {
-            const chapter = this["itemToChapter"].get(selectedItem);
-            if (chapter) {
-                chapter.processed = false;
-                return;
-            }
-        }
-
-        const chapter = this["itemToChapter"].get(selectedItem);
-        if (chapter) {
-            for (let item of chapter.items) {
-                if (!item.processed) {
-                    chapter.processed = false;
-                    return;
-                }
-            }
-            chapter.processed = true;
-            return;
-        }
-    }
-
     courseProgress(): number {
-        let allItemsCount: number = 0;
-        let processedItemsCount: number = 0;
+        let allLecturesCount: number = 0;
+        let processedChaptersCount: number = 0;
         if (this.courseContent != null) {
-            for (let section of this.courseContent.sections)
-                for (let chapter of section.chapters)
-                    if (chapter.items != null)
-                        for (let item of chapter.items) {
-                            allItemsCount++;
-                            if (item.processed) processedItemsCount++;
-                        }
+            for (let chapter of this.courseContent.chapters)
+                for (let lecture of chapter.lectures) {
+                    allLecturesCount++;
+                    if (lecture.processed) processedChaptersCount++;
+                }
         }
-
-        return Math.round(processedItemsCount / allItemsCount * 100);
+        return Math.round(processedChaptersCount / allLecturesCount * 100);
     }
 
     updateCourse(): void {

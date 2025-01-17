@@ -1,6 +1,11 @@
 # Learning Platform Changelog
 
-## 0.14.5
+## 0.14.7
+_release date: 2025-01-17_
+ * Redesigned course content structure
+ * Updated course model
+
+## 0.14.6
 _release date: 2025-01-17_
  * Synced JWT and auth cookies expiration time.
 
