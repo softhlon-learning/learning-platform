@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.14.9
+_release date: 2025-01-17_
+ * Updated course contents (without Java)
+ * Displaying lecture typ
+
 ## 0.14.8
 _release date: 2025-01-17_
  * Refactored frontend to the new course model
