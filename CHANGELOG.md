@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.15.2
+_release date: 2025-01-17_
+ * Replaced Reset by Home button
+ * Moving to the next lecture after viewed flag change
+Added switchLectureViewedFlag on press M key
+ * Removed header text
+
 ## 0.15.1
 _release date: 2025-01-17_
  * Updated Java course
