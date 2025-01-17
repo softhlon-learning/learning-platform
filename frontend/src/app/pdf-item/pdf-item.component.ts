@@ -21,4 +21,8 @@ export class PDFItemComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
+    width() {
+        return window.innerWidth;
+    }
 }

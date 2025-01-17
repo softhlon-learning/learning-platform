@@ -1,5 +1,9 @@
 <div *ngIf="navigationItems.currentLecture">
-    <object [data]="'https://storage.googleapis.com/' + navigationItems.currentLecture.id | safe" height="600"
-            width="970"></object>
+    <object *ngIf="this.width() >= 1500"
+            [data]="'https://storage.googleapis.com/' + navigationItems.currentLecture.id + '#toolbar=0&scrollbar=1' | safe"
+            frameborder="0" height="600" width="1060"></object>
+    <object *ngIf="this.width() < 1500"
+            [data]="'https://storage.googleapis.com/' + navigationItems.currentLecture.id + '#toolbar=0&scrollbar=0&zoom=70' | safe"
+            frameborder="0" height="600" width="1060"></object>
     <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"/>
 </div>
