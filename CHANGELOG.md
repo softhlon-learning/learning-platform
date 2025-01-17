@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.15.0
+_release date: 2025-01-17_
+ * Adjusted Java course to new model
+
 ## 0.14.9
 _release date: 2025-01-17_
  * Updated course contents (without Java)
