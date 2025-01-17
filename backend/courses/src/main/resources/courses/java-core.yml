@@ -4,135 +4,67 @@ orderNo: 4
 name: Java
 description: Master Java programming with our comprehensive course designed for all skill levels
 version: 1.0.0
-sections:
+chapters:
   - name: Introduction
-    chapters:
+    lectures:
       - name: Welcome to the Course
-        processed: false
-        items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4?v1
-            processed: false
+        id: welcome.mp4?v1
+        type: Video
+        time: 2m5s
       - name: Prerequisites
-        processed: false
-        items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4?v2
-            processed: false
+        type: Video
+        time: 2m5s
+        id: welcome.mp4?v2
       - name: Course Structure
-        processed: false
-        items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4?v3
-            processed: false
-          - name: PDF
-            processed: false
-            id: ultimate-java-course/intro/Summary.pdf?v4
+        id: ultimate-java-course/intro/Summary.pdf?v4
+        type: PDF
   - name: Getting Started
-    chapters:
+    lectures:
       - name: Introduction to Java
-        processed: false
-        items:
-          - name: Video
-            time: 3m15s
-            id: welcome.mp4?v5
-            processed: false
+        id: welcome.mp4?v5
+        type: Video
+        time: 3m15s
       - name: Java Virtual Machine
-        processed: false
-        items:
-          - name: Video
-            time: 1m20s
-            id: welcome.mp4?v6
-            processed: false
+        id: welcome.mp4?v6
+        type: Video
+        time: 1m20s
       - name: JDK and JRE
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v7
-            processed: false
-          - name: Quiz
-            id: ultimate-java-course/intro/Quiz.json?v8
-            processed: false
+        id: ultimate-java-course/intro/Quiz.json?v8
+        type: Quiz
       - name: Java on Windows
+        id: welcome.mp4?v9
+        type: Video
+        time: 2m55s
         processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v9
-            processed: false
       - name: Java on Linux
+        id: welcome.mp4?v10
+        type: Video
+        time: 2m55s
         processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v10
-            processed: false
       - name: Java on MacOS
+        id: welcome.mp4?v11
+        type: Video
+        time: 2m55s
         processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v11
-            processed: false
       - name: Intelij Idea on Windows
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v12
-            processed: false
+        id: welcome.mp4?v12
+        type: Video
+        time: 2m55s
       - name: Intelij Idea on Linux
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v13
-            processed: false
+        id: welcome.mp4?v13
+        type: Video
+        time: 2m55s
       - name: Intelij Idea on MacOS
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v14
-            processed: false
       - name: Basic Tools Overview
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v15
-            processed: false
       - name: Javac Tool
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v16
-            processed: false
-          - name: Quiz
-            id: ultimate-java-course/intro/Quiz.json?v17
-            processed: false
       - name: Java Tool
-        processed: false
-        items:
-          - name: Video
-            time: 2m55s
-            id: welcome.mp4?v18
-            processed: false
-          - name: Quiz
-            id: ultimate-java-course/intro/Quiz.json?v19
-            processed: false
       - name: Jar Tool
       - name: IDE Overview
       - name: Basic Project Configuration
       - name: First Introduction to the Project
       - name: Wrap Up
   - name: Language Fundamentals
-    chapters:
+    lectures:
       - name: Basic Program Structure
       - name: Packages
       - name: Main Function
@@ -156,7 +88,7 @@ sections:
       - name: Break and Continue
       - name: Wrap Up
   - name: Object-Oriented Programming
-    chapters:
+    lectures:
       - name: Classes and Objects
       - name: Abstraction
       - name: Encapsulation
@@ -199,14 +131,14 @@ sections:
       - name: Nested Classes
       - name: Wrap Up
   - name: Project
-    chapters:
+    lectures:
       - name: Project Overview
       - name: GitHub Repository
       - name: Basic Git Commands
       - name: Project Skeleton
       - name: Wrap Up
   - name: Strings and Text Blocks
-    chapters:
+    lectures:
       - name: String Class
       - name: Manipulating Characters in String
       - name: Concatenating Strings
@@ -216,7 +148,7 @@ sections:
       - name: Multiline Strings
       - name: Wrap Up
   - name: Data Structures
-    chapters:
+    lectures:
       - name: Overview
       - name: Introduction to Arrays
       - name: Array Operations
@@ -239,7 +171,7 @@ sections:
       - name: Custom Implementation
       - name: Wrap Up
   - name: Error Handling
-    chapters:
+    lectures:
       - name: Error Handling Overview
       - name: Catching Exceptions
       - name: Throwing Exceptions
@@ -250,7 +182,7 @@ sections:
       - name: Runtime Exceptions
       - name: Wrap Up
   - name: Functional Programming
-    chapters:
+    lectures:
       - name: Functional Programming Introduction
       - name: Functional Interface
       - name: Lambda Expressions
@@ -266,9 +198,9 @@ sections:
       - name: UnaryOperator
       - name: Primitive Function Specializations
       - name: Optional Class
-      - name: Wrap Up
+      - name: Wrap Up        
   - name: Streams
-    chapters:
+    lectures:
       - name: Introduction to Stream API
       - name: Stream Interface
       - name: Terminal and Intermediate Operations
@@ -289,7 +221,7 @@ sections:
       - name: PartitioningBy
       - name: Wrap Up
   - name: Generics
-    chapters:
+    lectures:
       - name: Generics Overview
       - name: Generic Types
       - name: Generic Methods
@@ -303,7 +235,7 @@ sections:
       - name: Erasure of Generic Methods
       - name: Wrap Up
   - name: Records and Pattern Matching
-    chapters:
+    lectures:
       - name: Records Overview
       - name: Canonical Constructor
       - name: Local Record Classes
@@ -316,7 +248,7 @@ sections:
       - name: Unnamed Patterns and Variables
       - name: Wrap Up
   - name: Modularization
-    chapters:
+    lectures:
       - name: Modularization Overview
       - name: Maven Modules
       - name: Creating a Maven Module
@@ -327,7 +259,7 @@ sections:
       - name: Glue It Together
       - name: Wrap Up
   - name: Date and Time
-    chapters:
+    lectures:
       - name: Date and Time Overview
       - name: Instant
       - name: LocalDate
@@ -344,7 +276,7 @@ sections:
       - name: Period
       - name: Wrap Up
   - name: Java I/O
-    chapters:
+    lectures:
       - name: Java I/O Introduction
       - name: I/O Streams
       - name: Byte Streams
@@ -370,7 +302,7 @@ sections:
       - name: Watching Directory for Change
       - name: Wrap Up
   - name: Reflection
-    chapters:
+    lectures:
       - name: Reflection Overview
       - name: Class Objects
       - name: Examining Class Modifiers and Types
@@ -382,11 +314,11 @@ sections:
       - name: Enumerated Types
       - name: Wrap Up
   - name: Data-Oriented Programming
-    chapters:
+    lectures:
       - name: Data-Oriented Programming Intro
       - name: Wrap Up
   - name: Concurrency
-    chapters:
+    lectures:
       - name: Threads
       - name: Interupting Thread
       - name: Joining Thread
@@ -423,7 +355,7 @@ sections:
       - name: Debugging StructuredTaskScope
       - name: Wrap Up
   - name: Math Operations
-    chapters:
+    lectures:
       - name: Math Operation Overview
       - name: Absolute Value
       - name: Min and Max
@@ -434,7 +366,7 @@ sections:
       - name: BigDecimal Class
       - name: Wrap Up
   - name: Regular Expressions
-    chapters:
+    lectures:
       - name: Regular Expressions Overview
       - name: String Literals
       - name: Character Classes
@@ -445,7 +377,7 @@ sections:
       - name: Unicode Support
       - name: Wrap Up
   - name: Networking
-    chapters:
+    lectures:
       - name: Networking Overview
       - name: Creating URL
       - name: Parsing URL
@@ -460,7 +392,7 @@ sections:
       - name: Broadcasting
       - name: Wrap Up
   - name: Internationalization
-    chapters:
+    lectures:
       - name: Internationalization Overview
       - name: Before Internationalization
       - name: After Internationalization
@@ -474,7 +406,7 @@ sections:
       - name: Messages with Plural Forms
       - name: Wrap Up
   - name: JDBC
-    chapters:
+    lectures:
       - name: JDBC Overview
       - name: Setting Up PostgreSQL Server
       - name: Establishing Connection
@@ -488,7 +420,7 @@ sections:
       - name: RowSet Objects
       - name: Wrap Up
   - name: Foreign Memory API
-    chapters:
+    lectures:
       - name: Foreign Function & Memory (FFM) API
       - name: FFM Architecture Overview
       - name: Foreign Memory API
@@ -501,53 +433,184 @@ sections:
       - name: Struct Layout
       - name: Wrap Up
   - name: Performance Tuning
-    chapters:
+    lectures:
       - name: Performance Tuning Overview
+        id: welcome.mp4?v957
+        type: Video
+        time: 2m5s
       - name: Wrap Up
+        id: welcome.mp4?v958
+        type: Video
+        time: 2m5s
   - name: External Libraries
-    chapters:
+    lectures:
       - name: Lombok Overview
+        id: welcome.mp4?v959
+        type: Video
+        time: 2m5s
       - name: Lombok Annotations
+        id: welcome.mp4?v960
+        type: Video
+        time: 2m5s
       - name: Apache Commons Lang
+        id: welcome.mp4?v961
+        type: Video
+        time: 2m5s
       - name: Apache Commons Collections
+        id: welcome.mp4?v962
+        type: Video
+        time: 2m5s
       - name: Apache Commons IO
+        id: welcome.mp4?v963
+        type: Video
+        time: 2m5s
       - name: Apache Commons Validator
+        id: welcome.mp4?v963
+        type: Video
+        time: 2m5s
       - name: Guava Overview
+        id: welcome.mp4?v964
+        type: Video
+        time: 2m5s
       - name: Guava Common Use Cases
+        id: welcome.mp4?v965
+        type: Video
+        time: 2m5s
       - name: Log5j Overview
+        id: welcome.mp4?v966
+        type: Video
+        time: 2m5s
       - name: Log5j Usage
+        id: welcome.mp4?v967
+        type: Video
+        time: 2m5s
       - name: Gson Overview
+        id: welcome.mp4?v968
+        type: Video
+        time: 2m5s
       - name: Gson Common Use Cases
+        id: welcome.mp4?v969
+        type: Video
+        time: 2m5s
       - name: Apache HttpComponents Overview
+        id: welcome.mp4?v970
+        type: Video
+        time: 2m5s
       - name: HttpClient (Sync API)
+        id: welcome.mp4?v971
+        type: Video
+        time: 2m5s
       - name: HttpClient (AsyncSync API)
+        id: welcome.mp4?v972
+        type: Video
+        time: 2m5s
       - name: Wrap Up
+        id: welcome.mp4?v973
+        type: Video
+        time: 2m5s
   - name: Monitoring and Troubleshooting
-    chapters:
+    lectures:
       - name: Diagnostic Tools Overview
+        id: welcome.mp4?v974
+        type: Video
+        time: 2m5s
       - name: JDK Mission Control
+        id: welcome.mp4?v975
+        type: Video
+        time: 2m5s
       - name: JCosole Tool
+        id: welcome.mp4?v976
+        type: Video
+        time: 2m5s
       - name: JInfo Tool
+        id: welcome.mp4?v977
+        type: Video
+        time: 2m5s
       - name: JCmd Tool
+        id: welcome.mp4?v978
+        type: Video
+        time: 2m5s
       - name: Detecting Memory Leaks
+        id: welcome.mp4?v979
+        type: Video
+        time: 2m5s
       - name: Detecting High CPU Usage Issues
+        id: welcome.mp4?v980
+        type: Video
+        time: 2m5s
       - name: Detecting Thread Allocation Issues
+        id: welcome.mp4?v981
+        type: Video
+        time: 2m5s
       - name: Session Recording
+        id: welcome.mp4?v982
+        type: Video
+        time: 2m5s
       - name: Profilling with JMC
+        id: welcome.mp4?v983
+        type: Video
+        time: 2m5s
       - name: Wrap Up
+        id: ultimate-java-course/intro/Summary.pdf?v984
+        type: PDF
   - name: Preview and Incubator Features
-    chapters:
+    lectures:
       - name: Java Development Process
+        id: welcome.mp4?v985
+        type: Video
+        time: 2m5s
       - name: Java Enhancemt Proposals
+        id: welcome.mp4?v986
+        type: Video
+        time: 2m5s
       - name: Preview Features
+        id: welcome.mp4?v987
+        type: Video
+        time: 2m5s
+        id: welcome.mp4?v988
+        type: Video
+        time: 2m5s
       - name: Icubator Features
+        id: welcome.mp4?v989
+        type: Video
+        time: 2m5s
       - name: Wrap Up
+        id: welcome.mp4?v990
+        type: Video
+        time: 2m5s
       - name: Project Amber
+        id: welcome.mp4?v991
+        type: Video
+        time: 2m5s
       - name: Amber Preview Features
+        id: welcome.mp4?v992
+        type: Video
+        time: 2m5s
       - name: Project Loom
+        id: welcome.mp4?v993
+        type: Video
+        time: 2m5s
       - name: Loom Preview Features
+        id: welcome.mp4?v994
+        type: Video
+        time: 2m5s
       - name: Project Panama
+        id: welcome.mp4?v995
+        type: Video
+        time: 2m5s
       - name: Panama Preview Features
+        id: welcome.mp4?v996
+        type: Video
+        time: 2m5s
       - name: Project Valhalla
+        id: welcome.mp4?v997
+        type: Video
+        time: 2m5s
       - name: Valhalla Preview Features
+        id: welcome.mp4?v998
+        type: Video
+        time: 2m5s
       - name: Wrap Up
+        type: Video
+        time: 2m5s
+        id: welcome.mp4?v999

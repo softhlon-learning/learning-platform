@@ -10,22 +10,18 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mp4?v1
         type: Video
-        processed: false
         time: 2m5s
       - name: Prerequisites
         id: welcome.mp4?v2
         type: Video
-        processed: false
         items:
         time: 2m5s
       - name: Course Structure
         type: PDF
         id: ultimate-java-course/intro/Summary.pdf?v3
-        processed: false
   - name: Getting Started
     lectures:
       - name: Introduction to API Design
         id: welcome.mp4?v4
         type: Video
         time: 3m15s
-        processed: false
