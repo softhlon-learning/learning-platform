@@ -1,10 +1,15 @@
 # Learning Platform Changelog
 
+## 0.15.3
+_release date: 2025-01-17_
+ * Optimized marking as viewed/not viewed flag
+ * Few more display/refresh optimizations
+
 ## 0.15.2
 _release date: 2025-01-17_
  * Replaced Reset by Home button
  * Moving to the next lecture after viewed flag change
-Added switchLectureViewedFlag on press M key
+ * Added switchLectureViewedFlag on press M key
  * Removed header text
 
 ## 0.15.1
