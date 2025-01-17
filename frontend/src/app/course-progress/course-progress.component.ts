@@ -50,6 +50,7 @@ export class CourseProgressComponent implements OnInit {
                 });
             ;
         }
+        this.refreshPageState();
         this.getCourse();
     }
 
@@ -194,12 +195,10 @@ export class CourseProgressComponent implements OnInit {
 
     updateCourse(): void {
         let courseContentB64 = btoa(JSON.stringify(this.courseContent));
-        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe(
-            () => this.refreshPageState());
+        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
     }
 
     refreshPageState() {
-        console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 

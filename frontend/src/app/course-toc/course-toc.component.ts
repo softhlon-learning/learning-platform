@@ -22,7 +22,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCourse();
+        this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 
     update() {
