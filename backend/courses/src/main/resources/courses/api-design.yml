@@ -26,5 +26,6 @@ chapters:
     lectures:
       - name: Introduction to API Design
         id: welcome.mp4?v4
-        name: Video
+        type: Video
         time: 3m15s
+        processed: false
