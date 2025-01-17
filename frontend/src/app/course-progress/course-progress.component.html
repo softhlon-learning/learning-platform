@@ -23,7 +23,7 @@
                   class="{{this.getClass(item)}}">
                 <label class="checkbox">
                   <input [checked]="item.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-                  <span class="name">{{ chapter.name }}({{item.name}}) </span>
+                  <span class="name">{{ chapter.name }}&nbsp;({{item.name}}) </span>
                   <span *ngIf="item.time" class="name">&nbsp;- {{ item.time }}</span>
                 </label>
               </li>
