@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.14.4
+_release date: 2025-01-16_
+ * Installed and configured Postfix
+
 ## 0.14.3
 _release date: 2025-01-16_
  * Enabled autoplay for video
