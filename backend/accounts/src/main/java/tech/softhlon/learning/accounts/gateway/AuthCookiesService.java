@@ -7,6 +7,8 @@ package tech.softhlon.learning.accounts.gateway;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -17,11 +19,15 @@ import org.springframework.stereotype.Service;
 class AuthCookiesService {
     private static final String AUTHORIZATION = "Authorization";
     private static final String AUTHENTICATED = "Authenticated";
-    private static final int MAX_AGE = 86400;
+    private final int maxAge;
+
+    public AuthCookiesService(@Value("${jwt.expiration}") int maxAge) {
+        this.maxAge = maxAge;
+    }
 
     void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        addCookie(response, AUTHORIZATION, token, true, MAX_AGE);
-        addCookie(response, AUTHENTICATED, "true", false, MAX_AGE);
+        addCookie(response, AUTHORIZATION, token, true, maxAge);
+        addCookie(response, AUTHENTICATED, "true", false, maxAge);
     }
 
     void addAuthFailedCookies(HttpServletResponse response) {

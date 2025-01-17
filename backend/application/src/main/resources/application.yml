@@ -16,7 +16,7 @@ login-redirect-uri: https://localhost/home
 google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercontent.com
 jwt:
   secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
-  expiration: 28800
+  expiration: 86400
 ---
 
 spring:
