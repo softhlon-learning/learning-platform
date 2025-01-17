@@ -4,39 +4,28 @@ orderNo: 2
 name: Architecture
 description: Discover the art and science of design with our comprehensive Architecture course
 version: 1.0.0
-sections:
+chapters:
   - name: Introduction
-    chapters:
+    lectures:
       - name: Welcome to the Course
+        id: welcome.mp4?v1
+        type: Video
         processed: false
-        items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4?v1
-            processed: false
+        time: 2m5s
       - name: Prerequisites
+        id: welcome.mp4?v2
+        type: Video
         processed: false
         items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4?v2
-            processed: false
+        time: 2m5s
       - name: Course Structure
+        type: PDF
+        id: ultimate-java-course/intro/Summary.pdf?v3
         processed: false
-        items:
-          - name: Video
-            time: 2m5s
-            id: welcome.mp4
-            processed: false
-          - name: PDF
-            processed: false
-            id: ultimate-java-course/intro/Summary.pdf?v3
   - name: Getting Started
-    chapters:
-      - name: Introduction to Architecture
+    lectures:
+      - name: Introduction to Software Architecture
+        id: welcome.mp4?v4
+        type: Video
+        time: 3m15s
         processed: false
-        items:
-          - name: Video
-            time: 3m15s
-            id: welcome.mp4?v4
-            processed: false
