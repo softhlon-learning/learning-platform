@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.14.5
+_release date: 2025-01-17_
+ * Restructured sections/chapters/items list in course details
+
 ## 0.14.4
 _release date: 2025-01-17_
  * Installed and configured Postfix
