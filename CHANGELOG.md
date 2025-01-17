@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.15.1
+_release date: 2025-01-17_
+ * Updated Java course
+ * Minor style tuning on course progress
+ * Added Watch/Read/Interact labels
+
 ## 0.15.0
 _release date: 2025-01-17_
  * Adjusted Java course to new model
