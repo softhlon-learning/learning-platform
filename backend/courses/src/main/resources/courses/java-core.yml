@@ -10,10 +10,10 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mp4?v1
         type: Video
-        time: 2m5s
+        time: 1m57s
       - name: Prerequisites
         type: Video
-        time: 2m5s
+        time: 2m14s
         id: welcome.mp4?v2
       - name: Course Structure
         id: ultimate-java-course/intro/Summary.pdf?v4
@@ -34,35 +34,61 @@ chapters:
       - name: Java on Windows
         id: welcome.mp4?v9
         type: Video
-        time: 2m55s
+        time: 4m15s
         processed: false
       - name: Java on Linux
         id: welcome.mp4?v10
         type: Video
-        time: 2m55s
+        time: 9m07s
         processed: false
       - name: Java on MacOS
         id: welcome.mp4?v11
         type: Video
-        time: 2m55s
+        time: 6m39s
         processed: false
       - name: Intelij Idea on Windows
         id: welcome.mp4?v12
         type: Video
-        time: 2m55s
+        time: 1m51s
       - name: Intelij Idea on Linux
         id: welcome.mp4?v13
         type: Video
-        time: 2m55s
+        time: 3m45s
       - name: Intelij Idea on MacOS
+        id: welcome.mp4?v14
+        type: Video
+        time: 6m45s
       - name: Basic Tools Overview
+        id: welcome.mp4?v15
+        type: Video
+        time: 5m10s
       - name: Javac Tool
+        id: welcome.mp4?v16
+        type: Video
+        time: 8m11s
       - name: Java Tool
+        id: welcome.mp4?v17
+        type: Video
+        time: 0m28s
       - name: Jar Tool
+        id: welcome.mp4?v18
+        type: Video
+        time: 4m33s
       - name: IDE Overview
+        id: welcome.mp4?v19
+        type: Video
+        time: 7m16s
       - name: Basic Project Configuration
+        id: welcome.mp4?v20
+        type: Video
+        time: 0m59s
       - name: First Introduction to the Project
+        id: welcome.mp4?v21
+        type: Video
+        time: 6m24s
       - name: Wrap Up
+        id: ultimate-java-course/intro/Summary.pdf?v5
+        type: PDF
   - name: Language Fundamentals
     lectures:
       - name: Basic Program Structure
