@@ -1,7 +1,7 @@
 # Learning Platform Changelog
 
 ## 0.14.4
-_release date: 2025-01-16_
+_release date: 2025-01-17_
  * Installed and configured Postfix
 
 ## 0.14.3
