@@ -71,13 +71,14 @@ ul {
     padding-inline-start: 10px;
 }
 
+.course-chapter-items {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .name {
     font-size: 13px;
     font-weight: normal;
     font-family: Verdana;
 }
 
-.course-chapter-items {
-    font-size: 13px;
-    font-weight: bold;
-}
