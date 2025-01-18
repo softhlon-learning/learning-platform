@@ -24,6 +24,7 @@ import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Resu
 @Service
 @RequiredArgsConstructor
 class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
+    private static final String ENROLLMENT_NOT_FOUND = "Enrollment not found";
     private final LoadEnrollmentRepository loadEnrollmentRepository;
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
@@ -34,7 +35,7 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
               request.courseId());
         return switch (result) {
             case EnrollmentLoaded(Enrollment enrollment) -> updateEnrollment(request, enrollment);
-            case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed("Enrollment not found");
+            case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed(ENROLLMENT_NOT_FOUND);
             case EnrollmentLoadFailed(Throwable cause) -> new Failed(cause);
         };
     }

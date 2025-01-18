@@ -27,6 +27,7 @@ import static tech.softhlon.learning.courses.domain.EnrollCourseService.Result.*
 @Service
 @RequiredArgsConstructor
 class EnrollCourseServiceImpl implements EnrollCourseService {
+    private static final String COURSE_NOT_FOUND = "Course not found";
     private final CheckCourseRepository checkCourseRepository;
     private final CreateEnrollmentRepository createEnrollmentRepository;
 
@@ -35,7 +36,7 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
         var courseExists = checkCourseRepository.execute(new CheckCourseRequest(request.courseId()));
         return switch (courseExists) {
             case CourseExists() -> persistEnrollment(request);
-            case CourseNotFound() -> new CourseNotFoundFailed("Course not found");
+            case CourseNotFound() -> new CourseNotFoundFailed(COURSE_NOT_FOUND);
             case CheckCourseFailed(Throwable cause) -> new Failed(cause);
         };
     }

@@ -26,6 +26,7 @@ import static tech.softhlon.learning.courses.domain.UnenrollCourseService.Result
 @Transactional
 @RequiredArgsConstructor
 class UnenrollCourseServiceImpl implements UnenrollCourseService {
+    private static final String ENROLLMENT_NOT_FOUND = "Enrollment not found";
     private final CheckEnrollmentRepository checkEnrollmentRepository;
     private final DeleteEnrollmentRepository deleteEnrollmentRepository;
 
@@ -38,7 +39,7 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
 
         return switch (enrollmentExists) {
             case EnrollmentExists() -> deleteEnrollment(request);
-            case EnrollmentNotFound() -> new EnrollmentNotFoundFailed("Enrollment not found");
+            case EnrollmentNotFound() -> new EnrollmentNotFoundFailed(ENROLLMENT_NOT_FOUND);
             case CheckEnrollmentFailed(Throwable cause) -> new Failed(cause);
         };
     }
