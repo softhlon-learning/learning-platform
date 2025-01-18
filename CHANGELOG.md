@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.15.9
+_release date: 2025-01-18_
+ * Updated Domain Driven Design welcome video
+ * Updated Async Messaging welcome video
+
 ## 0.15.8
 _release date: 2025-01-18_
  * Updated main app title
