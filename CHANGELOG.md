@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.16.8
+_release date: 2025-01-18_
+ * Added loginRedirectFailUri to handle Google Sign In error
+ * Propagating information that account has been deleted, when creating a new one with the same email
+
 ## 0.16.7
 _release date: 2025-01-18_
  * Replaced account status by isDeleted
