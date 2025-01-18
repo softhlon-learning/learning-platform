@@ -8,7 +8,7 @@ chapters:
   - name: Introduction
     lectures:
       - name: Welcome to the Course
-        id: welcome.mp4?v1
+        id: welcome.mov
         type: Video
         processed: false
         time: 2m5s
