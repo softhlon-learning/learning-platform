@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.16.4
+_release date: 2025-01-18_
+ * Reordered top navigation buttons
+ * Renamed NavigationItems to NavigationLectures
+ * Renamed CourseProgress* to CourseDetails*
+
 ## 0.16.3
 _release date: 2025-01-18_
  * Moved tokenHash and extractToken to JwtService
