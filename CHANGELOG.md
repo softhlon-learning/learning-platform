@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.16.1
+_release date: 2025-01-18_
+ * Fixed persisting course code
+ * Improved styling of chapters/lectures list
+ * Not moving to the next when marked as not viewed
+
 ## 0.16.0
 _release date: 2025-01-18_
  * Updated Microservices welcome video
