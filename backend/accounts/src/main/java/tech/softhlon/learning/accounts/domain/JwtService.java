@@ -9,10 +9,15 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,14 +46,6 @@ public class JwtService {
         return Jwts.parser().setSigningKey(key).build().parseClaimsJws(token).getBody();
     }
 
-    public String getUsernameFromToken(String token) {
-        return getAllClaimsFromToken(token).getSubject();
-    }
-
-    public Date getExpirationDateFromToken(String token) {
-        return getAllClaimsFromToken(token).getExpiration();
-    }
-
     public Boolean isTokenValid(String token) {
         try {
             return !isTokenExpired(token);
@@ -57,14 +54,38 @@ public class JwtService {
         }
     }
 
+    public String extractToken(HttpServletRequest request) {
+        var cookies = request.getCookies();
+        if (cookies == null) {
+            return null;
+        }
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("Authorization")) {
+                return cookie.getValue();
+            }
+        }
+        return null;
+    }
+
+    public String tokenHash(String token) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(token.getBytes());
+        byte[] digest = md.digest();
+        return DatatypeConverter.printHexBinary(digest).toLowerCase();
+    }
+
     public String generateToken(UUID accountId, String email) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("accountId", accountId.toString());
         return doGenerateToken(claims, email);
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private Boolean isTokenExpired(String token) {
-        final Date expiration = getExpirationDateFromToken(token);
+        final Date expiration = getAllClaimsFromToken(token).getExpiration();
         return expiration.before(new Date());
     }
 

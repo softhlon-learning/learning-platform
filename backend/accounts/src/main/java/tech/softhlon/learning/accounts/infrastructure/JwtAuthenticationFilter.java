@@ -7,7 +7,6 @@ package tech.softhlon.learning.accounts.infrastructure;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +21,7 @@ import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenRes
 import tech.softhlon.learning.accounts.domain.JwtService;
 import tech.softhlon.learning.common.security.AuthenticationToken;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
@@ -46,7 +43,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
           FilterChain filterChain) throws ServletException, IOException {
 
         try {
-            var token = extractToken(request);
+            var token = jwtService.extractToken(request);
             if (token != null && jwtService.isTokenValid(token) && !isTokenInvalidated(token)) {
                 var authentication = SecurityContextHolder.getContext().getAuthentication();
                 var claims = jwtService.getAllClaimsFromToken(token);
@@ -69,7 +66,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private boolean isTokenInvalidated(String token) {
         try {
-            var tokenHash = tokenHash(token);
+            var tokenHash = jwtService.tokenHash(token);
             var result = checkTokenRepository.execute(new CheckTokenRequest(tokenHash));
             if (result instanceof TokenExists) {
                 return true;
@@ -78,25 +75,5 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
             return false;
         }
         return false;
-    }
-
-    private String extractToken(HttpServletRequest request) {
-        var cookies = request.getCookies();
-        if (cookies == null) {
-            return null;
-        }
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("Authorization")) {
-                return cookie.getValue();
-            }
-        }
-        return null;
-    }
-
-    private String tokenHash(String token) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        md.update(token.getBytes());
-        byte[] digest = md.digest();
-        return DatatypeConverter.printHexBinary(digest).toUpperCase();
     }
 }
