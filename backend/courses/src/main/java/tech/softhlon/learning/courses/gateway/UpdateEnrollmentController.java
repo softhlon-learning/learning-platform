@@ -46,7 +46,7 @@ class UpdateEnrollmentController {
           @PathVariable("courseId") UUID courseId,
           @Validated @RequestBody UpdateEnrollmentRequest request) {
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, courseId: {}, body: {}", accountId, courseId, request);
+        log.info("Requested, accountId: {}, courseId: {}", accountId, courseId);
         var result = service.execute(prepareRequest(courseId, request));
         return switch (result) {
             case Succeeded() -> successOkBody();
