@@ -23,6 +23,7 @@ public interface LoadAccountByEmailRepository {
     sealed interface LoadAccountByEmailResult {
         record AccountFound(Account account) implements LoadAccountByEmailResult {}
         record AccountNotFound() implements LoadAccountByEmailResult {}
+        record AccountIsDeleted() implements LoadAccountByEmailResult {}
         record LoadAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
     }
     record LoadAccountByEmailRequest(String email) {}

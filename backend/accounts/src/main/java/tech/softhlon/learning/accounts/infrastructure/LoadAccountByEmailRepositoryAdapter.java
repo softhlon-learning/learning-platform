@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
+import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
@@ -30,7 +31,7 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
         try {
             var entity = accountsRepo.findByEmail(request.email());
             return entity.isPresent()
-                  ? new AccountFound(toAccunt(entity.get()))
+                  ? existingAccount(entity.get())
                   : new AccountNotFound();
         } catch (Throwable cause) {
             log.error("Error", cause);
@@ -38,7 +39,17 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
         }
     }
 
-    private Account toAccunt(AccountEntity entity) {
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private LoadAccountByEmailResult existingAccount(AccountEntity entity) {
+        return entity.isDeleted()
+              ? new AccountIsDeleted()
+              : new AccountFound(toAccount(entity));
+    }
+
+    private Account toAccount(AccountEntity entity) {
         return new Account(
               entity.getId(),
               entity.getEmail(),
