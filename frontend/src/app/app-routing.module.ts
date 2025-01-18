@@ -7,7 +7,7 @@ import {CourseDetailsComponent} from "./course-details/course-details.component"
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
-import { ProfileComponent } from './settings/profile.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},

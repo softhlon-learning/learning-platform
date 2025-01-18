@@ -5,7 +5,7 @@ import {PlatformService} from "../service/platform.service";
 import {Router} from "@angular/router";
 
 @Component({
-    selector: 'settings',
+    selector: 'profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.css']
 })

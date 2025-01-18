@@ -18,7 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
-import {ProfileComponent} from "./settings/profile.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 @NgModule({
     declarations: [

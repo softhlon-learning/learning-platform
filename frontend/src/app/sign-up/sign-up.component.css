@@ -18,7 +18,7 @@
     height: 500px;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     background-color: var(--sign-in);
