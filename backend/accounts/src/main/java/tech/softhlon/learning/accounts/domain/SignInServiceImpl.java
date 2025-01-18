@@ -30,7 +30,7 @@ class SignInServiceImpl implements SignInService {
         var exists = loadAccountByEmailRepository.execute(new LoadAccountByEmailRequest(request.email()));
         return switch (exists) {
             case AccountFound(Account account) -> authemticate(request, account);
-            case AccountNotFound() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
+            case AccountNotFound(), AccountIsDeleted() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
     }

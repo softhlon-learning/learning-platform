@@ -59,6 +59,6 @@ class SignInController {
 
     private ResponseEntity<?> fail(HttpServletResponse response, String message) {
         authCookiesService.addAuthFailedCookies(response);
-        return unauthorizedBody(message);
+        return unAuthorizedBody(httpRequest, message);
     }
 }

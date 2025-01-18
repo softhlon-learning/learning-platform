@@ -44,7 +44,7 @@ class SignOutController {
         var result = service.execute(new Request(extractToken()));
         return switch (result) {
             case Succeeded() -> successResponse(response);
-            case NotAuthorized(String message) -> unauthorizedBody(message);
+            case NotAuthorized(String message) -> unAuthorizedBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }
