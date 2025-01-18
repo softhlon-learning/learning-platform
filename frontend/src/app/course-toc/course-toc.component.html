@@ -2,7 +2,7 @@
   <div>
     <button (click)="this.enrollCourse()"
             *ngIf="!course.enrolled && this.isAuthenticated()"
-            routerLink="/course/{{course.code}}/progress">
+            routerLink="/course/{{course.code}}/details">
         Enroll
     </button>
     <button (click)="this.redirectToSignIn()"
@@ -16,7 +16,7 @@
     </button>
 
     <button *ngIf="course.enrolled && this.isAuthenticated()"
-            routerLink="/course/{{course.code}}/progress">
+            routerLink="/course/{{course.code}}/details">
         Open
     </button>
 
