@@ -1,9 +1,9 @@
 # Learning Platform Changelog
 
-## 0.15.6
+## 0.15.7
 _release date: 2025-01-18_
- * Created new Java welcome video
- * Created new Api Design welcome video 
+ * Parametrized video-item component for passing course paths
+ * Updated welcome video paths
 
 ## 0.15.5
 _release date: 2025-01-17_
