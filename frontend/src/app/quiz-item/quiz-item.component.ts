@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
-import {CourseProgressComponent} from "../course-progress/course-progress.component";
+import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 @Component({
     selector: 'quiz-item',
@@ -13,7 +13,7 @@ export class QuizItemComponent implements OnInit {
     navigationItems: NavigationLectures = new NavigationLectures();
 
     @Input()
-    progress?: CourseProgressComponent;
+    progress?: CourseDetailsComponent;
 
     constructor(
         private route: ActivatedRoute) {

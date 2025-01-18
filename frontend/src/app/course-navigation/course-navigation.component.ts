@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute} from "@angular/router";
 import {NavigationLectures} from "./navigation-lectures";
-import {CourseProgressComponent} from "../course-progress/course-progress.component";
+import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 @Component({
     selector: 'course-navigation',
@@ -14,7 +14,7 @@ export class CourseNavigationComponent implements OnInit {
     navigationItems: NavigationLectures = new NavigationLectures();
 
     @Input()
-    progress?: CourseProgressComponent;
+    progress?: CourseDetailsComponent;
 
     constructor(
         private coursesService: PlatformService,

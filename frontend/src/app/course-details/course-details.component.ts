@@ -8,11 +8,11 @@ import {CookieService} from "ngx-cookie-service";
 import {Lecture} from "../course-content/lecture";
 
 @Component({
-    selector: 'course-progress',
-    templateUrl: './course-progress.component.html',
-    styleUrls: ['./course-progress.component.css']
+    selector: 'course-details',
+    templateUrl: './course-details.component.html',
+    styleUrls: ['./course-details.component.css']
 })
-export class CourseProgressComponent implements OnInit {
+export class CourseDetailsComponent implements OnInit {
     course: Course = {};
     courseContent?: CourseContent;
     navigationLectures = new NavigationLectures();

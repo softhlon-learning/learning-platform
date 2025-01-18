@@ -5,7 +5,7 @@ import {PlatformService} from "./service/platform.service";
 import {provideHttpClient} from "@angular/common/http";
 import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
-import {CourseProgressComponent} from "./course-progress/course-progress.component";
+import {CourseDetailsComponent} from "./course-details/course-details.component";
 import {VideoItemComponent} from "./video-item/video-item.component";
 import {PDFItemComponent} from "./pdf-item/pdf-item.component";
 import {SafePipe} from "./common/safe-pipe/safe-pipe";
@@ -24,7 +24,7 @@ import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.c
         AppComponent,
         HomeComponent,
         CourseTocComponent,
-        CourseProgressComponent,
+        CourseDetailsComponent,
         CourseNavigationComponent,
         VideoItemComponent,
         PDFItemComponent,

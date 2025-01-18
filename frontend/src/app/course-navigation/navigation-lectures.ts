@@ -1,4 +1,4 @@
-import { Lecture } from "../course-content/lecture";
+import {Lecture} from "../course-content/lecture";
 
 export class NavigationLectures {
     previousLecture?: Lecture;
