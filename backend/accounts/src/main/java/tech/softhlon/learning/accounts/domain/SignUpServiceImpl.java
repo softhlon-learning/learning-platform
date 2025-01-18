@@ -47,17 +47,10 @@ class SignUpServiceImpl implements SignUpService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result validateInput(Request request) {
-        if (request.name().isBlank()) {
-            return new NamePolicyFailed("Name is blank");
-        }
+        if (request.name().isBlank()) return new NamePolicyFailed("Name is blank");
+        if (request.email().isBlank()) return new EmailPolicyFailed("Email is blank");
+        if (request.password().isBlank()) return new PasswordPolicyFailed("Password is blank");
 
-        if (request.email().isBlank()) {
-            return new EmailPolicyFailed("Email is blank");
-        }
-
-        if (request.password().isBlank()) {
-            return new PasswordPolicyFailed("Password is blank");
-        }
         return null;
     }
 
