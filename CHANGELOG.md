@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.17.6
+_release date: 2025-01-18_
+ * Refactored unAuthorizedBody
+ * Fixed SignInServiceImpl to check isDeleted flag
+ * Fixed LoadAccountByEmailRepositoryAdapter to check isDeleted flag
+
 ## 0.17.5
 _release date: 2025-01-18_
  * Implemented DeleteAccountController
