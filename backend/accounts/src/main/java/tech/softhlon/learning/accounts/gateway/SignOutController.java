@@ -18,10 +18,10 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.accounts.domain.SignOutService.Request;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
+import static tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -45,6 +45,7 @@ class SignOutController {
         var result = service.execute(new Request(extractToken()));
         return switch (result) {
             case Succeeded() -> successResponse(response);
+            case NotAuthorized(String message) -> unauthorizedBody(message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
     }

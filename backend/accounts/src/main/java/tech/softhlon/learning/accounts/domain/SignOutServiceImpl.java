@@ -18,8 +18,7 @@ import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckT
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenRequest;
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
 import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
+import static tech.softhlon.learning.accounts.domain.SignOutService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -34,6 +33,9 @@ class SignOutServiceImpl implements SignOutService {
     @Override
     public Result execute(Request request) {
         try {
+            if (request.token() == null) {
+                return new NotAuthorized("Authentication token not found");
+            }
             var exists = checkTokenRepository.execute(prepareRequest(request));
             return switch (exists) {
                 case TokenExists() -> new Succeeded();
