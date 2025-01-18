@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 
 import java.util.Collections;
@@ -64,7 +65,8 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                 return switch (exists) {
                     case AccountExists(UUID id) -> new Succeeded(token(id, email));
                     case AccountNotFound() -> persistAccount(name, email);
-                    case CheckAccountFailed(Throwable cause) -> new Result.Failed(cause);
+                    case CheckAccountFailed(Throwable cause) -> new Failed(cause);
+                    case AccountIsDeleted() -> new AccountIsDeletedFailed("Account has been deleted before");
                 };
             } else {
                 return new InvalidCredentialsFailed("Invalid token/credentials");

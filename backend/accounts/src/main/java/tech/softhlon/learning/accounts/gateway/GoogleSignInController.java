@@ -68,6 +68,10 @@ class GoogleSignInController {
                 authCookiesService.addAuthFailedCookies(response);
                 addFailfulRedirectHeaders(response);
             }
+            case AccountIsDeletedFailed accountIsDeletedFailed -> {
+                authCookiesService.addAuthFailedCookies(response);
+                addFailfulRedirectHeaders(response);
+            }
         }
     }
 

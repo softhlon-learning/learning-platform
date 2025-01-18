@@ -22,6 +22,7 @@ public interface CheckAccountByEmailRepository {
 
     sealed interface CheckAccountByEmailResult {
         record AccountExists(UUID id) implements CheckAccountByEmailResult {}
+        record AccountIsDeleted() implements CheckAccountByEmailResult {}
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }

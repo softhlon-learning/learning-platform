@@ -37,6 +37,7 @@ class SignUpServiceImpl implements SignUpService {
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
             case AccountExists(_) -> new AccountAlreadyExistsFailed("Account with the same email already exists");
+            case AccountIsDeleted() -> new AccountIsDeletedFailed("Account has been deleted before");
             case AccountNotFound() -> persistAccount(request);
             case CheckAccountFailed(Throwable cause) -> new Failed(cause);
         };
