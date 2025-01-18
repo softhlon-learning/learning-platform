@@ -1,6 +1,6 @@
 import { Lecture } from "../course-content/lecture";
 
-export class NavigationItems {
+export class NavigationLectures {
     previousLecture?: Lecture;
     currentLecture: Lecture = new Lecture();
     nextLecture?: Lecture;

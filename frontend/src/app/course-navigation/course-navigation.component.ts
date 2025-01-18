@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute} from "@angular/router";
-import {NavigationItems} from "./navigation-items";
+import {NavigationLectures} from "./navigation-lectures";
 import {CourseProgressComponent} from "../course-progress/course-progress.component";
 
 @Component({
@@ -11,7 +11,7 @@ import {CourseProgressComponent} from "../course-progress/course-progress.compon
 })
 export class CourseNavigationComponent implements OnInit {
     @Input()
-    navigationItems: NavigationItems = new NavigationItems();
+    navigationItems: NavigationLectures = new NavigationLectures();
 
     @Input()
     progress?: CourseProgressComponent;

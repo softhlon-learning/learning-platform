@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {NavigationItems} from "../course-navigation/navigation-items";
+import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseProgressComponent} from "../course-progress/course-progress.component";
 
 @Component({
@@ -10,7 +10,7 @@ import {CourseProgressComponent} from "../course-progress/course-progress.compon
 })
 export class PDFItemComponent implements OnInit {
     @Input()
-    navigationItems: NavigationItems = new NavigationItems();
+    navigationItems: NavigationLectures = new NavigationLectures();
 
     @Input()
     progress?: CourseProgressComponent;

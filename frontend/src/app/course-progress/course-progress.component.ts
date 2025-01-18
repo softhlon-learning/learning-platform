@@ -3,7 +3,7 @@ import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
-import {NavigationItems} from "../course-navigation/navigation-items";
+import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CookieService} from "ngx-cookie-service";
 import {Lecture} from "../course-content/lecture";
 
@@ -15,7 +15,7 @@ import {Lecture} from "../course-content/lecture";
 export class CourseProgressComponent implements OnInit {
     course: Course = {};
     courseContent?: CourseContent;
-    navigationLectures = new NavigationItems();
+    navigationLectures = new NavigationLectures();
 
     constructor(
         private coursesService: PlatformService,
@@ -71,7 +71,7 @@ export class CourseProgressComponent implements OnInit {
     }
 
     setLecture(selectedLecture: Lecture): void {
-        let tempNavigationLectures: NavigationItems = new NavigationItems();
+        let tempNavigationLectures: NavigationLectures = new NavigationLectures();
         let currentLecture: Lecture;
 
         if (this.courseContent) {
@@ -120,7 +120,7 @@ export class CourseProgressComponent implements OnInit {
         return null;
     }
 
-    next(): NavigationItems {
+    next(): NavigationLectures {
         if (this.navigationLectures.nextLecture != null) {
             this.setLecture(this.navigationLectures.nextLecture);
         }
@@ -128,7 +128,7 @@ export class CourseProgressComponent implements OnInit {
         return this.navigationLectures;
     }
 
-    previous(): NavigationItems {
+    previous(): NavigationLectures {
         if (this.navigationLectures.previousLecture != null) {
             this.setLecture(this.navigationLectures.previousLecture);
         }

@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {NavigationItems} from "../course-navigation/navigation-items";
+import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseProgressComponent} from "../course-progress/course-progress.component";
 
 @Component({
@@ -12,7 +12,7 @@ export class VideoItemComponent implements OnInit {
     @ViewChild('video') video?: ElementRef;
 
     @Input()
-    navigationItems: NavigationItems = new NavigationItems();
+    navigationItems: NavigationLectures = new NavigationLectures();
 
     @Input()
     progress?: CourseProgressComponent;
