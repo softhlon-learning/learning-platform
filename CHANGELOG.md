@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.17.5
+_release date: 2025-01-18_
+ * Implemented DeleteAccountController
+ * Fixing account deletion
+
 ## 0.17.4
 _release date: 2025-01-18_
  * Added DeleteAccountService
