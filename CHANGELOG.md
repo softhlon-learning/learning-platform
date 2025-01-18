@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.17.2
+_release date: 2025-01-18_
+ * Removed enrollment status from model and database
+
 ## 0.17.1
 _release date: 2025-01-18_
  * Added settings link in header
