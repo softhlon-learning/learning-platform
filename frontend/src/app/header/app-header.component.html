@@ -1,6 +1,8 @@
 <div class="header">
     <a href="#/subscribe" *ngIf="this.isAuthenticated()">Subscribe</a>
     <span *ngIf="this.isAuthenticated()">|</span>
+    <a href="/settings" *ngIf="this.isAuthenticated()">Settings</a>
+    <span *ngIf="this.isAuthenticated()">|</span>
     <a href="#/sign-out" *ngIf="this.isAuthenticated()" (click)="this.signOut()">Sign Out</a>
     <a href="/sign-in" *ngIf="!this.isAuthenticated() && !this.isSignInUpPage()">Sign In</a>
 </div>
