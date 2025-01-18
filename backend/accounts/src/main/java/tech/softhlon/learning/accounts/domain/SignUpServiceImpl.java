@@ -25,7 +25,7 @@ import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 @Service
 @RequiredArgsConstructor
 class SignUpServiceImpl implements SignUpService {
-    private static final String ACCOUNT_ALREADY_EXISTS = "Account with the same email already exists.";
+    private static final String ACCOUNT_ALREADY_EXISTS = "Account with the same email already exists";
     private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
