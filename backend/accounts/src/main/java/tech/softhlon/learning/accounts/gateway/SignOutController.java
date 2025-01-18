@@ -17,9 +17,7 @@ import tech.softhlon.learning.accounts.domain.SignOutService;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.accounts.domain.SignOutService.Request;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
+import static tech.softhlon.learning.accounts.domain.SignOutService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
