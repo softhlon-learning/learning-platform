@@ -10,7 +10,7 @@ import {CookieService} from "ngx-cookie-service";
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    title = 'Softhlon Learning Platform';
+    title = 'Java/Fullstack Developer Academy';
     courses?: Course[];
 
     constructor(
