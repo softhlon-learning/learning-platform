@@ -35,13 +35,10 @@ public class ResponseBodyHelper {
         return status(HttpStatus.ACCEPTED).build();
     }
 
-    public static ResponseEntity unauthorizedBody(String message) {
-        return status(HttpStatus.UNAUTHORIZED).body(message);
-    }
-
     public static ResponseEntity<?> internalServerBody(HttpServletRequest request, Throwable cause) {
         log.error("Unexpected error:", cause);
-        return ResponseEntity.internalServerError()
+        return ResponseEntity
+              .internalServerError()
               .body(
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -53,11 +50,25 @@ public class ResponseBodyHelper {
     }
 
     public static ResponseEntity<?> badRequestBody(HttpServletRequest request, String message) {
-        return ResponseEntity.badRequest()
+        return ResponseEntity
+              .status(HttpStatus.UNAUTHORIZED)
               .body(
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.BAD_REQUEST)
                           .errorMessage(ErrorMessage.VALIDATION_ERROR)
+                          .message(message)
+                          .path(request.getRequestURI())
+                          .build()
+                          .body());
+    }
+
+    public static ResponseEntity<?> unAuthorizedBody(HttpServletRequest request, String message) {
+        return ResponseEntity
+              .badRequest()
+              .body(
+                    ResponseBodyBuilder.builder()
+                          .status(HttpStatus.UNAUTHORIZED)
+                          .errorMessage(ErrorMessage.AUTHENTICATION_ERROR)
                           .message(message)
                           .path(request.getRequestURI())
                           .build()
@@ -79,6 +90,7 @@ public class ResponseBodyHelper {
     }
 
     enum ErrorMessage {
+        AUTHENTICATION_ERROR("Authentication Error"),
         VALIDATION_ERROR("Validation Error"),
         INTERNAL_SERVER_ERROR("Internal Server Error");
 
