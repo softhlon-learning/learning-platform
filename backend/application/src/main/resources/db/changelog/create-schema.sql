@@ -4,7 +4,7 @@ CREATE TABLE accounts (
     type VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     password VARCHAR NULL,
-    status VARCHAR NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
     created_time TIMESTAMP DEFAULT current_timestamp,
     updated_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),

@@ -89,8 +89,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     private CreateAccountRequest prepareRequest(String name, String email) {
         return new CreateAccountRequest(
               AccountType.GOOGLE.name(),
-              name, email, null,
-              AccountStatus.ACTIVE.name());
+              name, email, null);
     }
 
     private String token(UUID accountId, String email) {

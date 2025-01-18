@@ -28,6 +28,5 @@ public interface CreateAccountRepository {
           String type,
           String name,
           String email,
-          String password,
-          String status) {}
+          String password) {}
 }

@@ -45,7 +45,6 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
               .name(request.name())
               .email(request.email())
               .password(request.password())
-              .status(request.status())
               .build();
     }
 }

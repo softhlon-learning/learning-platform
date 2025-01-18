@@ -64,11 +64,10 @@ class SignUpServiceImpl implements SignUpService {
 
     private CreateAccountRequest prepareRequest(Request request) {
         return new CreateAccountRequest(
-              tech.softhlon.learning.accounts.domain.AccountType.PASSWORD.name(),
+              AccountType.PASSWORD.name(),
               request.name(),
               request.email(),
-              encryptPassword(request.password()),
-              tech.softhlon.learning.accounts.domain.AccountStatus.ACTIVE.name());
+              encryptPassword(request.password()));
     }
 
     private String encryptPassword(String password) {
