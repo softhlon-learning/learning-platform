@@ -1,14 +1,14 @@
 id: c5ddf18c-6da5-45d8-af33-e4e4a46d8f8a
 code: messaging
 orderNo: 5
-name: Async Messaging
+name: Asynchronous Messaging
 description: Unlock the power of real-time communication with our Async Messaging course, tailored for modern developers!
 version: 1.0.0
 chapters:
   - name: Introduction
     lectures:
       - name: Welcome to the Course
-        id: welcome.mp4?v1
+        id: welcome.mov
         type: Video
         processed: false
         time: 2m5s
