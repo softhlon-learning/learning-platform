@@ -10,7 +10,7 @@
 
   <div class="course-content">
     <ul class="course-content-list">
-      <li *ngFor="let chapter of courseContent?.chapters">
+      <li *ngFor="let chapter of courseContent?.chapters" style="margin-bottom: 10px">
         <span>
           <span class="course-chapter-items">{{ chapter.name }}</span>
         </span>
@@ -22,7 +22,7 @@
                 <label class="checkbox">
                   <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
                   <span class="name">{{ lecture.name }}</span>
-                  <span *ngIf="lecture.type" class="type">&nbsp;{{ this.typeVerb(lecture) }}</span>
+                  <span *ngIf="lecture.type" class="type">&nbsp; - {{ this.typeVerb(lecture) }}</span>
                   <span *ngIf="lecture.time" class="type">&nbsp;({{ lecture.time }})</span>
                 </label>
               </li>
@@ -31,21 +31,24 @@
         </ul>
       </li>
     </ul>
+
     <div class="course-item">
-      <video-item *ngIf="navigationLectures.currentLecture.type == 'Video'"
-                  [coursePath]="course.code + '-course'"
-                  [navigationItems]="navigationLectures"
-                  [progress]="this">
+      <video-item
+              *ngIf="navigationLectures.currentLecture.type == 'Video'"
+              [coursePath]="course.code + '-course'"
+              [navigationItems]="navigationLectures"
+              [progress]="this">
       </video-item>
-      <pdf-item *ngIf="navigationLectures.currentLecture.type == 'PDF'"
-                [navigationItems]="navigationLectures"
-                [progress]="this">
+      <pdf-item
+              *ngIf="navigationLectures.currentLecture.type == 'PDF'"
+              [navigationItems]="navigationLectures"
+              [progress]="this">
       </pdf-item>
-      <quiz-item *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
-                 [navigationItems]="navigationLectures"
-                 [progress]="this">
+      <quiz-item
+              *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
+              [navigationItems]="navigationLectures"
+              [progress]="this">
       </quiz-item>
     </div>
   </div>
 </span>
-
