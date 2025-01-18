@@ -31,7 +31,7 @@ import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.Cre
 
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
-    private static final String ACCOUNT_TS_DELETED = "Account has been deleted before. The new account can't be created";
+    private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
     private static final String INVALID_CREDENTIALS = "Invalid token/credentials";
     private static final String EMAIL = "email";
     private static final String GIVEN_NAME = "given_name";
