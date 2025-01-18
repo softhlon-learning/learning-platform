@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.16.7
+_release date: 2025-01-18_
+ * Replaced account status by isDeleted
+ * Checking isDeleted flag when querying for accounts
+
 ## 0.16.6
 _release date: 2025-01-18_
  * Added Spring Boot banner
