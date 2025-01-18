@@ -3,13 +3,11 @@
         <div class="title">
             Profile
         </div>
-        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-            <div class="form">
-                <button class="delete" type="submit">Delete Account</button>
-                <button routerLink="/home" class="cancel">Close</button>
-                <div class="error">{{ error }}</div>
-            </div>
-        </form>
+        <div class="form">
+            <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
+            <button routerLink="/home" class="cancel">Close</button>
+            <div class="error">{{ error }}</div>
+        </div>
     </div>
 </div>
 
