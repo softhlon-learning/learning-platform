@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.16.3
+_release date: 2025-01-18_
+ * Moved tokenHash and extractToken to JwtService
+
 ## 0.16.2
 _release date: 2025-01-18_
  * Added NotAuthorized response to /auth/sign-out, when auth token is tno present
