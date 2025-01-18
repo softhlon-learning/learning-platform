@@ -51,7 +51,7 @@ public class ResponseBodyHelper {
 
     public static ResponseEntity<?> badRequestBody(HttpServletRequest request, String message) {
         return ResponseEntity
-              .status(HttpStatus.UNAUTHORIZED)
+              .badRequest()
               .body(
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.BAD_REQUEST)
@@ -64,7 +64,7 @@ public class ResponseBodyHelper {
 
     public static ResponseEntity<?> unAuthorizedBody(HttpServletRequest request, String message) {
         return ResponseEntity
-              .badRequest()
+              .status(HttpStatus.UNAUTHORIZED)
               .body(
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.UNAUTHORIZED)

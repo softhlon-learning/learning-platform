@@ -64,8 +64,9 @@ export class SignInComponent implements OnInit {
     }
 
     private handleSignInError(signInError: any, defaultErrorMessage: string) {
+        console.log(signInError);
         if (signInError?.status === 401) {
-            this.error = signInError?.error || defaultErrorMessage;
+            this.error = signInError?.error?.message || defaultErrorMessage;
         } else {
             this.error = defaultErrorMessage;
         }
