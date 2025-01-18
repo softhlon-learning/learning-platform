@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.16.2
+_release date: 2025-01-18_
+ * Added NotAuthorized response to /auth/sign-out, when auth token is tno present
+ * Checking if token has been invalidated
+
 ## 0.16.1
 _release date: 2025-01-18_
  * Fixed persisting course code
