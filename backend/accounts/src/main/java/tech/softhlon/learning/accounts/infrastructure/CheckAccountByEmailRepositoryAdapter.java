@@ -37,6 +37,10 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
         }
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private CheckAccountByEmailResult existingAccount(AccountEntity entity) {
         return entity.isDeleted()
               ? new AccountIsDeleted()
