@@ -8,6 +8,7 @@ package tech.softhlon.learning.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Succeeded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
@@ -16,6 +17,7 @@ import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountR
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountRequest;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
 
@@ -57,7 +59,8 @@ class DeleteAccountServiceImpl implements DeleteAccountService {
               ));
         return switch (result) {
             case AccountPersisted(_) -> new Succeeded();
-            case AccountPersistenceFailed accountPersistenceFailed -> null;
+            case AccountNotFoundInDatabase() -> new AccountNotFoundFailed(ACCOUNT_NOT_FOUND);
+            case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
 }

@@ -20,6 +20,7 @@ public interface PersistAccountRepository {
 
     sealed interface PersistAccountResult {
         record AccountPersisted(UUID uuid) implements PersistAccountResult {}
+        record AccountNotFoundInDatabase() implements PersistAccountResult {}
         record AccountPersistenceFailed(Throwable cause) implements PersistAccountResult {}
     }
     record PersistAccountRequest(

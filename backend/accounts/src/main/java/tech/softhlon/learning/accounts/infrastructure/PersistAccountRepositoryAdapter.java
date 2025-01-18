@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
 
@@ -26,6 +27,9 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
     public PersistAccountResult execute(PersistAccountRequest request) {
         try {
             var entity = accountsJpaRepository.findById(request.id());
+            if (entity.isEmpty()) return new AccountNotFoundInDatabase();
+            updateEntity(entity.get(), request);
+            accountsJpaRepository.save(entity.get());
             return new AccountPersisted(request.id());
         } catch (Throwable cause) {
             log.error("Error", cause);
