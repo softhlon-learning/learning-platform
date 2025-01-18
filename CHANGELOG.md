@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.17.7
+_release date: 2025-01-19_
+ * Fixed authentication error handling
+ * Added deleteAccount() platform service
+ * Integrated delete button with deleteAccount service
+
 ## 0.17.6
 _release date: 2025-01-18_
  * Refactored unAuthorizedBody
