@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.16.6
+_release date: 2025-01-18_
+ * Added Spring Boot banner
+ * Small improvements in GoogleSignInServiceImpl
+ * Added invalidated_tokens__token_hash_index
+ * JwtService improvements/cleanup
+ * SignUpServiceImpl improvements/cleanup
+
 ## 0.16.5
 _release date: 2025-01-18_
  * Improved logging in UpdateEnrollmentController
