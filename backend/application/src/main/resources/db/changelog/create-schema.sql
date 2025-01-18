@@ -65,6 +65,8 @@ CREATE TABLE invalidated_tokens (
     PRIMARY KEY (id)
 );
 
+CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
+
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
