@@ -16,6 +16,7 @@ export class PlatformService {
     private signOutUrl = '/api/v1/account/auth/sign-out';
     private signInUrl = '/api/v1/account/auth/sign-in';
     private signUpUrl = '/api/v1/account/sign-up';
+    private deleteAccountUrl = '/api/v1/account';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -68,6 +69,10 @@ export class PlatformService {
     signUp(name: string, email: string, password: string): Observable<ArrayBuffer> {
         const signUpRequest = new SignUpRequest(name, email, password);
         return this.http.post<ArrayBuffer>(this.signUpUrl, signUpRequest, this.httpOptions).pipe();
+    }
+
+    deleteAccount(): Observable<ArrayBuffer> {
+        return this.http.delete<ArrayBuffer>(this.deleteAccountUrl, this.httpOptions).pipe();
     }
 }
 
