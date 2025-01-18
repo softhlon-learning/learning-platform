@@ -224,7 +224,7 @@ chapters:
       - name: UnaryOperator
       - name: Primitive Function Specializations
       - name: Optional Class
-      - name: Wrap Up        
+      - name: Wrap Up
   - name: Streams
     lectures:
       - name: Introduction to Stream API
