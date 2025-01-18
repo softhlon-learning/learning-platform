@@ -62,15 +62,15 @@ class GoogleSignInController {
         switch (result) {
             case Succeeded(String token) -> {
                 authCookiesService.addAuthSucceededCookies(response, token);
-                addFailfulRedirectHeaders(response);
+                addSuccessfulRedirectHeaders(response);
             }
             case Failed(_), InvalidCredentialsFailed(_) -> {
                 authCookiesService.addAuthFailedCookies(response);
-                addFailfulRedirectHeaders(response);
+                addFailfulRedirectHeaders(response, "Internal error");
             }
-            case AccountIsDeletedFailed accountIsDeletedFailed -> {
+            case AccountIsDeletedFailed(String message) -> {
                 authCookiesService.addAuthFailedCookies(response);
-                addFailfulRedirectHeaders(response);
+                addFailfulRedirectHeaders(response, message);
             }
         }
     }
@@ -88,8 +88,8 @@ class GoogleSignInController {
         response.setStatus(HttpStatus.FOUND.value());
     }
 
-    private void addFailfulRedirectHeaders(HttpServletResponse response) {
-        response.setHeader(LOCATION, loginRedirectFailUri);
+    private void addFailfulRedirectHeaders(HttpServletResponse response, String errorMessage) {
+        response.setHeader(LOCATION, loginRedirectFailUri + "?error=" + errorMessage);
         response.setStatus(HttpStatus.FOUND.value());
     }
 }

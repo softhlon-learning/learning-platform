@@ -25,6 +25,8 @@ import static tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 @Service
 @RequiredArgsConstructor
 class SignUpServiceImpl implements SignUpService {
+    private static final String ACCOUNT_ALREADY_EXISTS = "Account with the same email already exists. The new account can't be created";
+    private static final String ACCOUNT_TS_DELETED = "Account has been deleted before. The new account can't be created";
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final JwtService jwtService;
@@ -36,8 +38,8 @@ class SignUpServiceImpl implements SignUpService {
 
         var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(request.email()));
         return switch (exists) {
-            case AccountExists(_) -> new AccountAlreadyExistsFailed("Account with the same email already exists");
-            case AccountIsDeleted() -> new AccountIsDeletedFailed("Account has been deleted before");
+            case AccountExists(_) -> new AccountAlreadyExistsFailed(ACCOUNT_ALREADY_EXISTS);
+            case AccountIsDeleted() -> new AccountIsDeletedFailed(ACCOUNT_TS_DELETED);
             case AccountNotFound() -> persistAccount(request);
             case CheckAccountFailed(Throwable cause) -> new Failed(cause);
         };

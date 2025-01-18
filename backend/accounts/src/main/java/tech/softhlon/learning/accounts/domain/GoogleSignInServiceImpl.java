@@ -11,9 +11,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 
 import java.util.Collections;
@@ -31,6 +31,8 @@ import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.Cre
 
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
+    private static final String ACCOUNT_TS_DELETED = "Account has been deleted before. The new account can't be created";
+    private static final String INVALID_CREDENTIALS = "Invalid token/credentials";
     private static final String EMAIL = "email";
     private static final String GIVEN_NAME = "given_name";
     private final GoogleIdTokenVerifier verifier;
@@ -66,10 +68,10 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                     case AccountExists(UUID id) -> new Succeeded(token(id, email));
                     case AccountNotFound() -> persistAccount(name, email);
                     case CheckAccountFailed(Throwable cause) -> new Failed(cause);
-                    case AccountIsDeleted() -> new AccountIsDeletedFailed("Account has been deleted before");
+                    case AccountIsDeleted() -> new AccountIsDeletedFailed(ACCOUNT_TS_DELETED);
                 };
             } else {
-                return new InvalidCredentialsFailed("Invalid token/credentials");
+                return new InvalidCredentialsFailed(INVALID_CREDENTIALS);
             }
         } catch (Throwable cause) {
             return new Failed(cause);
