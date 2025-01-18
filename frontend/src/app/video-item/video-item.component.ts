@@ -17,6 +17,9 @@ export class VideoItemComponent implements OnInit {
     @Input()
     progress?: CourseProgressComponent;
 
+    @Input()
+    coursePath?: string;
+
     constructor(
         private route: ActivatedRoute) {
     }

@@ -33,6 +33,7 @@
     </ul>
     <div class="course-item">
       <video-item *ngIf="navigationLectures.currentLecture.type == 'Video'"
+                  [coursePath]="course.code + '-course'"
                   [navigationItems]="navigationLectures"
                   [progress]="this">
       </video-item>
