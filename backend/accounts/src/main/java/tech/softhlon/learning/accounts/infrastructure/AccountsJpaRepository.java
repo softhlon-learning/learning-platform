@@ -17,6 +17,6 @@ import java.util.UUID;
 
 @Repository
 interface AccountsJpaRepository extends CrudRepository<AccountEntity, UUID> {
-    Optional<AccountEntity> findByEmail(String email);
+    Optional<AccountEntity> findByEmailAndIsDeletedFalse(String email);
     boolean existsByEmail(String email);
 }
