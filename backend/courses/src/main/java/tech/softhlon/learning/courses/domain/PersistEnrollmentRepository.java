@@ -22,7 +22,6 @@ public interface PersistEnrollmentRepository {
     record PersistEnrollmentRequest(
           UUID courseId,
           UUID accountId,
-          String status,
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}

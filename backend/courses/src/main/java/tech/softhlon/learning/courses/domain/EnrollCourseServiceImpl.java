@@ -57,7 +57,6 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
         return new CreateEnrollmentRequest(
               request.courseId(),
               request.accountId(),
-              EnrollmentStatus.ACTIVE.name(),
               OffsetDateTime.now()
         );
     }

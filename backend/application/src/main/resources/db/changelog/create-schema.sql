@@ -28,7 +28,6 @@ CREATE TABLE enrollments (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid NOT NULL,
     course_id uuid NOT NULL,
-    status VARCHAR NOT NULL,
     content VARCHAR,
     enrolled_time TIMESTAMP,
     completed_time TIMESTAMP,

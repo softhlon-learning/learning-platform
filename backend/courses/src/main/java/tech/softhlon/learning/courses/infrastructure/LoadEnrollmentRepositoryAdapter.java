@@ -49,7 +49,6 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
         return new Enrollment(
               entity.getId(),
               entity.getAccountId(),
-              entity.getStatus(),
               entity.getContent(),
               entity.getEnrolledTime(),
               entity.getCompletedTime()

@@ -49,7 +49,6 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
 
     private void updateEntity(PersistEnrollmentRequest request, EnrollmentEntity entity) {
         entity.setAccountId(request.accountId());
-        entity.setStatus(request.status());
         entity.setContent(request.content());
         entity.setEnrolledTime(request.enrolledTime());
         entity.setCompletedTime(request.completedTime());

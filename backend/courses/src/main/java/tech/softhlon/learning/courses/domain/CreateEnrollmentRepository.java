@@ -28,6 +28,5 @@ public interface CreateEnrollmentRepository {
     record CreateEnrollmentRequest(
           UUID courseId,
           UUID accountId,
-          String status,
           OffsetDateTime enrolledTime) {}
 }

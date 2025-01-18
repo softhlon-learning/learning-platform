@@ -38,6 +38,14 @@ class SignUpController {
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
+    private static ResponseEntity<Response> successBody(UUID id) {
+        return status(HttpStatus.CREATED).body(new Response(id));
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     /**
      * POST /api/v1/account/sign-up endpoint.
      */
@@ -54,14 +62,6 @@ class SignUpController {
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private static ResponseEntity<Response> successBody(UUID id) {
-        return status(HttpStatus.CREATED).body(new Response(id));
     }
 
     private ResponseEntity<?> success(HttpServletResponse response, String token) {

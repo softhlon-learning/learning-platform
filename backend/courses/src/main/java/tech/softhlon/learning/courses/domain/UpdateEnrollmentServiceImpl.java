@@ -57,7 +57,6 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
         return new PersistEnrollmentRequest(
               request.courseId(),
               request.accountId(),
-              course.status(),
               request.content(),
               course.enrolledTime(),
               course.completedTime()

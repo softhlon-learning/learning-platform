@@ -29,7 +29,6 @@ public interface LoadEnrollmentRepository {
     record Enrollment(
           UUID courseId,
           UUID accountId,
-          String status,
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}

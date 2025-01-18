@@ -28,7 +28,6 @@ public class EnrollmentEntity {
     private UUID accountId;
     @ManyToOne
     private CourseEntity course;
-    private String status;
     private String content;
     private OffsetDateTime enrolledTime;
     private OffsetDateTime completedTime;
