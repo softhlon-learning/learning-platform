@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.16.5
+_release date: 2025-01-18_
+ * Improved logging in UpdateEnrollmentController
+ * Renamed /course/progress to /course/details
+ * GoogleSignInController cleanup/refactoring
+ * SignOutController cleanup
+ * SignUpController cleanup
+
 ## 0.16.4
 _release date: 2025-01-18_
  * Reordered top navigation buttons
