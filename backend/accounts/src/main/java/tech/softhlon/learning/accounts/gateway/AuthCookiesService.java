@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 class AuthCookiesService {
-    private static final String AUTHORIZATION = "Authorization";
+    static final String AUTHORIZATION = "Authorization";
     private static final String AUTHENTICATED = "Authenticated";
     private final int maxAge;
 

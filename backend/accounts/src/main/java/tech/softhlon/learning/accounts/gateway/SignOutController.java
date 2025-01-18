@@ -18,6 +18,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.accounts.domain.SignOutService.Request;
 import static tech.softhlon.learning.accounts.domain.SignOutService.Result.*;
+import static tech.softhlon.learning.accounts.gateway.AuthCookiesService.AUTHORIZATION;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
@@ -60,7 +61,7 @@ class SignOutController {
     private String extractToken() {
         var cookies = httpRequest.getCookies();
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("Authorization")) {
+            if (cookie.getName().equals(AUTHORIZATION)) {
                 return cookie.getValue();
             }
         }
