@@ -1,7 +1,5 @@
 <span *ngIf="course" class="main">
   <div>
-    <button [routerLink]="['/home']">Home</button>
-
     <button (click)="this.enrollCourse()"
             *ngIf="!course.enrolled && this.isAuthenticated()"
             routerLink="/course/{{course.code}}/progress">
@@ -21,6 +19,8 @@
             routerLink="/course/{{course.code}}/progress">
         Open
     </button>
+
+    <button [routerLink]="['/home']">Home</button>
   </div>
 
   <h2>{{ course.name }} - Table of Content</h2>
