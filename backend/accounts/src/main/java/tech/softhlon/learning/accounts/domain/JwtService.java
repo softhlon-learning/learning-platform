@@ -29,6 +29,10 @@ import java.util.UUID;
 
 @Component
 public class JwtService {
+    private static final String AUTHORIZATION = "Authorization";
+    private static final String ACCOUNT_ID = "accountId";
+    private static final String MD5 = "MD5";
+
     @Value("${jwt.secret}")
     private String secret;
 
@@ -43,7 +47,10 @@ public class JwtService {
     }
 
     public Claims getAllClaimsFromToken(String token) {
-        return Jwts.parser().setSigningKey(key).build().parseClaimsJws(token).getBody();
+        return Jwts.parser()
+              .setSigningKey(key).build()
+              .parseClaimsJws(token)
+              .getBody();
     }
 
     public Boolean isTokenValid(String token) {
@@ -60,7 +67,7 @@ public class JwtService {
             return null;
         }
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("Authorization")) {
+            if (cookie.getName().equals(AUTHORIZATION)) {
                 return cookie.getValue();
             }
         }
@@ -68,7 +75,7 @@ public class JwtService {
     }
 
     public String tokenHash(String token) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("MD5");
+        MessageDigest md = MessageDigest.getInstance(MD5);
         md.update(token.getBytes());
         byte[] digest = md.digest();
         return DatatypeConverter.printHexBinary(digest).toLowerCase();
@@ -76,7 +83,7 @@ public class JwtService {
 
     public String generateToken(UUID accountId, String email) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("accountId", accountId.toString());
+        claims.put(ACCOUNT_ID, accountId.toString());
         return doGenerateToken(claims, email);
     }
 
