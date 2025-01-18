@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
 import {PlatformService} from "../service/platform.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
     selector: 'sign-in',
@@ -21,6 +21,7 @@ export class SignInComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private platformService: PlatformService,
+        private route: ActivatedRoute,
         private router: Router) {
     }
 
@@ -29,6 +30,14 @@ export class SignInComponent implements OnInit {
         const button = document.querySelector("#g_id_onload") as HTMLElement | null;
         button?.setAttribute("data-client_id", environment.googleClientId);
         button?.setAttribute("data-login_uri", environment.loginUri);
+
+        this.route.queryParamMap.subscribe(item => {
+                console.log(item.get("error"));
+                if (item.has("error")) {
+                    this.error = item.get("error")?.toString();
+                }
+            }
+        );
     }
 
     onSubmit(): void {
