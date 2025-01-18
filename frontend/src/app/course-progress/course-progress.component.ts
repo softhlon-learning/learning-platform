@@ -162,7 +162,9 @@ export class CourseProgressComponent implements OnInit {
         if (lecture != null) {
             lecture.processed = viewed;
         }
-        this.next();
+        if (viewed) {
+            this.next();
+        }
         this.updateCourse();
     }
 
@@ -173,9 +175,9 @@ export class CourseProgressComponent implements OnInit {
                 lecture.processed = false
             } else {
                 lecture.processed = true;
+                this.next();
             }
         }
-        this.next();
         this.updateCourse();
     }
 
