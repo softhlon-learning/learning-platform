@@ -30,6 +30,8 @@ import static tech.softhlon.learning.accounts.domain.CreateAccountRepository.Cre
 
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
+    private static final String EMAIL = "email";
+    private static final String GIVEN_NAME = "given_name";
     private final GoogleIdTokenVerifier verifier;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final CreateAccountRepository createAccountRepository;
@@ -56,8 +58,8 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
             var idToken = verifier.verify(request.credential());
             if (idToken != null) {
                 IdToken.Payload payload = idToken.getPayload();
-                var email = (String) payload.get("email");
-                var name = (String) payload.get("given_name");
+                var email = (String) payload.get(EMAIL);
+                var name = (String) payload.get(GIVEN_NAME);
                 var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(email));
                 return switch (exists) {
                     case AccountExists(UUID id) -> new Succeeded(token(id, email));
