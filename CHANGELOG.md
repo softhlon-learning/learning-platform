@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.17.3
+_release date: 2025-01-18_
+ * Created PersistAccountRepository
+ * Implemented PersistAccountRepositoryAdapter
+
 ## 0.17.2
 _release date: 2025-01-18_
  * Removed enrollment status from model and database
