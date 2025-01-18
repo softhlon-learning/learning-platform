@@ -1,0 +1,59 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package tech.softhlon.learning.accounts.gateway;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RestController;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
+
+import static tech.softhlon.learning.accounts.domain.DeleteAccountService.Request;
+import static tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.*;
+import static tech.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@Slf4j
+@RestApiAdapter
+@RestController
+@RequiredArgsConstructor
+class DeleteAccountController {
+    private final DeleteAccountService deleteAccountService;
+    private final AuthCookiesService authCookiesService;
+    private final AuthenticationContext authContext;
+    private final HttpServletRequest httpRequest;
+
+    /**
+     * DELETE /api/v1/account endpoint.
+     */
+    @DeleteMapping(path = ACCOUNT)
+    ResponseEntity<?> delete(HttpServletResponse response) {
+        var accountId = authContext.accountId();
+        log.info("Requested, accountId: {}", accountId);
+
+        var result = deleteAccountService.execute(new Request(accountId));
+        return switch (result) {
+            case Succeeded() -> successResponse(response);
+            case AccountIsAlreadyDeletedFailed(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
+        };
+    }
+
+    private ResponseEntity<?> successResponse(HttpServletResponse response) {
+        authCookiesService.resetAuthCookies(response);
+        return successAcceptedBody();
+    }
+}

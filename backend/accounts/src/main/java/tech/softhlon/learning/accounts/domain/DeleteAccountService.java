@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @InboundPort
 @FunctionalInterface
-interface DeleteAccountService {
+public interface DeleteAccountService {
     Result execute(Request request);
 
     sealed interface Result {
