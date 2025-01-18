@@ -12,7 +12,8 @@ spring:
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
-login-redirect-uri: https://localhost/home
+login-redirect-success-uri: https://localhost/home
+login-redirect-fail-uri: https://localhost/sign-in
 google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercontent.com
 jwt:
   secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
@@ -23,5 +24,6 @@ spring:
   config:
     activate:
       on-profile: production
-login-redirect-uri: https://softhlon-learning.tech/home
+login-redirect-success-uri: https://softhlon-learning.tech/home
+login-redirect-fail-uri: https://softhlon-learning.tech/sign-in
 google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com

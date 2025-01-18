@@ -36,17 +36,20 @@ class GoogleSignInController {
     private final GoogleSignInService service;
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
-    private final String loginRedirectUri;
+    private final String loginRedirectSuccessUri;
+    private final String loginRedirectFailUri;
 
     public GoogleSignInController(
           GoogleSignInService service,
           AuthCookiesService authCookiesService,
           HttpServletRequest httpRequest,
-          @Value("${login-redirect-uri}") String loginRedirectUri) {
+          @Value("${login-redirect-success-uri}") String loginRedirectSuccessUri,
+          @Value("${login-redirect-fail-uri}") String loginRedirectFailUri) {
         this.service = service;
         this.authCookiesService = authCookiesService;
         this.httpRequest = httpRequest;
-        this.loginRedirectUri = loginRedirectUri;
+        this.loginRedirectSuccessUri = loginRedirectSuccessUri;
+        this.loginRedirectFailUri = loginRedirectFailUri;
     }
 
     /**
@@ -57,10 +60,15 @@ class GoogleSignInController {
         log.info("Requested");
         var result = service.execute(prepareRequest(body));
         switch (result) {
-            case Succeeded(String token) -> authCookiesService.addAuthSucceededCookies(response, token);
-            case Failed(_), InvalidCredentialsFailed(_) -> authCookiesService.addAuthFailedCookies(response);
+            case Succeeded(String token) -> {
+                authCookiesService.addAuthSucceededCookies(response, token);
+                addFailfulRedirectHeaders(response);
+            }
+            case Failed(_), InvalidCredentialsFailed(_) -> {
+                authCookiesService.addAuthFailedCookies(response);
+                addFailfulRedirectHeaders(response);
+            }
         }
-        addRedirectHeaders(response);
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -71,8 +79,13 @@ class GoogleSignInController {
         return new Request(body.get(CREDENTIAL));
     }
 
-    private void addRedirectHeaders(HttpServletResponse response) {
-        response.setHeader(LOCATION, loginRedirectUri);
+    private void addSuccessfulRedirectHeaders(HttpServletResponse response) {
+        response.setHeader(LOCATION, loginRedirectSuccessUri);
+        response.setStatus(HttpStatus.FOUND.value());
+    }
+
+    private void addFailfulRedirectHeaders(HttpServletResponse response) {
+        response.setHeader(LOCATION, loginRedirectFailUri);
         response.setStatus(HttpStatus.FOUND.value());
     }
 }
