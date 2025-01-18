@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.17.1
+_release date: 2025-01-18_
+ * Added settings link in header
+ * Renamed Settings with Profile and created a dedicated page
+
 ## 0.17.0
 _release date: 2025-01-18_
  * Improved error messages
