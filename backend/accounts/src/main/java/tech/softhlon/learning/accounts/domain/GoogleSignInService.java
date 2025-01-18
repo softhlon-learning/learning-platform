@@ -21,7 +21,5 @@ public interface GoogleSignInService {
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-    record Request(
-          String credential,
-          String gCsrfToken) {}
+    record Request(String credential) {}
 }

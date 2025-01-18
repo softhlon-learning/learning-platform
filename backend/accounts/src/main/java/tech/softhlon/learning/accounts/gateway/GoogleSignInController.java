@@ -20,7 +20,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import java.util.Map;
 
 import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Request;
-import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
+import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -55,11 +55,10 @@ class GoogleSignInController {
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
         log.info("Requested");
-        var result = service.execute(new Request(body.get(CREDENTIAL), null));
-        if (result instanceof Succeeded(String token)) {
-            authCookiesService.addAuthSucceededCookies(response, token);
-        } else {
-            authCookiesService.addAuthFailedCookies(response);
+        var result = service.execute(prepareRequest(body));
+        switch (result) {
+            case Succeeded(String token) -> authCookiesService.addAuthSucceededCookies(response, token);
+            case Failed(_), InvalidCredentialsFailed(_) -> authCookiesService.addAuthFailedCookies(response);
         }
         addRedirectHeaders(response);
     }
@@ -67,6 +66,10 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private Request prepareRequest(Map<String, String> body) {
+        return new Request(body.get(CREDENTIAL));
+    }
 
     private void addRedirectHeaders(HttpServletResponse response) {
         response.setHeader(LOCATION, loginRedirectUri);
