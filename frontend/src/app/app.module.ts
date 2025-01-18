@@ -18,6 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
+import {ProfileComponent} from "./settings/profile.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.c
         SignInComponent,
         CourseTileComponent,
         SignUpComponent,
-        PasswordRecoveryComponent
+        PasswordRecoveryComponent,
+        ProfileComponent
     ],
     imports: [
         BrowserModule,
