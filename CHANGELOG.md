@@ -1,14 +1,26 @@
 # Learning Platform Changelog
 
+## 0.16.0
+_release date: 2025-01-18_
+ * Updated Microservices welcome video
+ * Updated Spring Boot welcome video
+ * Updated Fullstack welcome video* 
+ * Created Microservices Design welcome video
+ * Created Spring Boot welcome video
+ * Created Microservices welcome video
+
 ## 0.15.9
 _release date: 2025-01-18_
  * Updated Domain Driven Design welcome video
  * Updated Async Messaging welcome video
+ * Created Domain Driven Design welcome video
+ * Created Async Messaging welcome video
 
 ## 0.15.8
 _release date: 2025-01-18_
  * Updated main app title
- * Updated Architecture welcome video
+ * Updated Architecture welcome video 
+ * Created Architecture welcome video
 
 ## 0.15.7
 _release date: 2025-01-18_
@@ -17,8 +29,8 @@ _release date: 2025-01-18_
 
 ## 0.15.6
 _release date: 2025-01-18_
-* Created new Java welcome video
-* Created new Api Design welcome video
+* Created Java welcome video
+* Created Api Design welcome video
 
 ## 0.15.5
 _release date: 2025-01-17_
