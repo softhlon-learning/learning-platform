@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.15.8
+_release date: 2025-01-18_
+ * Updated main app title
+ * Updated Architecture welcome video
+
 ## 0.15.7
 _release date: 2025-01-18_
  * Parametrized video-item component for passing course paths
