@@ -15,12 +15,18 @@ import java.util.UUID;
 
 @InboundPort
 @FunctionalInterface
-public interface DeleteAccountRepository {
-    DeleteAccountRequest execute(DeleteAccountRequest request);
+public interface PersistAccountRepository {
+    PersistAccountResult execute(PersistAccountRequest request);
 
-    sealed interface DeleteAccountResult {
-        record AccountPersisted(UUID uuid) implements DeleteAccountResult {}
-        record AccountPersistenceFailed(Throwable cause) implements DeleteAccountResult {}
+    sealed interface PersistAccountResult {
+        record AccountPersisted(UUID uuid) implements PersistAccountResult {}
+        record AccountPersistenceFailed(Throwable cause) implements PersistAccountResult {}
     }
-    record DeleteAccountRequest(UUID id) {}
+    record PersistAccountRequest(
+          UUID id,
+          String type,
+          String name,
+          String email,
+          String password,
+          boolean isDeleted) {}
 }

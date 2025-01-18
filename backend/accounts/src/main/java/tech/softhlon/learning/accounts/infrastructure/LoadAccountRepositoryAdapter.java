@@ -47,7 +47,9 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
               entity.getId(),
               entity.getType(),
               entity.getName(),
-              entity.getEmail()
+              entity.getEmail(),
+              entity.getPassword(),
+              entity.isDeleted()
         );
     }
 }

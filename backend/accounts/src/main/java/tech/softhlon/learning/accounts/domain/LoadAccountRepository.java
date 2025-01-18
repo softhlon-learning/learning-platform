@@ -26,5 +26,11 @@ public interface LoadAccountRepository {
         record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
     record LoadAccountRequest(UUID id) {}
-    record Account(UUID id, String type, String name, String email) {}
+    record Account(
+          UUID id,
+          String type,
+          String name,
+          String email,
+          String password,
+          boolean isDeleted) {}
 }
