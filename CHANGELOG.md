@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.17.0
+_release date: 2025-01-18_
+ * Improved error messages
+ * Deleted unused GetCourseDetails*
+
 ## 0.16.9
 _release date: 2025-01-18_
  * Passing error message to /sign-in when account has been deleted before
