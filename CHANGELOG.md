@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.17.4
+_release date: 2025-01-18_
+ * Added DeleteAccountService
+ * Implemented DeleteAccountServiceImpl
+
 ## 0.17.3
 _release date: 2025-01-18_
  * Created PersistAccountRepository
