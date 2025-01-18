@@ -38,10 +38,6 @@ class SignUpController {
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
-    private static ResponseEntity<Response> successBody(UUID id) {
-        return status(HttpStatus.CREATED).body(new Response(id));
-    }
-
     /**
      * POST /api/v1/account/sign-up endpoint.
      */
@@ -62,6 +58,10 @@ class SignUpController {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private static ResponseEntity<Response> successBody(UUID id) {
+        return status(HttpStatus.CREATED).body(new Response(id));
+    }
 
     private ResponseEntity<?> success(HttpServletResponse response, String token) {
         authCookiesService.addAuthSucceededCookies(response, token);
