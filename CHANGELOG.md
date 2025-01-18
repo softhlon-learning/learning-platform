@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.16.9
+_release date: 2025-01-18_
+ * Passing error message to /sign-in when account has been deleted before
+ * Displaying error from query parameter
+
 ## 0.16.8
 _release date: 2025-01-18_
  * Added loginRedirectFailUri to handle Google Sign In error
