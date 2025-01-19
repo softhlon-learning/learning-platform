@@ -32,6 +32,4 @@ export class VideoItemComponent implements OnInit {
             this.video.nativeElement.load();
         }
     }
-
-    protected readonly alert = alert;
 }
