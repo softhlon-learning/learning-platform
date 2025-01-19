@@ -3,24 +3,24 @@
     <button (click)="this.enrollCourse()"
             *ngIf="!course.enrolled && this.isAuthenticated()"
             routerLink="/course/{{course.code}}/details">
-        Enroll
+        Enroll [e]
     </button>
     <button (click)="this.redirectToSignIn()"
             *ngIf="!this.isAuthenticated()">
-        Enroll
+        Enroll [e]
     </button>
 
     <button (click)="this.unenrollCourse()"
             *ngIf="course.enrolled && this.isAuthenticated()">
-        Unenroll
+        Unenroll [u]
     </button>
 
     <button *ngIf="course.enrolled && this.isAuthenticated()"
             routerLink="/course/{{course.code}}/details">
-        Open
+        Open [→]
     </button>
 
-    <button [routerLink]="['/home']">Home</button>
+    <button [routerLink]="['/home']">Home [h]</button>
   </div>
 
   <h2>{{ course.name }} - Table of Content</h2>
