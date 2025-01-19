@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
         const {name = ''} = this.profileForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.getProfile().subscribe({
+        this.platformService.updateProfile(name || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });

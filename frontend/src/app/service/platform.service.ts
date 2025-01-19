@@ -79,6 +79,11 @@ export class PlatformService {
     getProfile(): Observable<Profile> {
         return this.http.get<Profile>(this.profileUrl).pipe();
     }
+
+    updateProfile(name: string): Observable<ArrayBuffer> {
+        const updateProfileRequest = new UpdateProfileRequest(name);
+        return this.http.put<ArrayBuffer>(this.profileUrl, updateProfileRequest).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -126,6 +131,15 @@ class SignUpRequest {
         this.password = password;
     }
 }
+
+class UpdateProfileRequest {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
 
 export class Profile {
     name: string;
