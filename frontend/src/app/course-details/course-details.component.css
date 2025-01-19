@@ -13,6 +13,7 @@ div.course-content {
     justify-content: flex-start;
     background-color: var(--very-light);
     border-radius: 5px;
+    border: 1px dashed var(--gray);
 }
 
 div.course-item {
