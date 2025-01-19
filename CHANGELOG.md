@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.19.0
+_release date: 2025-01-19_
+ * Implemented GetProfileServiceImpl
+ * Updated favicon.ico
+
 ## 0.18.0
 _release date: 2025-01-19_
  * Created UpdateProfileController
