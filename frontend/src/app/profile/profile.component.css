@@ -74,6 +74,7 @@ button.submit {
     margin: 0.2rem;
     width: 340px;
     border: 1px darkgrey dashed;
+    margin-top: 1rem;
 }
 
 button.delete {
