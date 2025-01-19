@@ -16,4 +16,5 @@ class RestResources {
     static final String GOOGLE_SIGN_IN = ACCOUNT + "/auth/google-sign-in";
     static final String SIGN_OUT = ACCOUNT + "/auth/sign-out";
     static final String SIGN_UP = ACCOUNT + "/sign-up";
+    static final String PROFILE = ACCOUNT + "/profile";
 }

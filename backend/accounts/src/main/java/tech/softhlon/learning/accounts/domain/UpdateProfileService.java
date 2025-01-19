@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @InboundPort
 @FunctionalInterface
-interface UpdateProfileService {
+public interface UpdateProfileService {
     Result execute(Request request);
 
     sealed interface Result {
