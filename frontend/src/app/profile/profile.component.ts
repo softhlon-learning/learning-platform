@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
-import {FormBuilder} from '@angular/forms';
-import {PlatformService} from "../service/platform.service";
+import {PlatformService, Profile} from "../service/platform.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,7 +11,7 @@ import {Router} from "@angular/router";
 export class ProfileComponent implements OnInit {
     protected readonly environment = environment;
     error: string | undefined;
-
+    profile?: Profile;
 
     constructor(
         private platformService: PlatformService,
@@ -21,6 +20,7 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit() {
         this.error = undefined;
+        this.getProfile();
     }
 
     deleteAccount(): void {
@@ -29,6 +29,11 @@ export class ProfileComponent implements OnInit {
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         })
+    }
+
+    getProfile(): void {
+        this.platformService.getProfile()
+            .subscribe(profile => (this.profile = profile));
     }
 
     private handleSuccess() {

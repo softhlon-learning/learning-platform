@@ -4,12 +4,15 @@
             Profile
         </div>
         <div class="info">
+            {{profile?.email}}
+        </div>
+        <div class="info">
             <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the
                 <a href="#">Privacy Policy</a>.</span>
         </div>
         <div>
             <div class="name">
-                <input placeholder="Name" type="text" formControlName="name">
+                <input placeholder="Name" type="text" formControlName="name" value="{{profile?.name}}">
             </div>
         </div>
         <div class="form">

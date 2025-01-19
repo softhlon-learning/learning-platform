@@ -17,7 +17,7 @@ export class PlatformService {
     private signInUrl = '/api/v1/account/auth/sign-in';
     private signUpUrl = '/api/v1/account/sign-up';
     private deleteAccountUrl = '/api/v1/account';
-    private profileUrl = '/api/v1/account';
+    private profileUrl = '/api/v1/account/profile';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -127,7 +127,7 @@ class SignUpRequest {
     }
 }
 
-class Profile {
+export class Profile {
     name: string;
     email: string;
 
