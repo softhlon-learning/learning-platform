@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.6
+_release date: 2025-01-19_
+ * Automatic 'Mark as Viewed' when video is finished
+ * Display navigation keys on buttons. Changed buttons width
+
 ## 0.18.5
 _release date: 2025-01-19_
  * Title and info improvements on all side forms
