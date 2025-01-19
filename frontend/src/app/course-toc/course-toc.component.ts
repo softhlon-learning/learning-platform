@@ -70,11 +70,16 @@ export class CourseTocComponent implements OnInit {
     }
 
     enrollCourse(): void {
-        this.coursesService.enrollCourse(this.course || {}).subscribe(item => {
-                this.update();
-                this.router.navigate(['/course/' + this.course?.code + '/details']);
-            }
-        );
+        if (this.course?.enrolled) return;
+        if (!this.isAuthenticated()) {
+            this.redirectToSignIn();
+        } else {
+            this.coursesService.enrollCourse(this.course || {}).subscribe(item => {
+                    this.update();
+                    this.router.navigate(['/course/' + this.course?.code + '/details']);
+                }
+            );
+        }
     }
 
     redirectToSignIn(): void {
@@ -86,6 +91,7 @@ export class CourseTocComponent implements OnInit {
     }
 
     unenrollCourse(): void {
+        if (!this.course?.enrolled || !this.isAuthenticated()) return;
         this.coursesService.unenrollCourse(this.course || {}).subscribe(
             item => this.update()
         );
