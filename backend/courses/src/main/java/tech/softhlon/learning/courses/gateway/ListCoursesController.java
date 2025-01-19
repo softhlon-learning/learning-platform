@@ -38,14 +38,6 @@ class ListCoursesController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
-    private static ResponseEntity<List<CourseView>> successBody(List<CourseView> courses) {
-        return status(HttpStatus.OK).body(courses);
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
     /**
      * GET /api/v1/course.
      */
@@ -58,5 +50,13 @@ class ListCoursesController {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private ResponseEntity<List<CourseView>> successBody(List<CourseView> courses) {
+        return status(HttpStatus.OK).body(courses);
     }
 }
