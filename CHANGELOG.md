@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.18.5
+_release date: 2025-01-19_
+ * Title and info improvements on all side forms
+
 ## 0.18.4
 _release date: 2025-01-19_
  * Added updateProfile service and fixed profile form logic
