@@ -1,5 +1,5 @@
 <div class="video-container">
-    <video #video controls height="600" id="{{navigationItems.currentLecture.id}}" preload="" width="1066">
+    <video (ended)="this.progress?.markAsViewed()" #video controls height="600" id="{{navigationItems.currentLecture.id}}" preload="" width="1066">
         <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
     </video>
