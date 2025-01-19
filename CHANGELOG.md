@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.9
+_release date: 2025-01-19_
+ * Display shortcut keys on toc page
+ * Support for key press on toc page
+
 ## 0.18.8
 _release date: 2025-01-19_
  * Improved styling for lecture list on course details
