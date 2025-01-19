@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.4
+_release date: 2025-01-19_
+ * Added updateProfile service and fixed profile form logic
+ * Improved error/success message handling for profile update
+
 ## 0.18.3
 _release date: 2025-01-19_
  * Loading profile data from backend
