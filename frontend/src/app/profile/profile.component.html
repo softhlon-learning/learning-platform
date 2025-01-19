@@ -18,7 +18,10 @@
                 <button class="submit" type="submit">Save</button>
                 <button routerLink="/home" class="cancel">Close</button>
                 <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
-                <div class="error">{{ error }}</div>
+                <div class="feedback">
+                    <div *ngIf="error" class="error">{{ error }}</div>
+                    <div *ngIf="success" class="success">{{ success }}</div>
+                </div>
             </div>
         </form>
     </div>

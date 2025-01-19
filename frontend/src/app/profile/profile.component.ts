@@ -12,6 +12,7 @@ import {FormBuilder} from "@angular/forms";
 export class ProfileComponent implements OnInit {
     protected readonly environment = environment;
     error: string | undefined;
+    success: string | undefined;
     profile?: Profile;
 
     profileForm = this.formBuilder.group({
@@ -57,13 +58,17 @@ export class ProfileComponent implements OnInit {
         this.platformService.getProfile()
             .subscribe(profile => {
                 this.profileForm.setValue({name: profile.name});
+                this.profile = profile;
             } );
     }
 
     private handleSuccess() {
+        this.error = undefined;
+        this.success = 'Profile successfully saved';
     }
 
     private handleError(signInError: any, defaultErrorMessage: string) {
+        this.success = undefined;
         this.error = signInError?.error?.message || defaultErrorMessage;
     }
 }

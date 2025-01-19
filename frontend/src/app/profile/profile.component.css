@@ -95,9 +95,11 @@ button.cancel {
     flex-direction: column;
 }
 
-.error {
+.feedback {
     padding: 10px;
     height: 20px;
-    color: red;
 }
 
+.error {
+    color: red;
+}
