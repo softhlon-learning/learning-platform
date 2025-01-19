@@ -70,14 +70,13 @@ input {
     border: 1px darkgrey dashed;
 }
 
-button.delete {
-    background-color: #ffc7c7;
+button.submit {
     margin: 0.2rem;
     width: 340px;
     border: 1px darkgrey dashed;
 }
 
-button.submit {
+button.delete {
     margin: 0.2rem;
     width: 340px;
     border: 1px darkgrey dashed;
