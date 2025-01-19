@@ -19,8 +19,9 @@ interface UpdateProfileService {
     Result execute(Request request);
 
     sealed interface Result {
-        record Succeeded(UUID id, String token) implements Result {}
+        record Succeeded() implements Result {}
+        record AccountNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-    record Request(String name) {}
+    record Request(UUID accountId, String name) {}
 }
