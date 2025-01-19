@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {PlatformService, Profile} from "../service/platform.service";
 import {Router} from "@angular/router";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
     selector: 'profile',
@@ -13,7 +14,12 @@ export class ProfileComponent implements OnInit {
     error: string | undefined;
     profile?: Profile;
 
+    profileForm = this.formBuilder.group({
+        name: ''
+    });
+
     constructor(
+        private formBuilder: FormBuilder,
         private platformService: PlatformService,
         private router: Router) {
     }
@@ -21,6 +27,22 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.error = undefined;
         this.getProfile();
+    }
+
+    onSubmit(): void {
+        if (this.profileForm.invalid) {
+            console.log('Form is invalid');
+            this.error = 'Please provide valid name';
+            return;
+        }
+        console.log('Form is valid');
+        const {name = ''} = this.profileForm.value;
+        const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
+
+        this.platformService.getProfile().subscribe({
+            next: () => this.handleSuccess(),
+            error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
+        });
     }
 
     deleteAccount(): void {
@@ -33,14 +55,12 @@ export class ProfileComponent implements OnInit {
 
     getProfile(): void {
         this.platformService.getProfile()
-            .subscribe(profile => (this.profile = profile));
+            .subscribe(profile => {
+                this.profileForm.setValue({name: profile.name});
+            } );
     }
 
     private handleSuccess() {
-        this.router.navigate(['/home'])
-            .then(() => {
-                window.location.reload();
-            });
     }
 
     private handleError(signInError: any, defaultErrorMessage: string) {

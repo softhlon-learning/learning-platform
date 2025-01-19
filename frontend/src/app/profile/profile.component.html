@@ -1,26 +1,25 @@
 <div class="main">
     <div class="container">
-        <div class="title">
-            Profile
-        </div>
-        <div class="info">
-            {{profile?.email}}
-        </div>
-        <div class="info">
-            <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge that you understand the
-                <a href="#">Privacy Policy</a>.</span>
-        </div>
         <div>
-            <div class="name">
-                <input placeholder="Name" type="text" formControlName="name" value="{{profile?.name}}">
+            <div class="title">
+                Profile
+            </div>
+            <div class="info">
+                {{ profile?.email }}
             </div>
         </div>
-        <div class="form">
-            <button class="submit" type="submit">Save</button>
-            <button routerLink="/home" class="cancel">Close</button>
-            <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
-            <div class="error">{{ error }}</div>
-        </div>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="form">
+                <div>
+                    <div class="name">
+                        <input placeholder="Name" type="text" formControlName="name">
+                    </div>
+                </div>
+                <button class="submit" type="submit">Save</button>
+                <button routerLink="/home" class="cancel">Close</button>
+                <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
+                <div class="error">{{ error }}</div>
+            </div>
+        </form>
     </div>
 </div>
-
