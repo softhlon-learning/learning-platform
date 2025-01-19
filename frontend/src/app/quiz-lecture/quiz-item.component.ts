@@ -4,7 +4,7 @@ import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 @Component({
-    selector: 'quiz-item',
+    selector: 'quiz-lecture',
     templateUrl: './quiz-item.component.html',
     styleUrls: ['./quiz-item.component.css']
 })

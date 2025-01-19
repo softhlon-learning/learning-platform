@@ -4,7 +4,7 @@ import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 @Component({
-    selector: 'video-item',
+    selector: 'video-lecture',
     templateUrl: './video-item.component.html',
     styleUrls: ['./video-item.component.css']
 })

@@ -4,7 +4,7 @@ import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 @Component({
-    selector: 'pdf-item',
+    selector: 'pdf-lecture',
     templateUrl: './pdf-item.component.html',
     styleUrls: ['./pdf-item.component.css']
 })
