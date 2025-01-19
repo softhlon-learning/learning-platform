@@ -3,9 +3,15 @@
         <div class="title">
             Profile
         </div>
+        <div>
+            <div class="name">
+                <input placeholder="Name" type="text" formControlName="name">
+            </div>
+        </div>
         <div class="form">
-            <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
+            <button class="submit" type="submit">Save</button>
             <button routerLink="/home" class="cancel">Close</button>
+            <button class="delete" (click)="this.deleteAccount()">Delete Account</button>
             <div class="error">{{ error }}</div>
         </div>
     </div>
