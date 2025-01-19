@@ -215,7 +215,6 @@ export class CourseDetailsComponent implements OnInit {
         this.router.navigate(['/course/' + this.course.code]);
     }
 
-
     home() {
         this.router.navigate(['/home']);
     }
