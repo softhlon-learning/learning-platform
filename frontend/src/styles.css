@@ -136,7 +136,7 @@ span {
 
 .checkbox > input:checked {
     border: 1px dotted gray;
-    background-color: var(--checked-warm);
+    /*background-color: var(--checked-warm);*/
 }
 
 .checkbox > input:checked + span::before {
