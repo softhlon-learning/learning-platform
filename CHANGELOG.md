@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.17.9
+_release date: 2025-01-19_
+ * Styling improvements for password recovery and profile forms
+ * Added UpdateProfileService and empty UpdateProfileServiceImpl
+ * Implemented UpdateProfileServiceImpl
+
 ## 0.17.8
 _release date: 2025-01-19_
  * Minor redesign of profile page
