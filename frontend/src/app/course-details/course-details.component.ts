@@ -29,16 +29,24 @@ export class CourseDetailsComponent implements OnInit {
         // event.preventDefault();
         event.stopPropagation()
 
-        if (event.code == 'ArrowDown' || event.code == 'ArrowRight') {
+        if (event.code == 'ArrowDown') {
             this.next();
         }
 
-        if (event.code == 'ArrowUp' || event.code == 'ArrowLeft') {
+        if (event.code == 'ArrowUp') {
             this.previous()
         }
 
         if (event.code == 'KeyM') {
             this.switchLectureViewedFlag();
+        }
+
+        if (event.code == 'ArrowLeft') {
+            this.back();
+        }
+
+        if (event.code == 'KeyH') {
+            this.home();
         }
     }
 
@@ -201,6 +209,15 @@ export class CourseDetailsComponent implements OnInit {
 
     refreshPageState() {
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
+    }
+
+    back() {
+        this.router.navigate(['/course/' + this.course.code]);
+    }
+
+
+    home() {
+        this.router.navigate(['/home']);
     }
 
     typeVerb(lecture: Lecture): string {
