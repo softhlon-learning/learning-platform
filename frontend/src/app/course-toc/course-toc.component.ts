@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
@@ -26,6 +26,27 @@ export class CourseTocComponent implements OnInit {
         this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 
+    @HostListener('window:keydown', ['$event'])
+    keyboardInput(event: any) {
+        event.stopPropagation()
+
+        if (event.code == 'KeyE') {
+            this.enrollCourse();
+        }
+
+        if (event.code == 'KeyU') {
+            this.unenrollCourse();
+        }
+
+        if (event.code == 'ArrowRight') {
+            this.open();
+        }
+
+        if (event.code == 'KeyH') {
+            this.home();
+        }
+    }
+
     update() {
         console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(
@@ -49,8 +70,10 @@ export class CourseTocComponent implements OnInit {
     }
 
     enrollCourse(): void {
-        this.coursesService.enrollCourse(this.course || {}).subscribe(
-            item => this.update()
+        this.coursesService.enrollCourse(this.course || {}).subscribe(item => {
+                this.update();
+                this.router.navigate(['/course/' + this.course?.code + '/details']);
+            }
         );
     }
 
@@ -70,5 +93,13 @@ export class CourseTocComponent implements OnInit {
 
     isAuthenticated(): boolean {
         return this.cookieService.get('Authenticated') === 'true';
+    }
+
+    home() {
+        this.router.navigate(['/home']);
+    }
+
+    open() {
+        this.router.navigate(['/course/' + this.course?.code + '/details']);
     }
 }
