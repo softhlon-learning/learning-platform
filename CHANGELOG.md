@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.17.8
+_release date: 2025-01-19_
+ * Minor redesign of profile page
+ * Minor redesign of password recovery page
+ * Renamed --sign-in to --side-form
+ * Renamed *-item to *-lecture
+
 ## 0.17.7
 _release date: 2025-01-19_
  * Fixed authentication error handling
