@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.3
+_release date: 2025-01-19_
+ * Loading profile data from backend
+ * Added support for saving profile on frontend
+
 ## 0.18.2
 _release date: 2025-01-19_
  * Implemented GetProfileController
