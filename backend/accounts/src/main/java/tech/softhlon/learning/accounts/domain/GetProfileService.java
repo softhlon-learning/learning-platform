@@ -19,11 +19,11 @@ public interface GetProfileService {
     Result execute(Request request);
 
     sealed interface Result {
-        record Succeeded(Profile profile) implements Result {}
+        record Succeeded(ProfileView profileView) implements Result {}
         record ProfileNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
     record Request(UUID accountId) {}
-    record Profile(String email, String name) {}
+    record ProfileView(String email, String name) {}
 }
 

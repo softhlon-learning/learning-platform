@@ -40,7 +40,7 @@ class GetProfileServiceImpl implements GetProfileService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Profile profile(Account account) {
-        return new Profile(account.email(), account.name());
+    private ProfileView profile(Account account) {
+        return new ProfileView(account.email(), account.name());
     }
 }
