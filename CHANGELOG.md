@@ -1,6 +1,6 @@
 # Learning Platform Changelog
 
-## 0.18.1
+## 0.18.2
 _release date: 2025-01-19_
  * Implemented GetProfileController
  * Added getProfile service
