@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.0
+_release date: 2025-01-19_
+ * Created UpdateProfileController
+ * Added GetProfileService and empty GetProfileServiceImpl
+
 ## 0.17.9
 _release date: 2025-01-19_
  * Styling improvements for password recovery and profile forms
