@@ -28,7 +28,7 @@ import java.util.UUID;
 @Component
 public class CreateCoursesOperator {
     private final UploadCourseService uploadCourseService;
-    private final tech.softhlon.learning.courses.gateway.CourseDefinitions courseDefinitions;
+    private final CourseDefinitions courseDefinitions;
     private final ObjectMapper mapper;
 
     public CreateCoursesOperator(
