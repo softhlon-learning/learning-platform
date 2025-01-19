@@ -33,22 +33,22 @@
     </ul>
 
     <div class="course-item">
-      <video-item
+      <video-lecture
               *ngIf="navigationLectures.currentLecture.type == 'Video'"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigationLectures"
               [progress]="this">
-      </video-item>
-      <pdf-item
+      </video-lecture>
+      <pdf-lecture
               *ngIf="navigationLectures.currentLecture.type == 'PDF'"
               [navigationItems]="navigationLectures"
               [progress]="this">
-      </pdf-item>
-      <quiz-item
+      </pdf-lecture>
+      <quiz-lecture
               *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
               [navigationItems]="navigationLectures"
               [progress]="this">
-      </quiz-item>
+      </quiz-lecture>
     </div>
   </div>
 </span>
