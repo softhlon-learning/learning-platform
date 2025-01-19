@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.8
+_release date: 2025-01-19_
+ * Improved styling for lecture list on course details
+ * Added key shortcuts to Back and Home on course detail
+
 ## 0.18.7
 _release date: 2025-01-19_
  * Added broder on course details main container
