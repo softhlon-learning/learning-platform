@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.18.7
+_release date: 2025-01-19_
+ * Added broder on course details main container
+ * Hiding video controls when mouse is not over
+
 ## 0.18.6
 _release date: 2025-01-19_
  * Automatic 'Mark as Viewed' when video is finished
