@@ -19,7 +19,7 @@ public interface GetProfileService {
     Result execute(Request request);
 
     sealed interface Result {
-        record Succeeded(String token) implements Result {}
+        record Succeeded(Profile profile) implements Result {}
         record ProfileNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
