@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.19.6
+_release date: 2025-01-20_
+ * Updated all video links to no-video-yet.mov (leaving only welcome one untouched)
+
 ## 0.19.5
 _release date: 2025-01-20_
  * Created no-video-yet.mov and uploaded it to each S3 bucket
