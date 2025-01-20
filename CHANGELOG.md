@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.19.8
+_release date: 2025-01-20_
+ * Refactoring: PDF -> Document
+ * Replaced PDF with Document type in all courses
+ * Added missing videos to Java course definition
+
 ## 0.19.7
 _release date: 2025-01-20_
  * Created no-document-yet.html and uploaded it to each S3 bucket
