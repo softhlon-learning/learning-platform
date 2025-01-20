@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.19.5
+_release date: 2025-01-20_
+ * Created no-video-yet.mov and uploaded it to each S3 bucket
+ * Updated/fixed document-lecture component
+
 ## 0.19.4
 _release date: 2025-01-20_
  * Minor tune of document display
