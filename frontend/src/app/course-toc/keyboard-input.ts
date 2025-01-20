@@ -21,7 +21,7 @@ export class KeyboardInputCourseToc {
             courseToc.open();
         }
 
-        if (event.code == 'KeyH') {
+        if (event.code == 'KeyH' || event.code == 'ArrowLeft') {
             courseToc.home();
         }
     }
