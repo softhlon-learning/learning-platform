@@ -1,4 +1,5 @@
 <div *ngIf="navigationItems.currentLecture">
-    <iframe src="https://java-course.hel1.your-objectstorage.com/java-on-mac.html?v2" width="1050" height="600" frameborder="0"></iframe>
+    <iframe src="https://java-course.hel1.your-objectstorage.com/java-on-mac.html?v2"
+            loading="lazy" id="document-frame" width="1070" height="600" frameborder="0"></iframe>
     <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"/>
 </div>
