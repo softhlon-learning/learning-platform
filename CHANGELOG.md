@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.20.3
+_release date: 2025-01-20_
+ * Very promising performance benchmarks on FreeBSD
+
 ## 0.20.2
 _release date: 2025-01-20_
  * Installed FreeBSD 14.2 successfully (on OVH)
