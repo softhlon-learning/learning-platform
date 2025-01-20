@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.19.0
+_release date: 2025-01-19_
+ * Check if course is enrolled/unenrolled and authentication status on key [e,u] press
+ * Extract keyboard-input.ts for toc
+ * Extract keyboard-input.ts for details
+
 ## 0.18.9
 _release date: 2025-01-19_
  * Display shortcut keys on toc page
