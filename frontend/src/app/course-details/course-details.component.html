@@ -39,12 +39,12 @@
               [navigationItems]="navigationLectures"
               [progress]="this">
       </video-lecture>
-      <pdf-lecture
+      <document-lecture
               *ngIf="navigationLectures.currentLecture.type == 'PDF'"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigationLectures"
               [progress]="this">
-      </pdf-lecture>
+      </document-lecture>
       <quiz-lecture
               *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
               [navigationItems]="navigationLectures"
