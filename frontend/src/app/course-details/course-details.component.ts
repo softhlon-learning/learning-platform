@@ -204,7 +204,7 @@ export class CourseDetailsComponent implements OnInit {
         if (lecture.type === "Video") {
             return "Watch";
         }
-        if (lecture.type === "PDF") {
+        if (lecture.type === "Document") {
             return "Read";
         }
         if (lecture.type === "Quiz") {
