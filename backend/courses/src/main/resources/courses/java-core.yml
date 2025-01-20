@@ -14,30 +14,30 @@ chapters:
       - name: Prerequisites
         type: Video
         time: 2m14s
-        id: welcome.mov?v2
+        id: no-video-yet.mov?v2
       - name: Course Structure
         id: java-on-mac.html
         type: PDF
   - name: Getting Started
     lectures:
       - name: Introduction to Java
-        id: welcome.mov?v5
+        id: no-video-yet.mov?v5
         type: Video
         time: 3m15s
       - name: Java Virtual Machine
-        id: welcome.mov?v6
+        id: no-video-yet.mov?v6
         type: Video
         time: 1m20s
       - name: JDK and JRE
         id: ultimate-java-course/intro/Quiz.json?v8
         type: Quiz
       - name: Java on Windows
-        id: welcome.mov?v9
+        id: no-video-yet.mov?v9
         type: Video
         time: 4m15s
         processed: false
       - name: Java on Linux
-        id: welcome.mov?v10
+        id: no-video-yet.mov?v10
         type: Video
         time: 9m07s
         processed: false
@@ -45,43 +45,43 @@ chapters:
         id: java-on-mac.html?v2
         type: PDF
       - name: Intelij Idea on Windows
-        id: welcome.mov?v12
+        id: no-video-yet.mov?v12
         type: Video
         time: 1m51s
       - name: Intelij Idea on Linux
-        id: welcome.mov?v13
+        id: no-video-yet.mov?v13
         type: Video
         time: 3m45s
       - name: Intelij Idea on MacOS
-        id: welcome.mov?v14
+        id: no-video-yet.mov?v14
         type: Video
         time: 6m45s
       - name: Basic Tools Overview
-        id: welcome.mov?v15
+        id: no-video-yet.mov?v15
         type: Video
         time: 5m10s
       - name: Javac Tool
-        id: welcome.mov?v16
+        id: no-video-yet.mov?v16
         type: Video
         time: 8m11s
       - name: Java Tool
-        id: welcome.mov?v17
+        id: no-video-yet.mov?v17
         type: Video
         time: 0m28s
       - name: Jar Tool
-        id: welcome.mov?v18
+        id: no-video-yet.mov?v18
         type: Video
         time: 4m33s
       - name: IDE Overview
-        id: welcome.mov?v19
+        id: no-video-yet.mov?v19
         type: Video
         time: 7m16s
       - name: Basic Project Configuration
-        id: welcome.mov?v20
+        id: no-video-yet.mov?v20
         type: Video
         time: 0m59s
       - name: First Introduction to the Project
-        id: welcome.mov?v21
+        id: no-video-yet.mov?v21
         type: Video
         time: 6m24s
       - name: Wrap Up
@@ -459,119 +459,119 @@ chapters:
   - name: Performance Tuning
     lectures:
       - name: Performance Tuning Overview
-        id: welcome.mov?v957
+        id: no-video-yet.mov?v957
         type: Video
         time: 2m5s
       - name: Wrap Up
-        id: welcome.mov?v958
+        id: no-video-yet.mov?v958
         type: Video
         time: 2m5s
   - name: External Libraries
     lectures:
       - name: Lombok Overview
-        id: welcome.mov?v959
+        id: no-video-yet.mov?v959
         type: Video
         time: 2m5s
       - name: Lombok Annotations
-        id: welcome.mov?v960
+        id: no-video-yet.mov?v960
         type: Video
         time: 2m5s
       - name: Apache Commons Lang
-        id: welcome.mov?v961
+        id: no-video-yet.mov?v961
         type: Video
         time: 2m5s
       - name: Apache Commons Collections
-        id: welcome.mov?v962
+        id: no-video-yet.mov?v962
         type: Video
         time: 2m5s
       - name: Apache Commons IO
-        id: welcome.mov?v963
+        id: no-video-yet.mov?v963
         type: Video
         time: 2m5s
       - name: Apache Commons Validator
-        id: welcome.mov?v963
+        id: no-video-yet.mov?v963
         type: Video
         time: 2m5s
       - name: Guava Overview
-        id: welcome.mov?v964
+        id: no-video-yet.mov?v964
         type: Video
         time: 2m5s
       - name: Guava Common Use Cases
-        id: welcome.mov?v965
+        id: no-video-yet.mov?v965
         type: Video
         time: 2m5s
       - name: Log5j Overview
-        id: welcome.mov?v966
+        id: no-video-yet.mov?v966
         type: Video
         time: 2m5s
       - name: Log5j Usage
-        id: welcome.mov?v967
+        id: no-video-yet.mov?v967
         type: Video
         time: 2m5s
       - name: Gson Overview
-        id: welcome.mov?v968
+        id: no-video-yet.mov?v968
         type: Video
         time: 2m5s
       - name: Gson Common Use Cases
-        id: welcome.mov?v969
+        id: no-video-yet.mov?v969
         type: Video
         time: 2m5s
       - name: Apache HttpComponents Overview
-        id: welcome.mov?v970
+        id: no-video-yet.mov?v970
         type: Video
         time: 2m5s
       - name: HttpClient (Sync API)
-        id: welcome.mov?v971
+        id: no-video-yet.mov?v971
         type: Video
         time: 2m5s
       - name: HttpClient (AsyncSync API)
-        id: welcome.mov?v972
+        id: no-video-yet.mov?v972
         type: Video
         time: 2m5s
       - name: Wrap Up
-        id: welcome.mov?v973
+        id: no-video-yet.mov?v973
         type: Video
         time: 2m5s
   - name: Monitoring and Troubleshooting
     lectures:
       - name: Diagnostic Tools Overview
-        id: welcome.mov?v974
+        id: no-video-yet.mov?v974
         type: Video
         time: 2m5s
       - name: JDK Mission Control
-        id: welcome.mov?v975
+        id: no-video-yet.mov?v975
         type: Video
         time: 2m5s
       - name: JCosole Tool
-        id: welcome.mov?v976
+        id: no-video-yet.mov?v976
         type: Video
         time: 2m5s
       - name: JInfo Tool
-        id: welcome.mov?v977
+        id: no-video-yet.mov?v977
         type: Video
         time: 2m5s
       - name: JCmd Tool
-        id: welcome.mov?v978
+        id: no-video-yet.mov?v978
         type: Video
         time: 2m5s
       - name: Detecting Memory Leaks
-        id: welcome.mov?v979
+        id: no-video-yet.mov?v979
         type: Video
         time: 2m5s
       - name: Detecting High CPU Usage Issues
-        id: welcome.mov?v980
+        id: no-video-yet.mov?v980
         type: Video
         time: 2m5s
       - name: Detecting Thread Allocation Issues
-        id: welcome.mov?v981
+        id: no-video-yet.mov?v981
         type: Video
         time: 2m5s
       - name: Session Recording
-        id: welcome.mov?v982
+        id: no-video-yet.mov?v982
         type: Video
         time: 2m5s
       - name: Profilling with JMC
-        id: welcome.mov?v983
+        id: no-video-yet.mov?v983
         type: Video
         time: 2m5s
       - name: Wrap Up
@@ -580,61 +580,61 @@ chapters:
   - name: Preview and Incubator Features
     lectures:
       - name: Java Development Process
-        id: welcome.mov?v985
+        id: no-video-yet.mov?v985
         type: Video
         time: 2m5s
       - name: Java Enhancemt Proposals
-        id: welcome.mov?v986
+        id: no-video-yet.mov?v986
         type: Video
         time: 2m5s
       - name: Preview Features
-        id: welcome.mov?v987
+        id: no-video-yet.mov?v987
         type: Video
         time: 2m5s
-        id: welcome.mov?v988
+        id: no-video-yet.mov?v988
         type: Video
         time: 2m5s
       - name: Icubator Features
-        id: welcome.mov?v989
+        id: no-video-yet.mov?v989
         type: Video
         time: 2m5s
       - name: Wrap Up
-        id: welcome.mov?v990
+        id: no-video-yet.mov?v990
         type: Video
         time: 2m5s
       - name: Project Amber
-        id: welcome.mov?v991
+        id: no-video-yet.mov?v991
         type: Video
         time: 2m5s
       - name: Amber Preview Features
-        id: welcome.mov?v992
+        id: no-video-yet.mov?v992
         type: Video
         time: 2m5s
       - name: Project Loom
-        id: welcome.mov?v993
+        id: no-video-yet.mov?v993
         type: Video
         time: 2m5s
       - name: Loom Preview Features
-        id: welcome.mov?v994
+        id: no-video-yet.mov?v994
         type: Video
         time: 2m5s
       - name: Project Panama
-        id: welcome.mov?v995
+        id: no-video-yet.mov?v995
         type: Video
         time: 2m5s
       - name: Panama Preview Features
-        id: welcome.mov?v996
+        id: no-video-yet.mov?v996
         type: Video
         time: 2m5s
       - name: Project Valhalla
-        id: welcome.mov?v997
+        id: no-video-yet.mov?v997
         type: Video
         time: 2m5s
       - name: Valhalla Preview Features
-        id: welcome.mov?v998
+        id: no-video-yet.mov?v998
         type: Video
         time: 2m5s
       - name: Wrap Up
         type: Video
         time: 2m5s
-        id: welcome.mov?v999
+        id: no-video-yet.mov?v999
