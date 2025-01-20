@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.19.3
+_release date: 2025-01-20_
+ * Refactored pdf-lecture to document-lecture
+
 ## 0.19.2
 _release date: 2025-01-20_
  * Updated pdf-lecture to display html files
