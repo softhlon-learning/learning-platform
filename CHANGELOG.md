@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.19.9
+_release date: 2025-01-20_
+ * Evaluated FreeBSD as main server (negatively)
+
 ## 0.19.8
 _release date: 2025-01-20_
  * Refactoring: PDF -> Document
