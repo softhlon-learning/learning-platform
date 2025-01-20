@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.20.7
+_release date: 2025-01-21_
+ * Installed maven and java ports
+ * Installed postgresql port
+
 ## 0.20.6
 _release date: 2025-01-21_
  * Fresh FreeBSD 14.2 installation (Hetzner)
