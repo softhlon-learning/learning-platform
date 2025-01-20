@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.20.5
+_release date: 2025-01-20_
+ * FreeBSD installation in progress
+
 ## 0.20.4
 _release date: 2025-01-20_
  * Started migration to FreeBSD 14.2
