@@ -16,7 +16,7 @@ chapters:
         time: 2m14s
         id: welcome.mov?v2
       - name: Course Structure
-        id: ultimate-java-course/intro/Summary.pdf?v4
+        id: java-on-mac.html
         type: PDF
   - name: Getting Started
     lectures:
@@ -42,10 +42,8 @@ chapters:
         time: 9m07s
         processed: false
       - name: Java on MacOS
-        id: welcome.mov?v11
-        type: Video
-        time: 6m39s
-        processed: false
+        id: java-on-mac.html?v2
+        type: PDF
       - name: Intelij Idea on Windows
         id: welcome.mov?v12
         type: Video
