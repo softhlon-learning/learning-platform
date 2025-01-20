@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.20.1
+_release date: 2025-01-20_
+* Re-evaluated FreeBSD as main server (positively)
+
 ## 0.20.0
 _release date: 2025-01-20_
  * Moved DNS Zone to Hetzner
