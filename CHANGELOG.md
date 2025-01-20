@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.19.4
+_release date: 2025-01-20_
+ * Minor tune of document display
+ * Found a better way to generate html (via Grok)
+
 ## 0.19.3
 _release date: 2025-01-20_
  * Refactored pdf-lecture to document-lecture
