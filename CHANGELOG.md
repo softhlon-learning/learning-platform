@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.20.2
+_release date: 2025-01-20_
+ * Installed FreeBSD 14.2 successfully (on OVH)
+
 ## 0.20.1
 _release date: 2025-01-20_
 * Re-evaluated FreeBSD as main server (positively)
