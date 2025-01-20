@@ -19,6 +19,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import {ProfileComponent} from "./profile/profile.component";
     ],
     providers: [
         PlatformService,
+        KeyboardInputCourseToc,
         provideHttpClient()
     ],
     bootstrap: [AppComponent]

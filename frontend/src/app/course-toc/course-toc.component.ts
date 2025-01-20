@@ -1,9 +1,10 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, Injector, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {CookieService} from "ngx-cookie-service";
+import {KeyboardInputCourseToc} from "./keyboard-input";
 
 @Component({
     selector: 'course-toc',
@@ -18,7 +19,8 @@ export class CourseTocComponent implements OnInit {
         private coursesService: PlatformService,
         private cookieService: CookieService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private injector: Injector) {
     }
 
     ngOnInit() {
@@ -28,23 +30,7 @@ export class CourseTocComponent implements OnInit {
 
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
-        event.stopPropagation()
-
-        if (event.code == 'KeyE') {
-            this.enrollCourse();
-        }
-
-        if (event.code == 'KeyU') {
-            this.unenrollCourse();
-        }
-
-        if (event.code == 'ArrowRight') {
-            this.open();
-        }
-
-        if (event.code == 'KeyH') {
-            this.home();
-        }
+        this.injector.get(KeyboardInputCourseToc).keyboardInput(this, event);
     }
 
     update() {
