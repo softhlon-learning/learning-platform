@@ -18,7 +18,7 @@ chapters:
         time: 2m5s
       - name: Course Structure
         type: PDF
-        id: ultimate-java-course/intro/Summary.pdf?v3
+        id: no-document-yet.html?v1
   - name: Getting Started
     lectures:
       - name: Introduction to API Design

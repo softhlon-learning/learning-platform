@@ -20,7 +20,7 @@ chapters:
         time: 2m5s
       - name: Course Structure
         type: PDF
-        id: ultimate-java-course/intro/Summary.pdf?v3
+        id: no-document-yet.html?v1
         processed: false
   - name: Getting Started
     lectures:

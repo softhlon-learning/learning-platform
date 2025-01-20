@@ -16,7 +16,7 @@ chapters:
         time: 2m14s
         id: no-video-yet.mov?v2
       - name: Course Structure
-        id: java-on-mac.html
+        id: no-document-yet.html?v1
         type: PDF
   - name: Getting Started
     lectures:
@@ -85,7 +85,7 @@ chapters:
         type: Video
         time: 6m24s
       - name: Wrap Up
-        id: ultimate-java-course/intro/Summary.pdf?v5
+        id: no-document-yet.html?v2
         type: PDF
   - name: Language Fundamentals
     lectures:
@@ -575,7 +575,7 @@ chapters:
         type: Video
         time: 2m5s
       - name: Wrap Up
-        id: ultimate-java-course/intro/Summary.pdf?v984
+        id: no-document-yet.html?v4
         type: PDF
   - name: Preview and Incubator Features
     lectures:
