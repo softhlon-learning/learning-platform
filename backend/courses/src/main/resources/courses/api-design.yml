@@ -17,7 +17,7 @@ chapters:
         items:
         time: 2m5s
       - name: Course Structure
-        type: PDF
+        type: Document
         id: no-document-yet.html?v1
   - name: Getting Started
     lectures:

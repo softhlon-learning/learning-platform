@@ -19,7 +19,7 @@ chapters:
         items:
         time: 2m5s
       - name: Course Structure
-        type: PDF
+        type: Document
         id: no-document-yet.html?v1
         processed: false
   - name: Getting Started

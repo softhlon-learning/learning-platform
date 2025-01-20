@@ -17,7 +17,7 @@ chapters:
         id: no-video-yet.mov?v2
       - name: Course Structure
         id: no-document-yet.html?v1
-        type: PDF
+        type: Document
   - name: Getting Started
     lectures:
       - name: Introduction to Java
@@ -43,7 +43,7 @@ chapters:
         processed: false
       - name: Java on MacOS
         id: java-on-mac.html?v2
-        type: PDF
+        type: Document
       - name: Intelij Idea on Windows
         id: no-video-yet.mov?v12
         type: Video
@@ -86,7 +86,7 @@ chapters:
         time: 6m24s
       - name: Wrap Up
         id: no-document-yet.html?v2
-        type: PDF
+        type: Document
   - name: Language Fundamentals
     lectures:
       - name: Basic Program Structure
@@ -576,7 +576,7 @@ chapters:
         time: 2m5s
       - name: Wrap Up
         id: no-document-yet.html?v4
-        type: PDF
+        type: Document
   - name: Preview and Incubator Features
     lectures:
       - name: Java Development Process
