@@ -13,7 +13,7 @@ chapters:
         processed: false
         time: 2m5s
       - name: Prerequisites
-        id: welcome.mp4?v2
+        id: welcome.mov?v2
         type: Video
         processed: false
         items:
@@ -25,7 +25,7 @@ chapters:
   - name: Getting Started
     lectures:
       - name: Introduction to Spring Boot
-        id: welcome.mp4?v4
+        id: welcome.mov?v4
         type: Video
         time: 3m15s
         processed: false
