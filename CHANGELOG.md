@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.19.2
+_release date: 2025-01-20_
+ * Updated pdf-lecture to display html files
+ * Support for ArrowLeft for Home button, on toc page
+
 ## 0.19.1
 _release date: 2025-01-20_
  * Updated video link in all courses
