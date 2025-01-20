@@ -41,6 +41,7 @@
       </video-lecture>
       <pdf-lecture
               *ngIf="navigationLectures.currentLecture.type == 'PDF'"
+              [coursePath]="course.code + '-course'"
               [navigationItems]="navigationLectures"
               [progress]="this">
       </pdf-lecture>

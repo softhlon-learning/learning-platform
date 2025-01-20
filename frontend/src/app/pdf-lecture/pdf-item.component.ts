@@ -15,6 +15,9 @@ export class PDFItemComponent implements OnInit {
     @Input()
     progress?: CourseDetailsComponent;
 
+    @Input()
+    coursePath?: string;
+
     constructor(
         private route: ActivatedRoute) {
     }
