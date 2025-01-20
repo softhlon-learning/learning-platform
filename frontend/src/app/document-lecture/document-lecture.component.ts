@@ -5,10 +5,10 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 
 @Component({
     selector: 'document-lecture',
-    templateUrl: './pdf-item.component.html',
-    styleUrls: ['./pdf-item.component.css']
+    templateUrl: './document-lecture.component.html',
+    styleUrls: ['./document-lecture.component.css']
 })
-export class PDFItemComponent implements OnInit {
+export class DocumentLectureComponent implements OnInit {
     @Input()
     navigationItems: NavigationLectures = new NavigationLectures();
 
@@ -16,7 +16,7 @@ export class PDFItemComponent implements OnInit {
     progress?: CourseDetailsComponent;
 
     @Input()
-    coursePath?: string;
+    coursePath: string = '';
 
     constructor(
         private route: ActivatedRoute) {

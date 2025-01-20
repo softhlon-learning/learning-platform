@@ -7,7 +7,7 @@ import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseDetailsComponent} from "./course-details/course-details.component";
 import {VideoItemComponent} from "./video-lecture/video-item.component";
-import {PDFItemComponent} from "./document-lecture/pdf-item.component";
+import {DocumentLectureComponent} from "./document-lecture/document-lecture.component";
 import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
 import {QuizItemComponent} from "./quiz-lecture/quiz-item.component";
@@ -30,7 +30,7 @@ import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
         CourseDetailsComponent,
         CourseNavigationComponent,
         VideoItemComponent,
-        PDFItemComponent,
+        DocumentLectureComponent,
         QuizItemComponent,
         SafePipe,
         AppHeaderComponent,
