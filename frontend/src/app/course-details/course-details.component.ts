@@ -6,6 +6,7 @@ import {CourseContent} from "../course-content/course-content";
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CookieService} from "ngx-cookie-service";
 import {Lecture} from "../course-content/lecture";
+import {KeyboardInputCourseDetails} from "./keyboard-input";
 
 @Component({
     selector: 'course-details',
@@ -18,6 +19,7 @@ export class CourseDetailsComponent implements OnInit {
     navigationLectures = new NavigationLectures();
 
     constructor(
+        private keyboardInputDetails: KeyboardInputCourseDetails,
         private coursesService: PlatformService,
         private cookieService: CookieService,
         private route: ActivatedRoute,
@@ -26,28 +28,7 @@ export class CourseDetailsComponent implements OnInit {
 
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
-        // event.preventDefault();
-        event.stopPropagation()
-
-        if (event.code == 'ArrowDown') {
-            this.next();
-        }
-
-        if (event.code == 'ArrowUp') {
-            this.previous()
-        }
-
-        if (event.code == 'KeyM') {
-            this.switchLectureViewedFlag();
-        }
-
-        if (event.code == 'ArrowLeft') {
-            this.back();
-        }
-
-        if (event.code == 'KeyH') {
-            this.home();
-        }
+        this.keyboardInputDetails.keyboardInput(this, event);
     }
 
     ngOnInit() {

@@ -20,6 +20,7 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
+import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
 
 @NgModule({
     declarations: [
@@ -47,10 +48,10 @@ import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
     providers: [
         PlatformService,
         KeyboardInputCourseToc,
+        KeyboardInputCourseDetails,
         provideHttpClient()
     ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
 }
-

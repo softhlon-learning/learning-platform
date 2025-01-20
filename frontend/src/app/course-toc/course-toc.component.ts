@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../course-content/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
+import {KeyboardInputCourseDetails} from "../course-details/keyboard-input";
 
 @Component({
     selector: 'course-toc',
@@ -16,6 +17,7 @@ export class CourseTocComponent implements OnInit {
     courseContent: CourseContent | undefined;
 
     constructor(
+        private keyboardInputToc: KeyboardInputCourseToc,
         private coursesService: PlatformService,
         private cookieService: CookieService,
         private router: Router,
@@ -30,7 +32,7 @@ export class CourseTocComponent implements OnInit {
 
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
-        this.injector.get(KeyboardInputCourseToc).keyboardInput(this, event);
+        this.keyboardInputToc.keyboardInput(this, event);
     }
 
     update() {
