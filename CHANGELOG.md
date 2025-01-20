@@ -1,13 +1,18 @@
 # Learning Platform Changelog
 
+## 0.19.1
+_release date: 2025-01-20_
+ * Updated video link in all courses
+ * Uploaded to S3 and tested HTML files instead of PDF
+
 ## 0.19.0
-_release date: 2025-01-19_
+_release date: 2025-01-20_
  * Check if course is enrolled/unenrolled and authentication status on key [e,u] press
  * Extract keyboard-input.ts for toc
  * Extract keyboard-input.ts for details
 
 ## 0.18.9
-_release date: 2025-01-19_
+_release date: 2025-01-20_
  * Display shortcut keys on toc page
  * Support for key press on toc page
 
