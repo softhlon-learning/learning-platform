@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.22.0
+_release date: 2025-01-21_
+ * Installed custom kernel
+ * General server/FreeBSD readiness
+
 ## 0.21.9
 _release date: 2025-01-21_
  * General FreeBSD maintenance
