@@ -28,4 +28,7 @@
 # CREATE DATABASE learning
 # ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
 # vim /usr/local/etc/nginx/nginx.conf
+# vim /usr/local/etc/rc.d/backend
+# vim /usr/local/etc/rc.d/frontend
+# vim /home/admin/upgrade
 ```
