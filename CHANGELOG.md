@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.21.6
+_release date: 2025-01-21_
+ * Updated FreeBSD hostname
+ * Installed Postfix
+
 ## 0.21.5
 _release date: 2025-01-21_
  * Optimized upgrade script a bit
