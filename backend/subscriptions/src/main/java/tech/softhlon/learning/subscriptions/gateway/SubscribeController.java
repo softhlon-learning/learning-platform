@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.SubscribeService;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Request;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.AccountAlreadySubscribedFailed;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.domain.SubscribeService.Request;
-import static tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------

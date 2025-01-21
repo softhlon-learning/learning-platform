@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.UnsubscribeService;
+import tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.AccountNotSubscribedFailed;
+import tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.*;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------

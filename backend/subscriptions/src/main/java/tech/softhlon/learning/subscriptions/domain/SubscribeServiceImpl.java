@@ -8,16 +8,19 @@ package tech.softhlon.learning.subscriptions.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
+import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.CheckSubscriptionFailed;
+import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
+import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.AccountAlreadySubscribedFailed;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
-
-import static tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
-import static tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.*;
-import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionRequest;
-import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersisted;
-import static tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.CreateSubscriptionResult.SubscriptionPersistenceFailed;
-import static tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
