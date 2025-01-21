@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.21.5
+_release date: 2025-01-21_
+ * Optimized upgrade script a bit
+ * Moved config folder one level up
+ * Documented backend init script
+ * Documented frontend init script
+ * Documented upgrade script
+
 ## 0.21.4
 _release date: 2025-01-21_
  * Created maintenance page
