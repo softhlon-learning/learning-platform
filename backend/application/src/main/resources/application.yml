@@ -1,7 +1,7 @@
 server:
   address: 127.0.0.1
-  tomcat.max-threads: 1000
-  tomcat.max-connections: 1000
+  tomcat.max-threads: 500
+  tomcat.max-connections: 500
   compression:
     enabled: true
     mime-types: text/html,text/css,application/javascript,application/json
@@ -11,7 +11,7 @@ spring:
     url: jdbc:postgresql://localhost/learning
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
-    hikari.maximum-pool-size: 1000
+    hikari.maximum-pool-size: 10
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
