@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.22.3
+_release date: 2025-01-21_
+ * Removed unnecessary statics from accounts module
+ * Removed unnecessary statics from subscriptions module
+ * Removed unnecessary statics from courses module
+
 ## 0.22.2
 _release date: 2025-01-21_
  * Added MergeCourseService and its empty implementation
