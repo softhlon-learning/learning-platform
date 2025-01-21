@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.21.8
+_release date: 2025-01-21_
+ * Performance testing of the new setup
+ * Analyzing high latency for single requests
+
 ## 0.21.7
 _release date: 2025-01-21_
  * Building custom FreeBSD kernel
