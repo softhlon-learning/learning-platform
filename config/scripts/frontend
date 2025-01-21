@@ -1,5 +1,41 @@
-#!/bin/zsh
+#!/bin/sh
 
-cd /home/debian/learning-platform/frontend
-npm install --silent
-ng serve
+# PROVIDE: frontend
+# REQUIRE: DAEMON mountlate
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+export PATH=/bin:/usr/bin:/usr/local/bin
+
+name=frontend
+rcvar=frontend_enable
+frontend_chdir="/home/admin/learning-platform/frontend"
+frontend_user=learning
+
+pidfile="/var/run/frontend/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/local/bin/yarn run start"
+
+stop_cmd="stop"
+status_cmd="status"
+
+stop () {
+        if [ -e ${pidfile} ]; then
+                echo Stopping ${name}
+		kill -9 `cat ${pidfile}`
+		killall -9 node
+        else
+                echo ${name} is not running.
+        fi
+}
+
+status () {
+        if [ -e ${pidfile} ]; then
+                echo ${name} is running.
+        else
+                echo ${name} is not running.
+        fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
