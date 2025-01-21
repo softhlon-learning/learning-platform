@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.22.1
+_release date: 2025-01-21_
+ * Removed unused run-prod.sh script
+ * Set proper backend profile on production
+
 ## 0.22.0
 _release date: 2025-01-21_
  * Installed custom kernel
