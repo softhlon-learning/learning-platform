@@ -28,7 +28,4 @@
 # CREATE DATABASE learning
 # ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
 # vim /usr/local/etc/nginx/nginx.conf
-sudo systemctl frontend enable
-sudo systemctl backend enable
-sudo systemctl upgrade restart
 ```
