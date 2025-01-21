@@ -14,10 +14,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.SignOutService;
+import tech.softhlon.learning.accounts.domain.SignOutService.Request;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
-import static tech.softhlon.learning.accounts.domain.SignOutService.Request;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.AuthCookiesService.AUTHORIZATION;
 import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;

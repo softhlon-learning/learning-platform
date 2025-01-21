@@ -15,12 +15,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Request;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
+import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import java.util.Map;
 
-import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Request;
-import static tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_IN;
 
 // ---------------------------------------------------------------------------------------------------------------------

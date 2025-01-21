@@ -8,15 +8,18 @@ package tech.softhlon.learning.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenRequest;
+import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.CheckTokenFailed;
+import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
+import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenNotFound;
+import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenRequest;
+import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
+import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
+import tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
-
-import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.*;
-import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenRequest;
-import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
-import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
-import static tech.softhlon.learning.accounts.domain.SignOutService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

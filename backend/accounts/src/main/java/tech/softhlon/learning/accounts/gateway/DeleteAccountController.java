@@ -13,11 +13,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Request;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 
-import static tech.softhlon.learning.accounts.domain.DeleteAccountService.Request;
-import static tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.*;
 import static tech.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
