@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.21.4
+_release date: 2025-01-21_
+ * Created maintenance page
+ * Added maintenance page to nginx config
+
 ## 0.21.3
 _release date: 2025-01-21_
  * Secured server to run services on unprivileged user
