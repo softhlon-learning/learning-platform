@@ -10,11 +10,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import tech.softhlon.learning.courses.domain.LoadCoursesRepository;
+import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
 
 import java.util.stream.StreamSupport;
-
-import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
-import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

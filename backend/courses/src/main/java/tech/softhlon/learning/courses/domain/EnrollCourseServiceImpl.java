@@ -9,15 +9,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
+import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CheckCourseFailed;
+import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseExists;
+import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseNotFound;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
+import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
+import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
+import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Failed;
+import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
-
-import static tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.*;
-import static tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
-import static tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
-import static tech.softhlon.learning.courses.domain.EnrollCourseService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

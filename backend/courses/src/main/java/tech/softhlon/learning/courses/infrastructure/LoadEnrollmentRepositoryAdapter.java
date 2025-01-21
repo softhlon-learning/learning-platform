@@ -10,10 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 
 import java.util.UUID;
-
-import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

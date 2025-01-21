@@ -8,18 +8,19 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
+import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
+import tech.softhlon.learning.courses.domain.LoadCoursesRepository.Course;
+import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
-
-import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
-import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
-import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.Course;
-import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
-import static tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
-import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
-import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

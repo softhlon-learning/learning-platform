@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.ListCoursesService;
+import tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
+import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
+import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
 
 import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
-import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
-import static tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
 import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
 
 // ---------------------------------------------------------------------------------------------------------------------

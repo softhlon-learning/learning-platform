@@ -17,12 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.UpdateEnrollmentService;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Request;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.AccountNotEligibleFailed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.EnrollmentNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Succeeded;
 
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Request;
-import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
 import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------

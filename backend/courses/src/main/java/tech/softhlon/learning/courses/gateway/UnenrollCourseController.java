@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Request;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
 
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.courses.domain.UnenrollCourseService.Request;
-import static tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.*;
 import static tech.softhlon.learning.courses.gateway.RestResources.UNENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------

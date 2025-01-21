@@ -9,13 +9,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import static tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentRequest;
-import static tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.*;
-import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentRequest;
-import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
-import static tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
-import static tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.*;
+import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.CheckEnrollmentFailed;
+import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentExists;
+import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentNotFound;
+import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
+import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

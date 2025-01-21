@@ -8,13 +8,16 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
-import static tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.*;
-import static tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
-import static tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
-import static tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
-import static tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.*;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.EnrollmentNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
