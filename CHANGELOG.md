@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.21.0
+_release date: 2025-01-21_
+ * Working on init scripts
+
 ## 0.20.9
 _release date: 2025-01-21_
  * Fixed cert key file name
