@@ -1,31 +1,33 @@
 # Learning Platform
 
+## Install FreeBSD
+ * https://community.hetzner.com/tutorials/freebsd-openzfs-via-linux-rescue
 ## Server Setup
 ```
-# apt update
-# apt upgrade
-# adduser debian
-# echo "deb http://deb.debian.org/debian bookworm-backports main contrib non-free" >> /etc/apt/sources.list
-sudo apt update
-sudo apt -t bookworm-backports install linux-image-amd64
-sudo shutdown -r
-sudo apt install -y postgresql
-sudo apt install -y nginx 
-sudo apt install -y gh
-gh auth login --hostname github.com --with-token <<< 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
-gh repo clone softhlon-learning/learning-platform
-wget https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb
-sudo dpkg -i jdk-23_linux-x64_bin.deb
-sudo apt install maven
-sudo apt install -y git
-curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash - 
-sudo apt install -y nodejs 
-sudo npm install -y -g @angular/cli
-sudo npm install -g npm@11.0.0
-sudo -i -u postgres
-ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
-sudo apt install zsh
-sudo vim /etc/nginx/sites-available/default
+# pkg install git
+# git clone --depth 1 https://git.FreeBSD.org/ports.git /usr/ports
+# cd /usr/ports && make index
+# cd /usr/ports/security/sudo && make install
+# cd /usr/ports/shels/zsh && make install
+# cd /usr/ports/devel/maven && make install
+# cd /usr/ports/javq/openjdk23 && make install
+# cd /usr/ports/devel/gh && make install
+# gh auth login --hostname github.com
+# gh repo clone softhlon-learning/learning-platform
+# cd /usr/ports/www/nginx && make install
+# sudo sysrc nginx_enable=yes
+# sudo service nginx start
+# cd /usr/ports/www/node22 && make install
+# cd /usr/ports/www/npm-node22 && make install
+# npm install -y -g @angular/cli
+# cd /usr/ports/databases/postgresql17-server && make install
+# sysrc postgresql_enable=yes
+# service postgresql initdb
+# service postgresql start
+# sudo -i -u postgres
+# CREATE DATABASE learning
+# ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
+# vim /usr/local/etc/nginx/nginx.conf
 sudo systemctl frontend enable
 sudo systemctl backend enable
 sudo systemctl upgrade restart
