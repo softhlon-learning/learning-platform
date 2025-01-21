@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.20.9
+_release date: 2025-01-21_
+ * Fixed cert key file name
+ * Updated README for FreeBSD
+ * Tuned performance parameters in application.yml
+ * Updated run-prod.sh for right zsh path on FreeBSD
+
 ## 0.20.8
 _release date: 2025-01-21_
  * Finished FreeBSD setup
