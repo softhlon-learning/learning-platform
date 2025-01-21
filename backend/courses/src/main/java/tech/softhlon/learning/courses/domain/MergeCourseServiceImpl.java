@@ -5,16 +5,17 @@
 
 package tech.softhlon.learning.courses.domain;
 
+import org.springframework.stereotype.Service;
+import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
-
-import org.springframework.stereotype.Service;
 
 @Service
 class MergeCourseServiceImpl implements MergeCourseService {
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
-        return null;
+        return new CourseMerged();
     }
 }

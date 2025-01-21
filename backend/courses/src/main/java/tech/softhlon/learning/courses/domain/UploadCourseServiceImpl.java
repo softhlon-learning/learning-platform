@@ -8,12 +8,14 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import static tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
-import static tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
-import static tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
-import static tech.softhlon.learning.courses.domain.UploadCourseService.Result.Failed;
-import static tech.softhlon.learning.courses.domain.UploadCourseService.Result.Succeeded;
+import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
+import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseReuqest;
+import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
+import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
+import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
+import tech.softhlon.learning.courses.domain.UploadCourseService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UploadCourseService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,6 +25,7 @@ import static tech.softhlon.learning.courses.domain.UploadCourseService.Result.S
 @Service
 @RequiredArgsConstructor
 class UploadCourseServiceImpl implements UploadCourseService {
+    private final MergeCourseService mergeCourseService;
     private final PersistCourseRepository persistCourseRepository;
 
     @Override
@@ -30,7 +33,7 @@ class UploadCourseServiceImpl implements UploadCourseService {
         try {
             var result = persistCourseRepository.execute(prepareReuqest(request));
             return switch (result) {
-                case CoursePersisted() -> new Succeeded();
+                case CoursePersisted() -> mergeCourseWithEnrollments(request);
                 case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
             };
         } catch (Throwable cause) {
@@ -45,6 +48,26 @@ class UploadCourseServiceImpl implements UploadCourseService {
 
     private PersistCourseRequest prepareReuqest(Request request) {
         return new PersistCourseRequest(
+              request.courseId(),
+              request.code(),
+              request.orderNo(),
+              request.name(),
+              request.description(),
+              request.content(),
+              request.version()
+        );
+    }
+
+    private Result mergeCourseWithEnrollments(Request request) {
+        var result = mergeCourseService.execute(prepareMergeRequest(request));
+        return switch (result) {
+            case CourseMergeFailed(Throwable cause) -> new Failed(cause);
+            case CourseMerged() -> new Succeeded();
+        };
+    }
+
+    private MergeCourseReuqest prepareMergeRequest(Request request) {
+        return new MergeCourseReuqest(
               request.courseId(),
               request.code(),
               request.orderNo(),
