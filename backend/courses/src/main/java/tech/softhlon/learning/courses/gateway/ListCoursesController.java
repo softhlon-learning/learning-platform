@@ -45,11 +45,13 @@ class ListCoursesController {
     ResponseEntity<?> listCourses() {
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}", accountId);
-        var result = service.execute(authContext.accountId());
-        return switch (result) {
-            case Succeeded(List<CourseView> courses) -> successBody(courses);
-            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
-        };
+//        var result = service.execute(authContext.accountId());
+//        return switch (result) {
+//            case Succeeded(List<CourseView> courses) -> successBody(courses);
+//            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
+//        };
+
+        return successBody(List.of());
     }
 
     // -----------------------------------------------------------------------------------------------------------------
