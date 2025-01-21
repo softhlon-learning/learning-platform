@@ -9,6 +9,9 @@
     "test": "ng test"
   },
   "private": true,
+  "resolutions": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
   "dependencies": {
     "@angular/animations": "^18.2.13",
     "@angular/common": "^18.2.13",
