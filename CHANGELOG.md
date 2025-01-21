@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.21.1
+_release date: 2025-01-21_
+ * Tuned pool sizes
+ * Building fat jar
+ * Finished /usr/local/etc/rc.d/backend init script.
+
 ## 0.21.0
 _release date: 2025-01-21_
  * Working on init scripts
