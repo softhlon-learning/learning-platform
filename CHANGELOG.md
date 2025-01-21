@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.22.2
+_release date: 2025-01-21_
+ * Added MergeCourseService and its empty implementation
+ * Integrated UploadCourseServiceImpl with MergeCourseService
+
 ## 0.22.1
 _release date: 2025-01-21_
  * Removed unused run-prod.sh script
