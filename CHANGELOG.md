@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.21.9
+_release date: 2025-01-21_
+ * General FreeBSD maintenance
+ * Documented content of page502.html
+ * 
 ## 0.21.8
 _release date: 2025-01-21_
  * Performance testing of the new setup
