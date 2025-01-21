@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.21.7
+_release date: 2025-01-21_
+ * Building custom FreeBSD kernel
+
 ## 0.21.6
 _release date: 2025-01-21_
  * Updated FreeBSD hostname
