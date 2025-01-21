@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.20.8
+_release date: 2025-01-21_
+ * Finished FreeBSD setup
+ * First app run on new OS
+
 ## 0.20.7
 _release date: 2025-01-21_
  * Installed maven and java ports
