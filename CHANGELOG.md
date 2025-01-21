@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.21.3
+_release date: 2025-01-21_
+ * Secured server to run services on unprivileged user
+
 ## 0.21.2
 _release date: 2025-01-21_
  * Finished /usr/local/etc/rc.d/frontend init script
