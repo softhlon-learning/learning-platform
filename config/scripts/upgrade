@@ -1,13 +1,13 @@
-#!/bin/zsh
+#!/usr/local/bin/bash
 
-sudo systemctl stop frontend
-sudo systemctl stop backend
-
-cd
-rm -fr /home/debian/learning-platform
+sudo service frontend stop
+sudo service backend stop
+sudo rm -fr /home/admin/learning-platform
 gh repo clone softhlon-learning/learning-platform
-
-sudo systemctl start frontend
-sudo systemctl start backend
-
-sleep infinity
+cd /home/admin/learning-platform/backend
+mvn clean install&
+cd /home/admin/learning-platform/frontend
+yarn install
+sudo chown -R learning /home/admin/learning-platform/frontend
+sudo service backend start
+sudo service frontend start
