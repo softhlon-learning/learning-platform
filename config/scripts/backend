@@ -1,4 +1,39 @@
-#!/bin/zsh
+#!/bin/sh
 
-cd /home/debian/learning-platform/backend/application
-./run.sh
+# PROVIDE: backend
+# REQUIRE: DAEMON mountlate
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=backend
+rcvar=backend_enable
+backend_user=learning
+backend_chdir="/home/admin/learning-platform/backend"
+
+pidfile="/var/run/backend/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/local/bin/java -jar /home/admin/learning-platform/backend/application/target/backend.jar"
+
+stop_cmd="stop"
+status_cmd="status"
+
+stop () {
+        if [ -e ${pidfile} ]; then
+                echo Stopping ${name}
+		killall -9 java
+        else
+                echo ${name} is not running.
+        fi
+}
+
+status () {
+        if [ -e ${pidfile} ]; then
+                echo ${name} is running.
+        else
+                echo ${name} is not running.
+        fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
