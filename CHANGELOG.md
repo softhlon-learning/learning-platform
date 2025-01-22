@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.22.6
+_release date: 2025-01-22_
+ * Moved version to top-left corner
+ * Play video on press Enter key
+
 ## 0.22.5
 _release date: 2025-01-22_
  * Fixed backend restart command
