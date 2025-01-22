@@ -22,8 +22,8 @@ status_cmd="status"
 stop () {
         if [ -e ${pidfile} ]; then
                 echo Stopping ${name}
-		kill -9 `cat ${pidfile}`
-		killall -9 node
+		            kill -9 `cat ${pidfile}`
+		            killall -9 node
         else
                 echo ${name} is not running.
         fi

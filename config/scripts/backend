@@ -21,8 +21,8 @@ restart_cmd="restart"
 stop () {
         if [ -e ${pidfile} ]; then
                 echo Stopping ${name}
-		kill `cat ${pidfile}`
-		killall java 
+		            kill `cat ${pidfile}`
+		            killall java
         else
                 echo ${name} is not running.
         fi
@@ -41,7 +41,6 @@ restart () {
 	sleep 1
  	run_rc_command start	
 }
-
 
 load_rc_config $name
 run_rc_command "$1"
