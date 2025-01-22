@@ -22,7 +22,6 @@ import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResul
 @RequiredArgsConstructor
 class MergeCourseServiceImpl implements MergeCourseService {
     private final JsonToCourseContentService jsonToCourseContentService;
-
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
         var result = jsonToCourseContentService.execute(
