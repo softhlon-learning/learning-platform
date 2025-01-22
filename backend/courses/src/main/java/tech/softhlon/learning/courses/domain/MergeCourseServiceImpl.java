@@ -11,8 +11,14 @@ import tech.softhlon.learning.courses.domain.JsonToCourseContentService.CourseCo
 import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentRequest;
 import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentResult.JsonConvertFailed;
 import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentResult.JsonConverted;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsRequest;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
+import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+
+import java.util.List;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -22,13 +28,15 @@ import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResul
 @RequiredArgsConstructor
 class MergeCourseServiceImpl implements MergeCourseService {
     private final JsonToCourseContentService jsonToCourseContentService;
+    private final LoadEnrollmentsRepository loadEnrollmentsRepository;
+
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
         var result = jsonToCourseContentService.execute(
               new JsonToCourseContentRequest(reuqest.content()));
 
         return switch (result) {
-            case JsonConverted(CourseContent content) -> processCourseContent(content);
+            case JsonConverted(CourseContent content) -> processCourseContent(reuqest, content);
             case JsonConvertFailed(Throwable cause) -> new CourseMergeFailed(cause);
         };
     }
@@ -37,8 +45,17 @@ class MergeCourseServiceImpl implements MergeCourseService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private MergeCourseResult processCourseContent(CourseContent content) {
-        return new CourseMerged();
+    private MergeCourseResult processCourseContent(
+          MergeCourseReuqest reuqest,
+          CourseContent content) {
+
+        var result = loadEnrollmentsRepository.execute(
+              new ListEnrollmentsRequest(reuqest.courseId()));
+
+        return switch (result) {
+            case EnrollmentLoadFailed(Throwable cause) -> null;
+            case EnrollmentsLoaded(List<Enrollment> enrollments) -> new CourseMerged();
+        };
     }
 }
 
