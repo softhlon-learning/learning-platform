@@ -23,7 +23,6 @@ class JsonToCourseContentServiceImpl implements JsonToCourseContentService {
     public JsonToCourseContentResult execute(JsonToCourseContentRequest request) {
         try {
             var json = base64Decode(request.json());
-            log.info("Course json: {}", json);
             return new JsonToCourseContentResult.JsonConverted(courseContent(json));
         } catch (Throwable cause) {
             log.error("Error", cause);
