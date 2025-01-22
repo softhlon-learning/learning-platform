@@ -200,6 +200,13 @@ export class CourseDetailsComponent implements OnInit {
         this.router.navigate(['/home']);
     }
 
+    play() {
+        let video = document.querySelector('video');
+        if (video) {
+            video.play();
+        }
+    }
+
     typeVerb(lecture: Lecture): string {
         if (lecture.type === "Video") {
             return "Watch";

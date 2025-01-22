@@ -28,5 +28,9 @@ export class KeyboardInputCourseDetails {
         if (event.code == 'KeyH') {
             courseDetails.home();
         }
+
+        if (event.code == 'Enter') {
+            courseDetails.play();
+        }
     }
 }
