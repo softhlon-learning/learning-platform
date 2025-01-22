@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.23.6
+_release date: 2025-01-23_
+ * Implemented LoadEnrollmentsRepositoryAdapter
+ * Integrated MergeCourseServiceImpl with LoadEnrollmentsRepository
+
 ## 0.23.5
 _release date: 2025-01-22_
  * Tuning bash prompt
