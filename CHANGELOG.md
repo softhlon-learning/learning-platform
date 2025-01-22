@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.23.5
+_release date: 2025-01-22_
+ * Tuning bash prompt
+ * Overall FreeBSD maintenance
+
 ## 0.23.4
 _release date: 2025-01-22_
  * Continue MergeCourseServiceImpl implementation
