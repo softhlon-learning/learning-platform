@@ -8,7 +8,9 @@ package tech.softhlon.learning.courses.domain;
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -20,10 +22,15 @@ import java.util.List;
 public interface LoadEnrollmentsRepository {
     ListEnrollmentsResult execute(ListEnrollmentsRequest request);
 
-    record ListEnrollmentsRequest() {}
+    record ListEnrollmentsRequest(UUID courseId) {}
     sealed interface ListEnrollmentsResult {
         record EnrollmentsLoaded(List<Enrollment> enrollments) implements ListEnrollmentsResult {}
         record EnrollmentLoadFailed(Throwable cause) implements ListEnrollmentsResult {}
     }
-    record Enrollment() {}
+    record Enrollment(
+          UUID courseId,
+          UUID accountId,
+          String content,
+          OffsetDateTime enrolledTime,
+          OffsetDateTime completedTime) {}
 }
