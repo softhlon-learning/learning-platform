@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.23.0
+_release date: 2025-01-22_
+ * Checked rescue mode in practice
+
 ## 0.22.9
 _release date: 2025-01-22_
  * Configure firewall on main server
