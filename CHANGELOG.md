@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.22.8
+_release date: 2025-01-22_
+ * Testing firewall configuration on backlup server
+
 ## 0.22.7
 _release date: 2025-01-22_
  * Configuring FreeBSD firewall
