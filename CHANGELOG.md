@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.22.9
+_release date: 2025-01-22_
+ * Configure firewall on main server
+ * Test and tune firewal settings
+
 ## 0.22.8
 _release date: 2025-01-22_
  * Testing firewall configuration on backlup server
