@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.23.2
+_release date: 2025-01-22_
+ * Implemented JsonToCourseContentServiceImpl
+ * Integrated (partially) JsonToCourseContentService with MergeCourseServiceImpl
+
 ## 0.23.1
 _release date: 2025-01-22_
  * Added JsonToCourseContentService interface
