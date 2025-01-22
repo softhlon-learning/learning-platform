@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.23.3
+_release date: 2025-01-22_
+ * Solved issue with read-only mailboxes
+ * Subscribed to few freebsd mailing lists
+
 ## 0.23.2
 _release date: 2025-01-22_
  * Implemented JsonToCourseContentServiceImpl
