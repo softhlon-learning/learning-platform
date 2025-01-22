@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.22.4
+_release date: 2025-01-21_
+ * Enabled javascript compressing on nginx
+
 ## 0.22.3
 _release date: 2025-01-21_
  * Removed unnecessary statics from accounts module
