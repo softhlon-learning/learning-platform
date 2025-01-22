@@ -17,8 +17,8 @@ interface JsonToCourseContentService {
 
     record JsonToCourseContentRequest(String json) {}
     sealed interface JsonToCourseContentResult {
-        record JsonConverted() implements JsonToCourseContentResult {}
-        record JsonConvertFailed() implements JsonToCourseContentResult {}
+        record JsonConverted(CourseContent content) implements JsonToCourseContentResult {}
+        record JsonConvertFailed(Throwable cause) implements JsonToCourseContentResult {}
     }
 
     record CourseContent(List<Chapter> chapters) {}
