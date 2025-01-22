@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.23.1
+_release date: 2025-01-22_
+ * Added JsonToCourseContentService interface
+ * Added empty JsonToCourseContentServiceImpl
+
 ## 0.23.0
 _release date: 2025-01-22_
  * Checked rescue mode in practice
