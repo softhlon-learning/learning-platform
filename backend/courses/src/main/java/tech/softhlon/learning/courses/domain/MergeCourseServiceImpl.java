@@ -22,6 +22,10 @@ class MergeCourseServiceImpl implements MergeCourseService {
         return new CourseMerged();
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     record CourseContent(List<Chapter> chapters) {}
 
     record Chapter(
