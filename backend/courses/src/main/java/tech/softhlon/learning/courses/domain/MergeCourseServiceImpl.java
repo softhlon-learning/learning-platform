@@ -26,6 +26,10 @@ class MergeCourseServiceImpl implements MergeCourseService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
+    private CourseContent courseContent(String courseContent) {
+        return null;
+    }
+
     record CourseContent(List<Chapter> chapters) {}
 
     record Chapter(
