@@ -13,19 +13,18 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface JsonToCourseContentService {
-    record JsonToCourseContentRequest(String json) {}
+    JsonToCourseContentResult execute(JsonToCourseContentRequest request);
 
+    record JsonToCourseContentRequest(String json) {}
     sealed interface JsonToCourseContentResult {
         record JsonConverted() implements JsonToCourseContentResult {}
         record JsonConvertFailed() implements JsonToCourseContentResult {}
     }
 
     record CourseContent(List<Chapter> chapters) {}
-
     record Chapter(
           String name,
           List<Lecture> lectures) {}
-
     record Lecture(
           UUID id,
           String name,
