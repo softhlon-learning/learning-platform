@@ -9,11 +9,4 @@
 
     <artifactId>common</artifactId>
     <name>Learning Platform :: Common</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-    </dependencies>
 </project>
