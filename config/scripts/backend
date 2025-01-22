@@ -1,27 +1,28 @@
 #!/bin/sh
 
-# PROVIDE: backend
+# PROVIDE: backend 
 # REQUIRE: DAEMON mountlate
-# KEYWORD: shutdown
-
+# KEYWORD: shutdown 
 . /etc/rc.subr
-
+ 
 name=backend
 rcvar=backend_enable
 backend_user=learning
 backend_chdir="/home/admin/learning-platform/backend"
-
+ 
 pidfile="/var/run/backend/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/local/bin/java -jar /home/admin/learning-platform/backend/application/target/backend.jar"
+command_args="-f -o /var/log/backend.log -p ${pidfile} /usr/local/bin/java -jar /home/admin/learning-platform/backend/application/target/backend.jar --spring.profiles.active=production"
 
 stop_cmd="stop"
 status_cmd="status"
+restart_cmd="restart"
 
 stop () {
         if [ -e ${pidfile} ]; then
                 echo Stopping ${name}
-		killall -9 java
+		kill `cat ${pidfile}`
+		killall java 
         else
                 echo ${name} is not running.
         fi
@@ -34,6 +35,13 @@ status () {
                 echo ${name} is not running.
         fi
 }
+
+restart () {
+ 	stop	
+	sleep 1
+ 	run_rc_command start	
+}
+
 
 load_rc_config $name
 run_rc_command "$1"
