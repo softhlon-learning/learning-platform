@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.23.4
+_release date: 2025-01-22_
+ * Continue MergeCourseServiceImpl implementation
+ * Added findByCourseId method
+ * Added LoadEnrollmentsRepository and its empty adapter
+
 ## 0.23.3
 _release date: 2025-01-22_
  * Solved issue with read-only mailboxes
