@@ -8,6 +8,9 @@ package tech.softhlon.learning.courses.domain;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
 
+import java.util.List;
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -18,4 +21,19 @@ class MergeCourseServiceImpl implements MergeCourseService {
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
         return new CourseMerged();
     }
+
+    record CourseContent(List<Chapter> chapters) {}
+
+    record Chapter(
+          String name,
+          List<Lecture> lectures) {}
+
+    record Lecture(
+          UUID id,
+          String name,
+          String type,
+          boolean processed,
+          String time,
+          boolean selctected) {}
 }
+
