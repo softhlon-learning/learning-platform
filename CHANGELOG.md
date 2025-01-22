@@ -1,7 +1,12 @@
 # Learning Platform Changelog
 
+## 0.22.5
+_release date: 2025-01-22_
+ * Fixed backend restart command
+ * Init scripts cleanup
+
 ## 0.22.4
-_release date: 2025-01-21_
+_release date: 2025-01-22_
  * Enabled javascript compressing on nginx
 
 ## 0.22.3
