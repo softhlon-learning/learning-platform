@@ -26,7 +26,7 @@ interface JsonToCourseContentService {
           String name,
           List<Lecture> lectures) {}
     record Lecture(
-          UUID id,
+          String id,
           String name,
           String type,
           boolean processed,
