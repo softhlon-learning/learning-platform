@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -15,5 +15,5 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Repository
-interface PasswordRecoveryTokensJpaRepository extends CrudRepository<PasswordRecoveryToken, UUID> {
+interface PasswordRecoveryTokensJpaRepository extends CrudRepository<PasswordRecoveryTokenEntity, UUID> {
 }

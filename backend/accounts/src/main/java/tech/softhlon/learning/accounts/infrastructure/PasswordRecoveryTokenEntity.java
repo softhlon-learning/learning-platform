@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ import java.util.UUID;
 @Getter
 @Builder
 @Entity(name = "password_recovery_tokens")
-class PasswordRecoveryToken {
+class PasswordRecoveryTokenEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
