@@ -27,9 +27,6 @@ export class PasswordRecoveryComponent implements OnInit {
 
     ngOnInit() {
         this.error = undefined;
-        const button = document.querySelector("#g_id_onload") as HTMLElement | null;
-        button?.setAttribute("data-client_id", environment.googleClientId);
-        button?.setAttribute("data-login_uri", environment.loginUri);
     }
 
     onSubmit(): void {
@@ -39,23 +36,23 @@ export class PasswordRecoveryComponent implements OnInit {
             return;
         }
 
-        const {name = '', email = '', password = ''} = this.signInForm.value;
+        const {email = ''} = this.signInForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.signUp(name || '', email || '', password || '').subscribe({
-            next: () => this.handleSignInSuccess(),
-            error: (signInError) => this.handleSignInError(signInError, DEFAULT_ERROR_MESSAGE),
+        this.platformService.recoverPassword(email || '').subscribe({
+            next: () => this.handleSuccess(),
+            error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
     }
 
-    private handleSignInSuccess() {
+    private handleSuccess() {
         this.router.navigate(['/home'])
             .then(() => {
                 window.location.reload();
             });
     }
 
-    private handleSignInError(signInError: any, defaultErrorMessage: string) {
+    private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
     }
 }
