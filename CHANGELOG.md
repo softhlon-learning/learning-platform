@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.24.2
+_release date: 2025-01-23_
+ * Testing ZFS snaphots
+
 ## 0.24.1
 _release date: 2025-01-23_
  * Added password_recover_tokens table
