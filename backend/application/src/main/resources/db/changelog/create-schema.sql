@@ -68,9 +68,14 @@ CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_h
 
 CREATE TABLE password_recover_tokens (
     id uuid DEFAULT gen_random_uuid(),
+    account_id uuid,
     token VARCHAR NOT NULL,
+    expiration_time TIMESTAMP DEFAULT current_timestamp,
     created_time TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT fk_password_recover_tokens_accounts
+         FOREIGN KEY (account_id)
+         REFERENCES accounts (id)
 );
 
 CREATE INDEX password_recover_tokens__token_index ON password_recover_tokens (token);
