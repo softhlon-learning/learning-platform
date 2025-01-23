@@ -67,7 +67,7 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     }
 
     private Result sendEmail(Account account) {
-        emailService.sendMessage("admin@softhlon-learning.tech", "Test", "Content");
+        emailService.sendMessage(account.email(), "Password Recovery", "Link");
         return new Succeeded();
     }
 }
