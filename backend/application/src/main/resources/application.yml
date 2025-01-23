@@ -12,7 +12,7 @@ spring:
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
     hikari.maximum-pool-size: 10
-  mmail.host=: mail.softhlon-learning.tech
+  mmail.host: mail.softhlon-learning.tech
   mail.port: 25
   mail.username: learning
   mail.password: "Prt2]JxDv9mn{qC5"
