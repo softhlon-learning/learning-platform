@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.25.5
+_release date: 2025-01-24_
+ * Implemented EmailServiceImpl
+
 ## 0.25.4
 _release date: 2025-01-23_
  * Added spring-boot-starter-mail dependency
