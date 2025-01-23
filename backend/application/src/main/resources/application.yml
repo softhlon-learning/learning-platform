@@ -27,8 +27,8 @@ google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercon
 jwt:
   secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
   expiration: 86400
----
 
+---
 spring:
   config:
     activate:
