@@ -33,6 +33,7 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     private static final String EMAIL_NOT_FOUND = "Email not found";
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
+    private final EmailService emailService;
 
     @Override
     public Result execute(Request request) {
@@ -66,6 +67,7 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     }
 
     private Result sendEmail(Account account) {
+        emailService.sendMessage("admin@softhlon-learning.tech", "Test", "Content");
         return new Succeeded();
     }
 }
