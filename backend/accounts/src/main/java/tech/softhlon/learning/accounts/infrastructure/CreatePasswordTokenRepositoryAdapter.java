@@ -38,6 +38,10 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
     // -----------------------------------------------------------------------------------------------------------------
 
     private PasswordTokenEntity passwordTokenEntity(CreatePasswordTokenRequest request) {
-        return PasswordTokenEntity.builder().accountId(request.accountId()).token(request.token()).expirationTime(request.expirationTime()).build();
+        return PasswordTokenEntity.builder()
+              .accountId(request.accountId())
+              .token(request.token())
+              .expirationTime(request.expirationTime())
+              .build();
     }
 }
