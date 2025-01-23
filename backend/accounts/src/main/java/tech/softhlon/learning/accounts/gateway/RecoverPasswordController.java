@@ -5,17 +5,16 @@
 
 package tech.softhlon.learning.accounts.gateway;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RestController;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-class RestResources {
-    static final String API_PREFIX = "/api/v1";
-    static final String ACCOUNT = API_PREFIX + "/account";
-    static final String SIGN_IN = ACCOUNT + "/auth/sign-in";
-    static final String GOOGLE_SIGN_IN = ACCOUNT + "/auth/google-sign-in";
-    static final String SIGN_OUT = ACCOUNT + "/auth/sign-out";
-    static final String SIGN_UP = ACCOUNT + "/sign-up";
-    static final String PROFILE = ACCOUNT + "/profile";
-    static final String PASSWORD_RECOVERY = ACCOUNT + "/password-recovery";
+@Slf4j
+@RestApiAdapter
+@RestController
+class RecoverPasswordController {
 }
