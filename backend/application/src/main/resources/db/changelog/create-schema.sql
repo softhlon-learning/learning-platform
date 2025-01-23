@@ -66,6 +66,15 @@ CREATE TABLE invalidated_tokens (
 
 CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
 
+CREATE TABLE password_recover_tokens (
+    id uuid DEFAULT gen_random_uuid(),
+    token VARCHAR NOT NULL,
+    created_time TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE INDEX password_recover_tokens__token_index ON password_recover_tokens (token);
+
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
