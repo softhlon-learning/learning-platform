@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.24.3
+_release date: 2025-01-23_
+ * Update selected flag when course content is merged
+ * Moved PasswordRecovery* to accounts module
+
 ## 0.24.2
 _release date: 2025-01-23_
  * Testing ZFS snaphots
