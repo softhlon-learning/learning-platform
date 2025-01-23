@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 })
 export class PasswordRecoveryComponent implements OnInit {
     protected readonly environment = environment;
+    success: boolean = false;
     error: string | undefined;
 
     signInForm = this.formBuilder.group({
@@ -27,6 +28,7 @@ export class PasswordRecoveryComponent implements OnInit {
 
     ngOnInit() {
         this.error = undefined;
+        this.success = false;
     }
 
     onSubmit(): void {
@@ -46,10 +48,7 @@ export class PasswordRecoveryComponent implements OnInit {
     }
 
     private handleSuccess() {
-        this.router.navigate(['/home'])
-            .then(() => {
-                window.location.reload();
-            });
+        this.success = true;
     }
 
     private handleError(signInError: any, defaultErrorMessage: string) {
