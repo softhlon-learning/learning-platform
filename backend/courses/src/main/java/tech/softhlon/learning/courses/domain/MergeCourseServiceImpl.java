@@ -98,9 +98,13 @@ class MergeCourseServiceImpl implements MergeCourseService {
             List<Lecture> lecturesCopy = new ArrayList<>();
             for (Lecture lecture : chaper.lectures()) {
                 boolean processed = false;
+                boolean selected = false;
                 if (idToLectureMap.containsKey(lecture.id())) {
                     if (idToLectureMap.get(lecture.id()).processed()) {
                         processed = true;
+                    }
+                    if (idToLectureMap.get(lecture.id()).selected()) {
+                        selected = true;
                     }
                 }
                 lecturesCopy.add(
@@ -110,7 +114,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
                             lecture.type(),
                             processed,
                             lecture.time(),
-                            lecture.selected()));
+                            selected));
             }
             chaptersCopy.add(new Chapter(chaper.name(), lecturesCopy));
         }
