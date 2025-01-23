@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.3
+_release date: 2025-01-23_
+ * Hack for google button display
+ * Display success message for password recovery
+
 ## 0.25.2
 _release date: 2025-01-23_
  * Integrated password-recovery form with backend
