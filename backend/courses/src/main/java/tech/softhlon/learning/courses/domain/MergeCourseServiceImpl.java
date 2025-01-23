@@ -8,7 +8,9 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.courses.domain.JsonCourseContentService.Chapter;
 import tech.softhlon.learning.courses.domain.JsonCourseContentService.CourseContent;
+import tech.softhlon.learning.courses.domain.JsonCourseContentService.Lecture;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsRequest;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
@@ -19,7 +21,10 @@ import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.Persist
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -67,17 +72,49 @@ class MergeCourseServiceImpl implements MergeCourseService {
           List<Enrollment> enrollments) {
 
         for (Enrollment enrollment : enrollments) {
-            var enrollmentContent = jsonCourseContentService.jsonToCurseContent(reuqest.content());
-            updateContent(content, enrollmentContent);
-            persistEnrollment(reuqest, enrollment, enrollmentContent);
+            var enrollmentContent = jsonCourseContentService.jsonToCurseContent(enrollment.content());
+            var updatedContent = updateContent(content, enrollmentContent);
+            persistEnrollment(reuqest, enrollment, updatedContent);
 
         }
         return new CourseMerged();
     }
 
-    private void updateContent(
+    private CourseContent updateContent(
           CourseContent content,
           CourseContent enrollmentContent) {
+        Map<String, Lecture> idToLectureMap = new HashMap<>();
+
+        // index all lectures in enrollment
+        for (Chapter chaper : enrollmentContent.chapters()) {
+            for (Lecture lecture : chaper.lectures()) {
+                idToLectureMap.put(lecture.id(), lecture);
+            }
+        }
+
+        // create/update processed flag in new content
+        List<Chapter> chaptersCopy = new ArrayList<>();
+        for (Chapter chaper : content.chapters()) {
+            List<Lecture> lecturesCopy = new ArrayList<>();
+            for (Lecture lecture : chaper.lectures()) {
+                boolean processed = false;
+                if (idToLectureMap.containsKey(lecture.id())) {
+                    if (idToLectureMap.get(lecture.id()).processed()) {
+                        processed = true;
+                    }
+                }
+                lecturesCopy.add(
+                      new Lecture(
+                            lecture.id(),
+                            lecture.name(),
+                            lecture.type(),
+                            processed,
+                            lecture.time(),
+                            lecture.selected()));
+            }
+            chaptersCopy.add(new Chapter(chaper.name(), lecturesCopy));
+        }
+        return new CourseContent(chaptersCopy);
     }
 
     MergeCourseResult persistEnrollment(
@@ -89,7 +126,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
               new PersistEnrollmentRequest(
                     reuqest.courseId(),
                     enrollment.accountId(),
-                    reuqest.content(),
+                    jsonCourseContentService.courseContentToJson(enrollmentContent),
                     enrollment.enrolledTime(),
                     enrollment.completedTime()));
 
