@@ -26,11 +26,21 @@ export class AppHeaderComponent implements OnInit {
     }
 
     signOut(): void {
-        this.coursesService.signOut().subscribe();
+        this.coursesService.signOut().subscribe({
+                next: () => this.handleResponse(),
+                error: (signInError) => this.handleResponse(),
+            }
+        );
     }
 
     isSignInUpPage() {
         return this.router.url === '/sign-in' || this.router.url === '/sign-up';
+    }
+
+    private handleResponse() {
+        this.router.navigate(['/home']).then(() => {
+            window.location.reload();
+        })
     }
 
     protected readonly version = version.version;
