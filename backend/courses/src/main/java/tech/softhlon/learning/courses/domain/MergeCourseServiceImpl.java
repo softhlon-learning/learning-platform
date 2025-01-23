@@ -53,9 +53,31 @@ class MergeCourseServiceImpl implements MergeCourseService {
               new ListEnrollmentsRequest(reuqest.courseId()));
 
         return switch (result) {
-            case EnrollmentLoadFailed(Throwable cause) -> null;
-            case EnrollmentsLoaded(List<Enrollment> enrollments) -> new CourseMerged();
+            case EnrollmentLoadFailed(Throwable cause) -> new CourseMergeFailed(cause);
+            case EnrollmentsLoaded(List<Enrollment> enrollments) -> processEnrollments(content, enrollments);
         };
+    }
+
+    private MergeCourseResult processEnrollments(
+          CourseContent content,
+          List<Enrollment> enrollments) {
+
+        for (Enrollment enrollment : enrollments) {
+            var result = jsonToCourseContentService.execute(
+                  new JsonToCourseContentRequest(
+                        enrollment.content()));
+
+            if (result instanceof JsonConverted(CourseContent enrollmentContent)) {
+                updateContent(content, enrollmentContent);
+            }
+        }
+
+        return new CourseMerged();
+    }
+
+    private void updateContent(
+          CourseContent content,
+          CourseContent enrollmentContent) {
     }
 }
 
