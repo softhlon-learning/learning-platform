@@ -7,9 +7,9 @@ import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentResult.JsonConvertFailed;
 
 import java.util.Base64;
+import java.util.List;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -18,28 +18,37 @@ import java.util.Base64;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class JsonToCourseContentServiceImpl implements JsonToCourseContentService {
-    @Override
-    public JsonToCourseContentResult execute(JsonToCourseContentRequest request) {
-        try {
-            var json = base64Decode(request.json());
-            return new JsonToCourseContentResult.JsonConverted(courseContent(json));
-        } catch (Throwable cause) {
-            log.error("Error", cause);
-            return new JsonConvertFailed(cause);
-        }
+class JsonCourseContentService {
+    CourseContent jsonToCurseContent(String json) {
+        return toCourseContent(base64Decode(json));
+    }
+
+    String courseContentToJson(CourseContent content) {
+        return base64Encode(toJson(content));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
+    private CourseContent toCourseContent(String json) {
+        return new Gson().fromJson(json, CourseContent.class);
+    }
+
+    private String toJson(CourseContent content) {
+        return new Gson().toJson(content);
+    }
+
     private String base64Decode(String value) {
         var decodedBytes = Base64.getDecoder().decode(value);
         return new String(decodedBytes);
     }
 
-    private CourseContent courseContent(String json) {
-        return new Gson().fromJson(json, CourseContent.class);
+    private String base64Encode(String value) {
+        return Base64.getEncoder().encodeToString(value.getBytes());
     }
+
+    record CourseContent(List<Chapter> chapters) {}
+    record Chapter(String name, List<Lecture> lectures) {}
+    record Lecture(String id, String name, String type, boolean processed, String time, boolean selctected) {}
 }

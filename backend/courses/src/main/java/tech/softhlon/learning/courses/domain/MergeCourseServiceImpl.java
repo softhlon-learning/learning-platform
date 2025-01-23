@@ -8,10 +8,7 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.JsonToCourseContentService.CourseContent;
-import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentRequest;
-import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentResult.JsonConvertFailed;
-import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentResult.JsonConverted;
+import tech.softhlon.learning.courses.domain.JsonCourseContentService.CourseContent;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsRequest;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
@@ -32,19 +29,19 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 class MergeCourseServiceImpl implements MergeCourseService {
-    private final JsonToCourseContentService jsonToCourseContentService;
+    private final JsonCourseContentService jsonCourseContentService;
     private final LoadEnrollmentsRepository loadEnrollmentsRepository;
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
-        var result = jsonToCourseContentService.execute(
-              new JsonToCourseContentRequest(reuqest.content()));
-
-        return switch (result) {
-            case JsonConverted(CourseContent content) -> processCourseContent(reuqest, content);
-            case JsonConvertFailed(Throwable cause) -> new CourseMergeFailed(cause);
-        };
+        try {
+            var content = jsonCourseContentService.jsonToCurseContent(reuqest.content());
+            return processCourseContent(reuqest, content);
+        } catch (Throwable cause) {
+            log.error("Error", cause);
+            return new CourseMergeFailed(cause);
+        }
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -70,13 +67,10 @@ class MergeCourseServiceImpl implements MergeCourseService {
           List<Enrollment> enrollments) {
 
         for (Enrollment enrollment : enrollments) {
-            var result = jsonToCourseContentService.execute(
-                  new JsonToCourseContentRequest(
-                        enrollment.content()));
-            if (result instanceof JsonConverted(CourseContent enrollmentContent)) {
-                updateContent(content, enrollmentContent);
-                persistEnrollment(reuqest, enrollment, enrollmentContent);
-            }
+            var enrollmentContent = jsonCourseContentService.jsonToCurseContent(reuqest.content());
+            updateContent(content, enrollmentContent);
+            persistEnrollment(reuqest, enrollment, enrollmentContent);
+
         }
         return new CourseMerged();
     }
