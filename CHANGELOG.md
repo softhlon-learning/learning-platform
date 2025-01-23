@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.1
+_release date: 2025-01-23_
+ * Implemented RecoverPasswordController
+ * Fixed password_recovery_tokens table name
+
 ## 0.25.0
 _release date: 2025-01-23_
  * Integrated RecoverPasswordServiceImpl with CreatePasswordTokenRepository
