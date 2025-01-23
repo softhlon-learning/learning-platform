@@ -6,6 +6,7 @@
 package tech.softhlon.learning.courses.domain;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.courses.domain.JsonToCourseContentService.CourseContent;
 import tech.softhlon.learning.courses.domain.JsonToCourseContentService.JsonToCourseContentRequest;
@@ -17,6 +18,9 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrol
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 
 import java.util.List;
 
@@ -24,11 +28,13 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 class MergeCourseServiceImpl implements MergeCourseService {
     private final JsonToCourseContentService jsonToCourseContentService;
     private final LoadEnrollmentsRepository loadEnrollmentsRepository;
+    private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
@@ -54,11 +60,12 @@ class MergeCourseServiceImpl implements MergeCourseService {
 
         return switch (result) {
             case EnrollmentLoadFailed(Throwable cause) -> new CourseMergeFailed(cause);
-            case EnrollmentsLoaded(List<Enrollment> enrollments) -> processEnrollments(content, enrollments);
+            case EnrollmentsLoaded(List<Enrollment> enrollments) -> processEnrollments(reuqest, content, enrollments);
         };
     }
 
     private MergeCourseResult processEnrollments(
+          MergeCourseReuqest reuqest,
           CourseContent content,
           List<Enrollment> enrollments) {
 
@@ -66,12 +73,11 @@ class MergeCourseServiceImpl implements MergeCourseService {
             var result = jsonToCourseContentService.execute(
                   new JsonToCourseContentRequest(
                         enrollment.content()));
-
             if (result instanceof JsonConverted(CourseContent enrollmentContent)) {
                 updateContent(content, enrollmentContent);
+                persistEnrollment(reuqest, enrollment, enrollmentContent);
             }
         }
-
         return new CourseMerged();
     }
 
@@ -79,5 +85,23 @@ class MergeCourseServiceImpl implements MergeCourseService {
           CourseContent content,
           CourseContent enrollmentContent) {
     }
-}
 
+    MergeCourseResult persistEnrollment(
+          MergeCourseReuqest reuqest,
+          Enrollment enrollment,
+          CourseContent enrollmentContent) {
+
+        var result = persistEnrollmentRepository.execute(
+              new PersistEnrollmentRequest(
+                    reuqest.courseId(),
+                    enrollment.accountId(),
+                    reuqest.content(),
+                    enrollment.enrolledTime(),
+                    enrollment.completedTime()));
+
+        return switch (result) {
+            case EnrollmentPersisted enrollmentPersisted -> new CourseMerged();
+            case EnrollmentPersistenceFailed(Throwable cause) -> new CourseMergeFailed(cause);
+        };
+    }
+}
