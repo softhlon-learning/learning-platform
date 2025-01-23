@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.24.0
+_release date: 2025-01-23_
+ * Added empty line in interfaces, for better readability
+ * Minor refactoring
+
 ## 0.23.9
 _release date: 2025-01-23_
  * Finished MergeCourseServiceImpl implementation 
