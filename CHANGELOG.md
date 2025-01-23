@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.24.4
+_release date: 2025-01-23_
+ * Added CreatePasswordTokenRepository and its empty adapter
+
 ## 0.24.3
 _release date: 2025-01-23_
  * Update selected flag when course content is merged
