@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.24.1
+_release date: 2025-01-23_
+ * Added password_recover_tokens table
+ * Created PasswordRecoveryTokensJpaRepository
+
 ## 0.24.0
 _release date: 2025-01-23_
  * Added empty line in interfaces, for better readability
