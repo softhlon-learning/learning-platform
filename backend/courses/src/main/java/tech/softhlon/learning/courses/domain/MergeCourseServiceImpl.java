@@ -8,9 +8,9 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.JsonCourseContentService.Chapter;
-import tech.softhlon.learning.courses.domain.JsonCourseContentService.CourseContent;
-import tech.softhlon.learning.courses.domain.JsonCourseContentService.Lecture;
+import tech.softhlon.learning.courses.domain.ContentService.Chapter;
+import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
+import tech.softhlon.learning.courses.domain.ContentService.Lecture;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsRequest;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
@@ -34,14 +34,14 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 class MergeCourseServiceImpl implements MergeCourseService {
-    private final JsonCourseContentService jsonCourseContentService;
+    private final ContentService contentService;
     private final LoadEnrollmentsRepository loadEnrollmentsRepository;
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
     public MergeCourseResult execute(MergeCourseReuqest reuqest) {
         try {
-            var content = jsonCourseContentService.jsonToCurseContent(reuqest.content());
+            var content = contentService.jsonToCurseContent(reuqest.content());
             return processCourseContent(reuqest, content);
         } catch (Throwable cause) {
             log.error("Error", cause);
@@ -72,7 +72,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
           List<Enrollment> enrollments) {
 
         for (Enrollment enrollment : enrollments) {
-            var enrollmentContent = jsonCourseContentService.jsonToCurseContent(enrollment.content());
+            var enrollmentContent = contentService.jsonToCurseContent(enrollment.content());
             var updatedContent = updateContent(content, enrollmentContent);
             persistEnrollment(reuqest, enrollment, updatedContent);
 
@@ -126,7 +126,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
               new PersistEnrollmentRequest(
                     reuqest.courseId(),
                     enrollment.accountId(),
-                    jsonCourseContentService.courseContentToJson(enrollmentContent),
+                    contentService.courseContentToJson(enrollmentContent),
                     enrollment.enrolledTime(),
                     enrollment.completedTime()));
 

@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class JsonCourseContentService {
+class ContentService {
     CourseContent jsonToCurseContent(String json) {
         return toCourseContent(base64Decode(json));
     }
