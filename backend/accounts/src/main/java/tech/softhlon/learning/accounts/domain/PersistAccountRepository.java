@@ -23,6 +23,7 @@ public interface PersistAccountRepository {
         record AccountNotFoundInDatabase() implements PersistAccountResult {}
         record AccountPersistenceFailed(Throwable cause) implements PersistAccountResult {}
     }
+
     record PersistAccountRequest(
           UUID id,
           String type,

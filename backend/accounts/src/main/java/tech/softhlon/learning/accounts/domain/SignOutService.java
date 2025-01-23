@@ -21,5 +21,6 @@ public interface SignOutService {
         record NotAuthorized(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(String token) {}
 }

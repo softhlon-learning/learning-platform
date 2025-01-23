@@ -24,6 +24,7 @@ public interface UpdateEnrollmentService {
         record EnrollmentNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(
           UUID accountId,
           UUID courseId,

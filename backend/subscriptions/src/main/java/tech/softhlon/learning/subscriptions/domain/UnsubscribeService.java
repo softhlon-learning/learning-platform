@@ -17,5 +17,6 @@ public interface UnsubscribeService {
         record AccountNotSubscribedFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(String accountId) {}
 }

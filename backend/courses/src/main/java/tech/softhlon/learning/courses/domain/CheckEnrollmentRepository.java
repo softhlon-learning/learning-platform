@@ -25,5 +25,6 @@ public interface CheckEnrollmentRepository {
         record EnrollmentNotFound() implements CheckEnrollmentResult {}
         record CheckEnrollmentFailed(Throwable cause) implements CheckEnrollmentResult {}
     }
+
     record CheckEnrollmentRequest(UUID accountId, UUID courseId) {}
 }

@@ -27,5 +27,6 @@ public interface SignUpService {
         record PasswordPolicyFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(String name, String email, String password) {}
 }

@@ -23,5 +23,6 @@ public interface CheckTokenRepository {
         record TokenNotFound() implements CheckTokenResult {}
         record CheckTokenFailed(Throwable cause) implements CheckTokenResult {}
     }
+
     record CheckTokenRequest(String tokenHash) {}
 }

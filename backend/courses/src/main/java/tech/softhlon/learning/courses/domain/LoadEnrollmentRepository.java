@@ -26,6 +26,7 @@ public interface LoadEnrollmentRepository {
         record EnrollmentNotFoundInDatabase() implements LoadEnrollmentResult {}
         record EnrollmentLoadFailed(Throwable cause) implements LoadEnrollmentResult {}
     }
+
     record Enrollment(
           UUID courseId,
           UUID accountId,

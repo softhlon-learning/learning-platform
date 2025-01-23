@@ -22,6 +22,7 @@ public interface UploadCourseService {
         record Succeeded() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(
           UUID courseId,
           String code,

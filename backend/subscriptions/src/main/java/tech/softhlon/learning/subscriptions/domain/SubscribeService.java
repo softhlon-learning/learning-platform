@@ -19,5 +19,6 @@ public interface SubscribeService {
         record AccountAlreadySubscribedFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(UUID accountId) {}
 }

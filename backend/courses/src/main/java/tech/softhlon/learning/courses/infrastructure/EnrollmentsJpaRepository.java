@@ -18,8 +18,17 @@ import java.util.UUID;
 
 @Repository
 interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
-    boolean existsByAccountIdAndCourseId(UUID accountId, UUID courseId);
-    Optional<EnrollmentEntity> findByAccountIdAndCourseId(UUID accountId, UUID courseId);
-    void deleteByAccountIdAndCourseId(UUID accountId, UUID courseId);
+    boolean existsByAccountIdAndCourseId(
+          UUID accountId,
+          UUID courseId);
+
+    Optional<EnrollmentEntity> findByAccountIdAndCourseId(
+          UUID accountId,
+          UUID courseId);
+
+    void deleteByAccountIdAndCourseId(
+          UUID accountId,
+          UUID courseId);
+
     List<EnrollmentEntity> findByCourseId(UUID courseId);
 }

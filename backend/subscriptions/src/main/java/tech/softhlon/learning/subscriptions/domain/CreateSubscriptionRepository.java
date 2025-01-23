@@ -25,6 +25,7 @@ public interface CreateSubscriptionRepository {
         record SubscriptionPersisted(UUID uuid) implements CreateSubscriptionResult {}
         record SubscriptionPersistenceFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
+
     record CreateSubscriptionRequest(
           UUID accountId,
           String status,

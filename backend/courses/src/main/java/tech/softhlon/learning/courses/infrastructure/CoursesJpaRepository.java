@@ -15,5 +15,4 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Repository
-interface CoursesJpaRepository extends CrudRepository<CourseEntity, UUID> {
-}
+interface CoursesJpaRepository extends CrudRepository<CourseEntity, UUID> {}

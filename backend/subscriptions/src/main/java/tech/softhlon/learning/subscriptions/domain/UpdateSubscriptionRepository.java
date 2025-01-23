@@ -25,6 +25,7 @@ public interface UpdateSubscriptionRepository {
         record SubscriptionPersisted() implements UpdateSubscriptionResult {}
         record SubscriptionPersistenceFailed(Throwable cause) implements UpdateSubscriptionResult {}
     }
+
     record Subscription(
           UUID id,
           UUID accountId,

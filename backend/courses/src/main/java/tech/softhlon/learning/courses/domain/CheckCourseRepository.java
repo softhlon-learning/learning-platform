@@ -25,5 +25,6 @@ public interface CheckCourseRepository {
         record CourseNotFound() implements CheckCourseResult {}
         record CheckCourseFailed(Throwable cause) implements CheckCourseResult {}
     }
+
     record CheckCourseRequest(UUID id) {}
 }

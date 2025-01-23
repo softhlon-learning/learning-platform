@@ -26,5 +26,6 @@ public interface CheckAccountByEmailRepository {
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }
+
     record CheckAccountByEmailRequest(String email) {}
 }

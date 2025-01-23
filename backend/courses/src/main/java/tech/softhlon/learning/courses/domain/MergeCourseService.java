@@ -22,6 +22,7 @@ interface MergeCourseService {
           String description,
           String content,
           String version) {}
+
     sealed interface MergeCourseResult {
         record CourseMerged() implements MergeCourseResult {}
         record CourseMergeFailed(Throwable cause) implements MergeCourseResult {}

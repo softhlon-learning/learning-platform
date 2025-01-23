@@ -25,6 +25,7 @@ public interface LoadAccountRepository {
         record AccountNotFound() implements LoadAccountResult {}
         record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
+
     record LoadAccountRequest(UUID id) {}
     record Account(
           UUID id,

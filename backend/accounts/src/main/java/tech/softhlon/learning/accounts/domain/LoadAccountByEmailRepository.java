@@ -26,6 +26,7 @@ public interface LoadAccountByEmailRepository {
         record AccountIsDeleted() implements LoadAccountByEmailResult {}
         record LoadAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
     }
+
     record LoadAccountByEmailRequest(String email) {}
     record Account(UUID id, String email, String password) {}
 }

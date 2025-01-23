@@ -24,6 +24,7 @@ public interface DeleteEnrollmentRepository {
         record EnrollmentDeleted() implements DeleteEnrollmentResult {}
         record EnrollementDeletionFailed(Throwable cause) implements DeleteEnrollmentResult {}
     }
+
     record DeleteEnrollmentRequest(
           UUID courseId,
           UUID accountId) {}

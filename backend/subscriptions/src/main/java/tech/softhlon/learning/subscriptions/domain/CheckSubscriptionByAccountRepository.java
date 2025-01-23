@@ -25,5 +25,6 @@ public interface CheckSubscriptionByAccountRepository {
         record SubscriptionNotFound() implements CheckSubscriptionByAccountResult {}
         record CheckSubscriptionFailed(Throwable cause) implements CheckSubscriptionByAccountResult {}
     }
+
     record CheckSubscriptionByAccountRequest(UUID accountId) {}
 }

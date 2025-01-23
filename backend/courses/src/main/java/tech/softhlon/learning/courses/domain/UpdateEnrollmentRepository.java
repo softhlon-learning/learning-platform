@@ -25,6 +25,7 @@ public interface UpdateEnrollmentRepository {
         record EnrollmentUpdated(UUID id) implements UpdateEnrollmentResult {}
         record EnrollmentUpdateFailed(Throwable cause) implements UpdateEnrollmentResult {}
     }
+
     record Enrollment(
           UUID id,
           UUID accountId,

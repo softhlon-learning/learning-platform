@@ -24,6 +24,7 @@ public interface CreateCourseRepository {
         record AccountPersisted() implements CreateAccountResult {}
         record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
     }
+
     record CreateAccountRequest(
           UUID courseId,
           String name,

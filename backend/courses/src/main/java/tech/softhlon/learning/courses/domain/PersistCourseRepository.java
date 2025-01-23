@@ -18,6 +18,7 @@ public interface PersistCourseRepository {
         record CoursePersisted() implements PersistCourseResult {}
         record CoursePersistenceFailed(Throwable cause) implements PersistCourseResult {}
     }
+
     record PersistCourseRequest(
           UUID id,
           String code,

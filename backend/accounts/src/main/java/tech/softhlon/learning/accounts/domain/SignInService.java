@@ -21,6 +21,7 @@ public interface SignInService {
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
     record Request(
           String email,
           String password) {}

@@ -19,6 +19,7 @@ public interface PersistEnrollmentRepository {
         record EnrollmentPersisted() implements PersistEnrollmentResult {}
         record EnrollmentPersistenceFailed(Throwable cause) implements PersistEnrollmentResult {}
     }
+
     record PersistEnrollmentRequest(
           UUID courseId,
           UUID accountId,

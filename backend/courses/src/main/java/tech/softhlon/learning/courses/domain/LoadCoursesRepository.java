@@ -25,6 +25,7 @@ public interface LoadCoursesRepository {
         record CoursesLoaded(List<Course> course) implements LoadCoursesResult {}
         record CoursesLoadFailed(Throwable cause) implements LoadCoursesResult {}
     }
+
     record Course(
           UUID courseId,
           String code,

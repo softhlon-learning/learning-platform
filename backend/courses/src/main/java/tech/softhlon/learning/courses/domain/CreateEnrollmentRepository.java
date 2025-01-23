@@ -25,6 +25,7 @@ public interface CreateEnrollmentRepository {
         record EnrollmentPersisted(UUID uuid) implements CreateEnrollmentResult {}
         record EnrollementPersistenceFailed(Throwable cause) implements CreateEnrollmentResult {}
     }
+
     record CreateEnrollmentRequest(
           UUID courseId,
           UUID accountId,
