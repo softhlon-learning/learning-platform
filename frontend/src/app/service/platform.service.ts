@@ -18,6 +18,7 @@ export class PlatformService {
     private signUpUrl = '/api/v1/account/sign-up';
     private deleteAccountUrl = '/api/v1/account';
     private profileUrl = '/api/v1/account/profile';
+    private passwordRecoveryUrl = '/api/v1/account/password-recovery';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -84,6 +85,11 @@ export class PlatformService {
         const updateProfileRequest = new UpdateProfileRequest(name);
         return this.http.put<ArrayBuffer>(this.profileUrl, updateProfileRequest).pipe();
     }
+
+    recoverPassword(name: string): Observable<ArrayBuffer> {
+        const recoverPasswordRequest = new RecoverPasswordRequest(name);
+        return this.http.post<ArrayBuffer>(this.passwordRecoveryUrl, recoverPasswordRequest).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -139,6 +145,15 @@ class UpdateProfileRequest {
         this.name = name;
     }
 }
+
+class RecoverPasswordRequest {
+    email: string;
+
+    constructor(email: string) {
+        this.email = email;
+    }
+}
+
 
 export class Profile {
     name: string;
