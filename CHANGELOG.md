@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.25.2
+_release date: 2025-01-23_
+ * Integrated password-recovery form with backend
+
 ## 0.25.1
 _release date: 2025-01-23_
  * Implemented RecoverPasswordController
