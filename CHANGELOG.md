@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.24.6
+_release date: 2025-01-23_
+ * Solved the issue with not displaying google button on Safari
+
 ## 0.24.5
 _release date: 2025-01-23_
  * Implemented CreatePasswordTokenRepositoryAdapter
