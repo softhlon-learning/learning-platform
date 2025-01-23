@@ -15,7 +15,7 @@ spring:
   mmail.host=: mail.softhlon-learning.tech
   mail.port: 25
   mail.username: learning
-  mail.password: password
+  mail.password: "Prt2]JxDv9mn{qC5"
   mail.properties.mail.smtp.auth: true
   mail.properties.mail.smtp.starttls.enable: true
 logging.level.org.zalando.logbook.Logbook: DEBUG
