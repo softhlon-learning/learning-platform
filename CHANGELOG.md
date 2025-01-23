@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.24.9
+_release date: 2025-01-23_
+ * Created RecoverPasswordService and its empty service
+ * Integrated RecoverPasswordServiceImpl with CheckAccountByEmailRepository
+
 ## 0.24.8
 _release date: 2025-01-23_
  * Fixed issue with sign-out redirecting
