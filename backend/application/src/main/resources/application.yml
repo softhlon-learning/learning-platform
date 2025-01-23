@@ -14,10 +14,6 @@ spring:
     hikari.maximum-pool-size: 10
   mail.host: mail.softhlon-learning.tech
   mail.port: 25
-  mail.username: learning
-  mail.password: "Prt2]JxDv9mn{qC5"
-  mail.properties.mail.smtp.auth: true
-  mail.properties.mail.smtp.starttls.enable: true
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
