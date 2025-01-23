@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.24.7
+_release date: 2025-01-23_
+ * Investigating issues with sign-in/sign-out (in progress)
+ * Set proper timezone on FreeBSD
+
 ## 0.24.6
 _release date: 2025-01-23_
  * Solved the issue with not displaying google button on Safari
