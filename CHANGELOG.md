@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.24.8
+_release date: 2025-01-23_
+ * Fixed issue with sign-out redirecting
+
 ## 0.24.7
 _release date: 2025-01-23_
  * Investigating issues with sign-in/sign-out (in progress)
