@@ -9,6 +9,7 @@ import com.google.api.client.auth.openidconnect.IdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
@@ -31,6 +32,7 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
     private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
@@ -76,6 +78,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                 return new InvalidCredentialsFailed(INVALID_CREDENTIALS);
             }
         } catch (Throwable cause) {
+            log.error("Error", cause);
             return new Failed(cause);
         }
     }
