@@ -44,8 +44,9 @@ class SignOutController {
     ResponseEntity<?> signOut(HttpServletResponse response) {
         log.info("Requested");
         var result = service.execute(new Request(extractToken()));
+        authCookiesService.resetAuthCookies(response);
         return switch (result) {
-            case Succeeded() -> successResponse(response);
+            case Succeeded() -> successCreatedBody();
             case NotAuthorized(String message) -> unAuthorizedBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
@@ -54,11 +55,6 @@ class SignOutController {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
-
-    private ResponseEntity<?> successResponse(HttpServletResponse response) {
-        authCookiesService.resetAuthCookies(response);
-        return successCreatedBody();
-    }
 
     private String extractToken() {
         var cookies = httpRequest.getCookies();
