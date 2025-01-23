@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.0
+_release date: 2025-01-23_
+ * Integrated RecoverPasswordServiceImpl with CreatePasswordTokenRepository
+ * Added empty RecoverPasswordController
+
 ## 0.24.9
 _release date: 2025-01-23_
  * Created RecoverPasswordService and its empty service
