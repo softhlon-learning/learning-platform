@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.23.9
+_release date: 2025-01-23_
+ * Finished MergeCourseServiceImpl implementation 
+
 ## 0.23.8
 _release date: 2025-01-23_
  *  Refactored/simplified json/content conversion service
