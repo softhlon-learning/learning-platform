@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.25.4
+_release date: 2025-01-23_
+ * Added spring-boot-starter-mail dependency
+ * Added mail properties
+ * Added EmailService and its empty implementation
+
 ## 0.25.3
 _release date: 2025-01-23_
  * Hack for google button display
