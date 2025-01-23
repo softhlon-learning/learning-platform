@@ -23,4 +23,5 @@ module accounts {
     requires spring.security.core;
     requires spring.security.web;
     requires spring.security.config;
+    requires spring.context.support;
 }
