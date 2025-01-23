@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.23.7
+_release date: 2025-01-23_
+ * Implemented(partially) processEnrollments method
+ * Implemented persistEnrollment method
+ * Added ObjectToJsonContentService and its empty implementation
+
 ## 0.23.6
 _release date: 2025-01-23_
  * Implemented LoadEnrollmentsRepositoryAdapter
