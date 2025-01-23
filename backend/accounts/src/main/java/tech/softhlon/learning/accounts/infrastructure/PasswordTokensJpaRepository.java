@@ -15,5 +15,5 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Repository
-interface PasswordRecoveryTokensJpaRepository extends CrudRepository<PasswordRecoveryTokenEntity, UUID> {
+interface PasswordTokensJpaRepository extends CrudRepository<PasswordTokenEntity, UUID> {
 }

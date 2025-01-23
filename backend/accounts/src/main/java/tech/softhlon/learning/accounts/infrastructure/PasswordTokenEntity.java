@@ -3,19 +3,30 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.infrastructure;
+package tech.softhlon.learning.accounts.infrastructure;
 
-import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.CreatePasswordTokenRepository;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Getter;
+
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Service
-class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenRepository {
-    @Override
-    public CreatePasswordTokenResult execute(CreatePasswordTokenRequest request) {
-        return null;
-    }
+@Getter
+@Builder
+@Entity(name = "password_recovery_tokens")
+class PasswordTokenEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private UUID accountId;
+    private String token;
+    private OffsetDateTime expirationTime;
 }

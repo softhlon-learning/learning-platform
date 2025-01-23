@@ -3,11 +3,12 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.softhlon.learning.accounts.domain;
 
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -27,5 +28,6 @@ public interface CreatePasswordTokenRepository {
 
     record CreatePasswordTokenRequest(
           UUID accountId,
-          String token) {}
+          String token,
+          OffsetDateTime expirationTime) {}
 }
