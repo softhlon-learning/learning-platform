@@ -83,8 +83,6 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Request prepareRequest(Map<String, String> body) {
-        log.info("Body: {}", body);
-        log.info("Credential: {}", body.get(CREDENTIAL));
         return new Request(body.get(CREDENTIAL));
     }
 
