@@ -12,7 +12,7 @@ spring:
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
     hikari.maximum-pool-size: 10
-logging.level.org.zalando.logbook.Logbook: DEBUG
+logging.level.org.zalando.logbook.Logbook: TRACE
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
 login-redirect-success-uri: https://localhost/home
