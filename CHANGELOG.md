@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.27.5
+_release date: 2025-01-24_
+ * Added EmailValidationService
+ * Implemented EmailValidationServiceImpl
+ * Integrated SignInServiceImpl with EmailValidationService
+
 ## 0.27.4
 _release date: 2025-01-24_
  * Fixed password-recovery.base-url
