@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.accounts.domain;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
@@ -21,12 +22,14 @@ import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
+import java.util.TimeZone;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 class ResetPasswordServiceImpl implements ResetPasswordService {
 
@@ -66,8 +69,8 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
           Request request) {
 
         var result = loadAccountByEmailRepository.execute(
-                    new LoadAccountByEmailRequest(
-                          request.email()));
+              new LoadAccountByEmailRequest(
+                    request.email()));
 
         return switch (result) {
             case AccountFound(Account account) -> processPasswordRecovery(account);
@@ -104,7 +107,29 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
         return new CreatePasswordTokenRequest(
               account.id(),
               token,
-              OffsetDateTime.now().plusDays(1));
+              expirationTime());
+
+    }
+
+    private OffsetDateTime expirationTime() {
+
+        log.info("Now: {}",
+              OffsetDateTime.now());
+
+        log.info("ZoneId: {}",
+              TimeZone
+                    .getDefault()
+                    .toZoneId());
+
+        log.info("Now with TZ.zoneId: {}", OffsetDateTime
+              .now(TimeZone
+                    .getDefault()
+                    .toZoneId()));
+
+        return OffsetDateTime
+              .now(TimeZone
+                    .getDefault()
+                    .toZoneId());
 
     }
 
