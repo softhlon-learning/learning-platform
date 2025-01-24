@@ -10,15 +10,14 @@ import {Router} from "@angular/router";
     styleUrls: ['./password-recovery.component.css']
 })
 export class PasswordRecoveryComponent implements OnInit {
-    protected readonly environment = environment;
     success: boolean = false;
     error: string | undefined;
-
     signInForm = this.formBuilder.group({
         name: '',
         email: '',
         password: ''
     });
+    protected readonly environment = environment;
 
     constructor(
         private formBuilder: FormBuilder,

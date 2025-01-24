@@ -10,9 +10,9 @@ export class CourseTileComponent implements OnInit {
     @Input()
     course!: Course; // Replace 'any' with the correct type when defined or imported
 
-    ngOnInit(): void {
+    constructor() {
     }
 
-    constructor() {
+    ngOnInit(): void {
     }
 }

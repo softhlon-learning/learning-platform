@@ -1,11 +1,11 @@
 <div class="header">
-    <a href="#/subscribe" *ngIf="this.isAuthenticated()">Subscribe</a>
+    <a *ngIf="this.isAuthenticated()" href="#/subscribe">Subscribe</a>
     <span *ngIf="this.isAuthenticated()">|</span>
-    <a href="/profile" *ngIf="this.isAuthenticated()">Profile</a>
+    <a *ngIf="this.isAuthenticated()" href="/profile">Profile</a>
     <span *ngIf="this.isAuthenticated()">|</span>
-    <a *ngIf="this.isAuthenticated()" (click)="this.signOut()">Sign Out</a>
-    <a href="/sign-in" *ngIf="!this.isAuthenticated() && !this.isSignInUpPage()">Sign In</a>
+    <a (click)="this.signOut()" *ngIf="this.isAuthenticated()">Sign Out</a>
+    <a *ngIf="!this.isAuthenticated() && !this.isSignInUpPage()" href="/sign-in">Sign In</a>
 </div>
 <div class="footer">
-    v{{version}}
+    v{{ version }}
 </div>

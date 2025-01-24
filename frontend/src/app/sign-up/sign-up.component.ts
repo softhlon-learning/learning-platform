@@ -10,14 +10,13 @@ import {Router} from "@angular/router";
     styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-    protected readonly environment = environment;
     error: string | undefined;
-
     signInForm = this.formBuilder.group({
         name: '',
         email: '',
         password: ''
     });
+    protected readonly environment = environment;
 
     constructor(
         private formBuilder: FormBuilder,

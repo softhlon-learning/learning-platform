@@ -1,5 +1,5 @@
 <div *ngIf="navigationItems.currentLecture">
     <iframe [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
-            loading="lazy" id="document-frame" width="1070" height="600" frameborder="0"></iframe>
+            frameborder="0" height="600" id="document-frame" loading="lazy" width="1070"></iframe>
     <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"/>
 </div>

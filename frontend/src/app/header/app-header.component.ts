@@ -12,13 +12,15 @@ import version from "../../../package.json";
 })
 export class AppHeaderComponent implements OnInit {
 
-    ngOnInit(): void {
-    }
+    protected readonly version = version.version;
 
     constructor(
         private router: Router,
         private coursesService: PlatformService,
         private cookieService: CookieService) {
+    }
+
+    ngOnInit(): void {
     }
 
     isAuthenticated(): boolean {
@@ -42,6 +44,4 @@ export class AppHeaderComponent implements OnInit {
             window.location.reload();
         })
     }
-
-    protected readonly version = version.version;
 }

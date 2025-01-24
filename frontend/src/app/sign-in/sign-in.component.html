@@ -14,27 +14,27 @@
              data-login_uri="https://localhost/api/v1/google-sign-in"
              id="g_id_onload">
         </div>
-        <div class="g_id_signin" style="height: 50px;"
-             data-logo_alignment="left"
+        <div class="g_id_signin" data-logo_alignment="left"
              data-shape="rectangular"
              data-size="large"
              data-text="continue_with"
              data-theme="outline"
-             data-type="standard">
+             data-type="standard"
+             style="height: 50px;">
         </div>
         <div class="or">
             -------------------------------------------------- or --------------------------------------------------
         </div>
-        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()" [formGroup]="signInForm">
             <div class="form">
                 <div class="email">
-                    <input placeholder="Email" type="text" formControlName="email">
+                    <input formControlName="email" placeholder="Email" type="text">
                 </div>
                 <div class="password">
-                    <input placeholder="Password" type="password" formControlName="password">
+                    <input formControlName="password" placeholder="Password" type="password">
                 </div>
                 <button class="submit" type="submit">Sign In</button>
-                <button routerLink="/home" class="cancel">Cancel</button>
+                <button class="cancel" routerLink="/home">Cancel</button>
                 <div class="error">{{ error }}</div>
             </div>
         </form>

@@ -10,14 +10,13 @@ import {FormBuilder} from "@angular/forms";
     styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-    protected readonly environment = environment;
     error: string | undefined;
     success: string | undefined;
     profile?: Profile;
-
     profileForm = this.formBuilder.group({
         name: ''
     });
+    protected readonly environment = environment;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -59,7 +58,7 @@ export class ProfileComponent implements OnInit {
             .subscribe(profile => {
                 this.profileForm.setValue({name: profile.name});
                 this.profile = profile;
-            } );
+            });
     }
 
     private handleSuccess() {

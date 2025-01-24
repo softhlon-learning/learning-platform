@@ -9,19 +9,19 @@
                 <a href="#">Privacy Policy</a>.</span>
             </div>
         </div>
-        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()" [formGroup]="signInForm">
             <div class="form">
                 <div class="name">
-                    <input placeholder="Name" type="text" formControlName="name">
+                    <input formControlName="name" placeholder="Name" type="text">
                 </div>
                 <div class="email">
-                    <input placeholder="Email" type="text" formControlName="email">
+                    <input formControlName="email" placeholder="Email" type="text">
                 </div>
                 <div class="password">
-                    <input placeholder="Password" type="password" formControlName="password">
+                    <input formControlName="password" placeholder="Password" type="password">
                 </div>
                 <button class="submit" type="submit">Submit</button>
-                <button routerLink="/home" class="cancel">Cancel</button>
+                <button class="cancel" routerLink="/home">Cancel</button>
                 <div class="error">{{ error }}</div>
             </div>
         </form>

@@ -5,7 +5,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../model/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
-import {KeyboardInputCourseDetails} from "../course-details/keyboard-input";
 
 @Component({
     selector: 'course-toc',
