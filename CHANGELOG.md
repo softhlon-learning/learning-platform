@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.1
+_release date: 2025-01-24_
+ * Set proper timezone on PostgreSQL
+ * Integrated UpdatePasswordServiceImpl with LoadAccountRepository
+
 ## 0.27.0
 _release date: 2025-01-24_
  * Updated TIMESTAMP to TIMESTAMP WITH TIME ZONE
