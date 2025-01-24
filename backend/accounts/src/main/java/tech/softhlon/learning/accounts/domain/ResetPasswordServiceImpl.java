@@ -113,19 +113,6 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
     private OffsetDateTime expirationTime() {
 
-        log.info("Now: {}",
-              OffsetDateTime.now());
-
-        log.info("ZoneId: {}",
-              TimeZone
-                    .getDefault()
-                    .toZoneId());
-
-        log.info("Now with TZ.zoneId: {}", OffsetDateTime
-              .now(TimeZone
-                    .getDefault()
-                    .toZoneId()));
-
         return OffsetDateTime
               .now(TimeZone
                     .getDefault()
