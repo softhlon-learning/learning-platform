@@ -5,7 +5,6 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
@@ -28,7 +27,6 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Slf4j
 @Service
 class ResetPasswordServiceImpl implements ResetPasswordService {
 
