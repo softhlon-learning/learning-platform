@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.26.8
+_release date: 2025-01-24_
+ * Implemented DeletePasswordTokenRepositoryAdapter
+ * Integrated UpdatePasswordServiceImpl with LoadPasswordTokenRepository
+
 ## 0.26.7
 _release date: 2025-01-24_
  * Build and install custom kernel with limited hardware support
