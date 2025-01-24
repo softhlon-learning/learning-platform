@@ -12,6 +12,8 @@ package tech.softhlon.learning.accounts.domain;
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.time.OffsetDateTime;
+
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
@@ -24,9 +26,13 @@ public interface LoadPasswordTokenRepository {
           String token) {}
 
     sealed interface LoadPasswordTokenResult {
-        record TokenLoaded() implements LoadPasswordTokenResult {}
+        record TokenLoaded(PasswordToken passwordToken) implements LoadPasswordTokenResult {}
         record TokenNotFound() implements LoadPasswordTokenResult {}
         record TokenLoadFailed(Throwable cause) implements LoadPasswordTokenResult {}
     }
+
+    record PasswordToken(
+          String token,
+          OffsetDateTime expirationTime) {}
 
 }
