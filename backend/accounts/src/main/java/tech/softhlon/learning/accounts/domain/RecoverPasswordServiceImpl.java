@@ -38,11 +38,21 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     private final EmailService emailService;
     @Value("${password-recovery.base-url}")
     private String baseUrl;
+    private static final String EMAIL_CONTENT = """
+          Hello,
+          
+          We've received a request to reset your password. Please click the link below to set a new one:
+          %s
+          
+          If you didn't request this, please ignore this email for your account's security.
+          
+          Best regards,
+          Softhlon-Learning Team
+          """;
 
     @Override
     public Result execute(Request request) {
-        var result = loadAccountByEmailRepository.execute(
-              new LoadAccountByEmailRequest(request.email()));
+        var result = loadAccountByEmailRepository.execute(new LoadAccountByEmailRequest(request.email()));
         return switch (result) {
             case AccountFound(Account account) -> processPasswordRecovery(account);
             case AccountIsDeleted(), AccountNotFound() -> new EmailNotFoundFailed(EMAIL_NOT_FOUND);
@@ -56,8 +66,7 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
 
     private Result processPasswordRecovery(Account account) {
         var token = UUID.randomUUID().toString();
-        var result = createPasswordTokenRepository.execute(
-              passwordTokenRequest(account, token));
+        var result = createPasswordTokenRepository.execute(passwordTokenRequest(account, token));
         return switch (result) {
             case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account, token);
             case PasswordTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
@@ -65,14 +74,11 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     }
 
     private CreatePasswordTokenRequest passwordTokenRequest(Account account, String token) {
-        return new CreatePasswordTokenRequest(
-              account.id(),
-              token,
-              OffsetDateTime.now().plusDays(1));
+        return new CreatePasswordTokenRequest(account.id(), token, OffsetDateTime.now().plusDays(1));
     }
 
     private Result sendEmail(Account account, String token) {
-        emailService.sendMessage(account.email(), SUBJECT, baseUrl + token);
+        emailService.sendMessage(account.email(), SUBJECT, EMAIL_CONTENT.formatted(baseUrl + token));
         return new Succeeded();
     }
 }
