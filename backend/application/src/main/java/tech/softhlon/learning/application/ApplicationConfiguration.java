@@ -29,9 +29,7 @@ class ApplicationConfiguration {
 
     @Bean
     AuthenticationContext authenticationContext() {
-
         return new AuthenticationContext();
-
     }
 
 }
