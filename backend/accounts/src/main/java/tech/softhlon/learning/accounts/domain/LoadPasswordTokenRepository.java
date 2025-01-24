@@ -13,6 +13,7 @@ import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 @OutboundPort
 @DomainRepository
@@ -32,6 +33,7 @@ public interface LoadPasswordTokenRepository {
     }
 
     record PasswordToken(
+          UUID id,
           String token,
           OffsetDateTime expirationTime) {}
 
