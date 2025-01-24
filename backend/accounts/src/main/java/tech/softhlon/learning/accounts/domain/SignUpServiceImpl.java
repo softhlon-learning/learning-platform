@@ -43,7 +43,8 @@ class SignUpServiceImpl implements SignUpService {
         var validationResult = validateInput(
               request);
 
-        if (validationResult != null) return validationResult;
+        if (validationResult != null)
+            return validationResult;
 
         var exists = checkAccountByEmailRepository.execute(
               new CheckAccountByEmailRequest(

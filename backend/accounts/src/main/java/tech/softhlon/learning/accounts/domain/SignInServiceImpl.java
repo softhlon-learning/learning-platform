@@ -23,12 +23,19 @@ import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
 class SignInServiceImpl implements SignInService {
 
     private static final String AUTH_ERORR_MESSAGE = "Authentication failed. Incorrect email or password";
+    private final EmailValidationService emailValidationService;
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final JwtService jwtService;
 
     @Override
     public Result execute(
           Request request) {
+
+        var validationResult = validateInput(
+              request);
+
+        if (validationResult != null)
+            return validationResult;
 
         var exists = loadAccountByEmailRepository.execute(
               new LoadAccountByEmailRequest(
@@ -45,6 +52,19 @@ class SignInServiceImpl implements SignInService {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private Result validateInput(
+          Request request) {
+
+        if (request.email().isBlank())
+            return new EmailPolicyFailed("Email is blank");
+
+        if (!emailValidationService.isEmailValid(request.email()))
+            return new EmailPolicyFailed("Email is not in right format");
+
+        return null;
+
+    }
 
     private Result authemticate(
           Request request,
