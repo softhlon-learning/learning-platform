@@ -2,7 +2,7 @@ import {Component, HostListener, Injector, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
-import {CourseContent} from "../course-content/course-content";
+import {CourseContent} from "../model/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
 import {KeyboardInputCourseDetails} from "../course-details/keyboard-input";

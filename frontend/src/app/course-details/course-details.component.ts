@@ -2,10 +2,10 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
-import {CourseContent} from "../course-content/course-content";
+import {CourseContent} from "../model/course-content";
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CookieService} from "ngx-cookie-service";
-import {Lecture} from "../course-content/lecture";
+import {Lecture} from "../model/lecture";
 import {KeyboardInputCourseDetails} from "./keyboard-input";
 
 @Component({
