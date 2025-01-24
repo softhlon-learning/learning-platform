@@ -28,7 +28,6 @@ public class ResponseBodyHelper {
 
         return status(HttpStatus.OK)
               .build();
-
     }
 
     public static ResponseEntity successCreatedBody() {
@@ -107,11 +106,8 @@ public class ResponseBodyHelper {
 
         private final String text;
 
-        ResponseField(
-              String text) {
-
+        ResponseField(String text) {
             this.text = text;
-
         }
 
     }
@@ -124,9 +120,7 @@ public class ResponseBodyHelper {
 
         private final String text;
 
-        ErrorMessage(
-              String text) {
-
+        ErrorMessage(String text) {
             this.text = text;
         }
 

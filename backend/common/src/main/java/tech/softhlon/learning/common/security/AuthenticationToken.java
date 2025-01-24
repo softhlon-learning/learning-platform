@@ -34,37 +34,27 @@ public class AuthenticationToken extends UsernamePasswordAuthenticationToken {
     }
 
     public UUID getAccountId() {
-
         return accountId;
-
     }
 
     @Override
     public Object getCredentials() {
-
         return null;
-
     }
 
     @Override
     public Object getDetails() {
-
         return null;
-
     }
 
     @Override
     public Object getPrincipal() {
-
         return null;
-
     }
 
     @Override
     public boolean isAuthenticated() {
-
         return true;
-
     }
 
     @Override
@@ -74,8 +64,7 @@ public class AuthenticationToken extends UsernamePasswordAuthenticationToken {
 
     @Override
     public String getName() {
-
         return name;
-
     }
+
 }
