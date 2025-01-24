@@ -14,15 +14,15 @@ interface UpdatePasswordService {
     Result execute(
           Request request);
 
-    record Request(
-          String password,
-          String token) {}
-
     sealed interface Result {
         record Succeeded() implements Result {}
         record InvalidTokenFailed(String message) implements Result {}
         record ExpiredTokenFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
+    record Request(
+          String password,
+          String token) {}
 
 }

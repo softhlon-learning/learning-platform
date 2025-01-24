@@ -20,11 +20,11 @@ public interface DeletePasswordTokenRepository {
     DeletePasswordTokenResult execute(
           DeletePasswordTokenRequest request);
 
-    record DeletePasswordTokenRequest(UUID id) {}
-
     sealed interface DeletePasswordTokenResult {
         record TokenDeleted() implements DeletePasswordTokenResult {}
         record TokenDeletionFailed(Throwable cause) implements DeletePasswordTokenResult {}
     }
+
+    record DeletePasswordTokenRequest(UUID id) {}
 
 }
