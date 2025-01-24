@@ -40,8 +40,8 @@ import java.time.OffsetDateTime;
 @RequiredArgsConstructor
 class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
-    private static final String INVALID_TOKEN = "Invalid reset password token";
-    private static final String EXPIRED_TOKEN = "Reset password token has expired";
+    private static final String INVALID_TOKEN = "Invalid password token";
+    private static final String EXPIRED_TOKEN = "Password token has expired";
 
     private final LoadPasswordTokenRepository loadPasswordTokenRepository;
     private final LoadAccountRepository loadAccountRepository;

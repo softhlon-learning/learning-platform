@@ -22,7 +22,7 @@ public interface UpdatePasswordService {
     }
 
     record Request(
-          String password,
-          String token) {}
+          String token,
+          String password) {}
 
 }
