@@ -1,5 +1,7 @@
 # Learning Platform Changelog
 
+Finished UpdatePasswordServiceImpl implementation
+
 ## 0.27.1
 _release date: 2025-01-24_
  * Set proper timezone on PostgreSQL
