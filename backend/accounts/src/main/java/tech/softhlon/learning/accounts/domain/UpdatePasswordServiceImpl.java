@@ -6,7 +6,11 @@
 package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenRequest;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
@@ -17,9 +21,14 @@ import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPa
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoaded;
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenNotFound;
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.PasswordToken;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountRequest;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
+import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.ExpiredTokenFailed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.InvalidTokenFailed;
+import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 
@@ -36,6 +45,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
     private final LoadPasswordTokenRepository loadPasswordTokenRepository;
     private final LoadAccountRepository loadAccountRepository;
+    private final PersistAccountRepository persistAccountRepository;
     private final DeletePasswordTokenRepository deletePasswordTokenRepository;
 
     @Override
@@ -46,7 +56,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
               new LoadPasswordTokenRequest(request.token()));
 
         return switch (result) {
-            case TokenLoaded(PasswordToken token) -> processTokenUpdate(token);
+            case TokenLoaded(PasswordToken token) -> processTokenUpdate(request, token);
             case TokenNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
             case TokenLoadFailed(Throwable cause) -> new Failed(cause);
         };
@@ -58,6 +68,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result processTokenUpdate(
+          Request request,
           PasswordToken token) {
 
         if (token.expirationTime().isBefore(OffsetDateTime.now())) {
@@ -68,15 +79,53 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
               new LoadAccountRequest(token.accountId()));
 
         return switch (result) {
-            case AccountLoaded(Account account) -> updatePassword(account);
+            case AccountLoaded(Account account) -> updatePassword(request, token, account);
             case AccountNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
 
-    private Result updatePassword(Account account) {
-        return null;
+    private Result updatePassword(
+          Request request,
+          PasswordToken token,
+          Account account) {
+
+        var result = persistAccountRepository.execute(
+              new PersistAccountRequest(
+                    account.id(),
+                    account.type(),
+                    account.name(),
+                    account.email(),
+                    encryptPassword(request.password()),
+                    account.isDeleted()
+              ));
+
+        return switch (result) {
+            case AccountPersisted(_) -> deleteToken(token);
+            case AccountNotFoundInDatabase() -> new InvalidTokenFailed(INVALID_TOKEN);
+            case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+
     }
 
+    private Result deleteToken(PasswordToken token) {
+
+        var result = deletePasswordTokenRepository.execute(
+              new DeletePasswordTokenRequest(token.id()));
+
+        return switch (result) {
+            case TokenDeleted tokenDeleted -> new Succeeded();
+            case TokenDeletionFailed(Throwable cause) -> new Failed(cause);
+        };
+
+    }
+
+    private String encryptPassword(
+          String password) {
+
+        var passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.encode(password);
+
+    }
 }
