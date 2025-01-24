@@ -15,7 +15,7 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-interface LoadPasswordTokenRepository {
+public interface LoadPasswordTokenRepository {
 
     LoadPasswordTokenResult execute(
           LoadPasswordTokenRequest request);
