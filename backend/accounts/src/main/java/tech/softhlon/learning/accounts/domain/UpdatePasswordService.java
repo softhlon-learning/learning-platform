@@ -9,7 +9,7 @@ package tech.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-interface UpdatePasswordService {
+public interface UpdatePasswordService {
 
     Result execute(
           Request request);

@@ -19,5 +19,6 @@ class RestResources {
     static final String SIGN_UP = ACCOUNT + "/sign-up";
     static final String PROFILE = ACCOUNT + "/profile";
     static final String RESET_PASSWORD = ACCOUNT + "/reset-password";
+    static final String UPDATE_PASSWORD = ACCOUNT + "/update-password";
 
 }
