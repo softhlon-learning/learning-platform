@@ -30,6 +30,7 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
           CreateAccountRequest createAccountRequest) {
 
         try {
+
             var createdAccount = accountsRepo.save(
                   toAccount(createAccountRequest));
 

@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @InboundPort
 @FunctionalInterface
-interface DeletePasswordTokenRepository {
+public interface DeletePasswordTokenRepository {
 
     DeletePasswordTokenResult execute(
           DeletePasswordTokenRequest request);
@@ -23,8 +23,8 @@ interface DeletePasswordTokenRepository {
     record DeletePasswordTokenRequest(UUID id) {}
 
     sealed interface DeletePasswordTokenResult {
-        record Succeeded() implements DeletePasswordTokenResult {}
-        record Failed(Throwable cause) implements DeletePasswordTokenResult {}
+        record TokenDeleted() implements DeletePasswordTokenResult {}
+        record TokenDeletionFailed(Throwable cause) implements DeletePasswordTokenResult {}
     }
 
 }

@@ -28,7 +28,9 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
     @Override
     public CreateInvalidatedTokenResult execute(
           CreateInvalidatedTokenRequest request) {
+
         try {
+
             var createdAccount = invalidatedTokensRepo.save(
                   toInvalidatedToken(request));
 

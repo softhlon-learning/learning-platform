@@ -28,6 +28,7 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
           CreatePasswordTokenRequest request) {
 
         try {
+
             passwordTokensJpaRepository.save(
                   passwordTokenEntity(request));
 

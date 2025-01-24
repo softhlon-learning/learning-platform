@@ -31,6 +31,7 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
           LoadAccountRequest request) {
 
         try {
+
             var accountEntity = accountsRepo.findById(
                   request.id());
 

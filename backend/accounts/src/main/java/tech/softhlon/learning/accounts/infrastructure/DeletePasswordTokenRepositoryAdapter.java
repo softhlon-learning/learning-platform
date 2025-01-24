@@ -8,10 +8,9 @@ package tech.softhlon.learning.accounts.infrastructure;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
-
-import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.*;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
+import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,27 +18,25 @@ import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckT
 
 @Slf4j
 @Service
-@PersistenceAdapter
 @RequiredArgsConstructor
-class CheckTokenRepositoryAdapter implements CheckTokenRepository {
+class DeletePasswordTokenRepositoryAdapter implements DeletePasswordTokenRepository {
 
-    private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
+    private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
     @Override
-    public CheckTokenResult execute(
-          CheckTokenRequest request) {
+    public DeletePasswordTokenResult execute(DeletePasswordTokenRequest request) {
 
         try {
 
-            return invalidatedTokensRepo.existsByTokenHash(
-                  request.tokenHash())
-                  ? new TokenExists()
-                  : new TokenNotFound();
+            passwordTokensJpaRepository.deleteById(
+                  request.id());
+
+            return new TokenDeleted();
 
         } catch (Throwable cause) {
 
             log.error("Error", cause);
-            return new CheckTokenFailed(cause);
+            return new TokenDeletionFailed(cause);
 
         }
 

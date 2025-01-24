@@ -30,6 +30,7 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
           CheckAccountByEmailRequest request) {
 
         try {
+
             var entity = accountsRepo.findByEmail(
                   request.email());
 
