@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.26.4
+_release date: 2025-01-24_
+ * Added update-password page
+
 ## 0.26.3
 _release date: 2025-01-24_
  * Code cleanup
