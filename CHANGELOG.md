@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.3
+_release date: 2025-01-24_
+ * Implemented UpdatePasswordController
+ * Update password related bug fixing
+
 ## 0.27.2
 _release date: 2025-01-24_
  * Finished UpdatePasswordServiceImpl implementation
