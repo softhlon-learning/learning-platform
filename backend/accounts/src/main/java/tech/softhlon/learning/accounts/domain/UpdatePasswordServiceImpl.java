@@ -30,6 +30,7 @@ import java.time.OffsetDateTime;
 @Service
 @RequiredArgsConstructor
 class UpdatePasswordServiceImpl implements UpdatePasswordService {
+
     private static final String INVALID_TOKEN = "Invalid reset password token";
     private static final String EXPIRED_TOKEN = "Reset password token has expired";
 
