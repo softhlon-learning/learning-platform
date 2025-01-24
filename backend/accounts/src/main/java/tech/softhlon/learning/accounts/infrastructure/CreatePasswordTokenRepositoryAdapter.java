@@ -20,6 +20,7 @@ import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.Crea
 @Service
 @RequiredArgsConstructor
 class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenRepository {
+
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
     @Override
