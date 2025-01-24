@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.26.3
+_release date: 2025-01-24_
+ * Code cleanup
+ * Reset password related bug fixes
+ * Update JWT secret value
+
 ## 0.26.2
 _release date: 2025-01-24_
  * Refactoring frontend code
