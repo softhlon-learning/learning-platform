@@ -9,5 +9,4 @@ package tech.softhlon.learning.common.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public @interface DomainValueObject {
-}
+public @interface DomainValueObject {}

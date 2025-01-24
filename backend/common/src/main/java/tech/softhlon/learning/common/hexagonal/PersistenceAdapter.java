@@ -9,5 +9,4 @@ package tech.softhlon.learning.common.hexagonal;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public @interface PersistenceAdapter {
-}
+public @interface PersistenceAdapter {}

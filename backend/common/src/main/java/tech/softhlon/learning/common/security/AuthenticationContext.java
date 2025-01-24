@@ -15,6 +15,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public class AuthenticationContext {
+
     private static final String MOCKED_ID = "0053d4b9-ecbf-4ebb-b6a0-d7abdc91a0f3";
 
     @Value("${authentication.mocked:false}")
@@ -24,16 +25,24 @@ public class AuthenticationContext {
     private String mockedAccountId;
 
     public UUID accountId() {
+
         if (authenticationMocked) {
             return UUID.fromString(mockedAccountId);
         } else {
-            var authentication = SecurityContextHolder.getContext().getAuthentication();
+            var authentication = SecurityContextHolder
+                  .getContext()
+                  .getAuthentication();
+
             if (authentication instanceof AuthenticationToken) {
-                var authToken = (AuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+                var authToken = (AuthenticationToken) SecurityContextHolder
+                      .getContext()
+                      .getAuthentication();
                 return authToken.getAccountId();
             } else {
                 return null;
             }
         }
+
     }
+
 }

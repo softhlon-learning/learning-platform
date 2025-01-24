@@ -26,8 +26,12 @@ import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
       SubscriptionsConfiguration.class
 })
 class ApplicationConfiguration {
+
     @Bean
     AuthenticationContext authenticationContext() {
+
         return new AuthenticationContext();
+
     }
+
 }

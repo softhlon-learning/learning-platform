@@ -23,20 +23,33 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.Respon
 
 @Slf4j
 public class ResponseBodyHelper {
+
     public static ResponseEntity successOkBody() {
-        return status(HttpStatus.OK).build();
+
+        return status(HttpStatus.OK)
+              .build();
+
     }
 
     public static ResponseEntity successCreatedBody() {
-        return status(HttpStatus.CREATED).build();
+
+        return status(HttpStatus.CREATED)
+              .build();
+
     }
 
     public static ResponseEntity successAcceptedBody() {
-        return status(HttpStatus.ACCEPTED).build();
+
+        return status(HttpStatus.ACCEPTED)
+              .build();
     }
 
-    public static ResponseEntity<?> internalServerBody(HttpServletRequest request, Throwable cause) {
+    public static ResponseEntity<?> internalServerBody(
+          HttpServletRequest request,
+          Throwable cause) {
+
         log.error("Unexpected error:", cause);
+
         return ResponseEntity
               .internalServerError()
               .body(
@@ -47,9 +60,13 @@ public class ResponseBodyHelper {
                           .path(request.getRequestURI())
                           .build()
                           .body());
+
     }
 
-    public static ResponseEntity<?> badRequestBody(HttpServletRequest request, String message) {
+    public static ResponseEntity<?> badRequestBody(
+          HttpServletRequest request,
+          String message) {
+
         return ResponseEntity
               .badRequest()
               .body(
@@ -60,9 +77,13 @@ public class ResponseBodyHelper {
                           .path(request.getRequestURI())
                           .build()
                           .body());
+
     }
 
-    public static ResponseEntity<?> unAuthorizedBody(HttpServletRequest request, String message) {
+    public static ResponseEntity<?> unAuthorizedBody(
+          HttpServletRequest request,
+          String message) {
+
         return ResponseEntity
               .status(HttpStatus.UNAUTHORIZED)
               .body(
@@ -73,9 +94,11 @@ public class ResponseBodyHelper {
                           .path(request.getRequestURI())
                           .build()
                           .body());
+
     }
 
     enum ResponseField {
+
         TIMESTAMP("timestamp"),
         STATUS("status"),
         ERROR("error"),
@@ -84,24 +107,33 @@ public class ResponseBodyHelper {
 
         private final String text;
 
-        ResponseField(String text) {
+        ResponseField(
+              String text) {
+
             this.text = text;
+
         }
+
     }
 
     enum ErrorMessage {
+
         AUTHENTICATION_ERROR("Authentication Error"),
         VALIDATION_ERROR("Validation Error"),
         INTERNAL_SERVER_ERROR("Internal Server Error");
 
         private final String text;
 
-        ErrorMessage(String text) {
+        ErrorMessage(
+              String text) {
+
             this.text = text;
         }
+
     }
     @Builder
     static class ResponseBodyBuilder {
+
         private HttpStatus status;
         private ErrorMessage errorMessage;
         private Object message;
@@ -117,5 +149,7 @@ public class ResponseBodyHelper {
 
             return responseBody;
         }
+
     }
+
 }

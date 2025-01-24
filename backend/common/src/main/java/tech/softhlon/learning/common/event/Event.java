@@ -9,5 +9,4 @@ package tech.softhlon.learning.common.event;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-public @interface Event {
-}
+public @interface Event {}
