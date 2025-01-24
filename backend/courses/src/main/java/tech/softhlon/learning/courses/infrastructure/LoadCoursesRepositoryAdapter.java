@@ -24,25 +24,39 @@ import java.util.stream.StreamSupport;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
+
     private final CoursesJpaRepository coursesRepo;
 
     @Override
     public LoadCoursesResult execute() {
+
         try {
-            var stream = StreamSupport.stream(coursesRepo.findAll().spliterator(), false);
-            var courses = stream.map(this::toCourse).toList();
+
+            var stream = StreamSupport.stream(
+                  coursesRepo.findAll().spliterator(),
+                  false);
+
+            var courses = stream.
+                  map(this::toCourse)
+                  .toList();
+
             return new CoursesLoaded(courses);
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CoursesLoadFailed(cause);
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Course toCourse(CourseEntity entity) {
+    private Course toCourse(
+          CourseEntity entity) {
+
         return new Course(
               entity.getId(),
               entity.getCode(),
@@ -52,5 +66,7 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
               entity.getContent(),
               entity.getVersion()
         );
+
     }
+
 }

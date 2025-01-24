@@ -22,18 +22,31 @@ import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEn
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsRepo;
     private final CoursesJpaRepository coursesRepo;
 
     @Override
-    public CreateEnrollmentResult execute(CreateEnrollmentRequest request) {
+    public CreateEnrollmentResult execute(
+          CreateEnrollmentRequest request) {
+
         try {
-            var course = coursesRepo.findById(request.courseId()).get();
-            var createdEnrollment = enrollmentsRepo.save(toEnrollment(request, course));
-            return new EnrollmentPersisted(createdEnrollment.getId());
+
+            var course = coursesRepo
+                  .findById(request.courseId())
+                  .get();
+
+            var createdEnrollment = enrollmentsRepo.save(
+                  toEnrollment(request, course));
+
+            return new EnrollmentPersisted(
+                  createdEnrollment.getId());
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollementPersistenceFailed(cause);
+
         }
     }
 
@@ -44,11 +57,14 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
     private EnrollmentEntity toEnrollment(
           CreateEnrollmentRequest request,
           CourseEntity course) {
+
         return EnrollmentEntity.builder()
               .accountId(request.accountId())
               .course(course)
               .content(course.getContent())
               .enrolledTime(request.enrolledTime())
               .build();
+
     }
+
 }

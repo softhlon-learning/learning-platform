@@ -13,7 +13,9 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface ListCoursesService {
-    Result execute(UUID accountId);
+
+    Result execute(
+          UUID accountId);
 
     sealed interface Result {
         record Succeeded(List<CourseView> courses) implements Result {}
@@ -28,4 +30,5 @@ public interface ListCoursesService {
           String description,
           String content,
           boolean enrolled) {}
+
 }

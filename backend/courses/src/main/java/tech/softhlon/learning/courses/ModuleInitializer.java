@@ -21,13 +21,18 @@ import tech.softhlon.learning.courses.gateway.CreateCoursesOperator;
 @Component
 @RequiredArgsConstructor
 class ModuleInitializer implements ApplicationListener<ContextRefreshedEvent> {
+
     private final CreateCoursesOperator createCoursesOperator;
 
     @Override
     @SneakyThrows
-    public void onApplicationEvent(ContextRefreshedEvent event) {
+    public void onApplicationEvent(
+          ContextRefreshedEvent event) {
+
         log.info("Module Initializer started");
         createCoursesOperator.execute();
         log.info("Module Initializer finished");
+
     }
+
 }

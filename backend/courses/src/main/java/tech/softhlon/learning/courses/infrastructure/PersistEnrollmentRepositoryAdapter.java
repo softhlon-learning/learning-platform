@@ -22,34 +22,49 @@ import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.Persist
 @PersistenceAdapter
 @RequiredArgsConstructor
 class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsJpaRepository;
 
     @Override
-    public PersistEnrollmentResult execute(PersistEnrollmentRequest request) {
+    public PersistEnrollmentResult execute(
+          PersistEnrollmentRequest request) {
+
         try {
             var entityOpt = enrollmentsJpaRepository.findByAccountIdAndCourseId(
                   request.accountId(),
                   request.courseId());
+
             if (entityOpt.isPresent()) {
+
                 var entity = entityOpt.get();
                 updateEntity(request, entity);
                 enrollmentsJpaRepository.save(entity);
+
             }
+
             return new EnrollmentPersisted();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollmentPersistenceFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void updateEntity(PersistEnrollmentRequest request, EnrollmentEntity entity) {
+    private void updateEntity(
+          PersistEnrollmentRequest request,
+          EnrollmentEntity entity) {
+
         entity.setAccountId(request.accountId());
         entity.setContent(request.content());
         entity.setEnrolledTime(request.enrolledTime());
         entity.setCompletedTime(request.completedTime());
+
     }
 }

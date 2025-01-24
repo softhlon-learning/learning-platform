@@ -30,37 +30,52 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class EnrollCourseServiceImpl implements EnrollCourseService {
+
     private static final String COURSE_NOT_FOUND = "Course not found";
     private final CheckCourseRepository checkCourseRepository;
     private final CreateEnrollmentRepository createEnrollmentRepository;
 
     @Override
-    public Result execute(Request request) {
-        var courseExists = checkCourseRepository.execute(new CheckCourseRequest(request.courseId()));
+    public Result execute(
+          Request request) {
+
+        var courseExists = checkCourseRepository
+              .execute(new CheckCourseRequest(
+                    request.courseId()));
+
         return switch (courseExists) {
             case CourseExists() -> persistEnrollment(request);
             case CourseNotFound() -> new CourseNotFoundFailed(COURSE_NOT_FOUND);
             case CheckCourseFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result persistEnrollment(Request request) {
-        var result = createEnrollmentRepository.execute(prepareRequest(request));
+    private Result persistEnrollment(
+          Request request) {
+
+        var result = createEnrollmentRepository
+              .execute(prepareRequest(request));
+
         return switch (result) {
             case EnrollmentPersisted(UUID id) -> new Succeeded();
             case EnrollementPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private CreateEnrollmentRequest prepareRequest(Request request) {
+    private CreateEnrollmentRequest prepareRequest(
+          Request request) {
+
         return new CreateEnrollmentRequest(
               request.courseId(),
               request.accountId(),
               OffsetDateTime.now()
         );
+
     }
 }

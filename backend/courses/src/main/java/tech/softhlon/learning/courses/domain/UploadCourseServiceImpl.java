@@ -25,28 +25,40 @@ import tech.softhlon.learning.courses.domain.UploadCourseService.Result.Succeede
 @Service
 @RequiredArgsConstructor
 class UploadCourseServiceImpl implements UploadCourseService {
+
     private final MergeCourseService mergeCourseService;
     private final PersistCourseRepository persistCourseRepository;
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         try {
-            var result = persistCourseRepository.execute(prepareReuqest(request));
+
+            var result = persistCourseRepository.execute(
+                  prepareReuqest(request));
+
             return switch (result) {
                 case CoursePersisted() -> mergeCourseWithEnrollments(request);
                 case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
             };
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new Failed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private PersistCourseRequest prepareReuqest(Request request) {
+    private PersistCourseRequest prepareReuqest(
+          Request request) {
+
         return new PersistCourseRequest(
               request.courseId(),
               request.code(),
@@ -56,17 +68,25 @@ class UploadCourseServiceImpl implements UploadCourseService {
               request.content(),
               request.version()
         );
+
     }
 
-    private Result mergeCourseWithEnrollments(Request request) {
-        var result = mergeCourseService.execute(prepareMergeRequest(request));
+    private Result mergeCourseWithEnrollments(
+          Request request) {
+
+        var result = mergeCourseService.execute(
+              prepareMergeRequest(request));
+
         return switch (result) {
             case CourseMergeFailed(Throwable cause) -> new Failed(cause);
             case CourseMerged() -> new Succeeded();
         };
+
     }
 
-    private MergeCourseReuqest prepareMergeRequest(Request request) {
+    private MergeCourseReuqest prepareMergeRequest(
+          Request request) {
+
         return new MergeCourseReuqest(
               request.courseId(),
               request.code(),
@@ -76,5 +96,6 @@ class UploadCourseServiceImpl implements UploadCourseService {
               request.content(),
               request.version()
         );
+
     }
 }

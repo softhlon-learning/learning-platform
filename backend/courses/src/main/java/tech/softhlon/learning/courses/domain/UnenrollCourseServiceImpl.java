@@ -29,12 +29,15 @@ import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succee
 @Transactional
 @RequiredArgsConstructor
 class UnenrollCourseServiceImpl implements UnenrollCourseService {
+
     private static final String ENROLLMENT_NOT_FOUND = "Enrollment not found";
     private final CheckEnrollmentRepository checkEnrollmentRepository;
     private final DeleteEnrollmentRepository deleteEnrollmentRepository;
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         var enrollmentExists = checkEnrollmentRepository.execute(
               new CheckEnrollmentRequest(
                     request.accountId(),
@@ -45,24 +48,34 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
             case EnrollmentNotFound() -> new EnrollmentNotFoundFailed(ENROLLMENT_NOT_FOUND);
             case CheckEnrollmentFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result deleteEnrollment(Request request) {
-        var result = deleteEnrollmentRepository.execute(prepareRequest(request));
+    private Result deleteEnrollment(
+          Request request) {
+
+        var result = deleteEnrollmentRepository.execute(
+              prepareRequest(request));
+
         return switch (result) {
             case EnrollmentDeleted() -> new Succeeded();
             case EnrollementDeletionFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private DeleteEnrollmentRequest prepareRequest(Request request) {
+    private DeleteEnrollmentRequest prepareRequest(
+          Request request) {
+
         return new DeleteEnrollmentRequest(
               request.courseId(),
               request.accountId()
         );
+
     }
+
 }

@@ -19,6 +19,7 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadCoursesRepository {
+
     LoadCoursesResult execute();
 
     sealed interface LoadCoursesResult {
@@ -34,4 +35,5 @@ public interface LoadCoursesRepository {
           String description,
           String content,
           String version) {}
+
 }

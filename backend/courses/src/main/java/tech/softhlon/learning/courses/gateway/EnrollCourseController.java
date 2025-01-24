@@ -35,6 +35,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE
 @RestController
 @RequiredArgsConstructor
 class EnrollCourseController {
+
     private final EnrollCourseService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -43,22 +44,34 @@ class EnrollCourseController {
      * POST /api/v1/course/{courseId}/enrollment.
      */
     @PostMapping(ENROLL_COURSE)
-    ResponseEntity<?> enrollCourse(@PathVariable("courseId") UUID courseId) {
+    ResponseEntity<?> enrollCourse(
+          @PathVariable("courseId") UUID courseId) {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, courseId: {}", accountId, courseId);
+
+        log.info("Requested, accountId: {}, courseId: {}",
+              accountId,
+              courseId);
+
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successCreatedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Request prepareRequest(UUID courseId) {
-        return new Request(authContext.accountId(), courseId);
+    private Request prepareRequest(
+          UUID courseId) {
+
+        return new Request(
+              authContext.accountId(),
+              courseId);
+
     }
 }

@@ -20,7 +20,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadEnrollmentsRepository {
-    ListEnrollmentsResult execute(ListEnrollmentsRequest request);
+
+    ListEnrollmentsResult execute(
+          ListEnrollmentsRequest request);
 
     sealed interface ListEnrollmentsResult {
         record EnrollmentsLoaded(List<Enrollment> enrollments) implements ListEnrollmentsResult {}
@@ -34,4 +36,5 @@ public interface LoadEnrollmentsRepository {
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}
+
 }

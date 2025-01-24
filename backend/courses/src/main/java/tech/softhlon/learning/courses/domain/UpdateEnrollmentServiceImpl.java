@@ -27,36 +27,51 @@ import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Succ
 @Service
 @RequiredArgsConstructor
 class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
+
     private static final String ENROLLMENT_NOT_FOUND = "Enrollment not found";
     private final LoadEnrollmentRepository loadEnrollmentRepository;
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         var result = loadEnrollmentRepository.execute(
               request.accountId(),
               request.courseId());
+
         return switch (result) {
             case EnrollmentLoaded(Enrollment enrollment) -> updateEnrollment(request, enrollment);
             case EnrollmentNotFoundInDatabase() -> new EnrollmentNotFoundFailed(ENROLLMENT_NOT_FOUND);
             case EnrollmentLoadFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result updateEnrollment(Request request, Enrollment enrollment) {
-        var result = persistEnrollmentRepository.execute(prepareReuqest(request, enrollment));
+    private Result updateEnrollment(
+          Request request,
+          Enrollment enrollment) {
+
+        var result = persistEnrollmentRepository.execute(
+              prepareReuqest(
+                    request,
+                    enrollment));
+
         return switch (result) {
             case EnrollmentPersisted() -> new Succeeded();
             case EnrollmentPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     private PersistEnrollmentRequest prepareReuqest(
-          Request request, Enrollment course) {
+          Request request,
+          Enrollment course) {
+
         return new PersistEnrollmentRequest(
               request.courseId(),
               request.accountId(),
@@ -64,5 +79,7 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
               course.enrolledTime(),
               course.completedTime()
         );
+
     }
+
 }

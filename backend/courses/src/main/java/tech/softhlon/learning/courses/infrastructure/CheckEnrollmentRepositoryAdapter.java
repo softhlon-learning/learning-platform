@@ -23,17 +23,28 @@ import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnro
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public CheckEnrollmentResult execute(CheckEnrollmentRequest request) {
+    public CheckEnrollmentResult execute(
+          CheckEnrollmentRequest request) {
+
         try {
-            return enrollmentsRepo.existsByAccountIdAndCourseId(request.accountId(), request.courseId())
+
+            return enrollmentsRepo.existsByAccountIdAndCourseId(
+                  request.accountId(),
+                  request.courseId())
                   ? new EnrollmentExists()
                   : new EnrollmentNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CheckEnrollmentFailed(cause);
+
         }
+
     }
+
 }

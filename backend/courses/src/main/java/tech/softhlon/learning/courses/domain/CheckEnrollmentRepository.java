@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CheckEnrollmentRepository {
-    CheckEnrollmentResult execute(CheckEnrollmentRequest request);
+
+    CheckEnrollmentResult execute(
+          CheckEnrollmentRequest request);
 
     sealed interface CheckEnrollmentResult {
         record EnrollmentExists() implements CheckEnrollmentResult {}
@@ -26,5 +28,8 @@ public interface CheckEnrollmentRepository {
         record CheckEnrollmentFailed(Throwable cause) implements CheckEnrollmentResult {}
     }
 
-    record CheckEnrollmentRequest(UUID accountId, UUID courseId) {}
+    record CheckEnrollmentRequest(
+          UUID accountId,
+          UUID courseId) {}
+
 }

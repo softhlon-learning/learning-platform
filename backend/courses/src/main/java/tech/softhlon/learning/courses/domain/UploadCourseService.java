@@ -16,7 +16,9 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface UploadCourseService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -31,4 +33,5 @@ public interface UploadCourseService {
           String description,
           String content,
           String version) {}
+
 }

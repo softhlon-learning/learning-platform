@@ -12,7 +12,9 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnenrollCourseService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -20,5 +22,8 @@ public interface UnenrollCourseService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(UUID accountId, UUID courseId) {}
+    record Request(
+          UUID accountId,
+          UUID courseId) {}
+
 }

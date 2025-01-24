@@ -22,26 +22,46 @@ import tech.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEn
 @PersistenceAdapter
 @RequiredArgsConstructor
 class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public UpdateEnrollmentResult execute(Enrollment enrollment) {
+    public UpdateEnrollmentResult execute(
+          Enrollment enrollment) {
+
         try {
-            var entity = enrollmentsRepo.findById(enrollment.id()).get();
-            updateEntity(enrollment, entity);
-            enrollmentsRepo.save(entity);
+            var entity = enrollmentsRepo.
+                  findById(enrollment.id()).get();
+
+            updateEntity(
+                  enrollment,
+                  entity);
+
+            enrollmentsRepo.save(
+                  entity);
+
             return new EnrollmentUpdated(enrollment.id());
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollmentUpdateFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void updateEntity(Enrollment enrollment, EnrollmentEntity entity) {
-        entity.setContent(enrollment.content());
+    private void updateEntity(
+          Enrollment enrollment,
+          EnrollmentEntity entity) {
+
+        entity.setContent(
+              enrollment.content());
+
     }
+
 }

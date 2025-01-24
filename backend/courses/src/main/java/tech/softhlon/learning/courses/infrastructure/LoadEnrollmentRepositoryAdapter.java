@@ -25,28 +25,46 @@ import java.util.UUID;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public LoadEnrollmentResult execute(UUID accountId, UUID courseId) {
+    public LoadEnrollmentResult execute(
+          UUID accountId,
+          UUID courseId) {
+
         try {
-            var entity = enrollmentsRepo.findByAccountIdAndCourseId(accountId, courseId);
+            var entity = enrollmentsRepo.findByAccountIdAndCourseId(
+                  accountId,
+                  courseId);
+
             if (entity.isPresent()) {
-                return new EnrollmentLoaded(toEnrollment(entity.get()));
+
+                return new EnrollmentLoaded(
+                      toEnrollment(entity.get()));
+
             } else {
+
                 return new EnrollmentNotFoundInDatabase();
+
             }
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Enrollment toEnrollment(EnrollmentEntity entity) {
+    private Enrollment toEnrollment(
+          EnrollmentEntity entity) {
+
         return new Enrollment(
               entity.getId(),
               entity.getAccountId(),
@@ -54,5 +72,6 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
               entity.getEnrolledTime(),
               entity.getCompletedTime()
         );
+
     }
 }

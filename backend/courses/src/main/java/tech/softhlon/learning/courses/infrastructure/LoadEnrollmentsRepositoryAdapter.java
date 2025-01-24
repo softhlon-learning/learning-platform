@@ -21,27 +21,39 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrol
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
+
     private final EnrollmentsJpaRepository enrollmentsJpaRepository;
 
     @Override
-    public ListEnrollmentsResult execute(ListEnrollmentsRequest request) {
+    public ListEnrollmentsResult execute(
+          ListEnrollmentsRequest request) {
+
         try {
-            var entities = enrollmentsJpaRepository.findByCourseId(request.courseId());
+            var entities = enrollmentsJpaRepository.
+                  findByCourseId(
+                        request.courseId());
+
             return new EnrollmentsLoaded(
                   entities.stream()
                         .map(this::toEnrollment)
                         .toList());
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Enrollment toEnrollment(EnrollmentEntity entity) {
+    private Enrollment toEnrollment(
+          EnrollmentEntity entity) {
+
         return new Enrollment(
               entity.getId(),
               entity.getAccountId(),
@@ -49,5 +61,6 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
               entity.getEnrolledTime(),
               entity.getCompletedTime()
         );
+
     }
 }

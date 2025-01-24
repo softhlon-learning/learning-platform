@@ -22,40 +22,61 @@ import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCour
 @PersistenceAdapter
 @RequiredArgsConstructor
 class PersistCourseRepositoryAdapter implements PersistCourseRepository {
+
     private final CoursesJpaRepository coursesRepo;
 
     @Override
-    public PersistCourseResult execute(PersistCourseRequest request) {
+    public PersistCourseResult execute(
+          PersistCourseRequest request) {
+
         try {
-            var entityOpt = coursesRepo.findById(request.id());
+            var entityOpt = coursesRepo
+                  .findById(request.id());
+
             if (entityOpt.isPresent()) {
+
                 var entity = entityOpt.get();
                 updateEntity(request, entity);
                 coursesRepo.save(entity);
+
             } else {
-                coursesRepo.save(prepareEntity(request));
+
+                coursesRepo.save(
+                      prepareEntity(request));
+
             }
+
             return new CoursePersisted();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CoursePersistenceFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void updateEntity(PersistCourseRequest request, CourseEntity entity) {
+    private void updateEntity(
+          PersistCourseRequest request,
+          CourseEntity entity) {
+
         entity.setCode(request.code());
         entity.setName(request.name());
         entity.setOrderNo(request.orderNo());
         entity.setDescription(request.description());
         entity.setContent(request.content());
         entity.setVersion(request.version());
+
     }
 
-    private CourseEntity prepareEntity(PersistCourseRequest request) {
+    private CourseEntity prepareEntity(
+          PersistCourseRequest request) {
+
         return CourseEntity.builder()
               .id(request.id())
               .code(request.code())
@@ -65,5 +86,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
               .content(request.content())
               .version(request.version())
               .build();
+
     }
+
 }

@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateCourseRepository {
-    CreateAccountRequest execute(CreateAccountRequest request);
+
+    CreateAccountRequest execute(
+          CreateAccountRequest request);
 
     sealed interface CreateAccountResult {
         record AccountPersisted() implements CreateAccountResult {}
@@ -31,4 +33,5 @@ public interface CreateCourseRepository {
           String description,
           String content,
           String version) {}
+
 }

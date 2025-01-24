@@ -34,6 +34,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
 @RestController
 @RequiredArgsConstructor
 class ListCoursesController {
+
     private final ListCoursesService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -43,20 +44,32 @@ class ListCoursesController {
      */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses() {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}", accountId);
-        var result = service.execute(authContext.accountId());
+
+        log.info("Requested, accountId: {}",
+              accountId);
+
+        var result = service.execute(
+              authContext.accountId());
+
         return switch (result) {
             case Succeeded(List<CourseView> courses) -> successBody(courses);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<List<CourseView>> successBody(List<CourseView> courses) {
-        return status(HttpStatus.OK).body(courses);
+    private ResponseEntity<List<CourseView>> successBody(
+          List<CourseView> courses) {
+
+        return status(HttpStatus.OK)
+              .body(courses);
+
     }
+
 }

@@ -37,6 +37,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE
 @RestController
 @RequiredArgsConstructor
 class UpdateEnrollmentController {
+
     private final UpdateEnrollmentService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -48,15 +49,23 @@ class UpdateEnrollmentController {
     ResponseEntity<?> updateCourse(
           @PathVariable("courseId") UUID courseId,
           @Validated @RequestBody UpdateEnrollmentRequest request) {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, courseId: {}", accountId, courseId);
-        var result = service.execute(prepareRequest(courseId, request));
+
+        log.info("Requested, accountId: {}, courseId: {}",
+              accountId,
+              courseId);
+
+        var result = service.execute(
+              prepareRequest(courseId, request));
+
         return switch (result) {
             case Succeeded() -> successOkBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case AccountNotEligibleFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -64,11 +73,14 @@ class UpdateEnrollmentController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Request prepareRequest(
-          UUID courseId, UpdateEnrollmentRequest updateEnrollmentRequest) {
+          UUID courseId,
+          UpdateEnrollmentRequest updateEnrollmentRequest) {
+
         return new Request(
               authContext.accountId(),
               courseId,
               updateEnrollmentRequest.content());
+
     }
 
     record UpdateEnrollmentRequest(String content) {}

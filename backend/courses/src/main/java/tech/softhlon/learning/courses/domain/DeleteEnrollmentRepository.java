@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface DeleteEnrollmentRepository {
-    DeleteEnrollmentResult execute(DeleteEnrollmentRequest request);
+
+    DeleteEnrollmentResult execute(
+          DeleteEnrollmentRequest request);
 
     sealed interface DeleteEnrollmentResult {
         record EnrollmentDeleted() implements DeleteEnrollmentResult {}
@@ -28,4 +30,5 @@ public interface DeleteEnrollmentRepository {
     record DeleteEnrollmentRequest(
           UUID courseId,
           UUID accountId) {}
+
 }

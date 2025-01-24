@@ -12,7 +12,9 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface PersistCourseRepository {
-    PersistCourseResult execute(PersistCourseRequest course);
+
+    PersistCourseResult execute(
+          PersistCourseRequest course);
 
     sealed interface PersistCourseResult {
         record CoursePersisted() implements PersistCourseResult {}
@@ -27,4 +29,5 @@ public interface PersistCourseRepository {
           String description,
           String content,
           String version) {}
+
 }

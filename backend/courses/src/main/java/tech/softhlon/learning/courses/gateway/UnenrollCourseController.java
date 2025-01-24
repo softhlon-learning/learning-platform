@@ -34,6 +34,7 @@ import static tech.softhlon.learning.courses.gateway.RestResources.UNENROLL_COUR
 @RestController
 @RequiredArgsConstructor
 class UnenrollCourseController {
+
     private final UnenrollCourseService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -42,21 +43,33 @@ class UnenrollCourseController {
      * DEELTE /api/v1/course/{courseId}/enrollment.
      */
     @DeleteMapping(UNENROLL_COURSE)
-    ResponseEntity<?> unenrollCourse(@PathVariable("courseId") UUID courseId) {
+    ResponseEntity<?> unenrollCourse(
+          @PathVariable("courseId") UUID courseId) {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, courseId: {}", accountId, courseId);
+
+        log.info("Requested, accountId: {}, courseId: {}",
+              accountId,
+              courseId);
+
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successAcceptedBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Request prepareRequest(UUID courseId) {
-        return new Request(authContext.accountId(), courseId);
+    private Request prepareRequest(
+          UUID courseId) {
+
+        return new Request(
+              authContext.accountId(),
+              courseId);
+
     }
 }

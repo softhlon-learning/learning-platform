@@ -22,6 +22,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnrollmentEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -31,4 +32,5 @@ public class EnrollmentEntity {
     private String content;
     private OffsetDateTime enrolledTime;
     private OffsetDateTime completedTime;
+
 }

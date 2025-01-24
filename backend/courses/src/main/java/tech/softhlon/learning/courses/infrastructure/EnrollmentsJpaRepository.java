@@ -18,6 +18,7 @@ import java.util.UUID;
 
 @Repository
 interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
+
     boolean existsByAccountIdAndCourseId(
           UUID accountId,
           UUID courseId);
@@ -30,5 +31,7 @@ interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID
           UUID accountId,
           UUID courseId);
 
-    List<EnrollmentEntity> findByCourseId(UUID courseId);
+    List<EnrollmentEntity> findByCourseId(
+          UUID courseId);
+
 }

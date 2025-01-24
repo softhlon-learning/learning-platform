@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 class CourseDefinitions {
+
     @Value("classpath:courses/api-design.yml")
     private Resource apiDesignDefinition;
 
@@ -40,4 +41,5 @@ class CourseDefinitions {
 
     @Value("classpath:courses/fullstack.yml")
     private Resource fullstackDefinition;
+
 }

@@ -12,7 +12,8 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface MergeCourseService {
-    MergeCourseResult execute(MergeCourseReuqest reuqest);
+    MergeCourseResult execute(
+          MergeCourseReuqest reuqest);
 
     sealed interface MergeCourseResult {
         record CourseMerged() implements MergeCourseResult {}
@@ -27,4 +28,5 @@ interface MergeCourseService {
           String description,
           String content,
           String version) {}
+
 }

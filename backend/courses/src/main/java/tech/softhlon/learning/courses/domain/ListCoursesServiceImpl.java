@@ -30,31 +30,43 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class ListCoursesServiceImpl implements ListCoursesService {
+
     private final LoadCoursesRepository loadCoursesRepository;
     private final LoadEnrollmentRepository loadEnrollmentRepository;
 
     @Override
-    public Result execute(UUID accountId) {
+    public Result execute(
+          UUID accountId) {
+
         var result = loadCoursesRepository.execute();
+
         return switch (result) {
             case CoursesLoadFailed(Throwable cause) -> new Failed(cause);
             case CoursesLoaded(List<Course> courses) -> new Succeeded(toCourseViews(courses, accountId));
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private List<CourseView> toCourseViews(List<Course> courses, UUID accountId) {
+    private List<CourseView> toCourseViews(
+          List<Course> courses,
+          UUID accountId) {
+
         return courses.stream()
               .map(course -> courseView(course, accountId))
               .map(courseView -> mapEnrolled(courseView, accountId))
               .sorted(Comparator.comparing(CourseView::orderNo))
               .toList();
+
     }
 
-    private CourseView courseView(Course course, UUID accountId) {
+    private CourseView courseView(
+          Course course,
+          UUID accountId) {
+
         return new CourseView(
               course.courseId(),
               course.code(),
@@ -63,17 +75,28 @@ class ListCoursesServiceImpl implements ListCoursesService {
               course.description(),
               course.content(),
               false);
+
     }
 
-    private CourseView mapEnrolled(CourseView courseView, UUID accountId) {
-        var result = loadEnrollmentRepository.execute(accountId, courseView.id());
+    private CourseView mapEnrolled(
+          CourseView courseView,
+          UUID accountId) {
+
+        var result = loadEnrollmentRepository.execute(
+              accountId,
+              courseView.id());
+
         return switch (result) {
             case EnrollmentLoaded(Enrollment enrollment) -> updateEnrollmentFlag(courseView, enrollment);
             case EnrollmentLoadFailed(_), EnrollmentNotFoundInDatabase() -> courseView;
         };
+
     }
 
-    private CourseView updateEnrollmentFlag(CourseView courseView, Enrollment enrollment) {
+    private CourseView updateEnrollmentFlag(
+          CourseView courseView,
+          Enrollment enrollment) {
+
         return new CourseView(
               courseView.id(),
               courseView.code(),
@@ -83,5 +106,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
               enrollment.content(),
               true
         );
+
     }
+
 }

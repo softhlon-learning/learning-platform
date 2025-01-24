@@ -27,22 +27,29 @@ import java.util.UUID;
 @Slf4j
 @Component
 public class CreateCoursesOperator {
+
     private final UploadCourseService uploadCourseService;
     private final CourseDefinitions courseDefinitions;
     private final ObjectMapper mapper;
 
     public CreateCoursesOperator(
+
           UploadCourseService uploadCourseService,
-          tech.softhlon.learning.courses.gateway.CourseDefinitions courseDefinitions,
+          CourseDefinitions courseDefinitions,
           ObjectMapper mapper) {
+
         this.uploadCourseService = uploadCourseService;
         this.courseDefinitions = courseDefinitions;
         var objectMapper = new ObjectMapper(new YAMLFactory());
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(
+              DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
+              false);
         this.mapper = objectMapper;
+
     }
 
     public void execute() throws IOException {
+
         log.info("Create Courses operator started");
         createCourse(courseDefinitions.getApiDesignDefinition());
         createCourse(courseDefinitions.getArchitectureDefinition());
@@ -53,21 +60,35 @@ public class CreateCoursesOperator {
         createCourse(courseDefinitions.getSpringDefinition());
         createCourse(courseDefinitions.getFullstackDefinition());
         log.info("Create Courses operator finished");
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void createCourse(Resource resource) throws IOException {
-        log.info("Creating/Updating course from definition: {}", resource.getFilename());
+    private void createCourse(
+          Resource resource) throws IOException {
+
+        log.info("Creating/Updating course from definition: {}",
+              resource.getFilename());
+
         var content = resource.getContentAsByteArray();
-        var courseDefinition = mapper.readValue(content, CourseDefinition.class);
-        uploadCourseService.execute(prepareRequest(courseDefinition, content));
+
+        var courseDefinition = mapper.readValue(
+              content,
+              CourseDefinition.class);
+
+        uploadCourseService.execute(prepareRequest(
+              courseDefinition,
+              content));
+
     }
 
     private Request prepareRequest(
-          CourseDefinition courseDefinition, byte[] content) throws JsonProcessingException {
+          CourseDefinition courseDefinition,
+          byte[] content) throws JsonProcessingException {
+
         return new Request(
               courseDefinition.id(),
               courseDefinition.code(),
@@ -77,17 +98,35 @@ public class CreateCoursesOperator {
               toBase64(content),
               courseDefinition.version()
         );
+
     }
 
-    private String toBase64(byte[] content) throws JsonProcessingException {
-        return Base64.getEncoder().encodeToString(convertToJson(new String(content, Charset.defaultCharset())));
+    private String toBase64(
+          byte[] content) throws JsonProcessingException {
+
+        return Base64
+              .getEncoder()
+              .encodeToString(
+                    convertToJson(new String(
+                          content,
+                          Charset.defaultCharset())));
     }
 
-    private byte[] convertToJson(String yamlString) throws JsonProcessingException {
-        var yamlMapper = new ObjectMapper(new YAMLFactory());
-        var jsonNode = yamlMapper.readTree(yamlString);
+    private byte[] convertToJson(
+          String yamlString) throws JsonProcessingException {
+
+        var yamlMapper = new ObjectMapper(
+              new YAMLFactory());
+
+        var jsonNode = yamlMapper
+              .readTree(yamlString);
+
         var jsonMapper = new ObjectMapper();
-        return jsonMapper.writeValueAsString(jsonNode).getBytes();
+
+        return jsonMapper
+              .writeValueAsString(jsonNode)
+              .getBytes();
+
     }
 
     private record CourseDefinition(
@@ -97,4 +136,5 @@ public class CreateCoursesOperator {
           String name,
           String description,
           String version) {}
+
 }

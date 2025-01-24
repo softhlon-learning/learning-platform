@@ -22,18 +22,28 @@ import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEn
 @PersistenceAdapter
 @RequiredArgsConstructor
 class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
+
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
     @Override
-    public DeleteEnrollmentResult execute(DeleteEnrollmentRequest request) {
+    public DeleteEnrollmentResult execute(
+          DeleteEnrollmentRequest request) {
+
         try {
+
             enrollmentsRepo.deleteByAccountIdAndCourseId(
                   request.accountId(),
                   request.courseId());
+
             return new EnrollmentDeleted();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new EnrollementDeletionFailed(cause);
+
         }
+
     }
+
 }

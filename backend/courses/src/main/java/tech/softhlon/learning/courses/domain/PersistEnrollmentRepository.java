@@ -13,7 +13,9 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface PersistEnrollmentRepository {
-    PersistEnrollmentResult execute(PersistEnrollmentRequest course);
+
+    PersistEnrollmentResult execute(
+          PersistEnrollmentRequest course);
 
     sealed interface PersistEnrollmentResult {
         record EnrollmentPersisted() implements PersistEnrollmentResult {}
@@ -26,4 +28,5 @@ public interface PersistEnrollmentRepository {
           String content,
           OffsetDateTime enrolledTime,
           OffsetDateTime completedTime) {}
+
 }

@@ -23,17 +23,25 @@ import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRe
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckCourseRepositoryAdapter implements CheckCourseRepository {
+
     private final CoursesJpaRepository coursesRepo;
 
     @Override
-    public CheckCourseResult execute(CheckCourseRequest request) {
+    public CheckCourseResult execute(
+          CheckCourseRequest request) {
+
         try {
+
             return coursesRepo.existsById(request.id())
                   ? new CourseExists()
                   : new CourseNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CheckCourseFailed(cause);
+
         }
+
     }
 }
