@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
 import {PlatformService} from "../service/platform.service";
-import {Router} from "@angular/router";
 
 @Component({
     selector: 'sign-up',
@@ -21,8 +20,7 @@ export class PasswordRecoveryComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService,
-        private router: Router) {
+        private platformService: PlatformService) {
     }
 
     ngOnInit() {

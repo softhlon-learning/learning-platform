@@ -1,4 +1,4 @@
-import {Component, HostListener, Injector, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
@@ -20,8 +20,7 @@ export class CourseTocComponent implements OnInit {
         private coursesService: PlatformService,
         private cookieService: CookieService,
         private router: Router,
-        private route: ActivatedRoute,
-        private injector: Injector) {
+        private route: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -37,7 +36,7 @@ export class CourseTocComponent implements OnInit {
     update() {
         console.log("Updating home");
         this.coursesService.refreshCourses().subscribe(
-            item => this.getCourse()
+            () => this.getCourse()
         );
     }
 
@@ -61,7 +60,7 @@ export class CourseTocComponent implements OnInit {
         if (!this.isAuthenticated()) {
             this.redirectToSignIn();
         } else {
-            this.coursesService.enrollCourse(this.course || {}).subscribe(item => {
+            this.coursesService.enrollCourse(this.course || {}).subscribe(() => {
                     this.update();
                     this.router.navigate(['/course/' + this.course?.code + '/details']);
                 }
@@ -80,7 +79,7 @@ export class CourseTocComponent implements OnInit {
     unenrollCourse(): void {
         if (!this.course?.enrolled || !this.isAuthenticated()) return;
         this.coursesService.unenrollCourse(this.course || {}).subscribe(
-            item => this.update()
+            () => this.update()
         );
     }
 

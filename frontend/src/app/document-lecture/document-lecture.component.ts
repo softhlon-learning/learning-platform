@@ -18,8 +18,7 @@ export class DocumentLectureComponent implements OnInit {
     @Input()
     coursePath: string = '';
 
-    constructor(
-        private route: ActivatedRoute) {
+    constructor() {
     }
 
     ngOnInit(): void {

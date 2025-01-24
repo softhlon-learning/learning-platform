@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {CookieService} from 'ngx-cookie-service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {shareReplay} from 'rxjs/operators';
@@ -25,8 +24,7 @@ export class PlatformService {
     };
 
     constructor(
-        private http: HttpClient,
-        private cookieService: CookieService) {
+        private http: HttpClient) {
     }
 
     refreshCourses(): Observable<Course[]> {

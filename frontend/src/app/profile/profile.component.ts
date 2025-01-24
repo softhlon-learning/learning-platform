@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {PlatformService, Profile} from "../service/platform.service";
-import {Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 
 @Component({
@@ -20,8 +19,7 @@ export class ProfileComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService,
-        private router: Router) {
+        private platformService: PlatformService) {
     }
 
     ngOnInit() {

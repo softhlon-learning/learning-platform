@@ -16,9 +16,7 @@ export class CourseNavigationComponent implements OnInit {
     @Input()
     progress?: CourseDetailsComponent;
 
-    constructor(
-        private coursesService: PlatformService,
-        private route: ActivatedRoute) {
+    constructor() {
     }
 
     ngOnInit(): void {

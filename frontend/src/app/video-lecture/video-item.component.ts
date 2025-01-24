@@ -1,5 +1,4 @@
-import {Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
@@ -20,14 +19,13 @@ export class VideoItemComponent implements OnInit {
     @Input()
     coursePath?: string;
 
-    constructor(
-        private route: ActivatedRoute) {
+    constructor() {
     }
 
     ngOnInit(): void {
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges() {
         if (this.video != null) {
             this.video.nativeElement.load();
         }

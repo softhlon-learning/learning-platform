@@ -30,7 +30,7 @@ export class AppHeaderComponent implements OnInit {
     signOut(): void {
         this.coursesService.signOut().subscribe({
                 next: () => this.handleResponse(),
-                error: (signInError) => this.handleResponse(),
+                error: () => this.handleResponse(),
             }
         );
     }
