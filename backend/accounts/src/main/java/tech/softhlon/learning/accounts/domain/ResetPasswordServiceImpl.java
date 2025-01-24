@@ -30,7 +30,7 @@ import java.util.UUID;
 @Service
 class ResetPasswordServiceImpl implements ResetPasswordService {
     private static final String EMAIL_NOT_FOUND = "Email not found";
-    private static final String SUBJECT = "Password Recovery";
+    private static final String SUBJECT = "Reset Password Request";
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
     private final EmailService emailService;
