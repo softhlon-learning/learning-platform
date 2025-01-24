@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.8
+_release date: 2025-01-24_
+ * Added UpdatePasswordService and its empty implementation
+ * New experimental code formatting in accounts
+
 ## 0.25.7
 _release date: 2025-01-24_
  * Renamed Recovery to Reset
