@@ -22,6 +22,7 @@ import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailReposito
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailRepository {
+
     private final AccountsJpaRepository accountsRepo;
 
     @Override
