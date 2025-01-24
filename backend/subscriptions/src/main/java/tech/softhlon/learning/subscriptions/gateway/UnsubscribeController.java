@@ -45,7 +45,6 @@ class UnsubscribeController {
           @Validated @RequestBody UnsubscribeService.Request request) {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}, body: {}",
               accountId,
               request);

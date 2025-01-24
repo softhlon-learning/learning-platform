@@ -23,8 +23,8 @@ import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRep
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionByAccountRepository {
-    private final SubscriptionsJpaRepository subscriptionsRepo;
 
+    private final SubscriptionsJpaRepository subscriptionsRepo;
 
     @Override
     public CheckSubscriptionByAccountResult execute(

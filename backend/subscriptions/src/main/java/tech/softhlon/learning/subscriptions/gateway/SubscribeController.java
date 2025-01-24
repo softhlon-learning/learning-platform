@@ -43,7 +43,6 @@ class SubscribeController {
     ResponseEntity<?> subscribe() {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}",
               accountId);
 
