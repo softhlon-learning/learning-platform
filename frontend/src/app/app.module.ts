@@ -17,10 +17,11 @@ import {CourseTileComponent} from "./course-tile/course-tile.component";
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {SignUpComponent} from "./sign-up/sign-up.component";
-import {PasswordRecoveryComponent} from "./reset-password/password-recovery.component";
+import {ResetPasswordComponent} from "./reset-password/reset-password.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
 import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
+import {UpdatePasswordComponent} from "./update-password/update-password.component";
 
 @NgModule({
     declarations: [
@@ -37,8 +38,9 @@ import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
         SignInComponent,
         CourseTileComponent,
         SignUpComponent,
-        PasswordRecoveryComponent,
-        ProfileComponent
+        ResetPasswordComponent,
+        ProfileComponent,
+        UpdatePasswordComponent
     ],
     imports: [
         BrowserModule,

@@ -5,16 +5,14 @@ import {PlatformService} from "../service/platform.service";
 
 @Component({
     selector: 'sign-up',
-    templateUrl: './password-recovery.component.html',
-    styleUrls: ['./password-recovery.component.css']
+    templateUrl: './reset-password.component.html',
+    styleUrls: ['./reset-password.component.css']
 })
-export class PasswordRecoveryComponent implements OnInit {
+export class ResetPasswordComponent implements OnInit {
     success: boolean = false;
     error: string | undefined;
-    signInForm = this.formBuilder.group({
-        name: '',
-        email: '',
-        password: ''
+    resetPasswordForm = this.formBuilder.group({
+        email: ''
     });
     protected readonly environment = environment;
 
@@ -29,16 +27,15 @@ export class PasswordRecoveryComponent implements OnInit {
     }
 
     onSubmit(): void {
-        if (this.signInForm.invalid) {
-            console.log('Form is invalid');
-            this.error = 'Please provide valid email and password';
+        if (this.resetPasswordForm.invalid) {
+            this.error = 'Please provide valid password';
             return;
         }
 
-        const {email = ''} = this.signInForm.value;
+        const {email = ''} = this.resetPasswordForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.recoverPassword(email || '').subscribe({
+        this.platformService.resetPassword(email || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
