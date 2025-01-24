@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.25.9
+_release date: 2025-01-24_
+ * New experimental code formatting in application and common
+
 ## 0.25.8
 _release date: 2025-01-24_
  * Added UpdatePasswordService and its empty implementation
