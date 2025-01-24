@@ -16,12 +16,17 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface UpdateProfileService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-    record Request(UUID accountId, String name) {}
+    record Request(
+          UUID accountId,
+          String name) {}
+
 }

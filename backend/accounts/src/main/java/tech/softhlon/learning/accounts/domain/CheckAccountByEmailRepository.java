@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CheckAccountByEmailRepository {
-    CheckAccountByEmailResult execute(CheckAccountByEmailRequest request);
+
+    CheckAccountByEmailResult execute(
+          CheckAccountByEmailRequest request);
 
     sealed interface CheckAccountByEmailResult {
         record AccountExists(UUID id) implements CheckAccountByEmailResult {}
@@ -27,5 +29,7 @@ public interface CheckAccountByEmailRepository {
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }
 
-    record CheckAccountByEmailRequest(String email) {}
+    record CheckAccountByEmailRequest(
+          String email) {}
+
 }

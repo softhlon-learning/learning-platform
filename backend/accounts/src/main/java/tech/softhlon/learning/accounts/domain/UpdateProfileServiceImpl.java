@@ -29,34 +29,47 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class UpdateProfileServiceImpl implements UpdateProfileService {
+
     private static final String ACCOUNT_NOT_FOUND = "Account not found";
     private final LoadAccountRepository loadAccountRepository;
     private final PersistAccountRepository persistAccountRepository;
 
     @Override
-    public Result execute(Request request) {
-        var result = loadAccountRepository.execute(new LoadAccountRequest(request.accountId()));
+    public Result execute(
+          Request request) {
+
+        var result = loadAccountRepository.execute(
+              new LoadAccountRequest(request.accountId()));
+
         return switch (result) {
             case AccountLoaded(Account account) -> persistAccount(persistAccountRequest(account, request));
             case AccountNotFound() -> new AccountNotFoundFailed(ACCOUNT_NOT_FOUND);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result persistAccount(PersistAccountRequest persistAccountRequest) {
+    private Result persistAccount(
+          PersistAccountRequest persistAccountRequest) {
+
         var result = persistAccountRepository.execute(persistAccountRequest);
+
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded();
             case AccountNotFoundInDatabase() -> new AccountNotFoundFailed(ACCOUNT_NOT_FOUND);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private PersistAccountRequest persistAccountRequest(Account account, Request request) {
+    private PersistAccountRequest persistAccountRequest(
+          Account account,
+          Request request) {
+
         return new PersistAccountRequest(
               account.id(),
               account.type(),
@@ -65,5 +78,7 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
               account.password(),
               account.isDeleted()
         );
+
     }
+
 }

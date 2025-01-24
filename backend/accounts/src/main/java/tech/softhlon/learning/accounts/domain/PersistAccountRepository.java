@@ -16,7 +16,9 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface PersistAccountRepository {
-    PersistAccountResult execute(PersistAccountRequest request);
+
+    PersistAccountResult execute(
+          PersistAccountRequest request);
 
     sealed interface PersistAccountResult {
         record AccountPersisted(UUID uuid) implements PersistAccountResult {}
@@ -31,4 +33,5 @@ public interface PersistAccountRepository {
           String email,
           String password,
           boolean isDeleted) {}
+
 }

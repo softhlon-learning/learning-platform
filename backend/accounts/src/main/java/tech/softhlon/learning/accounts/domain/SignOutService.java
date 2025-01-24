@@ -14,7 +14,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @InboundPort
 @FunctionalInterface
 public interface SignOutService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -22,5 +24,7 @@ public interface SignOutService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(String token) {}
+    record Request(
+          String token) {}
+
 }

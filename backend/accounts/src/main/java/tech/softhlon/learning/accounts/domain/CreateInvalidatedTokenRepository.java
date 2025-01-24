@@ -18,12 +18,16 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateInvalidatedTokenRepository {
-    CreateInvalidatedTokenResult execute(CreateInvalidatedTokenRequest request);
+
+    CreateInvalidatedTokenResult execute(
+          CreateInvalidatedTokenRequest request);
 
     sealed interface CreateInvalidatedTokenResult {
         record InvalidatedTokenPersisted(UUID uuid) implements CreateInvalidatedTokenResult {}
         record InvalidatedTokenPersistenceFailed(Throwable cause) implements CreateInvalidatedTokenResult {}
     }
 
-    record CreateInvalidatedTokenRequest(String tokenHash) {}
+    record CreateInvalidatedTokenRequest(
+          String tokenHash) {}
+
 }

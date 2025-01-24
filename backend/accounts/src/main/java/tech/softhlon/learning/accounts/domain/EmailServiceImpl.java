@@ -17,15 +17,22 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 class EmailServiceImpl implements EmailService {
+
     private final JavaMailSender emailSender;
 
     @Override
-    public void sendMessage(String to, String subject, String text) {
+    public void sendMessage(
+          String to,
+          String subject,
+          String text) {
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("noreply@softhlon-learning.tech");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
         emailSender.send(message);
+
     }
+
 }

@@ -16,7 +16,9 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface SignUpService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded(UUID id, String token) implements Result {}
@@ -28,5 +30,9 @@ public interface SignUpService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(String name, String email, String password) {}
+    record Request(
+          String name,
+          String email,
+          String password) {}
+
 }

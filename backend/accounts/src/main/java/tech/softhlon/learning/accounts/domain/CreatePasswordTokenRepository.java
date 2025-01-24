@@ -19,7 +19,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreatePasswordTokenRepository {
-    CreatePasswordTokenResult execute(CreatePasswordTokenRequest request);
+
+    CreatePasswordTokenResult execute(
+          CreatePasswordTokenRequest request);
 
     sealed interface CreatePasswordTokenResult {
         record PasswordTokenPersisted() implements CreatePasswordTokenResult {}
@@ -30,4 +32,5 @@ public interface CreatePasswordTokenRepository {
           UUID accountId,
           String token,
           OffsetDateTime expirationTime) {}
+
 }

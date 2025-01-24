@@ -14,13 +14,17 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @InboundPort
 @FunctionalInterface
 public interface ResetPasswordService {
-    Result execute(Request request);
 
-    record Request(String email) {}
+    Result execute(
+          Request request);
+
+    record Request(
+          String email) {}
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record EmailNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
+
 }

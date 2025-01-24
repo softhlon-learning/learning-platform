@@ -29,6 +29,7 @@ import java.util.UUID;
 
 @Service
 class ResetPasswordServiceImpl implements ResetPasswordService {
+
     private static final String EMAIL_NOT_FOUND = "Email not found";
     private static final String SUBJECT = "Reset Password Request";
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
@@ -52,47 +53,72 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
           CreatePasswordTokenRepository createPasswordTokenRepository,
           EmailService emailService,
           @Value("${password-recovery.base-url}") String baseUrl) {
+
         this.loadAccountByEmailRepository = loadAccountByEmailRepository;
         this.createPasswordTokenRepository = createPasswordTokenRepository;
         this.emailService = emailService;
         this.baseUrl = baseUrl;
+
     }
 
     @Override
-    public Result execute(Request request) {
-        var result = loadAccountByEmailRepository.execute(new LoadAccountByEmailRequest(request.email()));
+    public Result execute(
+          Request request) {
+
+        var result = loadAccountByEmailRepository.execute(
+                    new LoadAccountByEmailRequest(
+                          request.email()));
+
         return switch (result) {
             case AccountFound(Account account) -> processPasswordRecovery(account);
             case AccountIsDeleted(), AccountNotFound() -> new EmailNotFoundFailed(EMAIL_NOT_FOUND);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result processPasswordRecovery(Account account) {
+    private Result processPasswordRecovery(
+          Account account) {
+
         var token = UUID.randomUUID().toString();
-        var result = createPasswordTokenRepository.execute(passwordTokenRequest(account, token));
+        var result = createPasswordTokenRepository.execute(
+              passwordTokenRequest(
+                    account,
+                    token));
+
         return switch (result) {
             case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account, token);
             case PasswordTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private CreatePasswordTokenRequest passwordTokenRequest(Account account, String token) {
+    private CreatePasswordTokenRequest passwordTokenRequest(
+          Account account,
+          String token) {
+
         return new CreatePasswordTokenRequest(
               account.id(),
               token,
               OffsetDateTime.now().plusDays(1));
+
     }
 
-    private Result sendEmail(Account account, String token) {
+    private Result sendEmail(
+          Account account,
+          String token) {
+
         emailService.sendMessage(
               account.email(),
               SUBJECT,
               EMAIL_CONTENT.formatted(baseUrl + token));
+
         return new Succeeded();
+
     }
+
 }

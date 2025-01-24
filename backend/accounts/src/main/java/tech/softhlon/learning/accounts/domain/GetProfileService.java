@@ -16,14 +16,21 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface GetProfileService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded(ProfileView profileView) implements Result {}
         record ProfileNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-    record Request(UUID accountId) {}
-    record ProfileView(String email, String name) {}
+    record Request(
+          UUID accountId) {}
+
+    record ProfileView(
+          String email,
+          String name) {}
+
 }
 

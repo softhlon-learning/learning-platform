@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadAccountRepository {
-    LoadAccountResult execute(LoadAccountRequest request);
+
+    LoadAccountResult execute(
+          LoadAccountRequest request);
 
     sealed interface LoadAccountResult {
         record AccountLoaded(Account account) implements LoadAccountResult {}
@@ -26,7 +28,9 @@ public interface LoadAccountRepository {
         record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
 
-    record LoadAccountRequest(UUID id) {}
+    record LoadAccountRequest(
+          UUID id) {}
+
     record Account(
           UUID id,
           String type,

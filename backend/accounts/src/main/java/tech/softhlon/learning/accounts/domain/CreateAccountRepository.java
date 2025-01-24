@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateAccountRepository {
-    CreateAccountResult execute(CreateAccountRequest request);
+
+    CreateAccountResult execute(
+          CreateAccountRequest request);
 
     sealed interface CreateAccountResult {
         record AccountPersisted(UUID uuid) implements CreateAccountResult {}
@@ -30,4 +32,5 @@ public interface CreateAccountRepository {
           String name,
           String email,
           String password) {}
+
 }

@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface LoadAccountByEmailRepository {
-    LoadAccountByEmailResult execute(LoadAccountByEmailRequest request);
+
+    LoadAccountByEmailResult execute(
+          LoadAccountByEmailRequest request);
 
     sealed interface LoadAccountByEmailResult {
         record AccountFound(Account account) implements LoadAccountByEmailResult {}
@@ -27,6 +29,12 @@ public interface LoadAccountByEmailRepository {
         record LoadAccountFailed(Throwable cause) implements LoadAccountByEmailResult {}
     }
 
-    record LoadAccountByEmailRequest(String email) {}
-    record Account(UUID id, String email, String password) {}
+    record LoadAccountByEmailRequest(
+          String email) {}
+
+    record Account(
+          UUID id,
+          String email,
+          String password) {}
+
 }

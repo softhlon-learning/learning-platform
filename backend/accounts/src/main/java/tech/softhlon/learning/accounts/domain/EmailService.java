@@ -10,5 +10,11 @@ package tech.softhlon.learning.accounts.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface EmailService {
-    void sendMessage(String to, String subject, String text);
+
+    void sendMessage(
+          String to,
+          String subject,
+          String text);
+
 }
+

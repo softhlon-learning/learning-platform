@@ -14,7 +14,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @InboundPort
 @FunctionalInterface
 public interface SignInService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded(String token) implements Result {}
@@ -25,4 +27,5 @@ public interface SignInService {
     record Request(
           String email,
           String password) {}
+
 }

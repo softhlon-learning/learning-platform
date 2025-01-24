@@ -23,24 +23,37 @@ import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountR
 @Service
 @RequiredArgsConstructor
 class GetProfileServiceImpl implements GetProfileService {
+
     private static final String PROFILE_NOT_FOUND = "Profile not fould";
     private final LoadAccountRepository loadAccountRepository;
 
     @Override
-    public Result execute(Request request) {
-        var result = loadAccountRepository.execute(new LoadAccountRequest(request.accountId()));
+    public Result execute(
+          Request request) {
+
+        var result = loadAccountRepository.execute(
+              new LoadAccountRequest(
+                    request.accountId()));
+
         return switch (result) {
             case AccountLoaded(Account account) -> new Succeeded(profile(account));
             case AccountNotFound() -> new ProfileNotFoundFailed(PROFILE_NOT_FOUND);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ProfileView profile(Account account) {
-        return new ProfileView(account.email(), account.name());
+    private ProfileView profile(
+          Account account) {
+
+        return new ProfileView(
+              account.email(),
+              account.name());
+
     }
+
 }

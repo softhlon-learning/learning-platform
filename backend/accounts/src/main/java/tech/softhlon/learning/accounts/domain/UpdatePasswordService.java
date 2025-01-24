@@ -10,9 +10,13 @@ package tech.softhlon.learning.accounts.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface UpdatePasswordService {
-    Result execute(Request request);
 
-    record Request(String password, String token) {}
+    Result execute(
+          Request request);
+
+    record Request(
+          String password,
+          String token) {}
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -20,4 +24,5 @@ interface UpdatePasswordService {
         record ExpiredTokenFailed(String message) implements Result {}
         record Failed() implements Result {}
     }
+
 }

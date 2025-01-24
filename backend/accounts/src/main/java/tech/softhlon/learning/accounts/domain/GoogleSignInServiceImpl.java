@@ -35,6 +35,7 @@ import java.util.UUID;
 @Slf4j
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
+
     private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
     private static final String INVALID_CREDENTIALS = "Invalid token/credentials";
     private static final String EMAIL = "email";
@@ -49,6 +50,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
           CheckAccountByEmailRepository checkAccountByEmailRepository,
           CreateAccountRepository createAccountRepository,
           JwtService jwtService) {
+
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
         verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
@@ -57,17 +59,23 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
         this.checkAccountByEmailRepository = checkAccountByEmailRepository;
         this.createAccountRepository = createAccountRepository;
         this.jwtService = jwtService;
+
     }
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         try {
+
             var idToken = verifier.verify(request.credential());
             if (idToken != null) {
                 IdToken.Payload payload = idToken.getPayload();
                 var email = (String) payload.get(EMAIL);
                 var name = (String) payload.get(GIVEN_NAME);
-                var exists = checkAccountByEmailRepository.execute(new CheckAccountByEmailRequest(email));
+                var exists = checkAccountByEmailRepository.execute(
+                      new CheckAccountByEmailRequest(email));
+
                 return switch (exists) {
                     case AccountExists(UUID id) -> new Succeeded(token(id, email));
                     case AccountNotFound() -> persistAccount(name, email);
@@ -77,6 +85,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
             } else {
                 return new InvalidCredentialsFailed(INVALID_CREDENTIALS);
             }
+
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new Failed(cause);
@@ -87,21 +96,39 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result persistAccount(String name, String email) {
-        var result = createAccountRepository.execute(prepareRequest(name, email));
+    private Result persistAccount(
+          String name,
+          String email) {
+
+        var result = createAccountRepository.execute(prepareRequest(
+              name,
+              email));
+
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(token(id, email));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private CreateAccountRequest prepareRequest(String name, String email) {
+    private CreateAccountRequest prepareRequest(
+          String name,
+          String email) {
+
         return new CreateAccountRequest(
               AccountType.GOOGLE.name(),
-              name, email, null);
+              name,
+              email,
+              null);
+
     }
 
-    private String token(UUID accountId, String email) {
+    private String token(
+          UUID accountId,
+          String email) {
+
         return jwtService.generateToken(accountId, email);
+
     }
+
 }

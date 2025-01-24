@@ -14,7 +14,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @InboundPort
 @FunctionalInterface
 public interface GoogleSignInService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded(String token) implements Result {}
@@ -23,5 +25,7 @@ public interface GoogleSignInService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(String credential) {}
+    record Request(
+          String credential) {}
+
 }

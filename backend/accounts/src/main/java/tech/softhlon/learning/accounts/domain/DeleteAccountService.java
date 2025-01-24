@@ -16,7 +16,9 @@ import java.util.UUID;
 @InboundPort
 @FunctionalInterface
 public interface DeleteAccountService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -25,5 +27,7 @@ public interface DeleteAccountService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(UUID accountId) {}
+    record Request(
+          UUID accountId) {}
+
 }

@@ -13,8 +13,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 class UpdatePasswordServiceImpl implements UpdatePasswordService {
+
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         return null;
+
     }
+
 }
