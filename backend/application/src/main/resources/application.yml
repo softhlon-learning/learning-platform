@@ -33,4 +33,4 @@ spring:
 login-redirect-success-uri: https://softhlon-learning.tech/home
 login-redirect-fail-uri: https://softhlon-learning.tech/sign-in
 google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com
-password-recovery.base-url: "https://softhlon-learning.tech/update?token="
+password-recovery.base-url: "https://softhlon-learning.tech/update-password?token="
