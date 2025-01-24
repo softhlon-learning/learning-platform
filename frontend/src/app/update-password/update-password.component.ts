@@ -53,6 +53,7 @@ export class UpdatePasswordComponent implements OnInit {
 
     private handleSuccess() {
         this.success = true;
+        this.error = undefined;
     }
 
     private handleError(signInError: any, defaultErrorMessage: string) {
