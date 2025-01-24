@@ -22,7 +22,6 @@ import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
-import java.util.TimeZone;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -114,9 +113,8 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     private OffsetDateTime expirationTime() {
 
         return OffsetDateTime
-              .now(TimeZone
-                    .getDefault()
-                    .toZoneId());
+              .now()
+              .plusDays(1);
 
     }
 
