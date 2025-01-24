@@ -18,7 +18,7 @@ export class PlatformService {
     private signUpUrl = '/api/v1/account/sign-up';
     private deleteAccountUrl = '/api/v1/account';
     private profileUrl = '/api/v1/account/profile';
-    private passwordRecoveryUrl = '/api/v1/account/password-recovery';
+    private passwordRecoveryUrl = '/api/v1/account/reset-password';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})

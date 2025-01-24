@@ -6,7 +6,7 @@ import {CourseTocComponent} from './course-toc/course-toc.component';
 import {CourseDetailsComponent} from "./course-details/course-details.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {SignUpComponent} from './sign-up/sign-up.component';
-import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
+import {PasswordRecoveryComponent} from "./reset-password/password-recovery.component";
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     {path: 'sign-in', component: SignInComponent},
     {path: 'sign-up', component: SignUpComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'password-recovery', component: PasswordRecoveryComponent},
+    {path: 'reset-password', component: PasswordRecoveryComponent},
     {path: 'home', component: HomeComponent},
     {path: 'course/:id', component: CourseTocComponent},
     {path: 'course/:id/details', component: CourseDetailsComponent}
