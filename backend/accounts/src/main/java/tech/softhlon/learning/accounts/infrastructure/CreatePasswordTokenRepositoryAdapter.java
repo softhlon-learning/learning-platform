@@ -55,4 +55,5 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
               .build();
 
     }
+
 }

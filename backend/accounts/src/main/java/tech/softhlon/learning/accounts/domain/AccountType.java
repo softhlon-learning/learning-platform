@@ -10,6 +10,8 @@ package tech.softhlon.learning.accounts.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 enum AccountType {
+
     PASSWORD,
     GOOGLE;
+
 }

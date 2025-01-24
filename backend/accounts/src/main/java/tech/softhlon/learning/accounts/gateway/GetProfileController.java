@@ -44,7 +44,6 @@ class GetProfileController {
     ResponseEntity<?> getProfile() {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}",
               accountId);
 
@@ -83,4 +82,5 @@ class GetProfileController {
     record Profile(
           String email,
           String name) {}
+
 }

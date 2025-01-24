@@ -64,4 +64,5 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
         );
 
     }
+
 }

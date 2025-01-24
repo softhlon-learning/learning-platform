@@ -69,4 +69,5 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
               entity.getPassword());
 
     }
+
 }

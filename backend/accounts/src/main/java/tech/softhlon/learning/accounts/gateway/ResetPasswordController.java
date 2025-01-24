@@ -61,4 +61,5 @@ class ResetPasswordController {
 
     record RecoverPasswordRequest(
           String email) {}
+
 }

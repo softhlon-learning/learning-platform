@@ -48,7 +48,6 @@ class UpdateProfileController {
           HttpServletResponse response) {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}, body: {}",
               accountId,
               request);

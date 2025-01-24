@@ -38,4 +38,5 @@ public interface LoadAccountRepository {
           String email,
           String password,
           boolean isDeleted) {}
+
 }

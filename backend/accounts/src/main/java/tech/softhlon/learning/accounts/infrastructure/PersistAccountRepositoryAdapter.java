@@ -65,4 +65,5 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
         entity.setDeleted(request.isDeleted());
 
     }
+
 }
