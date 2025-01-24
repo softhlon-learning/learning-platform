@@ -18,6 +18,6 @@ class RestResources {
     static final String SIGN_OUT = ACCOUNT + "/auth/sign-out";
     static final String SIGN_UP = ACCOUNT + "/sign-up";
     static final String PROFILE = ACCOUNT + "/profile";
-    static final String PASSWORD_RECOVERY = ACCOUNT + "/password-recovery";
+    static final String RESET_PASSWORD = ACCOUNT + "/reset-password";
 
 }

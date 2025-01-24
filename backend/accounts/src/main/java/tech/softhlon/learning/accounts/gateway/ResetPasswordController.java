@@ -21,7 +21,7 @@ import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
-import static tech.softhlon.learning.accounts.gateway.RestResources.PASSWORD_RECOVERY;
+import static tech.softhlon.learning.accounts.gateway.RestResources.RESET_PASSWORD;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ class ResetPasswordController {
     /**
      * POST /api/v1/account/password-recovery endpoint.
      */
-    @PostMapping(PASSWORD_RECOVERY)
+    @PostMapping(RESET_PASSWORD)
     ResponseEntity<?> recoverPassword(
           @Validated @RequestBody RecoverPasswordRequest request,
           HttpServletResponse response) {
