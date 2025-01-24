@@ -33,6 +33,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class ResetPasswordController {
+
     private final ResetPasswordService service;
     private final HttpServletRequest httpRequest;
 
@@ -43,14 +44,21 @@ class ResetPasswordController {
     ResponseEntity<?> recoverPassword(
           @Validated @RequestBody RecoverPasswordRequest request,
           HttpServletResponse response) {
-        log.info("Requested, email: {}", request.email());
-        var result = service.execute(new Request(request.email()));
+
+        log.info("Requested, email: {}",
+              request.email());
+
+        var result = service.execute(
+              new Request(request.email()));
+
         return switch (result) {
             case Succeeded() -> successCreatedBody();
             case EmailNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
-    record RecoverPasswordRequest(String email) {}
+    record RecoverPasswordRequest(
+          String email) {}
 }

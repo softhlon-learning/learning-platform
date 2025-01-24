@@ -22,17 +22,26 @@ import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckT
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CheckTokenRepositoryAdapter implements CheckTokenRepository {
+
     private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
 
     @Override
-    public CheckTokenResult execute(CheckTokenRequest request) {
+    public CheckTokenResult execute(
+          CheckTokenRequest request) {
+
         try {
-            return invalidatedTokensRepo.existsByTokenHash(request.tokenHash())
+            return invalidatedTokensRepo.existsByTokenHash(
+                  request.tokenHash())
                   ? new TokenExists()
                   : new TokenNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CheckTokenFailed(cause);
+
         }
+
     }
+
 }

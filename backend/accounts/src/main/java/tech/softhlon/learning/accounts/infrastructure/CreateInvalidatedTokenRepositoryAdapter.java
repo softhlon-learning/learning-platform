@@ -22,26 +22,39 @@ import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepos
 @tech.softhlon.learning.common.hexagonal.PersistenceAdapter
 @RequiredArgsConstructor
 class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenRepository {
+
     private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
 
     @Override
-    public CreateInvalidatedTokenResult execute(CreateInvalidatedTokenRequest request) {
+    public CreateInvalidatedTokenResult execute(
+          CreateInvalidatedTokenRequest request) {
         try {
-            var createdAccount = invalidatedTokensRepo.save(toInvalidatedToken(request));
-            return new InvalidatedTokenPersisted(createdAccount.getId());
+            var createdAccount = invalidatedTokensRepo.save(
+                  toInvalidatedToken(request));
+
+            return new InvalidatedTokenPersisted(
+                  createdAccount.getId());
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new InvalidatedTokenPersistenceFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private InvalidatedEntity toInvalidatedToken(CreateInvalidatedTokenRequest request) {
+    private InvalidatedEntity toInvalidatedToken(
+          CreateInvalidatedTokenRequest request) {
+
         return InvalidatedEntity.builder()
               .tokenHash(request.tokenHash())
               .build();
+
     }
+
 }

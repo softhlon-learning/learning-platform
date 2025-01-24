@@ -32,6 +32,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignInController {
+
     private final SignInService service;
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
@@ -40,27 +41,50 @@ class SignInController {
      * POST /api/v1/account/auth/sign-in endpoint.
      */
     @PostMapping(SIGN_IN)
-    ResponseEntity<?> signIn(@Validated @RequestBody SignInService.Request request, HttpServletResponse response) {
-        log.info("Requested, body: {}", request);
-        var result = service.execute(request);
+    ResponseEntity<?> signIn(
+          @Validated @RequestBody SignInService.Request request,
+          HttpServletResponse response) {
+
+        log.info("Requested, body: {}",
+              request);
+
+        var result = service.execute(
+              request);
+
         return switch (result) {
             case Succeeded(String token) -> success(response, token);
             case InvalidCredentialsFailed(String message) -> fail(response, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<?> success(HttpServletResponse response, String token) {
-        authCookiesService.addAuthSucceededCookies(response, token);
+    private ResponseEntity<?> success(
+          HttpServletResponse response,
+          String token) {
+
+        authCookiesService.addAuthSucceededCookies(
+              response,
+              token);
+
         return successOkBody();
+
     }
 
-    private ResponseEntity<?> fail(HttpServletResponse response, String message) {
-        authCookiesService.addAuthFailedCookies(response);
-        return unAuthorizedBody(httpRequest, message);
+    private ResponseEntity<?> fail(
+          HttpServletResponse response,
+          String message) {
+
+        authCookiesService.addAuthFailedCookies(
+              response);
+
+        return unAuthorizedBody(
+              httpRequest,
+              message);
+
     }
 }

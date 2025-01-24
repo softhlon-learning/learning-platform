@@ -33,6 +33,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 class JwtAuthenticationFilter extends OncePerRequestFilter {
+
     private final JwtService jwtService;
     private final CheckTokenRepository checkTokenRepository;
 
@@ -43,37 +44,70 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
           FilterChain filterChain) throws ServletException, IOException {
 
         try {
-            var token = jwtService.extractToken(request);
-            if (token != null && jwtService.isTokenValid(token) && !isTokenInvalidated(token)) {
-                var authentication = SecurityContextHolder.getContext().getAuthentication();
-                var claims = jwtService.getAllClaimsFromToken(token);
+            var token = jwtService.extractToken(
+                  request);
+
+            if (token != null && jwtService.isTokenValid(token)
+                  && !isTokenInvalidated(token)) {
+
+                var authentication = SecurityContextHolder
+                      .getContext()
+                      .getAuthentication();
+
+                var claims = jwtService.getAllClaimsFromToken(
+                      token);
+
                 var authToken = new AuthenticationToken(
                       (String) claims.get("name"),
                       (String) claims.get("accountId"),
                       List.of());
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+
+                authToken
+                      .setDetails(new WebAuthenticationDetailsSource()
+                            .buildDetails(request));
+
+                SecurityContextHolder
+                      .getContext()
+                      .setAuthentication(authToken);
+
             }
         } catch (Throwable cause) {
+
             log.error("", cause);
+
         }
-        filterChain.doFilter(request, response);
+
+        filterChain.doFilter(
+              request,
+              response);
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private boolean isTokenInvalidated(String token) {
+    private boolean isTokenInvalidated(
+          String token) {
+
         try {
-            var tokenHash = jwtService.tokenHash(token);
-            var result = checkTokenRepository.execute(new CheckTokenRequest(tokenHash));
+            var tokenHash = jwtService.tokenHash(
+                  token);
+
+            var result = checkTokenRepository.execute(
+                  new CheckTokenRequest(tokenHash));
+
             if (result instanceof TokenExists) {
                 return true;
             }
+
         } catch (NoSuchAlgorithmException e) {
+
             return false;
+
         }
+
         return false;
     }
+
 }

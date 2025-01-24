@@ -23,10 +23,12 @@ import java.util.UUID;
 @Builder
 @Entity(name = "reset_password_tokens")
 class PasswordTokenEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID accountId;
     private String token;
     private OffsetDateTime expirationTime;
+
 }

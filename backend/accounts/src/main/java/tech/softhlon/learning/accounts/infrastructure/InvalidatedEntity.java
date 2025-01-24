@@ -22,8 +22,10 @@ import java.util.UUID;
 @Builder
 @Entity(name = "invalidated_tokens")
 class InvalidatedEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String tokenHash;
+
 }

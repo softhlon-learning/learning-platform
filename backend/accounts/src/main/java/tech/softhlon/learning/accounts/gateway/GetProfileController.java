@@ -35,35 +35,52 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.intern
 @RestController
 @RequiredArgsConstructor
 class GetProfileController {
+
     private final GetProfileService service;
     private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
 
     @GetMapping(PROFILE)
     ResponseEntity<?> getProfile() {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}", accountId);
-        var result = service.execute(new Request(accountId));
+
+        log.info("Requested, accountId: {}",
+              accountId);
+
+        var result = service.execute(
+              new Request(accountId));
+
         return switch (result) {
             case Succeeded(ProfileView profileView) -> successBody(profileView);
             case ProfileNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<?> successBody(GetProfileService.ProfileView profileView) {
-        return status(HttpStatus.OK).body(profile(profileView));
+    private ResponseEntity<?> successBody(
+          GetProfileService.ProfileView profileView) {
+
+        return status(HttpStatus.OK)
+              .body(profile(profileView));
+
     }
 
-    private Profile profile(ProfileView profileView) {
+    private Profile profile(
+          ProfileView profileView) {
+
         return new Profile(
               profileView.email(),
               profileView.name());
+
     }
 
-    record Profile(String email, String name) {}
+    record Profile(
+          String email,
+          String name) {}
 }

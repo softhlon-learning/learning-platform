@@ -33,6 +33,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignOutController {
+
     private final SignOutService service;
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
@@ -41,15 +42,23 @@ class SignOutController {
      * POST /api/v1/account/auth/sign-out endpoint.
      */
     @PostMapping(SIGN_OUT)
-    ResponseEntity<?> signOut(HttpServletResponse response) {
+    ResponseEntity<?> signOut(
+          HttpServletResponse response) {
+
         log.info("Requested");
-        var result = service.execute(new Request(extractToken()));
-        authCookiesService.resetAuthCookies(response);
+
+        var result = service.execute(
+              new Request(extractToken()));
+
+        authCookiesService.resetAuthCookies(
+              response);
+
         return switch (result) {
             case Succeeded() -> successCreatedBody();
             case NotAuthorized(String message) -> unAuthorizedBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -57,12 +66,15 @@ class SignOutController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private String extractToken() {
+
         var cookies = httpRequest.getCookies();
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals(AUTHORIZATION)) {
                 return cookie.getValue();
             }
         }
+
         return null;
+
     }
 }

@@ -25,25 +25,36 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
     private final AccountsJpaRepository accountsRepo;
 
     @Override
-    public CheckAccountByEmailResult execute(CheckAccountByEmailRequest request) {
+    public CheckAccountByEmailResult execute(
+          CheckAccountByEmailRequest request) {
+
         try {
-            var entity = accountsRepo.findByEmail(request.email());
+            var entity = accountsRepo.findByEmail(
+                  request.email());
+
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CheckAccountFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private CheckAccountByEmailResult existingAccount(AccountEntity entity) {
+    private CheckAccountByEmailResult existingAccount(
+          AccountEntity entity) {
+
         return entity.isDeleted()
               ? new AccountIsDeleted()
               : new AccountExists(entity.getId());
+
     }
 }

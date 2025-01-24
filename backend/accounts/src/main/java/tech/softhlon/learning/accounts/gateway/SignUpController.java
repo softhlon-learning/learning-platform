@@ -34,6 +34,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class SignUpController {
+
     private final SignUpService service;
     private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
@@ -42,9 +43,16 @@ class SignUpController {
      * POST /api/v1/account/sign-up endpoint.
      */
     @PostMapping(SIGN_UP)
-    ResponseEntity<?> signUp(@Validated @RequestBody SignUpService.Request request, HttpServletResponse response) {
-        log.info("Requested, body: {}", request);
-        var result = service.execute(request);
+    ResponseEntity<?> signUp(
+          @Validated @RequestBody SignUpService.Request request,
+          HttpServletResponse response) {
+
+        log.info("Requested, body: {}",
+              request);
+
+        var result = service.execute(
+              request);
+
         return switch (result) {
             case Succeeded(UUID id, String token) -> success(response, token);
             case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
@@ -54,20 +62,33 @@ class SignUpController {
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<Response> successBody(UUID id) {
-        return status(HttpStatus.CREATED).body(new Response(id));
+    private ResponseEntity<Response> successBody(
+          UUID id) {
+
+        return status(HttpStatus.CREATED)
+              .body(new Response(id));
+
     }
 
-    private ResponseEntity<?> success(HttpServletResponse response, String token) {
-        authCookiesService.addAuthSucceededCookies(response, token);
+    private ResponseEntity<?> success(
+          HttpServletResponse response,
+          String token) {
+
+        authCookiesService.addAuthSucceededCookies(
+              response,
+              token);
+
         return successCreatedBody();
+
     }
 
     record Response(UUID accountId) {}
+
 }

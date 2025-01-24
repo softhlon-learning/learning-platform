@@ -10,6 +10,7 @@ package tech.softhlon.learning.accounts.gateway;
 // ---------------------------------------------------------------------------------------------------------------------
 
 class RestResources {
+
     static final String API_PREFIX = "/api/v1";
     static final String ACCOUNT = API_PREFIX + "/account";
     static final String SIGN_IN = ACCOUNT + "/auth/sign-in";
@@ -18,4 +19,5 @@ class RestResources {
     static final String SIGN_UP = ACCOUNT + "/sign-up";
     static final String PROFILE = ACCOUNT + "/profile";
     static final String PASSWORD_RECOVERY = ACCOUNT + "/password-recovery";
+
 }

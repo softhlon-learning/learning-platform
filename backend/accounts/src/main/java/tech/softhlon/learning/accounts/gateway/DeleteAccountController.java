@@ -33,6 +33,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestController
 @RequiredArgsConstructor
 class DeleteAccountController {
+
     private final DeleteAccountService deleteAccountService;
     private final AuthCookiesService authCookiesService;
     private final AuthenticationContext authContext;
@@ -42,21 +43,34 @@ class DeleteAccountController {
      * DELETE /api/v1/account endpoint.
      */
     @DeleteMapping(path = ACCOUNT)
-    ResponseEntity<?> delete(HttpServletResponse response) {
-        var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}", accountId);
+    ResponseEntity<?> delete(
+          HttpServletResponse response) {
 
-        var result = deleteAccountService.execute(new Request(accountId));
+        var accountId = authContext
+              .accountId();
+
+        log.info("Requested, accountId: {}",
+              accountId);
+
+        var result = deleteAccountService.execute(
+              new Request(accountId));
+
         return switch (result) {
             case Succeeded() -> successResponse(response);
             case AccountIsAlreadyDeletedFailed(String message) -> badRequestBody(httpRequest, message);
             case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
 
-    private ResponseEntity<?> successResponse(HttpServletResponse response) {
-        authCookiesService.resetAuthCookies(response);
+    private ResponseEntity<?> successResponse(
+          HttpServletResponse response) {
+
+        authCookiesService.resetAuthCookies(
+              response);
+
         return successAcceptedBody();
+
     }
 }

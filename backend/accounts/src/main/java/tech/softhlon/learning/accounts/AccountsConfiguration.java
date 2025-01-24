@@ -18,5 +18,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories
 @Configuration(proxyBeanMethods = false)
 @ComponentScan("tech.softhlon.learning.accounts")
-public class AccountsConfiguration {
-}
+public class AccountsConfiguration {}

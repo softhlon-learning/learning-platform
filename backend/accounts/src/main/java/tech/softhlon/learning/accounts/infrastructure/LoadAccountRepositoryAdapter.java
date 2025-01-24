@@ -23,26 +23,37 @@ import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadAccountRepositoryAdapter implements LoadAccountRepository {
+
     private final AccountsJpaRepository accountsRepo;
 
     @Override
-    public LoadAccountResult execute(LoadAccountRequest request) {
+    public LoadAccountResult execute(
+          LoadAccountRequest request) {
+
         try {
-            var accountEntity = accountsRepo.findById(request.id());
+            var accountEntity = accountsRepo.findById(
+                  request.id());
+
             return accountEntity.isPresent()
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new AccountLoadFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private LoadAccountRepository.Account toAccount(AccountEntity entity) {
+    private LoadAccountRepository.Account toAccount(
+          AccountEntity entity) {
+
         return new Account(
               entity.getId(),
               entity.getType(),
@@ -51,5 +62,6 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
               entity.getPassword(),
               entity.isDeleted()
         );
+
     }
 }

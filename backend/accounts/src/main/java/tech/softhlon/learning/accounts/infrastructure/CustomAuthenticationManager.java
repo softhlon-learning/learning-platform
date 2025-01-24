@@ -22,21 +22,42 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 class CustomAuthenticationManager implements AuthenticationManager {
+
     private final JwtService jwtService;
 
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        var token = authentication.getCredentials().toString();
+    public Authentication authenticate(
+          Authentication authentication) throws AuthenticationException {
+
+        var token = authentication
+              .getCredentials()
+              .toString();
+
         if (jwtService.isTokenValid(token)) {
-            var claims = jwtService.getAllClaimsFromToken(token);
-            var name = claims.get("name", String.class);
-            var accountId = claims.get("accountId", String.class);
+
+            var claims = jwtService
+                  .getAllClaimsFromToken(token);
+
+            var name = claims.get(
+                  "name",
+                  String.class);
+
+            var accountId = claims.get(
+                  "accountId",
+                  String.class);
+
             return new AuthenticationToken(
                   name,
                   accountId,
                   List.of());
+
         } else {
+
             throw new InvalidTokenException();
+
         }
+
     }
+
 }
+

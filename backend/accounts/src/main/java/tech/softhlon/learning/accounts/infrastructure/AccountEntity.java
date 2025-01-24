@@ -24,6 +24,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 class AccountEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -32,4 +33,5 @@ class AccountEntity {
     private String email;
     private boolean isDeleted;
     private String password;
+
 }

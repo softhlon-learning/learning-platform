@@ -23,13 +23,20 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
     @Override
-    public CreatePasswordTokenResult execute(CreatePasswordTokenRequest request) {
+    public CreatePasswordTokenResult execute(
+          CreatePasswordTokenRequest request) {
+
         try {
-            passwordTokensJpaRepository.save(passwordTokenEntity(request));
+            passwordTokensJpaRepository.save(
+                  passwordTokenEntity(request));
+
             return new PasswordTokenPersisted();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new PasswordTokenPersistenceFailed(cause);
+
         }
     }
 
@@ -37,11 +44,14 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private PasswordTokenEntity passwordTokenEntity(CreatePasswordTokenRequest request) {
+    private PasswordTokenEntity passwordTokenEntity(
+          CreatePasswordTokenRequest request) {
+
         return PasswordTokenEntity.builder()
               .accountId(request.accountId())
               .token(request.token())
               .expirationTime(request.expirationTime())
               .build();
+
     }
 }

@@ -16,5 +16,8 @@ import java.util.UUID;
 
 @Repository
 interface InvalidatedTokensJpaRepository extends CrudRepository<InvalidatedEntity, UUID> {
-    boolean existsByTokenHash(String tokenHash);
+
+    boolean existsByTokenHash(
+          String tokenHash);
+
 }

@@ -24,35 +24,49 @@ import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 @PersistenceAdapter
 @RequiredArgsConstructor
 class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepository {
+
     private final AccountsJpaRepository accountsRepo;
 
     @Override
-    public LoadAccountByEmailResult execute(LoadAccountByEmailRequest request) {
+    public LoadAccountByEmailResult execute(
+          LoadAccountByEmailRequest request) {
         try {
-            var entity = accountsRepo.findByEmail(request.email());
+            var entity = accountsRepo.findByEmail(
+                  request.email());
+
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new LoadAccountFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private LoadAccountByEmailResult existingAccount(AccountEntity entity) {
+    private LoadAccountByEmailResult existingAccount(
+          AccountEntity entity) {
+
         return entity.isDeleted()
               ? new AccountIsDeleted()
               : new AccountFound(toAccount(entity));
+
     }
 
-    private Account toAccount(AccountEntity entity) {
+    private Account toAccount(
+          AccountEntity entity) {
+
         return new Account(
               entity.getId(),
               entity.getEmail(),
               entity.getPassword());
+
     }
 }

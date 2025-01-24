@@ -34,6 +34,7 @@ import static tech.softhlon.learning.accounts.gateway.RestResources.GOOGLE_SIGN_
 @RestApiAdapter
 @RestController
 class GoogleSignInController {
+
     private static final String LOCATION = "Location";
     private static final String CREDENTIAL = "credential";
     private final GoogleSignInService service;
@@ -48,51 +49,86 @@ class GoogleSignInController {
           HttpServletRequest httpRequest,
           @Value("${login-redirect-success-uri}") String loginRedirectSuccessUri,
           @Value("${login-redirect-fail-uri}") String loginRedirectFailUri) {
+
         this.service = service;
         this.authCookiesService = authCookiesService;
         this.httpRequest = httpRequest;
         this.loginRedirectSuccessUri = loginRedirectSuccessUri;
         this.loginRedirectFailUri = loginRedirectFailUri;
+
     }
 
     /**
      * POST /api/v1/account/auth/google-sign-in endpoint.
      */
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-    void signIn(@RequestParam Map<String, String> body, HttpServletResponse response) {
+    void signIn(
+          @RequestParam Map<String, String> body,
+          HttpServletResponse response) {
+
         log.info("Requested");
-        var result = service.execute(prepareRequest(body));
+
+        var result = service.execute(
+              prepareRequest(body));
+
         switch (result) {
             case Succeeded(String token) -> {
+
                 authCookiesService.addAuthSucceededCookies(response, token);
                 addSuccessfulRedirectHeaders(response);
+
             }
             case Failed(_), InvalidCredentialsFailed(_) -> {
+
                 authCookiesService.addAuthFailedCookies(response);
                 addFailfulRedirectHeaders(response, "Internal error");
+
             }
             case AccountIsDeletedFailed(String message) -> {
+
                 authCookiesService.addAuthFailedCookies(response);
                 addFailfulRedirectHeaders(response, message);
+
             }
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Request prepareRequest(Map<String, String> body) {
-        return new Request(body.get(CREDENTIAL));
+    private Request prepareRequest(
+          Map<String, String> body) {
+
+        return new Request(
+              body.get(CREDENTIAL));
+
     }
 
-    private void addSuccessfulRedirectHeaders(HttpServletResponse response) {
-        response.setHeader(LOCATION, loginRedirectSuccessUri);
-        response.setStatus(HttpStatus.FOUND.value());
+    private void addSuccessfulRedirectHeaders(
+          HttpServletResponse response) {
+
+        response.setHeader(
+              LOCATION,
+              loginRedirectSuccessUri);
+
+        response.setStatus(
+              HttpStatus.FOUND.value());
+
     }
 
-    private void addFailfulRedirectHeaders(HttpServletResponse response, String errorMessage) {
-        response.setHeader(LOCATION, loginRedirectFailUri + "?error=" + errorMessage);
-        response.setStatus(HttpStatus.FOUND.value());
+    private void addFailfulRedirectHeaders(
+          HttpServletResponse response,
+          String errorMessage) {
+
+        response.setHeader(
+              LOCATION,
+              loginRedirectFailUri + "?error=" + errorMessage);
+
+        response.setStatus(
+              HttpStatus.FOUND.value());
+
     }
 }

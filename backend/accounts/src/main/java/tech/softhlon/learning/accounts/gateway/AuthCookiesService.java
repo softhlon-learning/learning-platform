@@ -16,27 +16,74 @@ import org.springframework.stereotype.Service;
 
 @Service
 class AuthCookiesService {
+
     static final String AUTHORIZATION = "Authorization";
     private static final String AUTHENTICATED = "Authenticated";
     private final int maxAge;
 
-    public AuthCookiesService(@Value("${jwt.expiration}") int maxAge) {
+    public AuthCookiesService(
+          @Value("${jwt.expiration}") int maxAge) {
+
         this.maxAge = maxAge;
+
     }
 
-    void addAuthSucceededCookies(HttpServletResponse response, String token) {
-        addCookie(response, AUTHORIZATION, token, true, maxAge);
-        addCookie(response, AUTHENTICATED, "true", false, maxAge);
+    void addAuthSucceededCookies(
+          HttpServletResponse response,
+          String token) {
+
+        addCookie(
+              response,
+              AUTHORIZATION,
+              token,
+              true,
+              maxAge);
+
+        addCookie(
+              response,
+              AUTHENTICATED,
+              "true",
+              false,
+              maxAge);
+
     }
 
-    void addAuthFailedCookies(HttpServletResponse response) {
-        addCookie(response, AUTHORIZATION, null, true, 0);
-        addCookie(response, AUTHENTICATED, "false", false, Integer.MAX_VALUE);
+    void addAuthFailedCookies(
+          HttpServletResponse response) {
+
+        addCookie(
+              response,
+              AUTHORIZATION,
+              null,
+              true,
+              0);
+
+        addCookie(
+              response,
+              AUTHENTICATED,
+              "false",
+              false,
+              Integer.MAX_VALUE);
+
     }
 
-    void resetAuthCookies(HttpServletResponse response) {
-        addCookie(response, AUTHORIZATION, null, true, 0);
-        addCookie(response, AUTHENTICATED, "false", false, Integer.MAX_VALUE);
+    void resetAuthCookies(
+          HttpServletResponse response) {
+
+        addCookie(
+              response,
+              AUTHORIZATION,
+              null,
+              true,
+              0);
+
+        addCookie(
+              response,
+              AUTHENTICATED,
+              "false",
+              false,
+              Integer.MAX_VALUE);
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -49,11 +96,18 @@ class AuthCookiesService {
           String value,
           boolean httpOnly,
           int maxAge) {
-        var cookie = new Cookie(name, value);
+
+        var cookie = new Cookie(
+              name,
+              value);
+
         cookie.setPath("/");
         cookie.setSecure(true);
         cookie.setHttpOnly(httpOnly);
         cookie.setMaxAge(maxAge);
+
         response.addCookie(cookie);
+
     }
+
 }
