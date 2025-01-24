@@ -57,4 +57,5 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
               : new AccountExists(entity.getId());
 
     }
+
 }
