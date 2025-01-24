@@ -41,6 +41,7 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
 
             log.error("Error", cause);
             return new TokenLoadFailed(cause);
+
         }
 
     }
