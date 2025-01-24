@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.accounts.domain;
 
+import com.google.api.client.util.Value;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
@@ -31,9 +32,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class RecoverPasswordServiceImpl implements RecoverPasswordService {
     private static final String EMAIL_NOT_FOUND = "Email not found";
+    private static final String SUBJECT = "Password Recovery";
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
     private final EmailService emailService;
+    @Value("${password-recovery.base-url}")
+    private String baseUrl;
 
     @Override
     public Result execute(Request request) {
@@ -51,23 +55,24 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result processPasswordRecovery(Account account) {
+        var token = UUID.randomUUID().toString();
         var result = createPasswordTokenRepository.execute(
-              passwordTokenRequest(account));
+              passwordTokenRequest(account, token));
         return switch (result) {
-            case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account);
+            case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account, token);
             case PasswordTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
-    private CreatePasswordTokenRequest passwordTokenRequest(Account account) {
+    private CreatePasswordTokenRequest passwordTokenRequest(Account account, String token) {
         return new CreatePasswordTokenRequest(
               account.id(),
-              UUID.randomUUID().toString(),
+              token,
               OffsetDateTime.now().plusDays(1));
     }
 
-    private Result sendEmail(Account account) {
-        emailService.sendMessage(account.email(), "Password Recovery", "Link");
+    private Result sendEmail(Account account, String token) {
+        emailService.sendMessage(account.email(), SUBJECT, baseUrl + token);
         return new Succeeded();
     }
 }
