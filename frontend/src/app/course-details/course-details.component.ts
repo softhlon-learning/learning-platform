@@ -208,15 +208,9 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     typeVerb(lecture: Lecture): string {
-        if (lecture.type === "Video") {
-            return "Watch";
-        }
-        if (lecture.type === "Document") {
-            return "Read";
-        }
-        if (lecture.type === "Quiz") {
-            return "Interact";
-        }
+        if (lecture.type === "Video") return "Watch";
+        if (lecture.type === "Document") return "Read";
+        if (lecture.type === "Quiz") return "Interact";
         return lecture.type;
     }
 }

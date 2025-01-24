@@ -9,20 +9,9 @@ export class KeyboardInputCourseToc {
     keyboardInput(courseToc: CourseTocComponent, event: any) {
         event.stopPropagation()
 
-        if (event.code == 'KeyE') {
-            courseToc.enrollCourse();
-        }
-
-        if (event.code == 'KeyU') {
-            courseToc.unenrollCourse();
-        }
-
-        if (event.code == 'ArrowRight') {
-            courseToc.open();
-        }
-
-        if (event.code == 'KeyH' || event.code == 'ArrowLeft') {
-            courseToc.home();
-        }
+        if (event.code == 'KeyE') courseToc.enrollCourse();
+        if (event.code == 'KeyU') courseToc.unenrollCourse();
+        if (event.code == 'ArrowRight') courseToc.open();
+        if (event.code == 'KeyH' || event.code == 'ArrowLeft') courseToc.home();
     }
 }
