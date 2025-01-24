@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.27.4
+_release date: 2025-01-24_
+ * Fixed password-recovery.base-url
+ * Updated password update success text
+ * Improved error handling on update-password page
+
 ## 0.27.3
 _release date: 2025-01-24_
  * Implemented UpdatePasswordController
