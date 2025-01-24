@@ -34,6 +34,7 @@ public interface LoadPasswordTokenRepository {
 
     record PasswordToken(
           UUID id,
+          UUID accountId,
           String token,
           OffsetDateTime expirationTime) {}
 
