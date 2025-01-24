@@ -30,40 +30,58 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class SubscribeServiceImpl implements SubscribeService {
+
     private final CheckSubscriptionByAccountRepository checkSubscriptionRepository;
     private final CreateSubscriptionRepository createSubscriptionRepository;
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         try {
-            var exists = checkSubscriptionRepository.execute(new CheckSubscriptionByAccountRequest(request.accountId()));
+            var exists = checkSubscriptionRepository.execute(
+                  new CheckSubscriptionByAccountRequest(request.accountId()));
+
             return switch (exists) {
                 case SubscriptionExists() -> new AccountAlreadySubscribedFailed("Account already subscribed");
                 case SubscriptionNotFound() -> persistSubscription(request);
                 case CheckSubscriptionFailed(Throwable cause) -> new Failed(cause);
             };
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new Failed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private Result persistSubscription(Request request) {
-        var result = createSubscriptionRepository.execute(prepareRequest(request));
+    private Result persistSubscription(
+          Request request) {
+
+        var result = createSubscriptionRepository.execute(
+              prepareRequest(request));
+
         return switch (result) {
             case SubscriptionPersisted(UUID id) -> new Succeeded();
             case SubscriptionPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
-    private CreateSubscriptionRequest prepareRequest(Request request) {
+    private CreateSubscriptionRequest prepareRequest(
+          Request request) {
+
         return new CreateSubscriptionRequest(
               request.accountId(),
               SubscriptionStatus.ACTIVE.name(),
               OffsetDateTime.now());
+
     }
+
 }

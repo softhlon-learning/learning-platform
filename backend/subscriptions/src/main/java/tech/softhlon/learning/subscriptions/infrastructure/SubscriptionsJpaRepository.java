@@ -16,5 +16,8 @@ import java.util.UUID;
 
 @Repository
 interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, UUID> {
-    boolean existsByAccountId(UUID accountId);
+
+    boolean existsByAccountId(
+          UUID accountId);
+
 }

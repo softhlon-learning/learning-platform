@@ -10,8 +10,10 @@ package tech.softhlon.learning.subscriptions.gateway;
 // ---------------------------------------------------------------------------------------------------------------------
 
 class RestResources {
+
     static final String API_PREFIX = "/api/v1";
     static final String SUBSCRIPTION = API_PREFIX + "/subscription";
     static final String SUBSCRIBE = SUBSCRIPTION;
     static final String UNSUBSCRIBE = SUBSCRIPTION;
+
 }

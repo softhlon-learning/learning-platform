@@ -13,8 +13,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 class UnsubscribeServiceImpl implements UnsubscribeService {
+
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          Request request) {
+
         throw new UnsupportedOperationException();
+
     }
+
 }

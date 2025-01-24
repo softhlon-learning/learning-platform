@@ -19,7 +19,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CreateSubscriptionRepository {
-    CreateSubscriptionResult execute(CreateSubscriptionRequest request);
+
+    CreateSubscriptionResult execute(
+          CreateSubscriptionRequest request);
 
     sealed interface CreateSubscriptionResult {
         record SubscriptionPersisted(UUID uuid) implements CreateSubscriptionResult {}
@@ -30,4 +32,5 @@ public interface CreateSubscriptionRepository {
           UUID accountId,
           String status,
           OffsetDateTime startedTime) {}
+
 }

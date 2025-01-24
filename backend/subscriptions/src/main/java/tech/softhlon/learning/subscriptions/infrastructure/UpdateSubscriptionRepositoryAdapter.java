@@ -22,27 +22,48 @@ import tech.softhlon.learning.subscriptions.domain.UpdateSubscriptionRepository.
 @PersistenceAdapter
 @RequiredArgsConstructor
 class UpdateSubscriptionRepositoryAdapter implements UpdateSubscriptionRepository {
+
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
     @Override
-    public UpdateSubscriptionResult execute(Subscription subscription) {
+    public UpdateSubscriptionResult execute(
+          Subscription subscription) {
+
         try {
-            var entity = subscriptionsRepo.findById(subscription.id()).get();
-            updateEntity(subscription, entity);
-            subscriptionsRepo.save(entity);
+            var entity = subscriptionsRepo.findById(
+                  subscription.id()).get();
+
+            updateEntity(
+                  subscription,
+                  entity);
+
+            subscriptionsRepo.save(
+                  entity);
+
             return new SubscriptionPersisted();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new SubscriptionPersistenceFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private void updateEntity(Subscription subscription, SubscriptionEntity entity) {
-        entity.setStatus(subscription.status());
-        entity.setCancelledTime(subscription.cancelledTime());
+    private void updateEntity(
+          Subscription subscription,
+          SubscriptionEntity entity) {
+
+        entity.setStatus(
+              subscription.status());
+        entity.setCancelledTime(
+              subscription.cancelledTime());
+
     }
+
 }

@@ -10,7 +10,9 @@ package tech.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 public interface UnsubscribeService {
-    Result execute(Request request);
+
+    Result execute(
+          Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -18,5 +20,7 @@ public interface UnsubscribeService {
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(String accountId) {}
+    record Request(
+          String accountId) {}
+
 }

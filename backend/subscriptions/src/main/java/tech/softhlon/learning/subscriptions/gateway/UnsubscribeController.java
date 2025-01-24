@@ -32,6 +32,7 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSC
 @RestController
 @RequiredArgsConstructor
 class UnsubscribeController {
+
     private final UnsubscribeService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -40,13 +41,21 @@ class UnsubscribeController {
      * DELETE /api/v1/subscription.
      */
     @DeleteMapping(UNSUBSCRIBE)
-    ResponseEntity<?> unsubscribe(@Validated @RequestBody UnsubscribeService.Request request) {
+    ResponseEntity<?> unsubscribe(
+          @Validated @RequestBody UnsubscribeService.Request request) {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, body: {}", accountId, request);
+
+        log.info("Requested, accountId: {}, body: {}",
+              accountId,
+              request);
+
         return switch (service.execute(request)) {
             case Succeeded() -> successAcceptedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
+
 }

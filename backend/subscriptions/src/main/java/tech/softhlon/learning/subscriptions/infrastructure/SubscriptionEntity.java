@@ -25,6 +25,7 @@ import java.util.UUID;
 @Builder
 @Entity(name = "subscriptions")
 public class SubscriptionEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -32,4 +33,5 @@ public class SubscriptionEntity {
     private String status;
     private OffsetDateTime startedTime;
     private OffsetDateTime cancelledTime;
+
 }

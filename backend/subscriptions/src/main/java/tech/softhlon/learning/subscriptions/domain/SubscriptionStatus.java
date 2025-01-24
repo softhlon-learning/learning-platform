@@ -10,6 +10,8 @@ package tech.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 enum SubscriptionStatus {
+
     ACTIVE,
     CANCELLED;
+
 }

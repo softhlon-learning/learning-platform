@@ -18,7 +18,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface CheckSubscriptionByAccountRepository {
-    CheckSubscriptionByAccountResult execute(CheckSubscriptionByAccountRequest request);
+
+    CheckSubscriptionByAccountResult execute(
+          CheckSubscriptionByAccountRequest request);
 
     sealed interface CheckSubscriptionByAccountResult {
         record SubscriptionExists() implements CheckSubscriptionByAccountResult {}
@@ -26,5 +28,7 @@ public interface CheckSubscriptionByAccountRepository {
         record CheckSubscriptionFailed(Throwable cause) implements CheckSubscriptionByAccountResult {}
     }
 
-    record CheckSubscriptionByAccountRequest(UUID accountId) {}
+    record CheckSubscriptionByAccountRequest(
+          UUID accountId) {}
+
 }

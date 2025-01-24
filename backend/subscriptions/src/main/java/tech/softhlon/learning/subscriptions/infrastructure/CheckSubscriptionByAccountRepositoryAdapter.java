@@ -25,15 +25,23 @@ import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRep
 class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionByAccountRepository {
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
+
     @Override
-    public CheckSubscriptionByAccountResult execute(CheckSubscriptionByAccountRequest request) {
+    public CheckSubscriptionByAccountResult execute(
+          CheckSubscriptionByAccountRequest request) {
+
         try {
             return subscriptionsRepo.existsByAccountId(request.accountId())
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new CheckSubscriptionFailed(cause);
+
         }
+
     }
+
 }

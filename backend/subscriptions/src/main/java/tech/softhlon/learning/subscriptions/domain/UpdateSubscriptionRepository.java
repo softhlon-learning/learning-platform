@@ -19,7 +19,9 @@ import java.util.UUID;
 @DomainRepository
 @FunctionalInterface
 public interface UpdateSubscriptionRepository {
-    UpdateSubscriptionResult execute(Subscription subscription);
+
+    UpdateSubscriptionResult execute(
+          Subscription subscription);
 
     sealed interface UpdateSubscriptionResult {
         record SubscriptionPersisted() implements UpdateSubscriptionResult {}
@@ -32,4 +34,5 @@ public interface UpdateSubscriptionRepository {
           String status,
           OffsetDateTime startedTime,
           OffsetDateTime cancelledTime) {}
+
 }

@@ -31,6 +31,7 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRI
 @RestController
 @RequiredArgsConstructor
 class SubscribeController {
+
     private final SubscribeService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -40,12 +41,18 @@ class SubscribeController {
      */
     @PostMapping(SUBSCRIBE)
     ResponseEntity<?> subscribe() {
+
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}");
+
+        log.info("Requested, accountId: {}",
+              accountId);
+
         return switch (service.execute(new Request(accountId))) {
             case Succeeded() -> successCreatedBody();
             case AccountAlreadySubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
+
     }
+
 }

@@ -22,29 +22,43 @@ import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionRepository.
 @PersistenceAdapter
 @RequiredArgsConstructor
 class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepository {
+
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
     @Override
-    public CreateSubscriptionResult execute(CreateSubscriptionRequest request) {
+    public CreateSubscriptionResult execute(
+          CreateSubscriptionRequest request) {
+
         try {
-            var createdEntity = subscriptionsRepo.save(toEntity(request));
-            return new SubscriptionPersisted(createdEntity.getId());
+            var createdEntity = subscriptionsRepo.save(
+                  toEntity(request));
+
+            return new SubscriptionPersisted(
+                  createdEntity.getId());
+
         } catch (Throwable cause) {
+
             log.error("Error", cause);
             return new SubscriptionPersistenceFailed(cause);
+
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private SubscriptionEntity toEntity(CreateSubscriptionRequest request) {
+    private SubscriptionEntity toEntity(
+          CreateSubscriptionRequest request) {
+
         return SubscriptionEntity.builder()
               .accountId(request.accountId())
               .status(request.status())
               .startedTime(request.startedTime())
               .build();
+
     }
+
 }
 
