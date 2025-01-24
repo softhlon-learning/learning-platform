@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Request;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
@@ -53,6 +54,7 @@ class ResetPasswordController {
 
         return switch (result) {
             case Succeeded() -> successCreatedBody();
+            case EmailPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case EmailNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };

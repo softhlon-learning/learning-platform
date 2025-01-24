@@ -16,6 +16,7 @@ import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadA
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
@@ -45,17 +46,20 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
           """;
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
+    private final EmailValidationService emailValidationService;
     private final EmailService emailService;
     private final String baseUrl;
 
     public ResetPasswordServiceImpl(
           LoadAccountByEmailRepository loadAccountByEmailRepository,
           CreatePasswordTokenRepository createPasswordTokenRepository,
+          EmailValidationService emailValidationService,
           EmailService emailService,
           @Value("${password-recovery.base-url}") String baseUrl) {
 
         this.loadAccountByEmailRepository = loadAccountByEmailRepository;
         this.createPasswordTokenRepository = createPasswordTokenRepository;
+        this.emailValidationService = emailValidationService;
         this.emailService = emailService;
         this.baseUrl = baseUrl;
 
@@ -64,6 +68,12 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     @Override
     public Result execute(
           Request request) {
+
+        var validationResult = validateInput(
+              request);
+
+        if (validationResult != null)
+            return validationResult;
 
         var result = loadAccountByEmailRepository.execute(
               new LoadAccountByEmailRequest(
@@ -80,6 +90,19 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private Result validateInput(
+          Request request) {
+
+        if (request.email().isBlank())
+            return new EmailPolicyFailed("Email is blank");
+
+        if (!emailValidationService.isEmailValid(request.email()))
+            return new EmailPolicyFailed("Email is not in right format");
+
+        return null;
+
+    }
 
     private Result processPasswordRecovery(
           Account account) {

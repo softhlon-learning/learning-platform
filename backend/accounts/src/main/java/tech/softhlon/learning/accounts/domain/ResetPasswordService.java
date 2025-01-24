@@ -20,6 +20,7 @@ public interface ResetPasswordService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
+        record EmailPolicyFailed(String message) implements Result {}
         record EmailNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
