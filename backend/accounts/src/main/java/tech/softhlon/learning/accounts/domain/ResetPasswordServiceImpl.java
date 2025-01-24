@@ -82,11 +82,17 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     }
 
     private CreatePasswordTokenRequest passwordTokenRequest(Account account, String token) {
-        return new CreatePasswordTokenRequest(account.id(), token, OffsetDateTime.now().plusDays(1));
+        return new CreatePasswordTokenRequest(
+              account.id(),
+              token,
+              OffsetDateTime.now().plusDays(1));
     }
 
     private Result sendEmail(Account account, String token) {
-        emailService.sendMessage(account.email(), SUBJECT, EMAIL_CONTENT.formatted(baseUrl + token));
+        emailService.sendMessage(
+              account.email(),
+              SUBJECT,
+              EMAIL_CONTENT.formatted(baseUrl + token));
         return new Succeeded();
     }
 }
