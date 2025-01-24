@@ -5,8 +5,8 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-import com.google.api.client.util.Value;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersisted;
