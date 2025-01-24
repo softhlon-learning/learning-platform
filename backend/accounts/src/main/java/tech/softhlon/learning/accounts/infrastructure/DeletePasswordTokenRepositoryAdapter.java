@@ -24,7 +24,8 @@ class DeletePasswordTokenRepositoryAdapter implements DeletePasswordTokenReposit
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
     @Override
-    public DeletePasswordTokenResult execute(DeletePasswordTokenRequest request) {
+    public DeletePasswordTokenResult execute(
+          DeletePasswordTokenRequest request) {
 
         try {
 

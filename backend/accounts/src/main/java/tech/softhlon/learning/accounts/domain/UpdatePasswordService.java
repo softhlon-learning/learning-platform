@@ -22,7 +22,7 @@ interface UpdatePasswordService {
         record Succeeded() implements Result {}
         record InvalidTokenFailed(String message) implements Result {}
         record ExpiredTokenFailed(String message) implements Result {}
-        record Failed() implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 
 }
