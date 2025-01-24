@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
 import {PlatformService} from "../service/platform.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'sign-up',
@@ -10,6 +11,7 @@ import {PlatformService} from "../service/platform.service";
 })
 export class UpdatePasswordComponent implements OnInit {
     success: boolean = false;
+    token: string | undefined;
     error: string | undefined;
     updatePasswordForm = this.formBuilder.group({
         password: ''
@@ -18,12 +20,20 @@ export class UpdatePasswordComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService) {
+        private platformService: PlatformService,
+        private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.error = undefined;
         this.success = false;
+
+        this.route.queryParamMap.subscribe(item => {
+                if (item.has("token")) {
+                    this.token = item.get("token")?.toString();
+                }
+            }
+        );
     }
 
     onSubmit(): void {
@@ -35,7 +45,7 @@ export class UpdatePasswordComponent implements OnInit {
         const {password = ''} = this.updatePasswordForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.updatePassword(password || '').subscribe({
+        this.platformService.updatePassword(this.token || '', password || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });

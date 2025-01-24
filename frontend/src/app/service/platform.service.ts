@@ -90,8 +90,8 @@ export class PlatformService {
         return this.http.post<ArrayBuffer>(this.resetPassworUrl, recoverPasswordRequest).pipe();
     }
 
-    updatePassword(password: string): Observable<ArrayBuffer> {
-        const updatePasswordRequest = new UpdatePasswordRequest(password);
+    updatePassword(token: string, password: string): Observable<ArrayBuffer> {
+        const updatePasswordRequest = new UpdatePasswordRequest(token, password);
         return this.http.post<ArrayBuffer>(this.updatePassworUrl, updatePasswordRequest).pipe();
     }
 }
@@ -159,9 +159,11 @@ class RecoverPasswordRequest {
 }
 
 class UpdatePasswordRequest {
+    token: string;
     password: string;
 
-    constructor(password: string) {
+    constructor(token: string, password: string) {
+        this.token = token;
         this.password = password;
     }
 }
