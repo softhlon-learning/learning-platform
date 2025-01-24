@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.26.9
+_release date: 2025-01-24_
+ * Comparing performance under different kernels
+
 ## 0.26.8
 _release date: 2025-01-24_
  * Implemented DeletePasswordTokenRepositoryAdapter
