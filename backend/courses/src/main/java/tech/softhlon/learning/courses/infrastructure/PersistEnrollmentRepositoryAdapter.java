@@ -67,4 +67,5 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
         entity.setCompletedTime(request.completedTime());
 
     }
+
 }

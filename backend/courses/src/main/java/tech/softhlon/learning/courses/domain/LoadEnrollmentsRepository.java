@@ -28,7 +28,8 @@ public interface LoadEnrollmentsRepository {
         record EnrollmentsLoaded(List<Enrollment> enrollments) implements ListEnrollmentsResult {}
         record EnrollmentLoadFailed(Throwable cause) implements ListEnrollmentsResult {}
     }
-    record ListEnrollmentsRequest(UUID courseId) {}
+    record ListEnrollmentsRequest(
+          UUID courseId) {}
 
     record Enrollment(
           UUID courseId,

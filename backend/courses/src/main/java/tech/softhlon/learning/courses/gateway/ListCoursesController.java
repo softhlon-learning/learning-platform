@@ -46,7 +46,6 @@ class ListCoursesController {
     ResponseEntity<?> listCourses() {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}",
               accountId);
 

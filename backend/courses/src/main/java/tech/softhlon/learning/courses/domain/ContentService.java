@@ -23,14 +23,16 @@ class ContentService {
     CourseContent jsonToCurseContent(
           String json) {
 
-        return toCourseContent(base64Decode(json));
+        return toCourseContent(
+              base64Decode(json));
 
     }
 
     String courseContentToJson(
           CourseContent content) {
 
-        return base64Encode(toJson(content));
+        return base64Encode(
+              toJson(content));
 
     }
 
@@ -90,4 +92,5 @@ class ContentService {
           boolean processed,
           String time,
           boolean selected) {}
+
 }

@@ -48,6 +48,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
             return new EnrollementPersistenceFailed(cause);
 
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------

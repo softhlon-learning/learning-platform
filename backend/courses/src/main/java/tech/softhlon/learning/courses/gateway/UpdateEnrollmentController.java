@@ -51,7 +51,6 @@ class UpdateEnrollmentController {
           @Validated @RequestBody UpdateEnrollmentRequest request) {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}, courseId: {}",
               accountId,
               courseId);
@@ -84,4 +83,5 @@ class UpdateEnrollmentController {
     }
 
     record UpdateEnrollmentRequest(String content) {}
+
 }

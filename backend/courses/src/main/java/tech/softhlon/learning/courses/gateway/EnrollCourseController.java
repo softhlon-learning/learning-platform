@@ -48,7 +48,6 @@ class EnrollCourseController {
           @PathVariable("courseId") UUID courseId) {
 
         var accountId = authContext.accountId();
-
         log.info("Requested, accountId: {}, courseId: {}",
               accountId,
               courseId);
@@ -74,4 +73,5 @@ class EnrollCourseController {
               courseId);
 
     }
+
 }
