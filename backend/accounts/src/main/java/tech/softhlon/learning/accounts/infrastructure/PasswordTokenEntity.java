@@ -21,7 +21,7 @@ import java.util.UUID;
 
 @Getter
 @Builder
-@Entity(name = "password_recovery_tokens")
+@Entity(name = "reset_password_tokens")
 class PasswordTokenEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

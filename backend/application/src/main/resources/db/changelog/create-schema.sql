@@ -66,19 +66,19 @@ CREATE TABLE invalidated_tokens (
 
 CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
 
-CREATE TABLE password_recovery_tokens (
+CREATE TABLE reset_password_tokens (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid,
     token VARCHAR NOT NULL,
     expiration_time TIMESTAMP DEFAULT current_timestamp,
     created_time TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    CONSTRAINT fk_password_recovery_tokens_accounts
+    CONSTRAINT fk_reset_password_tokens_accounts
          FOREIGN KEY (account_id)
          REFERENCES accounts (id)
 );
 
-CREATE INDEX password_recovery_tokens__token_index ON password_recovery_tokens (token);
+CREATE INDEX reset_password_tokens__token_index ON reset_password_tokens (token);
 
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
