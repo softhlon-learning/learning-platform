@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.7
+_release date: 2025-01-24_
+ * Renamed Recovery to Reset
+ * Renamed password_recovery_tokens to reset_password_tokens
+
 ## 0.25.6
 _release date: 2025-01-24_
  * Removed unused email properties
