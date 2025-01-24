@@ -5,8 +5,8 @@ CREATE TABLE accounts (
     email VARCHAR NOT NULL,
     password VARCHAR NULL,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
-    created_time TIMESTAMP DEFAULT current_timestamp,
-    updated_time TIMESTAMP DEFAULT current_timestamp,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT unique_accounts_email UNIQUE (email)
 );
@@ -19,8 +19,8 @@ CREATE TABLE courses (
     description VARCHAR,
     content VARCHAR,
     version VARCHAR NOT NULL,
-    created_time TIMESTAMP DEFAULT current_timestamp,
-    updated_time TIMESTAMP DEFAULT current_timestamp,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
@@ -29,10 +29,10 @@ CREATE TABLE enrollments (
     account_id uuid NOT NULL,
     course_id uuid NOT NULL,
     content VARCHAR,
-    enrolled_time TIMESTAMP,
-    completed_time TIMESTAMP,
-    created_time TIMESTAMP DEFAULT current_timestamp,
-    updated_time TIMESTAMP DEFAULT current_timestamp,
+    enrolled_time TIMESTAMP WITH TIME ZONE,
+    completed_time TIMESTAMP WITH TIME ZONE,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     UNIQUE(account_id, course_id),
     CONSTRAINT fk_enrollments_accounts
@@ -47,10 +47,10 @@ CREATE TABLE subscriptions (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid NOT NULL,
     status VARCHAR NOT NULL,
-    started_time TIMESTAMP,
-    cancelled_time TIMESTAMP,
-    created_time TIMESTAMP DEFAULT current_timestamp,
-    updated_time TIMESTAMP DEFAULT current_timestamp,
+    started_time TIMESTAMP WITH TIME ZONE,
+    cancelled_time TIMESTAMP WITH TIME ZONE,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_subscriptions_accounts
          FOREIGN KEY (account_id)
@@ -60,7 +60,7 @@ CREATE TABLE subscriptions (
 CREATE TABLE invalidated_tokens (
     id uuid DEFAULT gen_random_uuid(),
     token_hash VARCHAR NOT NULL,
-    created_time TIMESTAMP DEFAULT current_timestamp,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
@@ -70,8 +70,8 @@ CREATE TABLE reset_password_tokens (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid,
     token VARCHAR NOT NULL,
-    expiration_time TIMESTAMP DEFAULT current_timestamp,
-    created_time TIMESTAMP DEFAULT current_timestamp,
+    expiration_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_reset_password_tokens_accounts
          FOREIGN KEY (account_id)
