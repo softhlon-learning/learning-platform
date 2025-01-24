@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.26.5
+_release date: 2025-01-24_
+ * Added token support to update-password component
+ * Added LoadPasswordTokenRepository interface
+ * Added empty LoadPasswordTokenRepositoryAdapter
+
 ## 0.26.4
 _release date: 2025-01-24_
  * Added update-password page
