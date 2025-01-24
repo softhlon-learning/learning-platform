@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.25.6
+_release date: 2025-01-24_
+ * Removed unused email properties
+ * Add email content
+
 ## 0.25.5
 _release date: 2025-01-24_
  * Implemented EmailServiceImpl
