@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.6
+_release date: 2025-01-25_
+ *  Added email validation to ResetPasswordService
+ *  Fixed reset password label
+
 ## 0.27.5
 _release date: 2025-01-24_
  * Added EmailValidationService
