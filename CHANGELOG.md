@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.26.2
+_release date: 2025-01-24_
+ * Refactoring frontend code
+ * Reformatting frontend code
+
 ## 0.26.1
 _release date: 2025-01-24_
  * Updated backend code formatting
