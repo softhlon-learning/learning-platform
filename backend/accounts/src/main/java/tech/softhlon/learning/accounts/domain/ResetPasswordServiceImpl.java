@@ -5,7 +5,6 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
@@ -17,9 +16,9 @@ import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadA
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.EmailNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -29,15 +28,13 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Service
-@RequiredArgsConstructor
-class RecoverPasswordServiceImpl implements RecoverPasswordService {
+class ResetPasswordServiceImpl implements ResetPasswordService {
     private static final String EMAIL_NOT_FOUND = "Email not found";
     private static final String SUBJECT = "Password Recovery";
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
     private final EmailService emailService;
-    @Value("${password-recovery.base-url}")
-    private String baseUrl;
+    private final String baseUrl;
     private static final String EMAIL_CONTENT = """
           Hello,
           
@@ -49,6 +46,17 @@ class RecoverPasswordServiceImpl implements RecoverPasswordService {
           Best regards,
           Softhlon-Learning Team
           """;
+
+    public ResetPasswordServiceImpl(
+          LoadAccountByEmailRepository loadAccountByEmailRepository,
+          CreatePasswordTokenRepository createPasswordTokenRepository,
+          EmailService emailService,
+          @Value("${password-recovery.base-url}") String baseUrl) {
+        this.loadAccountByEmailRepository = loadAccountByEmailRepository;
+        this.createPasswordTokenRepository = createPasswordTokenRepository;
+        this.emailService = emailService;
+        this.baseUrl = baseUrl;
+    }
 
     @Override
     public Result execute(Request request) {

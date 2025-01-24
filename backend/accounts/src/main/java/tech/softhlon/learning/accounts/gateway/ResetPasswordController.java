@@ -14,11 +14,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Request;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.EmailNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.RecoverPasswordService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Request;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.accounts.gateway.RestResources.PASSWORD_RECOVERY;
@@ -32,8 +32,8 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class RecoverPasswordController {
-    private final RecoverPasswordService service;
+class ResetPasswordController {
+    private final ResetPasswordService service;
     private final HttpServletRequest httpRequest;
 
     /**

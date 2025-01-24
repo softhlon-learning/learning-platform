@@ -13,7 +13,7 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 
 @InboundPort
 @FunctionalInterface
-public interface RecoverPasswordService {
+public interface ResetPasswordService {
     Result execute(Request request);
 
     record Request(String email) {}
