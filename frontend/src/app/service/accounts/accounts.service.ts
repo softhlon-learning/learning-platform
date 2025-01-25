@@ -3,12 +3,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 const SIGN_IN_PATH = '/api/v1/account/auth/sign-in';
-const SIGN_UP_PATH = '/api/v1/account/auth/signup';
+const SIGN_UP_PATH = '/api/v1/account/sign-up';
 const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out';
-const DELETE_ACCOUNT_PATH = '/api/v1/account/auth/delete';
-const PROFILE_PATH = '/api/v1/account/auth/profile';
+const DELETE_ACCOUNT_PATH = '/api/v1/account';
+const PROFILE_PATH = '/api/v1/account/profile';
 const RESET_ACCOUNT_PATH = '/api/v1/account/reset-account';
-const UPDATE_ACCOUNT_PATH = '/api/v1/account/auth/update';
+const UPDATE_PASSWORD_ACCOUNT_PATH = '/api/v1/account/update-password';
 
 const HTTP_OPTIONS = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -132,7 +132,7 @@ export class AccountsService {
 
         return this.http
             .post<ArrayBuffer>(
-                UPDATE_ACCOUNT_PATH,
+                UPDATE_PASSWORD_ACCOUNT_PATH,
                 updatePasswordRequest)
             .pipe();
     }
