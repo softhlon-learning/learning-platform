@@ -30,8 +30,12 @@ class SignUpServiceImpl implements SignUpService {
 
     private static final String ACCOUNT_ALREADY_EXISTS = "Account with the same email already exists";
     private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
+    private static final String PASSWORD_POLICY =
+          "Password should have 12 characters or more, at least " +
+                "one lower case letter, one upper case letter, and digit";
 
     private final EmailValidationService emailValidationService;
+    private final PasswordValidationService passwordValidationService;
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final JwtService jwtService;
@@ -72,11 +76,11 @@ class SignUpServiceImpl implements SignUpService {
         if (request.email().isBlank())
             return new EmailPolicyFailed("Email is blank");
 
-        if (request.password().isBlank())
-            return new PasswordPolicyFailed("Password is blank");
-
         if (!emailValidationService.isEmailValid(request.email()))
             return new EmailPolicyFailed("Email is not in right format");
+
+        if (!passwordValidationService.isPasswordValid(request.password()))
+            return new PasswordPolicyFailed(PASSWORD_POLICY);
 
         return null;
 
