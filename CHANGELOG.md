@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.29.4
+_release date: 2025-01-25_
+ * Extracted accounts model class to a dedicated file
+ * Extracted courses model class to a dedicated file
+
 ## 0.29.3
 _release date: 2025-01-25_
  * Created separate folders for accounts.service.ts and courses.service.ts
