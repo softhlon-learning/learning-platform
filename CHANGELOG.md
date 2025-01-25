@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.28.4
+_release date: 2025-01-25_
+ * Persist enrollments improvements
+
 ## 0.28.3
 _release date: 2025-01-25_
  * Update lecture bug fixing
