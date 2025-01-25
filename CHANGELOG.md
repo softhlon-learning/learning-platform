@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.8
+_release date: 2025-01-25_
+ * Password validation for sign-up
+ * Clear error after 2 seconds
+
 ## 0.27.7
 _release date: 2025-01-25_
  * Added PasswordValidationService and its empty implementation
