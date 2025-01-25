@@ -81,7 +81,6 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
     }
 
-
     private Result processTokenUpdate(
           Request request,
           PasswordToken token) {
