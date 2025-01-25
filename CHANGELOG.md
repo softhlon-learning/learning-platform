@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.28.1
+_release date: 2025-01-25_
+ * Updated upgrade script
+ * Updated backend script
+ * Finished UpdateLectureServiceImpl implementation
+
 ## 0.28.0
 _release date: 2025-01-25_
  * Partial UpdateLectureServiceImpl implementation
