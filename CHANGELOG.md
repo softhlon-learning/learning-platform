@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.29.3
+_release date: 2025-01-25_
+ * Created separate folders for accounts.service.ts and courses.service.ts
+ * Extracted constants in courses.service.ts
+ * Fixed broken accounts paths
+ * Add method comments in courses.service.ts
+
 ## 0.29.2
 _release date: 2025-01-25_
  * Extracted url to constants in accounts.service.ts
