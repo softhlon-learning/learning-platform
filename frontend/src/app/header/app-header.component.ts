@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
 import {Component, OnInit} from '@angular/core';
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";

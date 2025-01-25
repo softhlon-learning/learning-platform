@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 

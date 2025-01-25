@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";

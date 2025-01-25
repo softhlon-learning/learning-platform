@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
 import {Component, Input, OnInit} from '@angular/core';
 import {NavigationLectures} from "./navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
