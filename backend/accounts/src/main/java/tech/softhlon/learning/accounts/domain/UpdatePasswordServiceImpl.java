@@ -40,7 +40,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     private static final String INVALID_TOKEN = "Invalid password token";
     private static final String EXPIRED_TOKEN = "Password token has expired";
     private static final String PASSWORD_POLICY =
-          "Password should have at 12 characters or more, at least " +
+          "Password should have 12 characters or more, at least " +
                 "one lower case letter, one upper case letter, and digit";
 
     private final LoadPasswordTokenRepository loadPasswordTokenRepository;
@@ -55,6 +55,9 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
         var validationResult = validateInput(
               request);
+
+        if (validationResult != null)
+            return validationResult;
 
         var result = loadPasswordTokenRepository.execute(
               new LoadPasswordTokenRequest(request.token()));
