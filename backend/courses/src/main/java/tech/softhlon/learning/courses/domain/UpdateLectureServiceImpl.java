@@ -104,7 +104,14 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 true));
 
                 } else {
-                    lecturesCopy.add(lecture);
+                    lecturesCopy.add(
+                          new Lecture(
+                                lecture.id(),
+                                lecture.name(),
+                                lecture.type(),
+                                lecture.processed(),
+                                lecture.time(),
+                                false));
                 }
 
             }
