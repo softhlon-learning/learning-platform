@@ -90,7 +90,9 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
         List<Chapter> chaptersCopy = new ArrayList<>();
         for (Chapter chaper : enrollmentContent.chapters()) {
             List<Lecture> lecturesCopy = new ArrayList<>();
+
             for (Lecture lecture : chaper.lectures()) {
+
                 if (lecture.id().equals(request.lectureId())) {
                     lecturesCopy.add(
                           new Lecture(
@@ -100,6 +102,7 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 request.processed(),
                                 lecture.time(),
                                 true));
+
                 } else {
                     lecturesCopy.add(lecture);
                 }

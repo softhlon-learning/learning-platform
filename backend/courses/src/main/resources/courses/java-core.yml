@@ -12,9 +12,9 @@ chapters:
         type: Video
         time: 1m57s
       - name: Prerequisites
+        id: no-video-yet.mov?v2
         type: Video
         time: 2m14s
-        id: no-video-yet.mov?v2
       - name: Course Structure
         id: no-document-yet.html?v1
         type: Document
@@ -872,6 +872,9 @@ chapters:
   - name: Java I/O
     lectures:
       - name: Java I/O Introduction
+        id: no-video-yet.mov?v8191
+        type: Video
+        time: 2m5s
       - name: I/O Streams
         id: no-video-yet.mov?v819
         type: Video
@@ -1063,6 +1066,9 @@ chapters:
         type: Video
         time: 2m5s
       - name: Atomic Variables
+        id: no-video-yet.mov?v8651
+        type: Video
+        time: 2m5s
       - name: Explicit Locks
         id: no-video-yet.mov?v865
         type: Video
