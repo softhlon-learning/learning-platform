@@ -5,29 +5,18 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-import tech.softhlon.learning.common.hexagonal.InboundPort;
+import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@InboundPort
-@FunctionalInterface
-public interface UpdatePasswordService {
+@Service
+class UpdateLectureServiceImpl implements UpdatePasswordService {
 
-    Result execute(
-          Request request);
-
-    sealed interface Result {
-        record Succeeded() implements Result {}
-        record PasswordPolicyFailed(String message) implements Result {}
-        record InvalidTokenFailed(String message) implements Result {}
-        record ExpiredTokenFailed(String message) implements Result {}
-        record Failed(Throwable cause) implements Result {}
+    @Override
+    public Result execute(Request request) {
+        return null;
     }
-
-    record Request(
-          String token,
-          String password) {}
 
 }

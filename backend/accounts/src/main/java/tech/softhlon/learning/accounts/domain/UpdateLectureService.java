@@ -7,27 +7,26 @@ package tech.softhlon.learning.accounts.domain;
 
 import tech.softhlon.learning.common.hexagonal.InboundPort;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 @InboundPort
 @FunctionalInterface
-public interface UpdatePasswordService {
+public interface UpdateLectureService {
 
     Result execute(
           Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record PasswordPolicyFailed(String message) implements Result {}
-        record InvalidTokenFailed(String message) implements Result {}
-        record ExpiredTokenFailed(String message) implements Result {}
+        record LectureNotFoundFailed(String messagw) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
     record Request(
-          String token,
-          String password) {}
-
+          UUID courseId,
+          boolean processed) {}
 }
