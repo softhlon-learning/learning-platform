@@ -1,6 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {
+    Profile,
+    RecoverPasswordRequest,
+    SignInRequest,
+    SignUpRequest,
+    UpdatePasswordRequest,
+    UpdateProfileRequest
+} from './accounts.model';
 
 const SIGN_IN_PATH = '/api/v1/account/auth/sign-in';
 const SIGN_UP_PATH = '/api/v1/account/sign-up';
@@ -138,60 +146,3 @@ export class AccountsService {
     }
 }
 
-class SignInRequest {
-    email: string;
-    password: string;
-
-    constructor(email: string, password: string) {
-        this.email = email;
-        this.password = password;
-    }
-}
-
-class SignUpRequest {
-    name: string;
-    email: string;
-    password: string;
-
-    constructor(name: string, email: string, password: string) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-}
-
-class UpdateProfileRequest {
-    name: string;
-
-    constructor(name: string) {
-        this.name = name;
-    }
-}
-
-class RecoverPasswordRequest {
-    email: string;
-
-    constructor(email: string) {
-        this.email = email;
-    }
-}
-
-class UpdatePasswordRequest {
-    token: string;
-    password: string;
-
-    constructor(token: string, password: string) {
-        this.token = token;
-        this.password = password;
-    }
-}
-
-export class Profile {
-    name: string;
-    email: string;
-
-    constructor(name: string, email: string) {
-        this.name = name;
-        this.email = email;
-    }
-}
