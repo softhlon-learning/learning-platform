@@ -16,6 +16,7 @@ public interface UpdatePasswordService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
+        record PasswordPolicyFailed(String message) implements Result {}
         record InvalidTokenFailed(String message) implements Result {}
         record ExpiredTokenFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}

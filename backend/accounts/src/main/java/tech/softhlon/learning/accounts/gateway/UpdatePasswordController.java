@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Request;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.ExpiredTokenFailed;
+import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.PasswordPolicyFailed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.InvalidTokenFailed;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Succeeded;
@@ -51,6 +52,7 @@ class UpdatePasswordController {
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();
+            case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case ExpiredTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case InvalidTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);

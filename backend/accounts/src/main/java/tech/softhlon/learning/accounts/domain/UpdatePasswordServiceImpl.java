@@ -25,10 +25,7 @@ import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAc
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.ExpiredTokenFailed;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.InvalidTokenFailed;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.*;
 
 import java.time.OffsetDateTime;
 
@@ -42,15 +39,22 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
     private static final String INVALID_TOKEN = "Invalid password token";
     private static final String EXPIRED_TOKEN = "Password token has expired";
+    private static final String PASSWORD_POLICY =
+          "Password should have at 12 characters or more, at least " +
+                "one lower case letter, one upper case letter, and digit";
 
     private final LoadPasswordTokenRepository loadPasswordTokenRepository;
     private final LoadAccountRepository loadAccountRepository;
     private final PersistAccountRepository persistAccountRepository;
     private final DeletePasswordTokenRepository deletePasswordTokenRepository;
+    private final PasswordValidationService passwordValidationService;
 
     @Override
     public Result execute(
           Request request) {
+
+        var validationResult = validateInput(
+              request);
 
         var result = loadPasswordTokenRepository.execute(
               new LoadPasswordTokenRequest(request.token()));
@@ -66,6 +70,17 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private Result validateInput(
+          Request request) {
+
+        if (!passwordValidationService.isPasswordValid(request.password()))
+            return new PasswordPolicyFailed(PASSWORD_POLICY);
+
+        return null;
+
+    }
+
 
     private Result processTokenUpdate(
           Request request,

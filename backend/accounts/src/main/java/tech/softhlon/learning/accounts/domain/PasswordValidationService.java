@@ -13,4 +13,5 @@ interface PasswordValidationService {
 
     boolean isPasswordValid(
           String password);
+
 }
