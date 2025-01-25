@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {shareReplay} from 'rxjs/operators';
 import {Course} from '../../home/course';
+import {EnrollmentRequest, UpdateLectureRequest} from './courses.model';
 
 const COURSE_PATH = '/api/v1/course';
 const ENROLL_PATH = '/api/v1/course/{courseId}/enrollment';
@@ -97,31 +98,5 @@ export class CoursesService {
             .patch<ArrayBuffer>(
                 PATH,
                 updateLectureRequest).pipe();
-    }
-}
-
-class EnrollmentRequest {
-    enrollment: Enrollment;
-
-    constructor(courseId: string | undefined) {
-        this.enrollment = new Enrollment(courseId);
-    }
-}
-
-class Enrollment {
-    courseId?: string;
-
-    constructor(courseId?: string) {
-        this.courseId = courseId;
-    }
-}
-
-class UpdateLectureRequest {
-    lectureId: string;
-    processed: boolean;
-
-    constructor(lectureId: string, processed: boolean) {
-        this.lectureId = lectureId;
-        this.processed = processed;
     }
 }
