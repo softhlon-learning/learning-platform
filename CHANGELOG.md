@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.28.5
+_release date: 2025-01-25_
+ * Added updateLecture service
+ * Integrated frontend with UpdateLectureController
+ * Added IdPrinter tool
+
 ## 0.28.4
 _release date: 2025-01-25_
  * Persist enrollments improvements
