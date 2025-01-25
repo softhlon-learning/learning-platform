@@ -22,16 +22,8 @@ export class AccountsService {
         private http: HttpClient) {
     }
 
-    signOut(): Observable<ArrayBuffer> {
-        return this.http
-            .post<ArrayBuffer>(
-                SIGN_OUT_PATH,
-                HTTP_OPTIONS)
-            .pipe();
-    }
-
     /**
-     * Sends PATCH /api/v1/account/auth/sign-in request.
+     * Sends POST /api/v1/account/auth/sign-in request.
      * @param email User's email
      * @param password User's password
      */
@@ -48,6 +40,13 @@ export class AccountsService {
             .pipe();
     }
 
+    /**
+     * Sends POST /api/v1/account/auth/sign-out request.
+     *
+     * @param name User's name
+     * @param email User's email
+     * @param password User's password
+     */
     signUp(name: string, email: string, password: string): Observable<ArrayBuffer> {
         const signUpRequest = new SignUpRequest(
             name,
@@ -62,6 +61,20 @@ export class AccountsService {
             .pipe();
     }
 
+    /**
+     * Sends POST /api/v1/account/auth/sign-out request.
+     */
+    signOut(): Observable<ArrayBuffer> {
+        return this.http
+            .post<ArrayBuffer>(
+                SIGN_OUT_PATH,
+                HTTP_OPTIONS)
+            .pipe();
+    }
+
+    /**
+     * Sends DELETE /api/v1/account/auth/delete request.
+     */
     deleteAccount(): Observable<ArrayBuffer> {
         return this.http
             .delete<ArrayBuffer>(
@@ -70,12 +83,19 @@ export class AccountsService {
             .pipe();
     }
 
+    /**
+     * Sends GET /api/v1/account/auth/profile request.
+     */
     getProfile(): Observable<Profile> {
         return this.http
             .get<Profile>(PROFILE_PATH)
             .pipe();
     }
 
+    /**
+     * Sends PUT /api/v1/account/auth/profile request.
+     * @param name User's name
+     */
     updateProfile(name: string): Observable<ArrayBuffer> {
         const updateProfileRequest = new UpdateProfileRequest(name);
 
@@ -86,8 +106,12 @@ export class AccountsService {
             .pipe();
     }
 
-    resetPassword(name: string): Observable<ArrayBuffer> {
-        const recoverPasswordRequest = new RecoverPasswordRequest(name);
+    /**
+     * Sends POST /api/v1/account/reset-account request.
+     * @param name User's email
+     */
+    resetPassword(email: string): Observable<ArrayBuffer> {
+        const recoverPasswordRequest = new RecoverPasswordRequest(email);
 
         return this.http
             .post<ArrayBuffer>(
@@ -96,6 +120,11 @@ export class AccountsService {
             .pipe();
     }
 
+    /**
+     * Sends POST /api/v1/account/auth/update request.
+     * @param token Reset pasword request token
+     * @param password User's new password
+     */
     updatePassword(token: string, password: string): Observable<ArrayBuffer> {
         const updatePasswordRequest = new UpdatePasswordRequest(
             token,
