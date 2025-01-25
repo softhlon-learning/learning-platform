@@ -7,15 +7,19 @@ package tech.softhlon.learning.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
 import tech.softhlon.learning.courses.domain.ContentService.Chapter;
+import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
 import tech.softhlon.learning.courses.domain.ContentService.Lecture;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.Failed;
 import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.LectureNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.Succeeded;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +33,7 @@ import java.util.List;
 class UpdateLectureServiceImpl implements UpdateLectureService {
 
     private final LoadEnrollmentRepository loadEnrollmentRepository;
+    private final PersistEnrollmentRepository persistEnrollmentRepository;
     private final ContentService contentService;
 
     @Override
@@ -55,7 +60,20 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
           Request request,
           Enrollment enrollment) {
 
-       return null;
+        var updatedContent = updateContent(request, enrollment);
+
+        var result = persistEnrollmentRepository.execute(
+              new PersistEnrollmentRequest(
+                    enrollment.courseId(),
+                    enrollment.accountId(),
+                    contentService.courseContentToJson(updatedContent),
+                    enrollment.enrolledTime(),
+                    enrollment.completedTime()));
+
+        return switch (result) {
+            case EnrollmentPersisted() -> new Succeeded();
+            case EnrollmentPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
 
     }
 
@@ -88,7 +106,7 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
             }
         }
 
-       return new CourseContent(chaptersCopy);
+        return new CourseContent(chaptersCopy);
 
     }
 
