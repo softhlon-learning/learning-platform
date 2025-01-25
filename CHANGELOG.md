@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.29.2
+_release date: 2025-01-25_
+ * Extracted url to constants in accounts.service.ts
+ * Extracted httpOptions to constants in accounts.service.ts
+ * Add method comments in accounts.service.ts
+
 ## 0.29.1
 _release date: 2025-01-25_
  * Update lecture state on mouse click
