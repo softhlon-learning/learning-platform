@@ -94,6 +94,9 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     findCurrentItem(courseContent: CourseContent): void {
+        if (courseContent == null) {
+            return;
+        }
         for (let chapter of courseContent.chapters)
             for (let lecture of chapter.lectures)
                 if (lecture.selected) {
