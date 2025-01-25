@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.28.9
+_release date: 2025-01-25_
+ * Use AccountsService instead of PlatformService
+ * Removed platform.service.ts
+
 ## 0.28.8
 _release date: 2025-01-25_
  * Send update lecture request on each select event
