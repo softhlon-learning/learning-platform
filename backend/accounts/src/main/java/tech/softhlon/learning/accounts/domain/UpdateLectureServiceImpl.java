@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Service
-class UpdateLectureServiceImpl implements UpdatePasswordService {
+class UpdateLectureServiceImpl implements UpdateLectureService {
 
     @Override
     public Result execute(Request request) {
