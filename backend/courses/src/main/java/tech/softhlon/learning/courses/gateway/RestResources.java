@@ -18,5 +18,6 @@ class RestResources {
     static final String GET_COURSE = COURSE + "/{courseId}";
     static final String LIST_COURSES = COURSE;
     static final String UPDATE_COURSE = COURSE + "/{courseId}";
+    static final String UPDATE_LECTURE = COURSE + "/{courseId}/enrollment/lecture";
 
 }
