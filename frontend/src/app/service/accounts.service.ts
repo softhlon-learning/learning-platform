@@ -10,22 +10,23 @@ const PROFILE_PATH = '/api/v1/account/auth/profile';
 const RESET_ACCOUNT_PATH = '/api/v1/account/reset-account';
 const UPDATE_ACCOUNT_PATH = '/api/v1/account/auth/update';
 
+const HTTP_OPTIONS = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
+
 @Injectable({
     providedIn: 'root',
 })
 export class AccountsService {
-
-    private httpOptions = {
-        headers: new HttpHeaders({'Content-Type': 'application/json'})
-    };
-
     constructor(
         private http: HttpClient) {
     }
 
     signOut(): Observable<ArrayBuffer> {
         return this.http
-            .post<ArrayBuffer>(SIGN_OUT_PATH, this.httpOptions)
+            .post<ArrayBuffer>(
+                SIGN_OUT_PATH,
+                HTTP_OPTIONS)
             .pipe();
     }
 
@@ -35,7 +36,6 @@ export class AccountsService {
      * @param password User's password
      */
     signIn(email: string, password: string): Observable<ArrayBuffer> {
-
         const signInRequest = new SignInRequest(
             email,
             password);
@@ -44,13 +44,11 @@ export class AccountsService {
             .post<ArrayBuffer>(
                 SIGN_IN_PATH,
                 signInRequest,
-                this.httpOptions)
+                HTTP_OPTIONS)
             .pipe();
-
     }
 
     signUp(name: string, email: string, password: string): Observable<ArrayBuffer> {
-
         const signUpRequest = new SignUpRequest(
             name,
             email,
@@ -60,13 +58,15 @@ export class AccountsService {
             .post<ArrayBuffer>(
                 SIGN_UP_PATH,
                 signUpRequest,
-                this.httpOptions)
+                HTTP_OPTIONS)
             .pipe();
     }
 
     deleteAccount(): Observable<ArrayBuffer> {
         return this.http
-            .delete<ArrayBuffer>(DELETE_ACCOUNT_PATH, this.httpOptions)
+            .delete<ArrayBuffer>(
+                DELETE_ACCOUNT_PATH,
+                HTTP_OPTIONS)
             .pipe();
     }
 
@@ -78,14 +78,21 @@ export class AccountsService {
 
     updateProfile(name: string): Observable<ArrayBuffer> {
         const updateProfileRequest = new UpdateProfileRequest(name);
-        return this.http.put<ArrayBuffer>(PROFILE_PATH, updateProfileRequest).pipe();
+
+        return this.http
+            .put<ArrayBuffer>(
+                PROFILE_PATH,
+                updateProfileRequest)
+            .pipe();
     }
 
     resetPassword(name: string): Observable<ArrayBuffer> {
         const recoverPasswordRequest = new RecoverPasswordRequest(name);
 
         return this.http
-            .post<ArrayBuffer>(RESET_ACCOUNT_PATH, recoverPasswordRequest)
+            .post<ArrayBuffer>(
+                RESET_ACCOUNT_PATH,
+                recoverPasswordRequest)
             .pipe();
     }
 
@@ -95,7 +102,9 @@ export class AccountsService {
             password);
 
         return this.http
-            .post<ArrayBuffer>(UPDATE_ACCOUNT_PATH, updatePasswordRequest)
+            .post<ArrayBuffer>(
+                UPDATE_ACCOUNT_PATH,
+                updatePasswordRequest)
             .pipe();
     }
 }
