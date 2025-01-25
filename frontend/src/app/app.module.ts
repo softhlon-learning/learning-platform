@@ -21,8 +21,8 @@ import {ProfileComponent} from "./profile/profile.component";
 import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
 import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
 import {UpdatePasswordComponent} from "./update-password/update-password.component";
-import {AccountsService} from "./service/accounts.service";
-import {CoursesService} from "./service/courses.service";
+import {AccountsService} from "./service/accounts/accounts.service";
+import {CoursesService} from "./service/courses/courses.service";
 
 @NgModule({
     declarations: [

@@ -3,7 +3,7 @@ import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
 // @ts-ignore
 import version from "../../../package.json";
-import {AccountsService} from '../service/accounts.service';
+import {AccountsService} from '../service/accounts/accounts.service';
 
 @Component({
     selector: 'app-header',

@@ -6,7 +6,7 @@ import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CookieService} from "ngx-cookie-service";
 import {Lecture} from "../model/lecture";
 import {KeyboardInputCourseDetails} from "./keyboard-input";
-import {CoursesService} from '../service/courses.service';
+import {CoursesService} from '../service/courses/courses.service';
 
 @Component({
     selector: 'course-details',

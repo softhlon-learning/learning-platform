@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {shareReplay} from 'rxjs/operators';
 
-import {Course} from '../home/course';
+import {Course} from '../../home/course';
 
 @Injectable({
     providedIn: 'root',
