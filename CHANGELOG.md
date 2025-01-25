@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.7
+_release date: 2025-01-25_
+ * Added PasswordValidationService and its empty implementation
+ * Integrated UpdatePasswordServiceImpl with PasswordValidationService
+
 ## 0.27.6
 _release date: 2025-01-25_
  *  Added email validation to ResetPasswordService
