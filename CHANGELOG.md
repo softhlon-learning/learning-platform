@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.28.2
+_release date: 2025-01-25_
+ * Implemented UpdateLectureController
+
 ## 0.28.1
 _release date: 2025-01-25_
  * Updated upgrade script
