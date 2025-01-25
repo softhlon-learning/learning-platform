@@ -157,7 +157,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
                     enrollment.completedTime()));
 
         return switch (result) {
-            case EnrollmentPersisted enrollmentPersisted -> new CourseMerged();
+            case EnrollmentPersisted() -> new CourseMerged();
             case EnrollmentPersistenceFailed(Throwable cause) -> new CourseMergeFailed(cause);
         };
 

@@ -3,20 +3,33 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.softhlon.learning.courses.domain;
 
-import org.springframework.stereotype.Service;
+import tech.softhlon.learning.common.hexagonal.InboundPort;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@Service
-class UpdateLectureServiceImpl implements UpdateLectureService {
+@InboundPort
+@FunctionalInterface
+public interface UpdateLectureService {
 
-    @Override
-    public Result execute(Request request) {
-        return null;
+    Result execute(
+          Request request);
+
+    sealed interface Result {
+        record Succeeded() implements Result {}
+        record LectureNotFoundFailed() implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
+
+    record Request(
+          UUID accountId,
+          UUID courseId,
+          String lectureId,
+          boolean processed) {}
 
 }
