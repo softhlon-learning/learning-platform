@@ -19,6 +19,7 @@ export class PlatformService {
     private profileUrl = '/api/v1/account/profile';
     private resetPassworUrl = '/api/v1/account/reset-password';
     private updatePassworUrl = '/api/v1/account/update-password';
+    private updateLectureUrl = '/api/v1/course/{courseId}/enrollment/lecture';
     private courses$?: Observable<Course[]>;
     private httpOptions = {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -94,6 +95,11 @@ export class PlatformService {
         const updatePasswordRequest = new UpdatePasswordRequest(token, password);
         return this.http.post<ArrayBuffer>(this.updatePassworUrl, updatePasswordRequest).pipe();
     }
+
+    updateLecture(lectureId: string, processed: boolean): Observable<ArrayBuffer> {
+        const updateLectureRequest = new UpdateLectureRequest(lectureId, processed);
+        return this.http.post<ArrayBuffer>(this.updateLectureUrl, updateLectureRequest).pipe();
+    }
 }
 
 class EnrollmentRequest {
@@ -165,6 +171,16 @@ class UpdatePasswordRequest {
     constructor(token: string, password: string) {
         this.token = token;
         this.password = password;
+    }
+}
+
+class UpdateLectureRequest {
+    lectureId: string;
+    processed: boolean;
+
+    constructor(lectureId: string, processed: boolean) {
+        this.lectureId = lectureId;
+        this.processed = processed;
     }
 }
 
