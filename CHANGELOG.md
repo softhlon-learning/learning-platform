@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.28.7
+_release date: 2025-01-25_
+ * Fixed broken java course structure
+ * Added accounts.service.ts
+
 ## 0.28.6
 _release date: 2025-01-25_
  * Use printShort to log UUIDs
