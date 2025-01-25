@@ -113,6 +113,9 @@ export class CourseDetailsComponent implements OnInit {
         if (this.navigationLectures.nextLecture != null) {
             this.setLecture(this.navigationLectures.nextLecture);
         }
+        let lecture: Lecture | null = this.getCurrentLecture();
+        this.updateLecture(lecture as Lecture);
+
         this.scrollToElement(this.navigationLectures.currentLecture.id);
         return this.navigationLectures;
     }
@@ -121,6 +124,10 @@ export class CourseDetailsComponent implements OnInit {
         if (this.navigationLectures.previousLecture != null) {
             this.setLecture(this.navigationLectures.previousLecture);
         }
+
+        let lecture: Lecture | null = this.getCurrentLecture();
+        this.updateLecture(lecture as Lecture);
+
         this.scrollToElement(this.navigationLectures.currentLecture.id);
         return this.navigationLectures;
     }
