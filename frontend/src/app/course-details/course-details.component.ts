@@ -17,6 +17,7 @@ export class CourseDetailsComponent implements OnInit {
     course: Course = {};
     courseContent?: CourseContent;
     navigationLectures = new NavigationLectures();
+    currentLecture?: Lecture;
 
     constructor(
         private keyboardInputDetails: KeyboardInputCourseDetails,
@@ -64,7 +65,7 @@ export class CourseDetailsComponent implements OnInit {
             })
     }
 
-    setLecture(selectedLecture: Lecture): void {
+    setLecture(selectedLecture: Lecture, scroll: boolean = true): void {
         let tempNavigationLectures: NavigationLectures = new NavigationLectures();
         let currentLecture: Lecture;
 
@@ -89,7 +90,11 @@ export class CourseDetailsComponent implements OnInit {
                 }
         }
 
-        this.scrollToElement(selectedLecture.id);
+        // @ts-ignore
+        this.updateLecture(selectedLecture);
+        if (scroll === true) {
+            this.scrollToElement(selectedLecture.id);
+        }
         this.navigationLectures = tempNavigationLectures;
     }
 
@@ -203,7 +208,7 @@ export class CourseDetailsComponent implements OnInit {
         return Math.round(processedChaptersCount / allLecturesCount * 100);
     }
 
-    updateLecture(lecture: Lecture): void {
+    updateLecture(lecture?: Lecture): void {
         //let courseContentB64 = btoa(JSON.stringify(this.courseContent));
         //this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
         this.coursesService.updateLecture(this.course.id || '', lecture?.id || '', lecture?.processed || false).subscribe();
