@@ -58,5 +58,6 @@ export class UpdatePasswordComponent implements OnInit {
 
     private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
+        setTimeout( () => { this.error = undefined}, 2000 );
     }
 }

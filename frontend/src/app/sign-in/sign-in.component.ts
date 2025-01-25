@@ -40,7 +40,7 @@ export class SignInComponent implements OnInit {
     }
 
     onSubmit(): void {
-        if (this.signInForm.invalid) {
+           if (this.signInForm.invalid) {
             console.log('Form is invalid');
             this.error = 'Please provide valid email and password';
             return;
@@ -50,24 +50,26 @@ export class SignInComponent implements OnInit {
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
         this.platformService.signIn(email || '', password || '').subscribe({
-            next: () => this.handleSignInSuccess(),
-            error: (signInError) => this.handleSignInError(signInError, DEFAULT_ERROR_MESSAGE),
+            next: () => this.handleSuccess(),
+            error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
     }
 
-    private handleSignInSuccess() {
+    private handleSuccess() {
         this.router.navigate(['/home'])
             .then(() => {
                 window.location.reload();
             });
     }
 
-    private handleSignInError(signInError: any, defaultErrorMessage: string) {
-        console.log(signInError);
+    private handleError(signInError: any, defaultErrorMessage: string) {
         if (signInError?.status === 401) {
             this.error = signInError?.error?.message || defaultErrorMessage;
         } else {
             this.error = defaultErrorMessage;
         }
+
+        setTimeout( () => { this.error = undefined}, 2000 );
     }
+
 }

@@ -42,19 +42,20 @@ export class SignUpComponent implements OnInit {
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
         this.platformService.signUp(name || '', email || '', password || '').subscribe({
-            next: () => this.handleSignInSuccess(),
-            error: (signInError) => this.handleSignInError(signInError, DEFAULT_ERROR_MESSAGE),
+            next: () => this.handleSuccess(),
+            error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
     }
 
-    private handleSignInSuccess() {
+    private handleSuccess() {
         this.router.navigate(['/home'])
             .then(() => {
                 window.location.reload();
             });
     }
 
-    private handleSignInError(signInError: any, defaultErrorMessage: string) {
+    private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
+        setTimeout( () => { this.error = undefined}, 2000 );
     }
 }
