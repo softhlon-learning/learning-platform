@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.28.8
+_release date: 2025-01-25_
+ * Send update lecture request on each select event
+ * Fixed issue with marking lecture as selected
+ * Added courses.service.ts
+
 ## 0.28.7
 _release date: 2025-01-25_
  * Fixed broken java course structure
