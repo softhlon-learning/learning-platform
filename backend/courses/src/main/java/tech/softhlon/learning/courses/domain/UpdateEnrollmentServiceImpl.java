@@ -13,6 +13,7 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnroll
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentNotPresentFoundFailed;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.EnrollmentNotFoundFailed;
@@ -64,6 +65,7 @@ class UpdateEnrollmentServiceImpl implements UpdateEnrollmentService {
         return switch (result) {
             case EnrollmentPersisted() -> new Succeeded();
             case EnrollmentPersistenceFailed(Throwable cause) -> new Failed(cause);
+            case EnrollmentNotPresentFoundFailed() -> new Failed(null);
         };
 
     }

@@ -31,6 +31,7 @@ public interface LoadEnrollmentRepository {
     }
 
     record Enrollment(
+          UUID id,
           UUID courseId,
           UUID accountId,
           String content,

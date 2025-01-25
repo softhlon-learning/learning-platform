@@ -19,6 +19,7 @@ public interface PersistEnrollmentRepository {
 
     sealed interface PersistEnrollmentResult {
         record EnrollmentPersisted() implements PersistEnrollmentResult {}
+        record EnrollmentNotPresentFoundFailed() implements PersistEnrollmentResult {}
         record EnrollmentPersistenceFailed(Throwable cause) implements PersistEnrollmentResult {}
     }
 

@@ -39,14 +39,10 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
                   courseId);
 
             if (entity.isPresent()) {
-
                 return new EnrollmentLoaded(
                       toEnrollment(entity.get()));
-
             } else {
-
                 return new EnrollmentNotFoundInDatabase();
-
             }
 
         } catch (Throwable cause) {
@@ -66,6 +62,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
           EnrollmentEntity entity) {
 
         return new Enrollment(
+              entity.getId(),
               entity.getCourse().getId(),
               entity.getAccountId(),
               entity.getContent(),

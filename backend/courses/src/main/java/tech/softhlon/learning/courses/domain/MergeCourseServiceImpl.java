@@ -18,6 +18,7 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrol
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentNotPresentFoundFailed;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 
@@ -158,6 +159,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
 
         return switch (result) {
             case EnrollmentPersisted() -> new CourseMerged();
+            case EnrollmentNotPresentFoundFailed() -> new CourseMergeFailed(null);
             case EnrollmentPersistenceFailed(Throwable cause) -> new CourseMergeFailed(cause);
         };
 

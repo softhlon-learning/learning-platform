@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository;
+import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentNotPresentFoundFailed;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
 import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 
@@ -39,10 +40,11 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
                 var entity = entityOpt.get();
                 updateEntity(request, entity);
                 enrollmentsJpaRepository.save(entity);
+                return new EnrollmentPersisted();
 
+            } else {
+                return new EnrollmentNotPresentFoundFailed();
             }
-
-            return new EnrollmentPersisted();
 
         } catch (Throwable cause) {
 
