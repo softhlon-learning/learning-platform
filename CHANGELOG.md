@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.28.0
+_release date: 2025-01-25_
+ * Partial UpdateLectureServiceImpl implementation
+ *  Added updateContent method
+
 ## 0.27.9
 _release date: 2025-01-25_
  * Adjusted a link size
