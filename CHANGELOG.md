@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.29.0
+_release date: 2025-01-25_
+ * Scroll to previously selected element when entering course details page
+ * Scroll tuning
+ * Polished course-item styling on page reload
+
 ## 0.28.9
 _release date: 2025-01-25_
  * Use AccountsService instead of PlatformService
