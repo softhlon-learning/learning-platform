@@ -96,9 +96,10 @@ export class PlatformService {
         return this.http.post<ArrayBuffer>(this.updatePassworUrl, updatePasswordRequest).pipe();
     }
 
-    updateLecture(lectureId: string, processed: boolean): Observable<ArrayBuffer> {
+    updateLecture(id: string, lectureId: string, processed: boolean): Observable<ArrayBuffer> {
+        const url = `${this.updateLectureUrl.replace('{courseId}', id)}`;
         const updateLectureRequest = new UpdateLectureRequest(lectureId, processed);
-        return this.http.post<ArrayBuffer>(this.updateLectureUrl, updateLectureRequest).pipe();
+        return this.http.patch<ArrayBuffer>(url, updateLectureRequest).pipe();
     }
 }
 

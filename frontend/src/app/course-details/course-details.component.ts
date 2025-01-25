@@ -154,7 +154,7 @@ export class CourseDetailsComponent implements OnInit {
         if (viewed) {
             this.next();
         }
-        this.updateCourse();
+        this.updateLecture(lecture as Lecture);
     }
 
     switchLectureViewedFlag(): void {
@@ -167,7 +167,7 @@ export class CourseDetailsComponent implements OnInit {
                 this.next();
             }
         }
-        this.updateCourse();
+        this.updateLecture(lecture as Lecture);
     }
 
     courseProgress(): number {
@@ -183,9 +183,10 @@ export class CourseDetailsComponent implements OnInit {
         return Math.round(processedChaptersCount / allLecturesCount * 100);
     }
 
-    updateCourse(): void {
-        let courseContentB64 = btoa(JSON.stringify(this.courseContent));
-        this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
+    updateLecture(lecture: Lecture): void {
+        //let courseContentB64 = btoa(JSON.stringify(this.courseContent));
+        //this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
+        this.coursesService.updateLecture(this.course.id || '', lecture?.id || '', lecture?.processed || false).subscribe();
     }
 
     refreshPageState() {
