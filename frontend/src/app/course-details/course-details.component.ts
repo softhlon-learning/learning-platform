@@ -1,12 +1,12 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
-import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../model/course-content";
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CookieService} from "ngx-cookie-service";
 import {Lecture} from "../model/lecture";
 import {KeyboardInputCourseDetails} from "./keyboard-input";
+import {CoursesService} from '../service/courses.service';
 
 @Component({
     selector: 'course-details',
@@ -20,7 +20,7 @@ export class CourseDetailsComponent implements OnInit {
 
     constructor(
         private keyboardInputDetails: KeyboardInputCourseDetails,
-        private coursesService: PlatformService,
+        private coursesService: CoursesService,
         private cookieService: CookieService,
         private route: ActivatedRoute,
         private router: Router) {

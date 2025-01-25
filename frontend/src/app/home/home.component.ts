@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "./course";
-import {PlatformService} from '../service/platform.service';
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
+import {CoursesService} from '../service/courses.service';
 
 @Component({
     selector: 'home',
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     courses?: Course[];
 
     constructor(
-        private coursesService: PlatformService,
+        private coursesService: CoursesService,
         private cookieService: CookieService,
         private router: Router) {
     }

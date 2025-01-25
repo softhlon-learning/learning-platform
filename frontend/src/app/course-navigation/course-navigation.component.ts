@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PlatformService} from '../service/platform.service';
-import {ActivatedRoute} from "@angular/router";
 import {NavigationLectures} from "./navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 

@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {PlatformService} from "./service/platform.service";
 import {provideHttpClient} from "@angular/common/http";
 import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
@@ -50,7 +49,6 @@ import {CoursesService} from "./service/courses.service";
         ReactiveFormsModule
     ],
     providers: [
-        PlatformService,
         AccountsService,
         CoursesService,
         KeyboardInputCourseToc,

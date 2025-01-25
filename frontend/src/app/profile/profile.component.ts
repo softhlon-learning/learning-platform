@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
-import {PlatformService, Profile} from "../service/platform.service";
 import {FormBuilder} from "@angular/forms";
+import {AccountsService, Profile} from '../service/accounts.service';
 
 @Component({
     selector: 'profile',
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService) {
+        private accountsService: AccountsService) {
     }
 
     ngOnInit() {
@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
         const {name = ''} = this.profileForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.updateProfile(name || '').subscribe({
+        this.accountsService.updateProfile(name || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
@@ -45,14 +45,14 @@ export class ProfileComponent implements OnInit {
 
     deleteAccount(): void {
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
-        this.platformService.deleteAccount().subscribe({
+        this.accountsService.deleteAccount().subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         })
     }
 
     getProfile(): void {
-        this.platformService.getProfile()
+        this.accountsService.getProfile()
             .subscribe(profile => {
                 this.profileForm.setValue({name: profile.name});
                 this.profile = profile;

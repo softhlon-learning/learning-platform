@@ -77,13 +77,3 @@ class UpdateLectureRequest {
         this.processed = processed;
     }
 }
-
-export class Profile {
-    name: string;
-    email: string;
-
-    constructor(name: string, email: string) {
-        this.name = name;
-        this.email = email;
-    }
-}

@@ -1,10 +1,10 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Course} from "../home/course";
-import {PlatformService} from '../service/platform.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseContent} from "../model/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
+import {CoursesService} from "../service/courses.service";
 
 @Component({
     selector: 'course-toc',
@@ -17,7 +17,7 @@ export class CourseTocComponent implements OnInit {
 
     constructor(
         private keyboardInputToc: KeyboardInputCourseToc,
-        private coursesService: PlatformService,
+        private coursesService: CoursesService,
         private cookieService: CookieService,
         private router: Router,
         private route: ActivatedRoute) {

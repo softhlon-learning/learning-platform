@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {PlatformService} from "../service/platform.service";
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
 // @ts-ignore
 import version from "../../../package.json";
+import {AccountsService} from '../service/accounts.service';
 
 @Component({
     selector: 'app-header',
@@ -16,7 +16,7 @@ export class AppHeaderComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private coursesService: PlatformService,
+        private accountsService: AccountsService,
         private cookieService: CookieService) {
     }
 
@@ -28,7 +28,7 @@ export class AppHeaderComponent implements OnInit {
     }
 
     signOut(): void {
-        this.coursesService.signOut().subscribe({
+        this.accountsService.signOut().subscribe({
                 next: () => this.handleResponse(),
                 error: () => this.handleResponse(),
             }
