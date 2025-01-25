@@ -53,12 +53,6 @@ export class PlatformService {
         return this.http.delete<ArrayBuffer>(url).pipe();
     }
 
-    updateCourse(id: string, content: string): Observable<ArrayBuffer> {
-        const url = `${this.updateCourseUrl.replace('{courseId}', id)}`;
-        const request = new UpdateCourseRequest(content);
-        return this.http.patch<ArrayBuffer>(url, request, this.httpOptions).pipe();
-    }
-
     signOut(): Observable<ArrayBuffer> {
         return this.http.post<ArrayBuffer>(this.signOutUrl, this.httpOptions).pipe();
     }
