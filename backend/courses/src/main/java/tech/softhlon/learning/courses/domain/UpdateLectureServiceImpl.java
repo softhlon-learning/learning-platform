@@ -87,8 +87,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
         // create/update processed flag in new content
         List<Chapter> chaptersCopy = new ArrayList<>();
         for (Chapter chaper : enrollmentContent.chapters()) {
+            List<Lecture> lecturesCopy = new ArrayList<>();
             for (Lecture lecture : chaper.lectures()) {
-                List<Lecture> lecturesCopy = new ArrayList<>();
                 if (lecture.id().equals(request.lectureId())) {
                     lecturesCopy.add(
                           new Lecture(
@@ -102,8 +102,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                     lecturesCopy.add(lecture);
                 }
 
-                chaptersCopy.add(new Chapter(chaper.name(), lecturesCopy));
             }
+            chaptersCopy.add(new Chapter(chaper.name(), lecturesCopy));
         }
 
         return new CourseContent(chaptersCopy);

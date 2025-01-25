@@ -34,7 +34,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
           UUID courseId) {
 
         try {
-            var entity = enrollmentsRepo.findByAccountIdAndCourseId(
+             var entity = enrollmentsRepo.findByAccountIdAndCourseId(
                   accountId,
                   courseId);
 
@@ -66,7 +66,7 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
           EnrollmentEntity entity) {
 
         return new Enrollment(
-              entity.getId(),
+              entity.getCourse().getId(),
               entity.getAccountId(),
               entity.getContent(),
               entity.getEnrolledTime(),
