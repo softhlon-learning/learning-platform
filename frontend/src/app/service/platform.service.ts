@@ -11,7 +11,6 @@ import {Course} from '../home/course';
 export class PlatformService {
     private courseUrl = '/api/v1/course';
     private enrollmentUrl = '/api/v1/course/{courseId}/enrollment';
-    private updateCourseUrl = '/api/v1/course/{courseId}';
     private signOutUrl = '/api/v1/account/auth/sign-out';
     private signInUrl = '/api/v1/account/auth/sign-in';
     private signUpUrl = '/api/v1/account/sign-up';
@@ -102,14 +101,6 @@ class EnrollmentRequest {
 
     constructor(courseId: string | undefined) {
         this.enrollment = new Enrollment(courseId);
-    }
-}
-
-class UpdateCourseRequest {
-    content?: string;
-
-    constructor(content?: string) {
-        this.content = content;
     }
 }
 
