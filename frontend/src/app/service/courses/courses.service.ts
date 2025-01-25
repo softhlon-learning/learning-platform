@@ -10,6 +10,10 @@ import {shareReplay} from 'rxjs/operators';
 import {Course} from '../../home/course';
 import {EnrollmentRequest, UpdateLectureRequest} from './courses.model';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 const COURSE_PATH = '/api/v1/course';
 const ENROLL_PATH = '/api/v1/course/{courseId}/enrollment';
 const UPDATE_LECTURE_PATH = '/api/v1/course/{courseId}/enrollment/lecture';

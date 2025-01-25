@@ -8,6 +8,10 @@ import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
 import {AccountsService} from '../service/accounts/accounts.service';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'sign-up',
     templateUrl: './reset-password.component.html',

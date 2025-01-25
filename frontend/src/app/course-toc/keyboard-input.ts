@@ -6,6 +6,10 @@
 import {CourseTocComponent} from "./course-toc.component";
 import {HostListener, Injectable} from "@angular/core";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Injectable({
     providedIn: 'root'
 })

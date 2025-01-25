@@ -7,6 +7,10 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'video-lecture',
     templateUrl: './video-item.component.html',

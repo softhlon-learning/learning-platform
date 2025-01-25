@@ -15,6 +15,10 @@ import {ResetPasswordComponent} from "./reset-password/reset-password.component"
 import {ProfileComponent} from './profile/profile.component';
 import {UpdatePasswordComponent} from "./update-password/update-password.component";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'sign-in', component: SignInComponent},

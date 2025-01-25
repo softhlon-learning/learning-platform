@@ -15,6 +15,10 @@ import {
     UpdateProfileRequest
 } from './accounts.model';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 const SIGN_IN_PATH = '/api/v1/account/auth/sign-in';
 const SIGN_UP_PATH = '/api/v1/account/sign-up';
 const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out';

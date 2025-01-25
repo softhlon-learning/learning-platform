@@ -9,6 +9,10 @@ import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 import {CoursesService} from '../service/courses/courses.service';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',

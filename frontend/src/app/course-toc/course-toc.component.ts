@@ -11,6 +11,10 @@ import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
 import {CoursesService} from "../service/courses/courses.service";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'course-toc',
     templateUrl: './course-toc.component.html',

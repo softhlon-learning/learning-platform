@@ -8,6 +8,10 @@ import {ActivatedRoute} from "@angular/router";
 import {NavigationLectures} from "../course-navigation/navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'quiz-lecture',
     templateUrl: './quiz-item.component.html',

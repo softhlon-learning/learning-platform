@@ -7,6 +7,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NavigationLectures} from "./navigation-lectures";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'course-navigation',
     templateUrl: './course-navigation.component.html',

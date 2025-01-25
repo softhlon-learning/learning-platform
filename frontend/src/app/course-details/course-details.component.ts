@@ -13,6 +13,10 @@ import {Lecture} from "../model/lecture";
 import {KeyboardInputCourseDetails} from "./keyboard-input";
 import {CoursesService} from '../service/courses/courses.service';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'course-details',
     templateUrl: './course-details.component.html',

@@ -10,6 +10,10 @@ import {Router} from "@angular/router";
 import version from "../../../package.json";
 import {AccountsService} from '../service/accounts/accounts.service';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.component.html',

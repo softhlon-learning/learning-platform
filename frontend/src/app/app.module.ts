@@ -29,6 +29,10 @@ import {UpdatePasswordComponent} from "./update-password/update-password.compone
 import {AccountsService} from "./service/accounts/accounts.service";
 import {CoursesService} from "./service/courses/courses.service";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @NgModule({
     declarations: [
         AppComponent,

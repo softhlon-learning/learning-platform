@@ -5,6 +5,10 @@
 
 import {Lecture} from "../model/lecture";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 export class NavigationLectures {
     previousLecture?: Lecture;
     currentLecture: Lecture = new Lecture();

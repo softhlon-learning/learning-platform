@@ -9,6 +9,10 @@ import {FormBuilder} from "@angular/forms";
 import {AccountsService} from '../service/accounts/accounts.service';
 import { Profile } from '../service/accounts/accounts.model';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'profile',
     templateUrl: './profile.component.html',

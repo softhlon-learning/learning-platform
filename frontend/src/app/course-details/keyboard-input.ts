@@ -6,6 +6,10 @@
 import {HostListener, Injectable} from "@angular/core";
 import {CourseDetailsComponent} from "./course-details.component";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Injectable({
     providedIn: 'root'
 })

@@ -9,6 +9,10 @@ import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute} from "@angular/router";
 import {AccountsService} from '../service/accounts/accounts.service';
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'sign-up',
     templateUrl: './update-password.component.html',

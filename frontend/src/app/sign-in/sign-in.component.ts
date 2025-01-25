@@ -9,6 +9,10 @@ import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AccountsService} from "../service/accounts/accounts.service";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'sign-in',
     templateUrl: './sign-in.component.html',

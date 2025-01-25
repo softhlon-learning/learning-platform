@@ -6,6 +6,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Course} from "../home/course";
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
 @Component({
     selector: 'course-tile',
     templateUrl: './course-tile.component.html',
