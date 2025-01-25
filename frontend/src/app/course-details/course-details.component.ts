@@ -42,6 +42,11 @@ export class CourseDetailsComponent implements OnInit {
         this.getCourse();
     }
 
+    ngAfterViewInit() {
+        // @ts-ignore
+        this.findCurrentItem(this.courseContent);
+    }
+
     getCourse(): void {
         const id = this.route.snapshot.paramMap.get('id')!;
         this.coursesService.getCourses()
@@ -55,7 +60,6 @@ export class CourseDetailsComponent implements OnInit {
                 }
                 const courseContent: CourseContent = JSON.parse(atob(<string>this.course.content));
                 this.courseContent = courseContent;
-                this.findCurrentItem(courseContent);
             })
     }
 
@@ -83,6 +87,8 @@ export class CourseDetailsComponent implements OnInit {
                     }
                 }
         }
+
+        this.scrollToElement(selectedLecture.id);
         this.navigationLectures = tempNavigationLectures;
     }
 
@@ -137,6 +143,7 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     scrollToElement(id: string): void {
+        console.log(id);
         // @ts-ignore
         document.getElementById(id).scrollIntoView({
             behavior: "auto",
