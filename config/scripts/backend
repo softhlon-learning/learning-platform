@@ -12,7 +12,7 @@ backend_chdir="/home/admin/learning-platform/backend"
  
 pidfile="/var/run/backend/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -o /var/log/backend.log -p ${pidfile} /usr/local/bin/java -jar /home/admin/learning-platform/backend/application/target/backend.jar --spring.profiles.active=production"
+command_args="-f -o /var/log/backend.log -p ${pidfile} /usr/local/bin/java -Xms4g -Xmx4g -jar /home/admin/learning-platform/backend/application/backend.jar --spring.profiles.active=production"
 
 stop_cmd="stop"
 status_cmd="status"
@@ -21,8 +21,8 @@ restart_cmd="restart"
 stop () {
         if [ -e ${pidfile} ]; then
                 echo Stopping ${name}
-		            kill `cat ${pidfile}`
-		            killall java
+		kill `cat ${pidfile}`
+		killall java
         else
                 echo ${name} is not running.
         fi
@@ -37,9 +37,9 @@ status () {
 }
 
 restart () {
- 	stop	
+ 	stop
 	sleep 1
- 	run_rc_command start	
+ 	run_rc_command start
 }
 
 load_rc_config $name
