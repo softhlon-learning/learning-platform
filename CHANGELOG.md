@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.29.6
+_release date: 2025-01-25_
+ * Upgraded to spring-boot 3.4.2
+ * Added header to all TypeScript files
+
 ## 0.29.5
 _release date: 2025-01-25_
  * Upgraded to spring-boot 3.4.2
