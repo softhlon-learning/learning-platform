@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.29.1
+_release date: 2025-01-25_
+ * Update lecture state on mouse click
+
 ## 0.29.0
 _release date: 2025-01-25_
  * Scroll to previously selected element when entering course details page
