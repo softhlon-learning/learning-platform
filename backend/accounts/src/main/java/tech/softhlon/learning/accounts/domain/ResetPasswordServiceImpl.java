@@ -16,8 +16,8 @@ import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadA
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
-import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 

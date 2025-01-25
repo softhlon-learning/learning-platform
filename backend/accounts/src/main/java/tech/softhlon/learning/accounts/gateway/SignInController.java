@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.SignInService;
+import tech.softhlon.learning.accounts.domain.SignInService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.SignInService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.SignInService.Result.InvalidCredentialsFailed;
-import tech.softhlon.learning.accounts.domain.SignInService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.SignInService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
