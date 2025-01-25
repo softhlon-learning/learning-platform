@@ -60,6 +60,7 @@ export class CourseDetailsComponent implements OnInit {
                 }
                 const courseContent: CourseContent = JSON.parse(atob(<string>this.course.content));
                 this.courseContent = courseContent;
+                setTimeout(() => this.findCurrentItem(courseContent), 0);
             })
     }
 
@@ -143,13 +144,15 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     scrollToElement(id: string): void {
-        console.log(id);
         // @ts-ignore
-        document.getElementById(id).scrollIntoView({
-            behavior: "auto",
-            block: "center",
-            inline: "center"
-        });
+        const lectureElement = document.getElementById(id);
+        if (lectureElement != null) {
+            lectureElement.scrollIntoView({
+                behavior: "auto",
+                block: "center",
+                inline: "center"
+            });
+        }
     }
 
     markAsViewed(): void {
