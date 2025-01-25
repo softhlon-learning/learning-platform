@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
-import {PlatformService} from "../service/platform.service";
+import {AccountsService} from '../service/accounts.service';
 
 @Component({
     selector: 'sign-up',
@@ -18,7 +18,7 @@ export class ResetPasswordComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService) {
+        private accountsService: AccountsService) {
     }
 
     ngOnInit() {
@@ -35,7 +35,7 @@ export class ResetPasswordComponent implements OnInit {
         const {email = ''} = this.resetPasswordForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.resetPassword(email || '').subscribe({
+        this.accountsService.resetPassword(email || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
@@ -47,6 +47,8 @@ export class ResetPasswordComponent implements OnInit {
 
     private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
-        setTimeout( () => { this.error = undefined}, 2000 );
+        setTimeout(() => {
+            this.error = undefined
+        }, 2000);
     }
 }

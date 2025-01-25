@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
-import {PlatformService} from "../service/platform.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AccountsService} from "../service/accounts.service";
 
 @Component({
     selector: 'sign-in',
@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService,
+        private accountsService: AccountsService,
         private route: ActivatedRoute,
         private router: Router) {
     }
@@ -40,7 +40,7 @@ export class SignInComponent implements OnInit {
     }
 
     onSubmit(): void {
-           if (this.signInForm.invalid) {
+        if (this.signInForm.invalid) {
             console.log('Form is invalid');
             this.error = 'Please provide valid email and password';
             return;
@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit {
         const {email = '', password = ''} = this.signInForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.signIn(email || '', password || '').subscribe({
+        this.accountsService.signIn(email || '', password || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
@@ -69,7 +69,8 @@ export class SignInComponent implements OnInit {
             this.error = defaultErrorMessage;
         }
 
-        setTimeout( () => { this.error = undefined}, 2000 );
+        setTimeout(() => {
+            this.error = undefined
+        }, 2000);
     }
-
 }

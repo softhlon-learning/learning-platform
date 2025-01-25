@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
-import {PlatformService} from "../service/platform.service";
 import {Router} from "@angular/router";
+import {AccountsService} from "../service/accounts.service";
 
 @Component({
     selector: 'sign-up',
@@ -20,7 +20,7 @@ export class SignUpComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService,
+        private accountsService: AccountsService,
         private router: Router) {
     }
 
@@ -41,7 +41,7 @@ export class SignUpComponent implements OnInit {
         const {name = '', email = '', password = ''} = this.signInForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.signUp(name || '', email || '', password || '').subscribe({
+        this.accountsService.signUp(name || '', email || '', password || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
@@ -56,6 +56,8 @@ export class SignUpComponent implements OnInit {
 
     private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
-        setTimeout( () => { this.error = undefined}, 2000 );
+        setTimeout(() => {
+            this.error = undefined
+        }, 2000);
     }
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../environment/environment";
 import {FormBuilder} from '@angular/forms';
-import {PlatformService} from "../service/platform.service";
 import {ActivatedRoute} from "@angular/router";
+import {AccountsService} from '../service/accounts.service';
 
 @Component({
     selector: 'sign-up',
@@ -20,7 +20,7 @@ export class UpdatePasswordComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private platformService: PlatformService,
+        private accountsService: AccountsService,
         private route: ActivatedRoute) {
     }
 
@@ -45,7 +45,7 @@ export class UpdatePasswordComponent implements OnInit {
         const {password = ''} = this.updatePasswordForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.platformService.updatePassword(this.token || '', password || '').subscribe({
+        this.accountsService.updatePassword(this.token || '', password || '').subscribe({
             next: () => this.handleSuccess(),
             error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
         });
@@ -58,6 +58,8 @@ export class UpdatePasswordComponent implements OnInit {
 
     private handleError(signInError: any, defaultErrorMessage: string) {
         this.error = signInError?.error?.message || defaultErrorMessage;
-        setTimeout( () => { this.error = undefined}, 2000 );
+        setTimeout(() => {
+            this.error = undefined
+        }, 2000);
     }
 }
