@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.27.9
+_release date: 2025-01-25_
+ * Adjusted a link size
+ * Added UpdateLectureService and its empty implementation
+
 ## 0.27.8
 _release date: 2025-01-25_
  * Password validation for sign-up
