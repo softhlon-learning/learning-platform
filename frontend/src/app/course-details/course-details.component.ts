@@ -49,15 +49,14 @@ export class CourseDetailsComponent implements OnInit {
                 });
             ;
         }
-        this.getCourse();
+        this.fetchCourseAndInitView();
     }
 
     ngAfterViewInit() {
-        // @ts-ignore
         this.findCurrentItem(this.courseContent);
     }
 
-    getCourse(): void {
+    fetchCourseAndInitView() {
         const id = this.route.snapshot.paramMap.get('id')!;
         this.coursesService.getCourses()
             .subscribe(courses => {
@@ -65,16 +64,16 @@ export class CourseDetailsComponent implements OnInit {
                     let course = courses[i];
                     if (course.code === id) {
                         this.course = course;
+                        this.courseContent = JSON.parse(atob(<string>this.course.content));
+                        setTimeout(() => this.findCurrentItem(this.courseContent), 0);
                         break;
                     }
                 }
-                const courseContent: CourseContent = JSON.parse(atob(<string>this.course.content));
-                this.courseContent = courseContent;
-                setTimeout(() => this.findCurrentItem(courseContent), 0);
             })
     }
 
-    setLecture(selectedLecture: Lecture, scroll: boolean = true): void {
+
+    setLecture(selectedLecture: Lecture, scroll: boolean = true, persist: boolean = true): void {
         let tempNavigationLectures: NavigationLectures = new NavigationLectures();
         let currentLecture: Lecture;
 
@@ -99,25 +98,28 @@ export class CourseDetailsComponent implements OnInit {
                 }
         }
 
-        // @ts-ignore
-        this.updateLecture(selectedLecture);
+        if (persist == true) {
+            this.updateLecture(selectedLecture);
+        }
+
         if (scroll === true) {
             this.scrollToElement(selectedLecture.id);
         }
+
         this.navigationLectures = tempNavigationLectures;
     }
 
-    findCurrentItem(courseContent: CourseContent): void {
+    findCurrentItem(courseContent?: CourseContent): void {
         if (courseContent == null) {
             return;
         }
         for (let chapter of courseContent.chapters)
             for (let lecture of chapter.lectures)
                 if (lecture.selected) {
-                    this.setLecture(lecture);
+                    this.setLecture(lecture, true, false);
                     return;
                 }
-        this.setLecture(courseContent.chapters[0].lectures[0]);
+        this.setLecture(courseContent.chapters[0].lectures[0], true, false);
     }
 
     getCurrentLecture(): Lecture | null {
@@ -221,10 +223,6 @@ export class CourseDetailsComponent implements OnInit {
         //let courseContentB64 = btoa(JSON.stringify(this.courseContent));
         //this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
         this.coursesService.updateLecture(this.course.id || '', lecture?.id || '', lecture?.processed || false).subscribe();
-    }
-
-    refreshPageState() {
-        this.coursesService.refreshCourses().subscribe(() => this.getCourse());
     }
 
     back() {
