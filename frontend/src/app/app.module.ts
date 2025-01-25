@@ -23,6 +23,7 @@ import {KeyboardInputCourseToc} from "./course-toc/keyboard-input";
 import {KeyboardInputCourseDetails} from "./course-details/keyboard-input";
 import {UpdatePasswordComponent} from "./update-password/update-password.component";
 import {AccountsService} from "./service/accounts.service";
+import {CoursesService} from "./service/courses.service";
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import {AccountsService} from "./service/accounts.service";
     providers: [
         PlatformService,
         AccountsService,
+        CoursesService,
         KeyboardInputCourseToc,
         KeyboardInputCourseDetails,
         provideHttpClient()
