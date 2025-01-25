@@ -21,6 +21,7 @@ import tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.Fai
 import tech.softhlon.learning.subscriptions.domain.UnsubscribeService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.UNSUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -46,7 +47,7 @@ class UnsubscribeController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, body: {}",
-              accountId,
+              printShort(accountId),
               request);
 
         return switch (service.execute(request)) {

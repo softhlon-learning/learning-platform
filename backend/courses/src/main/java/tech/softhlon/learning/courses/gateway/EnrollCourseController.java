@@ -24,6 +24,7 @@ import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Succeede
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -49,8 +50,8 @@ class EnrollCourseController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, courseId: {}",
-              accountId,
-              courseId);
+              printShort(accountId),
+              printShort(courseId));
 
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successCreatedBody();

@@ -20,6 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Faile
 import tech.softhlon.learning.subscriptions.domain.SubscribeService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBSCRIBE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -44,7 +45,7 @@ class SubscribeController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}",
-              accountId);
+              printShort(accountId));
 
         return switch (service.execute(new Request(accountId))) {
             case Succeeded() -> successCreatedBody();

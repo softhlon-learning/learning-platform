@@ -12,4 +12,5 @@ module common {
     exports tech.softhlon.learning.common.hexagonal;
     exports tech.softhlon.learning.common.controller;
     exports tech.softhlon.learning.common.security;
+    exports tech.softhlon.learning.common.text;
 }

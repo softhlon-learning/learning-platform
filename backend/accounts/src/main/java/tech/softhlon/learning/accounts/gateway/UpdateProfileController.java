@@ -24,6 +24,7 @@ import tech.softhlon.learning.common.security.AuthenticationContext;
 
 import static tech.softhlon.learning.accounts.gateway.RestResources.PROFILE;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -49,7 +50,7 @@ class UpdateProfileController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, body: {}",
-              accountId,
+              printShort(accountId),
               request);
 
         var result = service.execute(

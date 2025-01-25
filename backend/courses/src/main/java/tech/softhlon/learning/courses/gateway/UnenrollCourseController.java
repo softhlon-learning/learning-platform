@@ -23,6 +23,7 @@ import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succee
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.courses.gateway.RestResources.UNENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -48,8 +49,8 @@ class UnenrollCourseController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, courseId: {}",
-              accountId,
-              courseId);
+              printShort(accountId),
+              printShort(courseId));
 
         return switch (service.execute(prepareRequest(courseId))) {
             case Succeeded() -> successAcceptedBody();

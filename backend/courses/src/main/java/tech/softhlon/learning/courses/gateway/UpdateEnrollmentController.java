@@ -26,6 +26,7 @@ import tech.softhlon.learning.courses.domain.UpdateEnrollmentService.Result.Succ
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -52,8 +53,8 @@ class UpdateEnrollmentController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, courseId: {}",
-              accountId,
-              courseId);
+              printShort(accountId),
+              printShort(courseId));
 
         var result = service.execute(
               prepareRequest(courseId, request));

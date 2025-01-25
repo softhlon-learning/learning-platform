@@ -25,6 +25,7 @@ import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.accounts.gateway.RestResources.PROFILE;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -45,7 +46,7 @@ class GetProfileController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}",
-              accountId);
+              printShort(accountId));
 
         var result = service.execute(
               new Request(accountId));

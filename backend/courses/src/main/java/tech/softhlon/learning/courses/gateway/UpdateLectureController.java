@@ -25,6 +25,7 @@ import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.Succeed
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_LECTURE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -50,8 +51,8 @@ class UpdateLectureController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}, courseId: {}, body: {}",
-              accountId,
-              courseId,
+              printShort(accountId),
+              printShort(courseId),
               request);
 
         var result = service.execute(

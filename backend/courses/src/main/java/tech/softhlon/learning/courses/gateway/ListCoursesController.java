@@ -23,6 +23,7 @@ import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ class ListCoursesController {
 
         var accountId = authContext.accountId();
         log.info("Requested, accountId: {}",
-              accountId);
+              printShort(accountId));
 
         var result = service.execute(
               authContext.accountId());
