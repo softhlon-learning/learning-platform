@@ -72,8 +72,23 @@ export class CourseDetailsComponent implements OnInit {
             })
     }
 
+    selectLectureOnly(lecture?: Lecture) {
+        this.selectLecture(lecture, false, false);
+    }
 
-    setLecture(selectedLecture: Lecture, scroll: boolean = true, persist: boolean = true): void {
+    selectAndScrollToLecture(lecture?: Lecture) {
+        this.selectLecture(lecture, true, false);
+    }
+
+    selectScrollToAndPersistLecture(lecture?: Lecture) {
+        this.selectLecture(lecture, true, true);
+    }
+
+    selectLecture(selectedLecture?: Lecture, scroll: boolean = true, persist: boolean = true): void {
+        if (selectedLecture == null) {
+            return;
+        }
+
         let tempNavigationLectures: NavigationLectures = new NavigationLectures();
         let currentLecture: Lecture;
 
@@ -116,45 +131,46 @@ export class CourseDetailsComponent implements OnInit {
         for (let chapter of courseContent.chapters)
             for (let lecture of chapter.lectures)
                 if (lecture.selected) {
-                    this.setLecture(lecture, true, false);
+                    this.selectAndScrollToLecture(lecture);
                     return;
                 }
-        this.setLecture(courseContent.chapters[0].lectures[0], true, false);
+        this.selectAndScrollToLecture(courseContent.chapters[0].lectures[0]);
     }
 
-    getCurrentLecture(): Lecture | null {
+    getCurrentLecture(): Lecture {
         if (this.courseContent != null) {
             for (let chapter of this.courseContent.chapters)
                 for (let lecture of chapter.lectures) {
                     if (lecture.id == this.navigationLectures.currentLecture.id) {
-                        this.setLecture(lecture);
                         return lecture;
                     }
                 }
         }
-        return null;
+        // @ts-ignore
+        return undefined;
     }
 
     next(): NavigationLectures {
         if (this.navigationLectures.nextLecture != null) {
-            this.setLecture(this.navigationLectures.nextLecture);
+            const nextLecture = this.navigationLectures.nextLecture;
+            this.selectScrollToAndPersistLecture(nextLecture);
+        } else {
+            const currentLecture = this.getCurrentLecture();
+            this.selectScrollToAndPersistLecture(currentLecture)
         }
-        let lecture: Lecture | null = this.getCurrentLecture();
-        this.updateLecture(lecture as Lecture);
 
-        this.scrollToElement(this.navigationLectures.currentLecture.id);
         return this.navigationLectures;
     }
 
     previous(): NavigationLectures {
-        if (this.navigationLectures.previousLecture != null) {
-            this.setLecture(this.navigationLectures.previousLecture);
+        if (this.navigationLectures.nextLecture != null) {
+            const nextLecture = this.navigationLectures.previousLecture;
+            this.selectScrollToAndPersistLecture(nextLecture);
+        } else {
+            const currentLecture = this.getCurrentLecture();
+            this.selectScrollToAndPersistLecture(currentLecture)
         }
 
-        let lecture: Lecture | null = this.getCurrentLecture();
-        this.updateLecture(lecture as Lecture);
-
-        this.scrollToElement(this.navigationLectures.currentLecture.id);
         return this.navigationLectures;
     }
 
