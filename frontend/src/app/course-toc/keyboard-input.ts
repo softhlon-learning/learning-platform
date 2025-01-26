@@ -14,6 +14,11 @@ import {HostListener, Injectable} from "@angular/core";
     providedIn: 'root'
 })
 export class KeyboardInputCourseToc {
+    /**
+     * React accordingly when key is pressed on course-toc page.
+     * @param courseDetails CourseDetailsComponent reference
+     * @param event Key pressed event
+     */
     @HostListener('window:keydown', ['$event'])
     keyboardInput(courseToc: CourseTocComponent, event: any) {
         event.stopPropagation()
