@@ -90,5 +90,5 @@ ul {
     font-family: Verdana;
     font-size: 13px;
     font-weight: normal;
-    color: slategray;
+    color: var(--stale);
 }

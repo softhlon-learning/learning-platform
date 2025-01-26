@@ -14,6 +14,9 @@
     --main: #363131;
     --gray: #808080;
     --error: #fa1607;
+    --stale: slategray;
+    --darkgrey: darkgrey;
+    --white: white;
 }
 
 @media (max-width: 1500px) {

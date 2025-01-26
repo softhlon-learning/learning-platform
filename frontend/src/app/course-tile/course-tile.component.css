@@ -6,7 +6,7 @@ button.course-box-item {
     margin: 10px;
     font-size: 30px;
     font-weight: bold;
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,7 +15,7 @@ button.course-box-item {
 
 button:hover.course-box-item {
     background-color: var(--hover);
-    color: white;
+    color: var(--white);
 }
 
 .enrolled-item {
@@ -26,7 +26,7 @@ button:hover.course-box-item {
     margin: 10px;
     font-size: 30px;
     font-weight: bold;
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,7 +35,7 @@ button:hover.course-box-item {
 
 button:hover.enrolled-item {
     background-color: var(--hover);
-    color: white;
+    color: var(--white);
 }
 
 .description {
