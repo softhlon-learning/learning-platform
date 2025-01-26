@@ -55,7 +55,7 @@ export class SignInComponent implements OnInit {
     }
 
     /**
-     * On submit button action.
+     * On submit button press action. handler.
      */
     onSubmit(): void {
         if (this.signInForm.invalid) {
