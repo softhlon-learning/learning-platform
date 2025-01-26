@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.30.7
+_release date: 2025-01-26_
+ * IPv6 FreeBSD setup
+
 ## 0.30.6
 _release date: 2025-01-26_
  * Code cleanup/add comments in course-navigation.component.ts
