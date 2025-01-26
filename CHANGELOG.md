@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.30.8
+_release date: 2025-01-26_
+ * Code cleanup/add comments in keyboard-input.ts
+ * Code cleanup/add comments in course-toc.component.ts
+ * Renamed init to initCache and updateCourse to updateCache
+
 ## 0.30.7
 _release date: 2025-01-26_
  * IPv6 FreeBSD setup
