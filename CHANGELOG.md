@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.30.4
+_release date: 2025-01-26_
+ * Fixed issue with previous button on last lecture
+ * Added comments to course-details.component.ts
+
 ## 0.30.3
 _release date: 2025-01-26_
  * Screen utility setup on FreeBSD
