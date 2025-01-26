@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.30.1
+_release date: 2025-01-26_
+ * Caching improvement - analysis
+
 ## 0.30.0
 _release date: 2025-01-26_
  * Improved video-item.component code & hmtl
