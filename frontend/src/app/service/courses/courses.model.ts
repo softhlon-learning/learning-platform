@@ -7,29 +7,38 @@
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create enrollment request body.
+ */
 export class EnrollmentRequest {
-    enrollment: Enrollment;
+    enrollment: Enrollment
 
     constructor(courseId: string | undefined) {
-        this.enrollment = new Enrollment(courseId);
+        this.enrollment = new Enrollment(courseId)
     }
 }
 
+/**
+ * Update lecture request body
+ */
 export class UpdateLectureRequest {
-    lectureId: string;
-    processed: boolean;
+    lectureId: string
+    processed: boolean
 
     constructor(lectureId: string, processed: boolean) {
-        this.lectureId = lectureId;
-        this.processed = processed;
+        this.lectureId = lectureId
+        this.processed = processed
     }
 }
 
+/**
+ * Enrollment request model.
+ */
 class Enrollment {
-    courseId?: string;
+    courseId?: string
 
     constructor(courseId?: string) {
-        this.courseId = courseId;
+        this.courseId = courseId
     }
 }
 

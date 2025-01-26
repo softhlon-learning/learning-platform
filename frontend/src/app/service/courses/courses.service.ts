@@ -3,29 +3,29 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
-import {Course} from '../../home/course';
-import {EnrollmentRequest, UpdateLectureRequest} from './courses.model';
+import {Injectable} from '@angular/core'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {Observable, of} from 'rxjs'
+import {Course} from '../../home/course'
+import {EnrollmentRequest, UpdateLectureRequest} from './courses.model'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const COURSE_PATH = '/api/v1/course';
-const ENROLL_PATH = '/api/v1/course/{courseId}/enrollment';
-const UPDATE_LECTURE_PATH = '/api/v1/course/{courseId}/enrollment/lecture';
+const COURSE_PATH = '/api/v1/course'
+const ENROLL_PATH = '/api/v1/course/{courseId}/enrollment'
+const UPDATE_LECTURE_PATH = '/api/v1/course/{courseId}/enrollment/lecture'
 
 const HTTP_OPTIONS = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
+}
 
 @Injectable({
     providedIn: 'root',
 })
 export class CoursesService {
-    private courses?: Course[];
+    private courses?: Course[]
 
     constructor(
         private http: HttpClient) {
@@ -38,25 +38,33 @@ export class CoursesService {
         if (!this.courses) {
             return this.http
                 .get<Course[]>(COURSE_PATH)
-                .pipe();
+                .pipe()
         } else {
             // @ts-ignore
-            console.log(this.courses);
-            return of(this.courses);
+            console.log(this.courses)
+            return of(this.courses)
         }
     }
 
+    /**
+     * Init courses cache.
+     * @param courses Up-to-date courses data
+     */
     initCache(courses: Course[]) {
-        this.courses = courses;
+        this.courses = courses
     }
 
+    /**
+     * Update course cache
+     * @param updatedCourse Course to be update
+     */
     updateCache(updatedCourse: Course) {
         if (this.courses != null) {
             for (let i = 0; i < this.courses.length; i++) {
-                let course = this.courses[i];
+                let course = this.courses[i]
                 if (course.code === updatedCourse.code) {
-                    this.courses[i] = course;
-                    break;
+                    this.courses[i] = course
+                    break
                 }
             }
         }
@@ -67,15 +75,14 @@ export class CoursesService {
      * @param course Course structure
      */
     enrollCourse(course: Course): Observable<ArrayBuffer> {
-
-        const PATH = `${ENROLL_PATH.replace('{courseId}', course.id ?? '')}`;
-        const request = new EnrollmentRequest(course.externalId);
+        const PATH = `${ENROLL_PATH.replace('{courseId}', course.id ?? '')}`
+        const request = new EnrollmentRequest(course.externalId)
 
         return this.http
             .post<ArrayBuffer>(
                 PATH,
                 request,
-                HTTP_OPTIONS).pipe();
+                HTTP_OPTIONS).pipe()
     }
 
     /**
@@ -83,11 +90,10 @@ export class CoursesService {
      * @param course Course strcuture
      */
     unenrollCourse(course: Course): Observable<ArrayBuffer> {
-
-        const PATH = `${ENROLL_PATH.replace('{courseId}', course.id ?? '')}`;
+        const PATH = `${ENROLL_PATH.replace('{courseId}', course.id ?? '')}`
         return this.http
             .delete<ArrayBuffer>(PATH)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -101,14 +107,14 @@ export class CoursesService {
         lectureId: string,
         processed: boolean): Observable<ArrayBuffer> {
 
-        const PATH = `${UPDATE_LECTURE_PATH.replace('{courseId}', courseId)}`;
+        const PATH = `${UPDATE_LECTURE_PATH.replace('{courseId}', courseId)}`
         const updateLectureRequest = new UpdateLectureRequest(
             lectureId,
-            processed);
+            processed)
 
         return this.http
             .patch<ArrayBuffer>(
                 PATH,
-                updateLectureRequest).pipe();
+                updateLectureRequest).pipe()
     }
 }
