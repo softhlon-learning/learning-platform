@@ -3,9 +3,9 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {QuizAnswer} from "./quiz-answer";
+import {QuizAnswer} from "./quiz-answer"
 
 export class Quiz {
-    name: string = '';
-    questions: Array<QuizAnswer> = [];
+    name: string = ''
+    questions: Array<QuizAnswer> = []
 }

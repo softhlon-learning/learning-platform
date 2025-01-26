@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {CourseNavigation} from "../course-navigation/course-navigation";
-import {CourseDetailsComponent} from "../course-details/course-details.component";
+import {Component, Input, OnInit} from '@angular/core'
+import {ActivatedRoute} from "@angular/router"
+import {CourseNavigation} from "../course-navigation/course-navigation"
+import {CourseDetailsComponent} from "../course-details/course-details.component"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,10 +19,10 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 })
 export class QuizItemComponent implements OnInit {
     @Input()
-    navigationItems: CourseNavigation = new CourseNavigation();
+    navigationItems: CourseNavigation = new CourseNavigation()
 
     @Input()
-    progress?: CourseDetailsComponent;
+    progress?: CourseDetailsComponent
 
     constructor(
         private route: ActivatedRoute) {
