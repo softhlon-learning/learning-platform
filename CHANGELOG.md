@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.29.8
+_release date: 2025-01-25_
+* Refactoring course-details.component.ts - part 3
+
 ## 0.29.7
 _release date: 2025-01-25_
  * Refactoring course-details.component.ts - part 1
