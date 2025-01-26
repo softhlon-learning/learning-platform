@@ -3,11 +3,11 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, OnInit} from '@angular/core';
-import {Course} from "./course";
-import {Router} from "@angular/router";
-import {CookieService} from "ngx-cookie-service";
-import {CoursesService} from '../service/courses/courses.service';
+import {Component, OnInit} from '@angular/core'
+import {Course} from "./course"
+import {Router} from "@angular/router"
+import {CookieService} from "ngx-cookie-service"
+import {CoursesService} from '../service/courses/courses.service'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,8 +19,8 @@ import {CoursesService} from '../service/courses/courses.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    title = 'Java/Fullstack Developer Academy';
-    courses?: Course[];
+    title = 'Java/Fullstack Developer Academy'
+    courses?: Course[]
 
     constructor(
         private coursesService: CoursesService,
@@ -28,24 +28,26 @@ export class HomeComponent implements OnInit {
         private router: Router) {
     }
 
-    get windowRef() {
-        return window;
-    }
-
+    /**
+     * Init /home page view.
+     */
     ngOnInit() {
-        this.fetchCourses();
-        const redirect = this.cookieService.get('Redirect') || '';
+        this.fetchCourses()
+        const redirect = this.cookieService.get('Redirect') || ''
         if (redirect != '') {
-            this.router.navigate([redirect]);
-            this.cookieService.delete('Redirect');
+            this.router.navigate([redirect])
+            this.cookieService.delete('Redirect')
         }
     }
 
-    fetchCourses(): void {
+    /**
+     * Fetch courses from the service nad init its cache.
+     */
+    private fetchCourses(): void {
         this.coursesService.getCourses()
             .subscribe(courses => {
-                this.courses = courses;
-                this.coursesService.initCache(this.courses);
-            });
+                this.courses = courses
+                this.coursesService.initCache(this.courses)
+            })
     }
 }
