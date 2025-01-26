@@ -81,7 +81,7 @@ export class SignInComponent implements OnInit {
         }
 
         setTimeout(() =>
-            this.error = undefined
-         ,HIDE_ERROR_DELAY);
+                this.error = undefined
+            , HIDE_ERROR_DELAY);
     }
 }
