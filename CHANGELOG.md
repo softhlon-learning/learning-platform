@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.30.2
+_release date: 2025-01-26_
+* Course data cache implementation
+
 ## 0.30.1
 _release date: 2025-01-26_
  * Caching improvement - analysis
