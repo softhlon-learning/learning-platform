@@ -1,9 +1,18 @@
 <div>
-    <button (click)="this.moveToPreviousLecture()" [disabled]="!navigationItems.previousLecture">Previous [↑]</button>
-    <button (click)="this.markLectureAsViewed()" *ngIf="!navigationItems.currentLecture.processed">Mark As Viewed [m]
+    <button
+            (click)="this.moveToPreviousLecture()"
+            [disabled]="!navigationItems.previousLecture">Previous [↑]
     </button>
-    <button (click)="this.markLectureAsNotViewed()" *ngIf="navigationItems.currentLecture.processed">Mark As Not Viewed
-        [m]
+    <button
+            (click)="this.markLectureAsViewed()"
+            *ngIf="!navigationItems.currentLecture.processed">Mark As Viewed [m]
     </button>
-    <button (click)="this.moveToNextLecture()" [disabled]="!navigationItems.nextLecture">Next[↓]</button>
+    <button
+            (click)="this.markLectureAsNotViewed()"
+            *ngIf="navigationItems.currentLecture.processed">Mark As Not Viewed [m]
+    </button>
+    <button
+            (click)="this.moveToNextLecture()"
+            [disabled]="!navigationItems.nextLecture">Next[↓]
+    </button>
 </div>

@@ -18,10 +18,10 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 })
 export class CourseNavigationComponent implements OnInit {
     @Input()
-    navigationItems: CourseNavigation = new CourseNavigation();
+    navigationItems: CourseNavigation = new CourseNavigation()
 
     @Input()
-    progress?: CourseDetailsComponent;
+    progress?: CourseDetailsComponent
 
     constructor() {
     }
@@ -29,23 +29,35 @@ export class CourseNavigationComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    moveToPreviousLecture(): void {
-        if (this.progress != null) {
-            this.progress.moveToPreviousLecture();
-        }
-    }
-
+    /**
+     * Move to the next lecture handler.
+     */
     moveToNextLecture(): void {
         if (this.progress != null) {
-            this.progress.moveToNextLecture();
+            this.progress.moveToNextLecture()
         }
     }
 
-    markLectureAsViewed(): void {
-        this.progress?.markLectureAsViewed();
+    /**
+     * Move to the previous lecture handler.
+     */
+    moveToPreviousLecture(): void {
+        if (this.progress != null) {
+            this.progress.moveToPreviousLecture()
+        }
     }
 
+    /**
+     * Mark lecture as viewed handler.
+     */
+    markLectureAsViewed(): void {
+        this.progress?.markLectureAsViewed()
+    }
+
+    /**
+     * MArk lecture as not viewed handler.
+     */
     markLectureAsNotViewed(): void {
-        this.progress?.markLectureAsNotViewed();
+        this.progress?.markLectureAsNotViewed()
     }
 }
