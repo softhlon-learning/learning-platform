@@ -22,7 +22,7 @@
                 <label class="checkbox">
                   <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
                   <span class="name">{{ lecture.name }}</span>
-                  <span *ngIf="lecture.type" class="type">&nbsp; - {{ this.typeVerb(lecture) }}</span>
+                  <span *ngIf="lecture.type" class="type">&nbsp; - {{ lecture.type }}</span>
                   <span *ngIf="lecture.time" class="type">&nbsp;({{ lecture.time }})</span>
                 </label>
               </li>
@@ -34,19 +34,19 @@
 
     <div class="course-item">
       <video-lecture
-              *ngIf="navigation.currentLecture.type == 'Video'"
+              *ngIf="navigation.currentLecture.type == 'Watch'"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigation"
               [progress]="this">
       </video-lecture>
       <document-lecture
-              *ngIf="navigation.currentLecture.type == 'Document'"
+              *ngIf="navigation.currentLecture.type == 'Read'"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigation"
               [progress]="this">
       </document-lecture>
       <quiz-lecture
-              *ngIf="navigation.currentLecture.type == 'Quiz'"
+              *ngIf="navigation.currentLecture.type == 'Interact'"
               [navigationItems]="navigation"
               [progress]="this">
       </quiz-lecture>
