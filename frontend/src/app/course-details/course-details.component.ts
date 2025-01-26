@@ -163,9 +163,9 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     moveToPreviousLecture(): NavigationLectures {
-        if (this.navigationLectures.nextLecture != null) {
-            const nextLecture = this.navigationLectures.previousLecture;
-            this.selectScrollToAndPersistLecture(nextLecture);
+        if (this.navigationLectures.previousLecture != null) {
+            const previousLecture = this.navigationLectures.previousLecture;
+            this.selectScrollToAndPersistLecture(previousLecture);
         } else {
             const currentLecture = this.getCurrentLecture();
             this.selectScrollToAndPersistLecture(currentLecture)
