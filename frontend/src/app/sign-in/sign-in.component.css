@@ -22,7 +22,7 @@
     align-items: center;
     flex-direction: column;
     background-color: var(--side-form);
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
 }
 
 .title {
@@ -67,20 +67,20 @@ input {
     padding: 1rem 1rem 1rem 1rem;
     margin: 0.2rem;
     width: 310px;
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
 }
 
 button.submit {
     margin-top: 1rem;
     margin-bottom: 0.2rem;
     width: 340px;
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
 }
 
 button.cancel {
     margin: 0.2rem;
     width: 340px;
-    border: 1px darkgrey dashed;
+    border: 1px var(--darkgrey) dashed;
 }
 
 .form {
@@ -93,5 +93,5 @@ button.cancel {
 .error {
     padding: 10px;
     height: 20px;
-    color: red;
+    color: var(--error);
 }
