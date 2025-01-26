@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, HostListener, OnInit} from '@angular/core';
-import {Course} from "../home/course";
-import {ActivatedRoute, Router} from "@angular/router";
-import {CourseContent} from "../model/course-content";
-import {NavigationLectures} from "../course-navigation/navigation-lectures";
-import {CookieService} from "ngx-cookie-service";
-import {Lecture} from "../model/lecture";
+import {Component, HostListener, OnInit} from '@angular/core'
+import {Course} from "../home/course"
+import {ActivatedRoute, Router} from "@angular/router"
+import {CourseContent} from "../model/course-content"
+import {NavigationLectures} from "../course-navigation/navigation-lectures"
+import {CookieService} from "ngx-cookie-service"
+import {Lecture} from "../model/lecture"
 import {KeyboardInputCourseDetails} from "./keyboard-input";
-import {CoursesService} from '../service/courses/courses.service';
+import {CoursesService} from '../service/courses/courses.service'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,10 +23,10 @@ import {CoursesService} from '../service/courses/courses.service';
     styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent implements OnInit {
-    course: Course = {};
-    courseContent?: CourseContent;
-    navigationLectures = new NavigationLectures();
-    currentLecture?: Lecture;
+    course: Course = {}
+    courseContent?: CourseContent
+    navigationLectures = new NavigationLectures()
+    currentLecture?: Lecture
 
     constructor(
         private keyboardInputDetails: KeyboardInputCourseDetails,
@@ -38,93 +38,120 @@ export class CourseDetailsComponent implements OnInit {
 
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
-        this.keyboardInputDetails.keyboardInput(this, event);
+        this.keyboardInputDetails.keyboardInput(this, event)
     }
 
+    /**
+     * Component initialization.
+     * If user is not authenticated then redirection to /sign-in.
+     * Otherwise course is fetched from service to initialize to the component.
+     */
     ngOnInit() {
         if (this.cookieService.get('Authenticated') !== 'true') {
             this.router.navigate(['/sign-in'])
                 .then(() => {
                     window.location.reload();
-                });
+                })
             ;
         }
-        this.fetchCourseAndInitView();
+        this.fetchCourseAndInitView()
     }
 
-    ngAfterViewInit() {
-        this.findAndScrollToCurrentLecture(this.courseContent);
-    }
-
+    /**
+     * Fetch latest course from service (service cache).
+     */
     fetchCourseAndInitView() {
-        const id = this.route.snapshot.paramMap.get('id')!;
+        const id = this.route.snapshot.paramMap.get('id')!
         this.coursesService.getCourses()
             .subscribe(courses => {
                 for (let i = 0; i < courses.length; i++) {
                     let course = courses[i];
                     if (course.code === id) {
-                        this.course = course;
-                        this.courseContent = JSON.parse(atob(<string>this.course.content));
-                        setTimeout(() => this.findAndScrollToCurrentLecture(this.courseContent), 0);
-                        break;
+                        this.course = course
+                        this.courseContent = JSON.parse(atob(<string>this.course.content))
+                        this.findAndScrollToSelectedLecture(this.courseContent)
+                        break
                     }
                 }
             })
     }
 
+    /**
+     *  Update lecture navigation state, based on current lecture selection.
+     * @param lecture Lecture to operate on
+     */
     selectLectureOnly(lecture?: Lecture) {
-        this.selectLecture(lecture, false, false);
+        this.selectLecture(lecture, false, false)
     }
 
+    /**
+     * Update lecture navigation state and scroll to current lecture selection.
+     * @param lecture Lecture to operate on
+     */
     selectAndScrollToLecture(lecture?: Lecture) {
-        this.selectLecture(lecture, true, false);
+        this.selectLecture(lecture, true, false)
     }
 
+    /**
+     * Update lecture navigation state, scroll to, and persist current lecture selection in the service.
+     * @param lecture
+     */
     selectScrollToAndPersistLecture(lecture?: Lecture) {
-        this.selectLecture(lecture, true, true);
+        this.selectLecture(lecture, true, true)
     }
 
+    /**
+     * Update lecture navigation state, scroll to, and persist current lecture selection in the service.
+     * Additional actions depen on passed flag values.
+     * @param selectedLecture
+     * @param scroll
+     * @param persist
+     */
     selectLecture(selectedLecture?: Lecture, scroll: boolean = true, persist: boolean = true): void {
         if (selectedLecture == null) {
-            return;
+            return
         }
 
-        let tempNavigationLectures: NavigationLectures = new NavigationLectures();
-        let currentLecture: Lecture;
+        let tempNavigationLectures: NavigationLectures = new NavigationLectures()
+        let currentLecture: Lecture
 
         if (this.courseContent) {
             for (let chapter of this.courseContent.chapters)
                 for (let lecture of chapter.lectures) {
-                    lecture.selected = false;
+                    lecture.selected = false
                     if (tempNavigationLectures.nextLecture != null) {
-                        continue;
+                        continue
                     }
                     // @ts-ignore
                     if (currentLecture != null) {
-                        tempNavigationLectures.nextLecture = lecture;
-                        this.navigationLectures = tempNavigationLectures;
+                        tempNavigationLectures.nextLecture = lecture
+                        this.navigationLectures = tempNavigationLectures
                     } else if (lecture != selectedLecture) {
-                        tempNavigationLectures.previousLecture = lecture;
+                        tempNavigationLectures.previousLecture = lecture
                     } else {
-                        currentLecture = lecture;
-                        tempNavigationLectures.currentLecture = lecture;
-                        tempNavigationLectures.currentLecture.selected = true;
+                        currentLecture = lecture
+                        tempNavigationLectures.currentLecture = lecture
+                        tempNavigationLectures.currentLecture.selected = true
                     }
                 }
         }
 
         if (persist == true) {
-            this.persisteLectureState(selectedLecture);
+            this.persisteLectureState(selectedLecture)
         }
 
         if (scroll === true) {
-            this.scrollToElement(selectedLecture.id);
+            this.scrollToElement(selectedLecture.id)
         }
 
-        this.navigationLectures = tempNavigationLectures;
+        this.navigationLectures = tempNavigationLectures
     }
 
-    findAndScrollToCurrentLecture(courseContent?: CourseContent): void {
+    /**
+     * Find the selected lecture and scroll to it.
+     * @param courseContent Course's content object
+     */
+    findAndScrollToSelectedLecture(courseContent?: CourseContent): void {
         if (courseContent == null) {
             return;
         }
@@ -137,7 +164,10 @@ export class CourseDetailsComponent implements OnInit {
         this.selectAndScrollToLecture(courseContent.chapters[0].lectures[0]);
     }
 
-    getCurrentLecture(): Lecture {
+    /**
+     * Return selected lecture.
+     */
+    selectedLecture(): Lecture {
         if (this.courseContent != null) {
             for (let chapter of this.courseContent.chapters)
                 for (let lecture of chapter.lectures) {
@@ -150,40 +180,56 @@ export class CourseDetailsComponent implements OnInit {
         return undefined;
     }
 
+    /**
+     * Move to the next lecture handler.
+     */
     moveToNextLecture(): NavigationLectures {
         if (this.navigationLectures.nextLecture != null) {
             const nextLecture = this.navigationLectures.nextLecture;
             this.selectScrollToAndPersistLecture(nextLecture);
         } else {
-            const currentLecture = this.getCurrentLecture();
+            const currentLecture = this.selectedLecture();
             this.selectScrollToAndPersistLecture(currentLecture)
         }
 
         return this.navigationLectures;
     }
 
+    /**
+     * Move to the previous lecture handler.
+     */
     moveToPreviousLecture(): NavigationLectures {
         if (this.navigationLectures.previousLecture != null) {
             const previousLecture = this.navigationLectures.previousLecture;
             this.selectScrollToAndPersistLecture(previousLecture);
         } else {
-            const currentLecture = this.getCurrentLecture();
+            const currentLecture = this.selectedLecture();
             this.selectScrollToAndPersistLecture(currentLecture)
         }
 
         return this.navigationLectures;
     }
 
+    /**
+     * Mark lecture as Viewed.
+     */
     markLectureAsViewed(): void {
         this.markLectureViewedFlag(true);
     }
 
+    /**
+     * Mark lecture as Viewed.
+     */
     markLectureAsNotViewed(): void {
         this.markLectureViewedFlag(false);
     }
 
+    /**
+     * mark lecture as Viewed/Not Viewed.
+     * @param viewed Viewed/Not Viewed switch
+     */
     markLectureViewedFlag(viewed: boolean): void {
-        let lecture: Lecture | null = this.getCurrentLecture();
+        let lecture: Lecture | null = this.selectedLecture()
         if (lecture != null) {
             lecture.processed = viewed;
         }
@@ -191,19 +237,25 @@ export class CourseDetailsComponent implements OnInit {
         this.persisteLectureState(lecture as Lecture);
     }
 
+    /**
+     * Switch lecture to Viewed in it's not, and vice-versa.
+     */
     switchLectureViewedFlag(): void {
-        let lecture: Lecture | null = this.getCurrentLecture();
+        let lecture: Lecture | null = this.selectedLecture()
         if (lecture != null) {
             if (lecture.processed) {
                 lecture.processed = false
-                this.selectScrollToAndPersistLecture(lecture);
+                this.selectScrollToAndPersistLecture(lecture)
             } else {
-                lecture.processed = true;
-                this.moveToNextLecture();
+                lecture.processed = true
+                this.moveToNextLecture()
             }
         }
     }
 
+    /**
+     * Dynamically calculate current learning propress for given course.
+     */
     calculateCourseProgress(): number {
         let allLecturesCount: number = 0;
         let processedChaptersCount: number = 0;
@@ -213,42 +265,63 @@ export class CourseDetailsComponent implements OnInit {
                     allLecturesCount++;
                     if (lecture.processed) processedChaptersCount++;
                 }
-            return Math.round(processedChaptersCount / allLecturesCount * 100);
+            return Math.round(processedChaptersCount / allLecturesCount * 100)
         } else {
-            return 0;
+            return 0
         }
     }
 
+    /**
+     * Persist lecture state in the service (an update service cache).
+     * @param lecture Lecture to operate on
+     */
     persisteLectureState(lecture?: Lecture): void {
         console.log(this.courseContent);
-        this.course.content = btoa(JSON.stringify(this.courseContent));
+        this.course.content = btoa(JSON.stringify(this.courseContent))
         this.coursesService
             .updateLecture(
                 this.course.id || '',
                 lecture?.id || '',
                 lecture?.processed || false)
-            .subscribe(() => this.coursesService.updateCourse(this.course));
+            .subscribe(() => this.coursesService.updateCourse(this.course))
     }
 
+    /**
+     * Move to the previous application page.
+     */
     moveBack() {
-        this.router.navigate(['/course/' + this.course.code]);
+        this.router.navigate(['/course/' + this.course.code])
     }
 
+    /**
+     * Move to application /home page.
+     */
     moveToHome() {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home'])
     }
 
+    /**
+     * Start playing video lecture.
+     */
     playVideo() {
         let video = document.querySelector('video');
         if (video) {
-            video.play();
+            video.play()
         }
     }
 
+    /**
+     * Return class for selected lecture.
+     * @param lecture Lecture to operate on
+     */
     getLectureClass(lecture: Lecture): string {
-        return lecture.selected ? 'selected' : '';
+        return lecture.selected ? 'selected' : ''
     }
 
+    /**
+     * Scroll to the given html element.
+     * @param id HTML element id
+     */
     scrollToElement(id: string): void {
         // @ts-ignore
         const lectureElement = document.getElementById(id);
@@ -257,14 +330,17 @@ export class CourseDetailsComponent implements OnInit {
                 behavior: "auto",
                 block: "center",
                 inline: "center"
-            });
+            })
         }
     }
 
+    /**
+     * Deprecated soon.
+     */
     typeVerb(lecture: Lecture): string {
-        if (lecture.type === "Video") return "Watch";
-        if (lecture.type === "Document") return "Read";
-        if (lecture.type === "Quiz") return "Interact";
-        return lecture.type;
+        if (lecture.type === "Video") return "Watch"
+        if (lecture.type === "Document") return "Read"
+        if (lecture.type === "Quiz") return "Interact"
+        return lecture.type
     }
 }
