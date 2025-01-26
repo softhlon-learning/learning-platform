@@ -90,6 +90,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
             log.error("Error", cause);
             return new Failed(cause);
         }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------

@@ -34,14 +34,11 @@ class CustomAuthenticationManager implements AuthenticationManager {
               .toString();
 
         if (jwtService.isTokenValid(token)) {
-
             var claims = jwtService
                   .getAllClaimsFromToken(token);
-
             var name = claims.get(
                   "name",
                   String.class);
-
             var accountId = claims.get(
                   "accountId",
                   String.class);
@@ -52,9 +49,7 @@ class CustomAuthenticationManager implements AuthenticationManager {
                   List.of());
 
         } else {
-
             throw new InvalidTokenException();
-
         }
 
     }

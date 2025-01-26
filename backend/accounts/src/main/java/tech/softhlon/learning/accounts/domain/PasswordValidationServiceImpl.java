@@ -26,11 +26,9 @@ class PasswordValidationServiceImpl implements PasswordValidationService {
         if (password.isBlank()) {
             return false;
         }
-
         if (password.length() < 12) {
             return false;
         }
-
         if (!passwordCharsPattern.matcher(password).matches()) {
             return false;
         }

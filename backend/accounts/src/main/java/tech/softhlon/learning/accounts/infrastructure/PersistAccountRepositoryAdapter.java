@@ -39,7 +39,6 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
             updateEntity(
                   entity.get(),
                   request);
-
             accountsJpaRepository.save(
                   entity.get());
 

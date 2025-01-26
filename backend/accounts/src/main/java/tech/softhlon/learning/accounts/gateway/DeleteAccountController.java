@@ -66,9 +66,7 @@ class DeleteAccountController {
     private ResponseEntity<?> successResponse(
           HttpServletResponse response) {
 
-        authCookiesService.resetAuthCookies(
-              response);
-
+        authCookiesService.resetAuthCookies(response);
         return successAcceptedBody();
 
     }

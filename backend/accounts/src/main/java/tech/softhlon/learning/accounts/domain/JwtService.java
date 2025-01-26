@@ -122,8 +122,9 @@ public class JwtService {
     private Boolean isTokenExpired(
           String token) {
 
-        final Date expiration = getAllClaimsFromToken(token)
-              .getExpiration();
+        final Date expiration =
+              getAllClaimsFromToken(token)
+                    .getExpiration();
 
         return expiration.before(new Date());
 
