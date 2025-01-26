@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.30.5
+_release date: 2025-01-26_
+ * Minor code quality improvements in course-details.component.ts and few related files
+ * Replaced old types with verbs, in course definitions
+ * Removed typeVerb method
+
 ## 0.30.4
 _release date: 2025-01-26_
  * Fixed issue with previous button on last lecture
