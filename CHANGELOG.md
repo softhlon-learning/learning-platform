@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.31.1
+_release date: 2025-01-26_
+ * Code cleanup/add comments in accounts
+ * Code cleanup/add comments in courses
+ * Code cleanup/add comments in sign-in.component.ts
+ * Code cleanup/add comments in sign-up.component.ts
+
 ## 0.31.0
 _release date: 2025-01-26_
  * Code cleanup/add comments in profile.component.ts
