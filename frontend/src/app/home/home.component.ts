@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCourses();
+        this.fetchCourses();
         const redirect = this.cookieService.get('Redirect') || '';
         if (redirect != '') {
             this.router.navigate([redirect]);
@@ -41,8 +41,11 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    getCourses(): void {
+    fetchCourses(): void {
         this.coursesService.getCourses()
-            .subscribe(courses => (this.courses = courses));
+            .subscribe(courses => {
+                this.courses = courses;
+                this.coursesService.init(this.courses);
+            });
     }
 }

@@ -5,8 +5,7 @@
 
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {shareReplay} from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
 import {Course} from '../../home/course';
 import {EnrollmentRequest, UpdateLectureRequest} from './courses.model';
 
@@ -26,37 +25,41 @@ const HTTP_OPTIONS = {
     providedIn: 'root',
 })
 export class CoursesService {
-    private courses$?: Observable<Course[]>;
+    private courses?: Course[];
 
     constructor(
         private http: HttpClient) {
     }
 
     /**
-     * Sends GET /api/v1/course request.
-     */
-    refreshCourses(): Observable<Course[]> {
-        this.courses$ = this.http
-            .get<Course[]>(COURSE_PATH)
-            .pipe();
-
-        this.courses$ = this.http
-            .get<Course[]>(COURSE_PATH)
-            .pipe(shareReplay(1));
-
-        return this.courses$;
-    }
-
-    /**
      * Replays GET /api/v1/course request.
      */
     getCourses(): Observable<Course[]> {
-        if (!this.courses$) {
-            this.courses$ = this.http
+        if (!this.courses) {
+            return this.http
                 .get<Course[]>(COURSE_PATH)
-                .pipe(shareReplay(1));
+                .pipe();
+        } else {
+            // @ts-ignore
+            console.log(this.courses);
+            return of(this.courses);
         }
-        return this.courses$;
+    }
+
+    init(courses: Course[]) {
+        this.courses = courses;
+    }
+
+    updateCourse(updatedCourse: Course) {
+        if (this.courses != null) {
+            for (let i = 0; i < this.courses.length; i++) {
+                let course = this.courses[i];
+                if (course.code === updatedCourse.code) {
+                    this.courses[i] = course;
+                    break;
+                }
+            }
+        }
     }
 
     /**

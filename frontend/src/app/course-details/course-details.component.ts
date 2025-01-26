@@ -220,12 +220,14 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     persisteLectureState(lecture?: Lecture): void {
+        console.log(this.courseContent);
+        this.course.content = btoa(JSON.stringify(this.courseContent));
         this.coursesService
             .updateLecture(
                 this.course.id || '',
                 lecture?.id || '',
                 lecture?.processed || false)
-            .subscribe();
+            .subscribe(() => this.coursesService.updateCourse(this.course));
     }
 
     moveBack() {

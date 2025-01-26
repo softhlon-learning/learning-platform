@@ -33,23 +33,10 @@ export class CourseTocComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.softFetchCourse()
-        this.coursesService.refreshCourses()
-            .subscribe(() => this.softFetchCourse());
+        this.fetchCourses();
     }
 
-    @HostListener('window:keydown', ['$event'])
-    keyboardInput(event: any) {
-        this.keyboardInputToc.keyboardInput(this, event);
-    }
-
-    hardFetchCourse() {
-        this.coursesService.refreshCourses().subscribe(
-            () => this.softFetchCourse()
-        );
-    }
-
-    softFetchCourse(): void {
+    fetchCourses(): void {
         const id = this.route.snapshot.paramMap.get('id')!;
         this.coursesService.getCourses()
             .subscribe(courses => {
@@ -61,16 +48,27 @@ export class CourseTocComponent implements OnInit {
                     }
                 }
                 this.courseContent = JSON.parse(atob(<string>this.course?.content));
-            })
+                this.coursesService.init(courses);
+            });
+    }
+
+    @HostListener('window:keydown', ['$event'])
+    keyboardInput(event: any) {
+        this.keyboardInputToc.keyboardInput(this, event);
     }
 
     enrollCourse(): void {
-        if (this.course?.enrolled) return;
+        if (this.course?.enrolled) {
+            return;
+        }
+
         if (!this.isAuthenticated()) {
             this.redirectToSignIn();
         } else {
             this.coursesService.enrollCourse(this.course || {}).subscribe(() => {
-                    this.hardFetchCourse();
+                    // @ts-ignore
+                    this.course.enrolled = true;
+                    this.coursesService.updateCourse(this.course || {});
                     this.router.navigate(['/course/' + this.course?.code + '/details']);
                 }
             );
@@ -88,7 +86,11 @@ export class CourseTocComponent implements OnInit {
     unenrollCourse(): void {
         if (!this.course?.enrolled || !this.isAuthenticated()) return;
         this.coursesService.unenrollCourse(this.course || {}).subscribe(
-            () => this.hardFetchCourse()
+            () => {
+                // @ts-ignore
+                this.course.enrolled = false;
+                this.coursesService.updateCourse(this.course || {});
+            }
         );
     }
 
