@@ -9,1623 +9,1623 @@ chapters:
     lectures:
       - name: Welcome to the Course
         id: welcome.mov
-        type: Video
+        type: Watch
         time: 1m57s
       - name: Prerequisites
         id: no-video-yet.mov?v2
-        type: Video
+        type: Watch
         time: 2m14s
       - name: Course Structure
         id: no-document-yet.html?v1
-        type: Document
+        type: Read
   - name: Getting Started
     lectures:
       - name: Introduction to Java
         id: no-video-yet.mov?v5
-        type: Video
+        type: Watch
         time: 3m15s
       - name: Java Virtual Machine
         id: no-video-yet.mov?v6
-        type: Video
+        type: Watch
         time: 1m20s
       - name: JDK and JRE
         id: ultimate-java-course/intro/Quiz.json?v8
-        type: Quiz
+        type: Interact
       - name: Java on Windows
         id: no-video-yet.mov?v9
-        type: Video
+        type: Watch
         time: 4m15s
         processed: false
       - name: Java on Linux
         id: no-video-yet.mov?v10
-        type: Video
+        type: Watch
         time: 9m07s
         processed: false
       - name: Java on MacOS
         id: java-on-mac.html?v2
-        type: Document
+        type: Read
       - name: Intelij Idea on Windows
         id: no-video-yet.mov?v12
-        type: Video
+        type: Watch
         time: 1m51s
       - name: Intelij Idea on Linux
         id: no-video-yet.mov?v13
-        type: Video
+        type: Watch
         time: 3m45s
       - name: Intelij Idea on MacOS
         id: no-video-yet.mov?v14
-        type: Video
+        type: Watch
         time: 6m45s
       - name: Basic Tools Overview
         id: no-video-yet.mov?v15
-        type: Video
+        type: Watch
         time: 5m10s
       - name: Javac Tool
         id: no-video-yet.mov?v16
-        type: Video
+        type: Watch
         time: 8m11s
       - name: Java Tool
         id: no-video-yet.mov?v17
-        type: Video
+        type: Watch
         time: 0m28s
       - name: Jar Tool
         id: no-video-yet.mov?v18
-        type: Video
+        type: Watch
         time: 4m33s
       - name: IDE Overview
         id: no-video-yet.mov?v19
-        type: Video
+        type: Watch
         time: 7m16s
       - name: Basic Project Configuration
         id: no-video-yet.mov?v20
-        type: Video
+        type: Watch
         time: 0m59s
       - name: First Introduction to the Project
         id: no-video-yet.mov?v21
-        type: Video
+        type: Watch
         time: 6m24s
       - name: Wrap Up
         id: no-document-yet.html?v2
-        type: Document
+        type: Read
   - name: Language Fundamentals
     lectures:
       - name: Basic Program Structure
         id: no-video-yet.mov?v630
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Packages
         id: no-video-yet.mov?v631
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Main Function
         id: no-video-yet.mov?v632
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Program Arguments
         id: no-video-yet.mov?v633
-        type: Video
+        type: Watch
         time: 2m5s
       - name: System Properties
         id: no-video-yet.mov?v634
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Envrinment Variables
         id: no-video-yet.mov?v635
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Printing to Standard Output
         id: no-video-yet.mov?v636
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Reading from Standard Input
         id: no-video-yet.mov?v637
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Instrocution to Build Automation
         id: no-video-yet.mov?v638
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Maven
         id: no-video-yet.mov?v639
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Gradle
         id: no-video-yet.mov?v640
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Local Debugging
         id: no-video-yet.mov?v641
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Remote Debugging
         id: no-video-yet.mov?v642
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Basic Profilling
         id: no-video-yet.mov?v643
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Troubleshooting
         id: no-video-yet.mov?v644
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Expressions, Statements and Blocks
         id: no-video-yet.mov?v645
-        type: Video
+        type: Watch
         time: 2m5s
       - name: If-Then-Else
         id: no-video-yet.mov?v646
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Switch
         id: no-video-yet.mov?v647
-        type: Video
+        type: Watch
         time: 2m5s
       - name: While and Do-While
         id: no-video-yet.mov?v648
-        type: Video
+        type: Watch
         time: 2m5s
       - name: For Loop
         id: no-video-yet.mov?v649
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Break and Continue
         id: no-video-yet.mov?v650
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v651
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Object-Oriented Programming
     lectures:
       - name: Classes and Objects
         id: no-video-yet.mov?v652
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Abstraction
         id: no-video-yet.mov?v653
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Encapsulation
         id: no-video-yet.mov?v654
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Inheritance
         id: no-video-yet.mov?v655
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Multiple Inheritance
         id: no-video-yet.mov?v656
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Packages
         id: no-video-yet.mov?v657
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Overwritting and Overloading
         id: no-video-yet.mov?v658
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Polymorhism
         id: no-video-yet.mov?v659
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Final Classes
         id: no-video-yet.mov?v660
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Final Methods
         id: no-video-yet.mov?v661
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Abstract Classes
         id: no-video-yet.mov?v662
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Abstract Methods
         id: no-video-yet.mov?v663
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Declaring Classes
         id: no-video-yet.mov?v664
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Declaring Class Members
         id: no-video-yet.mov?v665
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Declaring Class Methods
         id: no-video-yet.mov?v666
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating Objects
         id: no-video-yet.mov?v667
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Using Objects
         id: no-video-yet.mov?v668
-        type: Video
+        type: Watch
         time: 2m5s
       - name: This Keyword
         id: no-video-yet.mov?v669
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Supper Keyword
         id: no-video-yet.mov?v670
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Return Value from Method
         id: no-video-yet.mov?v671
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Access Control
         id: no-video-yet.mov?v672
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Initializing Fields
         id: no-video-yet.mov?v673
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Equals and Hashcode
         id: no-video-yet.mov?v673
-        type: Video
+        type: Watch
         time: 2m5s
       - name: InstanceOf Operator
         id: no-video-yet.mov?v674
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Records
         id: no-video-yet.mov?v675
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Nested Classes
         id: no-video-yet.mov?v676
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Static Nested Class
         id: no-video-yet.mov?v677
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Inner Classes
         id: no-video-yet.mov?v678
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Local Classes
         id: no-video-yet.mov?v679
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Anonymous Classes
         id: no-video-yet.mov?v680
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Best Practices for Nested Classes
         id: no-video-yet.mov?v681
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Modelling Application Domain
         id: no-video-yet.mov?v682
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Autoboxing and Unboxing
         id: no-video-yet.mov?v683
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Strong, Soft, and Weak References
         id: no-video-yet.mov?v684
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Immutability
         id: no-video-yet.mov?v65
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Hidden Classes
         id: no-video-yet.mov?v686
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Sealed Classes
         id: no-video-yet.mov?v687
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Annotations
         id: no-video-yet.mov?v688
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Declaring New Annotations
         id: no-video-yet.mov?v689
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Nested Classes
         id: no-video-yet.mov?v690
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v691
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Project
     lectures:
       - name: Project Overview
         id: no-video-yet.mov?v692
-        type: Video
+        type: Watch
         time: 2m5s
       - name: GitHub Repository
         id: no-video-yet.mov?v693
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Basic Git Commands
         id: no-video-yet.mov?v694
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Project Skeleton
         id: no-video-yet.mov?v695
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v696
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Strings and Text Blocks
     lectures:
       - name: String Class
         id: no-video-yet.mov?v697
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Manipulating Characters in String
         id: no-video-yet.mov?v698
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Concatenating Strings
         id: no-video-yet.mov?v699
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Comparing Strings
         id: no-video-yet.mov?v700
-        type: Video
+        type: Watch
         time: 2m5s
       - name: StringBuilder and StringBuffer
         id: no-video-yet.mov?v701
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Text Blocks
         id: no-video-yet.mov?v702
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Multiline Strings
         id: no-video-yet.mov?v703
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v704
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Data Structures
     lectures:
       - name: Overview
         id: no-video-yet.mov?v705
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Introduction to Arrays
         id: no-video-yet.mov?v706
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Array Operations
         id: no-video-yet.mov?v707
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Arrays Class
         id: no-video-yet.mov?v708
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Collection Framework
         id: no-video-yet.mov?v709
-        type: Video
+        type: Watch
         time: 2m5s
       - name: List Interface
         id: no-video-yet.mov?v710
-        type: Video
+        type: Watch
         time: 2m5s
       - name: List Implementations
         id: no-video-yet.mov?v711
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Set Interface
         id: no-video-yet.mov?v712
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Set Implementations
         id: no-video-yet.mov?v713
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Queue Interface
         id: no-video-yet.mov?v714
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Queue Implementations
         id: no-video-yet.mov?v715
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Deque Interface
         id: no-video-yet.mov?v716
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Deque Implementations
         id: no-video-yet.mov?v717
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Map Interface
         id: no-video-yet.mov?v718
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Map Implementations
         id: no-video-yet.mov?v719
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrapper Implementations
         id: no-video-yet.mov?v720
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Ordering
         id: no-video-yet.mov?v721
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Sorted Interfaces
         id: no-video-yet.mov?v722
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Sequenced Collections
         id: no-video-yet.mov?v723
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Custom Implementation
         id: no-video-yet.mov?v724
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v725
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Error Handling
     lectures:
       - name: Error Handling Overview
         id: no-video-yet.mov?v726
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Catching Exceptions
         id: no-video-yet.mov?v727
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Throwing Exceptions
         id: no-video-yet.mov?v728
-        type: Video
+        type: Watch
         time: 2m5s
       - name: The try-catch-finally Statement
         id: no-video-yet.mov?v729
-        type: Video
+        type: Watch
         time: 2m5s
       - name: The try-with-resources Statement
         id: no-video-yet.mov?v730
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Specifying Exceptions
         id: no-video-yet.mov?v731
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Checked Exceptions
         id: no-video-yet.mov?v732
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Runtime Exceptions
         id: no-video-yet.mov?v733
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v734
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Functional Programming
     lectures:
       - name: Functional Programming Introduction
         id: no-video-yet.mov?v735
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Functional Interface
         id: no-video-yet.mov?v736
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Lambda Expressions
         id: no-video-yet.mov?v737
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Method Reference
         id: no-video-yet.mov?v738
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Built-in Functional Interfaces
         id: no-video-yet.mov?v739
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Consumer
         id: no-video-yet.mov?v740
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BiConsumer
         id: no-video-yet.mov?v741
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Supplier
         id: no-video-yet.mov?v742
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Function
         id: no-video-yet.mov?v743
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BiFunction
         id: no-video-yet.mov?v744
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Predicate
         id: no-video-yet.mov?v745
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BiPredicate
         id: no-video-yet.mov?v746
-        type: Video
+        type: Watch
         time: 2m5s
       - name: UnaryOperator
         id: no-video-yet.mov?v747
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Primitive Function Specializations
         id: no-video-yet.mov?v748
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Optional Class
         id: no-video-yet.mov?v749
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v750
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Streams
     lectures:
       - name: Introduction to Stream API
         id: no-video-yet.mov?v751
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Stream Interface
         id: no-video-yet.mov?v752
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Terminal and Intermediate Operations
         id: no-video-yet.mov?v753
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ForEach Operation
         id: no-video-yet.mov?v754
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Filter Operation
         id: no-video-yet.mov?v755
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Map Operation
         id: no-video-yet.mov?v756
-        type: Video
+        type: Watch
         time: 2m5s
       - name: FlatMap Operation
         id: no-video-yet.mov?v757
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v758
-        type: Video
+        type: Watch
         time: 2m5s
       - name: AllMAtch, anyMatch, and noneMatch
         id: no-video-yet.mov?v759
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Reduce Operation
         id: no-video-yet.mov?v760
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Stream Collectors
         id: no-video-yet.mov?v761
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ToCollection
         id: no-video-yet.mov?v762
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ToList and toUnmodififiableList
         id: no-video-yet.mov?v763
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ToSet and toUnmodififiableSet
         id: no-video-yet.mov?v764
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ToMap and toUnmodififiableMap
         id: no-video-yet.mov?v765
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Joining
         id: no-video-yet.mov?v766
-        type: Video
+        type: Watch
         time: 2m5s
       - name: GroupingBy
         id: no-video-yet.mov?v767
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Mapping
         id: no-video-yet.mov?v768
-        type: Video
+        type: Watch
         time: 2m5s
       - name: PartitioningBy
         id: no-video-yet.mov?v769
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v770
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Generics
     lectures:
       - name: Generics Overview
         id: no-video-yet.mov?v771
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Generic Types
         id: no-video-yet.mov?v772
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Generic Methods
         id: no-video-yet.mov?v773
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Bounded Type Parameters
         id: no-video-yet.mov?v774
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Inheritance and Subtypes
         id: no-video-yet.mov?v775
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Upper Bounded Wildcards
         id: no-video-yet.mov?v776
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Unbounded Wildcards
         id: no-video-yet.mov?v777
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v778
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Lower Bounded Wildcards
         id: no-video-yet.mov?v779
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wildcard Capture and Helper Methods
         id: no-video-yet.mov?v780
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Erasure of Generic Types
         id: no-video-yet.mov?v781
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Erasure of Generic Methods
         id: no-video-yet.mov?v782
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v783
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Records and Pattern Matching
     lectures:
       - name: Records Overview
         id: no-video-yet.mov?v784
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Canonical Constructor
         id: no-video-yet.mov?v785
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Local Record Classes
         id: no-video-yet.mov?v786
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Matching
         id: no-video-yet.mov?v787
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Matching for InstanceOf
         id: no-video-yet.mov?v788
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Matching for Switch
         id: no-video-yet.mov?v789
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Matching for the instanceof
         id: no-video-yet.mov?v790
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Matching for Switch
         id: no-video-yet.mov?v791
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Record Patterns
         id: no-video-yet.mov?v792
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Unnamed Patterns and Variables
         id: no-video-yet.mov?v793
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v794
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Modularization
     lectures:
       - name: Modularization Overview
         id: no-video-yet.mov?v795
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Maven Modules
         id: no-video-yet.mov?v796
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating a Maven Module
         id: no-video-yet.mov?v797
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Gradle Modules
         id: no-video-yet.mov?v798
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating a Gradle Module
         id: no-video-yet.mov?v799
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Java Modules
         id: no-video-yet.mov?v800
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating a Java Module
         id: no-video-yet.mov?v801
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Glue It Together
         id: no-video-yet.mov?v802
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v803
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Date and Time
     lectures:
       - name: Date and Time Overview
         id: no-video-yet.mov?v804
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Instant
         id: no-video-yet.mov?v805
-        type: Video
+        type: Watch
         time: 2m5s
       - name: LocalDate
         id: no-video-yet.mov?v806
-        type: Video
+        type: Watch
         time: 2m5s
       - name: LocalTime
         id: no-video-yet.mov?v807
-        type: Video
+        type: Watch
         time: 2m5s
       - name: LocalDateTime
         id: no-video-yet.mov?v808
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ZoneDateTime
         id: no-video-yet.mov?v809
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ZoneId
         id: no-video-yet.mov?v810
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ZoneOffset
         id: no-video-yet.mov?v811
-        type: Video
+        type: Watch
         time: 2m5s
       - name: OffsetDateTime
         id: no-video-yet.mov?v812
-        type: Video
+        type: Watch
         time: 2m5s
       - name: MonthDay
         id: no-video-yet.mov?v813
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Year
         id: no-video-yet.mov?v814
-        type: Video
+        type: Watch
         time: 2m5s
       - name: YearMonth
         id: no-video-yet.mov?v815
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Duration
         id: no-video-yet.mov?v816
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Period
         id: no-video-yet.mov?v817
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v818
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Java I/O
     lectures:
       - name: Java I/O Introduction
         id: no-video-yet.mov?v8191
-        type: Video
+        type: Watch
         time: 2m5s
       - name: I/O Streams
         id: no-video-yet.mov?v819
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Byte Streams
         id: no-video-yet.mov?v820
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Character Streams
         id: no-video-yet.mov?v821
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Buffered Streams
         id: no-video-yet.mov?v822
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Scanning and Formatting
         id: no-video-yet.mov?v823
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Command Line I/O
         id: no-video-yet.mov?v824
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Data Streams
         id: no-video-yet.mov?v825
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Object Streams
         id: no-video-yet.mov?v826
-        type: Video
+        type: Watch
         time: 2m5s
       - name: File I/O
         id: no-video-yet.mov?v827
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Paths
         id: no-video-yet.mov?v828
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Checking Files or Directories
         id: no-video-yet.mov?v829
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Deleting Files or Directories
         id: no-video-yet.mov?v830
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Copying Files
         id: no-video-yet.mov?v831
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Moving Files or Directories
         id: no-video-yet.mov?v832
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Reading and Writing Small Files
         id: no-video-yet.mov?v833
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Buffered Reading and Writing Files
         id: no-video-yet.mov?v834
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Using Channels
         id: no-video-yet.mov?v835
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating Files
         id: no-video-yet.mov?v836
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating and Reading Directories
         id: no-video-yet.mov?v837
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Symbolic and Hard Links
         id: no-video-yet.mov?v838
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Finding Files
         id: no-video-yet.mov?v839
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Watching Directory for Change
         id: no-video-yet.mov?v840
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v841
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Reflection
     lectures:
       - name: Reflection Overview
         id: no-video-yet.mov?v842
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Class Objects
         id: no-video-yet.mov?v843
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Examining Class Modifiers and Types
         id: no-video-yet.mov?v844
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Discovering Class Members
         id: no-video-yet.mov?v845
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Fields
         id: no-video-yet.mov?v846
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Methods
         id: no-video-yet.mov?v847
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Constructors
         id: no-video-yet.mov?v848
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Arrays
         id: no-video-yet.mov?v849
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Enumerated Types
         id: no-video-yet.mov?v850
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v851
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Data-Oriented Programming
     lectures:
       - name: Data-Oriented Programming Intro
         id: no-video-yet.mov?v852
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v853
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Concurrency
     lectures:
       - name: Threads
         id: no-video-yet.mov?v854
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Interupting Thread
         id: no-video-yet.mov?v855
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Joining Thread
         id: no-video-yet.mov?v856
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Thread Safety
         id: no-video-yet.mov?v857
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Synchronization by Method
         id: no-video-yet.mov?v858
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Synchronization by Itself
         id: no-video-yet.mov?v859
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Synchronization by Monitor Object
         id: no-video-yet.mov?v860
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Latches
         id: no-video-yet.mov?v861
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Barriers
         id: no-video-yet.mov?v862
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Exchangers
         id: no-video-yet.mov?v863
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Semaphores
         id: no-video-yet.mov?v864
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Atomic Variables
         id: no-video-yet.mov?v8651
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Explicit Locks
         id: no-video-yet.mov?v865
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Atomic Variables
         id: no-video-yet.mov?v866
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Syncrhonized Collections
         id: no-video-yet.mov?v867
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Concurrent Collections
         id: no-video-yet.mov?v868
-        type: Video
+        type: Watch
         time: 2m5s
       - name: CopyOnWriteArrayList
         id: no-video-yet.mov?v869
-        type: Video
+        type: Watch
         time: 2m5s
       - name: CopyOnWriteArraySet
         id: no-video-yet.mov?v870
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BlockingQueue
         id: no-video-yet.mov?v871
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BlockingDeque
         id: no-video-yet.mov?v872
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ConcurrentSkipListMap
         id: no-video-yet.mov?v873
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Executors and ExecutorService
         id: no-video-yet.mov?v874
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Fork/Join Framework
         id: no-video-yet.mov?v875
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Future
         id: no-video-yet.mov?v876
-        type: Video
+        type: Watch
         time: 2m5s
       - name: FutureTask
         id: no-video-yet.mov?v877
-        type: Video
+        type: Watch
         time: 2m5s
       - name: CompletableFuture
         id: no-video-yet.mov?v878
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Task Cancellation
         id: no-video-yet.mov?v879
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Exector Shutdown
         id: no-video-yet.mov?v880
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Thread Local Variables
         id: no-video-yet.mov?v881
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Virtual Threads
         id: no-video-yet.mov?v882
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Structured Concurrency Overview
         id: no-video-yet.mov?v883
-        type: Video
+        type: Watch
         time: 2m5s
       - name: StructuredTaskScope
         id: no-video-yet.mov?v884
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Shutdown Policies
         id: no-video-yet.mov?v885
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Your Own Policies
         id: no-video-yet.mov?v886
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Debugging StructuredTaskScope
         id: no-video-yet.mov?v887
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v888
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Math Operations
     lectures:
       - name: Math Operation Overview
         id: no-video-yet.mov?v889
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Absolute Value
         id: no-video-yet.mov?v890
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Min and Max
         id: no-video-yet.mov?v891
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Square Root and Exponentiation
         id: no-video-yet.mov?v892
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Rounding, Floor, and Ceiling
         id: no-video-yet.mov?v893
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Trigonometric Functions
         id: no-video-yet.mov?v894
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BigInteger Class
         id: no-video-yet.mov?v895
-        type: Video
+        type: Watch
         time: 2m5s
       - name: BigDecimal Class
         id: no-video-yet.mov?v896
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v897
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v898
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Regular Expressions
     lectures:
       - name: Regular Expressions Overview
         id: no-video-yet.mov?v899
-        type: Video
+        type: Watch
         time: 2m5s
       - name: String Literals
         id: no-video-yet.mov?v900
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Character Classes
         id: no-video-yet.mov?v901
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Predefined Character Classes
         id: no-video-yet.mov?v902
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Capturing Groups
         id: no-video-yet.mov?v903
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Pattern Class
         id: no-video-yet.mov?v904
-        type: Video
+        type: Watch
         time: 2m5s
       - name: PatternSyntaxException Class
         id: no-video-yet.mov?v905
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Unicode Support
         id: no-video-yet.mov?v906
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v907
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Networking
     lectures:
       - name: Networking Overview
         id: no-video-yet.mov?v908
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating URL
         id: no-video-yet.mov?v909
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Parsing URL
         id: no-video-yet.mov?v910
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Reading from URL
         id: no-video-yet.mov?v911
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Connecting URL
         id: no-video-yet.mov?v912
-        type: Video
+        type: Watch
         time: 2m5s
       - name: URLConnection Class
         id: no-video-yet.mov?v913
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Sockets
         id: no-video-yet.mov?v914
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Reading and Writing to a Socket
         id: no-video-yet.mov?v915
-        type: Video
+        type: Watch
         time: 2m5s
       - name: TCP Client-Server
         id: no-video-yet.mov?v915
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Datagrams (UDP)
         id: no-video-yet.mov?v916
-        type: Video
+        type: Watch
         time: 2m5s
       - name: UDP Client-Server
         id: no-video-yet.mov?v917
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Broadcasting
         id: no-video-yet.mov?v918
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v919
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Internationalization
     lectures:
       - name: Internationalization Overview
         id: no-video-yet.mov?v920
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Before Internationalization
         id: no-video-yet.mov?v921
-        type: Video
+        type: Watch
         time: 2m5s
       - name: After Internationalization
         id: no-video-yet.mov?v922
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Locale
         id: no-video-yet.mov?v923
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ResourceBundle Class
         id: no-video-yet.mov?v924
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ListResourceBundle Class
         id: no-video-yet.mov?v925
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Numbers and Currencies
         id: no-video-yet.mov?v926
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Dates and Times
         id: no-video-yet.mov?v927
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Customizing Dates and Times
         id: no-video-yet.mov?v928
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Messages
         id: no-video-yet.mov?v929
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Messages with Plural Forms
         id: no-video-yet.mov?v930
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v931
-        type: Video
+        type: Watch
         time: 2m5s
   - name: JDBC
     lectures:
       - name: JDBC Overview
         id: no-video-yet.mov?v932
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Setting Up PostgreSQL Server
         id: no-video-yet.mov?v933
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Establishing Connection
         id: no-video-yet.mov?v934
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Creating Statements
         id: no-video-yet.mov?v935
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Executing Query
         id: no-video-yet.mov?v936
-        type: Video
+        type: Watch
         time: 2m5s
       - name: ResultSet Class
         id: no-video-yet.mov?v937
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Closing Connection
         id: no-video-yet.mov?v938
-        type: Video
+        type: Watch
         time: 2m5s
       - name: SQL Exceptions
         id: no-video-yet.mov?v939
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Prepared Statements
         id: no-video-yet.mov?v940
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Transactions
         id: no-video-yet.mov?v941
-        type: Video
+        type: Watch
         time: 2m5s
       - name: RowSet Objects
         id: no-video-yet.mov?v942
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v943
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Foreign Memory API
     lectures:
       - name: Foreign Function & Memory (FFM) API
         id: no-video-yet.mov?v944
-        type: Video
+        type: Watch
         time: 2m5s
       - name: FFM Architecture Overview
         id: no-video-yet.mov?v945
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Foreign Memory API
         id: no-video-yet.mov?v946
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Foreign Linker API
         id: no-video-yet.mov?v947
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Arena and MemorySegment Oveview
         id: no-video-yet.mov?v948
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Arrays into Memory Segments
         id: no-video-yet.mov?v949
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Addresses
         id: no-video-yet.mov?v950
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Working with SequenceLayout
         id: no-video-yet.mov?v951
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Sequence Layout
         id: no-video-yet.mov?v952
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Struct Layout
         id: no-video-yet.mov?v953
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v954
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v956
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Performance Tuning
     lectures:
       - name: Performance Tuning Overview
         id: no-video-yet.mov?v957
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v958
-        type: Video
+        type: Watch
         time: 2m5s
   - name: External Libraries
     lectures:
       - name: Lombok Overview
         id: no-video-yet.mov?v959
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Lombok Annotations
         id: no-video-yet.mov?v960
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Apache Commons Lang
         id: no-video-yet.mov?v961
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Apache Commons Collections
         id: no-video-yet.mov?v962
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Apache Commons IO
         id: no-video-yet.mov?v963
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Apache Commons Validator
         id: no-video-yet.mov?v963
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Guava Overview
         id: no-video-yet.mov?v964
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Guava Common Use Cases
         id: no-video-yet.mov?v965
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Log5j Overview
         id: no-video-yet.mov?v966
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Log5j Usage
         id: no-video-yet.mov?v967
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Gson Overview
         id: no-video-yet.mov?v968
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Gson Common Use Cases
         id: no-video-yet.mov?v969
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Apache HttpComponents Overview
         id: no-video-yet.mov?v970
-        type: Video
+        type: Watch
         time: 2m5s
       - name: HttpClient (Sync API)
         id: no-video-yet.mov?v971
-        type: Video
+        type: Watch
         time: 2m5s
       - name: HttpClient (AsyncSync API)
         id: no-video-yet.mov?v972
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v973
-        type: Video
+        type: Watch
         time: 2m5s
   - name: Monitoring and Troubleshooting
     lectures:
       - name: Diagnostic Tools Overview
         id: no-video-yet.mov?v974
-        type: Video
+        type: Watch
         time: 2m5s
       - name: JDK Mission Control
         id: no-video-yet.mov?v975
-        type: Video
+        type: Watch
         time: 2m5s
       - name: JCosole Tool
         id: no-video-yet.mov?v976
-        type: Video
+        type: Watch
         time: 2m5s
       - name: JInfo Tool
         id: no-video-yet.mov?v977
-        type: Video
+        type: Watch
         time: 2m5s
       - name: JCmd Tool
         id: no-video-yet.mov?v978
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Detecting Memory Leaks
         id: no-video-yet.mov?v979
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Detecting High CPU Usage Issues
         id: no-video-yet.mov?v980
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Detecting Thread Allocation Issues
         id: no-video-yet.mov?v981
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Session Recording
         id: no-video-yet.mov?v982
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Profilling with JMC
         id: no-video-yet.mov?v983
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-document-yet.html?v4
-        type: Document
+        type: Read
   - name: Preview and Incubator Features
     lectures:
       - name: Java Development Process
         id: no-video-yet.mov?v985
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Java Enhancemt Proposals
         id: no-video-yet.mov?v986
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Preview Features
         id: no-video-yet.mov?v987
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v988
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Icubator Features
         id: no-video-yet.mov?v989
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
         id: no-video-yet.mov?v990
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Project Amber
         id: no-video-yet.mov?v991
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Amber Preview Features
         id: no-video-yet.mov?v992
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Project Loom
         id: no-video-yet.mov?v993
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Loom Preview Features
         id: no-video-yet.mov?v994
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Project Panama
         id: no-video-yet.mov?v995
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Panama Preview Features
         id: no-video-yet.mov?v996
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Project Valhalla
         id: no-video-yet.mov?v997
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Valhalla Preview Features
         id: no-video-yet.mov?v998
-        type: Video
+        type: Watch
         time: 2m5s
       - name: Wrap Up
-        type: Video
+        type: Watch
         time: 2m5s
         id: no-video-yet.mov?v999

@@ -9,23 +9,23 @@ chapters:
     lectures:
       - name: Welcome to the Course
         id: welcome.mov
-        type: Video
+        type: Watch
         processed: false
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v2
-        type: Video
+        type: Watch
         processed: false
         items:
         time: 2m5s
       - name: Course Structure
-        type: Document
+        type: Read
         id: no-document-yet.html?v1
         processed: false
   - name: Getting Started
     lectures:
       - name: Introduction to Software Architecture
         id: no-video-yet.mov?v4
-        type: Video
+        type: Watch
         time: 3m15s
         processed: false
