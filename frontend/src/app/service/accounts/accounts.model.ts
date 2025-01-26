@@ -7,60 +7,78 @@
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sing In request body.
+ */
 export class SignInRequest {
-    email: string;
-    password: string;
+    email: string
+    password: string
 
     constructor(email: string, password: string) {
-        this.email = email;
-        this.password = password;
+        this.email = email
+        this.password = password
     }
 }
 
+/**
+ * Sign Up request body.
+ */
 export class SignUpRequest {
-    name: string;
-    email: string;
-    password: string;
+    name: string
+    email: string
+    password: string
 
     constructor(name: string, email: string, password: string) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
+        this.name = name
+        this.email = email
+        this.password = password
     }
 }
 
+/**
+ * Update profile request body.
+ */
 export class UpdateProfileRequest {
-    name: string;
+    name: string
 
     constructor(name: string) {
-        this.name = name;
+        this.name = name
     }
 }
 
-export class RecoverPasswordRequest {
-    email: string;
+/**
+ * Reset password request body.
+ */
+export class ResetPasswordRequest {
+    email: string
 
     constructor(email: string) {
-        this.email = email;
+        this.email = email
     }
 }
 
+/**
+ * Update password request body.
+ */
 export class UpdatePasswordRequest {
-    token?: string;
-    password?: string;
+    token?: string
+    password?: string
 
     constructor(token?: string, password?: string) {
-        this.token = token;
-        this.password = password;
+        this.token = token
+        this.password = password
     }
 }
 
+/**
+ * Profile response model.
+ */
 export class Profile {
-    name: string;
-    email: string;
+    name: string
+    email: string
 
     constructor(name: string, email: string) {
-        this.name = name;
-        this.email = email;
+        this.name = name
+        this.email = email
     }
 }

@@ -3,33 +3,33 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Injectable} from '@angular/core'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {Observable} from 'rxjs'
 import {
     Profile,
-    RecoverPasswordRequest,
+    ResetPasswordRequest,
     SignInRequest,
     SignUpRequest,
     UpdatePasswordRequest,
     UpdateProfileRequest
-} from './accounts.model';
+} from './accounts.model'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const SIGN_IN_PATH = '/api/v1/account/auth/sign-in';
-const SIGN_UP_PATH = '/api/v1/account/sign-up';
-const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out';
-const DELETE_ACCOUNT_PATH = '/api/v1/account';
-const PROFILE_PATH = '/api/v1/account/profile';
-const RESET_ACCOUNT_PATH = '/api/v1/account/reset-account';
-const UPDATE_PASSWORD_ACCOUNT_PATH = '/api/v1/account/update-password';
+const SIGN_IN_PATH = '/api/v1/account/auth/sign-in'
+const SIGN_UP_PATH = '/api/v1/account/sign-up'
+const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out'
+const DELETE_ACCOUNT_PATH = '/api/v1/account'
+const PROFILE_PATH = '/api/v1/account/profile'
+const RESET_ACCOUNT_PATH = '/api/v1/account/reset-account'
+const UPDATE_PASSWORD_ACCOUNT_PATH = '/api/v1/account/update-password'
 
 const HTTP_OPTIONS = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
+}
 
 @Injectable({
     providedIn: 'root',
@@ -48,14 +48,14 @@ export class AccountsService {
         const signInRequest =
             new SignInRequest(
                 email,
-                password);
+                password)
 
         return this.http
             .post<ArrayBuffer>(
                 SIGN_IN_PATH,
                 signInRequest,
                 HTTP_OPTIONS)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -70,14 +70,14 @@ export class AccountsService {
             new SignUpRequest(
                 name,
                 email,
-                password);
+                password)
 
         return this.http
             .post<ArrayBuffer>(
                 SIGN_UP_PATH,
                 signUpRequest,
                 HTTP_OPTIONS)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -88,7 +88,7 @@ export class AccountsService {
             .post<ArrayBuffer>(
                 SIGN_OUT_PATH,
                 HTTP_OPTIONS)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -99,7 +99,7 @@ export class AccountsService {
             .delete<ArrayBuffer>(
                 DELETE_ACCOUNT_PATH,
                 HTTP_OPTIONS)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -108,7 +108,7 @@ export class AccountsService {
     getProfile(): Observable<Profile> {
         return this.http
             .get<Profile>(PROFILE_PATH)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -117,13 +117,13 @@ export class AccountsService {
      */
     updateProfile(name: string): Observable<ArrayBuffer> {
         const updateProfileRequest =
-            new UpdateProfileRequest(name);
+            new UpdateProfileRequest(name)
 
         return this.http
             .put<ArrayBuffer>(
                 PROFILE_PATH,
                 updateProfileRequest)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -132,13 +132,13 @@ export class AccountsService {
      */
     resetPassword(email: string): Observable<ArrayBuffer> {
         const recoverPasswordRequest =
-            new RecoverPasswordRequest(email);
+            new ResetPasswordRequest(email)
 
         return this.http
             .post<ArrayBuffer>(
                 RESET_ACCOUNT_PATH,
                 recoverPasswordRequest)
-            .pipe();
+            .pipe()
     }
 
     /**
@@ -150,13 +150,13 @@ export class AccountsService {
         const updatePasswordRequest =
             new UpdatePasswordRequest(
                 token,
-                password);
+                password)
 
         return this.http
             .post<ArrayBuffer>(
                 UPDATE_PASSWORD_ACCOUNT_PATH,
                 updatePasswordRequest)
-            .pipe();
+            .pipe()
     }
 }
 
