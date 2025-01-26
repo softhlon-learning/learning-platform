@@ -55,13 +55,13 @@ li li {
     background-color: var(--hover);
 }
 
-.progress {
+.details-header {
     display: flex;
     flex: 1;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
-div.progress span span {
+div.details-header span span {
     font-weight: bold;
     color: var(--hover);
 }
@@ -91,4 +91,8 @@ ul {
     font-size: 13px;
     font-weight: normal;
     color: var(--stale);
+}
+
+.play-pause-header {
+    width: 120px;
 }

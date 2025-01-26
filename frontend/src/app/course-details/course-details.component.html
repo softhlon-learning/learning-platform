@@ -4,8 +4,12 @@
     <button routerLink="/home">Home [h]</button>
   </div>
 
-  <div class="progress">
-    <span>Progress: <span>{{ this.calculateCourseProgress() }}%</span></span>
+
+  <div class="details-header">
+      <span class="play-pause-header"></span>
+      <span *ngIf="this.isVideoPaused()">presss [Enter] to play video</span>
+      <span *ngIf="this.isVideoPlaying()">presss [Enter] to pause video</span>
+      <span class="play-pause-header">Progress: <span>{{ this.calculateCourseProgress() }}%</span></span>
   </div>
 
   <div class="course-content">

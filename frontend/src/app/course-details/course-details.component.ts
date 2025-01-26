@@ -326,6 +326,16 @@ export class CourseDetailsComponent implements OnInit {
         }
     }
 
+    isVideoPaused() {
+        let video = document.querySelector('video')
+        return video && video.paused
+    }
+
+    isVideoPlaying() {
+        let video = document.querySelector('video')
+        return video && !video.paused
+    }
+
     /**
      * Return class for selected lecture.
      * @param lecture Lecture to operate on
