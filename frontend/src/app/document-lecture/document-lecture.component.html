@@ -1,5 +1,12 @@
 <div *ngIf="navigationItems.currentLecture">
-    <iframe [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
-            frameborder="0" height="600" id="document-frame" loading="lazy" width="1070"></iframe>
-    <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"/>
+    <iframe
+            [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
+            frameborder="0"
+            width="1070" height="600"
+            id="document-frame"
+            loading="lazy">
+    </iframe>
+    <course-navigation
+            [navigationItems]="navigationItems"
+            [progress]="this.progress"/>
 </div>
