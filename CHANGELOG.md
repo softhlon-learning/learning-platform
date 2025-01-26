@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.30.9
+_release date: 2025-01-26_
+ * Code cleanup/add comments in document-lecture.component.ts
+ * Code cleanup/add comments in app-header.component.ts
+ * Code cleanup/add comments in home.component.ts
+
 ## 0.30.8
 _release date: 2025-01-26_
  * Code cleanup/add comments in keyboard-input.ts
