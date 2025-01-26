@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.29.9
+_release date: 2025-01-25_
+ * Refactoring course-navigation.component.ts
+ * Refactoring course-toc.component.ts
+ * Refactoring keyboard-input.ts
+ * Reformatting
+
 ## 0.29.8
 _release date: 2025-01-25_
 * Refactoring course-details.component.ts - part 3
