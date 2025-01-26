@@ -17,7 +17,7 @@ import {Course} from "../home/course";
 })
 export class CourseTileComponent implements OnInit {
     @Input()
-    course!: Course; // Replace 'any' with the correct type when defined or imported
+    course!: Course // Replace 'any' with the correct type when defined or imported
 
     constructor() {
     }
