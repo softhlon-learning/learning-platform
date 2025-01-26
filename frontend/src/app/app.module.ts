@@ -10,7 +10,7 @@ import {provideHttpClient} from "@angular/common/http";
 import {CourseTocComponent} from "./course-toc/course-toc.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseDetailsComponent} from "./course-details/course-details.component";
-import {VideoItemComponent} from "./video-lecture/video-item.component";
+import {VideoLectureComponent} from "./video-lecture/video-lecture.component";
 import {DocumentLectureComponent} from "./document-lecture/document-lecture.component";
 import {SafePipe} from "./common/safe-pipe/safe-pipe";
 import {CourseNavigationComponent} from "./course-navigation/course-navigation.component";
@@ -40,7 +40,7 @@ import {CoursesService} from "./service/courses/courses.service";
         CourseTocComponent,
         CourseDetailsComponent,
         CourseNavigationComponent,
-        VideoItemComponent,
+        VideoLectureComponent,
         DocumentLectureComponent,
         QuizItemComponent,
         SafePipe,

@@ -13,10 +13,10 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 
 @Component({
     selector: 'video-lecture',
-    templateUrl: './video-item.component.html',
-    styleUrls: ['./video-item.component.css']
+    templateUrl: './video-lecture.component.html',
+    styleUrls: ['./video-lecture.component.css']
 })
-export class VideoItemComponent implements OnInit {
+export class VideoLectureComponent implements OnInit {
     @ViewChild('video') video?: ElementRef;
 
     @Input()
