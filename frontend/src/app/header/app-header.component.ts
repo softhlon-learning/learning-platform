@@ -3,12 +3,12 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, OnInit} from '@angular/core';
-import {CookieService} from "ngx-cookie-service";
-import {Router} from "@angular/router";
 // @ts-ignore
-import version from "../../../package.json";
-import {AccountsService} from '../service/accounts/accounts.service';
+import version from "../../../package.json"
+import {Component, OnInit} from '@angular/core'
+import {CookieService} from "ngx-cookie-service"
+import {Router} from "@angular/router"
+import {AccountsService} from '../service/accounts/accounts.service'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -20,7 +20,7 @@ import {AccountsService} from '../service/accounts/accounts.service';
     styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-    protected readonly version = version.version;
+    protected readonly version = version.version
 
     constructor(
         private router: Router,
@@ -31,25 +31,38 @@ export class AppHeaderComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    /**
+     * Check if user is authenticated.
+     */
     isAuthenticated(): boolean {
-        return this.cookieService.get('Authenticated') === 'true';
+        return this.cookieService.get('Authenticated') === 'true'
     }
 
+    /**
+     * Sign out current user.
+     */
     signOut(): void {
         this.accountsService.signOut().subscribe({
                 next: () => this.handleResponse(),
                 error: () => this.handleResponse(),
             }
-        );
+        )
     }
 
+    /**
+     * Check if you are at /sign-in or /sign-up.
+     */
     isSignInUpPage() {
-        return this.router.url === '/sign-in' || this.router.url === '/sign-up';
+        return this.router.url === '/sign-in' || this.router.url === '/sign-up'
     }
 
+    /**
+     * Handle success and eerror response, and redirect to /home.
+     * @private
+     */
     private handleResponse() {
         this.router.navigate(['/home']).then(() => {
-            window.location.reload();
+            window.location.reload()
         })
     }
 }
