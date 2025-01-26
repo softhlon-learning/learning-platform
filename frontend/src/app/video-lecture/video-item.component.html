@@ -1,5 +1,5 @@
 <div class="video-container">
-    <video #video (ended)="this.progress?.markAsViewed()"
+    <video #video (ended)="this.progress?.markLectureAsViewed()"
            height="600"
            id="{{navigationItems.currentLecture.id}}"
            onmouseout="this.removeAttribute('controls')" onmouseover="this.setAttribute('controls','controls')" preload="" width="1066">

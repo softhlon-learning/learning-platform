@@ -53,7 +53,7 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     ngAfterViewInit() {
-        this.findCurrentItem(this.courseContent);
+        this.findAndScrollToCurrentLecture(this.courseContent);
     }
 
     fetchCourseAndInitView() {
@@ -65,7 +65,7 @@ export class CourseDetailsComponent implements OnInit {
                     if (course.code === id) {
                         this.course = course;
                         this.courseContent = JSON.parse(atob(<string>this.course.content));
-                        setTimeout(() => this.findCurrentItem(this.courseContent), 0);
+                        setTimeout(() => this.findAndScrollToCurrentLecture(this.courseContent), 0);
                         break;
                     }
                 }
@@ -114,7 +114,7 @@ export class CourseDetailsComponent implements OnInit {
         }
 
         if (persist == true) {
-            this.updateLecture(selectedLecture);
+            this.persisteLectureState(selectedLecture);
         }
 
         if (scroll === true) {
@@ -124,7 +124,7 @@ export class CourseDetailsComponent implements OnInit {
         this.navigationLectures = tempNavigationLectures;
     }
 
-    findCurrentItem(courseContent?: CourseContent): void {
+    findAndScrollToCurrentLecture(courseContent?: CourseContent): void {
         if (courseContent == null) {
             return;
         }
@@ -150,7 +150,7 @@ export class CourseDetailsComponent implements OnInit {
         return undefined;
     }
 
-    next(): NavigationLectures {
+    moveToNextLecture(): NavigationLectures {
         if (this.navigationLectures.nextLecture != null) {
             const nextLecture = this.navigationLectures.nextLecture;
             this.selectScrollToAndPersistLecture(nextLecture);
@@ -162,7 +162,7 @@ export class CourseDetailsComponent implements OnInit {
         return this.navigationLectures;
     }
 
-    previous(): NavigationLectures {
+    moveToPreviousLecture(): NavigationLectures {
         if (this.navigationLectures.nextLecture != null) {
             const nextLecture = this.navigationLectures.previousLecture;
             this.selectScrollToAndPersistLecture(nextLecture);
@@ -172,6 +172,75 @@ export class CourseDetailsComponent implements OnInit {
         }
 
         return this.navigationLectures;
+    }
+
+    markLectureAsViewed(): void {
+        this.markLectureViewedFlag(true);
+    }
+
+    markLectureAsNotViewed(): void {
+        this.markLectureViewedFlag(false);
+    }
+
+    markLectureViewedFlag(viewed: boolean): void {
+        let lecture: Lecture | null = this.getCurrentLecture();
+        if (lecture != null) {
+            lecture.processed = viewed;
+        }
+        if (viewed) this.moveToNextLecture();
+        this.persisteLectureState(lecture as Lecture);
+    }
+
+    switchLectureViewedFlag(): void {
+        let lecture: Lecture | null = this.getCurrentLecture();
+        if (lecture != null) {
+            if (lecture.processed) {
+                lecture.processed = false
+                this.selectScrollToAndPersistLecture(lecture);
+            } else {
+                lecture.processed = true;
+                this.moveToNextLecture();
+            }
+        }
+    }
+
+    calculateCourseProgress(): number {
+        let allLecturesCount: number = 0;
+        let processedChaptersCount: number = 0;
+        if (this.courseContent != null) {
+            for (let chapter of this.courseContent.chapters)
+                for (let lecture of chapter.lectures) {
+                    allLecturesCount++;
+                    if (lecture.processed) processedChaptersCount++;
+                }
+            return Math.round(processedChaptersCount / allLecturesCount * 100);
+        } else {
+            return 0;
+        }
+    }
+
+    persisteLectureState(lecture?: Lecture): void {
+        this.coursesService
+            .updateLecture(
+                this.course.id || '',
+                lecture?.id || '',
+                lecture?.processed || false)
+            .subscribe();
+    }
+
+    moveBack() {
+        this.router.navigate(['/course/' + this.course.code]);
+    }
+
+    moveHome() {
+        this.router.navigate(['/home']);
+    }
+
+    playVideo() {
+        let video = document.querySelector('video');
+        if (video) {
+            video.play();
+        }
     }
 
     getClass(lecture: Lecture): string {
@@ -187,72 +256,6 @@ export class CourseDetailsComponent implements OnInit {
                 block: "center",
                 inline: "center"
             });
-        }
-    }
-
-    markAsViewed(): void {
-        this.markLectureViewedFlag(true);
-    }
-
-    markAsNotViewed(): void {
-        this.markLectureViewedFlag(false);
-    }
-
-    markLectureViewedFlag(viewed: boolean): void {
-        let lecture: Lecture | null = this.getCurrentLecture();
-        if (lecture != null) {
-            lecture.processed = viewed;
-        }
-        if (viewed) {
-            this.next();
-        }
-        this.updateLecture(lecture as Lecture);
-    }
-
-    switchLectureViewedFlag(): void {
-        let lecture: Lecture | null = this.getCurrentLecture();
-        if (lecture != null) {
-            if (lecture.processed) {
-                lecture.processed = false
-            } else {
-                lecture.processed = true;
-                this.next();
-            }
-        }
-        this.updateLecture(lecture as Lecture);
-    }
-
-    courseProgress(): number {
-        let allLecturesCount: number = 0;
-        let processedChaptersCount: number = 0;
-        if (this.courseContent != null) {
-            for (let chapter of this.courseContent.chapters)
-                for (let lecture of chapter.lectures) {
-                    allLecturesCount++;
-                    if (lecture.processed) processedChaptersCount++;
-                }
-        }
-        return Math.round(processedChaptersCount / allLecturesCount * 100);
-    }
-
-    updateLecture(lecture?: Lecture): void {
-        //let courseContentB64 = btoa(JSON.stringify(this.courseContent));
-        //this.coursesService.updateCourse(this.course.id ?? '', courseContentB64).subscribe();
-        this.coursesService.updateLecture(this.course.id || '', lecture?.id || '', lecture?.processed || false).subscribe();
-    }
-
-    back() {
-        this.router.navigate(['/course/' + this.course.code]);
-    }
-
-    home() {
-        this.router.navigate(['/home']);
-    }
-
-    play() {
-        let video = document.querySelector('video');
-        if (video) {
-            video.play();
         }
     }
 

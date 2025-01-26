@@ -31,21 +31,21 @@ export class CourseNavigationComponent implements OnInit {
 
     previous(): void {
         if (this.progress != null) {
-            this.progress.previous();
+            this.progress.moveToPreviousLecture();
         }
     }
 
     next(): void {
         if (this.progress != null) {
-            this.progress.next();
+            this.progress.moveToNextLecture();
         }
     }
 
     markAsViewed(): void {
-        this.progress?.markAsViewed();
+        this.progress?.markLectureAsViewed();
     }
 
     markAsNotViewed(): void {
-        this.progress?.markAsNotViewed();
+        this.progress?.markLectureAsNotViewed();
     }
 }

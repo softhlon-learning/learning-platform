@@ -18,11 +18,11 @@ export class KeyboardInputCourseDetails {
     keyboardInput(courseDetails: CourseDetailsComponent, event: any) {
         event.stopPropagation()
 
-        if (event.code == 'ArrowDown') courseDetails.next();
-        if (event.code == 'ArrowUp') courseDetails.previous()
+        if (event.code == 'ArrowDown') courseDetails.moveToNextLecture();
+        if (event.code == 'ArrowUp') courseDetails.moveToPreviousLecture()
         if (event.code == 'KeyM') courseDetails.switchLectureViewedFlag();
-        if (event.code == 'ArrowLeft') courseDetails.back();
-        if (event.code == 'KeyH') courseDetails.home();
-        if (event.code == 'Enter') courseDetails.play();
+        if (event.code == 'ArrowLeft') courseDetails.moveBack();
+        if (event.code == 'KeyH') courseDetails.moveHome();
+        if (event.code == 'Enter') courseDetails.playVideo();
     }
 }

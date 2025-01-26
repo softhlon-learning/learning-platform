@@ -1,11 +1,11 @@
-<span (keydown.enter)="this.next()" class="main">
+<span (keydown.enter)="this.moveToNextLecture()" class="main">
   <div>
     <button routerLink="/course/{{course.code}}">Back [←]</button>
     <button routerLink="/home">Home [h]</button>
   </div>
 
   <div class="progress">
-    <span>Progress: <span>{{ this.courseProgress() }}%</span></span>
+    <span>Progress: <span>{{ this.calculateCourseProgress() }}%</span></span>
   </div>
 
   <div class="course-content">
