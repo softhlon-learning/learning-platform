@@ -22,7 +22,7 @@ export class KeyboardInputCourseDetails {
         if (event.code == 'ArrowUp') courseDetails.moveToPreviousLecture()
         if (event.code == 'KeyM') courseDetails.switchLectureViewedFlag();
         if (event.code == 'ArrowLeft') courseDetails.moveBack();
-        if (event.code == 'KeyH') courseDetails.moveHome();
+        if (event.code == 'KeyH') courseDetails.moveToHome();
         if (event.code == 'Enter') courseDetails.playVideo();
     }
 }

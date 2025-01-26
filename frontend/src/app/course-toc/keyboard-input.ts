@@ -20,7 +20,7 @@ export class KeyboardInputCourseToc {
 
         if (event.code == 'KeyE') courseToc.enrollCourse();
         if (event.code == 'KeyU') courseToc.unenrollCourse();
-        if (event.code == 'ArrowRight') courseToc.open();
-        if (event.code == 'KeyH' || event.code == 'ArrowLeft') courseToc.home();
+        if (event.code == 'ArrowRight') courseToc.openCourse();
+        if (event.code == 'KeyH' || event.code == 'ArrowLeft') courseToc.moveToHome();
     }
 }

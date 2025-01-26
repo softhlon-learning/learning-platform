@@ -232,7 +232,7 @@ export class CourseDetailsComponent implements OnInit {
         this.router.navigate(['/course/' + this.course.code]);
     }
 
-    moveHome() {
+    moveToHome() {
         this.router.navigate(['/home']);
     }
 
