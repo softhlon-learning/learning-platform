@@ -21,8 +21,8 @@ import {CoursesService} from "../service/courses/courses.service";
     styleUrls: ['./course-toc.component.css']
 })
 export class CourseTocComponent implements OnInit {
-    course?: Course;
-    courseContent: CourseContent | undefined;
+    course?: Course
+    courseContent: CourseContent | undefined
 
     constructor(
         private keyboardInputToc: KeyboardInputCourseToc,
@@ -33,76 +33,101 @@ export class CourseTocComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.fetchCourses();
+        this.fetchCourses()
     }
 
+    /**
+     * Fetch course and init service cache.
+     */
     fetchCourses(): void {
-        const id = this.route.snapshot.paramMap.get('id')!;
+        const id = this.route.snapshot.paramMap.get('id')!
         this.coursesService.getCourses()
             .subscribe(courses => {
                 for (let i = 0; i < courses.length; i++) {
-                    let course = courses[i];
+                    let course = courses[i]
                     if (course.code === id) {
-                        this.course = course;
-                        break;
+                        this.course = course
+                        break
                     }
                 }
-                this.courseContent = JSON.parse(atob(<string>this.course?.content));
-                this.coursesService.init(courses);
-            });
+                this.courseContent = JSON.parse(atob(<string>this.course?.content))
+                this.coursesService.init(courses)
+            })
     }
 
+    /**
+     * Pressed key events handler.
+     * @param event Pressed key event
+     */
     @HostListener('window:keydown', ['$event'])
     keyboardInput(event: any) {
-        this.keyboardInputToc.keyboardInput(this, event);
+        this.keyboardInputToc.keyboardInput(this, event)
     }
 
+    /**
+     * Enroll course, upadte service cache, and redirect to course details page.
+     */
     enrollCourse(): void {
         if (this.course?.enrolled) {
-            return;
+            return
         }
 
         if (!this.isAuthenticated()) {
-            this.redirectToSignIn();
+            this.redirectToSignIn()
         } else {
             this.coursesService.enrollCourse(this.course || {}).subscribe(() => {
                     // @ts-ignore
-                    this.course.enrolled = true;
-                    this.coursesService.updateCourse(this.course || {});
-                    this.router.navigate(['/course/' + this.course?.code + '/details']);
+                    this.course.enrolled = true
+                    this.coursesService.updateCourse(this.course || {})
+                    this.router.navigate(['/course/' + this.course?.code + '/details'])
                 }
-            );
+            )
         }
     }
 
-    redirectToSignIn(): void {
-        this.cookieService.set('Redirect', '/course/' + this.course?.code);
-        this.router.navigate(['/sign-in'])
-            .then(() => {
-                window.location.reload();
-            });
-    }
-
+    /**
+     * Unenroll course and upadte service cache.
+     */
     unenrollCourse(): void {
-        if (!this.course?.enrolled || !this.isAuthenticated()) return;
+        if (!this.course?.enrolled || !this.isAuthenticated()) return
         this.coursesService.unenrollCourse(this.course || {}).subscribe(
             () => {
                 // @ts-ignore
-                this.course.enrolled = false;
-                this.coursesService.updateCourse(this.course || {});
+                this.course.enrolled = false
+                this.coursesService.updateCourse(this.course || {})
             }
-        );
+        )
     }
 
+    /**
+     * Redirect to /sign-in.
+     */
+    redirectToSignIn(): void {
+        this.cookieService.set('Redirect', '/course/' + this.course?.code)
+        this.router.navigate(['/sign-in'])
+            .then(() => {
+                window.location.reload()
+            })
+    }
+
+    /**
+     * Check is user is aiuthenticated.
+     */
     isAuthenticated(): boolean {
-        return this.cookieService.get('Authenticated') === 'true';
+        return this.cookieService.get('Authenticated') === 'true'
     }
 
+    /**
+     * Move to /home page.
+     */
     moveToHome() {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home'])
     }
 
+    /**
+     * Open course details.
+     */
     openCourse() {
-        this.router.navigate(['/course/' + this.course?.code + '/details']);
+        this.router.navigate(['/course/' + this.course?.code + '/details'])
     }
 }
