@@ -318,7 +318,11 @@ export class CourseDetailsComponent implements OnInit {
     playVideo() {
         let video = document.querySelector('video')
         if (video) {
-            video.play()
+            if (video.paused) {
+                video.play()
+            } else {
+                video.pause()
+            }
         }
     }
 
