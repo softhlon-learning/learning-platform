@@ -29,23 +29,23 @@ export class CourseNavigationComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    previous(): void {
+    moveToPreviousLecture(): void {
         if (this.progress != null) {
             this.progress.moveToPreviousLecture();
         }
     }
 
-    next(): void {
+    moveToNextLecture(): void {
         if (this.progress != null) {
             this.progress.moveToNextLecture();
         }
     }
 
-    markAsViewed(): void {
+    markLectureAsViewed(): void {
         this.progress?.markLectureAsViewed();
     }
 
-    markAsNotViewed(): void {
+    markLectureAsNotViewed(): void {
         this.progress?.markLectureAsNotViewed();
     }
 }
