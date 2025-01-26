@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.31.3
+_release date: 2025-01-26_
+ * Add video pause when Enter is pressed again
+ * Cleanup CSS color references - part 1
+ * Display 'press [Enter] to play/pause video' text
+
 ## 0.31.2
 _release date: 2025-01-26_
  * Code cleanup/add comments in update-password.component.ts
