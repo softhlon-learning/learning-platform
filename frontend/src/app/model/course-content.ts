@@ -3,13 +3,13 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Chapter} from "./chapter";
+import {Chapter} from "./chapter"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 export class CourseContent {
-    name: string = '';
-    chapters: Chapter[] = [];
+    name: string = ''
+    chapters: Chapter[] = []
 }

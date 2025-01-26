@@ -3,13 +3,13 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Lecture} from "./lecture";
+import {Lecture} from "./lecture"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 export class Chapter {
-    name: string = '';
-    lectures: Lecture[] = [];
+    name: string = ''
+    lectures: Lecture[] = []
 }
