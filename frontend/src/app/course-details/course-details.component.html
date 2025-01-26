@@ -20,7 +20,7 @@
         <ul class="courses">
           <li *ngFor="let lecture of chapter.lectures">
             <ul class="course-chapter-items">
-              <li (click)="this.selectAndPersistLecture()" [id]="lecture.id"
+              <li (click)="this.selectAndPersistLecture(lecture)" [id]="lecture.id"
                   class="{{this.getLectureClass(lecture)}}">
                 <label class="checkbox">
                   <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
