@@ -3,9 +3,9 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {CourseNavigation} from "../course-navigation/course-navigation";
-import {CourseDetailsComponent} from "../course-details/course-details.component";
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core'
+import {CourseNavigation} from "../course-navigation/course-navigation"
+import {CourseDetailsComponent} from "../course-details/course-details.component"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -17,16 +17,16 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
     styleUrls: ['./video-lecture.component.css']
 })
 export class VideoLectureComponent implements OnInit {
-    @ViewChild('video') video?: ElementRef;
+    @ViewChild('video') video?: ElementRef
 
     @Input()
-    navigationItems: CourseNavigation = new CourseNavigation();
+    navigationItems: CourseNavigation = new CourseNavigation()
 
     @Input()
-    progress?: CourseDetailsComponent;
+    progress?: CourseDetailsComponent
 
     @Input()
-    coursePath?: string;
+    coursePath?: string
 
     constructor() {
     }
@@ -37,7 +37,7 @@ export class VideoLectureComponent implements OnInit {
     ngOnChanges() {
         // it's necessary to refresh video when clicking on new lecture
         if (this.video != null) {
-            this.video.nativeElement.load();
+            this.video.nativeElement.load()
         }
     }
 }
