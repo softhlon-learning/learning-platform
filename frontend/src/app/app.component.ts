@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, enableProdMode} from '@angular/core';
+import {Component, enableProdMode} from '@angular/core'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -17,4 +17,4 @@ import {Component, enableProdMode} from '@angular/core';
 export class AppComponent {
 }
 
-enableProdMode();
+enableProdMode()

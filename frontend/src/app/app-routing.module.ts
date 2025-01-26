@@ -3,16 +3,16 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {CourseTocComponent} from './course-toc/course-toc.component';
-import {CourseDetailsComponent} from "./course-details/course-details.component";
-import {SignInComponent} from "./sign-in/sign-in.component";
-import {SignUpComponent} from './sign-up/sign-up.component';
-import {ResetPasswordComponent} from "./reset-password/reset-password.component";
-import {ProfileComponent} from './profile/profile.component';
-import {UpdatePasswordComponent} from "./update-password/update-password.component";
+import {NgModule} from '@angular/core'
+import {RouterModule, Routes} from '@angular/router'
+import {HomeComponent} from './home/home.component'
+import {CourseTocComponent} from './course-toc/course-toc.component'
+import {CourseDetailsComponent} from "./course-details/course-details.component"
+import {SignInComponent} from "./sign-in/sign-in.component"
+import {SignUpComponent} from './sign-up/sign-up.component'
+import {ResetPasswordComponent} from "./reset-password/reset-password.component"
+import {ProfileComponent} from './profile/profile.component'
+import {UpdatePasswordComponent} from "./update-password/update-password.component"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -28,7 +28,7 @@ const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'course/:id', component: CourseTocComponent},
     {path: 'course/:id/details', component: CourseDetailsComponent}
-];
+]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
