@@ -33,8 +33,9 @@ export class CourseTocComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCourse()
-        this.coursesService.refreshCourses().subscribe(() => this.getCourse());
+        this.softFetchCourse()
+        this.coursesService.refreshCourses()
+            .subscribe(() => this.softFetchCourse());
     }
 
     @HostListener('window:keydown', ['$event'])
@@ -42,14 +43,13 @@ export class CourseTocComponent implements OnInit {
         this.keyboardInputToc.keyboardInput(this, event);
     }
 
-    update() {
-        console.log("Updating home");
+    hardFetchCourse() {
         this.coursesService.refreshCourses().subscribe(
-            () => this.getCourse()
+            () => this.softFetchCourse()
         );
     }
 
-    getCourse(): void {
+    softFetchCourse(): void {
         const id = this.route.snapshot.paramMap.get('id')!;
         this.coursesService.getCourses()
             .subscribe(courses => {
@@ -70,7 +70,7 @@ export class CourseTocComponent implements OnInit {
             this.redirectToSignIn();
         } else {
             this.coursesService.enrollCourse(this.course || {}).subscribe(() => {
-                    this.update();
+                    this.hardFetchCourse();
                     this.router.navigate(['/course/' + this.course?.code + '/details']);
                 }
             );
@@ -88,7 +88,7 @@ export class CourseTocComponent implements OnInit {
     unenrollCourse(): void {
         if (!this.course?.enrolled || !this.isAuthenticated()) return;
         this.coursesService.unenrollCourse(this.course || {}).subscribe(
-            () => this.update()
+            () => this.hardFetchCourse()
         );
     }
 
@@ -96,11 +96,11 @@ export class CourseTocComponent implements OnInit {
         return this.cookieService.get('Authenticated') === 'true';
     }
 
-    home() {
+    moveToHome() {
         this.router.navigate(['/home']);
     }
 
-    open() {
+    openCourse() {
         this.router.navigate(['/course/' + this.course?.code + '/details']);
     }
 }
