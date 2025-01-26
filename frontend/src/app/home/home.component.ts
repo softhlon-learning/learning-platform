@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
         this.coursesService.getCourses()
             .subscribe(courses => {
                 this.courses = courses;
-                this.coursesService.init(this.courses);
+                this.coursesService.initCache(this.courses);
             });
     }
 }

@@ -46,11 +46,11 @@ export class CoursesService {
         }
     }
 
-    init(courses: Course[]) {
+    initCache(courses: Course[]) {
         this.courses = courses;
     }
 
-    updateCourse(updatedCourse: Course) {
+    updateCache(updatedCourse: Course) {
         if (this.courses != null) {
             for (let i = 0; i < this.courses.length; i++) {
                 let course = this.courses[i];

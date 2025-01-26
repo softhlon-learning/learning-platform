@@ -51,7 +51,7 @@ export class CourseTocComponent implements OnInit {
                     }
                 }
                 this.courseContent = JSON.parse(atob(<string>this.course?.content))
-                this.coursesService.init(courses)
+                this.coursesService.initCache(courses)
             })
     }
 
@@ -78,7 +78,7 @@ export class CourseTocComponent implements OnInit {
             this.coursesService.enrollCourse(this.course || {}).subscribe(() => {
                     // @ts-ignore
                     this.course.enrolled = true
-                    this.coursesService.updateCourse(this.course || {})
+                    this.coursesService.updateCache(this.course || {})
                     this.router.navigate(['/course/' + this.course?.code + '/details'])
                 }
             )
@@ -94,7 +94,7 @@ export class CourseTocComponent implements OnInit {
             () => {
                 // @ts-ignore
                 this.course.enrolled = false
-                this.coursesService.updateCourse(this.course || {})
+                this.coursesService.updateCache(this.course || {})
             }
         )
     }

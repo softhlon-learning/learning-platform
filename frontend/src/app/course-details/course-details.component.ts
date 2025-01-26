@@ -287,7 +287,7 @@ export class CourseDetailsComponent implements OnInit {
                 this.course.id || '',
                 lecture?.id || '',
                 lecture?.processed || false)
-            .subscribe(() => this.coursesService.updateCourse(this.course))
+            .subscribe(() => this.coursesService.updateCache(this.course))
     }
 
     /**
