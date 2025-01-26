@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.31.2
+_release date: 2025-01-26_
+ * Code cleanup/add comments in update-password.component.ts
+ * Code cleanup/add comments in video-lecture.component.ts
+ * Added missing private keywords
+
 ## 0.31.1
 _release date: 2025-01-26_
  * Code cleanup/add comments in accounts
