@@ -58,12 +58,13 @@ export class CourseDetailsComponent implements OnInit {
 
     /**
      * Fetch latest course from service (service cache).
+     * @private
      */
-    fetchCourseAndInitView() {
+    private fetchCourseAndInitView() {
         const id = this.route.snapshot.paramMap.get('id')!
         this.coursesService.getCourses()
             .subscribe(courses => {
-                for (let i = 0 ;i < courses.length ; i++) {
+                for (let i = 0; i < courses.length; i++) {
                     let course = courses[i]
                     if (course.code === id) {
                         this.course = course
@@ -76,27 +77,29 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     /**
-     *  Update lecture navigation state, based on current lecture selection.
-     * @param lecture Lecture to operate on
-     */
-    selectLectureOnly(lecture?: Lecture) {
-        this.selectLecture(lecture, false, false)
-    }
-
-    /**
      * Update lecture navigation state and scroll to current lecture selection.
      * @param lecture Lecture to operate on
+     * @private
      */
-    selectAndScrollToLecture(lecture?: Lecture) {
+    private selectAndScrollToLecture(lecture?: Lecture) {
         this.selectLecture(lecture, true, false)
     }
 
     /**
      * Update lecture navigation state, scroll to, and persist current lecture selection in the service.
      * @param lecture
+     * @private
      */
-    selectScrollToAndPersistLecture(lecture?: Lecture) {
+    private selectScrollToAndPersistLecture(lecture?: Lecture) {
         this.selectLecture(lecture, true, true)
+    }
+
+    /**
+     * Update lecture navigation state and persist current lecture selection in the service.
+     * @param lecture
+     */
+    selectAndPersistLecture(lecture?: Lecture) {
+        this.selectLecture(lecture, false, true)
     }
 
     /**
@@ -105,8 +108,9 @@ export class CourseDetailsComponent implements OnInit {
      * @param selectedLecture
      * @param scroll
      * @param persist
+     * @private
      */
-    selectLecture(selectedLecture?: Lecture, scroll: boolean = true, persist: boolean = true): void {
+    private selectLecture(selectedLecture?: Lecture, scroll: boolean = true, persist: boolean = true): void {
         if (selectedLecture == null) {
             return
         }
@@ -150,8 +154,9 @@ export class CourseDetailsComponent implements OnInit {
     /**
      * Find the selected lecture and scroll to it.
      * @param courseContent Course's content object
+     * @private
      */
-    findAndScrollToSelectedLecture(courseContent?: CourseContent): void {
+    private findAndScrollToSelectedLecture(courseContent?: CourseContent): void {
         if (courseContent == null) {
             return
         }
@@ -166,8 +171,9 @@ export class CourseDetailsComponent implements OnInit {
 
     /**
      * Return selected lecture.
+     * @private
      */
-    selectedLecture(): Lecture {
+    private selectedLecture(): Lecture {
         if (this.courseContent != null) {
             for (let chapter of this.courseContent.chapters)
                 for (let lecture of chapter.lectures) {
@@ -227,8 +233,9 @@ export class CourseDetailsComponent implements OnInit {
     /**
      * mark lecture as Viewed/Not Viewed.
      * @param viewed Viewed/Not Viewed switch
+     * @private
      */
-    markLectureViewedFlag(viewed: boolean): void {
+    private markLectureViewedFlag(viewed: boolean): void {
         let lecture: Lecture | null = this.selectedLecture()
 
         if (lecture != null) {
@@ -278,8 +285,9 @@ export class CourseDetailsComponent implements OnInit {
     /**
      * Persist lecture state in the service (an update service cache).
      * @param lecture Lecture to operate on
+     * @private
      */
-    persisteLectureState(lecture?: Lecture): void {
+    private persisteLectureState(lecture?: Lecture): void {
         console.log(this.courseContent)
         this.course.content = btoa(JSON.stringify(this.courseContent))
         this.coursesService
@@ -325,8 +333,9 @@ export class CourseDetailsComponent implements OnInit {
     /**
      * Scroll to the given html element.
      * @param id HTML element id
+     * @private
      */
-    scrollToElement(id: string): void {
+    private scrollToElement(id: string): void {
         // @ts-ignore
         const lectureElement = document.getElementById(id)
         if (lectureElement != null) {

@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
 
     /**
      * Fetch courses from the service nad init its cache.
+     * @private
      */
     private fetchCourses(): void {
         this.coursesService.getCourses()

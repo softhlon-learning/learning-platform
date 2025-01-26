@@ -70,6 +70,7 @@ export class ProfileComponent implements OnInit {
 
     /**
      * Fetch profile from service.
+     * @private
      */
     private fetchProfile(): void {
         this.accountsService.getProfile()
