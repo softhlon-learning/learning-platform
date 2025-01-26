@@ -1,5 +1,6 @@
 <div class="main">
     <div class="container">
+
         <div class="top">
             <div class="title">
                 Sign Up
@@ -10,6 +11,7 @@
             </span>
             </div>
         </div>
+
         <form (ngSubmit)="onSubmit()" [formGroup]="signInForm">
             <div class="form">
                 <div class="name">
@@ -26,5 +28,6 @@
                 <div class="error">{{ error }}</div>
             </div>
         </form>
+
     </div>
 </div>
