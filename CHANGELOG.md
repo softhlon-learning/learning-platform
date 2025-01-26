@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.29.7
+_release date: 2025-01-25_
+ * Refactoring course-details.component.ts - part 1
+ * Refactoring course-details.component.ts - part 2
+
 ## 0.29.6
 _release date: 2025-01-25_
  * Upgraded to spring-boot 3.4.2
