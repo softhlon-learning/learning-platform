@@ -46,10 +46,10 @@ export class RecoverPasswordRequest {
 }
 
 export class UpdatePasswordRequest {
-    token: string;
-    password: string;
+    token?: string;
+    password?: string;
 
-    constructor(token: string, password: string) {
+    constructor(token?: string, password?: string) {
         this.token = token;
         this.password = password;
     }

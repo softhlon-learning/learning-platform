@@ -45,9 +45,10 @@ export class AccountsService {
      * @param password User's password
      */
     signIn(email: string, password: string): Observable<ArrayBuffer> {
-        const signInRequest = new SignInRequest(
-            email,
-            password);
+        const signInRequest =
+            new SignInRequest(
+                email,
+                password);
 
         return this.http
             .post<ArrayBuffer>(
@@ -65,10 +66,11 @@ export class AccountsService {
      * @param password User's password
      */
     signUp(name: string, email: string, password: string): Observable<ArrayBuffer> {
-        const signUpRequest = new SignUpRequest(
-            name,
-            email,
-            password);
+        const signUpRequest =
+            new SignUpRequest(
+                name,
+                email,
+                password);
 
         return this.http
             .post<ArrayBuffer>(
@@ -114,7 +116,8 @@ export class AccountsService {
      * @param name User's name
      */
     updateProfile(name: string): Observable<ArrayBuffer> {
-        const updateProfileRequest = new UpdateProfileRequest(name);
+        const updateProfileRequest =
+            new UpdateProfileRequest(name);
 
         return this.http
             .put<ArrayBuffer>(
@@ -128,7 +131,8 @@ export class AccountsService {
      * @param name User's email
      */
     resetPassword(email: string): Observable<ArrayBuffer> {
-        const recoverPasswordRequest = new RecoverPasswordRequest(email);
+        const recoverPasswordRequest =
+            new RecoverPasswordRequest(email);
 
         return this.http
             .post<ArrayBuffer>(
@@ -142,10 +146,11 @@ export class AccountsService {
      * @param token Reset pasword request token
      * @param password User's new password
      */
-    updatePassword(token: string, password: string): Observable<ArrayBuffer> {
-        const updatePasswordRequest = new UpdatePasswordRequest(
-            token,
-            password);
+    updatePassword(token?: string, password?: string): Observable<ArrayBuffer> {
+        const updatePasswordRequest =
+            new UpdatePasswordRequest(
+                token,
+                password);
 
         return this.http
             .post<ArrayBuffer>(

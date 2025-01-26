@@ -5,7 +5,6 @@
 
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-
 import {HomeComponent} from './home/home.component';
 import {CourseTocComponent} from './course-toc/course-toc.component';
 import {CourseDetailsComponent} from "./course-details/course-details.component";

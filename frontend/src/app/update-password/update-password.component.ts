@@ -14,6 +14,7 @@ import {AccountsService} from '../service/accounts/accounts.service';
 // ---------------------------------------------------------------------------------------------------------------------
 
 const HIDE_ERROR_DELAY = 2000;
+const TOKEN_QUERY_PARAM = "token";
 
 @Component({
     selector: 'sign-up',
@@ -39,9 +40,10 @@ export class UpdatePasswordComponent implements OnInit {
         this.error = undefined;
         this.success = false;
 
-        this.route.queryParamMap.subscribe(item => {
-                if (item.has("token")) {
-                    this.token = item.get("token")?.toString();
+        this.route.queryParamMap.subscribe(
+            paramMap => {
+                if (paramMap.has(TOKEN_QUERY_PARAM)) {
+                    this.token = paramMap.get(TOKEN_QUERY_PARAM)?.toString();
                 }
             }
         );
@@ -53,12 +55,12 @@ export class UpdatePasswordComponent implements OnInit {
             return;
         }
 
-        const {password = ''} = this.updatePasswordForm.value;
+        const {password} = this.updatePasswordForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
-        this.accountsService.updatePassword(this.token || '', password || '').subscribe({
+        this.accountsService.updatePassword(this.token, password || undefined).subscribe({
             next: () => this.handleSuccess(),
-            error: (signInError) => this.handleError(signInError, DEFAULT_ERROR_MESSAGE),
+            error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         });
     }
 
@@ -67,10 +69,12 @@ export class UpdatePasswordComponent implements OnInit {
         this.error = undefined;
     }
 
-    private handleError(signInError: any, defaultErrorMessage: string) {
-        this.error = signInError?.error?.message || defaultErrorMessage;
-        setTimeout(() => {
-            this.error = undefined
-        }, HIDE_ERROR_DELAY);
+    private handleError(error: any, defaultErrorMessage: string) {
+        this.error = error?.error?.message
+            || defaultErrorMessage;
+
+        setTimeout(
+            () => this.error = undefined,
+            HIDE_ERROR_DELAY);
     }
 }
