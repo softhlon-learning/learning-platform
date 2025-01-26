@@ -1,23 +1,29 @@
 # Learning Platform Changelog
 
+## 0.30.0
+_release date: 2025-01-26_
+ * Improved video-item.component code & hmtl
+ * Improved update-password.component code & hmtl
+ * Renamed video-item to video-lecture
+
 ## 0.29.9
-_release date: 2025-01-25_
+_release date: 2025-01-26_
  * Refactoring course-navigation.component.ts
  * Refactoring course-toc.component.ts
  * Refactoring keyboard-input.ts
  * Reformatting
 
 ## 0.29.8
-_release date: 2025-01-25_
+_release date: 2025-01-26_
 * Refactoring course-details.component.ts - part 3
 
 ## 0.29.7
-_release date: 2025-01-25_
+_release date: 2025-01-26_
  * Refactoring course-details.component.ts - part 1
  * Refactoring course-details.component.ts - part 2
 
 ## 0.29.6
-_release date: 2025-01-25_
+_release date: 2025-01-26_
  * Upgraded to spring-boot 3.4.2
  * Added header to all TypeScript files
 
