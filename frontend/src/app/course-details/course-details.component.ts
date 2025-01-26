@@ -243,7 +243,7 @@ export class CourseDetailsComponent implements OnInit {
         }
     }
 
-    getClass(lecture: Lecture): string {
+    getLectureClass(lecture: Lecture): string {
         return lecture.selected ? 'selected' : '';
     }
 
