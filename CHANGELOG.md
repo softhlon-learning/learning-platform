@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.30.6
+_release date: 2025-01-26_
+ * Code cleanup/add comments in course-navigation.component.ts
+ * Code cleanup/add comments in keyboard-input.ts
+ * Code cleanup in course-tile.component
+
 ## 0.30.5
 _release date: 2025-01-26_
  * Minor code quality improvements in course-details.component.ts and few related files
