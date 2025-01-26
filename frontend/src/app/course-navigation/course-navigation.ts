@@ -9,7 +9,7 @@ import {Lecture} from "../model/lecture";
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-export class NavigationLectures {
+export class CourseNavigation {
     previousLecture?: Lecture;
     currentLecture: Lecture = new Lecture();
     nextLecture?: Lecture;

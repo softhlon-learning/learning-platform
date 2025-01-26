@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 import {Component, Input, OnInit} from '@angular/core';
-import {NavigationLectures} from "./navigation-lectures";
+import {CourseNavigation} from "./course-navigation";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 })
 export class CourseNavigationComponent implements OnInit {
     @Input()
-    navigationItems: NavigationLectures = new NavigationLectures();
+    navigationItems: CourseNavigation = new CourseNavigation();
 
     @Input()
     progress?: CourseDetailsComponent;

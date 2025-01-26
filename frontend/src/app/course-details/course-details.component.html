@@ -34,20 +34,20 @@
 
     <div class="course-item">
       <video-lecture
-              *ngIf="navigationLectures.currentLecture.type == 'Video'"
+              *ngIf="navigation.currentLecture.type == 'Video'"
               [coursePath]="course.code + '-course'"
-              [navigationItems]="navigationLectures"
+              [navigationItems]="navigation"
               [progress]="this">
       </video-lecture>
       <document-lecture
-              *ngIf="navigationLectures.currentLecture.type == 'Document'"
+              *ngIf="navigation.currentLecture.type == 'Document'"
               [coursePath]="course.code + '-course'"
-              [navigationItems]="navigationLectures"
+              [navigationItems]="navigation"
               [progress]="this">
       </document-lecture>
       <quiz-lecture
-              *ngIf="navigationLectures.currentLecture.type == 'Quiz'"
-              [navigationItems]="navigationLectures"
+              *ngIf="navigation.currentLecture.type == 'Quiz'"
+              [navigationItems]="navigation"
               [progress]="this">
       </quiz-lecture>
     </div>

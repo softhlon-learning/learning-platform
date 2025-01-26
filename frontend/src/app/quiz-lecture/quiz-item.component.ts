@@ -5,7 +5,7 @@
 
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {NavigationLectures} from "../course-navigation/navigation-lectures";
+import {CourseNavigation} from "../course-navigation/course-navigation";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 })
 export class QuizItemComponent implements OnInit {
     @Input()
-    navigationItems: NavigationLectures = new NavigationLectures();
+    navigationItems: CourseNavigation = new CourseNavigation();
 
     @Input()
     progress?: CourseDetailsComponent;

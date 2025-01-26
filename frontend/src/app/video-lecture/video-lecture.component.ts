@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {NavigationLectures} from "../course-navigation/navigation-lectures";
+import {CourseNavigation} from "../course-navigation/course-navigation";
 import {CourseDetailsComponent} from "../course-details/course-details.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ export class VideoLectureComponent implements OnInit {
     @ViewChild('video') video?: ElementRef;
 
     @Input()
-    navigationItems: NavigationLectures = new NavigationLectures();
+    navigationItems: CourseNavigation = new CourseNavigation();
 
     @Input()
     progress?: CourseDetailsComponent;
