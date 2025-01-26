@@ -12,6 +12,8 @@ import {AccountsService} from '../service/accounts/accounts.service';
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+const HIDE_ERROR_DELAY = 2000;
+
 @Component({
     selector: 'sign-up',
     templateUrl: './reset-password.component.html',
@@ -58,6 +60,6 @@ export class ResetPasswordComponent implements OnInit {
         this.error = signInError?.error?.message || defaultErrorMessage;
         setTimeout(() => {
             this.error = undefined
-        }, 2000);
+        }, HIDE_ERROR_DELAY);
     }
 }

@@ -13,6 +13,8 @@ import {AccountsService} from "../service/accounts/accounts.service";
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+const HIDE_ERROR_DELAY = 2000;
+
 @Component({
     selector: 'sign-in',
     templateUrl: './sign-in.component.html',
@@ -78,8 +80,8 @@ export class SignInComponent implements OnInit {
             this.error = defaultErrorMessage;
         }
 
-        setTimeout(() => {
+        setTimeout(() =>
             this.error = undefined
-        }, 2000);
+         ,HIDE_ERROR_DELAY);
     }
 }

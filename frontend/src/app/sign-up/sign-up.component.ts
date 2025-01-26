@@ -13,6 +13,8 @@ import {AccountsService} from "../service/accounts/accounts.service";
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+const HIDE_ERROR_DELAY = 2000;
+
 @Component({
     selector: 'sign-up',
     templateUrl: './sign-up.component.html',
@@ -42,7 +44,6 @@ export class SignUpComponent implements OnInit {
 
     onSubmit(): void {
         if (this.signInForm.invalid) {
-            console.log('Form is invalid');
             this.error = 'Please provide valid email and password';
             return;
         }
@@ -67,6 +68,6 @@ export class SignUpComponent implements OnInit {
         this.error = signInError?.error?.message || defaultErrorMessage;
         setTimeout(() => {
             this.error = undefined
-        }, 2000);
+        }, HIDE_ERROR_DELAY);
     }
 }

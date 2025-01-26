@@ -31,8 +31,4 @@ export class DocumentLectureComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-    width() {
-        return window.innerWidth;
-    }
 }

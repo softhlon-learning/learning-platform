@@ -20,7 +20,6 @@ import {AccountsService} from '../service/accounts/accounts.service';
     styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-
     protected readonly version = version.version;
 
     constructor(

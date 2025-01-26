@@ -39,11 +39,9 @@ export class ProfileComponent implements OnInit {
 
     onSubmit(): void {
         if (this.profileForm.invalid) {
-            console.log('Form is invalid');
             this.error = 'Please provide valid name';
             return;
         }
-        console.log('Form is valid');
         const {name = ''} = this.profileForm.value;
         const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred';
 
