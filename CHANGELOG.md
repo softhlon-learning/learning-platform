@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.31.4
+_release date: 2025-01-27_
+ * Cleanup CSS color references - part 2
+ * Fixed issue with clicking on lecture
+
 ## 0.31.3
 _release date: 2025-01-26_
  * Add video pause when Enter is pressed again
