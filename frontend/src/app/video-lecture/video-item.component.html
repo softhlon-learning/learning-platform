@@ -1,11 +1,17 @@
 <div class="video-container">
     <video #video (ended)="this.progress?.markLectureAsViewed()"
            height="600"
+           width="1066"
            id="{{navigationItems.currentLecture.id}}"
-           onmouseout="this.removeAttribute('controls')" onmouseover="this.setAttribute('controls','controls')"
-           preload="" width="1066">
+           onmouseover="this.setAttribute('controls','controls')"
+           onmouseout="this.removeAttribute('controls')">
+
         <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
+
     </video>
-    <course-navigation [navigationItems]="navigationItems" [progress]="this.progress"></course-navigation>
+    <course-navigation
+            [navigationItems]="navigationItems"
+            [progress]="this.progress">
+    </course-navigation>
 </div>

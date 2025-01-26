@@ -35,6 +35,7 @@ export class VideoItemComponent implements OnInit {
     }
 
     ngOnChanges() {
+        // it's necessary to refresh video when clicking on new lecture
         if (this.video != null) {
             this.video.nativeElement.load();
         }
