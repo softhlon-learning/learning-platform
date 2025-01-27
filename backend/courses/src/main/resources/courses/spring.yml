@@ -1,8 +1,8 @@
 id: 286a67f1-4917-4ab8-8f7a-ec4b2d2ecebf
 code: spring
 orderNo: 7
-name: Spring Boot
-description: Learn to develop robust, production-ready applications with our Spring Boot course
+name: Spring Framework
+description: Learn to develop robust, production-ready applications with our Spring Framework course
 version: 1.0.0
 chapters:
   - name: Introduction
@@ -13,7 +13,7 @@ chapters:
         processed: false
         time: 2m5s
       - name: Prerequisites
-        id: no-video-yet.mov?v2
+        id: no-video-yet.mov?v1
         type: Watch
         processed: false
         items:
@@ -22,10 +22,259 @@ chapters:
         type: Read
         id: no-document-yet.html?v1
         processed: false
-  - name: Getting Started
+  - name: Introduction to Spring Framework
     lectures:
-      - name: Introduction to Spring Boot
+      - name: What is Spring?
+        id: no-video-yet.mov?v2
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: History and Evolution of Spring
+        id: no-video-yet.mov?v3
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Core Features of Spring
         id: no-video-yet.mov?v4
         type: Watch
         time: 3m15s
         processed: false
+      - name: Spring's Ecosystem
+        id: no-video-yet.mov?v5
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Benefits of Using Spring
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring vs. Other Frameworks
+        id: no-video-yet.mov?v7
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Setting Up Spring Environment
+        id: no-video-yet.mov?v8
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring Tool Suite (STS)
+        id: no-video-yet.mov?v9
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring Initializr
+        id: no-video-yet.mov?v10
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v2
+        type: Read
+  - name: Spring Core Concepts
+    lectures:
+      - name: Inversion of Control (IoC)
+        id: no-video-yet.mov?v11
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Dependency Injection (DI)
+        id: no-video-yet.mov?v12
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Bean Lifecycle
+        id: no-video-yet.mov?v13
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Bean Scopes
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring Container
+        id: no-video-yet.mov?v15
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Bean Definition and Configuration
+        id: no-video-yet.mov?v16
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: XML vs. Annotation Configuration
+        id: no-video-yet.mov?v17
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Java-based Configuration
+        id: no-video-yet.mov?v18
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Property Placeholder Configuration
+        id: no-video-yet.mov?v19
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Autowiring
+        id: no-video-yet.mov?v20
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Component Scanning
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Profiles
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Conditional Beans
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Event Handling in Spring
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Resource Management
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring Expression Language (SpEL)
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Circular Dependencies
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Bean Post Processors
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: Aspect-Oriented Programming (AOP)
+    lectures:
+      - name: What is AOP?
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Concepts
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Aspects
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Advice
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Pointcuts and Joinpoints
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring AOP vs. AspectJ
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Declaring Aspects in Spring
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Types of Advice
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Pointcut Designators
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Creating Custom Aspects
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Annotations
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: XML Configuration for AOP
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+        processed: false
+        processed: false
+      - name: Proxies in Spring AOP
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AspectJ Annotations
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Load-time Weaving
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Compile-time Weaving
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Introduction to New Instances
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: AOP Best Practices
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Performance Considerations
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Debugging AOP
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Testing Aspects
+        id: no-video-yet.mov?v49
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
