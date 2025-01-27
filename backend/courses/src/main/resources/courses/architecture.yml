@@ -572,3 +572,91 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+  - name: Architecture for Mobile and IoT
+    lectures:
+      - name: Mobile Architecture Patterns
+        id: no-video-yet.mov?v119
+        type: Watch
+        time: 3m15s
+      - name: Offline-First Architecture
+        id: no-video-yet.mov?v120
+        type: Watch
+        time: 3m15s
+      - name: IoT Architecture Fundamentals
+        id: no-video-yet.mov?v121
+        type: Watch
+        time: 3m15s
+      - name: Edge Computing in IoT
+        id: no-video-yet.mov?v122
+        type: Watch
+        time: 3m15s
+      - name: Security in IoT and Mobile
+        id: no-video-yet.mov?v122
+        type: Watch
+        time: 3m15s
+      - name: Device Management and Updates
+        id: no-video-yet.mov?v123
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v12
+        type: Read
+  - name: Architecture for AI and Machine Learning
+    lectures:
+      - name: Architecting for ML Workflows
+        id: no-video-yet.mov?v124
+        type: Watch
+        time: 3m15s
+      - name: Data Pipelines for AI
+        id: no-video-yet.mov?v125
+        type: Watch
+        time: 3m15s
+      - name: Model Serving Architectures
+        id: no-video-yet.mov?v126
+        type: Watch
+        time: 3m15s
+      - name: Scalability in ML Systems
+        id: no-video-yet.mov?v127
+        type: Watch
+        time: 3m15s
+      - name: AI in Distributed Systems
+        id: no-video-yet.mov?v128
+        type: Watch
+        time: 3m15s
+      - name: MLOps and Continuous Learning
+        id: no-video-yet.mov?v129
+        type: Watch
+        time: 3m15s
+  - name: Architecture for High Availability
+    lectures:
+      - name: High Availability Concepts
+        id: no-video-yet.mov?v130
+        type: Watch
+        time: 3m15s
+      - name: Redundancy and Failover
+        id: no-video-yet.mov?v131
+        type: Watch
+        time: 3m15s
+      - name: Disaster Recovery Planning
+        id: no-video-yet.mov?v132
+        type: Watch
+        time: 3m15s
+      - name: Replication Strategies
+        id: no-video-yet.mov?v133
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing for Availability
+        id: no-video-yet.mov?v134
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Alerting
+        id: no-video-yet.mov?v135
+        type: Watch
+        time: 3m15s
+      - name: Service Level Agreements
+        id: no-video-yet.mov?v135
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v13
+        type: Read
