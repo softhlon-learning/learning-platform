@@ -774,5 +774,124 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Wrap Up
-        id: no-document-yet.html?v15
+        id: no-document-yet.html?v16
+        type: Read
+  - name: Internationalization and Localization
+    lectures:
+      - name: APIs for a Global Audience
+        id: no-video-yet.mov?v173
+        type: Watch
+        time: 3m15s
+      - name: Handling Multiple Languages
+        id: no-video-yet.mov?v174
+        type: Watch
+        time: 3m15s
+      - name: Content Negotiation
+        id: no-video-yet.mov?v175
+        type: Watch
+        time: 3m15s
+      - name: Localization Techniques
+        id: no-video-yet.mov?v175
+        type: Watch
+        time: 3m15s
+      - name: Date and Time Formats
+        id: no-video-yet.mov?v176
+        type: Watch
+        time: 3m15s
+      - name: Number Formats
+        id: no-video-yet.mov?v177
+        type: Watch
+        time: 3m15s
+      - name: Number Formats
+        id: no-video-yet.mov?v178
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v17
+        type: Read
+  - name: API Evolution and Deprecation
+    lectures:
+      - name: Managing API Evolution
+        id: no-video-yet.mov?v179
+        type: Watch
+        time: 3m15s
+      - name: Versioning Techniques
+        id: no-video-yet.mov?v180
+        type: Watch
+        time: 3m15s
+      - name: Backward Compatibility
+        id: no-video-yet.mov?v181
+        type: Watch
+        time: 3m15s
+      - name: Communicating Changes
+        id: no-video-yet.mov?v182
+        type: Watch
+        time: 3m15s
+      - name: Change Management
+        id: no-video-yet.mov?v183
+        type: Watch
+        time: 3m15s
+      - name: Developer Feedback Loops
+        id: no-video-yet.mov?v184
+        type: Watch
+        time: 3m15s
+      - name: Deprecation Strategies
+        id: no-video-yet.mov?v185
+        type: Watch
+        time: 3m15s
+      - name: Grace Periods
+        id: no-video-yet.mov?v186
+        type: Watch
+        time: 3m15s
+      - name: Migration Assistance
+        id: no-video-yet.mov?v187
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v18
+        type: Read
+  - name: Advanced API Security
+    lectures:
+      - name: Advanced Authentication Techniques
+        id: no-video-yet.mov?v188
+        type: Watch
+        time: 3m15s
+      - name: Multi-Factor Authentication (MFA)
+        id: no-video-yet.mov?v189
+        type: Watch
+        time: 3m15s
+      - name: Biometrics at API Level
+        id: no-video-yet.mov?v190
+        type: Watch
+        time: 3m15s
+      - name: Federated Identity
+        id: no-video-yet.mov?v191
+        type: Watch
+        time: 3m15s
+      - name: SAML, OAuth2 for Enterprise
+        id: no-video-yet.mov?v192
+        type: Watch
+        time: 3m15s
+      - name: Zero Trust Architectures
+        id: no-video-yet.mov?v193
+        type: Watch
+        time: 3m15s
+      - name: Principles of Zero Trust
+        id: no-video-yet.mov?v194
+        type: Watch
+        time: 3m15s
+      - name: API Threat Modeling
+        id: no-video-yet.mov?v195
+        type: Watch
+        time: 3m15s
+      - name: Identifying Threats
+        id: no-video-yet.mov?v196
+        type: Watch
+        time: 3m15s
+      - name: Mitigation Strategies
+        id: no-video-yet.mov?v196
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v19
         type: Read
