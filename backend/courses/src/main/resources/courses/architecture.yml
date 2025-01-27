@@ -218,3 +218,236 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v7
         type: Read
+  - name: Integration Architectures
+    lectures:
+      - name: API Integration Patterns
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Message-Oriented Middleware
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: Enterprise Service Bus (ESB)
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Microservices Integration Challenges
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Legacy System Integration
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+  - name: Cloud Architecture
+    lectures:
+      - name: Cloud Computing Concepts
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+      - name: IaaS, PaaS, and SaaS
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+      - name: Multi-Tenant Architecture
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+      - name: Serverless Architectures
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+      - name: Cloud Design Patterns
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+      - name: Hybrid Cloud Strategies
+        id: no-video-yet.mov?v49
+        type: Watch
+        time: 3m15s
+      - name: Cloud Security Considerations
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+      - name: Cost Management in Cloud
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+  - name: Cloud Design Patterns
+    lectures:
+      - name: Ambassador
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: Anti-corruption Layer
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: Asynchronous Request-Reply
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: Backends for Frontends
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: Bulkhead
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: Cache-Aside
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Choreography
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Circuit Breaker
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: Claim-Check
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+      - name: Compensating Transaction
+        id: no-video-yet.mov?v60
+        type: Watch
+        time: 3m15s
+      - name: Competing Consumers
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Compute Resource Consolidation
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+      - name: CQRS
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+      - name: Deployment Stamps
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+      - name: Edge Workload Configuration
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+      - name: Event Sourcing
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+      - name: External Configuration Store
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+      - name: Federated Identity
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Gatekeeper
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: Gateway Aggregation
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Gateway Offloading
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Geode
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Health Endpoint Monitoring
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: Index Table
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Leader Election
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: Materialized View
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: Messaging Bridge
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Pipes and Filters
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name: Priority Queue
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: Publisher-Subscriber
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: Quarantine
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: Queue-Based Load Leveling
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Rate Limiting
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: Retry
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: Saga Distributed Transactions
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Scheduler Agent Supervisor
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: Sequential Convoy
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Sharding
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Sidecar
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Static Content Hosting
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+      - name: Strangler Fig
+        id: no-video-yet.mov?v91
+        type: Watch
+        time: 3m15s
+      - name: Throttling
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: Valet Key
+        id: no-video-yet.mov?v93
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
+        type: Read
