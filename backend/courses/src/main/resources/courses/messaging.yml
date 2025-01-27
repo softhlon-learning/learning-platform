@@ -146,3 +146,175 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+  - name: RabbitMQ
+    lectures:
+      - name: RabbitMQ Overview
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+      - name: AMQP Protocol Basics
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+      - name: Exchanges, Queues, and Bindings
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+      - name: RabbitMQ Message Flow
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+      - name: RabbitMQ in Java - Client Libraries
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Message Persistence and Durability
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+      - name: Clustering and High Availability
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+      - name: Dead Letter Queues
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Message Prioritization
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Management
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Performance Tuning
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+  - name: Messaging Patterns
+    lectures:
+      - name: Command Message Pattern
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Document Message Pattern
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: Event Message Pattern
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Request-Reply Pattern
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Correlation Identifier
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+      - name: Return Address
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+      - name: Message Expiration
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+      - name: Message Sequence
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+      - name: Message Router
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+      - name: Content-Based Router
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+      - name: Message Filter
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+      - name: Aggregator Pattern
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Message Serialization
+    lectures:
+      - name: Serialization Necessity in Messaging
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: Java Serialization
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: JSON with Jackson in Messaging
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: Protocol Buffers
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: Avro for Schema Evolution
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: XML and JAXB
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Binary vs. Text Serialization
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: Error Handling and Fault Tolerance
+    lectures:
+      - name: Retry Mechanisms
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: Dead Letter Queues
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+      - name: Idempotency in Messaging
+        id: no-video-yet.mov?v60
+        type: Watch
+        time: 3m15s
+      - name: Circuit Breakers with Messaging
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Handling Network Partitions
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+      - name: Message Redelivery
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+      - name: Failures in Distributed Systems
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+      - name: Graceful Degradation
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
+        type: Read
