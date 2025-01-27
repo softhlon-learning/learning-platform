@@ -54,7 +54,7 @@ chapters:
         type: Watch
         time: 3m15s
         processed: false
-      - name: DDD in Modern Software Development
+      - name: DDD in Software Development
         id: no-video-yet.mov?v8
         type: Watch
         time: 3m15s
@@ -76,11 +76,7 @@ chapters:
         id: no-video-yet.mov?v11
         type: Watch
         time: 3m15s
-      - name: Entities, Value Objects, and Aggregates
-        id: no-video-yet.mov?v12
-        type: Watch
-        time: 3m15s
-      - name: Entities, Value Objects, and Aggregates
+      - name: Entities, Value Objects, Aggregates
         id: no-video-yet.mov?v12
         type: Watch
         time: 3m15s
@@ -104,11 +100,11 @@ chapters:
         id: no-video-yet.mov?v17
         type: Watch
         time: 3m15s
-      - name: Aggregates and Consistency Boundaries
+      - name: Consistency Boundaries
         id: no-video-yet.mov?v18
         type: Watch
         time: 3m15s
-      - name: The Anemic Domain Model Anti-Pattern
+      - name: The Anemic Domain Model
         id: no-video-yet.mov?v19
         type: Watch
         time: 3m15s
