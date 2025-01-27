@@ -278,3 +278,246 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+  - name: Spring JDBC
+    lectures:
+      - name: Introduction to Spring JDBC
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: JDBC Template
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: RowMapper and ResultSetExtractor
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: NamedParameterJdbcTemplate
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: SimpleJdbcInsert
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: SimpleJdbcCall
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Transaction Management
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Batch Processing
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Exception Translation
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Database Connection
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: DataSource Configuration
+        id: no-video-yet.mov?v60
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: JdbcDaoSupport
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Querying with Spring JDBC
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Handling LOBs
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Stored Procedures and Functions
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Spring JDBC vs. ORM
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Best Practices
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Testing Spring JDBC
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+  - name: Spring MVC
+    lectures:
+      - name: Introduction to Spring MVC
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: MVC Pattern in Spring
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: DispatcherServlet
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Controllers and Request Mapping
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Handling Forms
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Validation
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: View Resolution
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Interceptors
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: Exception Handling
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: RESTful Services with Spring MVC
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Content Negotiation
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name: Internationalization (i18n)
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: File Upload
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: CORS Support
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: WebSocket Support
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Spring MVC Testing
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: Thymeleaf Integration
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Spring Security
+    lectures:
+      - name: Introduction to Spring Security
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Security Configuration
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: Authentication
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Authorization
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: User Details Service
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Password Encoding
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+        time: 3m15s
+      - name: Remember Me Functionality
+        id: no-video-yet.mov?v91
+        type: Watch
+        time: 3m15s
+      - name: Session Management
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: CSRF Protection
+        id: no-video-yet.mov?v93
+        type: Watch
+        time: 3m15s
+      - name: Security Headers
+        id: no-video-yet.mov?v94
+        type: Watch
+        time: 3m15s
+      - name: Method Security
+        id: no-video-yet.mov?v95
+        type: Watch
+        time: 3m15s
+      - name: OAuth2 and JWT
+        id: no-video-yet.mov?v96
+        type: Watch
+        time: 3m15s
+      - name: Spring Security with JDBC
+        id: no-video-yet.mov?v97
+        type: Watch
+        time: 3m15s
+      - name: Customizing Security Filters
+        id: no-video-yet.mov?v98
+        type: Watch
+        time: 3m15s
+      - name: Security for REST Services
+        id: no-video-yet.mov?v99
+        type: Watch
+        time: 3m15s
+      - name: Single Sign-On (SSO)
+        id: no-video-yet.mov?v100
+        type: Watch
+        time: 3m15s
+      - name: Security Testing
+        id: no-video-yet.mov?v101
+        type: Watch
+        time: 3m15s
+
+
+
+
