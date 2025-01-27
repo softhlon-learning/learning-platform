@@ -1,8 +1,14 @@
 # Learning Platform Changelog
 
+## 0.33.9
+_release date: 2025-01-28_
+ * Set default button color to --steel
+ * Added custom logging.pattern.console
+ * Added spring.output.ansi.enabled=ALWAYS
+
 ## 0.33.8
 _release date: 2025-01-27_
-* Update of Spring course - part 5
+ * Update of Spring course - part 5
 
 ## 0.33.7
 _release date: 2025-01-27_
