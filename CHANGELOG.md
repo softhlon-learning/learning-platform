@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.32.0
+_release date: 2025-01-27_
+* Update of Architectire course - part 1
+
 ## 0.31.9
 _release date: 2025-01-27_
 * Update of API Design course - part 5
