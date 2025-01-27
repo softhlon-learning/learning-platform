@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.33.6
+_release date: 2025-01-27_
+* Update of Spring course - part 4
+
 ## 0.33.5
 _release date: 2025-01-27_
 * Update of Spring course - part 3
