@@ -19,9 +19,120 @@ chapters:
       - name: Course Structure
         type: Read
         id: no-document-yet.html?v1
-  - name: Getting Started
+      - name: Wrap Up
+        id: no-document-yet.html?v2
+        type: Read
+  - name: Introduction to APIs
     lectures:
       - name: Introduction to API Design
         id: no-video-yet.mov?v2
         type: Watch
         time: 3m15s
+      - name: What is an API?
+        id: no-video-yet.mov?v3
+        type: Watch
+        time: 3m15s
+      - name: Types of APIs (REST, SOAP, GraphQL)
+        id: no-video-yet.mov?v4
+        type: Watch
+        time: 3m15s
+      - name: REST API Fundamentals
+        id: no-video-yet.mov?v5
+        type: Watch
+        time: 3m15s
+      - name: SOAP and XML-RPC
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+      - name: Introduction to GraphQL
+        id: no-video-yet.mov?v7
+        type: Watch
+        time: 3m15s
+      - name: Other Paradigms (gRPC, WebSockets)
+        id: no-video-yet.mov?v8
+        type: Watch
+        time: 3m15s
+      - name: Importance of API Design
+        id: no-video-yet.mov?v9
+        type: Watch
+        time: 3m15s
+      - name: Business Value of Good API Design
+        id: no-video-yet.mov?v10
+        type: Watch
+        time: 3m15s
+      - name: Impact on Developer Experience
+        id: no-video-yet.mov?v11
+        type: Watch
+        time: 3m15s
+      - name: API Economy and Market Trends
+        id: no-video-yet.mov?v12
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: Fundamentals of API Design
+    lectures:
+      - name: API Architecture Patterns
+        id: no-video-yet.mov?v13
+        type: Watch
+        time: 3m15s
+      - name: Monolithic vs. Microservices
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+      - name: API Gateways
+        id: no-video-yet.mov?v15
+        type: Watch
+        time: 3m15s
+      - name: RESTful Principles
+        id: no-video-yet.mov?v16
+        type: Watch
+        time: 3m15s
+      - name: Resource Naming Conventions
+        id: no-video-yet.mov?v17
+        type: Watch
+        time: 3m15s
+      - name: Understanding HTTP Methods
+        id: no-video-yet.mov?v18
+        type: Watch
+        time: 3m15s
+      - name: Utilizing HTTP Status Codes
+        id: no-video-yet.mov?v19
+        type: Watch
+        time: 3m15s
+      - name: Versioning Strategies
+        id: no-video-yet.mov?v20
+        type: Watch
+        time: 3m15s
+      - name: URI Versioning
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+      - name: Header-Based Versioning
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+      - name: Media Type Negotiation
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+      - name: Authentication and Security Basics
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+      - name: API Keys
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+      - name: Basic Authentication
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+      - name: Introduction to OAuth
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
