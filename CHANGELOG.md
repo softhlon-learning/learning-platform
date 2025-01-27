@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.31.7
+_release date: 2025-01-27_
+ * Update of API Design course - part 3
+
 ## 0.31.6
 _release date: 2025-01-27_
  * Update of API Design course - part 2
