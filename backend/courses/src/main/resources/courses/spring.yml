@@ -886,3 +886,122 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v13
         type: Read
+  - name: Spring Profiles and Environment Management
+    lectures:
+      - name: Understanding Spring Profiles
+        id: no-video-yet.mov?v183
+        type: Watch
+        time: 3m15s
+      - name: Configuring Profiles
+        id: no-video-yet.mov?v184
+        type: Watch
+        time: 3m15s
+      - name: Activating Profiles
+        id: no-video-yet.mov?v185
+        type: Watch
+        time: 3m15s
+      - name: Environment Abstraction
+        id: no-video-yet.mov?v186
+        type: Watch
+        time: 3m15s
+      - name: Property Management
+        id: no-video-yet.mov?v187
+        type: Watch
+        time: 3m15s
+      - name: Externalized Configuration
+        id: no-video-yet.mov?v188
+        type: Watch
+        time: 3m15s
+      - name: Conditional Bean Creation
+        id: no-video-yet.mov?v189
+        type: Watch
+        time: 3m15s
+      - name: Profiles in Testing
+        id: no-video-yet.mov?v190
+        type: Watch
+        time: 3m15s
+      - name: Profiles in Testing
+        id: no-video-yet.mov?v191
+        type: Watch
+        time: 3m15s
+      - name: Managing Multiple Environments
+        id: no-video-yet.mov?v192
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot Profiles
+        id: no-video-yet.mov?v193
+        type: Watch
+        time: 3m15s
+      - name: Overriding Properties
+        id: no-video-yet.mov?v194
+        type: Watch
+        time: 3m15s
+      - name: Property Sources
+        id: no-video-yet.mov?v195
+        type: Watch
+        time: 3m15s
+      - name: Encrypting Properties
+        id: no-video-yet.mov?v196
+        type: Watch
+        time: 3m15s
+      - name: Config Server with Profiles
+        id: no-video-yet.mov?v197
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v14
+        type: Read
+  - name: Spring Testing
+    lectures:
+      - name: Unit Testing
+        id: no-video-yet.mov?v198
+        type: Watch
+        time: 3m15s
+      - name: Integration Testing
+        id: no-video-yet.mov?v199
+        type: Watch
+        time: 3m15s
+      - name: String Test Context Framework
+        id: no-video-yet.mov?v200
+        type: Watch
+        time: 3m15s
+      - name: Mocking Beans
+        id: no-video-yet.mov?v201
+        type: Watch
+        time: 3m15s
+      - name: Testing REST Services
+        id: no-video-yet.mov?v202
+        type: Watch
+        time: 3m15s
+      - name: Database Testing with Spring
+        id: no-video-yet.mov?v203
+        type: Watch
+        time: 3m15s
+      - name: Transactional Testing
+        id: no-video-yet.mov?v204
+        type: Watch
+        time: 3m15s
+      - name: Testing Web Applications
+        id: no-video-yet.mov?v205
+        type: Watch
+        time: 3m15s
+      - name: Security Testing
+        id: no-video-yet.mov?v206
+        type: Watch
+        time: 3m15s
+      - name: Testing Asynchronous Code
+        id: no-video-yet.mov?v207
+        type: Watch
+        time: 3m15s
+      - name: MockMvc and WebTestClient
+        id: no-video-yet.mov?v208
+        type: Watch
+        time: 3m15s
+      - name: Testcontainers for Database Testing
+        id: no-video-yet.mov?v209
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v15
+        type: Read
+
