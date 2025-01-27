@@ -352,3 +352,208 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+  - name: Testing and Documentation
+    lectures:
+      - name: API Testing Techniques
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Unit Testing of API Endpoints
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name:  ntegration Testing Across Services
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: Automated Testing with Tools
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: Writing Effective API Documentation
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: Developers vs. End Users
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Interactive Documentation
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: Mock APIs for Testing
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: The Role of Mocking in Development
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Tools for Creating Mock APIs
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Deployment and Management
+    lectures:
+      - name: Deployment Strategies
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Blue-Green Deployments
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Canary Releases
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Logging
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+      - name: Setting Up Logging for APIs
+        id: no-video-yet.mov?v91
+        type: Watch
+        time: 3m15s
+      - name: Real-Time Monitoring Dashboards
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: API Lifecycle Management
+        id: no-video-yet.mov?v93
+        type: Watch
+        time: 3m15s
+      - name: From Design to Retirement
+        id: no-video-yet.mov?v94
+        type: Watch
+        time: 3m15s
+      - name: API Governance
+        id: no-video-yet.mov?v95
+        type: Watch
+        time: 3m15s
+      - name: API Analytics
+        id: no-video-yet.mov?v96
+        type: Watch
+        time: 3m15s
+      - name: Usage Patterns and Insights
+        id: no-video-yet.mov?v97
+        type: Watch
+        time: 3m15s
+      - name: A/B Testing with APIs
+        id: no-video-yet.mov?v98
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
+  - name: Case Studies and Best Practices
+    lectures:
+      - name: Notable Case Studies
+        id: no-video-yet.mov?v100
+        type: Watch
+        time: 3m15s
+      - name: Lessons from Success
+        id: no-video-yet.mov?v101
+        type: Watch
+        time: 3m15s
+      - name: Common Pitfalls in API Design
+        id: no-video-yet.mov?v102
+        type: Watch
+        time: 3m15s
+      - name: Frequent Mistakes
+        id: no-video-yet.mov?v103
+        type: Watch
+        time: 3m15s
+      - name: Future Trends in API Design
+        id: no-video-yet.mov?v104
+        type: Watch
+        time: 3m15s
+      - name: Emerging Technologies
+        id: no-video-yet.mov?v105
+        type: Watch
+        time: 3m15s
+      - name: Predictions for API Evolution
+        id: no-video-yet.mov?v106
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
+        type: Read
+  - name: GraphQL
+    lectures:
+      - name: Introduction to GraphQL
+        id: no-video-yet.mov?v107
+        type: Watch
+        time: 3m15s
+      - name: History and Philosophy
+        id: no-video-yet.mov?v108
+        type: Watch
+        time: 3m15s
+      - name: Why GraphQL?
+        id: no-video-yet.mov?v108
+        type: Watch
+        time: 3m15s
+      - name: Schemas, Queries, and Mutations
+        id: no-video-yet.mov?v109
+        type: Watch
+        time: 3m15s
+      - name: Schema Design
+        id: no-video-yet.mov?v110
+        type: Watch
+        time: 3m15s
+      - name: Writing Queries
+        id: no-video-yet.mov?v111
+        type: Watch
+        time: 3m15s
+      - name: Mutation Operations
+        id: no-video-yet.mov?v112
+        type: Watch
+        time: 3m15s
+      - name: Resolvers and Data Fetching
+        id: no-video-yet.mov?v113
+        type: Watch
+        time: 3m15s
+      - name: Resolver Functions
+        id: no-video-yet.mov?v114
+        type: Watch
+        time: 3m15s
+      - name: Efficient Data Loading Strategies
+        id: no-video-yet.mov?v115
+        type: Watch
+        time: 3m15s
+      - name: GraphQL vs. REST - When to Use Each
+        id: no-video-yet.mov?v116
+        type: Watch
+        time: 3m15s
+      - name: Comparing Performance
+        id: no-video-yet.mov?v117
+        type: Watch
+        time: 3m15s
+      - name: Case Case Analysis
+        id: no-video-yet.mov?v118
+        type: Watch
+        time: 3m15s
+      - name: GraphQL Security Considerations
+        id: no-video-yet.mov?v119
+        type: Watch
+        time: 3m15s
+      - name: Input Validation
+        id: no-video-yet.mov?v120
+        type: Watch
+        time: 3m15s
+      - name: Query Complexity Limits
+        id: no-video-yet.mov?v121
+        type: Watch
+        time: 3m15s
+      - name: Access Control
+        id: no-video-yet.mov?v122
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v12
+        type: Read
+        
