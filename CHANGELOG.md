@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.32.3
+_release date: 2025-01-27_
+* Update of Architectire course - part 3
+
 ## 0.32.2
 _release date: 2025-01-27_
 * Update of Architectire course - part 3
