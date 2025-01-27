@@ -461,11 +461,7 @@ chapters:
         id: no-video-yet.mov?v91
         type: Watch
         time: 3m15s
-      - name: Handling Failures in Distributed Systems
-        id: no-video-yet.mov?v92
-        type: Watch
-        time: 3m15s
-      - name: Handling Failures in Distributed Systems
+      - name: Failures in Distributed Systems
         id: no-video-yet.mov?v92
         type: Watch
         time: 3m15s
