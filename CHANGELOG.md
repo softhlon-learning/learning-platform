@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.31.5
+_release date: 2025-01-27_
+ * Update of API Design course - part 1
+
 ## 0.31.4
 _release date: 2025-01-27_
  * Cleanup CSS color references - part 2
