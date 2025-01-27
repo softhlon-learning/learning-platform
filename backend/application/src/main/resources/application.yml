@@ -11,6 +11,7 @@ spring:
     hikari.maximum-pool-size: 10
   mail.host: mail.softhlon-learning.tech
   mail.port: 25
+  output.ansi.enabled: ALWAYS
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
@@ -22,6 +23,7 @@ jwt:
   expiration: 86400
 password-recovery.base-url: "https://localhost/update-password?token="
 logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | %msg%n"
+
 ---
 spring:
   config:
