@@ -287,5 +287,126 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
-
-
+  - name: Containerization and Orchestration
+    lectures:
+      - name: Introduction to Docker
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Dockerizing Java Applications
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: Docker Compose
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+      - name: Kubernetes Basics
+        id: no-video-yet.mov?v60
+        type: Watch
+        time: 3m15s
+      - name: K8s Deployments and Services
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Helm Charts for K8s
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Stateful Sets and Persistent Volumes
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+      - name: K8s Networking and Ingress
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Logging in K8s
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+      - name: Scaling and Auto-healing in K8s
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Continuous Integration and Deployment
+    lectures:
+      - name: CI/CD for Microservices
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+      - name: Jenkins Pipelines
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+      - name: GitOps with Kubernetes
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Docker Registry
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: Blue-Green Deployments
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Canary Releases
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Configuration as Code
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Testing Strategies for Microservices
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: Feature Toggles
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
+  - name: Observability and Monitoring
+    lectures:
+      - name: Observability in Microservices
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: Distributed Tracing
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: Logging with ELK Stack or similar
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Metrics with Prometheus
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name: Monitoring with Grafana
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: Alerting Systems
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: Liveness/Readiness Probes
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: Debugging Distributed Systems
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
+        type: Read
