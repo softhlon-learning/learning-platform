@@ -318,3 +318,114 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+  - name: Scaling and Load Balancing
+    lectures:
+      - name: Horizontal vs. Vertical Scaling
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing in Messaging Systems
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+      - name: Partitioning Strategies
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Consumer Group Scaling
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: Sharding in Messaging
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Auto-scaling with Cloud Providers
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Handling Backpressure
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Message Batching for Efficiency
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Security in Messaging
+    lectures:
+      - name: Authentication and Authorization
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Encryption at Rest and in Transit
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: SSL/TLS in Messaging Systems
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: Securing Kafka
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Securing RabbitMQ
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name: Message Tampering Prevention
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: Access Control Lists
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: Data Leakage Prevention
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
+  - name: Asynchronous Messaging in Microservices
+    lectures:
+      - name: Event-Driven Microservices
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Saga Pattern for Transactions
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: CQRS with Messaging
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: Event Sourcing in Java
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Integrating with API Gateways
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: Service Mesh and Messaging
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Tracing in Distributed Systems
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Resilience in Microservices
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
+        type: Read
