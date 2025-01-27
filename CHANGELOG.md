@@ -1,20 +1,24 @@
 # Learning Platform Changelog
 
+## 0.32.4
+_release date: 2025-01-27_
+* Update of Domain Driven Design course - part 1
+
 ## 0.32.3
 _release date: 2025-01-27_
-* Update of Architectire course - part 3
+* Update of Architecture course - part 3
 
 ## 0.32.2
 _release date: 2025-01-27_
-* Update of Architectire course - part 3
+* Update of Architecture course - part 3
 
 ## 0.32.1
 _release date: 2025-01-27_
-* Update of Architectire course - part 2
+* Update of Architecture course - part 2
 
 ## 0.32.0
 _release date: 2025-01-27_
-* Update of Architectire course - part 1
+* Update of Architecture course - part 1
 
 ## 0.31.9
 _release date: 2025-01-27_
