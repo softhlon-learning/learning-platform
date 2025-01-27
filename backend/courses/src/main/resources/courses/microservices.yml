@@ -13,7 +13,7 @@ chapters:
         processed: false
         time: 2m5s
       - name: Prerequisites
-        id: no-video-yet.mov?v2
+        id: no-video-yet.mov?v1
         type: Watch
         processed: false
         items:
@@ -22,10 +22,155 @@ chapters:
         type: Read
         id: no-document-yet.html?v1
         processed: false
-  - name: Getting Started
+  - name: Introduction to Microservices
     lectures:
-      - name: Introduction to Microservices
+      - name: What are Microservices?
+        id: no-video-yet.mov?v2
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Monolithic vs. Distributed
+        id: no-video-yet.mov?v3
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Benefits and Challenges
         id: no-video-yet.mov?v4
         type: Watch
         time: 3m15s
         processed: false
+      - name: Evolution of Distributed Systems
+        id: no-video-yet.mov?v5
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Microservices in the Java Ecosystem
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Microservices and DevOps
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v2
+        type: Read
+  - name: Java Microservices Fundamentals
+    lectures:
+      - name: Spring Boot for Microservices
+        id: no-video-yet.mov?v7
+        type: Watch
+        time: 3m15s
+      - name: First Microservice
+        id: no-video-yet.mov?v8
+        type: Watch
+        time: 3m15s
+      - name: RESTful Services in Java
+        id: no-video-yet.mov?v9
+        type: Watch
+        time: 3m15s
+      - name: Testing Microservices in Java
+        id: no-video-yet.mov?v10
+        type: Watch
+        time: 3m15s
+      - name:  Logging and Monitoring Basics
+        id: no-video-yet.mov?v11
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: Service Design and Patterns
+    lectures:
+      - name: Domain-Driven Design (DDD)
+        id: no-video-yet.mov?v12
+        type: Watch
+        time: 3m15s
+      - name: API Gateway Pattern
+        id: no-video-yet.mov?v13
+        type: Watch
+        time: 3m15s
+      - name: Database Per Service
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+      - name: Saga for Data Consistency
+        id: no-video-yet.mov?v15
+        type: Watch
+        time: 3m15s
+      - name: CQRS
+        id: no-video-yet.mov?v16
+        type: Watch
+        time: 3m15s
+      - name: Service Discovery Patterns
+        id: no-video-yet.mov?v17
+        type: Watch
+        time: 3m15s
+      - name: Circuit Breaker Pattern
+        id: no-video-yet.mov?v18
+        type: Watch
+        time: 3m15s
+      - name: Bulkhead Pattern
+        id: no-video-yet.mov?v19
+        type: Watch
+        time: 3m15s
+      - name: Strangler Fig for Migration
+        id: no-video-yet.mov?v20
+        type: Watch
+        time: 3m15s
+      - name: Sidecar Pattern
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+      - name: Adapter Pattern in Microservices
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
+  - name: Building Microservices with Spring
+    lectures:
+      - name: Spring Cloud Overview
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+      - name: Spring Cloud Config
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+      - name: Spring Cloud Netflix Eureka
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+      - name: Spring Cloud Gateway
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+      - name: Spring Cloud Sleuth
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+      - name: Resilience4j for Fault Tolerance
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+      - name: Spring Cloud Stream
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot Actuator
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+      - name: Spring Security i
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+
+
