@@ -191,3 +191,140 @@ chapters:
         id: no-video-yet.mov?v34
         type: Watch
         time: 3m15s
+  - name: Bounded Contexts and Context Mapping
+    lectures:
+      - name: Defining Bounded Contexts
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Strategies for Context Integration
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Context Maps in Practice
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Bounded Context Boundaries
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Context Mapping Patterns
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Data Duplication vs. Sharing
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: Context Mapping Challenges
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Context Mapping Tools
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Evolution of Bounded Contexts
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+  - name: Implementation and Best Practices
+    lectures:
+      - name: Coding Practices for DDD
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+      - name: Implementing Aggregates
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+      - name: Transaction Boundaries
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+      - name: Error Handling
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+      - name: Performance Considerations
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+      - name: Integration with Infrastructure
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+      - name: Managing Complexity
+        id: no-video-yet.mov?v49
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: DDD and Microservices
+    lectures:
+      - name: Bounded Contexts to Microservices
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+      - name: Context Mapping in Microservices
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+      - name: Communication Patterns
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: Event-Driven Microservices
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: Service Discovery and Orchestration
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: Microservices and Domain Events
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: Challenges of Microservices with DDD
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
+  - name: Advanced Topics in DDD
+    lectures:
+      - name: Domain-Driven Security
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Polygot Persistence in DDD
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: DDD with Functional Programming
+        id: no-video-yet.mov?59
+        type: Watch
+        time: 3m15s
+      - name: Eventual Consistency
+        id: no-video-yet.mov?60
+        type: Watch
+        time: 3m15s
+      - name: Domain-Driven Refactoring Patterns
+        id: no-video-yet.mov?61
+        type: Watch
+        time: 3m15s
+      - name: DDD and Reactive Systems
+        id: no-video-yet.mov?62
+        type: Watch
+        time: 3m15s
+      - name: DDD and Data Mesh
+        id: no-video-yet.mov?63
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
