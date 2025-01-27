@@ -123,123 +123,6 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
-  - name: Architecture Documentation
-    lectures:
-      - name: Importance of Documentation
-        id: no-video-yet.mov?v21
-        type: Watch
-        time: 3m15s
-      - name: Architectural Decision Records (ADRs)
-        id: no-video-yet.mov?v22
-        type: Watch
-        time: 3m15s
-      - name: Creating Architecture Views
-        id: no-video-yet.mov?v23
-        type: Watch
-        time: 3m15s
-      - name: UML for Architecture Diagrams
-        id: no-video-yet.mov?v24
-        type: Watch
-        time: 3m15s
-      - name: Non-Functional Requirements
-        id: no-video-yet.mov?v25
-        type: Watch
-        time: 3m15s
-      - name: The C4 Model
-        id: no-video-yet.mov?v26
-        type: Watch
-        time: 3m15s
-      - name: Documentation Tools and Practices
-        id: no-video-yet.mov?v27
-        type: Watch
-        time: 3m15s
-      - name: Wrap Up
-        id: no-document-yet.html?v5
-        type: Read
-  - name: Quality Attributes
-    lectures:
-      - name: Defining Quality Attributes
-        id: no-video-yet.mov?v28
-        type: Watch
-        time: 3m15s
-      - name: Scalability, and Availability
-        id: no-video-yet.mov?v29
-        type: Watch
-        time: 3m15s
-      - name: Security and Privacy
-        id: no-video-yet.mov?v30
-        type: Watch
-        time: 3m15s
-      - name: Maintainability and Extensibility
-        id: no-video-yet.mov?v31
-        type: Watch
-        time: 3m15s
-      - name: Usability and Accessibility
-        id: no-video-yet.mov?v32
-        type: Watch
-        time: 3m15s
-      - name: Reliability and Fault Tolerance
-        id: no-video-yet.mov?v32
-        type: Watch
-        time: 3m15s
-      - name: Wrap Up
-        id: no-document-yet.html?v6
-        type: Read
-  - name: Data Architectures
-    lectures:
-      - name: Data Modeling Techniques
-        id: no-video-yet.mov?v33
-        type: Watch
-        time: 3m15s
-      - name: Database Design for Scalability
-        id: no-video-yet.mov?v34
-        type: Watch
-        time: 3m15s
-      - name: Relational vs. NoSQL Databases
-        id: no-video-yet.mov?v35
-        type: Watch
-        time: 3m15s
-      - name: Data Warehousing and ETL
-        id: no-video-yet.mov?v36
-        type: Watch
-        time: 3m15s
-      - name: Big Data Architectures
-        id: no-video-yet.mov?v37
-        type: Watch
-        time: 3m15s
-      - name: Data Security and Compliance
-        id: no-video-yet.mov?v38
-        type: Watch
-        time: 3m15s
-      - name: Event Sourcing and CQRS
-        id: no-video-yet.mov?v38
-        type: Watch
-        time: 3m15s
-      - name: Wrap Up
-        id: no-document-yet.html?v7
-        type: Read
-  - name: Integration Architectures
-    lectures:
-      - name: API Integration Patterns
-        id: no-video-yet.mov?v39
-        type: Watch
-        time: 3m15s
-      - name: Message-Oriented Middleware
-        id: no-video-yet.mov?v40
-        type: Watch
-        time: 3m15s
-      - name: Enterprise Service Bus (ESB)
-        id: no-video-yet.mov?v41
-        type: Watch
-        time: 3m15s
-      - name: Microservices Integration Challenges
-        id: no-video-yet.mov?v42
-        type: Watch
-        time: 3m15s
-      - name: Legacy System Integration
-        id: no-video-yet.mov?v43
-        type: Watch
-        time: 3m15s
   - name: Cloud Architecture
     lectures:
       - name: Cloud Computing Concepts
@@ -450,4 +333,242 @@ chapters:
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v8
+        type: Read
+  - name: Architecture Documentation
+    lectures:
+      - name: Importance of Documentation
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+      - name: Architectural Decision Records (ADRs)
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+      - name: Creating Architecture Views
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+      - name: UML for Architecture Diagrams
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+      - name: Non-Functional Requirements
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+      - name: The C4 Model
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+      - name: Documentation Tools and Practices
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+  - name: Quality Attributes
+    lectures:
+      - name: Defining Quality Attributes
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+      - name: Scalability, and Availability
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+      - name: Security and Privacy
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+      - name: Maintainability and Extensibility
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+      - name: Usability and Accessibility
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Reliability and Fault Tolerance
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Data Architectures
+    lectures:
+      - name: Data Modeling Techniques
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+      - name: Database Design for Scalability
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+      - name: Relational vs. NoSQL Databases
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Data Warehousing and ETL
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Big Data Architectures
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Data Security and Compliance
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Event Sourcing and CQRS
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: Integration Architectures
+    lectures:
+      - name: API Integration Patterns
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Message-Oriented Middleware
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: Enterprise Service Bus (ESB)
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Microservices Integration Challenges
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Legacy System Integration
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+  - name: DevOps and Continuous Delivery
+    lectures:
+      - name: DevOps Principles
+        id: no-video-yet.mov?v94
+        type: Watch
+        time: 3m15s
+      - name: Continuous Integration (CI)
+        id: no-video-yet.mov?v95
+        type: Watch
+        time: 3m15s
+      - name: Continuous Delivery (CD)
+        id: no-video-yet.mov?v96
+        type: Watch
+        time: 3m15s
+      - name: Infrastructure as Code
+        id: no-video-yet.mov?v97
+        type: Watch
+        time: 3m15s
+      - name: Microservices and DevOps
+        id: no-video-yet.mov?v98
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Logging in DevOps
+        id: no-video-yet.mov?v99
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Logging in DevOps
+        id: no-video-yet.mov?v99
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Distributed Systems
+    lectures:
+      - name: Basics of Distributed Systems
+        id: no-video-yet.mov?v100
+        type: Watch
+        time: 3m15s
+      - name: CAP Theorem in Practice
+        id: no-video-yet.mov?v101
+        type: Watch
+        time: 3m15s
+      - name: Distributed Data Management
+        id: no-video-yet.mov?v102
+        type: Watch
+        time: 3m15s
+      - name: Consensus Algorithms
+        id: no-video-yet.mov?v103
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing Techniques
+        id: no-video-yet.mov?v104
+        type: Watch
+        time: 3m15s
+      - name: Fault Tolerance and Recovery
+        id: no-video-yet.mov?v105
+        type: Watch
+        time: 3m15s
+      - name: Distributed Transactions
+        id: no-video-yet.mov?v106
+        type: Watch
+        time: 3m15s
+  - name: Performance Architecture
+    lectures:
+      - name: Performance Metrics
+        id: no-video-yet.mov?v107
+        type: Watch
+        time: 3m15s
+      - name: Caching Strategies
+        id: no-video-yet.mov?v108
+        type: Watch
+        time: 3m15s
+      - name: Concurrency and Parallelism
+        id: no-video-yet.mov?v109
+        type: Watch
+        time: 3m15s
+      - name: Load Testing
+        id: no-video-yet.mov?v110
+        type: Watch
+        time: 3m15s
+      - name: Database Optimization
+        id: no-video-yet.mov?v111
+        type: Watch
+        time: 3m15s
+      - name: Content Delivery Networks
+        id: no-video-yet.mov?v112
+        type: Watch
+        time: 3m15s
+      - name: Bottlenecks
+        id: no-video-yet.mov?v113
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
+  - name: Security Architecture
+    lectures:
+      - name: Security Architecture
+        id: no-video-yet.mov?v114
+        type: Watch
+        time: 3m15s
+      - name: Threat Modeling
+        id: no-video-yet.mov?v115
+        type: Watch
+        time: 3m15s
+      - name: Secure Development Lifecycle
+        id: no-video-yet.mov?v116
+        type: Watch
+        time: 3m15s
+      - name: Authentication and Authorization
+        id: no-video-yet.mov?v117
+        type: Watch
+        time: 3m15s
+      - name: Encryption Techniques
+        id: no-video-yet.mov?v118
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
         type: Read
