@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.32.9
+_release date: 2025-01-27_
+* Update of Microservices course - part 1
+
 ## 0.32.8
 _release date: 2025-01-27_
 * Update of Async Messaging course - part 3
