@@ -13,7 +13,7 @@ chapters:
         processed: false
         time: 2m5s
       - name: Prerequisites
-        id: no-video-yet.mov?v2
+        id: no-video-yet.mov?v1
         type: Watch
         processed: false
         items:
@@ -22,10 +22,199 @@ chapters:
         type: Read
         id: no-document-yet.html?v1
         processed: false
-  - name: Getting Started
+  - name: Introduction to Software Architecture
     lectures:
-      - name: Introduction to Software Architecture
+      - name: Defining Software Architecture
+        id: no-video-yet.mov?v2
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: The Role of an Architect
+        id: no-video-yet.mov?v3
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Historical Context
         id: no-video-yet.mov?v4
         type: Watch
         time: 3m15s
         processed: false
+      - name: Architecture vs. Design
+        id: no-video-yet.mov?v5
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Architectural Patterns Overview
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Architecture Anti-Patterns
+        id: no-video-yet.mov?v7
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v2
+        type: Read
+  - name:  Architectural Styles and Patterns
+    lectures:
+      - name: Layered Architecture
+        id: no-video-yet.mov?v8
+        type: Watch
+        time: 3m15s
+      - name: Client-Server Architecture
+        id: no-video-yet.mov?v9
+        type: Watch
+        time: 3m15s
+      - name: Event-Driven Architecture
+        id: no-video-yet.mov?v10
+        type: Watch
+        time: 3m15s
+      - name: Microservices Architecture
+        id: no-video-yet.mov?v11
+        type: Watch
+        time: 3m15s
+      - name: Service-Oriented Architecture (SOA)
+        id: no-video-yet.mov?v12
+        type: Watch
+        time: 3m15s
+      - name: Peer-to-Peer Architecture
+        id: no-video-yet.mov?v13
+        type: Watch
+        time: 3m15s
+      - name: Comparing Architectural Styles
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: Principles of Software Architecture
+    lectures:
+      - name: SOLID Principles
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+      - name: YAGNI and KISS Principles
+        id: no-video-yet.mov?v15
+        type: Watch
+        time: 3m15s
+      - name: DRY (Don't Repeat Yourself)
+        id: no-video-yet.mov?v16
+        type: Watch
+        time: 3m15s
+      - name: Separation of Concerns
+        id: no-video-yet.mov?v17
+        type: Watch
+        time: 3m15s
+      - name: Coupling and Cohesion
+        id: no-video-yet.mov?v18
+        type: Watch
+        time: 3m15s
+      - name: Design for Scale
+        id: no-video-yet.mov?v19
+        type: Watch
+        time: 3m15s
+      - name: Modularity and Reusability
+        id: no-video-yet.mov?v20
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
+  - name: Architecture Documentation
+    lectures:
+      - name: Importance of Documentation
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+      - name: Architectural Decision Records (ADRs)
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+      - name: Creating Architecture Views
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+      - name: UML for Architecture Diagrams
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+      - name: Non-Functional Requirements
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+      - name: The C4 Model
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+      - name: Documentation Tools and Practices
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+  - name: Quality Attributes
+    lectures:
+      - name: Defining Quality Attributes
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+      - name: Scalability, and Availability
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+      - name: Security and Privacy
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+      - name: Maintainability and Extensibility
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+      - name: Usability and Accessibility
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Reliability and Fault Tolerance
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Data Architectures
+    lectures:
+      - name: Data Modeling Techniques
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+      - name: Database Design for Scalability
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+      - name: Relational vs. NoSQL Databases
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Data Warehousing and ETL
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Big Data Architectures
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Data Security and Compliance
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Event Sourcing and CQRS
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
