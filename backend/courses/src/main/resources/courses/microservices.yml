@@ -165,12 +165,127 @@ chapters:
         id: no-video-yet.mov?v30
         type: Watch
         time: 3m15s
-      - name: Spring Security i
+      - name: Spring Security
         id: no-video-yet.mov?v31
         type: Watch
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v5
+        type: Read
+  - name: Data Management in Microservices
+    lectures:
+      - name: Data Challenges in Microservices
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Eventual vs. Strong Consistency
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+      - name: Saga Orchestration vs. Choreography
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+      - name: Database Sharding and Partitioning
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Transactions Across Services
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Data Replication Techniques
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Using NoSQL Databases
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Data Versioning and Migration
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Inter-service Communication
+    lectures:
+      - name: RESTful APIs
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: gRPC in Java Microservices
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Message Brokers - Kafka, RabbitMQ
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Sync vs. Async Communication
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+      - name: API Versioning
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+      - name: Protocol Buffers
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+      - name: Service Mesh - Istio, Linkerd
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+      - name: HTTP/2 and WebSockets
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: Security in Microservices
+    lectures:
+      - name: Security Challenges in Microservices
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+      - name: OAuth 2.0 and OpenID Connect
+        id: no-video-yet.mov?v49
+        type: Watch
+        time: 3m15s
+      - name: JWT (JSON Web Tokens)
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+      - name: API Key Management
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+      - name: Securing Service-to-Service
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: Encryption at Rest and in Transit
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: Identity and Access Management
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: Security in Service Mesh
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: PenTesting and Security Audits
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
         type: Read
 
 
