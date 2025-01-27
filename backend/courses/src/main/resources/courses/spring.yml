@@ -704,10 +704,185 @@ chapters:
         id: no-video-yet.mov?v143
         type: Watch
         time: 3m15s
-      - name: TMonitoring Batch Jobs
+      - name: Monitoring Batch Jobs
         id: no-video-yet.mov?v143
         type: Watch
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v10
+        type: Read
+  - name: Spring Integration
+    lectures:
+      - name: Overview of Spring Integration
+        id: no-video-yet.mov?v144
+        type: Watch
+        time: 3m15s
+      - name: Integration Patterns
+        id: no-video-yet.mov?v145
+        type: Watch
+        time: 3m15s
+      - name: Message Channels
+        id: no-video-yet.mov?v146
+        type: Watch
+        time: 3m15s
+      - name: Message Endpoints
+        id: no-video-yet.mov?v147
+        type: Watch
+        time: 3m15s
+      - name: Transformers
+        id: no-video-yet.mov?v148
+        type: Watch
+        time: 3m15s
+      - name: Routers
+        id: no-video-yet.mov?v149
+        type: Watch
+        time: 3m15s
+      - name: Filters
+        id: no-video-yet.mov?v150
+        type: Watch
+        time: 3m15s
+      - name: Splitters and Aggregators
+        id: no-video-yet.mov?v151
+        type: Watch
+        time: 3m15s
+      - name: Service Activators
+        id: no-video-yet.mov?v152
+        type: Watch
+        time: 3m15s
+      - name: Adapters for External Systems
+        id: no-video-yet.mov?v153
+        type: Watch
+        time: 3m15s
+      - name: Error Handling
+        id: no-video-yet.mov?v154
+        type: Watch
+        time: 3m15s
+      - name: Transaction Management
+        id: no-video-yet.mov?v155
+        type: Watch
+        time: 3m15s
+      - name: Configuring with XML
+        id: no-video-yet.mov?v156
+        type: Watch
+        time: 3m15s
+      - name: Configuring with Annotations
+        id: no-video-yet.mov?v157
+        type: Watch
+        time: 3m15s
+      - name: Security in Integration
+        id: no-video-yet.mov?v158
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
+        type: Read
+  - name: Spring WebFlux
+    lectures:
+      - name: Reactive Programming
+        id: no-video-yet.mov?v159
+        type: Watch
+        time: 3m15s
+      - name: WebFlux vs. MVC
+        id: no-video-yet.mov?v160
+        type: Watch
+        time: 3m15s
+      - name: Project Reactor Basics
+        id: no-video-yet.mov?v161
+        type: Watch
+        time: 3m15s
+      - name: Reactive REST Services
+        id: no-video-yet.mov?v162
+        type: Watch
+        time: 3m15s
+      - name: WebClient
+        id: no-video-yet.mov?v163
+        type: Watch
+        time: 3m15s
+      - name: Functional Endpoints
+        id: no-video-yet.mov?v164
+        type: Watch
+        time: 3m15s
+      - name: WebSockets with WebFlux
+        id: no-video-yet.mov?v165
+        type: Watch
+        time: 3m15s
+      - name: Server-Sent Events (SSE)
+        id: no-video-yet.mov?v166
+        type: Watch
+        time: 3m15s
+      - name: Error Handling in WebFlux
+        id: no-video-yet.mov?v167
+        type: Watch
+        time: 3m15s
+      - name: Testing Reactive Applications
+        id: no-video-yet.mov?v168
+        type: Watch
+        time: 3m15s
+      - name: Security in Reactive Applications
+        id: no-video-yet.mov?v169
+        type: Watch
+        time: 3m15s
+      - name: Backpressure Management
+        id: no-video-yet.mov?v170
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v12
+        type: Read
+  - name: Spring Transaction Management
+    lectures:
+      - name: Basics of Transactions
+        id: no-video-yet.mov?v171
+        type: Watch
+        time: 3m15s
+      - name: Declarative vs. Programmatic
+        id: no-video-yet.mov?v172
+        type: Watch
+        time: 3m15s
+      - name: Transaction Isolation Levels
+        id: no-video-yet.mov?v173
+        type: Watch
+        time: 3m15s
+      - name: Propagation Behaviors
+        id: no-video-yet.mov?v174
+        type: Watch
+        time: 3m15s
+      - name: Rollback Rules
+        id: no-video-yet.mov?v175
+        type: Watch
+        time: 3m15s
+      - name: Transaction Attributes
+        id: no-video-yet.mov?v176
+        type: Watch
+        time: 3m15s
+      - name: Transaction Boundaries
+        id: no-video-yet.mov?v177
+        type: Watch
+        time: 3m15s
+      - name: Transactions with JPA
+        id: no-video-yet.mov?v178
+        type: Watch
+        time: 3m15s
+      - name: Transaction Events
+        id: no-video-yet.mov?v179
+        type: Watch
+        time: 3m15s
+      - name: Chained Transactions
+        id: no-video-yet.mov?v180
+        type: Watch
+        time: 3m15s
+      - name: Handling Deadlocks
+        id: no-video-yet.mov?v181
+        type: Watch
+        time: 3m15s
+      - name: Distributed Transactions
+        id: no-video-yet.mov?v182
+        type: Watch
+        time: 3m15s
+      - name: Best Practices
+        id: no-video-yet.mov?v182
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v13
         type: Read
