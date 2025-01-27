@@ -14,7 +14,7 @@
 
 .course-content-list ul {
     column-count: 3;
-    column-rule: dotted 1px #333;
+    column-rule: dashed 1px var(--light);
     list-style-type: none;
     padding-inline-start: 5px;
 }
@@ -36,4 +36,12 @@ div {
 
 div button {
     width: 14em;
+}
+
+.chapter {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-bottom: 1px var(--very-light) solid;
 }

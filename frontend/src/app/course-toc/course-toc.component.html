@@ -28,9 +28,9 @@
   <div class="course-content">
     <ul class="course-content-list">
       <li *ngFor="let chapter of courseContent?.chapters">
-      <span>
-        <span class="name">{{ chapter.name }}</span>
-      </span>
+         <div class="chapter">
+            <span>{{ chapter.name }}</span>
+        </div>
         <ul class="courses">
           <li *ngFor="let lecture of chapter.lectures">
             <label class="checkbox">
