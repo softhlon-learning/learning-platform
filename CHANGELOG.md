@@ -1,44 +1,48 @@
 # Learning Platform Changelog
 
+## 0.33.3
+_release date: 2025-01-27_
+* Update of Spring course - part 1
+
 ## 0.33.2
 _release date: 2025-01-27_
-* Update of Microservices course - part 4
-* 
+ * Update of Microservices course - part 4
+ 
 ## 0.33.1
 _release date: 2025-01-27_
-* Update of Microservices course - part 3
+ * Update of Microservices course - part 3
 
 ## 0.33.0
 _release date: 2025-01-27_
-* Update of Microservices course - part 2
+ * Update of Microservices course - part 2
 
 ## 0.32.9
 _release date: 2025-01-27_
-* Update of Microservices course - part 1
+ * Update of Microservices course - part 1
 
 ## 0.32.8
 _release date: 2025-01-27_
-* Update of Async Messaging course - part 3
+ * Update of Async Messaging course - part 3
 
 ## 0.32.7
 _release date: 2025-01-27_
-* Update of Async Messaging course - part 2
+ * Update of Async Messaging course - part 2
 
 ## 0.32.6
 _release date: 2025-01-27_
-* Update of Async Messaging course - part 1
+ * Update of Async Messaging course - part 1
 
 ## 0.32.5
 _release date: 2025-01-27_
-* Update of Domain Driven Design course - part 2
+ * Update of Domain Driven Design course - part 2
 
 ## 0.32.4
 _release date: 2025-01-27_
-* Update of Domain Driven Design course - part 1
+ * Update of Domain Driven Design course - part 1
 
 ## 0.32.3
 _release date: 2025-01-27_
-* Update of Architecture course - part 3
+ * Update of Architecture course - part 3
 
 ## 0.32.2
 _release date: 2025-01-27_
@@ -50,11 +54,11 @@ _release date: 2025-01-27_
 
 ## 0.32.0
 _release date: 2025-01-27_
-* Update of Architecture course - part 1
+ * Update of Architecture course - part 1
 
 ## 0.31.9
 _release date: 2025-01-27_
-* Update of API Design course - part 5
+ * Update of API Design course - part 5
 
 ## 0.31.8
 _release date: 2025-01-27_
