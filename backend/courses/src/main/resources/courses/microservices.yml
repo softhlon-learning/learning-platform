@@ -410,3 +410,102 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+  - name: Scaling and Performance
+    lectures:
+      - name: Horizontal vs. Vertical Scaling
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing Strategies
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: Caching Strategies
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Asyns Processing
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: Rate Limiting and Throttling
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Optimizing Database Queries
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Resource Limits in Kubernetes
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v12
+        type: Read
+  - name: Resilience and Fault Tolerance
+    lectures:
+      - name: Building Resilient Systems
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Implementing Retry Logic
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+      - name: Circuit Breaker Implementation
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+      - name: Timeouts and Bulkheads
+        id: no-video-yet.mov?v91
+        type: Watch
+        time: 3m15s
+      - name: Handling Failures in Distributed Systems
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: Handling Failures in Distributed Systems
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v13
+        type: Read
+  - name: Microservices Best Practices and Anti-Patterns
+    lectures:
+      - name: Best Practices in Microservices Design
+        id: no-video-yet.mov?v93
+        type: Watch
+        time: 3m15s
+      - name: Avoiding Common Pitfalls
+        id: no-video-yet.mov?v94
+        type: Watch
+        time: 3m15s
+      - name: Anti-Patterns in Microservices
+        id: no-video-yet.mov?v95
+        type: Watch
+        time: 3m15s
+      - name: Managing Complexity
+        id: no-video-yet.mov?v96
+        type: Watch
+        time: 3m15s
+      - name: Service Granularity
+        id: no-video-yet.mov?v97
+        type: Watch
+        time: 3m15s
+      - name: Shared Libraries vs. Microservices
+        id: no-video-yet.mov?v98
+        type: Watch
+        time: 3m15s
+      - name: Communication Patterns to Avoid
+        id: no-video-yet.mov?v99
+        type: Watch
+        time: 3m15s
+      - name: When to Merge or Split Services
+        id: no-video-yet.mov?v100
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v14
+        type: Read
