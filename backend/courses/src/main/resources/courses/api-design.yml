@@ -136,3 +136,219 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+  - name: Designing RESTful APIs
+    lectures:
+      - name: Defining Resources and Endpoints
+        id: no-video-yet.mov?v28
+        type: Watch
+        time: 3m15s
+      - name: Resource-Oriented Design
+        id: no-video-yet.mov?v29
+        type: Watch
+        time: 3m15s
+      - name: Endpoint Nomenclature
+        id: no-video-yet.mov?v30
+        type: Watch
+        time: 3m15s
+      - name: CRUD Operations in REST
+        id: no-video-yet.mov?v31
+        type: Watch
+        time: 3m15s
+      - name: Mapping CRUD to HTTP Verbs
+        id: no-video-yet.mov?v32
+        type: Watch
+        time: 3m15s
+      - name: Implementation Considerations
+        id: no-video-yet.mov?v33
+        type: Watch
+        time: 3m15s
+      - name: Query Parameters and Filtering
+        id: no-video-yet.mov?v34
+        type: Watch
+        time: 3m15s
+      - name: Pagination Strategies
+        id: no-video-yet.mov?v35
+        type: Watch
+        time: 3m15s
+      - name: Search and Sorting
+        id: no-video-yet.mov?v36
+        type: Watch
+        time: 3m15s
+      - name: Error Handling
+        id: no-video-yet.mov?v37
+        type: Watch
+        time: 3m15s
+      - name: Standard Error Responses
+        id: no-video-yet.mov?v38
+        type: Watch
+        time: 3m15s
+      - name: Custom Errors and Best Practices
+        id: no-video-yet.mov?v39
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v5
+        type: Read
+  - name: Advanced API Design Concepts
+    lectures:
+      - name: HATEOAS (Hypermedia)
+        id: no-video-yet.mov?v40
+        type: Watch
+        time: 3m15s
+      - name: Understanding Hypermedia
+        id: no-video-yet.mov?v41
+        type: Watch
+        time: 3m15s
+      - name: Implementing HATEOAS in APIs
+        id: no-video-yet.mov?v42
+        type: Watch
+        time: 3m15s
+      - name: Documentation Standards
+        id: no-video-yet.mov?v43
+        type: Watch
+        time: 3m15s
+      - name: Writing Effective API Docs
+        id: no-video-yet.mov?v44
+        type: Watch
+        time: 3m15s
+      - name: Using OpenAPI Specification
+        id: no-video-yet.mov?v45
+        type: Watch
+        time: 3m15s
+      - name: Designing for Scalability
+        id: no-video-yet.mov?v46
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing Techniques
+        id: no-video-yet.mov?v47
+        type: Watch
+        time: 3m15s
+      - name: Caching Strategies
+        id: no-video-yet.mov?v48
+        type: Watch
+        time: 3m15s
+      - name: Rate Limiting and Throttling
+        id: no-video-yet.mov?v49
+        type: Watch
+        time: 3m15s
+      - name: Why Rate Limit?
+        id: no-video-yet.mov?v50
+        type: Watch
+        time: 3m15s
+      - name: Implementation Techniques
+        id: no-video-yet.mov?v51
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: API Security
+    lectures:
+      - name: Authentication Methods
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: OAuth 2.0 in Detail
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: JSON Web Tokens (JWT)
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: API Keys Revisited
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: Authorization Techniques
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: Role-Based Access Control
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Attribute-Based Access Control
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: Data Protection and Privacy
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+      - name: Encryption at Rest and in Transit
+        id: no-video-yet.mov?v60
+        type: Watch
+        time: 3m15s
+      - name: Data Anonymization Techniques
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Common Security Vulnerabilities
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+      - name: OWASP API Security Top 10
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+      - name: Prevention of Injection Attacks
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: Performance and Optimization
+    lectures:
+      - name: Caching Strategies
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+      - name: Client-side vs. Server-side Caching
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+      - name: Cache Invalidation
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+      - name: API Performance Metrics
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Latency and Throughput
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: Monitoring Tools
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Load Balancing
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Types of Load Balancers
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Session Persistence
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: Microservices and API Gateways
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Mervice Discovery
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: API Gateway as a Single Entry Point
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
+        type: Read
