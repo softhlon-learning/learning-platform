@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.32.5
+_release date: 2025-01-27_
+* Update of Domain Driven Design course - part 2
+
 ## 0.32.4
 _release date: 2025-01-27_
 * Update of Domain Driven Design course - part 1
