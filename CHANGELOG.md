@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.32.8
+_release date: 2025-01-27_
+* Update of Async Messaging course - part 3
+
 ## 0.32.7
 _release date: 2025-01-27_
 * Update of Async Messaging course - part 2
