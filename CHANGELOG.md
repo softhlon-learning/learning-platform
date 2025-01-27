@@ -1,20 +1,24 @@
 # Learning Platform Changelog
 
+## 0.33.7
+_release date: 2025-01-27_
+ * Improved styling on course-toc page
+
 ## 0.33.6
 _release date: 2025-01-27_
-* Update of Spring course - part 4
+ * Update of Spring course - part 4
 
 ## 0.33.5
 _release date: 2025-01-27_
-* Update of Spring course - part 3
+ * Update of Spring course - part 3
 
 ## 0.33.4
 _release date: 2025-01-27_
-* Update of Spring course - part 2
+ * Update of Spring course - part 2
 
 ## 0.33.3
 _release date: 2025-01-27_
-* Update of Spring course - part 1
+ * Update of Spring course - part 1
 
 ## 0.33.2
 _release date: 2025-01-27_
