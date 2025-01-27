@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.33.2
+_release date: 2025-01-27_
+* Update of Microservices course - part 4
+* 
 ## 0.33.1
 _release date: 2025-01-27_
 * Update of Microservices course - part 3
