@@ -517,7 +517,197 @@ chapters:
         id: no-video-yet.mov?v101
         type: Watch
         time: 3m15s
-
-
-
-
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: Spring Data JPA
+    lectures:
+      - name: Introduction to Spring Data
+        id: no-video-yet.mov?v101
+        type: Watch
+        time: 3m15s
+      - name: JPA Basics
+        id: no-video-yet.mov?v102
+        type: Watch
+        time: 3m15s
+      - name: Configuring Spring Data JPA
+        id: no-video-yet.mov?v103
+        type: Watch
+        time: 3m15s
+      - name: Entity Management
+        id: no-video-yet.mov?v104
+        type: Watch
+        time: 3m15s
+      - name: Repository Interfaces
+        id: no-video-yet.mov?v105
+        type: Watch
+        time: 3m15s
+      - name: Custom Queries
+        id: no-video-yet.mov?v105
+        type: Watch
+        time: 3m15s
+      - name: Query Methods
+        id: no-video-yet.mov?v106
+        type: Watch
+        time: 3m15s
+      - name: Specifications
+        id: no-video-yet.mov?v107
+        type: Watch
+        time: 3m15s
+      - name: Auditing
+        id: no-video-yet.mov?v108
+        type: Watch
+        time: 3m15s
+      - name: Pagination and Sorting
+        id: no-video-yet.mov?v109
+        type: Watch
+        time: 3m15s
+      - name: Transaction Management
+        id: no-video-yet.mov?v110
+        type: Watch
+        time: 3m15s
+      - name: Mapping Relationships
+        id: no-video-yet.mov?v111
+        type: Watch
+        time: 3m15s
+      - name: Performance Tuning
+        id: no-video-yet.mov?v112
+        type: Watch
+        time: 3m15s
+      - name: Caching
+        id: no-video-yet.mov?v113
+        type: Watch
+        time: 3m15s
+      - name: Advanced Mapping Techniques
+        id: no-video-yet.mov?v114
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
+        type: Read
+  - name: Spring Boot
+    lectures:
+      - name: What is Spring Boot?
+        id: no-video-yet.mov?v115
+        type: Watch
+        time: 3m15s
+      - name: Auto-configuration
+        id: no-video-yet.mov?v116
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot Starters
+        id: no-video-yet.mov?v117
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot CLI
+        id: no-video-yet.mov?v118
+        type: Watch
+        time: 3m15s
+      - name: Actuator
+        id: no-video-yet.mov?v119
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot vs. Traditional Spring
+        id: no-video-yet.mov?v119
+        type: Watch
+        time: 3m15s
+      - name: Externalized Configuration
+        id: no-video-yet.mov?v120
+        type: Watch
+        time: 3m15s
+      - name: Profiles in Spring Boot
+        id: no-video-yet.mov?v121
+        type: Watch
+        time: 3m15s
+      - name: Logging in Spring Boot
+        id: no-video-yet.mov?v122
+        type: Watch
+        time: 3m15s
+      - name: RESTful Services with Spring Boot
+        id: no-video-yet.mov?v123
+        type: Watch
+        time: 3m15s
+      - name: Spring Boot with JPA
+        id: no-video-yet.mov?v124
+        type: Watch
+        time: 3m15s
+      - name: Packaging and Deployment
+        id: no-video-yet.mov?v125
+        type: Watch
+        time: 3m15s
+      - name: Testing in Spring Boot
+        id: no-video-yet.mov?v126
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Spring Batch
+    lectures:
+      - name: Batch Processing
+        id: no-video-yet.mov?v127
+        type: Watch
+        time: 3m15s
+      - name: Spring Batch Architecture
+        id: no-video-yet.mov?v128
+        type: Watch
+        time: 3m15s
+      - name: Job and Step Definitions
+        id: no-video-yet.mov?v129
+        type: Watch
+        time: 3m15s
+      - name: Readers, Writers, and Processors
+        id: no-video-yet.mov?v130
+        type: Watch
+        time: 3m15s
+      - name: Job Repository and Job Launcher
+        id: no-video-yet.mov?v132
+        type: Watch
+        time: 3m15s
+      - name: Execution Context
+        id: no-video-yet.mov?v133
+        type: Watch
+        time: 3m15s
+      - name: Chunk-Oriented Processing
+        id: no-video-yet.mov?v134
+        type: Watch
+        time: 3m15s
+      - name: Tasklet Steps
+        id: no-video-yet.mov?v135
+        type: Watch
+        time: 3m15s
+      - name: Batch Configuration
+        id: no-video-yet.mov?v136
+        type: Watch
+        time: 3m15s
+      - name: Retry and Skip Policies
+        id: no-video-yet.mov?v138
+        type: Watch
+        time: 3m15s
+      - name: Error Handling and Recovery
+        id: no-video-yet.mov?v139
+        type: Watch
+        time: 3m15s
+      - name: Scaling and Parallel Processing
+        id: no-video-yet.mov?v140
+        type: Watch
+        time: 3m15s
+      - name: Job Partitioning
+        id: no-video-yet.mov?v141
+        type: Watch
+        time: 3m15s
+      - name: Integrating with Spring Boot
+        id: no-video-yet.mov?v142
+        type: Watch
+        time: 3m15s
+      - name: Testing Batch Jobs
+        id: no-video-yet.mov?v143
+        type: Watch
+        time: 3m15s
+      - name: TMonitoring Batch Jobs
+        id: no-video-yet.mov?v143
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
