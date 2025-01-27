@@ -13,7 +13,7 @@ chapters:
         processed: false
         time: 2m5s
       - name: Prerequisites
-        id: no-video-yet.mov?v2
+        id: no-video-yet.mov?v1
         type: Watch
         processed: false
         items:
@@ -22,10 +22,127 @@ chapters:
         type: Read
         id: no-document-yet.html?v1
         processed: false
-  - name: Getting Started
+  - name: Introduction to Asynchronous Messaging
     lectures:
-      - name: Introduction to Async Messaging
+      - name: What is Asynchronous Messaging?
+        id: no-video-yet.mov?v2
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Benefits of Async Communication
+        id: no-video-yet.mov?v3
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Synchronous vs. Asynchronous
         id: no-video-yet.mov?v4
         type: Watch
         time: 3m15s
         processed: false
+      - name: Messaging Patterns Overview
+        id: no-video-yet.mov?v5
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Evolution of Messaging in Java
+        id: no-video-yet.mov?v6
+        type: Watch
+        time: 3m15s
+        processed: false
+      - name: Wrap Up
+        id: no-document-yet.html?v2
+        type: Read
+  - name: Java Messaging Service (JMS)
+    lectures:
+      - name: JMS Overview
+        id: no-video-yet.mov?v7
+        type: Watch
+        time: 3m15s
+      - name: JMS Architecture and Components
+        id: no-video-yet.mov?v8
+        type: Watch
+        time: 3m15s
+      - name: Point-to-Point (Queue) Messaging
+        id: no-video-yet.mov?v9
+        type: Watch
+        time: 3m15s
+      - name: Publish/Subscribe (Topic) Messaging
+        id: no-video-yet.mov?v10
+        type: Watch
+        time: 3m15s
+      - name: JMS API in Detail
+        id: no-video-yet.mov?v11
+        type: Watch
+        time: 3m15s
+      - name: Message Types and Properties
+        id: no-video-yet.mov?v12
+        type: Watch
+        time: 3m15s
+      - name: JMS Providers
+        id: no-video-yet.mov?v13
+        type: Watch
+        time: 3m15s
+      - name: Transaction Management in JMS
+        id: no-video-yet.mov?v14
+        type: Watch
+        time: 3m15s
+      - name: Message Acknowledgment Modes
+        id: no-video-yet.mov?v15
+        type: Watch
+        time: 3m15s
+      - name: Durable Subscriptions
+        id: no-video-yet.mov?v16
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v3
+        type: Read
+  - name: Apache Kafka
+    lectures:
+      - name: Kafka Architecture
+        id: no-video-yet.mov?v17
+        type: Watch
+        time: 3m15s
+      - name: Kafka Topics, Partitions, Brokers
+        id: no-video-yet.mov?v18
+        type: Watch
+        time: 3m15s
+      - name: Producers and Consumers
+        id: no-video-yet.mov?v19
+        type: Watch
+        time: 3m15s
+      - name: Kafka Streams for Stream Processing
+        id: no-video-yet.mov?v20
+        type: Watch
+        time: 3m15s
+      - name: Kafka Connect for Data Integration
+        id: no-video-yet.mov?v21
+        type: Watch
+        time: 3m15s
+      - name: Kafka Cluster Management
+        id: no-video-yet.mov?v22
+        type: Watch
+        time: 3m15s
+      - name: Scaling Kafka
+        id: no-video-yet.mov?v23
+        type: Watch
+        time: 3m15s
+      - name: Guarantees and Consistency in Kafka
+        id: no-video-yet.mov?v24
+        type: Watch
+        time: 3m15s
+      - name: Kafka Security
+        id: no-video-yet.mov?v25
+        type: Watch
+        time: 3m15s
+      - name: Monitoring and Metrics
+        id: no-video-yet.mov?v26
+        type: Watch
+        time: 3m15s
+      - name: Integration with Java Applications
+        id: no-video-yet.mov?v27
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v4
+        type: Read
