@@ -39,7 +39,9 @@ class UpdatePasswordController {
      * POST /api/v1/account/update-password endpoint.
      */
     @PostMapping(UPDATE_PASSWORD)
-    ResponseEntity<?> updatePasswrd(@Validated @RequestBody PasswordUpdate request, HttpServletResponse response) {
+    ResponseEntity<?> updatePasswrd(
+          @Validated @RequestBody PasswordUpdate request,
+          HttpServletResponse response) {
 
         log.info("controller | Update password [request], {}",
               request);

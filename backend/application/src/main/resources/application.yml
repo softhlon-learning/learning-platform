@@ -21,7 +21,7 @@ google-client-id: 2547423840-ahppq370e0gdvvn0hb0blmk2o3hrvj9i.apps.googleusercon
 jwt:
   secret: 75a839dab1e167e6e1a6dc273247dec588cabe62f96142704a802d673ac94ab7
   expiration: 86400
-password-recovery.base-url: "https://localhost/update-password?token="
+update-password.base-url: "https://localhost/update-password?token="
 logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | acc: %X{accountId} | %msg%n"
 
 ---
@@ -32,4 +32,4 @@ spring:
 login-redirect-success-uri: https://softhlon-learning.tech/home
 login-redirect-fail-uri: https://softhlon-learning.tech/sign-in
 google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com
-password-recovery.base-url: "https://softhlon-learning.tech/update-password?token="
+update-password.base-url: "https://softhlon-learning.tech/update-password?token="

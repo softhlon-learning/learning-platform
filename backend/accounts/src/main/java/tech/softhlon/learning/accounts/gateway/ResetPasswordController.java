@@ -39,11 +39,11 @@ class ResetPasswordController {
     private final HttpServletRequest httpRequest;
 
     /**
-     * POST /api/v1/account/password-recovery endpoint.
+     * POST /api/v1/account/reset-password endpoint.
      */
     @PostMapping(RESET_PASSWORD)
-    ResponseEntity<?> recoverPassword(
-          @Validated @RequestBody RecoverPasswordRequest request,
+    ResponseEntity<?> resetPassword(
+          @Validated @RequestBody ResetPasswordRequest request,
           HttpServletResponse response) {
 
         log.info("controller | Reset password [request], email: {}",
@@ -61,7 +61,7 @@ class ResetPasswordController {
 
     }
 
-    record RecoverPasswordRequest(
+    record ResetPasswordRequest(
           String email) {}
 
 }

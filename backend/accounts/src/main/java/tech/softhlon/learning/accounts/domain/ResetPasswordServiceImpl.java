@@ -55,7 +55,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
           CreatePasswordTokenRepository createPasswordTokenRepository,
           EmailValidationService emailValidationService,
           EmailService emailService,
-          @Value("${password-recovery.base-url}") String baseUrl) {
+          @Value("${update-password.base-url}") String baseUrl) {
 
         this.loadAccountByEmailRepository = loadAccountByEmailRepository;
         this.createPasswordTokenRepository = createPasswordTokenRepository;
@@ -80,7 +80,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
                     request.email()));
 
         return switch (result) {
-            case AccountFound(Account account) -> processPasswordRecovery(account);
+            case AccountFound(Account account) -> resetPassword(account);
             case AccountIsDeleted(), AccountNotFound() -> new EmailNotFoundFailed(EMAIL_NOT_FOUND);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
@@ -104,7 +104,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
     }
 
-    private Result processPasswordRecovery(
+    private Result resetPassword(
           Account account) {
 
         var token = UUID.randomUUID().toString();
