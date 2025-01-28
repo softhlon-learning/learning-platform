@@ -53,7 +53,7 @@ export class CourseDetailsComponent implements OnInit {
                     window.location.reload()
                 })
         }
-        this.fetchCourseAndInitView()
+        this.fetchCourseAndInitView();
     }
 
     /**
@@ -69,7 +69,7 @@ export class CourseDetailsComponent implements OnInit {
                     if (course.code === id) {
                         this.course = course
                         this.courseContent = JSON.parse(atob(<string>this.course.content))
-                        this.findAndScrollToSelectedLecture(this.courseContent)
+                        setTimeout( () =>  this.findAndScrollToSelectedLecture(this.courseContent), 0);
                         break
                     }
                 }
