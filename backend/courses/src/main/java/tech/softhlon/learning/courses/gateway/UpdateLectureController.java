@@ -50,8 +50,7 @@ class UpdateLectureController {
           @Validated @RequestBody UpdateLectureRequest request) {
 
         var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, courseId: {}, body: {}",
-              printShort(accountId),
+        log.info("controller | Update lecture request, courseId: {}, {}",
               printShort(courseId),
               request);
 
@@ -84,6 +83,18 @@ class UpdateLectureController {
 
     record UpdateLectureRequest(
           String lectureId,
-          boolean processed) {}
+          boolean processed) {
+
+        @Override
+        public String toString() {
+            return """
+                  [lectureId: %s, processed: %s]"""
+                  .formatted(
+                        lectureId,
+                        processed);
+
+        }
+
+    }
 
 }
