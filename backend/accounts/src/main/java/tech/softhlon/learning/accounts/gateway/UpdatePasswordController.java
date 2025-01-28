@@ -41,7 +41,7 @@ class UpdatePasswordController {
     @PostMapping(UPDATE_PASSWORD)
     ResponseEntity<?> updatePasswrd(@Validated @RequestBody PasswordUpdate request, HttpServletResponse response) {
 
-        log.info("controller | Update password [request],{}",
+        log.info("controller | Update password [request], {}",
               request);
 
         var result = service.execute(
