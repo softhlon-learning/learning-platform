@@ -254,13 +254,8 @@ export class CourseDetailsComponent implements OnInit {
     switchLectureViewedFlag(): void {
         let lecture: Lecture | null = this.selectedLecture()
         if (lecture != null) {
-            if (lecture.processed) {
-                lecture.processed = false
-                this.selectScrollToAndPersistLecture(lecture)
-            } else {
-                lecture.processed = true
-                this.moveToNextLecture()
-            }
+            lecture.processed = !lecture.processed
+            this.selectScrollToAndPersistLecture(lecture)
         }
     }
 
