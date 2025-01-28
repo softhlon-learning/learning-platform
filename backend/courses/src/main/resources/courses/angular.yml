@@ -448,4 +448,106 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+  - name: Testing in Angular
+    lectures:
+      - name: Unit Testing Fundamentals
+        id: no-video-yet.mov?v98
+        type: Watch
+        time: 3m15s
+      - name: Jasmine and Karma Setup
+        id: no-video-yet.mov?v99
+        type: Watch
+        time: 3m15s
+      - name: Test Cases for Components
+        id: no-video-yet.mov?v100
+        type: Watch
+        time: 3m15s
+      - name: Mocking Services
+        id: no-video-yet.mov?v101
+        type: Watch
+        time: 3m15s
+      - name: Testing Services
+        id: no-video-yet.mov?v102
+        type: Watch
+        time: 3m15s
+      - name: Testing Pipes
+        id: no-video-yet.mov?v103
+        type: Watch
+        time: 3m15s
+      - name: Testing Directives
+        id: no-video-yet.mov?v104
+        type: Watch
+        time: 3m15s
+      - name: Testing Forms
+        id: no-video-yet.mov?v105
+        type: Watch
+        time: 3m15s
+      - name: Asynchronous Testing
+        id: no-video-yet.mov?v106
+        type: Watch
+        time: 3m15s
+      - name: Testing HTTP Requests
+        id: no-video-yet.mov?v107
+        type: Watch
+        time: 3m15s
+      - name: End-to-End Testing
+        id: no-video-yet.mov?v108
+        type: Watch
+        time: 3m15s
+      - name: Mock Backend for Testing
+        id: no-video-yet.mov?v109
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v9
+        type: Read
+  - name: Security in Angular
+    lectures:
+      - name: Security in Web Applications
+        id: no-video-yet.mov?v110
+        type: Watch
+        time: 3m15s
+      - name: Sanitization
+        id: no-video-yet.mov?v111
+        type: Watch
+        time: 3m15s
+      - name: CSRF Protection
+        id: no-video-yet.mov?v112
+        type: Watch
+        time: 3m15s
+      - name: CORS in Angular Applications
+        id: no-video-yet.mov?v113
+        type: Watch
+        time: 3m15s
+      - name: Authentication and Authorization
+        id: no-video-yet.mov?v114
+        type: Watch
+        time: 3m15s
+      - name: JWT in Angular
+        id: no-video-yet.mov?v115
+        type: Watch
+        time: 3m15s
+      - name: Avoiding XSS Attacks
+        id: no-video-yet.mov?v116
+        type: Watch
+        time: 3m15s
+      - name: Secure HTTP Calls
+        id: no-video-yet.mov?v117
+        type: Watch
+        time: 3m15s
+      - name: Secure Storage
+        id: no-video-yet.mov?v118
+        type: Watch
+        time: 3m15s
+      - name: Securing Routes
+        id: no-video-yet.mov?v119
+        type: Watch
+        time: 3m15s
+      - name: Angular Security Best Practices
+        id: no-video-yet.mov?v120
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v10
+        type: Read
 
