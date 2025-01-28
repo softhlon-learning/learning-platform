@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.35.2
+_release date: 2025-01-28_
+ * Upgrade to Angular 19.1
+
 ## 0.35.1
 _release date: 2025-01-28_
  * Delay/cancel/send updateLecture calls by 500ms
