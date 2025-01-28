@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.34.4
+_release date: 2025-01-28_
+ * Synced 'Mark As Viewed/NtoViewed' with 'pressed M key' behavior
+ * Removed unused console.log calls
+
 ## 0.34.3
 _release date: 2025-01-28_
  * Renamed left passwordRecovery to PasswordReset
