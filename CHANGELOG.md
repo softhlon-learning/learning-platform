@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.34.1
+_release date: 2025-01-28_
+ * Removed unused UpdateEnrollment* stuff
+ * Applied new logging to accounts module
+
 ## 0.34.0
 _release date: 2025-01-28_
  * New way of logging accountId (via MDC)
