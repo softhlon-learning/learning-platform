@@ -22,7 +22,7 @@ jwt:
   secret: 75a839dab1e167e6e1a6dc273247dec588cabe62f96142704a802d673ac94ab7
   expiration: 86400
 password-recovery.base-url: "https://localhost/update-password?token="
-logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | %msg%n"
+logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | acc: %X{accountId} | %msg%n"
 
 ---
 spring:

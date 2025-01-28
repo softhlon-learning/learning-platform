@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
@@ -25,6 +26,8 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import static tech.softhlon.learning.common.text.IdPrinter.printShort;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -33,6 +36,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 class JwtAuthenticationFilter extends OncePerRequestFilter {
+    private static final String ACCOUNT_ID = "accountId";
 
     private final JwtService jwtService;
     private final CheckTokenRepository checkTokenRepository;
@@ -70,10 +74,16 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                       .getContext()
                       .setAuthentication(authToken);
 
+                setMDC(printShort(
+                      authToken.getAccountId()));
+
+            } else {
+                setMDC("anonymous");
             }
         } catch (Throwable cause) {
 
             log.error("", cause);
+            setMDC("anonymous");
 
         }
 
@@ -108,6 +118,14 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         return false;
+
+    }
+
+    private void setMDC(
+          String accountId) {
+
+        MDC.put(ACCOUNT_ID,
+              accountId);
 
     }
 

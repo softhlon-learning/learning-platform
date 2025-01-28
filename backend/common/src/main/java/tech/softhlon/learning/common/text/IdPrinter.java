@@ -18,7 +18,7 @@ public class IdPrinter {
 
         if (id == null) return null;
 
-        return id
+        return '#' + id
               .toString()
               .substring(0, 8);
 
