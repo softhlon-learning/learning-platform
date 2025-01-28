@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.35.0
+_release date: 2025-01-28_
+ * Fixed issue with no scrolling to lecture on details page load
+
 ## 0.34.9
 _release date: 2025-01-28_
-* Update of Angular course - part 4
+ * Update of Angular course - part 4
 
 ## 0.34.8
 _release date: 2025-01-28_
