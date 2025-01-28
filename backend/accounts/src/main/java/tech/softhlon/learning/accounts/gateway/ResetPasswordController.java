@@ -46,7 +46,7 @@ class ResetPasswordController {
           @Validated @RequestBody RecoverPasswordRequest request,
           HttpServletResponse response) {
 
-        log.info("Requested, email: {}",
+        log.info("controller | Reset password [request], email: {}",
               request.email());
 
         var result = service.execute(

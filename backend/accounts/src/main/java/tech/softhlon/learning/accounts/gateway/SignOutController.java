@@ -45,7 +45,7 @@ class SignOutController {
     ResponseEntity<?> signOut(
           HttpServletResponse response) {
 
-        log.info("Requested");
+        log.info("controller | Sign out [request]");
 
         var result = service.execute(
               new Request(extractToken()));

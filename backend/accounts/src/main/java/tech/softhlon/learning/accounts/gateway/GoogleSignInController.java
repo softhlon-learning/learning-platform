@@ -66,7 +66,7 @@ class GoogleSignInController {
           @RequestParam Map<String, String> body,
           HttpServletResponse response) {
 
-        log.info("Requested");
+        log.info("controller | Google sign-in [request]");
 
         var result = service.execute(
               prepareRequest(body));

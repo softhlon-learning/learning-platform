@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import tech.softhlon.learning.courses.domain.UploadCourseService;
@@ -28,6 +29,7 @@ import java.util.UUID;
 @Component
 public class CreateCoursesOperator {
 
+    private static final String ACCOUNT_ID = "accountId";
     private final UploadCourseService uploadCourseService;
     private final CourseDefinitions courseDefinitions;
     private final ObjectMapper mapper;
@@ -50,7 +52,10 @@ public class CreateCoursesOperator {
 
     public void execute() throws IOException {
 
-        log.info("Create Courses operator started");
+        MDC.put(ACCOUNT_ID,
+              "#app-init");
+
+        log.info("operator | Create Courses operator started");
         createCourse(courseDefinitions.getApiDesignDefinition());
         createCourse(courseDefinitions.getArchitectureDefinition());
         createCourse(courseDefinitions.getDomainDrovenDesignDefinition());
@@ -59,7 +64,7 @@ public class CreateCoursesOperator {
         createCourse(courseDefinitions.getMicroservicesDefinition());
         createCourse(courseDefinitions.getSpringDefinition());
         createCourse(courseDefinitions.getFullstackDefinition());
-        log.info("Create Courses operator finished");
+        log.info("operator | Create Courses operator finished");
 
     }
 
@@ -70,7 +75,7 @@ public class CreateCoursesOperator {
     private void createCourse(
           Resource resource) throws IOException {
 
-        log.info("Creating/Updating course from definition: {}",
+        log.info("operator | Creating/Updating course from definition: {}",
               resource.getFilename());
 
         var content = resource.getContentAsByteArray();

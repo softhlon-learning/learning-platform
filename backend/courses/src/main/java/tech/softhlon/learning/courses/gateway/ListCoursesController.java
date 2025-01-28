@@ -47,7 +47,7 @@ class ListCoursesController {
     ResponseEntity<?> listCourses() {
 
         var accountId = authContext.accountId();
-        log.info("controller | List courses",
+        log.info("controller | List courses [request]",
               printShort(accountId));
 
         var result = service.execute(

@@ -50,7 +50,7 @@ class UpdateLectureController {
           @Validated @RequestBody UpdateLectureRequest request) {
 
         var accountId = authContext.accountId();
-        log.info("controller | Update lecture request, courseId: {}, {}",
+        log.info("controller | Update lecture [request], courseId: {}, {}",
               printShort(courseId),
               request);
 

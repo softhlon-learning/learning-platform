@@ -46,7 +46,7 @@ class SignInController {
           @Validated @RequestBody SignInService.Request request,
           HttpServletResponse response) {
 
-        log.info("Requested, body: {}",
+        log.info("controller | Sign in [request], {}",
               request);
 
         var result = service.execute(

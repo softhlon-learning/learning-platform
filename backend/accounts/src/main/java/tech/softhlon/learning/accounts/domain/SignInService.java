@@ -27,6 +27,15 @@ public interface SignInService {
 
     record Request(
           String email,
-          String password) {}
+          String password) {
+
+        @Override
+        public String toString() {
+            return """
+                  [email: %s, password: ************]"""
+                  .formatted(email);
+        }
+
+    }
 
 }

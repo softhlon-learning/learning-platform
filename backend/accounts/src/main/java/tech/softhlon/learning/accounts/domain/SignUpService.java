@@ -33,6 +33,17 @@ public interface SignUpService {
     record Request(
           String name,
           String email,
-          String password) {}
+          String password) {
+
+        @Override
+        public String toString() {
+            return """
+                  [email: %s, name: %s, password: ************]"""
+                  .formatted(
+                        email,
+                        name);
+        }
+
+    }
 
 }

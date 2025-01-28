@@ -41,9 +41,13 @@ class UpdatePasswordController {
     @PostMapping(UPDATE_PASSWORD)
     ResponseEntity<?> updatePasswrd(@Validated @RequestBody PasswordUpdate request, HttpServletResponse response) {
 
-        log.info("Requested, body: {}", request);
+        log.info("controller | Update password [request],{}",
+              request);
 
-        var result = service.execute(new Request(request.token(), request.password));
+        var result = service.execute(
+              new Request(
+                    request.token(),
+                    request.password));
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();
@@ -55,6 +59,17 @@ class UpdatePasswordController {
 
     }
 
-    record PasswordUpdate(String token, String password) {}
+    record PasswordUpdate(
+          String token,
+          String password) {
+
+        @Override
+        public String toString() {
+            return """
+                  [token: %s, password: ************]"""
+                  .formatted(token);
+        }
+
+    }
 
 }

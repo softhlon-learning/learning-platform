@@ -23,7 +23,6 @@ import tech.softhlon.learning.common.security.AuthenticationContext;
 
 import static tech.softhlon.learning.accounts.gateway.RestResources.ACCOUNT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -47,10 +46,9 @@ class DeleteAccountController {
     ResponseEntity<?> delete(
           HttpServletResponse response) {
 
-        var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}",
-              printShort(accountId));
+        log.info("controller | Delete account [request]");
 
+        var accountId = authContext.accountId();
         var result = deleteAccountService.execute(
               new Request(accountId));
 

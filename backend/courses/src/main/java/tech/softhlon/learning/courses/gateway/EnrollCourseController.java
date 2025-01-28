@@ -49,7 +49,7 @@ class EnrollCourseController {
           @PathVariable("courseId") UUID courseId) {
 
         var accountId = authContext.accountId();
-        log.info("controller | Enroll course request, courseId: {}",
+        log.info("controller | Enroll course [request], courseId: {}",
               printShort(courseId));
 
         return switch (service.execute(prepareRequest(courseId))) {

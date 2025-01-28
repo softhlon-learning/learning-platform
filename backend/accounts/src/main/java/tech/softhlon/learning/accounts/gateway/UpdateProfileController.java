@@ -24,7 +24,6 @@ import tech.softhlon.learning.common.security.AuthenticationContext;
 
 import static tech.softhlon.learning.accounts.gateway.RestResources.PROFILE;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -44,15 +43,14 @@ class UpdateProfileController {
      * PUT /api/v1/account/profile endpoint.
      */
     @PutMapping(PROFILE)
-    ResponseEntity<?> signIn(
+    ResponseEntity<?> updateProfile(
           @Validated @RequestBody Profile request,
           HttpServletResponse response) {
 
-        var accountId = authContext.accountId();
-        log.info("Requested, accountId: {}, body: {}",
-              printShort(accountId),
+        log.info("controller | Update prodile [request], {}",
               request);
 
+        var accountId = authContext.accountId();
         var result = service.execute(
               new Request(
                     accountId,
@@ -66,6 +64,15 @@ class UpdateProfileController {
 
     }
 
-    record Profile(String name) {}
+    record Profile(String name) {
+
+        @Override
+        public String toString() {
+            return """
+                  [name: %s"""
+                  .formatted(name);
+        }
+
+    }
 
 }
