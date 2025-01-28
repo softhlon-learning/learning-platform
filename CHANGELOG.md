@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.35.4
+_release date: 2025-01-28_
+ * Caching javascripts on nginx
+
 ## 0.35.3
 _release date: 2025-01-28_
  * Added yarn.lock
