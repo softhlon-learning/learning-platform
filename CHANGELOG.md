@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.34.5
+_release date: 2025-01-28_
+ * Switch from fullstack to angular course
+
 ## 0.34.4
 _release date: 2025-01-28_
  * Synced 'Mark As Viewed/NtoViewed' with 'pressed M key' behavior
