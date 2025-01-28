@@ -10,7 +10,16 @@
     <artifactId>subscriptions</artifactId>
     <name>Learning Platform :: Subscriptions</name>
 
+    <properties>
+        <stripe-version>28.3.0</stripe-version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>${stripe-version}</version>
+        </dependency>
         <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>common</artifactId>
