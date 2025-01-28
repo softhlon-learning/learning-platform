@@ -550,4 +550,101 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v10
         type: Read
-
+  - name: Internationalization (i18n)
+    lectures:
+      - name: Basics of i18n in Angular
+        id: no-video-yet.mov?v121
+        type: Watch
+        time: 3m15s
+      - name: Setting Up i18n
+        id: no-video-yet.mov?v122
+        type: Watch
+        time: 3m15s
+      - name: Translation Files and Tools
+        id: no-video-yet.mov?v123
+        type: Watch
+        time: 3m15s
+      - name: Pluralization
+        id: no-video-yet.mov?v124
+        type: Watch
+        time: 3m15s
+      - name: Number Formatting
+        id: no-video-yet.mov?v125
+        type: Watch
+        time: 3m15s
+      - name: Date and Time Localization
+        id: no-video-yet.mov?v125
+        type: Watch
+        time: 3m15s
+      - name: RTL Support
+        id: no-video-yet.mov?v126
+        type: Watch
+        time: 3m15s
+      - name: Dynamic Language Switching
+        id: no-video-yet.mov?v127
+        type: Watch
+        time: 3m15s
+      - name: Custom Pipes for Localization
+        id: no-video-yet.mov?v128
+        type: Watch
+        time: 3m15s
+      - name: AOT Compilation with i18n
+        id: no-video-yet.mov?v129
+        type: Watch
+        time: 3m15s
+      - name: i18n Best Practices
+        id: no-video-yet.mov?v130
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v11
+        type: Read
+  - name: Capstone Project
+    lectures:
+      - name: Project Proposal and Planning
+        id: no-video-yet.mov?v131
+        type: Watch
+        time: 3m15s
+      - name: Architecture Design
+        id: no-video-yet.mov?v132
+        type: Watch
+        time: 3m15s
+      - name: Implementing Core Features
+        id: no-video-yet.mov?v133
+        type: Watch
+        time: 3m15s
+      - name: State Management Setup
+        id: no-video-yet.mov?v134
+        type: Watch
+        time: 3m15s
+      - name: Routing and Navigation Setup
+        id: no-video-yet.mov?v135
+        type: Watch
+        time: 3m15s
+      - name: Forms and Validation
+        id: no-video-yet.mov?v136
+        type: Watch
+        time: 3m15s
+      - name: Backend Integration
+        id: no-video-yet.mov?v137
+        type: Watch
+        time: 3m15s
+      - name: Authentication and Security
+        id: no-video-yet.mov?v138
+        type: Watch
+        time: 3m15s
+      - name: Internationalization
+        id: no-video-yet.mov?v139
+        type: Watch
+        time: 3m15s
+      - name: Presentation and Review
+        id: no-video-yet.mov?v140
+        type: Watch
+        time: 3m15s
+      - name: Presentation and Review
+        id: no-video-yet.mov?v140
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v12
+        type: Read
