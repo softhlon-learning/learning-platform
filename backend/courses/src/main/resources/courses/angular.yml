@@ -1,8 +1,8 @@
 id: e5dece9a-b350-4c44-afea-7248ac8a69f3
 code: fullstack-development
 orderNo: 8
-name: Fullstack Development
-description: Join our Fullstack Development course to gain expertise in both front-end and back-end programming.
+name: Angular
+description: Join our Angular course to gain expertise in front-end programming.
 version: 1.0.0
 chapters:
   - name: Introduction
@@ -24,7 +24,7 @@ chapters:
         processed: false
   - name: Getting Started
     lectures:
-      - name: Introduction to Fullstack Development
+      - name: Introduction to Angular
         id: no-video-yet.mov?v4
         type: Watch
         time: 3m15s

@@ -63,7 +63,7 @@ public class CreateCoursesOperator {
         createCourse(courseDefinitions.getMessagingDefinition());
         createCourse(courseDefinitions.getMicroservicesDefinition());
         createCourse(courseDefinitions.getSpringDefinition());
-        createCourse(courseDefinitions.getFullstackDefinition());
+        createCourse(courseDefinitions.getAngularDefinition());
         log.info("operator | Create Courses operator finished");
 
     }
