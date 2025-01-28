@@ -12,10 +12,13 @@ import {CookieService} from "ngx-cookie-service"
 import {Lecture} from "../model/lecture"
 import {KeyboardInputCourseDetails} from "./keyboard-input"
 import {CoursesService} from '../service/courses/courses.service'
+import {Observable} from "rxjs";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
+
+const UPDATE_LECTURE_DELAY = 500;
 
 @Component({
     selector: 'course-details',
@@ -27,6 +30,8 @@ export class CourseDetailsComponent implements OnInit {
     courseContent?: CourseContent
     navigation = new CourseNavigation()
     currentLecture?: Lecture
+    updateLectureCall?: Observable<ArrayBuffer>
+    updateLectureTimeout?: ReturnType<typeof setTimeout>
 
     constructor(
         private keyboardInputDetails: KeyboardInputCourseDetails,
@@ -69,7 +74,7 @@ export class CourseDetailsComponent implements OnInit {
                     if (course.code === id) {
                         this.course = course
                         this.courseContent = JSON.parse(atob(<string>this.course.content))
-                        setTimeout( () =>  this.findAndScrollToSelectedLecture(this.courseContent), 0);
+                        setTimeout(() => this.findAndScrollToSelectedLecture(this.courseContent), 0);
                         break
                     }
                 }
@@ -280,12 +285,34 @@ export class CourseDetailsComponent implements OnInit {
      */
     private persisteLectureState(lecture?: Lecture): void {
         this.course.content = btoa(JSON.stringify(this.courseContent))
-        this.coursesService
+
+        this.prepareLectureCall(lecture)
+        this.updateLectureTimeout = setTimeout(() => {
+            if (this.updateLectureCall != null) {
+                this.updateLectureCall.subscribe(
+                    () => {
+                        this.coursesService.updateCache(this.course)
+                        this.updateLectureCall = undefined
+                    })
+            }
+        }, UPDATE_LECTURE_DELAY)
+    }
+
+    /**
+     * Prepare lecture call Observable
+     * @param lecture Lecture to operate on
+     * @private
+     */
+    private prepareLectureCall(lecture?: Lecture): void {
+        if (this.updateLectureTimeout != undefined) {
+            clearTimeout(this.updateLectureTimeout)
+        }
+
+        this.updateLectureCall = this.coursesService
             .updateLecture(
                 this.course.id || '',
                 lecture?.id || '',
                 lecture?.processed || false)
-            .subscribe(() => this.coursesService.updateCache(this.course))
     }
 
     /**
