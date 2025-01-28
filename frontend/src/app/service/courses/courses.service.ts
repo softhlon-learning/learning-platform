@@ -41,7 +41,6 @@ export class CoursesService {
                 .pipe()
         } else {
             // @ts-ignore
-            console.log(this.courses)
             return of(this.courses)
         }
     }

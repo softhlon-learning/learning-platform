@@ -46,7 +46,6 @@ export class SignInComponent implements OnInit {
         button?.setAttribute("data-login_uri", environment.loginUri)
 
         this.route.queryParamMap.subscribe(item => {
-                console.log(item.get("error"))
                 if (item.has("error")) {
                     this.error = item.get("error")?.toString()
                 }
@@ -59,7 +58,6 @@ export class SignInComponent implements OnInit {
      */
     onSubmit(): void {
         if (this.signInForm.invalid) {
-            console.log('Form is invalid')
             this.error = 'Please provide valid email and password'
             return
         }

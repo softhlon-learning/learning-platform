@@ -279,7 +279,6 @@ export class CourseDetailsComponent implements OnInit {
      * @private
      */
     private persisteLectureState(lecture?: Lecture): void {
-        console.log(this.courseContent)
         this.course.content = btoa(JSON.stringify(this.courseContent))
         this.coursesService
             .updateLecture(
