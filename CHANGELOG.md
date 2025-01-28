@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.34.0
+_release date: 2025-01-28_
+ * New way of logging accountId (via MDC)
+ * Applied new logging style in courses module controllers
+
 ## 0.33.9
 _release date: 2025-01-28_
  * Set default button color to --steel
