@@ -25,6 +25,8 @@ update-password.base-url: "https://localhost/update-password?token="
 logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | acc: %X{accountId} | %msg%n"
 
 ---
+server:
+  address: ::1
 spring:
   config:
     activate:
