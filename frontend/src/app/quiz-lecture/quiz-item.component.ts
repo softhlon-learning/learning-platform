@@ -15,7 +15,8 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 @Component({
     selector: 'quiz-lecture',
     templateUrl: './quiz-item.component.html',
-    styleUrls: ['./quiz-item.component.css']
+    styleUrls: ['./quiz-item.component.css'],
+    standalone: false
 })
 export class QuizItemComponent implements OnInit {
     @Input()

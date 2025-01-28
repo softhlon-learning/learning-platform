@@ -16,7 +16,8 @@ import {CoursesService} from '../service/courses/courses.service'
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
     title = 'Java/Fullstack Developer Academy'

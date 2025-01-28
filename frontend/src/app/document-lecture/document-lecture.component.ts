@@ -14,7 +14,8 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 @Component({
     selector: 'document-lecture',
     templateUrl: './document-lecture.component.html',
-    styleUrls: ['./document-lecture.component.css']
+    styleUrls: ['./document-lecture.component.css'],
+    standalone: false
 })
 export class DocumentLectureComponent implements OnInit {
     @Input()

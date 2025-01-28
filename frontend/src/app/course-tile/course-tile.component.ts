@@ -13,7 +13,8 @@ import {Course} from "../home/course";
 @Component({
     selector: 'course-tile',
     templateUrl: './course-tile.component.html',
-    styleUrls: ['./course-tile.component.css']
+    styleUrls: ['./course-tile.component.css'],
+    standalone: false
 })
 export class CourseTileComponent implements OnInit {
     @Input()

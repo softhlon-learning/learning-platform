@@ -18,7 +18,8 @@ import {CoursesService} from "../service/courses/courses.service";
 @Component({
     selector: 'course-toc',
     templateUrl: './course-toc.component.html',
-    styleUrls: ['./course-toc.component.css']
+    styleUrls: ['./course-toc.component.css'],
+    standalone: false
 })
 export class CourseTocComponent implements OnInit {
     course?: Course

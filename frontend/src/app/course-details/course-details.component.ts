@@ -23,7 +23,8 @@ const UPDATE_LECTURE_DELAY = 500;
 @Component({
     selector: 'course-details',
     templateUrl: './course-details.component.html',
-    styleUrls: ['./course-details.component.css']
+    styleUrls: ['./course-details.component.css'],
+    standalone: false
 })
 export class CourseDetailsComponent implements OnInit {
     course: Course = {}

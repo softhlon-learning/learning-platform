@@ -18,7 +18,8 @@ const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
 @Component({
     selector: 'sign-up',
     templateUrl: './reset-password.component.html',
-    styleUrls: ['./reset-password.component.css']
+    styleUrls: ['./reset-password.component.css'],
+    standalone: false
 })
 export class ResetPasswordComponent implements OnInit {
     success: boolean = false

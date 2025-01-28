@@ -14,7 +14,8 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 @Component({
     selector: 'video-lecture',
     templateUrl: './video-lecture.component.html',
-    styleUrls: ['./video-lecture.component.css']
+    styleUrls: ['./video-lecture.component.css'],
+    standalone: false
 })
 export class VideoLectureComponent implements OnInit {
     @ViewChild('video') video?: ElementRef

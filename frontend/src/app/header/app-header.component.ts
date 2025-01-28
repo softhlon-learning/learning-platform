@@ -17,7 +17,8 @@ import {AccountsService} from '../service/accounts/accounts.service'
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.component.html',
-    styleUrls: ['./app-header.component.css']
+    styleUrls: ['./app-header.component.css'],
+    standalone: false
 })
 export class AppHeaderComponent implements OnInit {
     protected readonly version = version.version

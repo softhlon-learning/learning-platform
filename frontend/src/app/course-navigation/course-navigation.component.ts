@@ -14,7 +14,8 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 @Component({
     selector: 'course-navigation',
     templateUrl: './course-navigation.component.html',
-    styleUrls: ['./course-navigation.component.css']
+    styleUrls: ['./course-navigation.component.css'],
+    standalone: false
 })
 export class CourseNavigationComponent implements OnInit {
     @Input()
