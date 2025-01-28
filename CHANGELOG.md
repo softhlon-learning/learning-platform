@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.34.2
+_release date: 2025-01-28_
+ * Fixed incorrect reset account url path
+ * Fixed support for delete account
+
 ## 0.34.1
 _release date: 2025-01-28_
  * Removed unused UpdateEnrollment* stuff
