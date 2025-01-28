@@ -47,7 +47,7 @@ class UpdateProfileController {
           @Validated @RequestBody Profile request,
           HttpServletResponse response) {
 
-        log.info("controller | Update prodile [request], {}",
+        log.info("controller | Update profile [request], {}",
               request);
 
         var accountId = authContext.accountId();
@@ -69,7 +69,7 @@ class UpdateProfileController {
         @Override
         public String toString() {
             return """
-                  [name: %s"""
+                  [name: %s]"""
                   .formatted(name);
         }
 
