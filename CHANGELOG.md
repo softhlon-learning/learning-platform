@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.35.5
+_release date: 2025-01-28_
+ * Update security config on backend
+ * Secured /profile page
+
 ## 0.35.4
 _release date: 2025-01-28_
  * Caching javascripts on nginx
