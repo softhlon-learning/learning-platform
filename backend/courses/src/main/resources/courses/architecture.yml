@@ -57,7 +57,7 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v2
         type: Read
-  - name:  Architectural Styles and Patterns
+  - name: Architectural Styles and Patterns
     lectures:
       - name: Layered Architecture
         id: no-video-yet.mov?v8
