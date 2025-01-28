@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.35.6
+_release date: 2025-01-28_
+ * Added ngx-stripe
+ * Import Stripe module and provider
+ * Created String account
+
 ## 0.35.5
 _release date: 2025-01-28_
  * Update security config on backend
