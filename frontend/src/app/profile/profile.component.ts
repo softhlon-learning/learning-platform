@@ -8,6 +8,8 @@ import {environment} from "../../environment/environment"
 import {FormBuilder} from "@angular/forms"
 import {AccountsService} from '../service/accounts/accounts.service'
 import {Profile} from '../service/accounts/accounts.model'
+import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -33,6 +35,8 @@ export class ProfileComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
+        private cookieService: CookieService,
+        private router: Router,
         private accountsService: AccountsService) {
     }
 
@@ -41,6 +45,12 @@ export class ProfileComponent implements OnInit {
      */
     ngOnInit() {
         this.error = undefined
+        if (this.cookieService.get('Authenticated') !== 'true') {
+            this.router.navigate(['/sign-in'])
+                .then(() => {
+                    window.location.reload()
+                })
+        }
         this.fetchProfile()
     }
 
