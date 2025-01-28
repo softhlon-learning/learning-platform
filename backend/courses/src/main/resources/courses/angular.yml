@@ -249,3 +249,203 @@ chapters:
       - name: Wrap Up
         id: no-document-yet.html?v5
         type: Read
+  - name: Routing and Navigation
+    lectures:
+      - name: Introduction to Routing
+        id: no-video-yet.mov?v52
+        type: Watch
+        time: 3m15s
+      - name: Configuring Routes
+        id: no-video-yet.mov?v53
+        type: Watch
+        time: 3m15s
+      - name: Router Outlet
+        id: no-video-yet.mov?v54
+        type: Watch
+        time: 3m15s
+      - name: Route Parameters
+        id: no-video-yet.mov?v55
+        type: Watch
+        time: 3m15s
+      - name: Query Parameters
+        id: no-video-yet.mov?v56
+        type: Watch
+        time: 3m15s
+      - name: Route Guards
+        id: no-video-yet.mov?v57
+        type: Watch
+        time: 3m15s
+      - name: Lazy Loading
+        id: no-video-yet.mov?v58
+        type: Watch
+        time: 3m15s
+      - name: Preloading Strategies
+        id: no-video-yet.mov?v59
+        type: Watch
+        time: 3m15s
+      - name: Navigation by Code
+        id: no-video-yet.mov?v61
+        type: Watch
+        time: 3m15s
+      - name: Child Routes
+        id: no-video-yet.mov?v62
+        type: Watch
+        time: 3m15s
+      - name: Route Resolvers
+        id: no-video-yet.mov?v63
+        type: Watch
+        time: 3m15s
+      - name: Route Data
+        id: no-video-yet.mov?v64
+        type: Watch
+        time: 3m15s
+      - name: Router Events
+        id: no-video-yet.mov?v65
+        type: Watch
+        time: 3m15s
+      - name: URL Matching Strategies
+        id: no-video-yet.mov?v66
+        type: Watch
+        time: 3m15s
+      - name: Navigation Extras
+        id: no-video-yet.mov?v67
+        type: Watch
+        time: 3m15s
+      - name: Router State
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Router Module Configuration
+        id: no-video-yet.mov?v68
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v6
+        type: Read
+  - name: Forms in Angular
+    lectures:
+      - name: Template-Driven Forms
+        id: no-video-yet.mov?v69
+        type: Watch
+        time: 3m15s
+      - name: Reactive Forms
+        id: no-video-yet.mov?v70
+        type: Watch
+        time: 3m15s
+      - name: Form Controls, Groups, and Arrays
+        id: no-video-yet.mov?v71
+        type: Watch
+        time: 3m15s
+      - name: Validation - Built-in Validators
+        id: no-video-yet.mov?v72
+        type: Watch
+        time: 3m15s
+      - name: Custom Validators
+        id: no-video-yet.mov?v73
+        type: Watch
+        time: 3m15s
+      - name: Asynchronous Validation
+        id: no-video-yet.mov?v74
+        type: Watch
+        time: 3m15s
+      - name: Form State and Status Changes
+        id: no-video-yet.mov?v75
+        type: Watch
+        time: 3m15s
+      - name: Dynamic Forms
+        id: no-video-yet.mov?v76
+        type: Watch
+        time: 3m15s
+      - name: Form Submission
+        id: no-video-yet.mov?v77
+        type: Watch
+        time: 3m15s
+      - name: Handling Form Data
+        id: no-video-yet.mov?v78
+        type: Watch
+        time: 3m15s
+      - name: Resetting Forms
+        id: no-video-yet.mov?v79
+        type: Watch
+        time: 3m15s
+      - name: Cross-Field Validation
+        id: no-video-yet.mov?v80
+        type: Watch
+        time: 3m15s
+      - name: Form Arrays for Multiple Fields
+        id: no-video-yet.mov?v81
+        type: Watch
+        time: 3m15s
+      - name: Form State with Observables
+        id: no-video-yet.mov?v82
+        type: Watch
+        time: 3m15s
+      - name: Form Best Practices
+        id: no-video-yet.mov?v83
+        type: Watch
+        time: 3m15s
+      - name: Testing Forms
+        id: no-video-yet.mov?v84
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v7
+        type: Read
+  - name: HTTP Client and Observables
+    lectures:
+      - name: HttpClient Module Setup
+        id: no-video-yet.mov?v85
+        type: Watch
+        time: 3m15s
+      - name: Making GET Requests
+        id: no-video-yet.mov?v86
+        type: Watch
+        time: 3m15s
+      - name: POST, PUT, PATCH, DELETE Requests
+        id: no-video-yet.mov?v87
+        type: Watch
+        time: 3m15s
+      - name: Headers and Interceptors
+        id: no-video-yet.mov?v88
+        type: Watch
+        time: 3m15s
+      - name: Observable Basics
+        id: no-video-yet.mov?v89
+        type: Watch
+        time: 3m15s
+      - name: Subscribing to Observables
+        id: no-video-yet.mov?v90
+        type: Watch
+        time: 3m15s
+      - name: Operators - map, filter, catchError
+        id: no-video-yet.mov?v91
+        type: Watch
+        time: 3m15s
+      - name: Handling Asynchronous Data
+        id: no-video-yet.mov?v92
+        type: Watch
+        time: 3m15s
+      - name: RxJS Subjects
+        id: no-video-yet.mov?v93
+        type: Watch
+        time: 3m15s
+      - name: Combining Observables
+        id: no-video-yet.mov?v94
+        type: Watch
+        time: 3m15s
+      - name: Handling Progress Events
+        id: no-video-yet.mov?v95
+        type: Watch
+        time: 3m15s
+      - name: Caching Responses
+        id: no-video-yet.mov?v96
+        type: Watch
+        time: 3m15s
+      - name: Mocking HTTP for Testing
+        id: no-video-yet.mov?v97
+        type: Watch
+        time: 3m15s
+      - name: Wrap Up
+        id: no-document-yet.html?v8
+        type: Read
+
