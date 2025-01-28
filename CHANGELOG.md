@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.34.3
+_release date: 2025-01-28_
+ * Renamed left passwordRecovery to PasswordReset
+ * Fixed switchLectureViewedFlag logic (no move the next lecture)
+
 ## 0.34.2
 _release date: 2025-01-28_
  * Fixed incorrect reset account url path
@@ -14,7 +19,7 @@ _release date: 2025-01-28_
 _release date: 2025-01-28_
  * New way of logging accountId (via MDC)
  * Applied new logging style in courses module controllers
-
+q
 ## 0.33.9
 _release date: 2025-01-28_
  * Set default button color to --steel
