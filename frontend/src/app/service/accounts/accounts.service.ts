@@ -24,7 +24,7 @@ const SIGN_UP_PATH = '/api/v1/account/sign-up'
 const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out'
 const DELETE_ACCOUNT_PATH = '/api/v1/account'
 const PROFILE_PATH = '/api/v1/account/profile'
-const RESET_ACCOUNT_PATH = '/api/v1/account/reset-account'
+const RESET_ACCOUNT_PATH = '/api/v1/account/reset-password'
 const UPDATE_PASSWORD_ACCOUNT_PATH = '/api/v1/account/update-password'
 
 const HTTP_OPTIONS = {
