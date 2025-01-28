@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.35.3
+_release date: 2025-01-28_
+ * Added yarn.lock
+ * Added missing frontend dependencies
+
 ## 0.35.2
 _release date: 2025-01-28_
  * Upgrade to Angular 19.1
