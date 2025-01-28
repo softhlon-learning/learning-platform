@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.34.9
+_release date: 2025-01-28_
+* Update of Angular course - part 4
+
 ## 0.34.8
 _release date: 2025-01-28_
  * Update of Angular course - part 3
