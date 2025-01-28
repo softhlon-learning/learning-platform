@@ -241,10 +241,6 @@ export class CourseDetailsComponent implements OnInit {
         if (lecture != null) {
             lecture.processed = viewed
         }
-        if (viewed) {
-            this.moveToNextLecture()
-        }
-
         this.persisteLectureState(lecture as Lecture)
     }
 
@@ -255,7 +251,7 @@ export class CourseDetailsComponent implements OnInit {
         let lecture: Lecture | null = this.selectedLecture()
         if (lecture != null) {
             lecture.processed = !lecture.processed
-            this.selectScrollToAndPersistLecture(lecture)
+            this.selectAndPersistLecture(lecture)
         }
     }
 
