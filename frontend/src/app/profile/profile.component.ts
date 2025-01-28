@@ -23,6 +23,7 @@ const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
 export class ProfileComponent implements OnInit {
     error: string | undefined
     success: string | undefined
+    accountDeleted: boolean = false
     profile?: Profile
     profileForm = this.formBuilder.group({
         name: ''
@@ -53,7 +54,7 @@ export class ProfileComponent implements OnInit {
         const {name = ''} = this.profileForm.value
 
         this.accountsService.updateProfile(name || '').subscribe({
-            next: () => this.handleSuccess(),
+            next: () => this.handleSaveProfileSuccess(),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         })
     }
@@ -63,7 +64,7 @@ export class ProfileComponent implements OnInit {
      */
     deleteAccount(): void {
         this.accountsService.deleteAccount().subscribe({
-            next: () => this.handleSuccess(),
+            next: () => this.handleDeleteAccountSuccess(),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         })
     }
@@ -81,12 +82,22 @@ export class ProfileComponent implements OnInit {
     }
 
     /**
-     * Success response handler
+     * Success response handler (for update profile).
      * @private
      */
-    private handleSuccess() {
+    private handleSaveProfileSuccess() {
         this.error = undefined
+        this.accountDeleted = true
         this.success = 'Profile successfully saved'
+    }
+
+    /**
+     * Success response handler (for delete account).
+     * @private
+     */
+    private handleDeleteAccountSuccess() {
+        this.error = undefined
+        this.success = 'Account has been deleted'
     }
 
     /**
