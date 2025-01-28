@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.35.1
+_release date: 2025-01-28_
+ * Delay/cancel/send updateLecture calls by 500ms
+
 ## 0.35.0
 _release date: 2025-01-28_
  * Fixed issue with no scrolling to lecture on details page load
