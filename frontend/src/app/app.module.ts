@@ -28,6 +28,7 @@ import {KeyboardInputCourseDetails} from "./course-details/keyboard-input"
 import {UpdatePasswordComponent} from "./update-password/update-password.component"
 import {AccountsService} from "./service/accounts/accounts.service"
 import {CoursesService} from "./service/courses/courses.service"
+import {NgxStripeModule, provideNgxStripe} from 'ngx-stripe'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -55,14 +56,16 @@ import {CoursesService} from "./service/courses/courses.service"
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxStripeModule.forRoot()
     ],
     providers: [
         AccountsService,
         CoursesService,
         KeyboardInputCourseToc,
         KeyboardInputCourseDetails,
-        provideHttpClient()
+        provideHttpClient(),
+        provideNgxStripe()
     ],
     bootstrap: [AppComponent]
 })
