@@ -46,7 +46,7 @@ class CreateCheckoutSessionController {
           @Validated @RequestBody CreateCheckoutRequest request,
           HttpServletResponse response) {
 
-        log.info("controller | Redirect to Stripe customer portal [request]");
+        log.info("controller | Create Stripe chckout session [request]");
 
         var accountId = authContext.accountId();
         var result = service.execute(
