@@ -49,9 +49,11 @@ class CreateCheckoutSessionController {
         log.info("controller | Create Stripe checkout session [request]");
 
         var accountId = authContext.accountId();
+        var email = authContext.email();
         var result = service.execute(
               new Request(
                     accountId,
+                    email,
                     request.priceId()));
 
         return switch (result) {

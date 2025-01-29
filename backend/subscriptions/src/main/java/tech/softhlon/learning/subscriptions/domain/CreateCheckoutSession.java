@@ -27,6 +27,7 @@ public interface CreateCheckoutSession {
 
     record Request(
           UUID acccountId,
+          String email,
           String priceId) {}
 
 }
