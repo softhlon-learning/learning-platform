@@ -27,6 +27,7 @@ import java.util.UUID;
 class CheckoutSessionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private UUID accountId;
     private String sessionId;
     private OffsetDateTime expiredTime;
