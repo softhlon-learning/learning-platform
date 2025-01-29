@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -13,6 +14,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
+
+    private final String webhookSecret;
+
+    public StoreCheckoutResultServiceImpl(
+          @Value("${stripe.checkout-result.webhook.secret}")
+          String webhookSecret) {
+
+        this.webhookSecret = webhookSecret;
+    }
 
     @Override
     public Result execute(Request request) {

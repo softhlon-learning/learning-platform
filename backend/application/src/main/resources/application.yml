@@ -25,7 +25,7 @@ update-password.base-url: "http://localhost/update-password?token="
 logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | acc: %X{accountId} | %msg%n"
 service.base-url: "http://localhost"
 stripe.api-key: "sk_test_51QmNzsIdZlPlV5wEyJEDGjierQfxyKkJVsuhjbvMMtxnjex89QWnOiRIkV8nwccigHjmX6Fqh0VCTSFnO0TwZJW500de6la5pX"
-
+stripe.checkout-result.webhook.secret: "whsec_Nyb8rWd6bwKHWMspS0AMwBuJRizTzBDN"
 ---
 spring:
   config:
@@ -36,4 +36,4 @@ login-redirect-fail-uri: https://softhlon-learning.tech/sign-in
 google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com
 update-password.base-url: "https://softhlon-learning.tech/update-password?token="
 service.base-url: "https://softhlon-learning.tech"
-stripe.api-key: "sk_test_51QmNzsIdZlPlV5wEyJEDGjierQfxyKkJVsuhjbvMMtxnjex89QWnOiRIkV8nwccigHjmX6Fqh0VCTSFnO0TwZJW500de6la5pX"
+
