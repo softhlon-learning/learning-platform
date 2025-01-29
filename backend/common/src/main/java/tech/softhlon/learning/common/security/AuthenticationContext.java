@@ -45,4 +45,21 @@ public class AuthenticationContext {
 
     }
 
+    public String email() {
+
+        var authentication = SecurityContextHolder
+              .getContext()
+              .getAuthentication();
+
+        if (authentication instanceof AuthenticationToken) {
+            var authToken = (AuthenticationToken) SecurityContextHolder
+                  .getContext()
+                  .getAuthentication();
+            return authToken.getName();
+        } else {
+            return null;
+        }
+
+    }
+
 }
