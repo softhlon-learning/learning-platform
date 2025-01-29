@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.37.9
+_release date: 2025-01-29_
+ * Cleanup on /subscribe
+ * Added subscriptions service and model
+
 ## 0.36.9
 _release date: 2025-01-29_
  * Extracted literals to constants (SignUpServiceImpl)
