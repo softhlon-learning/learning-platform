@@ -32,7 +32,10 @@ class RedirectToStripePortalController {
 
     @GetMapping(CUSTOMER_PORTAL)
     ResponseEntity<?> redirectToStripePortal() {
+
+        log.info("controller | Redirect to Stripe customer portal [request]");
         return null;
+
     }
 
 }
