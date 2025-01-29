@@ -7,6 +7,8 @@ package tech.softhlon.learning.subscriptions.domain;
 
 import tech.softhlon.learning.common.hexagonal.InboundPort;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -24,6 +26,7 @@ public interface CreateCheckoutSession {
     }
 
     record Request(
+          UUID acccountId,
           String priceId) {}
 
 }

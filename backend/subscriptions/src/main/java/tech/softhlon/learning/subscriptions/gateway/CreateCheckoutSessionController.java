@@ -46,8 +46,12 @@ class CreateCheckoutSessionController {
           HttpServletResponse response) {
 
         log.info("controller | Redirect to Stripe customer portal [request]");
+
+        var accountId = authContext.accountId();
         var result = service.execute(
-              new Request(request.priceId()));
+              new Request(
+                    accountId,
+                    request.priceId()));
 
         return switch (result) {
             case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);

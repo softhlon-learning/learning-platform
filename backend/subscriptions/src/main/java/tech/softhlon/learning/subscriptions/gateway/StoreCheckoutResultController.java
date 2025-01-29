@@ -25,7 +25,7 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class CreateCheckoutResultController {
+class StoreCheckoutResultController {
 
     private final HttpServletRequest httpRequest;
 

@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Succeeded;
 
-import java.util.UUID;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -38,9 +36,8 @@ class CreateCheckoutSessionImpl implements CreateCheckoutSession {
           Request request) {
 
         try {
-            var sessionId = UUID.randomUUID().toString();
             SessionCreateParams params = new SessionCreateParams.Builder()
-                  .setSuccessUrl(serviceBaseUrl + "/payment/succeedd?session_id=" + sessionId)
+                  .setSuccessUrl(serviceBaseUrl + "/payment/succeedd?session_id={CHECKOUT_SESSION_ID}")
                   .setCancelUrl(serviceBaseUrl + "/canceled")
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
