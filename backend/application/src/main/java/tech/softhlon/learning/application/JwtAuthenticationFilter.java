@@ -62,7 +62,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                       token);
 
                 var authToken = new AuthenticationToken(
-                      (String) claims.get("name"),
+                      (String) claims.get("sub"),
                       (String) claims.get("accountId"),
                       List.of());
 
