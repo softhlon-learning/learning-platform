@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.37.6
+_release date: 2025-01-29_
+ * Limit number for subscription to one customer to 1
+ * Set customer email in checkout session
+ * Fixed reading email from JWT token
+
 ## 0.37.5
 _release date: 2025-01-29_
  * Improved subscribe user experience
