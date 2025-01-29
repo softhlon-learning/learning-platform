@@ -39,7 +39,7 @@ class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
 
             switch (event.getType()) {
                 case "checkout.session.completed":
-                    log.info("Payment succeeded!");
+                    log.info("service | Payment succeeded");
             }
 
             return new Succeeded();
