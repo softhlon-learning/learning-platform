@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.37.9
+_release date: 2025-01-30_
+ * Improved checkout session namings
+ * Added missing id attribute in CheckoutSessionEntity
+
 ## 0.37.8
 _release date: 2025-01-30_
  * Added PersistCheckoutSessionRepository and its empty adapter
