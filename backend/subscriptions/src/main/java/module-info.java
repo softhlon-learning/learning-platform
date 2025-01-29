@@ -9,4 +9,6 @@ module subscriptions {
     requires spring.data.commons;
     requires spring.boot.autoconfigure;
     requires spring.data.jpa;
+    requires spring.beans;
+    requires stripe.java;
 }

@@ -19,7 +19,7 @@ public interface RedirectToStripePortalService {
           Request request);
 
     sealed interface Result {
-        record Succeeded() implements Result {}
+        record Succeeded(String url) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
