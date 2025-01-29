@@ -1,6 +1,6 @@
 <div class="main">
     <div class="container">
-        <div style="top">
+        <div>
             <div class="title">
                 Subscribe
             </div>
@@ -10,13 +10,11 @@
                 </span>
             </div>
         </div>
-        <form (ngSubmit)="onSubmit()" *ngIf="!this.success" [formGroup]="resetPasswordForm">
-            <div class="form">
-                <button class="cancel" routerLink="/home">Continue</button>
-                <button class="cancel" routerLink="/home">Close</button>
-                <div class="error">{{ error }}</div>
-            </div>
-        </form>
+        <div class="form">
+            <button class="cancel" routerLink="/home">Continue</button>
+            <button class="cancel" routerLink="/home">Close</button>
+            <div class="error">{{ error }}</div>
+        </div>
         <div *ngIf="this.success">
             <div class="form">
                 <div class="success">
