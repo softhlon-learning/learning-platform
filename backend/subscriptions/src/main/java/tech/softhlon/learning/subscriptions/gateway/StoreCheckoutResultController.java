@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService;
+import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Request;
 
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_RESULT;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -27,6 +30,7 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RequiredArgsConstructor
 class StoreCheckoutResultController {
 
+    private final StoreCheckoutResultService service;
     private final HttpServletRequest httpRequest;
 
     @PostMapping(CHECKOUT_RESULT)
@@ -35,7 +39,14 @@ class StoreCheckoutResultController {
 
         log.info("controller | Create Stripe checkout result [request], {}",
               payload);
-        return null;
+
+        var result = service.execute(
+              new Request(
+                    httpRequest.getHeader("Stripe-Signature"),
+                    payload
+              ));
+
+        return successCreatedBody();
 
     }
 
