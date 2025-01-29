@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.softhlon.learning.application;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
