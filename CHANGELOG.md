@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.36.7
+_release date: 2025-01-29_
+ * Testing communication with Stripe
+
 ## 0.36.6
 _release date: 2025-01-29_
  * Added StoreCheckoutResultService and its empty implementation
