@@ -9,10 +9,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
@@ -21,8 +21,10 @@ import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Request
 import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Succeeded;
 
+import java.util.Map;
+
+import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.redirectBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_SESSION;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -42,7 +44,7 @@ class CreateCheckoutSessionController {
 
     @PostMapping(CHECKOUT_SESSION)
     ResponseEntity<?> checkoutSession(
-          @Validated @RequestBody CreateCheckoutSessionRequest request,
+          @RequestParam Map<String, String> body,
           HttpServletResponse response) {
 
         log.info("controller | Redirect to Stripe customer portal [request]");
@@ -51,10 +53,10 @@ class CreateCheckoutSessionController {
         var result = service.execute(
               new Request(
                     accountId,
-                    request.priceId()));
+                    "price_1QmYo3IdZlPlV5wEDgbXc1Js"));
 
         return switch (result) {
-            case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);
+            case Succeeded(String redirectUrl) -> successBody(new CreateCheckoutResponse(redirectUrl));
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 
@@ -64,32 +66,17 @@ class CreateCheckoutSessionController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<?> redirect(
-          HttpServletResponse response,
-          String redirectUrl) {
+    private ResponseEntity<CreateCheckoutResponse> successBody(
+          CreateCheckoutResponse response) {
 
-        addSuccessfulRedirectHeaders(
-              response,
-              redirectUrl);
-
-        response.setHeader(
-              "Access-Control-Allow-Origin", "*");
-
-        return redirectBody();
+        return status(HttpStatus.OK)
+              .body(response);
 
     }
 
-    private void addSuccessfulRedirectHeaders(
-          HttpServletResponse response,
-          String redirectUrl) {
+    record CreateCheckoutRequest(
+          String priceId) {}
 
-        response.setHeader(
-              LOCATION,
-              redirectUrl);
-
-    }
-
-    record CreateCheckoutSessionRequest(
-          String priceId) {
-    }
+    record CreateCheckoutResponse(
+          String redirectUrl) {}
 }
