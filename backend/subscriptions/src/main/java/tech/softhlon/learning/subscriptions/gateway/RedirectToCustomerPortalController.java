@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Request;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Request;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.redirectBody;
@@ -34,10 +34,10 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOME
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class RedirectToStripePortalController {
+class RedirectToCustomerPortalController {
 
     private static final String LOCATION = "Location";
-    private final RedirectToStripePortalService service;
+    private final RedirectToCustomerPortalService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 

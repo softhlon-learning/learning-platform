@@ -45,7 +45,7 @@ public class ResponseBodyHelper {
 
     public static ResponseEntity redirectBody() {
 
-        return status(HttpStatus.FOUND)
+        return status(HttpStatus.SEE_OTHER)
               .build();
     }
 

@@ -13,7 +13,7 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 
 @InboundPort
 @FunctionalInterface
-public interface RedirectToStripePortalService {
+public interface RedirectToCustomerPortalService {
 
     Result execute(
           Request request);

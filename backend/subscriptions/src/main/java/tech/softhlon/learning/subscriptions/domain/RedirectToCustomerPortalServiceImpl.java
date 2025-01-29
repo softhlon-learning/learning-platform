@@ -11,8 +11,8 @@ import com.stripe.param.billingportal.SessionCreateParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -20,11 +20,11 @@ import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService
 
 @Slf4j
 @Service
-class RedirectToStripePortalServiceImpl implements RedirectToStripePortalService {
+class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalService {
     private final String serviceBaseUrl;
     private final String stripeApiKey;
 
-    public RedirectToStripePortalServiceImpl(
+    public RedirectToCustomerPortalServiceImpl(
           @Value("${service.base-url}") String serviceBaseUrl,
           @Value("${stripe.api-key}") String stripeApiKey) {
 
