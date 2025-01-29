@@ -1,6 +1,11 @@
 # Learning Platform Changelog
 
-## 0.37.9
+## 0.37.1
+_release date: 2025-01-29_
+ * Cleanup on /subscribe
+ * Redesigned CreateCheckoutSessionController
+
+## 0.37.0
 _release date: 2025-01-29_
  * Cleanup on /subscribe
  * Added subscriptions service and model
