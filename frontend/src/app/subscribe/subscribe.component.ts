@@ -6,6 +6,7 @@
 import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
 import {Router} from "@angular/router";
+import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -40,7 +41,7 @@ export class SubscribeComponent implements OnInit {
 
     checkoutSession(): void {
         this.subscriptionsService.createCheckoutSession(PRICE_ID).subscribe({
-            next: () => this.handleSuccess(),
+            next: (response) => this.handleSuccess(response),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         })
     }
@@ -49,11 +50,9 @@ export class SubscribeComponent implements OnInit {
      * Success response handler.
      * @private
      */
-    private handleSuccess() {
-        this.router.navigate(['/home'])
-            .then(() => {
-                window.location.reload()
-            })
+    private handleSuccess(response: CheckoutSessionResponse) {
+        console.log(response)
+        location.href=response.redirectUrl
     }
 
     /**
@@ -63,6 +62,8 @@ export class SubscribeComponent implements OnInit {
      * @private
      */
     private handleError(error: any, defaultErrorMessage: string) {
+        console.error(error)
+
         this.error = error?.error?.message || defaultErrorMessage
         setTimeout(() => {
             this.error = undefined

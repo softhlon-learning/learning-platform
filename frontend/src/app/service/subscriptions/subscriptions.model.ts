@@ -17,3 +17,11 @@ export class CheckoutSessionRequest {
         this.priceId = priceId
     }
 }
+
+export class CheckoutSessionResponse {
+    redirectUrl: string
+
+    constructor(redirectUrl: string) {
+        this.redirectUrl = redirectUrl;
+    }
+}

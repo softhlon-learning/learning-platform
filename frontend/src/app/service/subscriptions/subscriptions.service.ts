@@ -6,8 +6,7 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
-import {Course} from '../../home/course'
-import {CheckoutSessionRequest} from "./subscriptions.model";
+import {CheckoutSessionResponse} from "./subscriptions.model";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,14 +22,11 @@ export class SubscriptionsService {
         private http: HttpClient) {
     }
 
-    createCheckoutSession(priceId?: string): Observable<ArrayBuffer> {
-        const checkoutSessionRequest =
-            new CheckoutSessionRequest(priceId || '')
-
+    createCheckoutSession(priceId?: string): Observable<CheckoutSessionResponse> {
         return this.http
-            .post<ArrayBuffer>(
+            .post<CheckoutSessionResponse>(
                 SUBSCRIBE_PATH,
-                checkoutSessionRequest)
+                null)
             .pipe()
     }
 }
