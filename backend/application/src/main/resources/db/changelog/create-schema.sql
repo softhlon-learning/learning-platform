@@ -93,6 +93,8 @@ CREATE TABLE checkout_sessions (
          REFERENCES accounts (id)
 );
 
+CREATE INDEX checkout_sessions__session_id_index ON checkout_sessions (session_id);
+
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
