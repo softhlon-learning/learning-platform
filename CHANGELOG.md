@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.37.7
+_release date: 2025-01-29_
+ * Subscribe page styling improvements
+ * Added checkout_sessions table
+ * Added CreateSessionService and its empty implementation
+ * Added CheckoutSessionEntity
+
 ## 0.37.6
 _release date: 2025-01-29_
  * Limit number for subscription to one customer to 1
