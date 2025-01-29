@@ -37,8 +37,7 @@ class StoreCheckoutResultController {
     ResponseEntity<?> createResult(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Create Stripe checkout result [request], {}",
-              payload);
+        log.info("controller | Store Stripe checkout result [request]");
 
         var result = service.execute(
               new Request(
