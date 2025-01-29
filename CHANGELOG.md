@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.36.3
+_release date: 2025-01-29_
+ * Implemented CreateCheckoutSessionController
+ * Small improvements in RedirectToCustomerPortal*
+
 ## 0.36.2
 _release date: 2025-01-29_
  * Added CreateCheckoutSession interface
