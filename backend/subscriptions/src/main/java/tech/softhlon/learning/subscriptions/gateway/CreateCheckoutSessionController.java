@@ -72,6 +72,9 @@ class CreateCheckoutSessionController {
               response,
               redirectUrl);
 
+        response.setHeader(
+              "Access-Control-Allow-Origin", "*");
+
         return redirectBody();
 
     }
