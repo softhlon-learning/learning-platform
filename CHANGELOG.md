@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.35.7
+_release date: 2025-01-28_
+ * Added stripe maven dependency
+ * Removed unused code from subscriptions module
+ * Stripe integration analysis
+
 ## 0.35.6
 _release date: 2025-01-28_
  * Added ngx-stripe
