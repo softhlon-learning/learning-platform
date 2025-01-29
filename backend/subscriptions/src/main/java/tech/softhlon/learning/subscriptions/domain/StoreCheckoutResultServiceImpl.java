@@ -37,8 +37,6 @@ class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
                   request.sigHeader(),
                   webhookSecret);
 
-            log.info("Event: {}", event);
-
             switch (event.getType()) {
                 case "checkout.session.completed":
                     log.info("Payment succeeded!");
