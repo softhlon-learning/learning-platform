@@ -11,7 +11,15 @@
             </div>
         </div>
         <div class="form">
-            <button (click)="this.checkoutSession()" class="cancel">Continue</button>
+            <button (click)="this.checkoutSession()" class="pay">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 200px">
+                    <div>
+                        <div style="font-size: 40px; font-weight: bold">US$ 15</div>
+                        <div style="font-size: 20px; font-style: italic">per month</div>
+                    </div>
+                    <div style="font-size: 20px; font-weight: bold">Subscribe & Pay</div>
+                </div>
+            </button>
             <button class="cancel" routerLink="/home">Close</button>
             <div class="error">{{ error }}</div>
         </div>

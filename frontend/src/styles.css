@@ -5,19 +5,21 @@
     --very-light: #F8F8F8;
     --light: #D1D0CE;
     --warm: #D1D0CE;
-    --hover: var(--main);
+    --hover: #444444;
     --active: #01234a;
     --checked-dark: #01234a;
     --checked-warm: #ceffaf;
     --enrolled: #ecffe6;
     --side-form: #F8F8F8;
-    --main: #363131;
+    --main: #333333;
     --gray: #808080;
     --error: #fa1607;
     --stale: slategray;
     --darkgrey: darkgrey;
     --white: white;
     --steel: #F8F8F8;
+    --subscribe: #e9edf3;
+    --subscribe-hover: #ecffe6;
 }
 
 @media (max-width: 1500px) {
@@ -109,6 +111,7 @@ button:disabled {
 
 button:active {
     color: var(--light);
+    background-color: var(--stale);
 }
 
 span {
