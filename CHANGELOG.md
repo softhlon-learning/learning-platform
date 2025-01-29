@@ -1,6 +1,6 @@
 # Learning Platform Changelog
 
-## 0.36.3
+## 0.36.4
 _release date: 2025-01-29_
  * Analysing subsriprion costs
  * Configured webhook for receving paymeny stattus
