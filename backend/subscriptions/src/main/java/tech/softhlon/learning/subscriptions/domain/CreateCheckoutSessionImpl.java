@@ -37,8 +37,8 @@ class CreateCheckoutSessionImpl implements CreateCheckoutSession {
 
         try {
             SessionCreateParams params = new SessionCreateParams.Builder()
-                  .setSuccessUrl(serviceBaseUrl + "/payment/succeedd?session_id={CHECKOUT_SESSION_ID}")
-                  .setCancelUrl(serviceBaseUrl + "/canceled")
+                  .setSuccessUrl(serviceBaseUrl + "/home")
+                  .setCancelUrl(serviceBaseUrl + "/subscribe")
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
