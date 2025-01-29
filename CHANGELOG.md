@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.37.4
+_release date: 2025-01-29_
+ * Reverted CheckSubscriptionByAccountRepository and its related files
+ * Reverted CreateSubscriptionRepository and its adapter
+
 ## 0.37.3
 _release date: 2025-01-29_
  * Added CreateCheckoutRequest in controller
