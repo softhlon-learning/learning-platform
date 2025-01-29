@@ -18,9 +18,7 @@ const SUBSCRIBE_PATH = '/api/v1/subscription/checkout-session'
 @Injectable({
     providedIn: 'root',
 })
-export class CoursesService {
-    private courses?: Course[]
-
+export class SubscriptionsService {
     constructor(
         private http: HttpClient) {
     }
