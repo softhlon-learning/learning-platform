@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.36.6
+_release date: 2025-01-29_
+ * Added StoreCheckoutResultService and its empty implementation
+ * Improvements for CreateCheckout*/StoreCheckout* code
+
 ## 0.36.5
 _release date: 2025-01-29_
  * Fixing issues with SSL certificate
