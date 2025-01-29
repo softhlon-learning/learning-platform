@@ -14,6 +14,6 @@ export class CheckoutSessionRequest {
     priceId: string
 
     constructor(priceId: string) {
-        this.priceId = priceId;
+        this.priceId = priceId
     }
 }
