@@ -3,16 +3,20 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.softhlon.learning.subscriptions.infrastructure;
+
+import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-class CreateSessionServiceImpl implements CreateSessionService {
+@Service
+class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
 
     @Override
-    public CreateSessionResult execute(CreateSessionRequest request) {
+    public LoadCheckoutResult execute(LoadCheckoutRequest request) {
         return null;
     }
 

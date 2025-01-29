@@ -5,25 +5,30 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
+
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
-interface CreateSessionService {
+public interface LoadCheckoutRepository {
 
-    CreateSessionResult execute(
-          CreateSessionRequest request);
+    LoadCheckoutResult execute(
+          LoadCheckoutRequest request);
 
-    record CreateSessionRequest(
-          UUID accountId,
-          String sessionID) {}
+    record LoadCheckoutRequest(
+          String sessionId,
+          UUID accoountId) {}
 
-    sealed interface CreateSessionResult {
-        record SessionCreated() implements CreateSessionResult {}
-        record SessionCrea() implements CreateSessionResult {}
+    sealed interface LoadCheckoutResult {
+        record CheckoutLoaded() implements LoadCheckoutResult {}
+        record CheckoutLoadFailed(Throwable cause) implements LoadCheckoutResult {}
     }
 
 }
