@@ -43,6 +43,12 @@ public class ResponseBodyHelper {
               .build();
     }
 
+    public static ResponseEntity redirectBody() {
+
+        return status(HttpStatus.FOUND)
+              .build();
+    }
+
     public static ResponseEntity<?> internalServerBody(
           HttpServletRequest request,
           Throwable cause) {
