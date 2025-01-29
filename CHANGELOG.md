@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.36.5
+_release date: 2025-01-29_
+ * Fixing issues with SSL certificate
+ * Moved SecurityConfig and JwtAuthenticationFilter to application module
+ * Added empty CreateCheckoutResultController
+
 ## 0.36.4
 _release date: 2025-01-29_
  * Analysing subsriprion costs
