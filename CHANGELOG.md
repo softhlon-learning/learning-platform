@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.37.8
+_release date: 2025-01-30_
+ * Added PersistCheckoutSessionRepository and its empty adapter
+ * Implemented PersistCheckoutSessionRepositoryAdapter
+ * Integrated CreateCheckoutSessionImpl with PersistCheckoutSessionRepository
+
 ## 0.37.7
 _release date: 2025-01-29_
  * Subscribe page styling improvements
