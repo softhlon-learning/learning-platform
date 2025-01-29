@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.36.2
+_release date: 2025-01-29_
+ * Added CreateCheckoutSession interface
+ * Implemented CreateCheckoutSessionImpl service
+
 ## 0.36.1
 _release date: 2025-01-29_
  * Renamed RedirectToStripPortal* to RedirectToCustomerPortal*.
