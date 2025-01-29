@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.37.3
+_release date: 2025-01-29_
+ * Added CreateCheckoutRequest in controller
+ * Passing priceId to the service
+ * Logging improvements in new controllers and services
+
 ## 0.37.2
 _release date: 2025-01-29_
  * Redirect to Stripe from frontend
