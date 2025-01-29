@@ -26,7 +26,7 @@ public interface PersistCheckoutSessionRepository {
 
     sealed interface PersistCheckoutSessionResult {
         record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}
-        record CheckoutSessionPersistence(Throwable cause) implements PersistCheckoutSessionResult {}
+        record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistCheckoutSessionResult {}
     }
 
 }

@@ -31,6 +31,7 @@ class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
 
     @Override
     public Result execute(Request request) {
+
         try {
             var event = Webhook.constructEvent(
                   request.payload(),
@@ -46,6 +47,7 @@ class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
         } catch (Throwable cause) {
             return new Failed(cause);
         }
+
     }
 
 }
