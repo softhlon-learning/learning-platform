@@ -80,6 +80,19 @@ CREATE TABLE reset_password_tokens (
 
 CREATE INDEX reset_password_tokens__token_index ON reset_password_tokens (token);
 
+CREATE TABLE checkout_sessions (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid,
+    session_id VARCHAR NOT NULL,
+    expired_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    completed_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_checkout_sessions_accounts
+         FOREIGN KEY (account_id)
+         REFERENCES accounts (id)
+);
+
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
