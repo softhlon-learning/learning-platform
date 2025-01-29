@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.35.9
+_release date: 2025-01-29_
+ * Implemented RedirectToStripePortalServiceImpl
+ * Added logging to RedirectToStripePortalController
+
 ## 0.35.8
 _release date: 2025-01-29_
  * Added empty RedirectToStripe controller and service
