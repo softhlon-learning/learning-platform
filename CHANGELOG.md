@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.36.9
+_release date: 2025-01-29_
+ * Extracted literals to constants (SignUpServiceImpl)
+ * Added /subscribe page template
+
 ## 0.36.8
 _release date: 2025-01-29_
  * Added stripe.checkout-result.webhook.secret
