@@ -6,7 +6,7 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
-import {CheckoutSessionResponse} from "./subscriptions.model";
+import {CheckoutSessionRequest, CheckoutSessionResponse} from "./subscriptions.model";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -26,7 +26,7 @@ export class SubscriptionsService {
         return this.http
             .post<CheckoutSessionResponse>(
                 SUBSCRIBE_PATH,
-                null)
+                new CheckoutSessionRequest(priceId || ''))
             .pipe()
     }
 }

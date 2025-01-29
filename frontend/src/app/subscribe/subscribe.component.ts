@@ -5,7 +5,6 @@
 
 import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
-import {Router} from "@angular/router";
 import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -27,8 +26,7 @@ export class SubscribeComponent implements OnInit {
     error: string | undefined
 
     constructor(
-        private subscriptionsService: SubscriptionsService,
-        private router: Router) {
+        private subscriptionsService: SubscriptionsService) {
     }
 
     /**
@@ -52,7 +50,7 @@ export class SubscribeComponent implements OnInit {
      */
     private handleSuccess(response: CheckoutSessionResponse) {
         console.log(response)
-        location.href=response.redirectUrl
+        location.href = response.redirectUrl
     }
 
     /**
