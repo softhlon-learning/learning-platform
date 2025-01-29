@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.37.5
+_release date: 2025-01-29_
+ * Improved subscribe user experience
+
 ## 0.37.4
 _release date: 2025-01-29_
  * Reverted CheckSubscriptionByAccountRepository and its related files
