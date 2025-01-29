@@ -5,13 +5,18 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import com.stripe.net.Webhook;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
 @Service
 class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
 
@@ -26,7 +31,23 @@ class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
 
     @Override
     public Result execute(Request request) {
-        return null;
+        try {
+            var event = Webhook.constructEvent(
+                  request.payload(),
+                  request.sigHeader(),
+                  webhookSecret);
+
+            log.info("Event: {}", event);
+
+            switch (event.getType()) {
+                case "checkout.session.completed":
+                    log.info("Payment succeeded!");
+            }
+
+            return new Succeeded();
+        } catch (Throwable cause) {
+            return new Failed(cause);
+        }
     }
 
 }

@@ -19,7 +19,7 @@ public interface StoreCheckoutResultService {
           Request request);
 
     sealed interface Result {
-        record Succeeded(String url) implements Result {}
+        record Succeeded() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
