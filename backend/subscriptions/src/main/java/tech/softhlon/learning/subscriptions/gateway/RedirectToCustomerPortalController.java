@@ -84,9 +84,8 @@ class RedirectToCustomerPortalController {
               LOCATION,
               redirectUrl);
 
-        response.setStatus(
-              HttpStatus.FOUND.value());
-
+        response.setStatus(HttpStatus
+              .SEE_OTHER.value());
     }
 
     record RedirectToPortalRequest(

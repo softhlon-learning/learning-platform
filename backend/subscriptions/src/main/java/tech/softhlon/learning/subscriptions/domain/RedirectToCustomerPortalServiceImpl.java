@@ -22,21 +22,19 @@ import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalServi
 @Service
 class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalService {
     private final String serviceBaseUrl;
-    private final String stripeApiKey;
 
     public RedirectToCustomerPortalServiceImpl(
           @Value("${service.base-url}") String serviceBaseUrl,
           @Value("${stripe.api-key}") String stripeApiKey) {
 
         this.serviceBaseUrl = serviceBaseUrl;
-        this.stripeApiKey = stripeApiKey;
+        Stripe.apiKey = stripeApiKey;
     }
 
     @Override
     public Result execute(Request request) {
 
         try {
-            Stripe.apiKey = stripeApiKey;
 
             var checkoutSession = com.stripe.model.checkout.Session
                   .retrieve(request.sessionId());
