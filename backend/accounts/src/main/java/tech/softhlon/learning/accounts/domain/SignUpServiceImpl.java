@@ -27,7 +27,9 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class SignUpServiceImpl implements SignUpService {
-
+    private static final String NAME_IS_BLANK = "Name is blank";
+    private static final String EMAIL_IS_BLANK = "Email is blank";
+    private static final String EMAIL_INVALID_FORMAT = "Email is not in right format";
     private static final String ACCOUNT_ALREADY_EXISTS = "Account with the same email already exists";
     private static final String ACCOUNT_TS_DELETED = "Account has been deleted before";
     private static final String PASSWORD_POLICY =
@@ -71,13 +73,13 @@ class SignUpServiceImpl implements SignUpService {
           Request request) {
 
         if (request.name().isBlank())
-            return new NamePolicyFailed("Name is blank");
+            return new NamePolicyFailed(NAME_IS_BLANK);
 
         if (request.email().isBlank())
-            return new EmailPolicyFailed("Email is blank");
+            return new EmailPolicyFailed(EMAIL_IS_BLANK);
 
         if (!emailValidationService.isEmailValid(request.email()))
-            return new EmailPolicyFailed("Email is not in right format");
+            return new EmailPolicyFailed(EMAIL_INVALID_FORMAT);
 
         if (!passwordValidationService.isPasswordValid(request.password()))
             return new PasswordPolicyFailed(PASSWORD_POLICY);
