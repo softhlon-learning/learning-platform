@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.36.0
+_release date: 2025-01-29_
+ * Implemented RedirectToStripePortalController
+ * Added redirectBody method
+ * Updated RedirectToStripePortalServiceImpl for setting the Stripe.apiKey
+
 ## 0.35.9
 _release date: 2025-01-29_
  * Implemented RedirectToStripePortalServiceImpl
