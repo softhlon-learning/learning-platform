@@ -75,9 +75,12 @@ button.pay {
     width: 340px;
     height: 340px;
     border: 1px var(--darkgrey) dashed;
+    background-color: var(--subscribe);
 }
 
 button.pay:hover {
+    background-color: var(--hover);
+    color: var(--white);
 }
 
 button.cancel {
