@@ -6,15 +6,24 @@
 package tech.softhlon.learning.subscriptions.gateway;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService;
+import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Request;
+import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.RedirectToStripePortalService.Result.Succeeded;
 
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.redirectBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOMER_PORTAL;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -26,16 +35,62 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOME
 @RestController
 @RequiredArgsConstructor
 class RedirectToStripePortalController {
+
+    private static final String LOCATION = "Location";
     private final RedirectToStripePortalService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
     @GetMapping(CUSTOMER_PORTAL)
-    ResponseEntity<?> redirectToStripePortal() {
+    ResponseEntity<?> redirectToStripePortal(
+          @Validated @RequestBody RedirectToPortalRequest request,
+          HttpServletResponse response) {
 
         log.info("controller | Redirect to Stripe customer portal [request]");
-        return null;
+        var result = service.execute(
+              new Request(
+                    "Name",
+                    request.sessionId()
+              ));
 
+        return switch (result) {
+            case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);
+            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
+        };
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private ResponseEntity<?> redirect(
+          HttpServletResponse response,
+          String redirectUrl) {
+
+        addSuccessfulRedirectHeaders(
+              response,
+              redirectUrl);
+
+        return redirectBody();
+
+    }
+
+    private void addSuccessfulRedirectHeaders(
+          HttpServletResponse response,
+          String redirectUrl) {
+
+        response.setHeader(
+              LOCATION,
+              redirectUrl);
+
+        response.setStatus(
+              HttpStatus.FOUND.value());
+
+    }
+
+    record RedirectToPortalRequest(
+          String sessionId) {
     }
 
 }
