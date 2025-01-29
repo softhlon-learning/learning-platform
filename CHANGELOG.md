@@ -2,6 +2,11 @@
 
 ## 0.36.3
 _release date: 2025-01-29_
+ * Analysing subsriprion costs
+ * Configured webhook for receving paymeny stattus
+
+## 0.36.3
+_release date: 2025-01-29_
  * Implemented CreateCheckoutSessionController
  * Small improvements in RedirectToCustomerPortal*
 
