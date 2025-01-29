@@ -5,18 +5,54 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Slf4j
+@Service
+@RequiredArgsConstructor
 class PersistCheckoutSessionRepositoryAdapter implements PersistCheckoutSessionRepository {
+    private final CheckoutSessionsJpaRepository checkoutSessionsJpaRepository;
 
     @Override
     public PersistCheckoutSessionResult execute(
           PersistCheckoutSessionRequest request) {
-        return null;
+
+        try {
+
+            checkoutSessionsJpaRepository.save(
+                  entity(request));
+            return new CheckoutSessionPersisted();
+
+        } catch (Throwable cause) {
+
+            log.error("Error", cause);
+            return new CheckoutSessionPersistenceFailed(cause);
+
+        }
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private CheckoutSessionEntity entity(
+          PersistCheckoutSessionRequest request) {
+
+        return CheckoutSessionEntity.builder()
+              .sessionId(request.sessionId())
+              .accountId(request.accountId())
+              .build();
+
     }
 
 }
