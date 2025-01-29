@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.36.1
+_release date: 2025-01-29_
+ * Renamed RedirectToStripPortal* to RedirectToCustomerPortal*.
+ * Added empty CreateCheckoutSessionController
+
 ## 0.36.0
 _release date: 2025-01-29_
  * Implemented RedirectToStripePortalController
