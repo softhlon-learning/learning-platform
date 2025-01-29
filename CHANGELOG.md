@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.37.2
+_release date: 2025-01-29_
+ * Redirect to Stripe from frontend
+
 ## 0.37.1
 _release date: 2025-01-29_
  * Cleanup on /subscribe
