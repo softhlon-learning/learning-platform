@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Request;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Request;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
@@ -34,10 +34,10 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class CreateCheckoutSessionController {
+class InitializeCheckoutController {
 
     private static final String LOCATION = "Location";
-    private final CreateCheckoutSession service;
+    private final InitializeCheckoutService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 

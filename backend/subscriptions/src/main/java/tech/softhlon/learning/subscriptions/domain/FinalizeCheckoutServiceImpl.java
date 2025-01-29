@@ -9,8 +9,8 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -18,11 +18,11 @@ import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Re
 
 @Slf4j
 @Service
-class StoreCheckoutResultServiceImpl implements StoreCheckoutResultService {
+class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private final String webhookSecret;
 
-    public StoreCheckoutResultServiceImpl(
+    public FinalizeCheckoutServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
           String webhookSecret) {
 

@@ -11,12 +11,12 @@ import com.stripe.param.checkout.SessionCreateParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.CreateCheckoutSession.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
 
 import java.util.UUID;
 
@@ -26,20 +26,20 @@ import java.util.UUID;
 
 @Slf4j
 @Service
-class CreateCheckoutSessionImpl implements CreateCheckoutSession {
+class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
     private static final String HOME_PATH = "/home";
     private static final String SUBSCRIBE_PATH = "/subscribe";
     private final String serviceBaseUrl;
-    private final PersistCheckoutSessionRepository persistCheckoutSessionRepository;
+    private final PersistCheckoutRepository persistCheckoutRepository;
 
-    public CreateCheckoutSessionImpl(
+    public InitializeCheckoutServiceImpl(
           @Value("${stripe.api-key}") String stripeApiKey,
           @Value("${service.base-url}") String serviceBaseUrl,
-          PersistCheckoutSessionRepository persistCheckoutSessionRepository) {
+          PersistCheckoutRepository persistCheckoutRepository) {
 
         Stripe.apiKey = stripeApiKey;
         this.serviceBaseUrl = serviceBaseUrl;
-        this.persistCheckoutSessionRepository = persistCheckoutSessionRepository;
+        this.persistCheckoutRepository = persistCheckoutRepository;
 
     }
 
@@ -87,7 +87,7 @@ class CreateCheckoutSessionImpl implements CreateCheckoutSession {
           UUID accountId,
           String sessionId) {
 
-        return persistCheckoutSessionRepository.execute(
+        return persistCheckoutRepository.execute(
               new PersistCheckoutSessionRequest(
                     accountId, sessionId));
 

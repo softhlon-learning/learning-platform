@@ -8,9 +8,9 @@ package tech.softhlon.learning.subscriptions.infrastructure;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,7 +19,7 @@ import tech.softhlon.learning.subscriptions.domain.PersistCheckoutSessionReposit
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class PersistCheckoutSessionRepositoryAdapter implements PersistCheckoutSessionRepository {
+class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
     private final CheckoutSessionsJpaRepository checkoutSessionsJpaRepository;
 
     @Override

@@ -5,7 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
-import tech.softhlon.learning.common.hexagonal.InboundPort;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
 
@@ -13,21 +13,20 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-@InboundPort
+@OutboundPort
 @FunctionalInterface
-public interface CreateCheckoutSession {
+public interface PersistCheckoutRepository {
 
-    Result execute(
-          Request request);
+    PersistCheckoutSessionResult execute(
+          PersistCheckoutSessionRequest request);
 
-    sealed interface Result {
-        record Succeeded(String url) implements Result {}
-        record Failed(Throwable cause) implements Result {}
+    record PersistCheckoutSessionRequest(
+          UUID accountId,
+          String sessionId) {}
+
+    sealed interface PersistCheckoutSessionResult {
+        record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}
+        record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistCheckoutSessionResult {}
     }
-
-    record Request(
-          UUID acccountId,
-          String email,
-          String priceId) {}
 
 }

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService;
-import tech.softhlon.learning.subscriptions.domain.StoreCheckoutResultService.Request;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Request;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_RESULT;
@@ -28,13 +28,13 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class StoreCheckoutResultController {
+class FinalizeCheckoutController {
 
-    private final StoreCheckoutResultService service;
+    private final FinalizeCheckoutService service;
     private final HttpServletRequest httpRequest;
 
     @PostMapping(CHECKOUT_RESULT)
-    ResponseEntity<?> createResult(
+    ResponseEntity<?> finalizeCheckout(
           @Validated @RequestBody String payload) {
 
         log.info("controller | Store Stripe checkout result [request]");
