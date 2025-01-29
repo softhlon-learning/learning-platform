@@ -15,5 +15,6 @@ class RestResources {
     static final String SUBSCRIPTION = API_PREFIX + "/subscription";
     static final String CUSTOMER_PORTAL = SUBSCRIPTION + "/customer-portal";
     static final String CHECKOUT_SESSION = SUBSCRIPTION + "/checkout-session";
+    static final String CHECKOUT_RESULT = SUBSCRIPTION + "/checkout-result";
 
 }
