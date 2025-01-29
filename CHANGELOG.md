@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.36.8
+_release date: 2025-01-29_
+ * Added stripe.checkout-result.webhook.secret
+ * Partially implemented StoreCheckoutResultServiceImpl
+ * Integrated StoreCheckoutResultController with StoreCheckoutResultService
+
 ## 0.36.7
 _release date: 2025-01-29_
  * Testing communication with Stripe
