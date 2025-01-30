@@ -11,9 +11,8 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.CheckoutNotFound;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
@@ -32,7 +31,7 @@ import java.time.OffsetDateTime;
 
 @Slf4j
 @Service
-class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
+class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedService {
 
     private static final String ID = "id";
     private static final String SESSION_NOT_FOUND = "Checkout session not found";
@@ -42,7 +41,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
     private final PersistCheckoutRepository persistCheckoutRepository;
     private final CreateCustomerService createCustomerService;
 
-    public FinalizeCheckoutServiceImpl(
+    public SubmitCheckoutCompletedServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
@@ -148,7 +147,6 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
             case CustomerCreationFailed (Throwable cause) -> new Failed(cause);
         };
     }
-
 
     record DataObject(
           Object object) {}

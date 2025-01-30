@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Request;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.CheckoutNotFound;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Request;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.CheckoutNotFound;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_RESULT;
+import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_CHECKOUT_COMPLETED;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -31,16 +31,16 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class FinalizeCheckoutController {
+class SubmitCheckoutCompletedController {
 
-    private final FinalizeCheckoutService service;
+    private final SubmitCheckoutCompletedService service;
     private final HttpServletRequest httpRequest;
 
-    @PostMapping(CHECKOUT_RESULT)
-    ResponseEntity<?> finalizeCheckout(
+    @PostMapping(SUBMIT_CHECKOUT_COMPLETED)
+    ResponseEntity<?> submitCheckoutCompleted(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Finalize checkout [request]");
+        log.info("controller | Submit 'checkout.session.completed' event [request]");
 
         var result = service.execute(
               new Request(
@@ -48,7 +48,7 @@ class FinalizeCheckoutController {
                     payload
               ));
 
-        log.info("controller | Finalize checkout [response]: {}", result);
+        log.info("controller | Submit 'checkout.session.completed' event [response]: {}", result);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();

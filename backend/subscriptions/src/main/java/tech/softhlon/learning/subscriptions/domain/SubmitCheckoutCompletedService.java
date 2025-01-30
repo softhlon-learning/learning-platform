@@ -13,7 +13,7 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 
 @InboundPort
 @FunctionalInterface
-public interface FinalizeCheckoutService {
+public interface SubmitCheckoutCompletedService {
 
     Result execute(
           Request request);
