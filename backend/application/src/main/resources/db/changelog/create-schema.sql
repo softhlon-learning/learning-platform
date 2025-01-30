@@ -58,6 +58,8 @@ CREATE TABLE subscriptions (
          REFERENCES accounts (id)
 );
 
+CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
+
 CREATE TABLE invalidated_tokens (
     id uuid DEFAULT gen_random_uuid(),
     token_hash VARCHAR NOT NULL,
@@ -95,6 +97,16 @@ CREATE TABLE checkout_sessions (
 );
 
 CREATE INDEX checkout_sessions__session_id_index ON checkout_sessions (session_id);
+
+CREATE TABLE customers (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid NOT NULL,
+    customer_id VARCHAR NOT NULL,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE INDEX customers__customer_id_index ON customers (customer_id);
 
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
