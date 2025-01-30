@@ -144,8 +144,8 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
               ));
 
         return switch (result) {
-            case CustomerCreated customerCreated -> null;
-            case CustomerCreationFailed customerCreationFailed -> null;
+            case CustomerCreated() -> new Succeeded();
+            case CustomerCreationFailed (Throwable cause) -> new Failed(cause);
         };
     }
 
