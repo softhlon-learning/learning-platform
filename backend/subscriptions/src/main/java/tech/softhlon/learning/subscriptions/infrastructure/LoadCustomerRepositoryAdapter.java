@@ -9,9 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomertResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomertResult.CustomerLoadLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomertResult.CustomerNotFound;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -24,7 +24,7 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
     private final CustomersJpaRepository customersJpaRepository;
 
     @Override
-    public LoadCustomertResult execute(
+    public LoadCustomerResult execute(
           LoadCustomerRequest request) {
 
         try {

@@ -19,13 +19,13 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadCustomerRepository {
 
-    LoadCustomertResult execute(
+    LoadCustomerResult execute(
           LoadCustomerRequest request);
 
-    sealed interface LoadCustomertResult {
-        record CustomerLoadLoaded(Customer customer) implements LoadCustomertResult {}
-        record CustomerNotFound() implements LoadCustomertResult {}
-        record CustomerLoadFailed(Throwable cause) implements LoadCustomertResult {}
+    sealed interface LoadCustomerResult {
+        record CustomerLoadLoaded(Customer customer) implements LoadCustomerResult {}
+        record CustomerNotFound() implements LoadCustomerResult {}
+        record CustomerLoadFailed(Throwable cause) implements LoadCustomerResult {}
     }
 
     record LoadCustomerRequest(

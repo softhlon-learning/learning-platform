@@ -13,7 +13,7 @@ import java.util.UUID;
 
 public interface CreateCustomerService {
 
-    CreateSubscriptionService.CreateSubscriptionResult execute(
+    CreateCustomerResult execute(
           CreateCustomerRequest request);
 
     sealed interface CreateCustomerResult {
@@ -22,7 +22,7 @@ public interface CreateCustomerService {
     }
 
     record CreateCustomerRequest(
-          String session,
+          String customerId,
           UUID accountId) {}
 
 }

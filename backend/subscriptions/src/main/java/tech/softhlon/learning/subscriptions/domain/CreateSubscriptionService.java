@@ -21,6 +21,8 @@ interface CreateSubscriptionService {
         record SubscriptionCreationFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
 
-    record CreateSubscriptionRequest(UUID accountId) {}
+    record CreateSubscriptionRequest(
+
+          UUID accountId) {}
 
 }
