@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.39.9
+_release date: 2025-01-30_
+ * Fixed return type in FinalizeCheckoutServiceImpl
+ * Added SubmitSubscriptionCreatedController
+ * Renamed FinalizeCheckout* to SubmitCheckout*
+
 ## 0.39.8
 _release date: 2025-01-30_
  * Integrated FinalizeCheckoutServiceImpl with CreateCustomerService
