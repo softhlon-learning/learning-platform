@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import com.stripe.model.Event;
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +30,8 @@ import java.time.OffsetDateTime;
 @Slf4j
 @Service
 class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
+
+    private static final String ID = "id";
 
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
@@ -59,7 +62,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
                 case "checkout.session.completed": {
                     log.info("service | Payment succeeded [checkout.session.completed]");
                     var result = loadCheckoutRepository.execute(
-                          new LoadCheckoutRequest(event.getId()));
+                          new LoadCheckoutRequest(sessionId(event)));
 
                     return switch (result) {
                         case CheckoutLoaded(CheckoutSession session) -> processSession(session);
@@ -81,6 +84,17 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
+
+    private String sessionId(Event event) {
+
+        return event
+              .getData()
+              .getObject()
+              .getRawJsonObject()
+              .get(ID)
+              .getAsString();
+
+    }
 
     private Result processSession(CheckoutSession session) {
         var result = persistCheckoutRepository.execute(
