@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.39.1
+_release date: 2025-01-30_
+ * Integrated FinalizeCheckoutServiceImpl with CreateSubscriptionService
+
 ## 0.39.0
 _release date: 2025-01-30_
  * Implemented CreateSubscriptionServiceImpl
