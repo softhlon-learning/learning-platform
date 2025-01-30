@@ -44,7 +44,7 @@ _release date: 2025-01-30_
 
 ## 0.38.4
 _release date: 2025-01-30_
- * Created and added trucsted localhost certificate
+ * Created and added trusted localhost certificate
 
 ## 0.38.3
 _release date: 2025-01-30_
