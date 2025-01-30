@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.9
+_release date: 2025-01-30_
+ * Implemented LoadSubscriptionRepositoryAdapter
+ * Implemented PersistSubscriptionRepositoryAdapter
+
 ## 0.38.8
 _release date: 2025-01-30_
  * Added PersistCheckoutRepository and its empty adapter
