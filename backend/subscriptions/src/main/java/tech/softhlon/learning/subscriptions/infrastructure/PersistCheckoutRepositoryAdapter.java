@@ -27,9 +27,9 @@ class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
           PersistCheckoutSessionRequest request) {
 
         try {
-
             checkoutSessionsJpaRepository.save(
                   entity(request));
+
             return new CheckoutSessionPersisted();
 
         } catch (Throwable cause) {
@@ -49,8 +49,11 @@ class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
           PersistCheckoutSessionRequest request) {
 
         return CheckoutSessionEntity.builder()
+              .id(request.id())
               .sessionId(request.sessionId())
               .accountId(request.accountId())
+              .expiredTime(request.expiredTime())
+              .completedTime(request.completedTime())
               .build();
 
     }

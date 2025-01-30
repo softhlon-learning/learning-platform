@@ -28,9 +28,8 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
 
         try {
             var entity = checkoutSessionsJpaRepository
-                  .findBySessionIdAndAccountId(
-                        request.sessionId(),
-                        request.accoountId());
+                  .findBySessionId(
+                        request.sessionId());
 
             if (entity.isPresent()) {
                 return new CheckoutLoaded(

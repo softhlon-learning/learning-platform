@@ -11,6 +11,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundFailed;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+
+import java.time.OffsetDateTime;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -21,12 +31,19 @@ import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Resul
 class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private final String webhookSecret;
+    private final LoadCheckoutRepository loadCheckoutRepository;
+    private final PersistCheckoutRepository persistCheckoutRepository;
 
     public FinalizeCheckoutServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
-          String webhookSecret) {
+          String webhookSecret,
+          LoadCheckoutRepository loadCheckoutRepository,
+          PersistCheckoutRepository persistCheckoutRepository) {
 
         this.webhookSecret = webhookSecret;
+        this.loadCheckoutRepository = loadCheckoutRepository;
+        this.persistCheckoutRepository = persistCheckoutRepository;
+
     }
 
     @Override
@@ -39,8 +56,19 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
                   webhookSecret);
 
             switch (event.getType()) {
-                case "checkout.session.completed":
-                    log.info("service | Payment succeeded");
+                case "checkout.session.completed": {
+                    log.info("service | Payment succeeded [checkout.session.completed]");
+                    var result = loadCheckoutRepository.execute(
+                          new LoadCheckoutRequest(event.getId()));
+
+                    return switch (result) {
+                        case CheckoutLoaded(CheckoutSession session) -> processSession(session);
+                        case CheckoutNotFoundFailed() -> new Failed(null);
+                        case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
+                    };
+                }
+                default:
+                    log.info("service | Event not handled [{}]", event.getType());
             }
 
             return new Succeeded();
@@ -50,4 +78,23 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Result processSession(CheckoutSession session) {
+        var result = persistCheckoutRepository.execute(
+              new PersistCheckoutSessionRequest(
+                    session.id(),
+                    session.sessionId(),
+                    session.accountId(),
+                    session.expiredTime(),
+                    OffsetDateTime.now()
+              ));
+
+        return switch (result) {
+            case CheckoutSessionPersisted() -> new Succeeded();
+            case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+    }
 }

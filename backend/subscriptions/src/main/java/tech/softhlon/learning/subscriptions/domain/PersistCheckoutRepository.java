@@ -7,6 +7,7 @@ package tech.softhlon.learning.subscriptions.domain;
 
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -21,8 +22,11 @@ public interface PersistCheckoutRepository {
           PersistCheckoutSessionRequest request);
 
     record PersistCheckoutSessionRequest(
+          UUID id,
+          String sessionId,
           UUID accountId,
-          String sessionId) {}
+          OffsetDateTime expiredTime,
+          OffsetDateTime completedTime) {}
 
     sealed interface PersistCheckoutSessionResult {
         record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}

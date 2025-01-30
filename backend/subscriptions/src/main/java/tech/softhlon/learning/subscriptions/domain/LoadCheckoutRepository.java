@@ -24,8 +24,7 @@ public interface LoadCheckoutRepository {
           LoadCheckoutRequest request);
 
     record LoadCheckoutRequest(
-          String sessionId,
-          UUID accoountId) {}
+          String sessionId) {}
 
     sealed interface LoadCheckoutResult {
         record CheckoutLoaded(CheckoutSession checkoutSession) implements LoadCheckoutResult {}

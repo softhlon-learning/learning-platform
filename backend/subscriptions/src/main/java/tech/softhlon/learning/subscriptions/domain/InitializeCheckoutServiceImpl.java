@@ -89,7 +89,11 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
         return persistCheckoutRepository.execute(
               new PersistCheckoutSessionRequest(
-                    accountId, sessionId));
+                    null,
+                    sessionId,
+                    accountId,
+                    null,
+                    null));
 
     }
 
