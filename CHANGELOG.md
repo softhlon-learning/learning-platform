@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.1
+_release date: 2025-01-30_
+ * Added IncorrectEventType to SubmitCheckoutCompletedService
+ * Added SubmitSubscriptionCreatedService
+ * Implemented SubmitSubscriptionCreatedServiceImpl
+
 ## 0.40.0
 _release date: 2025-01-30_
  * Improved Stripe webhooks setup
