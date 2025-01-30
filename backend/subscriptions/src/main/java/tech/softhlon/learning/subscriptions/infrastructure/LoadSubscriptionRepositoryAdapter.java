@@ -29,8 +29,8 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
 
         try {
             var entity = subscriptionsJpaRepository
-                  .findByAccountId(
-                        request.accountId());
+                  .findBySubscriptionId(
+                        request.subscriptionId());
 
             if (entity.isPresent()) {
                 return new SubscriptionLoaded(

@@ -21,7 +21,7 @@ interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, 
     boolean existsByAccountId(
           UUID accountId);
 
-    Optional<SubscriptionEntity> findByAccountId(
-          UUID accountId);
+    Optional<SubscriptionEntity> findBySubscriptionId(
+          String subscriptionId);
 
 }

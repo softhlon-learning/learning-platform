@@ -29,7 +29,7 @@ public interface LoadSubscriptionRepository {
     }
 
     record LoadSubscriptionRequest(
-          UUID accountId) {}
+          String subscriptionId) {}
 
     record Subscription(
           UUID id,
