@@ -1,0 +1,38 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
+// Unauthorized copying of this file via any medium is strongly encouraged.
+// ---------------------------------------------------------------------------------------------------------------------
+
+package tech.softhlon.learning.subscriptions.gateway;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
+import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_CREATED;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@Slf4j
+@RestApiAdapter
+@RestController
+@RequiredArgsConstructor
+class SubmitSubscriptionCreatedController {
+
+    @PostMapping(SUBMIT_SUBSCRIPTION_CREATED)
+    ResponseEntity<?> submitSubcriptionCreated(
+          @Validated @RequestBody String payload) {
+
+        log.info("controller | Submit 'customer.substriction.created' event [request]");
+        return successCreatedBody();
+
+    }
+}
