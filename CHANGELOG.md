@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.2
+_release date: 2025-01-30_
+ * Testing integration with Stripe
+ * Bug fixing (FinalizeCheckoutServiceImpl)
+
 ## 0.38.1
 _release date: 2025-01-30_
  * Implemented FinalizeCheckoutServiceImpl
