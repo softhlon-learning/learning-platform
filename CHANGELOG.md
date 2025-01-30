@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.38.5
+_release date: 2025-01-30_
+ * Setting email instead of accountId as MDC
+ * Updated MDC for course operator
+ * Removed acc: in logger. Changed accountId to account in MDC map
+
 ## 0.38.4
 _release date: 2025-01-30_
  * Created and added trucsted localhost certificate
