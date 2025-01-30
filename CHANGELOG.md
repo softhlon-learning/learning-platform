@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.40.0
+_release date: 2025-01-30_
+ * Improved Stripe webhooks setup
+ * Testing Stripe integration
+
 ## 0.39.9
 _release date: 2025-01-30_
  * Fixed return type in FinalizeCheckoutServiceImpl
