@@ -74,8 +74,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                       .getContext()
                       .setAuthentication(authToken);
 
-                setMDC(printShort(
-                      authToken.getAccountId()));
+                setMDC(authToken.getName());
 
             } else {
                 setMDC("anonymous");
