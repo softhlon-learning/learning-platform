@@ -20,7 +20,7 @@ interface CreateSubscriptionService {
 
     sealed interface CreateSubscriptionResult {
         record SubscriptionCreated() implements CreateSubscriptionResult {}
-        record SubscriptionCreaationFailed(Throwable cause) implements CreateSubscriptionResult {}
+        record SubscriptionCreationFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
 
 }
