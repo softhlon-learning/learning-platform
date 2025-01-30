@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.39.3
+_release date: 2025-01-30_
+ * Removed CreateSubscriptionService from FinalizeCheckoutServiceImpl
+ * Added subscription_id (table and models)
+
 ## 0.39.2
 _release date: 2025-01-30_
  * Analysing and redesign checkout/subsription workflow
