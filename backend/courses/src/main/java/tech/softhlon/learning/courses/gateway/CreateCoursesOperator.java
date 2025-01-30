@@ -29,7 +29,7 @@ import java.util.UUID;
 @Component
 public class CreateCoursesOperator {
 
-    private static final String ACCOUNT_ID = "accountId";
+    private static final String ACCOUNT = "account";
     private final UploadCourseService uploadCourseService;
     private final CourseDefinitions courseDefinitions;
     private final ObjectMapper mapper;
@@ -52,7 +52,7 @@ public class CreateCoursesOperator {
 
     public void execute() throws IOException {
 
-        MDC.put(ACCOUNT_ID,
+        MDC.put(ACCOUNT,
               "course-init");
 
         log.info("operator | Create Courses operator started");

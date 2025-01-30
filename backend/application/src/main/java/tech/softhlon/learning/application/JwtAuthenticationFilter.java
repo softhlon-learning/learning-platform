@@ -26,8 +26,6 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
-import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -36,7 +34,7 @@ import static tech.softhlon.learning.common.text.IdPrinter.printShort;
 @Component
 @RequiredArgsConstructor
 class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private static final String ACCOUNT_ID = "accountId";
+    private static final String ACCOUNT = "account";
 
     private final JwtService jwtService;
     private final CheckTokenRepository checkTokenRepository;
@@ -123,7 +121,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
     private void setMDC(
           String accountId) {
 
-        MDC.put(ACCOUNT_ID,
+        MDC.put(ACCOUNT,
               accountId);
 
     }
