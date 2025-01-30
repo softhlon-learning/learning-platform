@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.39.0
+_release date: 2025-01-30_
+ * Implemented CreateSubscriptionServiceImpl
+
 ## 0.38.9
 _release date: 2025-01-30_
  * Implemented LoadSubscriptionRepositoryAdapter
