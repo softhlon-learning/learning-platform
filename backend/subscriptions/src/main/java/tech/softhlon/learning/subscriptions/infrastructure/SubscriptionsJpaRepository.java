@@ -8,6 +8,7 @@ package tech.softhlon.learning.subscriptions.infrastructure;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -18,6 +19,9 @@ import java.util.UUID;
 interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, UUID> {
 
     boolean existsByAccountId(
+          UUID accountId);
+
+    Optional<SubscriptionEntity> findByAccountId(
           UUID accountId);
 
 }

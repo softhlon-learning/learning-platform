@@ -44,6 +44,7 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
             return new CheckoutLoadFailed(cause);
 
         }
+
     }
 
     CheckoutSession checkoutSession(CheckoutSessionEntity entity) {

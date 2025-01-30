@@ -20,9 +20,9 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadSubscriptionRepository {
     LoadSubscriptionResult execute(
-          LoadCheckoutRequest request);
+          LoadSubscriptionRequest request);
 
-    record LoadCheckoutRequest(
+    record LoadSubscriptionRequest(
           UUID accountId) {}
 
     sealed interface LoadSubscriptionResult {
