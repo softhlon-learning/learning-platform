@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.7
+_release date: 2025-01-30_
+ * Fixed record name (CheckoutNotFound)
+ * Added LoadSubscriptionRepository and its empty adapter
+
 ## 0.38.6
 _release date: 2025-01-30_
  * Updated subscriptions structure (table and entity)
