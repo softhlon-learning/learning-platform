@@ -35,4 +35,5 @@ class SubmitSubscriptionCreatedController {
         return successCreatedBody();
 
     }
+
 }
