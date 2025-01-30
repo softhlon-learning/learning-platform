@@ -7,6 +7,7 @@ package tech.softhlon.learning.subscriptions.infrastructure;
 
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -14,4 +15,9 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface CheckoutSessionsJpaRepository extends CrudRepository<CheckoutSessionEntity, UUID> {
+
+    Optional<CheckoutSessionEntity> findBySessionIdInAndAccountId(
+          String sessionId,
+          UUID accountId);
+
 }
