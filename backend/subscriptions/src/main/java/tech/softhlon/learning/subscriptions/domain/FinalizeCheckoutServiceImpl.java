@@ -37,7 +37,7 @@ import java.util.UUID;
 class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private static final String ID = "id";
-    private static final String SESSION_NOt_FOUND = "Checkout session not found";
+    private static final String SESSION_NOT_FOUND = "Checkout session not found";
 
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
@@ -69,15 +69,18 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
             switch (event.getType()) {
                 case "checkout.session.completed": {
-                    log.info("service | Payment succeeded [checkout.session.completed]");
+                    log.info("service | Payment succeeded [{}]", event.getType());
                     var result = loadCheckoutRepository.execute(
                           new LoadCheckoutRequest(sessionId(event)));
 
                     return switch (result) {
-                        case CheckoutLoaded(CheckoutSession session) -> processSession(session);
-                        case CheckoutNotFound() -> new Result.CheckoutNotFound(SESSION_NOt_FOUND);
+                        case CheckoutLoaded(CheckoutSession session) -> createSubscription(session);
+                        case CheckoutNotFound() -> new Result.CheckoutNotFound(SESSION_NOT_FOUND);
                         case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
                     };
+                }
+                case "customer.subscription.deleted": {
+                    log.info("service | Subscription deleted [{}]", event);
                 }
                 default:
                     log.info("service | Event not handled [{}]", event.getType());
@@ -105,7 +108,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     }
 
-    private Result processSession(CheckoutSession session) {
+    private Result createSubscription(CheckoutSession session) {
         var result = persistCheckoutRepository.execute(
               new PersistCheckoutSessionRequest(
                     session.id(),
@@ -119,6 +122,10 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
             case CheckoutSessionPersisted() -> createSuscription(session.accountId());
             case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+    }
+
+    private Result cancelSubscription(String sessionId) {
+        return new Succeeded();
     }
 
     private Result createSuscription(
