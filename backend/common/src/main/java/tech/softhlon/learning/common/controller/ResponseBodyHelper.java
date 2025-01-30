@@ -61,7 +61,7 @@ public class ResponseBodyHelper {
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.INTERNAL_SERVER_ERROR)
                           .errorMessage(ErrorMessage.INTERNAL_SERVER_ERROR)
-                          .message(cause.getMessage())
+                          .message(cause != null ? cause.getMessage() : null)
                           .path(request.getRequestURI())
                           .build()
                           .body());
