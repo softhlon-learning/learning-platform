@@ -102,7 +102,8 @@ CREATE TABLE customers (
     account_id uuid NOT NULL,
     customer_id VARCHAR NOT NULL,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT unique_customers_email UNIQUE (account_id)
 );
 
 CREATE INDEX customers__customer_id_index ON customers (customer_id);
@@ -124,4 +125,3 @@ CREATE TRIGGER update_courses_updated_time BEFORE UPDATE ON courses FOR EACH ROW
 CREATE TRIGGER update_enrollments_updated_time BEFORE UPDATE ON enrollments FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_subscriptions_updated_time BEFORE UPDATE ON subscriptions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_checkout_sessions_updated_time BEFORE UPDATE ON checkout_sessions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
-
