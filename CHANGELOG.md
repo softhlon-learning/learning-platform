@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.38.6
+_release date: 2025-01-30_
+ * Updated subscriptions structure (table and entity)
+
 ## 0.38.5
 _release date: 2025-01-30_
  * Setting email instead of accountId as MDC
