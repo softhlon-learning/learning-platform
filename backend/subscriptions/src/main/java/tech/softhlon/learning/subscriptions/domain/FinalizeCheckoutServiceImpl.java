@@ -87,12 +87,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private String sessionId(Event event) {
 
-        return event
-              .getData()
-              .getObject()
-              .getRawJsonObject()
-              .get(ID)
-              .getAsString();
+        return event.getId();
 
     }
 

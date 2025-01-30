@@ -21,6 +21,10 @@
             <version>${stripe-version}</version>
         </dependency>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>
