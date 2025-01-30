@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.0
+_release date: 2025-01-30_
+ * Added LoadCheckoutRepository and its empty adapter
+ * Implemented LoadCheckoutRepositoryAdapter
+
 ## 0.37.9
 _release date: 2025-01-30_
  * Improved checkout session namings
