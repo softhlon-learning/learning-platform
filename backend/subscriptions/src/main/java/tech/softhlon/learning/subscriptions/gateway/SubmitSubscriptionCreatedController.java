@@ -31,7 +31,7 @@ class SubmitSubscriptionCreatedController {
     ResponseEntity<?> submitSubcriptionCreated(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Submit 'customer.substriction.created' event [request]");
+        log.info("controller | Submit 'customer.subscriction.created' event [request]");
         return successCreatedBody();
 
     }
