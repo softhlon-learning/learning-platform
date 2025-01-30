@@ -56,6 +56,7 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
 
         return new Subscription(
               entity.getId(),
+              entity.getSubscriptionId(),
               entity.getAccountId(),
               entity.isActive(),
               entity.getActivatedTime(),

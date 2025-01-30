@@ -71,6 +71,7 @@ class CreateSubscriptionServiceImpl implements CreateSubscriptionService {
         if (subscription != null) {
             return new PersistSubscriptionRequest(
                   subscription.id(),
+                  subscription.subscriptionId(),
                   subscription.accountId(),
                   true,
                   OffsetDateTime.now(),
@@ -78,6 +79,7 @@ class CreateSubscriptionServiceImpl implements CreateSubscriptionService {
             );
         } else {
             return new PersistSubscriptionRequest(
+                  null,
                   null,
                   accountId,
                   true,

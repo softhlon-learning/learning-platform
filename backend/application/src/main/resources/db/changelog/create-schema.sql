@@ -45,7 +45,8 @@ CREATE TABLE enrollments (
 
 CREATE TABLE subscriptions (
     id uuid DEFAULT gen_random_uuid(),
-    account_id uuid NOT NULL,
+    subscription_id VARCHAR NOT NULL,
+    account_id uuid NULL,
     active BOOLEAN NOT NULL DEFAULT true,
     activated_time TIMESTAMP WITH TIME ZONE,
     deactivated_time TIMESTAMP WITH TIME ZONE,

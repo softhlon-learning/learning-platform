@@ -33,6 +33,7 @@ public interface LoadSubscriptionRepository {
 
     record Subscription(
           UUID id,
+          String subscriptionId,
           UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,

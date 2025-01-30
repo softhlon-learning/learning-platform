@@ -28,6 +28,7 @@ public interface PersistSubscriptionRepository {
 
     record PersistSubscriptionRequest(
           UUID id,
+          String subscriptionId,
           UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,
