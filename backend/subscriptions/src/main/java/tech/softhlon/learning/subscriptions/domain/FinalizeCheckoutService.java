@@ -20,7 +20,7 @@ public interface FinalizeCheckoutService {
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record CheckoutNotFound() implements Result {}
+        record CheckoutNotFound(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 

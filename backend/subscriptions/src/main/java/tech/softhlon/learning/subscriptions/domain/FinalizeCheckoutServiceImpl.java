@@ -11,6 +11,7 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.CheckoutNotFound;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
@@ -33,6 +34,7 @@ import java.time.OffsetDateTime;
 class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private static final String ID = "id";
+    private static final String SESSION_NOt_FOUND = "Checkout session not found";
 
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
@@ -67,7 +69,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
                     return switch (result) {
                         case CheckoutLoaded(CheckoutSession session) -> processSession(session);
-                        case CheckoutNotFoundFailed() -> new Failed(null);
+                        case CheckoutNotFoundFailed() -> new CheckoutNotFound(SESSION_NOt_FOUND);
                         case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
                     };
                 }
