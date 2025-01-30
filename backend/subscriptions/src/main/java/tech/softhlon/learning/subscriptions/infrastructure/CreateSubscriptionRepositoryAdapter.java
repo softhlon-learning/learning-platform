@@ -54,8 +54,8 @@ class CreateSubscriptionRepositoryAdapter implements CreateSubscriptionRepositor
 
         return SubscriptionEntity.builder()
               .accountId(request.accountId())
-              .status(request.status())
-              .startedTime(request.startedTime())
+              .active(true)
+              .activatedTime(request.startedTime())
               .build();
 
     }

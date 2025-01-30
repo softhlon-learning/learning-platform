@@ -30,7 +30,6 @@ public interface CreateSubscriptionRepository {
 
     record CreateSubscriptionRequest(
           UUID accountId,
-          String status,
           OffsetDateTime startedTime) {}
 
 }

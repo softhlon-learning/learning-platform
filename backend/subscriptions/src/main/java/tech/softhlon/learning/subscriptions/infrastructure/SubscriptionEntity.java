@@ -30,8 +30,8 @@ public class SubscriptionEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID accountId;
-    private String status;
-    private OffsetDateTime startedTime;
-    private OffsetDateTime cancelledTime;
+    private boolean active;
+    private OffsetDateTime activatedTime;
+    private OffsetDateTime deactivatedTime;
 
 }
