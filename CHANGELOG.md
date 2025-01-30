@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.39.8
+_release date: 2025-01-30_
+ * Integrated FinalizeCheckoutServiceImpl with CreateCustomerService
+
 ## 0.39.7
 _release date: 2025-01-30_
  * Implement PersistCustomersRepositoryAdapter
