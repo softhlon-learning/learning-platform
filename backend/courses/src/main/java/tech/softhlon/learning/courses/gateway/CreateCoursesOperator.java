@@ -53,7 +53,7 @@ public class CreateCoursesOperator {
     public void execute() throws IOException {
 
         MDC.put(ACCOUNT_ID,
-              "#app-init");
+              "course-init");
 
         log.info("operator | Create Courses operator started");
         createCourse(courseDefinitions.getApiDesignDefinition());
