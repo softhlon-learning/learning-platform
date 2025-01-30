@@ -26,7 +26,7 @@ public interface PersistSubscriptionRepository {
           UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,
-          OffsetDateTime deactivateTime) {}
+          OffsetDateTime deactivatedTime) {}
 
     sealed interface PersistSubscriptionResult {
         record SubscriptionPersisted() implements PersistSubscriptionResult {}
