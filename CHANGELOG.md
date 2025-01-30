@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.39.4
+_release date: 2025-01-30_
+ * Added customers table
+ * Added update_checkout_sessions_updated_time trigger
+ * Added CustomersJpaRepository
+
 ## 0.39.3
 _release date: 2025-01-30_
  * Removed CreateSubscriptionService from FinalizeCheckoutServiceImpl
