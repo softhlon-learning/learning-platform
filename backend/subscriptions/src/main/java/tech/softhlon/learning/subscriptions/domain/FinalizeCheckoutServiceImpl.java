@@ -11,14 +11,13 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.CheckoutNotFound;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundFailed;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFound;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
@@ -69,7 +68,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
                     return switch (result) {
                         case CheckoutLoaded(CheckoutSession session) -> processSession(session);
-                        case CheckoutNotFoundFailed() -> new CheckoutNotFound(SESSION_NOt_FOUND);
+                        case CheckoutNotFound() -> new Result.CheckoutNotFound(SESSION_NOt_FOUND);
                         case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
                     };
                 }
