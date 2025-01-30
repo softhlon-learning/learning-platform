@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.39.6
+_release date: 2025-01-30_
+ * Added CreateCustomerService and its empty implementation
+ * Added unique constraint on customers.account_id
+ * Implement LoadCustomerRepositoryAdapter
+
 ## 0.39.5
 _release date: 2025-01-30_
  * Added LoadCustomerRepository and its empty adapter
