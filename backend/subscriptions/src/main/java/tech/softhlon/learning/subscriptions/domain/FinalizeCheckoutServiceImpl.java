@@ -11,9 +11,6 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionRequest;
-import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionResult.SubscriptionCreated;
-import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionResult.SubscriptionCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
@@ -21,12 +18,6 @@ import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCh
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFound;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
-
-import java.time.OffsetDateTime;
-import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -42,19 +33,16 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
     private final PersistCheckoutRepository persistCheckoutRepository;
-    private final CreateSubscriptionService createSubscriptionService;
 
     public FinalizeCheckoutServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
-          PersistCheckoutRepository persistCheckoutRepository,
-          CreateSubscriptionService createSubscriptionService) {
+          PersistCheckoutRepository persistCheckoutRepository) {
 
         this.webhookSecret = webhookSecret;
         this.loadCheckoutRepository = loadCheckoutRepository;
         this.persistCheckoutRepository = persistCheckoutRepository;
-        this.createSubscriptionService = createSubscriptionService;
 
     }
 
@@ -74,13 +62,10 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
                           new LoadCheckoutRequest(sessionId(event)));
 
                     return switch (result) {
-                        case CheckoutLoaded(CheckoutSession session) -> createSubscription(session);
+                        case CheckoutLoaded(CheckoutSession session) -> new Succeeded();
                         case CheckoutNotFound() -> new Result.CheckoutNotFound(SESSION_NOT_FOUND);
                         case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
                     };
-                }
-                case "customer.subscription.deleted": {
-                    log.info("service | Subscription deleted [{}]", event);
                 }
                 default:
                     log.info("service | Event not handled [{}]", event);
@@ -106,38 +91,6 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
               .object()
               .id();
 
-    }
-
-    private Result createSubscription(CheckoutSession session) {
-        var result = persistCheckoutRepository.execute(
-              new PersistCheckoutSessionRequest(
-                    session.id(),
-                    session.sessionId(),
-                    session.accountId(),
-                    session.expiredTime(),
-                    OffsetDateTime.now()
-              ));
-
-        return switch (result) {
-            case CheckoutSessionPersisted() -> createSuscription(session.accountId());
-            case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
-        };
-    }
-
-    private Result cancelSubscription(String sessionId) {
-        return new Succeeded();
-    }
-
-    private Result createSuscription(
-          UUID accountId) {
-
-        var result = createSubscriptionService.execute(
-              new CreateSubscriptionRequest(accountId));
-
-        return switch (result) {
-            case SubscriptionCreated() -> new Succeeded();
-            case SubscriptionCreationFailed(Throwable cause) -> new Failed(cause);
-        };
     }
 
     record DataObject(Object object) {}
