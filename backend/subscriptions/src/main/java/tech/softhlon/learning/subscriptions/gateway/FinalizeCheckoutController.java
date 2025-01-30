@@ -37,13 +37,15 @@ class FinalizeCheckoutController {
     ResponseEntity<?> finalizeCheckout(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Store Stripe checkout result [request]");
+        log.info("controller | Finalize checkout [request]");
 
         var result = service.execute(
               new Request(
                     httpRequest.getHeader("Stripe-Signature"),
                     payload
               ));
+
+        log.info("controller | Finalize checkout [response]: {}", result);
 
         return successCreatedBody();
 
