@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.39.7
+_release date: 2025-01-30_
+ * Implement PersistCustomersRepositoryAdapter
+ * Implemented CreateCustomerServiceImp
+
 ## 0.39.6
 _release date: 2025-01-30_
  * Added CreateCustomerService and its empty implementation
