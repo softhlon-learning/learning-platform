@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFound;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -35,7 +35,7 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
                 return new CheckoutLoaded(
                       checkoutSession(entity.get()));
             } else {
-                return new CheckoutNotFound();
+                return new CheckoutNotFoundInDatabase();
             }
 
         } catch (Throwable cause) {

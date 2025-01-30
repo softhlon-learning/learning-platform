@@ -25,7 +25,7 @@ public interface LoadCheckoutRepository {
 
     sealed interface LoadCheckoutResult {
         record CheckoutLoaded(CheckoutSession checkoutSession) implements LoadCheckoutResult {}
-        record CheckoutNotFound() implements LoadCheckoutResult {}
+        record CheckoutNotFoundInDatabase() implements LoadCheckoutResult {}
         record CheckoutLoadFailed(Throwable cause) implements LoadCheckoutResult {}
     }
 

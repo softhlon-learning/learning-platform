@@ -11,13 +11,20 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.CheckoutNotFound;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFound;
+import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.*;
+import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerRequest;
+import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.*;
+
+import java.time.OffsetDateTime;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -33,16 +40,19 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
     private final PersistCheckoutRepository persistCheckoutRepository;
+    private final CreateCustomerService createCustomerService;
 
     public FinalizeCheckoutServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
-          PersistCheckoutRepository persistCheckoutRepository) {
+          PersistCheckoutRepository persistCheckoutRepository,
+          CreateCustomerService createCustomerService) {
 
         this.webhookSecret = webhookSecret;
         this.loadCheckoutRepository = loadCheckoutRepository;
         this.persistCheckoutRepository = persistCheckoutRepository;
+        this.createCustomerService = createCustomerService;
 
     }
 
@@ -62,8 +72,8 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
                           new LoadCheckoutRequest(sessionId(event)));
 
                     return switch (result) {
-                        case CheckoutLoaded(CheckoutSession session) -> new Succeeded();
-                        case CheckoutNotFound() -> new Result.CheckoutNotFound(SESSION_NOT_FOUND);
+                        case CheckoutLoaded(CheckoutSession checkout) -> persistCheckout(customerId(event), checkout);
+                        case CheckoutNotFoundInDatabase() -> new Result.CheckoutNotFound(SESSION_NOT_FOUND);
                         case CheckoutLoadFailed(Throwable cause) -> new Failed(cause);
                     };
                 }
@@ -93,6 +103,57 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     }
 
-    record DataObject(Object object) {}
-    record Object(String id) {}
+    private String customerId(Event event) {
+
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .object()
+              .customer();
+
+    }
+
+    private Result persistCheckout(
+          String customerId,
+          CheckoutSession checkout) {
+
+        var result = persistCheckoutRepository.execute(
+              new PersistCheckoutSessionRequest(
+                    checkout.id(),
+                    checkout.sessionId(),
+                    checkout.accountId(),
+                    checkout.expiredTime(),
+                    OffsetDateTime.now()
+              ));
+
+        return switch (result) {
+            case CheckoutSessionPersisted() -> createCustomer(customerId, checkout);
+            case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+
+    }
+
+    private Result createCustomer(
+          String customerId,
+          CheckoutSession checkout) {
+        var result = createCustomerService.execute(
+              new CreateCustomerRequest(
+                    customerId,
+                    checkout.accountId()
+              ));
+
+        return switch (result) {
+            case CustomerCreated customerCreated -> null;
+            case CustomerCreationFailed customerCreationFailed -> null;
+        };
+    }
+
+
+    record DataObject(
+          Object object) {}
+
+    record Object(
+          String id,
+          String customer) {}
 }
