@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.38.4
+_release date: 2025-01-30_
+ * Created and added trucsted localhost certificate
+
 ## 0.38.3
 _release date: 2025-01-30_
  * Added CheckoutNotFound to FinalizeCheckoutService result
