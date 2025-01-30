@@ -58,8 +58,6 @@ CREATE TABLE subscriptions (
          REFERENCES accounts (id)
 );
 
-CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
-
 CREATE TABLE invalidated_tokens (
     id uuid DEFAULT gen_random_uuid(),
     token_hash VARCHAR NOT NULL,
@@ -90,6 +88,7 @@ CREATE TABLE checkout_sessions (
     expired_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     completed_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_checkout_sessions_accounts
          FOREIGN KEY (account_id)
@@ -124,3 +123,5 @@ CREATE TRIGGER update_accounts_updated_time BEFORE UPDATE ON accounts FOR EACH R
 CREATE TRIGGER update_courses_updated_time BEFORE UPDATE ON courses FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_enrollments_updated_time BEFORE UPDATE ON enrollments FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_subscriptions_updated_time BEFORE UPDATE ON subscriptions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_checkout_sessions_updated_time BEFORE UPDATE ON checkout_sessions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+
