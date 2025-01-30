@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
@@ -77,10 +78,10 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
                     };
                 }
                 default:
-                    log.info("service | Event not handled [{}]", event);
+                    log.info("service | Event not handled [{}]", event.getType());
+                    return new IncorrectEventType("Incorrecrt event type: " + event.getType());
             }
 
-            return new Succeeded();
         } catch (Throwable cause) {
             return new Failed(cause);
         }
