@@ -16,11 +16,11 @@ interface CreateSubscriptionService {
     CreateSubscriptionResult execute(
           CreateSubscriptionRequest request);
 
-    record CreateSubscriptionRequest(UUID accountId) {}
-
     sealed interface CreateSubscriptionResult {
         record SubscriptionCreated() implements CreateSubscriptionResult {}
         record SubscriptionCreationFailed(Throwable cause) implements CreateSubscriptionResult {}
     }
+
+    record CreateSubscriptionRequest(UUID accountId) {}
 
 }

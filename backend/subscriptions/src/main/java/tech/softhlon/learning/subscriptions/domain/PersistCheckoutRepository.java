@@ -21,16 +21,16 @@ public interface PersistCheckoutRepository {
     PersistCheckoutSessionResult execute(
           PersistCheckoutSessionRequest request);
 
+    sealed interface PersistCheckoutSessionResult {
+        record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}
+        record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistCheckoutSessionResult {}
+    }
+
     record PersistCheckoutSessionRequest(
           UUID id,
           String sessionId,
           UUID accountId,
           OffsetDateTime expiredTime,
           OffsetDateTime completedTime) {}
-
-    sealed interface PersistCheckoutSessionResult {
-        record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}
-        record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistCheckoutSessionResult {}
-    }
 
 }

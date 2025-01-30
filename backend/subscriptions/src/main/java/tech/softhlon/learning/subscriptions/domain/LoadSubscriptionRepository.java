@@ -22,14 +22,14 @@ public interface LoadSubscriptionRepository {
     LoadSubscriptionResult execute(
           LoadSubscriptionRequest request);
 
-    record LoadSubscriptionRequest(
-          UUID accountId) {}
-
     sealed interface LoadSubscriptionResult {
         record SubscriptionLoaded(Subscription subscription) implements LoadSubscriptionResult {}
         record SubscriptionNotFound() implements LoadSubscriptionResult {}
         record SubscriptionLoadFailed(Throwable cause) implements LoadSubscriptionResult {}
     }
+
+    record LoadSubscriptionRequest(
+          UUID accountId) {}
 
     record Subscription(
           UUID id,

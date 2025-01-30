@@ -21,16 +21,16 @@ public interface PersistSubscriptionRepository {
     PersistSubscriptionResult execute(
           PersistSubscriptionRequest request);
 
+    sealed interface PersistSubscriptionResult {
+        record SubscriptionPersisted() implements PersistSubscriptionResult {}
+        record SubscriptionPersistenceFailed(Throwable cause) implements PersistSubscriptionResult {}
+    }
+
     record PersistSubscriptionRequest(
           UUID id,
           UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,
           OffsetDateTime deactivatedTime) {}
-
-    sealed interface PersistSubscriptionResult {
-        record SubscriptionPersisted() implements PersistSubscriptionResult {}
-        record SubscriptionPersistenceFailed(Throwable cause) implements PersistSubscriptionResult {}
-    }
 
 }

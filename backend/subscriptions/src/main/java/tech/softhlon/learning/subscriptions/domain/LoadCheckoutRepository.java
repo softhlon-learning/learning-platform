@@ -23,14 +23,14 @@ public interface LoadCheckoutRepository {
     LoadCheckoutResult execute(
           LoadCheckoutRequest request);
 
-    record LoadCheckoutRequest(
-          String sessionId) {}
-
     sealed interface LoadCheckoutResult {
         record CheckoutLoaded(CheckoutSession checkoutSession) implements LoadCheckoutResult {}
         record CheckoutNotFound() implements LoadCheckoutResult {}
         record CheckoutLoadFailed(Throwable cause) implements LoadCheckoutResult {}
     }
+
+    record LoadCheckoutRequest(
+          String sessionId) {}
 
     record CheckoutSession(
           UUID id,
