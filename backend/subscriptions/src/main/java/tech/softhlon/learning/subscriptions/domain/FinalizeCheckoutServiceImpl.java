@@ -91,7 +91,8 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
         return new Gson()
               .fromJson(
                     event.getData().toJson(),
-                    Object.class)
+                    DataObject.class)
+              .object()
               .id();
 
     }
@@ -112,5 +113,6 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
         };
     }
 
+    record DataObject(Object object) {}
     record Object(String id) {}
 }
