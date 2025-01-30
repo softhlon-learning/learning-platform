@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import com.google.gson.Gson;
 import com.stripe.model.Event;
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
@@ -87,7 +88,11 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
     private String sessionId(Event event) {
 
-        return event.getId();
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    Object.class)
+              .id();
 
     }
 
@@ -106,4 +111,6 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
             case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
     }
+
+    record Object(String id) {}
 }

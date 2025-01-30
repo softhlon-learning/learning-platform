@@ -11,4 +11,5 @@ module subscriptions {
     requires spring.data.jpa;
     requires spring.beans;
     requires stripe.java;
+    requires com.google.gson;
 }
