@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.8
+_release date: 2025-01-30_
+ * Added PersistCheckoutRepository and its empty adapter
+ * Added CreateSubscriptionService and its empty implementation
+
 ## 0.38.7
 _release date: 2025-01-30_
  * Fixed record name (CheckoutNotFound)
