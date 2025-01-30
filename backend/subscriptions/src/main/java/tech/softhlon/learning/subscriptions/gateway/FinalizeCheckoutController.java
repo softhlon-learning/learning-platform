@@ -20,8 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Resul
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_RESULT;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -52,8 +51,9 @@ class FinalizeCheckoutController {
         log.info("controller | Finalize checkout [response]: {}", result);
 
         return switch (result) {
-            case CheckoutNotFound(), Failed(_) -> internalServerBody(httpRequest, null);
             case Succeeded succeeded -> successCreatedBody();
+            case CheckoutNotFound(String message) -> badRequestBody(httpRequest, message);
+            case Failed(_) -> internalServerBody(httpRequest, null);
         };
 
     }
