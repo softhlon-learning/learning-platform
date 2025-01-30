@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.1
+_release date: 2025-01-30_
+ * Implemented FinalizeCheckoutServiceImpl
+ * Added default constructors to CheckoutSessionEntity
+
 ## 0.38.0
 _release date: 2025-01-30_
  * Added LoadCheckoutRepository and its empty adapter
