@@ -16,7 +16,7 @@ import java.util.UUID;
 
 interface CheckoutSessionsJpaRepository extends CrudRepository<CheckoutSessionEntity, UUID> {
 
-    Optional<CheckoutSessionEntity> findBySessionIdInAndAccountId(
+    Optional<CheckoutSessionEntity> findBySessionIdAndAccountId(
           String sessionId,
           UUID accountId);
 

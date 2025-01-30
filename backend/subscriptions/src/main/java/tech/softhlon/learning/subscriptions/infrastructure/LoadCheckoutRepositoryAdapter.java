@@ -28,7 +28,7 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
 
         try {
             var entity = checkoutSessionsJpaRepository
-                  .findBySessionIdInAndAccountId(
+                  .findBySessionIdAndAccountId(
                         request.sessionId(),
                         request.accoountId());
 
