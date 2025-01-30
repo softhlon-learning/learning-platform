@@ -39,10 +39,8 @@ class CreateSubscriptionServiceImpl implements CreateSubscriptionService {
               new LoadSubscriptionRequest(request.accountId()));
 
         return switch (result) {
-            case SubscriptionLoaded(Subscription subscription) -> persistSubscription(
-                  request.accountId(),
-                  subscription);
-            case SubscriptionNotFound() -> persistSubscription(request.accountId(), null);
+            case SubscriptionLoaded(Subscription subscription) -> persist(request.accountId(), subscription);
+            case SubscriptionNotFound() -> persist(request.accountId(), null);
             case SubscriptionLoadFailed(Throwable cause) -> new SubscriptionCreationFailed(cause);
         };
     }
@@ -51,7 +49,7 @@ class CreateSubscriptionServiceImpl implements CreateSubscriptionService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    CreateSubscriptionResult persistSubscription(
+    CreateSubscriptionResult persist(
           UUID accountId,
           Subscription subscription) {
 

@@ -11,6 +11,9 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionRequest;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionResult.SubscriptionCreated;
+import tech.softhlon.learning.subscriptions.domain.CreateSubscriptionService.CreateSubscriptionResult.SubscriptionCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.FinalizeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
@@ -23,6 +26,7 @@ import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.Per
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -38,16 +42,19 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
     private final PersistCheckoutRepository persistCheckoutRepository;
+    private final CreateSubscriptionService createSubscriptionService;
 
     public FinalizeCheckoutServiceImpl(
           @Value("${stripe.checkout-result.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
-          PersistCheckoutRepository persistCheckoutRepository) {
+          PersistCheckoutRepository persistCheckoutRepository,
+          CreateSubscriptionService createSubscriptionService) {
 
         this.webhookSecret = webhookSecret;
         this.loadCheckoutRepository = loadCheckoutRepository;
         this.persistCheckoutRepository = persistCheckoutRepository;
+        this.createSubscriptionService = createSubscriptionService;
 
     }
 
@@ -109,8 +116,20 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
               ));
 
         return switch (result) {
-            case CheckoutSessionPersisted() -> new Succeeded();
+            case CheckoutSessionPersisted() -> createSuscription(session.accountId());
             case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+    }
+
+    private Result createSuscription(
+          UUID accountId) {
+
+        var result = createSubscriptionService.execute(
+              new CreateSubscriptionRequest(accountId));
+
+        return switch (result) {
+            case SubscriptionCreated() -> new Succeeded();
+            case SubscriptionCreationFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
