@@ -69,7 +69,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
 
             switch (event.getType()) {
                 case "checkout.session.completed": {
-                    log.info("service | Payment succeeded [{}]", event.getType());
+                    log.info("service | Payment succeeded [{}]", event);
                     var result = loadCheckoutRepository.execute(
                           new LoadCheckoutRequest(sessionId(event)));
 
@@ -83,7 +83,7 @@ class FinalizeCheckoutServiceImpl implements FinalizeCheckoutService {
                     log.info("service | Subscription deleted [{}]", event);
                 }
                 default:
-                    log.info("service | Event not handled [{}]", event.getType());
+                    log.info("service | Event not handled [{}]", event);
             }
 
             return new Succeeded();
