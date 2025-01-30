@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.39.5
+_release date: 2025-01-30_
+ * Added LoadCustomerRepository and its empty adapter
+ * Added PersistCustomersRepository and its empty adapter
+
 ## 0.39.4
 _release date: 2025-01-30_
  * Added customers table
