@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.38.3
+_release date: 2025-01-30_
+ * Added CheckoutNotFound to FinalizeCheckoutService result
+ * Response 400 when CheckoutNotFound
+
 ## 0.38.2
 _release date: 2025-01-30_
  * Testing integration with Stripe
