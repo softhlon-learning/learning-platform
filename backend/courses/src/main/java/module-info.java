@@ -14,4 +14,5 @@ module courses {
     requires org.apache.tomcat.embed.core;
     requires jakarta.persistence;
     requires spring.web;
+    requires spring.data.commons;
 }
