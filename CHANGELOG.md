@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.19
+_release date: 2025-01-31_
+ * subscriptions: Improve request/response log format in controllers
+ * courses: Improve request/response log format in controllers
+ * accounts: Improve request/response log format in controllers
+
 ## 0.40.18
 _release date: 2025-01-31_
  * subscriptions: Fix logging event type
