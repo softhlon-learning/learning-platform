@@ -47,6 +47,7 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
           PersistEventLogRequest request) {
 
         return EventLogEntity.builder()
+              .eventType(request.eventType())
               .customerId(request.customerId())
               .payload(request.payload())
               .build();

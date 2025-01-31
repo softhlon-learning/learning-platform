@@ -24,6 +24,7 @@ public interface PersistEventLogRepository {
     }
 
     record PersistEventLogRequest(
+          String eventType,
           String customerId,
           String payload) {}
 

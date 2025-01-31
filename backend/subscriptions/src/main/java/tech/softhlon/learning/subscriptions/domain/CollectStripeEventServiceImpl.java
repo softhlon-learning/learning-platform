@@ -49,6 +49,7 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
 
             var result = persistEventLogRepository.execute(
                   new PersistEventLogRequest(
+                        event.getType(),
                         customerId,
                         request.payload()));
 

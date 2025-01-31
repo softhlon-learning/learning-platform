@@ -28,6 +28,7 @@ public class EventLogEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private String eventType;
     private String customerId;
     private String payload;
 
