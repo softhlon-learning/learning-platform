@@ -11,9 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.SignUpService;
 import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
@@ -44,14 +42,16 @@ class SignUpController {
      */
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(
-          @Validated @RequestBody SignUpService.Request request,
+          Request request,
           HttpServletResponse response) {
 
         log.info("controller | request / Sign up, {}",
               request);
 
         var result = service.execute(
-              request);
+              request.name(),
+              request.email(),
+              request.password());
 
         return switch (result) {
             case Succeeded(UUID id, String token) -> success(response, token);
@@ -89,6 +89,12 @@ class SignUpController {
 
     }
 
-    record Response(UUID accountId) {}
+    record Request(
+          String name,
+          String email,
+          String password) {}
+
+    record Response(
+          UUID accountId) {}
 
 }

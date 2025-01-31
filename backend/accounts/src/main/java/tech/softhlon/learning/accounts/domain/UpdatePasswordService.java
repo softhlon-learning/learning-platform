@@ -16,7 +16,8 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface UpdatePasswordService {
 
     Result execute(
-          Request request);
+          String token,
+          String password);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -25,9 +26,5 @@ public interface UpdatePasswordService {
         record ExpiredTokenFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String token,
-          String password) {}
 
 }

@@ -35,11 +35,12 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID accountId,
+          String name) {
 
-        var result = loadAccountRepository.execute(request.accountId());
+        var result = loadAccountRepository.execute(accountId);
         return switch (result) {
-            case AccountLoaded(Account account) -> persistAccount(persistAccountRequest(account, request));
+            case AccountLoaded(Account account) -> persistAccount(persistAccountRequest(account, name));
             case AccountNotFound() -> new AccountNotFoundFailed(ACCOUNT_NOT_FOUND);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
@@ -65,12 +66,12 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
 
     private PersistAccountRequest persistAccountRequest(
           Account account,
-          Request request) {
+          String name) {
 
         return new PersistAccountRequest(
               account.id(),
               account.type(),
-              request.name(),
+              name,
               account.email(),
               account.password(),
               account.isDeleted()

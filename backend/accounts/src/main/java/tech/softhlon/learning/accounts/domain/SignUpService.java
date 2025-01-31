@@ -18,7 +18,9 @@ import java.util.UUID;
 public interface SignUpService {
 
     Result execute(
-          Request request);
+          String name,
+          String email,
+          String password);
 
     sealed interface Result {
         record Succeeded(UUID id, String token) implements Result {}
@@ -28,22 +30,6 @@ public interface SignUpService {
         record EmailPolicyFailed(String message) implements Result {}
         record PasswordPolicyFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
-    }
-
-    record Request(
-          String name,
-          String email,
-          String password) {
-
-        @Override
-        public String toString() {
-            return """
-                  [email: %s, name: %s, password: ************]"""
-                  .formatted(
-                        email,
-                        name);
-        }
-
     }
 
 }

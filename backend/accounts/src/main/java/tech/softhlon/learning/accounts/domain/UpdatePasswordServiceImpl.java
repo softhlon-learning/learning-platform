@@ -48,19 +48,21 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
     @Override
     public Result execute(
-          Request request) {
+          String token,
+          String password) {
 
         var validationResult = validateInput(
-              request);
+              token,
+              password);
 
         if (validationResult != null)
             return validationResult;
 
         var result = loadPasswordTokenRepository
-              .execute(request.token());
+              .execute(token);
 
         return switch (result) {
-            case TokenLoaded(PasswordToken token) -> processTokenUpdate(request, token);
+            case TokenLoaded(PasswordToken passwordToken) -> processTokenUpdate(token, password, passwordToken);
             case TokenNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
             case TokenLoadFailed(Throwable cause) -> new Failed(cause);
         };
@@ -72,9 +74,10 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result validateInput(
-          Request request) {
+          String token,
+          String password) {
 
-        if (!passwordValidationService.isPasswordValid(request.password()))
+        if (!passwordValidationService.isPasswordValid(password))
             return new PasswordPolicyFailed(PASSWORD_POLICY);
 
         return null;
@@ -82,16 +85,17 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     }
 
     private Result processTokenUpdate(
-          Request request,
-          PasswordToken token) {
+          String token,
+          String password,
+          PasswordToken passwordToken) {
 
-        if (token.expirationTime().isBefore(OffsetDateTime.now())) {
+        if (passwordToken.expirationTime().isBefore(OffsetDateTime.now())) {
             return new ExpiredTokenFailed(EXPIRED_TOKEN);
         }
 
-        var result = loadAccountRepository.execute(token.accountId());
+        var result = loadAccountRepository.execute(passwordToken.accountId());
         return switch (result) {
-            case AccountLoaded(Account account) -> updatePassword(request, token, account);
+            case AccountLoaded(Account account) -> updatePassword(password, passwordToken, account);
             case AccountNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
@@ -99,7 +103,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     }
 
     private Result updatePassword(
-          Request request,
+          String password,
           PasswordToken token,
           Account account) {
 
@@ -109,7 +113,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
                     account.type(),
                     account.name(),
                     account.email(),
-                    encryptPassword(request.password()),
+                    encryptPassword(password),
                     account.isDeleted()
               ));
 

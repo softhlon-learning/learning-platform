@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Request;
 import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.*;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
@@ -47,9 +46,8 @@ class UpdatePasswordController {
               request);
 
         var result = service.execute(
-              new Request(
-                    request.token(),
-                    request.password));
+              request.token(),
+              request.password);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();

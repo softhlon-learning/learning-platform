@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.UpdateProfileService;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Request;
 import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.AccountNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Succeeded;
@@ -52,9 +51,8 @@ class UpdateProfileController {
 
         var accountId = authContext.accountId();
         var result = service.execute(
-              new Request(
-                    accountId,
-                    request.name()));
+              accountId,
+              request.name());
 
         return switch (result) {
             case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

@@ -44,21 +44,25 @@ class SignUpServiceImpl implements SignUpService {
 
     @Override
     public Result execute(
-          Request request) {
+          String name,
+          String email,
+          String password) {
 
         var validationResult = validateInput(
-              request);
+              name,
+              email,
+              password);
 
         if (validationResult != null)
             return validationResult;
 
         var exists = checkAccountByEmailRepository.execute(
-              request.email());
+              email);
 
         return switch (exists) {
             case AccountExists(_) -> new AccountAlreadyExistsFailed(ACCOUNT_ALREADY_EXISTS);
             case AccountIsDeleted() -> new AccountIsDeletedFailed(ACCOUNT_TS_DELETED);
-            case AccountNotFound() -> persistAccount(request);
+            case AccountNotFound() -> persistAccount(name, email, password);
             case CheckAccountFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -69,18 +73,20 @@ class SignUpServiceImpl implements SignUpService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result validateInput(
-          Request request) {
+          String name,
+          String email,
+          String password) {
 
-        if (request.name().isBlank())
+        if (name.isBlank())
             return new NamePolicyFailed(NAME_IS_BLANK);
 
-        if (request.email().isBlank())
+        if (email.isBlank())
             return new EmailPolicyFailed(EMAIL_IS_BLANK);
 
-        if (!emailValidationService.isEmailValid(request.email()))
+        if (!emailValidationService.isEmailValid(email))
             return new EmailPolicyFailed(EMAIL_INVALID_FORMAT);
 
-        if (!passwordValidationService.isPasswordValid(request.password()))
+        if (!passwordValidationService.isPasswordValid(password))
             return new PasswordPolicyFailed(PASSWORD_POLICY);
 
         return null;
@@ -88,15 +94,17 @@ class SignUpServiceImpl implements SignUpService {
     }
 
     private Result persistAccount(
-          Request request) {
+          String name,
+          String email,
+          String password) {
 
         var result = createAccountRepository.execute(PASSWORD,
-              request.name(),
-              request.email(),
-              encryptPassword(request.password()));
+              name,
+              email,
+              encryptPassword(password));
 
         return switch (result) {
-            case AccountPersisted(UUID id) -> new Succeeded(id, token(request, id));
+            case AccountPersisted(UUID id) -> new Succeeded(id, token(email, id));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -110,11 +118,11 @@ class SignUpServiceImpl implements SignUpService {
 
     }
 
-    private String token(Request request, UUID id) {
+    private String token(String email, UUID id) {
 
         return jwtService.generateToken(
               id,
-              request.email());
+              email);
 
     }
 

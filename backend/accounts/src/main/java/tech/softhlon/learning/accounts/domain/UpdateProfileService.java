@@ -18,15 +18,13 @@ import java.util.UUID;
 public interface UpdateProfileService {
 
     Result execute(
-          Request request);
+          UUID accountId,
+          String name);
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-    record Request(
-          UUID accountId,
-          String name) {}
 
 }
