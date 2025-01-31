@@ -50,6 +50,7 @@ class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionReposit
         return SubscriptionEntity.builder()
               .id(request.id())
               .subscriptionId(request.subscriptionId())
+              .customerId(request.customerId())
               .accountId(request.accountId())
               .active(request.active())
               .activatedTime(request.activatedTime())
