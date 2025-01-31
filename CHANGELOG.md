@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.41.6
+_release date: 2025-02-01_
+ * * subscriptions: Get rid of request objects (part 2) 
+
 ## 0.41.5
 _release date: 2025-01-31_
  * courses: Get rid of request objects (part 2)
