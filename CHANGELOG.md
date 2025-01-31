@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.15
+_release date: 2025-01-31_
+ * application: Add stripe.generic-event.webhook.secret parameter
+ * subscriptions: Implement CollectStripeEventServiceImpl
+ * subscriptions: Integrated SubmitGenericEventController with CollectStripeEventServiceImpl
+
 ## 0.40.14
 _release date: 2025-01-31_
  * Add PersistEventLogRepository
