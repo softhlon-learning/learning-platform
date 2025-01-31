@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.18
+_release date: 2025-01-31_
+ * subscriptions: Fix logging event type
+ * subscriptions: Rename SubmitGenericEventController to CollectStripeEventController
+ * subscriptions: Improve logging in Submit* controllers
+
 ## 0.40.17
 _release date: 2025-01-31_
  * subscriptions: Fixed/improved CollectStripeEventServiceImpl.customerId() method
