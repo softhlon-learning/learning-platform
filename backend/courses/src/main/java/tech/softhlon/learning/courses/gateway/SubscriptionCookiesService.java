@@ -35,7 +35,7 @@ class SubscriptionCookiesService {
               response,
               SUBSCRIBED,
               String.valueOf(subscribed),
-              true,
+              false,
               maxAge);
 
     }
