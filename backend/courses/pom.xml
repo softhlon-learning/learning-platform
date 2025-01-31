@@ -12,14 +12,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-yaml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-        <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>
@@ -27,14 +19,16 @@
         <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>subscriptions</artifactId>
-            <version>0.40.6-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>tech.softhlon.learning</groupId>
-            <artifactId>subscriptions</artifactId>
-            <version>0.40.8-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 </project>
