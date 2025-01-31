@@ -58,7 +58,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                     log.info("service | Event received '{}'", event.getType());
 
                     var subscriptionId = subscriptionId(event);
-                    var customerId = subscriptionId(event);
+                    var customerId = customerId(event);
 
                     var result = loadSubscriptionRepository.execute(
                           new LoadSubscriptionRequest(subscriptionId));
