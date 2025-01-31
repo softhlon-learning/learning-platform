@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.12
+_release date: 2025-01-31_
+ * stripe: configured generic-event webhook to collect most of the events
+ * subscriptions: Fix SubmitGenericEventController path
+ * courses: Improvements in ListCoursesServiceImpl.toCourseViews
+
 ## 0.40.11
 _release date: 2025-01-31_
  * stripe: Add 1-day Premium Member product (for testing)
