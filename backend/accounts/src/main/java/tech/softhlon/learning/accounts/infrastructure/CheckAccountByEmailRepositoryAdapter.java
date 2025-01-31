@@ -27,12 +27,12 @@ class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailReposit
 
     @Override
     public CheckAccountByEmailResult execute(
-          CheckAccountByEmailRequest request) {
+          String email) {
 
         try {
 
             var entity = accountsRepo.findByEmail(
-                  request.email());
+                  email);
 
             return entity.isPresent()
                   ? existingAccount(entity.get())

@@ -18,15 +18,12 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 public interface CheckTokenRepository {
 
     CheckTokenResult execute(
-          CheckTokenRequest request);
+          String tokenHash);
 
     sealed interface CheckTokenResult {
         record TokenExists() implements CheckTokenResult {}
         record TokenNotFound() implements CheckTokenResult {}
         record CheckTokenFailed(Throwable cause) implements CheckTokenResult {}
     }
-
-    record CheckTokenRequest(
-          String tokenHash) {}
 
 }

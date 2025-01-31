@@ -17,7 +17,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenRequest;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
 import tech.softhlon.learning.accounts.domain.JwtService;
 import tech.softhlon.learning.common.security.AuthenticationToken;
@@ -102,7 +101,7 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                   token);
 
             var result = checkTokenRepository.execute(
-                  new CheckTokenRequest(tokenHash));
+                  tokenHash);
 
             if (result instanceof TokenExists) {
                 return true;

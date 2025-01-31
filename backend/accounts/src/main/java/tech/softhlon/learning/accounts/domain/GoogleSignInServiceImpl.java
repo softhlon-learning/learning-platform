@@ -12,12 +12,10 @@ import com.google.api.client.json.gson.GsonFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
@@ -27,6 +25,8 @@ import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeed
 
 import java.util.Collections;
 import java.util.UUID;
+
+import static tech.softhlon.learning.accounts.domain.AccountType.GOOGLE;
 
 // --------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -73,8 +73,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
                 IdToken.Payload payload = idToken.getPayload();
                 var email = (String) payload.get(EMAIL);
                 var name = (String) payload.get(GIVEN_NAME);
-                var exists = checkAccountByEmailRepository.execute(
-                      new CheckAccountByEmailRequest(email));
+                var exists = checkAccountByEmailRepository.execute(email);
 
                 return switch (exists) {
                     case AccountExists(UUID id) -> new Succeeded(token(id, email));
@@ -101,26 +100,16 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
           String name,
           String email) {
 
-        var result = createAccountRepository.execute(prepareRequest(
+        var result = createAccountRepository.execute(
+              GOOGLE,
               name,
-              email));
+              email,
+              null);
 
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(token(id, email));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
-
-    }
-
-    private CreateAccountRequest prepareRequest(
-          String name,
-          String email) {
-
-        return new CreateAccountRequest(
-              AccountType.GOOGLE.name(),
-              name,
-              email,
-              null);
 
     }
 

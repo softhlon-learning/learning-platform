@@ -27,12 +27,20 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
 
     @Override
     public CreateAccountResult execute(
-          CreateAccountRequest createAccountRequest) {
+          String type,
+          String name,
+          String email,
+          String password) {
 
         try {
 
             var createdAccount = accountsRepo.save(
-                  toAccount(createAccountRequest));
+                  AccountEntity.builder()
+                        .type(type)
+                        .name(name)
+                        .email(email)
+                        .password(password)
+                        .build());
 
             return new AccountPersisted(
                   createdAccount.getId());
@@ -43,22 +51,6 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
             return new AccountPersistenceFailed(cause);
 
         }
-
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private AccountEntity toAccount(
-          CreateAccountRequest request) {
-
-        return AccountEntity.builder()
-              .type(request.type())
-              .name(request.name())
-              .email(request.email())
-              .password(request.password())
-              .build();
 
     }
 

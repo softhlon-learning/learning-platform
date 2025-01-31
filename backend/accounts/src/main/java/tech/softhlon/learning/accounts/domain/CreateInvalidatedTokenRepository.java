@@ -20,14 +20,11 @@ import java.util.UUID;
 public interface CreateInvalidatedTokenRepository {
 
     CreateInvalidatedTokenResult execute(
-          CreateInvalidatedTokenRequest request);
+          String tokenHash);
 
     sealed interface CreateInvalidatedTokenResult {
         record InvalidatedTokenPersisted(UUID uuid) implements CreateInvalidatedTokenResult {}
         record InvalidatedTokenPersistenceFailed(Throwable cause) implements CreateInvalidatedTokenResult {}
     }
-
-    record CreateInvalidatedTokenRequest(
-          String tokenHash) {}
 
 }

@@ -27,12 +27,14 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
 
     @Override
     public CreateInvalidatedTokenResult execute(
-          CreateInvalidatedTokenRequest request) {
+          String tokenHash) {
 
         try {
 
             var createdAccount = invalidatedTokensRepo.save(
-                  toInvalidatedToken(request));
+                  InvalidatedEntity.builder()
+                        .tokenHash(tokenHash)
+                        .build());
 
             return new InvalidatedTokenPersisted(
                   createdAccount.getId());
@@ -43,19 +45,6 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
             return new InvalidatedTokenPersistenceFailed(cause);
 
         }
-
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private InvalidatedEntity toInvalidatedToken(
-          CreateInvalidatedTokenRequest request) {
-
-        return InvalidatedEntity.builder()
-              .tokenHash(request.tokenHash())
-              .build();
 
     }
 

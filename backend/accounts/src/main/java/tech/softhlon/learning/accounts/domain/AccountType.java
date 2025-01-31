@@ -9,9 +9,9 @@ package tech.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-enum AccountType {
+class AccountType {
 
-    PASSWORD,
-    GOOGLE;
+    static final String PASSWORD = "PASSWORD";
+    static final String GOOGLE = "GOOGLE";
 
 }

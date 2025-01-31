@@ -27,12 +27,12 @@ class CheckTokenRepositoryAdapter implements CheckTokenRepository {
 
     @Override
     public CheckTokenResult execute(
-          CheckTokenRequest request) {
+          String tokenHash) {
 
         try {
 
             return invalidatedTokensRepo.existsByTokenHash(
-                  request.tokenHash())
+                  tokenHash)
                   ? new TokenExists()
                   : new TokenNotFound();
 

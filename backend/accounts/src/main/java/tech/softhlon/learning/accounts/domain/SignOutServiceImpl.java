@@ -7,7 +7,6 @@ package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenRequest;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.CheckTokenFailed;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenNotFound;
@@ -44,8 +43,7 @@ class SignOutServiceImpl implements SignOutService {
             }
 
             var exists = checkTokenRepository.execute(
-                  prepareRequest(
-                        request));
+                  tokenHash(request));
 
             return switch (exists) {
                 case TokenExists() -> new Succeeded();
@@ -63,12 +61,11 @@ class SignOutServiceImpl implements SignOutService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private CheckTokenRequest prepareRequest(
+    private String tokenHash(
           Request request) throws NoSuchAlgorithmException {
 
-        return new CheckTokenRequest(
-              jwtService.tokenHash(
-                    request.token()));
+        return jwtService.tokenHash(
+              request.token());
 
     }
 

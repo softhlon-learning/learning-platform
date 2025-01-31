@@ -20,17 +20,14 @@ import java.util.UUID;
 public interface CreateAccountRepository {
 
     CreateAccountResult execute(
-          CreateAccountRequest request);
+          String type,
+          String name,
+          String email,
+          String password);
 
     sealed interface CreateAccountResult {
         record AccountPersisted(UUID uuid) implements CreateAccountResult {}
         record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
     }
-
-    record CreateAccountRequest(
-          String type,
-          String name,
-          String email,
-          String password) {}
 
 }

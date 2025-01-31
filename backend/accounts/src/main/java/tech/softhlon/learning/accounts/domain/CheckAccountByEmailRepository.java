@@ -20,7 +20,7 @@ import java.util.UUID;
 public interface CheckAccountByEmailRepository {
 
     CheckAccountByEmailResult execute(
-          CheckAccountByEmailRequest request);
+          String email);
 
     sealed interface CheckAccountByEmailResult {
         record AccountExists(UUID id) implements CheckAccountByEmailResult {}
@@ -28,8 +28,5 @@ public interface CheckAccountByEmailRepository {
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
     }
-
-    record CheckAccountByEmailRequest(
-          String email) {}
 
 }

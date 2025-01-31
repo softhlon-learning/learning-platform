@@ -8,17 +8,17 @@ package tech.softhlon.learning.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailRequest;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountRequest;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 
 import java.util.UUID;
+
+import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -53,8 +53,7 @@ class SignUpServiceImpl implements SignUpService {
             return validationResult;
 
         var exists = checkAccountByEmailRepository.execute(
-              new CheckAccountByEmailRequest(
-                    request.email()));
+              request.email());
 
         return switch (exists) {
             case AccountExists(_) -> new AccountAlreadyExistsFailed(ACCOUNT_ALREADY_EXISTS);
@@ -91,24 +90,15 @@ class SignUpServiceImpl implements SignUpService {
     private Result persistAccount(
           Request request) {
 
-        var result = createAccountRepository.execute(
-              prepareRequest(request));
+        var result = createAccountRepository.execute(PASSWORD,
+              request.name(),
+              request.email(),
+              encryptPassword(request.password()));
 
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(id, token(request, id));
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
-
-    }
-
-    private CreateAccountRequest prepareRequest(
-          Request request) {
-
-        return new CreateAccountRequest(
-              AccountType.PASSWORD.name(),
-              request.name(),
-              request.email(),
-              encryptPassword(request.password()));
 
     }
 
