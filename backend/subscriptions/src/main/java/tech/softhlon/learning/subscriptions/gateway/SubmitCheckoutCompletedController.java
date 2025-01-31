@@ -17,8 +17,8 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Request;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.CheckoutNotFound;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
