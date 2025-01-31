@@ -11,13 +11,6 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Request;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.*;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoaded;
@@ -26,9 +19,11 @@ import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.Su
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.IncorrectEventType;
+import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
-import java.util.UUID;
 
 @Slf4j
 @Service
@@ -101,7 +96,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
     }
 
-   Result persist(
+    Result persist(
           String subscriptionId,
           Subscription subscription) {
 

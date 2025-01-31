@@ -11,18 +11,20 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerRequest;
+import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreated;
+import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.*;
-import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerRequest;
-import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.*;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 
@@ -145,7 +147,7 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
 
         return switch (result) {
             case CustomerCreated() -> new Succeeded();
-            case CustomerCreationFailed (Throwable cause) -> new Failed(cause);
+            case CustomerCreationFailed(Throwable cause) -> new Failed(cause);
         };
     }
 
