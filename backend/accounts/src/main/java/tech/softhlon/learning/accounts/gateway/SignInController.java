@@ -43,14 +43,15 @@ class SignInController {
      */
     @PostMapping(SIGN_IN)
     ResponseEntity<?> signIn(
-          @Validated @RequestBody SignInService.Request request,
+          @Validated @RequestBody Request request,
           HttpServletResponse response) {
 
         log.info("controller | request / Sign in, {}",
               request);
 
         var result = service.execute(
-              request);
+              request.email(),
+              request.password());
 
         return switch (result) {
             case Succeeded(String token) -> success(response, token);
@@ -89,5 +90,9 @@ class SignInController {
               message);
 
     }
+
+    record Request(
+          String email,
+          String password) {}
 
 }

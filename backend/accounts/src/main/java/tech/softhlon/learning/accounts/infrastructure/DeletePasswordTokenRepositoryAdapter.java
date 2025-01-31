@@ -12,6 +12,8 @@ import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository;
 import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
 import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,13 +27,11 @@ class DeletePasswordTokenRepositoryAdapter implements DeletePasswordTokenReposit
 
     @Override
     public DeletePasswordTokenResult execute(
-          DeletePasswordTokenRequest request) {
+          UUID id) {
 
         try {
 
-            passwordTokensJpaRepository.deleteById(
-                  request.id());
-
+            passwordTokensJpaRepository.deleteById(id);
             return new TokenDeleted();
 
         } catch (Throwable cause) {

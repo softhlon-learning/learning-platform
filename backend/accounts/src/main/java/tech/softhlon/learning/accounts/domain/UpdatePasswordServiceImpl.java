@@ -8,15 +8,12 @@ package tech.softhlon.learning.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenRequest;
 import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
 import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenRequest;
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoaded;
 import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenNotFound;
@@ -59,8 +56,8 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
         if (validationResult != null)
             return validationResult;
 
-        var result = loadPasswordTokenRepository.execute(
-              new LoadPasswordTokenRequest(request.token()));
+        var result = loadPasswordTokenRepository
+              .execute(request.token());
 
         return switch (result) {
             case TokenLoaded(PasswordToken token) -> processTokenUpdate(request, token);
@@ -92,9 +89,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
             return new ExpiredTokenFailed(EXPIRED_TOKEN);
         }
 
-        var result = loadAccountRepository.execute(
-              new LoadAccountRequest(token.accountId()));
-
+        var result = loadAccountRepository.execute(token.accountId());
         return switch (result) {
             case AccountLoaded(Account account) -> updatePassword(request, token, account);
             case AccountNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
@@ -129,7 +124,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     private Result deleteToken(PasswordToken token) {
 
         var result = deletePasswordTokenRepository.execute(
-              new DeletePasswordTokenRequest(token.id()));
+              token.id());
 
         return switch (result) {
             case TokenDeleted tokenDeleted -> new Succeeded();

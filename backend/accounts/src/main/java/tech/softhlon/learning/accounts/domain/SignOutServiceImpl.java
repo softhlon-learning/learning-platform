@@ -33,20 +33,20 @@ class SignOutServiceImpl implements SignOutService {
 
     @Override
     public Result execute(
-          Request request) {
+          String token) {
 
         try {
 
-            if (request.token() == null) {
+            if (token == null) {
                 return new NotAuthorized("Authentication token not found");
             }
 
             var exists = checkTokenRepository.execute(
-                  tokenHash(request));
+                  tokenHash(token));
 
             return switch (exists) {
                 case TokenExists() -> new Succeeded();
-                case TokenNotFound() -> persistInvalidatedToken(request);
+                case TokenNotFound() -> persistInvalidatedToken(token);
                 case CheckTokenFailed(Throwable cause) -> new Failed(cause);
             };
 
@@ -61,19 +61,18 @@ class SignOutServiceImpl implements SignOutService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private String tokenHash(
-          Request request) throws NoSuchAlgorithmException {
+          String token) throws NoSuchAlgorithmException {
 
         return jwtService.tokenHash(
-              request.token());
+              token);
 
     }
 
     private Result persistInvalidatedToken(
-          Request request) throws NoSuchAlgorithmException {
+          String token) throws NoSuchAlgorithmException {
 
         var result = createInvalidatedTokenRepository.execute(
-              jwtService.tokenHash(
-                    request.token()));
+              jwtService.tokenHash(token));
 
         return switch (result) {
             case InvalidatedTokenPersisted(UUID id) -> new Succeeded();

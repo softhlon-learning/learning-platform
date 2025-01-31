@@ -8,7 +8,6 @@ package tech.softhlon.learning.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
@@ -38,9 +37,7 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
     public Result execute(
           Request request) {
 
-        var result = loadAccountRepository.execute(
-              new LoadAccountRequest(request.accountId()));
-
+        var result = loadAccountRepository.execute(request.accountId());
         return switch (result) {
             case AccountLoaded(Account account) -> persistAccount(persistAccountRequest(account, request));
             case AccountNotFound() -> new AccountNotFoundFailed(ACCOUNT_NOT_FOUND);

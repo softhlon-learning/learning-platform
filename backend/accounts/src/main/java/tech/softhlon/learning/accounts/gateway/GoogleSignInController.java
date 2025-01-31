@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Request;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
@@ -69,7 +68,7 @@ class GoogleSignInController {
         log.info("controller | request / Google sign-in");
 
         var result = service.execute(
-              prepareRequest(body));
+              body.get(CREDENTIAL));
 
         switch (result) {
             case Succeeded(String token) -> {
@@ -98,14 +97,6 @@ class GoogleSignInController {
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
-
-    private Request prepareRequest(
-          Map<String, String> body) {
-
-        return new Request(
-              body.get(CREDENTIAL));
-
-    }
 
     private void addSuccessfulRedirectHeaders(
           HttpServletResponse response) {

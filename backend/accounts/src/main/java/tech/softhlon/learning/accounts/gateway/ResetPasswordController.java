@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService;
-import tech.softhlon.learning.accounts.domain.ResetPasswordService.Request;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed;
@@ -49,9 +48,7 @@ class ResetPasswordController {
         log.info("controller | request / Reset password, email: {}",
               request.email());
 
-        var result = service.execute(
-              new Request(request.email()));
-
+        var result = service.execute(request.email());
         return switch (result) {
             case Succeeded() -> successCreatedBody();
             case EmailPolicyFailed(String message) -> badRequestBody(httpRequest, message);

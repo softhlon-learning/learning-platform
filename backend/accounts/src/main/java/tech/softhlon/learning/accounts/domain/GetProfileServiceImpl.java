@@ -11,10 +11,11 @@ import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GetProfileService.Result.ProfileNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Succeeded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -29,12 +30,9 @@ class GetProfileServiceImpl implements GetProfileService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID accountId) {
 
-        var result = loadAccountRepository.execute(
-              new LoadAccountRequest(
-                    request.accountId()));
-
+        var result = loadAccountRepository.execute(accountId);
         return switch (result) {
             case AccountLoaded(Account account) -> new Succeeded(profile(account));
             case AccountNotFound() -> new ProfileNotFoundFailed(PROFILE_NOT_FOUND);

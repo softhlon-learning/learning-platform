@@ -14,6 +14,8 @@ import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountR
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
 import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -28,13 +30,11 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
 
     @Override
     public LoadAccountResult execute(
-          LoadAccountRequest request) {
+          UUID accountId) {
 
         try {
 
-            var accountEntity = accountsRepo.findById(
-                  request.id());
-
+            var accountEntity = accountsRepo.findById(accountId);
             return accountEntity.isPresent()
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();

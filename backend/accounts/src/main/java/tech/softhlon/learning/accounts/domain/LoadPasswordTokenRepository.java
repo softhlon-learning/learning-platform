@@ -21,16 +21,13 @@ import java.util.UUID;
 public interface LoadPasswordTokenRepository {
 
     LoadPasswordTokenResult execute(
-          LoadPasswordTokenRequest request);
+          String token);
 
     sealed interface LoadPasswordTokenResult {
         record TokenLoaded(PasswordToken passwordToken) implements LoadPasswordTokenResult {}
         record TokenNotFound() implements LoadPasswordTokenResult {}
         record TokenLoadFailed(Throwable cause) implements LoadPasswordTokenResult {}
     }
-
-    record LoadPasswordTokenRequest(
-          String token) {}
 
     record PasswordToken(
           UUID id,

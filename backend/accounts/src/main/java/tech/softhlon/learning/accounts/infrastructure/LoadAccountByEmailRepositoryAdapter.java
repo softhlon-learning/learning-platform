@@ -29,13 +29,11 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
 
     @Override
     public LoadAccountByEmailResult execute(
-          LoadAccountByEmailRequest request) {
+          String email) {
 
         try {
 
-            var entity = accountsRepo.findByEmail(
-                  request.email());
-
+            var entity = accountsRepo.findByEmail(email);
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();

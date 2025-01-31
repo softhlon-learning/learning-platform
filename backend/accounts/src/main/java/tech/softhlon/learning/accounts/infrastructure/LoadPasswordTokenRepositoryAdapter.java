@@ -25,12 +25,12 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
     @Override
-    public LoadPasswordTokenResult execute(LoadPasswordTokenRequest request) {
+    public LoadPasswordTokenResult execute(String token) {
 
         try {
 
-            var enity = passwordTokensJpaRepository.findByToken(
-                  request.token());
+            var enity = passwordTokensJpaRepository
+                  .findByToken(token);
 
             if (enity.isPresent()) {
                 return new TokenLoaded(

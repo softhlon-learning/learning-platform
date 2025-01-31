@@ -12,6 +12,9 @@ import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersisted;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersistenceFailed;
 
+import java.time.OffsetDateTime;
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,12 +28,18 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
 
     @Override
     public CreatePasswordTokenResult execute(
-          CreatePasswordTokenRequest request) {
+          UUID accountId,
+          String token,
+          OffsetDateTime expirationTime) {
 
         try {
 
             passwordTokensJpaRepository.save(
-                  passwordTokenEntity(request));
+                  PasswordTokenEntity.builder()
+                        .accountId(accountId)
+                        .token(token)
+                        .expirationTime(expirationTime)
+                        .build());
 
             return new PasswordTokenPersisted();
 
@@ -40,20 +49,6 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
             return new PasswordTokenPersistenceFailed(cause);
 
         }
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private PasswordTokenEntity passwordTokenEntity(
-          CreatePasswordTokenRequest request) {
-
-        return PasswordTokenEntity.builder()
-              .accountId(request.accountId())
-              .token(request.token())
-              .expirationTime(request.expirationTime())
-              .build();
 
     }
 

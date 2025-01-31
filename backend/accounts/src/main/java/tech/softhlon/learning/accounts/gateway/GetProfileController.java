@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.GetProfileService;
 import tech.softhlon.learning.accounts.domain.GetProfileService.ProfileView;
-import tech.softhlon.learning.accounts.domain.GetProfileService.Request;
 import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GetProfileService.Result.ProfileNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Succeeded;
@@ -46,8 +45,7 @@ class GetProfileController {
         log.info("controller | request / Fetch profile");
 
         var accountId = authContext.accountId();
-        var result = service.execute(
-              new Request(accountId));
+        var result = service.execute(accountId);
 
         return switch (result) {
             case Succeeded(ProfileView profileView) -> successBody(profileView);

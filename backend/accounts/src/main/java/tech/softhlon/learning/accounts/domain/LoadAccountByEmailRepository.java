@@ -20,7 +20,7 @@ import java.util.UUID;
 public interface LoadAccountByEmailRepository {
 
     LoadAccountByEmailResult execute(
-          LoadAccountByEmailRequest request);
+          String email);
 
     sealed interface LoadAccountByEmailResult {
         record AccountFound(Account account) implements LoadAccountByEmailResult {}

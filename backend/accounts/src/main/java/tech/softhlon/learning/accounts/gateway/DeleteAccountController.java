@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService;
-import tech.softhlon.learning.accounts.domain.DeleteAccountService.Request;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
@@ -49,8 +48,7 @@ class DeleteAccountController {
         log.info("controller | request / Delete account");
 
         var accountId = authContext.accountId();
-        var result = deleteAccountService.execute(
-              new Request(accountId));
+        var result = deleteAccountService.execute(accountId);
 
         return switch (result) {
             case Succeeded() -> successResponse(response);

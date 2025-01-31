@@ -21,16 +21,13 @@ import java.util.UUID;
 public interface CreatePasswordTokenRepository {
 
     CreatePasswordTokenResult execute(
-          CreatePasswordTokenRequest request);
+          UUID accountId,
+          String token,
+          OffsetDateTime expirationTime);
 
     sealed interface CreatePasswordTokenResult {
         record PasswordTokenPersisted() implements CreatePasswordTokenResult {}
         record PasswordTokenPersistenceFailed(Throwable cause) implements CreatePasswordTokenResult {}
     }
-
-    record CreatePasswordTokenRequest(
-          UUID accountId,
-          String token,
-          OffsetDateTime expirationTime) {}
 
 }

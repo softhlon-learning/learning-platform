@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.accounts.domain.SignOutService;
-import tech.softhlon.learning.accounts.domain.SignOutService.Request;
 import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
 import tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
@@ -48,7 +47,7 @@ class SignOutController {
         log.info("controller | request / Sign out");
 
         var result = service.execute(
-              new Request(extractToken()));
+              extractToken());
 
         authCookiesService.resetAuthCookies(
               response);

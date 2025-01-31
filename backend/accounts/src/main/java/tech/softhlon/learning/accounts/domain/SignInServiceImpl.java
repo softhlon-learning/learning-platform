@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.Account;
-import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailRequest;
 import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
 import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
 
@@ -29,20 +28,20 @@ class SignInServiceImpl implements SignInService {
 
     @Override
     public Result execute(
-          Request request) {
+          String email,
+          String password) {
 
         var validationResult = validateInput(
-              request);
+              email,
+              password);
 
         if (validationResult != null)
             return validationResult;
 
-        var exists = loadAccountByEmailRepository.execute(
-              new LoadAccountByEmailRequest(
-                    request.email()));
+        var exists = loadAccountByEmailRepository.execute(email);
 
         return switch (exists) {
-            case AccountFound(Account account) -> authemticate(request, account);
+            case AccountFound(Account account) -> authenticate(password, account);
             case AccountNotFound(), AccountIsDeleted() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
@@ -54,25 +53,26 @@ class SignInServiceImpl implements SignInService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result validateInput(
-          Request request) {
+          String email,
+          String password) {
 
-        if (request.email().isBlank())
+        if (email.isBlank())
             return new EmailPolicyFailed("Email is blank");
 
-        if (!emailValidationService.isEmailValid(request.email()))
+        if (!emailValidationService.isEmailValid(email))
             return new EmailPolicyFailed("Email is not in right format");
 
         return null;
 
     }
 
-    private Result authemticate(
-          Request request,
+    private Result authenticate(
+          String password,
           Account account) {
 
         var passwordEncoder = new BCryptPasswordEncoder();
         var matches = passwordEncoder.matches(
-              request.password(),
+              password,
               account.password());
 
         return matches

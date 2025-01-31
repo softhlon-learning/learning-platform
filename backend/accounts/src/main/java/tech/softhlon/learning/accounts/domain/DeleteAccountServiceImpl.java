@@ -12,7 +12,6 @@ import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Accoun
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Succeeded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
@@ -20,6 +19,8 @@ import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAc
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
+
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -35,12 +36,9 @@ class DeleteAccountServiceImpl implements DeleteAccountService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID accountId) {
 
-        var result = loadAccountRepository.execute(
-              new LoadAccountRequest(
-                    request.accountId()));
-
+        var result = loadAccountRepository.execute(accountId);
         return switch (result) {
             case AccountLoaded(Account account) -> deleteAccount(account);
             case AccountNotFound accountNotFound -> new AccountIsAlreadyDeletedFailed(ACCOUNT_NOT_FOUND);

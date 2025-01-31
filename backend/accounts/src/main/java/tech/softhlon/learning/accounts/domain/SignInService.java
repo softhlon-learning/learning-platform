@@ -16,26 +16,14 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface SignInService {
 
     Result execute(
-          Request request);
+          String email,
+          String password);
 
     sealed interface Result {
         record Succeeded(String token) implements Result {}
         record EmailPolicyFailed(String message) implements Result {}
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
-    }
-
-    record Request(
-          String email,
-          String password) {
-
-        @Override
-        public String toString() {
-            return """
-                  [email: %s, password: ************]"""
-                  .formatted(email);
-        }
-
     }
 
 }

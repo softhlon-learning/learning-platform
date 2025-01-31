@@ -64,11 +64,11 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
 
     @Override
     public Result execute(
-          Request request) {
+          String credential) {
 
         try {
 
-            var idToken = verifier.verify(request.credential());
+            var idToken = verifier.verify(credential);
             if (idToken != null) {
                 IdToken.Payload payload = idToken.getPayload();
                 var email = (String) payload.get(EMAIL);

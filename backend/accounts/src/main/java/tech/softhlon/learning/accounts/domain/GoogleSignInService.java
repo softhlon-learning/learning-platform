@@ -16,7 +16,7 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface GoogleSignInService {
 
     Result execute(
-          Request request);
+          String credential);
 
     sealed interface Result {
         record Succeeded(String token) implements Result {}
@@ -24,8 +24,5 @@ public interface GoogleSignInService {
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String credential) {}
 
 }

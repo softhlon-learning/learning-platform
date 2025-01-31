@@ -16,7 +16,7 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface ResetPasswordService {
 
     Result execute(
-          Request request);
+          String email);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -24,8 +24,5 @@ public interface ResetPasswordService {
         record EmailNotFoundFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String email) {}
 
 }

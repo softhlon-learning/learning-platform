@@ -18,13 +18,11 @@ import java.util.UUID;
 public interface DeletePasswordTokenRepository {
 
     DeletePasswordTokenResult execute(
-          DeletePasswordTokenRequest request);
+          UUID id);
 
     sealed interface DeletePasswordTokenResult {
         record TokenDeleted() implements DeletePasswordTokenResult {}
         record TokenDeletionFailed(Throwable cause) implements DeletePasswordTokenResult {}
     }
-
-    record DeletePasswordTokenRequest(UUID id) {}
 
 }

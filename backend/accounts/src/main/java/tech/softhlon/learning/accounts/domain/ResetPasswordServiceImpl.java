@@ -7,11 +7,9 @@ package tech.softhlon.learning.accounts.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenRequest;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersisted;
 import tech.softhlon.learning.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailRequest;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
@@ -67,17 +65,15 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
     @Override
     public Result execute(
-          Request request) {
+          String email) {
 
-        var validationResult = validateInput(
-              request);
+        var validationResult = validateInput(email);
 
         if (validationResult != null)
             return validationResult;
 
-        var result = loadAccountByEmailRepository.execute(
-              new LoadAccountByEmailRequest(
-                    request.email()));
+        var result = loadAccountByEmailRepository
+              .execute(email);
 
         return switch (result) {
             case AccountFound(Account account) -> resetPassword(account);
@@ -92,12 +88,12 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result validateInput(
-          Request request) {
+          String email) {
 
-        if (request.email().isBlank())
+        if (email.isBlank())
             return new EmailPolicyFailed("Email is blank");
 
-        if (!emailValidationService.isEmailValid(request.email()))
+        if (!emailValidationService.isEmailValid(email))
             return new EmailPolicyFailed("Email is not in right format");
 
         return null;
@@ -109,25 +105,14 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
         var token = UUID.randomUUID().toString();
         var result = createPasswordTokenRepository.execute(
-              passwordTokenRequest(
-                    account,
-                    token));
+              account.id(),
+              token,
+              expirationTime());
 
         return switch (result) {
             case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account, token);
             case PasswordTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
-
-    }
-
-    private CreatePasswordTokenRequest passwordTokenRequest(
-          Account account,
-          String token) {
-
-        return new CreatePasswordTokenRequest(
-              account.id(),
-              token,
-              expirationTime());
 
     }
 

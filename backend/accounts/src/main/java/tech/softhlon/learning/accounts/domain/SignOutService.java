@@ -16,15 +16,12 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface SignOutService {
 
     Result execute(
-          Request request);
+          String token);
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record NotAuthorized(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String token) {}
 
 }
