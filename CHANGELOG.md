@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.13
+_release date: 2025-01-31_
+ * database: Add events_log table
+ * subscriptions: Add CollectStripeEventService
+ * subscriptions: Add EventLogJpaRepository and entity
+
 ## 0.40.12
 _release date: 2025-01-31_
  * stripe: configured generic-event webhook to collect most of the events
