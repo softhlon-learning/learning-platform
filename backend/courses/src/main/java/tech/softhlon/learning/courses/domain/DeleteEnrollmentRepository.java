@@ -20,15 +20,12 @@ import java.util.UUID;
 public interface DeleteEnrollmentRepository {
 
     DeleteEnrollmentResult execute(
-          DeleteEnrollmentRequest request);
+          UUID courseId,
+          UUID accountId);
 
     sealed interface DeleteEnrollmentResult {
         record EnrollmentDeleted() implements DeleteEnrollmentResult {}
         record EnrollementDeletionFailed(Throwable cause) implements DeleteEnrollmentResult {}
     }
-
-    record DeleteEnrollmentRequest(
-          UUID courseId,
-          UUID accountId) {}
 
 }

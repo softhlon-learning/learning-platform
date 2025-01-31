@@ -13,6 +13,8 @@ import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository;
 import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
 import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -27,13 +29,14 @@ class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
 
     @Override
     public DeleteEnrollmentResult execute(
-          DeleteEnrollmentRequest request) {
+          UUID courseId,
+          UUID accountId) {
 
         try {
 
             enrollmentsRepo.deleteByAccountIdAndCourseId(
-                  request.accountId(),
-                  request.courseId());
+                  accountId,
+                  courseId);
 
             return new EnrollmentDeleted();
 

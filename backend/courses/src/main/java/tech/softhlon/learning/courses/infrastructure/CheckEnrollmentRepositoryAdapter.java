@@ -14,6 +14,8 @@ import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnro
 import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentExists;
 import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentNotFound;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -28,13 +30,13 @@ class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
 
     @Override
     public CheckEnrollmentResult execute(
-          CheckEnrollmentRequest request) {
+          UUID accountId,
+          UUID courseId) {
 
         try {
 
-            return enrollmentsRepo.existsByAccountIdAndCourseId(
-                  request.accountId(),
-                  request.courseId())
+            return enrollmentsRepo
+                  .existsByAccountIdAndCourseId(accountId, courseId)
                   ? new EnrollmentExists()
                   : new EnrollmentNotFound();
 

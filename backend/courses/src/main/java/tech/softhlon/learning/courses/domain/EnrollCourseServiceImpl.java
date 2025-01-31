@@ -8,11 +8,9 @@ package tech.softhlon.learning.courses.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRequest;
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CheckCourseFailed;
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseExists;
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseNotFound;
-import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentRequest;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
 import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
@@ -37,14 +35,14 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID accountId,
+          UUID courseId) {
 
         var courseExists = checkCourseRepository
-              .execute(new CheckCourseRequest(
-                    request.courseId()));
+              .execute(courseId);
 
         return switch (courseExists) {
-            case CourseExists() -> persistEnrollment(request);
+            case CourseExists() -> persistEnrollment(accountId, courseId);
             case CourseNotFound() -> new CourseNotFoundFailed(COURSE_NOT_FOUND);
             case CheckCourseFailed(Throwable cause) -> new Failed(cause);
         };
@@ -56,26 +54,18 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result persistEnrollment(
-          Request request) {
+          UUID accountId,
+          UUID courseId) {
 
-        var result = createEnrollmentRepository
-              .execute(prepareRequest(request));
+        var result = createEnrollmentRepository.execute(
+              courseId,
+              accountId,
+              OffsetDateTime.now());
 
         return switch (result) {
             case EnrollmentPersisted(UUID id) -> new Succeeded();
             case EnrollementPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
-
-    }
-
-    private CreateEnrollmentRequest prepareRequest(
-          Request request) {
-
-        return new CreateEnrollmentRequest(
-              request.courseId(),
-              request.accountId(),
-              OffsetDateTime.now()
-        );
 
     }
 

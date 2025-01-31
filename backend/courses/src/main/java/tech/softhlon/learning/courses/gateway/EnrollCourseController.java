@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.EnrollCourseService;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Request;
 import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.AccountNotSubscribedFailed;
 import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
 import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Failed;
@@ -52,25 +51,16 @@ class EnrollCourseController {
         log.info("controller | request / Enroll course, courseId: {}",
               printShort(courseId));
 
-        return switch (service.execute(prepareRequest(courseId))) {
+        var result = service.execute(
+              accountId,
+              courseId);
+
+        return switch (result) {
             case Succeeded() -> successCreatedBody();
             case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
             case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
-
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private Request prepareRequest(
-          UUID courseId) {
-
-        return new Request(
-              authContext.accountId(),
-              courseId);
 
     }
 

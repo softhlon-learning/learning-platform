@@ -21,16 +21,13 @@ import java.util.UUID;
 public interface CreateEnrollmentRepository {
 
     CreateEnrollmentResult execute(
-          CreateEnrollmentRequest request);
+          UUID courseId,
+          UUID accountId,
+          OffsetDateTime enrolledTime);
 
     sealed interface CreateEnrollmentResult {
         record EnrollmentPersisted(UUID uuid) implements CreateEnrollmentResult {}
         record EnrollementPersistenceFailed(Throwable cause) implements CreateEnrollmentResult {}
     }
-
-    record CreateEnrollmentRequest(
-          UUID courseId,
-          UUID accountId,
-          OffsetDateTime enrolledTime) {}
 
 }

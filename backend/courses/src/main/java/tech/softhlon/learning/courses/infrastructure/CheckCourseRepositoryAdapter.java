@@ -14,6 +14,8 @@ import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseRe
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseExists;
 import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseNotFound;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -28,11 +30,11 @@ class CheckCourseRepositoryAdapter implements CheckCourseRepository {
 
     @Override
     public CheckCourseResult execute(
-          CheckCourseRequest request) {
+          UUID courseId) {
 
         try {
 
-            return coursesRepo.existsById(request.id())
+            return coursesRepo.existsById(courseId)
                   ? new CourseExists()
                   : new CourseNotFound();
 

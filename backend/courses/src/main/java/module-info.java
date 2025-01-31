@@ -16,4 +16,5 @@ module courses {
     requires spring.web;
     requires spring.data.commons;
     requires spring.beans;
+    requires java.rmi;
 }

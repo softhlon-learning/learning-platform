@@ -13,6 +13,9 @@ import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
 import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
 
+import java.time.OffsetDateTime;
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -28,16 +31,21 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
 
     @Override
     public CreateEnrollmentResult execute(
-          CreateEnrollmentRequest request) {
+          UUID courseId,
+          UUID accountId,
+          OffsetDateTime enrolledTime) {
 
         try {
 
             var course = coursesRepo
-                  .findById(request.courseId())
+                  .findById(courseId)
                   .get();
 
             var createdEnrollment = enrollmentsRepo.save(
-                  toEnrollment(request, course));
+                  toEnrollment(
+                        accountId,
+                        enrolledTime,
+                        course));
 
             return new EnrollmentPersisted(
                   createdEnrollment.getId());
@@ -56,14 +64,15 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
     // -----------------------------------------------------------------------------------------------------------------
 
     private EnrollmentEntity toEnrollment(
-          CreateEnrollmentRequest request,
+          UUID accountId,
+          OffsetDateTime enrolledTime,
           CourseEntity course) {
 
         return EnrollmentEntity.builder()
-              .accountId(request.accountId())
+              .accountId(accountId)
               .course(course)
               .content(course.getContent())
-              .enrolledTime(request.enrolledTime())
+              .enrolledTime(enrolledTime)
               .build();
 
     }
