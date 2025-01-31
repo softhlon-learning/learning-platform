@@ -48,7 +48,7 @@ class UnenrollCourseController {
           @PathVariable("courseId") UUID courseId) {
 
         var accountId = authContext.accountId();
-        log.info("controller | Unenroll course [request], courseId: {}",
+        log.info("controller | request / Unenroll course, courseId: {}",
               printShort(courseId));
 
         return switch (service.execute(prepareRequest(courseId))) {

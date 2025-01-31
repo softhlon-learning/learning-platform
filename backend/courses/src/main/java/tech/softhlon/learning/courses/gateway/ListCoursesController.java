@@ -51,7 +51,7 @@ class ListCoursesController {
           HttpServletResponse response) {
 
         var accountId = authContext.accountId();
-        log.info("controller | List courseList [request]",
+        log.info("controller | request / List courseList",
               printShort(accountId));
 
         var result = service.execute(

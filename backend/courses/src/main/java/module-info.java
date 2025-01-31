@@ -15,4 +15,5 @@ module courses {
     requires jakarta.persistence;
     requires spring.web;
     requires spring.data.commons;
+    requires spring.beans;
 }
