@@ -11,7 +11,7 @@ import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.mo
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const PRICE_ID = 'price_1QmYo3IdZlPlV5wEDgbXc1Js'
+const PRICE_ID = 'price_1QnKpKIdZlPlV5wEtEtBKcJo'
 const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
 const HIDE_ERROR_DELAY = 2000
 
