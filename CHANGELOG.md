@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.40.4
+_release date: 2025-01-31_
+ * Added customerId to subscription (table and models)
+
 ## 0.40.3
 _release date: 2025-01-31_
  * Updated Stripe webhooks secrets setup
