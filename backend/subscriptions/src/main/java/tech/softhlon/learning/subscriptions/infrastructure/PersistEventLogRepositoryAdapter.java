@@ -34,7 +34,7 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
         } catch (Throwable cause) {
 
             log.error("Error", cause);
-            return new EventLogPersistenceFailed(cause)
+            return new EventLogPersistenceFailed(cause);
 
         }
     }
