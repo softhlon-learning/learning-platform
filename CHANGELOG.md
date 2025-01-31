@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.40.9
+_release date: 2025-01-31_
+ * run-debug.sh: Set suspend=n
+ * subscriptions: Add findByAccountId to SubscriptionsJpaRepository
+ * subscriptions: Add public access to CheckSubscriptionOperator types
+ * courses: POC ListCoursesServiceImpl integration with  CheckSubscriptionOperator
+
 ## 0.40.8
 _release date: 2025-01-31_
  * Implemented CheckSubscriptionOperator
