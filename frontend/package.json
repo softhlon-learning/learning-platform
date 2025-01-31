@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.40.13",
+  "version": "0.40.14",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --live-reload=false --configuration=production",

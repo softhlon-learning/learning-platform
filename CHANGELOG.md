@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.40.14
+_release date: 2025-01-31_
+ * Add PersistEventLogRepository
+ * Implement PersistEventLogRepositoryAdapter
+
 ## 0.40.13
 _release date: 2025-01-31_
  * database: Add events_log table
