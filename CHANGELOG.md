@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.41.2
+_release date: 2025-01-31_
+ * subscriptions: Hotfix for CustomerEntity
+ * subscriptions: Remove set customerId when initializing checkout session
+ * subscriptions: Set customerId or email in checkout session initialization 
+
 ## 0.41.1
 _release date: 2025-01-31_
  * subscriptions: Fix setting customer in InitializeCheckoutServiceImpl
