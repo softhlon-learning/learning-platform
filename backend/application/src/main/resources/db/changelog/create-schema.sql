@@ -63,10 +63,7 @@ CREATE TABLE subscriptions (
     deactivated_time TIMESTAMP WITH TIME ZONE,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_subscriptions_customers
-         FOREIGN KEY (customer_id)
-         REFERENCES customers (customer_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE invalidated_tokens (
