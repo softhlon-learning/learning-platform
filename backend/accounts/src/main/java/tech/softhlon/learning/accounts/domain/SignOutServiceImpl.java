@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.CheckTokenFailed;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
 import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenNotFound;
-import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenRequest;
 import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
 import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
@@ -73,9 +72,8 @@ class SignOutServiceImpl implements SignOutService {
           Request request) throws NoSuchAlgorithmException {
 
         var result = createInvalidatedTokenRepository.execute(
-              new CreateInvalidatedTokenRequest(
-                    jwtService.tokenHash(
-                          request.token())));
+              jwtService.tokenHash(
+                    request.token()));
 
         return switch (result) {
             case InvalidatedTokenPersisted(UUID id) -> new Succeeded();
