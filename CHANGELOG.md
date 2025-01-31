@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.7
+_release date: 2025-01-31_
+ * Integrated ListCoursesController with SubscriptionCookiesService
+ * Set Subscribe cookie to no NOT httpOnly
+ * Added isSubscribed() method to AppHeaderComponent
+
 ## 0.40.6
 _release date: 2025-01-31_
  * Removed fk_subscriptions_customers
