@@ -92,7 +92,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                     event.getData().toJson(),
                     DataObject.class)
               .object()
-              .subscription();
+              .id();
 
     }
 
@@ -140,7 +140,6 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
           Object object) {}
 
     record Object(
-          String id,
-          String subscription) {}
+          String id) {}
 
 }
