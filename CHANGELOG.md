@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.1
+_release date: 2025-01-31_
+ * subscriptions: Fix setting customer in InitializeCheckoutServiceImpl
+ * accounts: Get rid of request objects (part 1)
+
 ## 0.41.0
 _release date: 2025-01-31_
  * subscriptions: Add LoadCustomerByAccountRepository and its adapter
