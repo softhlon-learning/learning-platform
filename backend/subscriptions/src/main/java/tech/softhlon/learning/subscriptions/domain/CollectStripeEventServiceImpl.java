@@ -72,12 +72,15 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
 
     private String customerId(Event event) {
 
-        return new Gson()
+        var object = new Gson()
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
-              .object()
-              .customer();
+              .object();
+
+        return object.customer() != null
+              ? object.customer()
+              : object.id();
 
     }
 
