@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_CREATED;
+import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -30,7 +30,7 @@ class SubmitGenericEventController {
 
     private final HttpServletRequest httpRequest;
 
-    @PostMapping(SUBMIT_SUBSCRIPTION_CREATED)
+    @PostMapping(SUBMIT_SUBSCRIPTION_GENERIC)
     ResponseEntity<?> submitSubscriptionCreated(
           @Validated @RequestBody String payload) {
 
