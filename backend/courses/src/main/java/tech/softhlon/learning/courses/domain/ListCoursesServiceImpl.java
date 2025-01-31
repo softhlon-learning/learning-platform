@@ -19,8 +19,6 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnroll
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator;
 import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionRequest;
-import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
-import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
 import java.util.Comparator;
@@ -65,13 +63,8 @@ class ListCoursesServiceImpl implements ListCoursesService {
               new CheckSusbcriptionRequest(accountId));
 
         boolean subscribed = false;
-        switch (result) {
-            case CheckSubsriptionFailed(_) -> log.info("CheckSubsriptionFailed");
-            case NotSubscribed() -> log.info("NotSubscribed");
-            case Subscribed() -> {
-                log.info("Subscribed");
-                subscribed = true;
-            }
+        if (result instanceof Subscribed) {
+            subscribed = true;
         }
 
         return new CoursesView(
