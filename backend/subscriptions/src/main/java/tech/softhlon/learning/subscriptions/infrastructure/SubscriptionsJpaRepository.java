@@ -25,6 +25,7 @@ interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, 
     @Query(value = """
           SELECT s.* FROM subscriptions s 
           JOIN customers c ON c.customer_id = s.customer_id
+          WHERE s.active = true
           """, nativeQuery = true)
     Optional<SubscriptionEntity> findByAccountId(
           UUID accountId);
