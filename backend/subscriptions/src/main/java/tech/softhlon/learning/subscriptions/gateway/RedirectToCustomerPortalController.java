@@ -46,7 +46,7 @@ class RedirectToCustomerPortalController {
           @Validated @RequestBody RedirectToPortalRequest request,
           HttpServletResponse response) {
 
-        log.info("controller | Redirect to Stripe customer portal [request]");
+        log.info("controller | request / Redirect to Stripe customer portal");
         var result = service.execute(
               new Request(
                     "Name",

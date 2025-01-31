@@ -46,7 +46,7 @@ class InitializeCheckoutController {
           @Validated @RequestBody CreateCheckoutRequest request,
           HttpServletResponse response) {
 
-        log.info("controller | Create Stripe checkout session [request]");
+        log.info("controller | request / Create Stripe checkout session");
 
         var accountId = authContext.accountId();
         var email = authContext.email();

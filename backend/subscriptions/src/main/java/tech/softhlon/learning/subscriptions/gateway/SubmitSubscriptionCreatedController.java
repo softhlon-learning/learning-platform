@@ -40,7 +40,7 @@ class SubmitSubscriptionCreatedController {
     ResponseEntity<?> submitSubscriptionCreated(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Submit customer.subscription.created event [request]");
+        log.info("controller | request / Submit customer.subscription.created event");
 
         var result = service.execute(
               new Request(
@@ -48,7 +48,7 @@ class SubmitSubscriptionCreatedController {
                     payload
               ));
 
-        log.info("controller | Submit 'customer.subscription.created' event [response]: {}", result);
+        log.info("controller | response / Submit customer.subscription.created event: {}", result);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();

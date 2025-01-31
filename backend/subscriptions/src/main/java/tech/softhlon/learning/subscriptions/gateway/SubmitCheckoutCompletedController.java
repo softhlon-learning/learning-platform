@@ -41,7 +41,7 @@ class SubmitCheckoutCompletedController {
     ResponseEntity<?> submitCheckoutCompleted(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | Submit checkout.session.completed event [request]");
+        log.info("controller | request / Submit checkout.session.completed event");
 
         var result = service.execute(
               new Request(
@@ -49,7 +49,7 @@ class SubmitCheckoutCompletedController {
                     payload
               ));
 
-        log.info("controller | Submit 'checkout.session.completed' event [response]: {}", result);
+        log.info("controller | response / Submit checkout.session.completed event: {}", result);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();

@@ -53,9 +53,10 @@ class CollectStripeEventController {
     ResponseEntity<?> collectStripeEvent(
           @Validated @RequestBody String payload) throws SignatureVerificationException {
 
-        var sigHeader = httpRequest.getHeader("Stripe-Signature");
+        var sigHeader = httpRequest
+              .getHeader("Stripe-Signature");
 
-        log.info("controller | Collect event: {}",
+        log.info("controller | request / Collect {} event",
               eventType(
                     sigHeader,
                     payload));
