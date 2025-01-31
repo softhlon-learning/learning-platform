@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.41.3
+_release date: 2025-01-31_
+ * accounts: Get rid of request objects (part 2)
+
 ## 0.41.2
 _release date: 2025-01-31_
  * subscriptions: Hotfix for CustomerEntity
