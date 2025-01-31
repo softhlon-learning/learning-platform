@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.40.2
+_release date: 2025-01-30_
+ * Removed CreateSubscriptionService and implementation
+ * Integrated SubmitSubscriptionCreatedController with SubmitSubscriptionCreatedService
+
 ## 0.40.1
 _release date: 2025-01-30_
  * Added IncorrectEventType to SubmitCheckoutCompletedService
