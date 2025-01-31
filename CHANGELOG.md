@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.17
+_release date: 2025-01-31_
+ * subscriptions: Fixed/improved CollectStripeEventServiceImpl.customerId() method
+ * subscriptions: Add StripeEventUtil
+ * subscriptions: Log event type in SubmitGenericEventController
+
 ## 0.40.16
 _release date: 2025-01-31_
  * application: Add /api/v1/subscription/generic-event to permitted paths
