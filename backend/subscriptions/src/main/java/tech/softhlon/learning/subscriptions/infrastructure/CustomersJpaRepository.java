@@ -19,4 +19,7 @@ interface CustomersJpaRepository extends CrudRepository<CustomerEntity, UUID> {
     Optional<CustomerEntity> findByCustomerId(
           String customerId);
 
+    Optional<CustomerEntity> findByAccountId(
+          UUID accountId);
+
 }
