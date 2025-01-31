@@ -63,8 +63,9 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                           new LoadSubscriptionRequest(subscriptionId));
 
                     return switch (result) {
-                        case SubscriptionNotFound() -> persist(subscriptionId, customerId,  null);
-                        case SubscriptionLoaded(Subscription subscription) -> persist(subscriptionId, null, subscription);
+                        case SubscriptionNotFound() -> persist(subscriptionId, customerId, null);
+                        case SubscriptionLoaded(Subscription subscription) ->
+                              persist(subscriptionId, null, subscription);
                         case SubscriptionLoadFailed(Throwable cause) -> new Failed(cause);
                     };
 

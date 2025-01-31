@@ -14,13 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Request;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Succeeded;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_CREATED;
 
 // ---------------------------------------------------------------------------------------------------------------------
