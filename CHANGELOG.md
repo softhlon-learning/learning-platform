@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.41.0
+_release date: 2025-01-31_
+ * subscriptions: Add LoadCustomerByAccountRepository and its adapter
+ * subscriptions: Set customerId when starting checkout session
+ * subscriptions: Add CustomersJpaRepository.findByAccountId
+
 ## 0.40.19
 _release date: 2025-01-31_
  * subscriptions: Improve request/response log format in controllers
