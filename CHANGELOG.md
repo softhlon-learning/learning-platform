@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.5
+_release date: 2025-01-31_
+ * Fixed customerId set in SubmitSubscriptionCreatedServiceImpl
+ * Fixed PersistSubscriptionRepositoryAdapter
+ * Removed account_id from subscriptions (table and model)
+
 ## 0.40.4
 _release date: 2025-01-31_
  * Added customerId to subscription (table and models)
