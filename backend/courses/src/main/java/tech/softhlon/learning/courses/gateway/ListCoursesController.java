@@ -6,6 +6,7 @@
 package tech.softhlon.learning.courses.gateway;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -39,12 +40,14 @@ class ListCoursesController {
     private final ListCoursesService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
+    private final SubscriptionCookiesService subscriptionCookiesService;
 
     /**
      * GET /api/v1/course.
      */
     @GetMapping(LIST_COURSES)
-    ResponseEntity<?> listCourses() {
+    ResponseEntity<?> listCourses(
+          HttpServletResponse response) {
 
         var accountId = authContext.accountId();
         log.info("controller | List courses [request]",
@@ -54,7 +57,7 @@ class ListCoursesController {
               authContext.accountId());
 
         return switch (result) {
-            case Succeeded(List<CourseView> courses) -> successBody(courses);
+            case Succeeded(List<CourseView> courses) -> successBody(courses, response);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 
@@ -65,7 +68,12 @@ class ListCoursesController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private ResponseEntity<List<CourseView>> successBody(
-          List<CourseView> courses) {
+          List<CourseView> courses,
+          HttpServletResponse response) {
+
+        subscriptionCookiesService.addASubscriptionCookie(
+              response,
+              false);
 
         return status(HttpStatus.OK)
               .body(courses);
