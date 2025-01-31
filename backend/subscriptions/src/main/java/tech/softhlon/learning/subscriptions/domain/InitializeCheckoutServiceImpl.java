@@ -58,8 +58,13 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
           Request request) {
 
         try {
+            var customerId = customerId(request.acccountId());
             SessionCreateParams params = new SessionCreateParams.Builder()
-                  .setCustomerEmail(request.email())
+                  .setCustomer(customerId)
+                  .setCustomerEmail(
+                        customerId == null
+                              ? request.email()
+                              : null)
                   .setSuccessUrl(serviceBaseUrl + HOME_PATH)
                   .setCancelUrl(serviceBaseUrl + SUBSCRIBE_PATH)
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
@@ -68,6 +73,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                         .setPrice(request.priceId())
                         .build())
                   .build();
+
 
             var session = Session.create(params);
 
