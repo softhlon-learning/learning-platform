@@ -8,8 +8,8 @@ _release date: 2025-01-31_
 
 ## 0.40.14
 _release date: 2025-01-31_
- * Add PersistEventLogRepository
- * Implement PersistEventLogRepositoryAdapter
+ * subscriptions: Add PersistEventLogRepository
+ * subscriptions: Implement PersistEventLogRepositoryAdapter
 
 ## 0.40.13
 _release date: 2025-01-31_
