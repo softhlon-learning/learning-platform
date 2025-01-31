@@ -14,6 +14,8 @@ import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRep
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
 
+import java.util.Optional;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -31,7 +33,10 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
           CheckSubscriptionByAccountRequest request) {
 
         try {
-            return false
+            var subsription = subscriptionsRepo.findByAccountId(
+                  request.accountId());
+
+            return subsription.isPresent()
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
 

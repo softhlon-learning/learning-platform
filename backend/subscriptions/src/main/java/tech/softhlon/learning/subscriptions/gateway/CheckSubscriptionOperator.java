@@ -43,10 +43,10 @@ public class CheckSubscriptionOperator {
         };
     }
 
-    record CheckSusbcriptionRequest(
+    public record CheckSusbcriptionRequest(
           UUID accountId) {}
 
-    sealed interface CheckSusbcriptionResult {
+    public sealed interface CheckSusbcriptionResult {
         record Subscribed() implements CheckSusbcriptionResult {}
         record NotSubscribed() implements CheckSusbcriptionResult {}
         record CheckSubsriptionFailed(Throwable cause) implements CheckSusbcriptionResult {}
