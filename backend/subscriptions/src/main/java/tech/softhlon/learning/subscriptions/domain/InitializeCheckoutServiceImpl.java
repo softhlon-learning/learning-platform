@@ -59,7 +59,6 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
         try {
             SessionCreateParams params = new SessionCreateParams.Builder()
-                  .setCustomer(customerId(request.acccountId()))
                   .setCustomerEmail(request.email())
                   .setSuccessUrl(serviceBaseUrl + HOME_PATH)
                   .setCancelUrl(serviceBaseUrl + SUBSCRIBE_PATH)
