@@ -12,7 +12,6 @@ import tech.softhlon.learning.courses.domain.ContentService.Chapter;
 import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
 import tech.softhlon.learning.courses.domain.ContentService.Lecture;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
-import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsRequest;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
 import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
@@ -71,7 +70,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
           CourseContent content) {
 
         var result = loadEnrollmentsRepository.execute(
-              new ListEnrollmentsRequest(reuqest.courseId()));
+              reuqest.courseId());
 
         return switch (result) {
             case EnrollmentLoadFailed(Throwable cause) -> new CourseMergeFailed(cause);

@@ -12,6 +12,8 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -26,12 +28,11 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
 
     @Override
     public ListEnrollmentsResult execute(
-          ListEnrollmentsRequest request) {
+          UUID courseId) {
 
         try {
             var entities = enrollmentsJpaRepository.
-                  findByCourseId(
-                        request.courseId());
+                  findByCourseId(courseId);
 
             return new EnrollmentsLoaded(
                   entities.stream()

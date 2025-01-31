@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService;
-import tech.softhlon.learning.courses.domain.UnenrollCourseService.Request;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
@@ -51,24 +50,11 @@ class UnenrollCourseController {
         log.info("controller | request / Unenroll course, courseId: {}",
               printShort(courseId));
 
-        return switch (service.execute(prepareRequest(courseId))) {
+        return switch (service.execute(accountId, courseId)) {
             case Succeeded() -> successAcceptedBody();
             case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
-
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private Request prepareRequest(
-          UUID courseId) {
-
-        return new Request(
-              authContext.accountId(),
-              courseId);
 
     }
 

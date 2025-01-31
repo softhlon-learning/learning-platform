@@ -22,14 +22,12 @@ import java.util.UUID;
 public interface LoadEnrollmentsRepository {
 
     ListEnrollmentsResult execute(
-          ListEnrollmentsRequest request);
+          UUID courseId);
 
     sealed interface ListEnrollmentsResult {
         record EnrollmentsLoaded(List<Enrollment> enrollments) implements ListEnrollmentsResult {}
         record EnrollmentLoadFailed(Throwable cause) implements ListEnrollmentsResult {}
     }
-    record ListEnrollmentsRequest(
-          UUID courseId) {}
 
     record Enrollment(
           UUID courseId,

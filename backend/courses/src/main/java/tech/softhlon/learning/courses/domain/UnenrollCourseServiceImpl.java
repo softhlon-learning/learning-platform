@@ -18,6 +18,8 @@ import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Enroll
 import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
 import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -34,14 +36,14 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID accountId,
+          UUID courseId) {
 
-        var enrollmentExists = checkEnrollmentRepository.execute(
-              request.accountId(),
-              request.courseId());
+        var enrollmentExists = checkEnrollmentRepository
+              .execute(accountId, courseId);
 
         return switch (enrollmentExists) {
-            case EnrollmentExists() -> deleteEnrollment(request);
+            case EnrollmentExists() -> deleteEnrollment(accountId, courseId);
             case EnrollmentNotFound() -> new EnrollmentNotFoundFailed(ENROLLMENT_NOT_FOUND);
             case CheckEnrollmentFailed(Throwable cause) -> new Failed(cause);
         };
@@ -53,11 +55,11 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result deleteEnrollment(
-          Request request) {
+          UUID accountId,
+          UUID courseId) {
 
-        var result = deleteEnrollmentRepository.execute(
-              request.courseId(),
-              request.accountId());
+        var result = deleteEnrollmentRepository
+              .execute(courseId, accountId);
 
         return switch (result) {
             case EnrollmentDeleted() -> new Succeeded();
