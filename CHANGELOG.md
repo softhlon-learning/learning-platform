@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.40.1
+_release date: 2025-01-31_
+ * stripe: Add 1-day Premium Member product (for testing)
+
 ## 0.40.10
 _release date: 2025-01-31_
- * subscriptions: Add 'WHERE s.active = true' when checking subscriptio
+ * subscriptions: Add 'WHERE s.active = true' when checking subscription
  * frontend/header: Check authentication status for displaying 'Subscribe' button
  * courses: Add CoursesView to encapsulate subscribed flag
  * subscriptions: Added missing 'c.account_id =?1' sql condition to SubscriptionsJpaRepository.findByAccountId
