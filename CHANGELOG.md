@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.40.16
+_release date: 2025-01-31_
+ * application: Add /api/v1/subscription/generic-event to permitted paths
+ * database: Add event_type to events_log
+ * database: Add created_time to event_logs
+ * subscriptions: Added eventType to EventLogEntity and models
+
 ## 0.40.15
 _release date: 2025-01-31_
  * application: Add stripe.generic-event.webhook.secret parameter
