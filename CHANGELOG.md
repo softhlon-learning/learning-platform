@@ -1,8 +1,9 @@
 # Learning Platform Changelog
 
-## 0.40.1
+## 0.40.11
 _release date: 2025-01-31_
  * stripe: Add 1-day Premium Member product (for testing)
+ * subscriptions: Add SubmitGenericEventController to monitor available events
 
 ## 0.40.10
 _release date: 2025-01-31_
