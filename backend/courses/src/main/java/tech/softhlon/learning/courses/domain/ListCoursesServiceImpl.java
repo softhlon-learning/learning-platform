@@ -18,6 +18,10 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnroll
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator;
+import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionRequest;
+import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
+import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
+import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
 import java.util.Comparator;
 import java.util.List;
@@ -56,6 +60,15 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private List<CourseView> toCourseViews(
           List<Course> courses,
           UUID accountId) {
+
+        var result = checkSubscriptionOperator.execute(
+              new CheckSusbcriptionRequest(accountId));
+
+        switch (result) {
+            case CheckSubsriptionFailed(_) -> log.info("CheckSubsriptionFailed");
+            case NotSubscribed() -> log.info("NotSubscribed");
+            case Subscribed() -> log.info("Subscribed");
+        }
 
         return courses.stream()
               .map(course -> courseView(course, accountId))
