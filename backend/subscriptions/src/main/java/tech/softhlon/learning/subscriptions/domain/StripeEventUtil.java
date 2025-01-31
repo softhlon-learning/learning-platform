@@ -14,16 +14,6 @@ import com.stripe.model.Event;
 
 public class StripeEventUtil {
 
-    public static String type(Event event) {
-
-        return new Gson()
-              .fromJson(
-                    event.getData().toJson(),
-                    DataObject.class)
-              .type();
-
-    }
-
     static String customerId(Event event) {
 
         var object = new Gson()

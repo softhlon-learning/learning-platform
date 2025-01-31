@@ -23,7 +23,6 @@ import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Res
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.type;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -81,12 +80,10 @@ class SubmitGenericEventController {
           String sigHeader,
           String payload) throws SignatureVerificationException {
 
-        var event = Webhook.constructEvent(
+        return Webhook.constructEvent(
               payload,
               sigHeader,
-              webhookSecret);
-
-        return type(event);
+              webhookSecret).getType();
 
     }
 }
