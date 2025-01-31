@@ -53,7 +53,7 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
                         request.payload()));
 
             return switch (result) {
-                case EventLogPersisted eventLogPersisted -> new Succeeded();
+                case EventLogPersisted() -> new Succeeded();
                 case EventLogPersistenceFailed(Throwable cause) -> new Failed(cause);
             };
 
