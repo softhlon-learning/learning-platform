@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.40.6
+_release date: 2025-01-31_
+ * Removed fk_subscriptions_customers
+ * Improved logging in Submit* services
+ * Added SubscriptionCookiesService
+ * Added Subscribed cookie
+
 ## 0.40.5
 _release date: 2025-01-31_
  * Fixed customerId set in SubmitSubscriptionCreatedServiceImpl
