@@ -30,6 +30,7 @@ public class SubscriptionEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String subscriptionId;
+    private String customerId;
     private UUID accountId;
     private boolean active;
     private OffsetDateTime activatedTime;

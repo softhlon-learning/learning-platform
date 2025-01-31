@@ -29,6 +29,7 @@ public interface PersistSubscriptionRepository {
     record PersistSubscriptionRequest(
           UUID id,
           String subscriptionId,
+          String customerId,
           UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,

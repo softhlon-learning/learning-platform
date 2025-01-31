@@ -58,12 +58,14 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                     log.info("service | Event received '{}'", event.getType());
 
                     var subscriptionId = subscriptionId(event);
+                    var customerId = subscriptionId(event);
+
                     var result = loadSubscriptionRepository.execute(
                           new LoadSubscriptionRequest(subscriptionId));
 
                     return switch (result) {
-                        case SubscriptionNotFound() -> persist(subscriptionId, null);
-                        case SubscriptionLoaded(Subscription subscription) -> persist(subscriptionId, subscription);
+                        case SubscriptionNotFound() -> persist(subscriptionId, customerId,  null);
+                        case SubscriptionLoaded(Subscription subscription) -> persist(subscriptionId, null, subscription);
                         case SubscriptionLoadFailed(Throwable cause) -> new Failed(cause);
                     };
 
@@ -96,12 +98,25 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
     }
 
+    private String customerId(Event event) {
+
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .object()
+              .customer();
+
+    }
+
     Result persist(
           String subscriptionId,
+          String customerId,
           Subscription subscription) {
 
         var request = prepareRequest(
               subscriptionId,
+              customerId,
               subscription);
 
         var result = persistSubscriptionRepository.execute(request);
@@ -114,11 +129,13 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
     PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
+          String customerId,
           Subscription subscription) {
         if (subscription != null) {
             return new PersistSubscriptionRequest(
                   subscription.id(),
                   subscription.subscriptionId(),
+                  subscription.customerId(),
                   subscription.accountId(),
                   true,
                   OffsetDateTime.now(),
@@ -128,6 +145,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
             return new PersistSubscriptionRequest(
                   null,
                   subscriptionId,
+                  customerId,
                   null,
                   true,
                   OffsetDateTime.now(),
@@ -140,6 +158,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
           Object object) {}
 
     record Object(
-          String id) {}
+          String id,
+          String customer) {}
 
 }
