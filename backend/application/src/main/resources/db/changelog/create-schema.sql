@@ -110,6 +110,7 @@ CREATE TABLE events_log (
     event_type VARCHAR NOT NULL,
     customer_id VARCHAR NOT NULL,
     payload VARCHAR NOT NULL,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
