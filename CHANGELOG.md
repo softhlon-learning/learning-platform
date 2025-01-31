@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.40.10
+_release date: 2025-01-31_
+ * subscriptions: Add 'WHERE s.active = true' when checking subscriptio
+ * frontend/header: Check authentication status for displaying 'Subscribe' button
+ * courses: Add CoursesView to encapsulate subscribed flag
+ * subscriptions: Added missing 'c.account_id =?1' sql condition to SubscriptionsJpaRepository.findByAccountId
+
 ## 0.40.9
 _release date: 2025-01-31_
  * run-debug.sh: Set suspend=n
