@@ -5,8 +5,6 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
-import com.google.gson.Gson;
-import com.stripe.model.Event;
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +25,9 @@ import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedServic
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
+
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.sessionId;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -92,28 +93,6 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
-
-    private String sessionId(Event event) {
-
-        return new Gson()
-              .fromJson(
-                    event.getData().toJson(),
-                    DataObject.class)
-              .object()
-              .id();
-
-    }
-
-    private String customerId(Event event) {
-
-        return new Gson()
-              .fromJson(
-                    event.getData().toJson(),
-                    DataObject.class)
-              .object()
-              .customer();
-
-    }
 
     private Result persistCheckout(
           String customerId,
