@@ -18,8 +18,13 @@ public interface ListCoursesService {
           UUID accountId);
 
     sealed interface Result {
-        record Succeeded(List<CourseView> courses) implements Result {}
+        record Succeeded(CoursesView courses) implements Result {}
         record Failed(Throwable cause) implements Result {}
+    }
+
+    record CoursesView(
+          List<CourseView> courseList,
+          boolean subscribed) {
     }
 
     record CourseView(

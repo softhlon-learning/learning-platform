@@ -17,6 +17,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.courses.domain.ListCoursesService;
 import tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
+import tech.softhlon.learning.courses.domain.ListCoursesService.CoursesView;
 import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
 import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
 
@@ -50,14 +51,14 @@ class ListCoursesController {
           HttpServletResponse response) {
 
         var accountId = authContext.accountId();
-        log.info("controller | List courses [request]",
+        log.info("controller | List courseList [request]",
               printShort(accountId));
 
         var result = service.execute(
               authContext.accountId());
 
         return switch (result) {
-            case Succeeded(List<CourseView> courses) -> successBody(courses, response);
+            case Succeeded(CoursesView courses) -> successBody(courses, response);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 
@@ -68,15 +69,15 @@ class ListCoursesController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private ResponseEntity<List<CourseView>> successBody(
-          List<CourseView> courses,
+          CoursesView courses,
           HttpServletResponse response) {
 
         subscriptionCookiesService.addASubscriptionCookie(
               response,
-              false);
+              courses.subscribed());
 
         return status(HttpStatus.OK)
-              .body(courses);
+              .body(courses.courseList());
 
     }
 

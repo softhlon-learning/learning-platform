@@ -13,4 +13,5 @@ module courses {
     requires com.google.gson;
     requires org.apache.tomcat.embed.core;
     requires jakarta.persistence;
+    requires spring.web;
 }

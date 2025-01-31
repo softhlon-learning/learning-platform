@@ -57,24 +57,30 @@ class ListCoursesServiceImpl implements ListCoursesService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private List<CourseView> toCourseViews(
+    private CoursesView toCourseViews(
           List<Course> courses,
           UUID accountId) {
 
         var result = checkSubscriptionOperator.execute(
               new CheckSusbcriptionRequest(accountId));
 
+        boolean subscribed = false;
         switch (result) {
             case CheckSubsriptionFailed(_) -> log.info("CheckSubsriptionFailed");
             case NotSubscribed() -> log.info("NotSubscribed");
-            case Subscribed() -> log.info("Subscribed");
+            case Subscribed() -> {
+                log.info("Subscribed");
+                subscribed = true;
+            }
         }
 
-        return courses.stream()
-              .map(course -> courseView(course, accountId))
-              .map(courseView -> mapEnrolled(courseView, accountId))
-              .sorted(Comparator.comparing(CourseView::orderNo))
-              .toList();
+        return new CoursesView(
+              courses.stream()
+                    .map(course -> courseView(course, accountId))
+                    .map(courseView -> mapEnrolled(courseView, accountId))
+                    .sorted(Comparator.comparing(CourseView::orderNo))
+                    .toList(),
+              subscribed);
 
     }
 
