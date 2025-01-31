@@ -33,7 +33,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     private final PersistSubscriptionRepository persistSubscriptionRepository;
 
     public SubmitSubscriptionCreatedServiceImpl(
-          @Value("${stripe.checkout-result.webhook.secret}")
+          @Value("${stripe.subscription-created.webhook.secret}")
           String webhookSecret,
           LoadSubscriptionRepository loadSubscriptionRepository,
           PersistSubscriptionRepository persistSubscriptionRepository) {

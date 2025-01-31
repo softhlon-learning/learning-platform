@@ -45,7 +45,7 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
     private final CreateCustomerService createCustomerService;
 
     public SubmitCheckoutCompletedServiceImpl(
-          @Value("${stripe.checkout-result.webhook.secret}")
+          @Value("${stripe.checkout-completed.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
           PersistCheckoutRepository persistCheckoutRepository,
