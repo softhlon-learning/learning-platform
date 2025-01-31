@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.40.3
+_release date: 2025-01-31_
+ * Updated Stripe webhooks secrets setup
+ * Bug fixing in SubmitSubscriptionCreatedServiceImpl
+ * Fixed subscriptionId(Event event
+
 ## 0.40.2
 _release date: 2025-01-31_
  * Removed CreateSubscriptionService and implementation
