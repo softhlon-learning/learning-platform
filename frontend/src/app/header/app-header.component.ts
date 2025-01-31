@@ -40,6 +40,13 @@ export class AppHeaderComponent implements OnInit {
     }
 
     /**
+     * Check if user is subscribed.
+     */
+    isSubscribed(): boolean {
+        return this.cookieService.get('Subscribed') === 'true'
+    }
+
+    /**
      * Sign out current user.
      */
     signOut(): void {
