@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +22,10 @@ interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, 
     Optional<SubscriptionEntity> findBySubscriptionId(
           String subscriptionId);
 
+    @Query(value = """
+          SELECT s.* FROM subscriptions s 
+          JOIN customers c ON c.customer_id = s.customer_id
+          """, nativeQuery = true)
+    Optional<SubscriptionEntity> findByAccountId(
+          UUID accountId);
 }
