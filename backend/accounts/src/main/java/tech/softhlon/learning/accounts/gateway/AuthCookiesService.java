@@ -19,6 +19,7 @@ class AuthCookiesService {
 
     static final String AUTHORIZATION = "Authorization";
     private static final String AUTHENTICATED = "Authenticated";
+    private static final String SUBSCRIBED = "Subscribed";
     private final int maxAge;
 
     public AuthCookiesService(
@@ -83,6 +84,13 @@ class AuthCookiesService {
               "false",
               false,
               Integer.MAX_VALUE);
+
+        addCookie(
+              response,
+              SUBSCRIBED,
+              null,
+              true,
+              0);
 
     }
 
