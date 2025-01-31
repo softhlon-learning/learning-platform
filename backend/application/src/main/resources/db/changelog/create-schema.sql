@@ -105,6 +105,13 @@ CREATE TABLE checkout_sessions (
 
 CREATE INDEX checkout_sessions__session_id_index ON checkout_sessions (session_id);
 
+CREATE TABLE events_log (
+    id uuid DEFAULT gen_random_uuid(),
+    customer_id VARCHAR NOT NULL,
+    payload VARCHAR NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
