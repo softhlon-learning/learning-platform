@@ -69,7 +69,7 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
 
             switch (event.getType()) {
                 case "checkout.session.completed": {
-                    log.info("service | Payment succeeded [{}]", event.getType());
+                    log.info("service | Payment succeeded '{}'", event.getType());
                     var result = loadCheckoutRepository.execute(
                           new LoadCheckoutRequest(sessionId(event)));
 
@@ -80,8 +80,8 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
                     };
                 }
                 default:
-                    log.info("service | Event not handled [{}]", event.getType());
-                    return new IncorrectEventType("Incorrecrt event type: " + event.getType());
+                    log.info("service | Event not handled '{}'", event.getType());
+                    return new IncorrectEventType("Incorrect event type: " + event.getType());
             }
 
         } catch (Throwable cause) {

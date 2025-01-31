@@ -54,8 +54,8 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                   webhookSecret);
 
             switch (event.getType()) {
-                case "customer.subscriction.created": {
-                    log.info("service | Event received [{}]", event.getType());
+                case "customer.subscription.created": {
+                    log.info("service | Event received '{}'", event.getType());
 
                     var subscriptionId = subscriptionId(event);
                     var result = loadSubscriptionRepository.execute(
@@ -69,8 +69,8 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
                 }
                 default:
-                    log.info("service | Event not handled [{}]", event.getType());
-                    return new IncorrectEventType("Incorrecrt event type: " + event.getType());
+                    log.info("service | Event not handled '{}'", event.getType());
+                    return new IncorrectEventType("Incorrect event type: " + event.getType());
             }
 
         } catch (Throwable cause) {
