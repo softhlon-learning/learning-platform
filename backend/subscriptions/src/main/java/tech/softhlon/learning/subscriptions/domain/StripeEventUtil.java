@@ -12,14 +12,24 @@ import com.stripe.model.Event;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-class StripeEventUtil {
+public class StripeEventUtil {
+
+    public static String type(Event event) {
+
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .type();
+
+    }
 
     static String customerId(Event event) {
 
         var object = new Gson()
               .fromJson(
                     event.getData().toJson(),
-                    CollectStripeEventServiceImpl.DataObject.class)
+                    DataObject.class)
               .object();
 
         return object.customer() != null
@@ -33,7 +43,7 @@ class StripeEventUtil {
         return new Gson()
               .fromJson(
                     event.getData().toJson(),
-                    SubmitCheckoutCompletedServiceImpl.DataObject.class)
+                    DataObject.class)
               .object()
               .id();
 
@@ -51,6 +61,7 @@ class StripeEventUtil {
     }
 
     private record DataObject(
+          String type,
           Object object) {}
 
     private record Object(
