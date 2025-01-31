@@ -40,7 +40,8 @@ class SecurityConfig {
                           "/api/v1/account/update-password",
                           "/api/v1/course",
                           "/api/v1/subscription/created-event",
-                          "/api/v1/subscription/checkout-completed-event"
+                          "/api/v1/subscription/checkout-completed-event",
+                          "/api/v1/subscription/generic-event"
                     ).permitAll()
                     .anyRequest().authenticated())
               .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
