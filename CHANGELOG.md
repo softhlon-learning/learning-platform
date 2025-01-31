@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.40.8
+_release date: 2025-01-31_
+ * Implemented CheckSubscriptionOperator
+ * Added CheckSubscriptionOperator to ListCoursesServiceImpl
+
 ## 0.40.7
 _release date: 2025-01-31_
  * Integrated ListCoursesController with SubscriptionCookiesService
