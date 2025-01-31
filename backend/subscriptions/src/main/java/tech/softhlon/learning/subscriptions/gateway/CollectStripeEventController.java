@@ -32,13 +32,13 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_
 @Slf4j
 @RestApiAdapter
 @RestController
-class SubmitGenericEventController {
+class CollectStripeEventController {
 
     private final String webhookSecret;
     private final CollectStripeEventService service;
     private final HttpServletRequest httpRequest;
 
-    public SubmitGenericEventController(
+    public CollectStripeEventController(
           @Value("${stripe.generic-event.webhook.secret}")
           String webhookSecret,
           CollectStripeEventService service,
@@ -50,12 +50,12 @@ class SubmitGenericEventController {
     }
 
     @PostMapping(SUBMIT_SUBSCRIPTION_GENERIC)
-    ResponseEntity<?> submitSubscriptionCreated(
+    ResponseEntity<?> collectStripeEvent(
           @Validated @RequestBody String payload) throws SignatureVerificationException {
 
         var sigHeader = httpRequest.getHeader("Stripe-Signature");
 
-        log.info("controller | Submit event: {}",
+        log.info("controller | Collect event: {}",
               eventType(
                     sigHeader,
                     payload));
