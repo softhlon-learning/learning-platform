@@ -17,6 +17,7 @@ class RestResources {
     static final String CHECKOUT_SESSION = SUBSCRIPTION + "/checkout-session";
     static final String SUBMIT_CHECKOUT_COMPLETED = SUBSCRIPTION + "/checkout-completed-event";
     static final String SUBMIT_SUBSCRIPTION_CREATED = SUBSCRIPTION + "/created-event";
+    static final String SUBMIT_SUBSCRIPTION_DELETED = SUBSCRIPTION + "/deleted-event";
     static final String SUBMIT_SUBSCRIPTION_GENERIC = SUBSCRIPTION + "/generic-event";
 
 }
