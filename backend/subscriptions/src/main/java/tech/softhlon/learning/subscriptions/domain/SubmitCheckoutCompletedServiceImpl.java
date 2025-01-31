@@ -69,7 +69,6 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
 
             switch (event.getType()) {
                 case "checkout.session.completed": {
-                    log.info("service | Payment succeeded '{}'", event.getType());
                     var result = loadCheckoutRepository.execute(
                           new LoadCheckoutRequest(sessionId(event)));
 

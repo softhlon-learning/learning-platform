@@ -55,7 +55,6 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
             switch (event.getType()) {
                 case "customer.subscription.created": {
-                    log.info("service | Event received '{}'", event.getType());
 
                     var subscriptionId = subscriptionId(event);
                     var customerId = customerId(event);
