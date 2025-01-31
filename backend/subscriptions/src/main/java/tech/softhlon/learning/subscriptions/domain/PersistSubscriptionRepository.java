@@ -30,7 +30,6 @@ public interface PersistSubscriptionRepository {
           UUID id,
           String subscriptionId,
           String customerId,
-          UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,
           OffsetDateTime deactivatedTime) {}

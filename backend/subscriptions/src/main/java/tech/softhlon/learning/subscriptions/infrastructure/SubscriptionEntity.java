@@ -5,10 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +28,6 @@ public class SubscriptionEntity {
     private UUID id;
     private String subscriptionId;
     private String customerId;
-    private UUID accountId;
     private boolean active;
     private OffsetDateTime activatedTime;
     private OffsetDateTime deactivatedTime;

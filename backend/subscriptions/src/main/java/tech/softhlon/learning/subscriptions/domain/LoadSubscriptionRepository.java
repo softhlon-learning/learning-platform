@@ -35,7 +35,6 @@ public interface LoadSubscriptionRepository {
           UUID id,
           String subscriptionId,
           String customerId,
-          UUID accountId,
           boolean active,
           OffsetDateTime activatedTime,
           OffsetDateTime deactivateTime) {}

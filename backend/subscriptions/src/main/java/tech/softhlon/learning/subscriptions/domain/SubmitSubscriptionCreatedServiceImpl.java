@@ -136,7 +136,6 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                   subscription.id(),
                   subscription.subscriptionId(),
                   subscription.customerId(),
-                  subscription.accountId(),
                   true,
                   OffsetDateTime.now(),
                   null
@@ -146,7 +145,6 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                   null,
                   subscriptionId,
                   customerId,
-                  null,
                   true,
                   OffsetDateTime.now(),
                   null

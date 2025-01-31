@@ -43,20 +43,30 @@ CREATE TABLE enrollments (
          REFERENCES courses (id)
 );
 
+CREATE TABLE customers (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid NOT NULL,
+    customer_id VARCHAR NOT NULL,
+    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    CONSTRAINT unique_customers_email UNIQUE (customer_id)
+);
+
+CREATE INDEX customers__customer_id_index ON customers (customer_id);
+
 CREATE TABLE subscriptions (
     id uuid DEFAULT gen_random_uuid(),
     subscription_id VARCHAR NOT NULL,
     customer_id VARCHAR NOT NULL,
-    account_id uuid NULL,
     active BOOLEAN NOT NULL DEFAULT true,
     activated_time TIMESTAMP WITH TIME ZONE,
     deactivated_time TIMESTAMP WITH TIME ZONE,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    CONSTRAINT fk_subscriptions_accounts
-         FOREIGN KEY (account_id)
-         REFERENCES accounts (id)
+    CONSTRAINT fk_subscriptions_customers
+         FOREIGN KEY (customer_id)
+         REFERENCES customers (customer_id)
 );
 
 CREATE TABLE invalidated_tokens (
@@ -97,17 +107,6 @@ CREATE TABLE checkout_sessions (
 );
 
 CREATE INDEX checkout_sessions__session_id_index ON checkout_sessions (session_id);
-
-CREATE TABLE customers (
-    id uuid DEFAULT gen_random_uuid(),
-    account_id uuid NOT NULL,
-    customer_id VARCHAR NOT NULL,
-    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    PRIMARY KEY (id),
-    CONSTRAINT unique_customers_email UNIQUE (account_id)
-);
-
-CREATE INDEX customers__customer_id_index ON customers (customer_id);
 
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$

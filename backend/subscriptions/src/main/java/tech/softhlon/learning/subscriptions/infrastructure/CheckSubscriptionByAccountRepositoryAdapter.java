@@ -31,7 +31,7 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
           CheckSubscriptionByAccountRequest request) {
 
         try {
-            return subscriptionsRepo.existsByAccountId(request.accountId())
+            return false
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();
 
