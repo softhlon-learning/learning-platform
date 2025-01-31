@@ -47,7 +47,7 @@ class UpdateProfileController {
           @Validated @RequestBody Profile request,
           HttpServletResponse response) {
 
-        log.info("controller | Update profile [request], {}",
+        log.info("controller | request / Update profile, {}",
               request);
 
         var accountId = authContext.accountId();

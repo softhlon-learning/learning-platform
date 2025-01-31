@@ -43,7 +43,7 @@ class GetProfileController {
     @GetMapping(PROFILE)
     ResponseEntity<?> getProfile() {
 
-        log.info("controller | Fetch profile [request]");
+        log.info("controller | request / Fetch profile");
 
         var accountId = authContext.accountId();
         var result = service.execute(

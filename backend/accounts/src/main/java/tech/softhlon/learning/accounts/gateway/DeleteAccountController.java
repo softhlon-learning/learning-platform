@@ -46,7 +46,7 @@ class DeleteAccountController {
     ResponseEntity<?> delete(
           HttpServletResponse response) {
 
-        log.info("controller | Delete account [request]");
+        log.info("controller | request / Delete account");
 
         var accountId = authContext.accountId();
         var result = deleteAccountService.execute(

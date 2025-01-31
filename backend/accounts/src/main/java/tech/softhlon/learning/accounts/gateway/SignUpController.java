@@ -47,7 +47,7 @@ class SignUpController {
           @Validated @RequestBody SignUpService.Request request,
           HttpServletResponse response) {
 
-        log.info("controller | Sign up [request], {}",
+        log.info("controller | request / Sign up, {}",
               request);
 
         var result = service.execute(

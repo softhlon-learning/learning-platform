@@ -43,7 +43,7 @@ class UpdatePasswordController {
           @Validated @RequestBody PasswordUpdate request,
           HttpServletResponse response) {
 
-        log.info("controller | Update password [request], {}",
+        log.info("controller | request / Update password, {}",
               request);
 
         var result = service.execute(
