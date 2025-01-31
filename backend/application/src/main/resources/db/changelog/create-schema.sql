@@ -107,6 +107,7 @@ CREATE INDEX checkout_sessions__session_id_index ON checkout_sessions (session_i
 
 CREATE TABLE events_log (
     id uuid DEFAULT gen_random_uuid(),
+    event_type VARCHAR NOT NULL,
     customer_id VARCHAR NOT NULL,
     payload VARCHAR NOT NULL,
     PRIMARY KEY (id)
