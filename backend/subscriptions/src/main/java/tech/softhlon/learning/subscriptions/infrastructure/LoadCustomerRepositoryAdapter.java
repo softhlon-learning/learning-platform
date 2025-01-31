@@ -25,13 +25,12 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
 
     @Override
     public LoadCustomerResult execute(
-          LoadCustomerRequest request) {
+          String customerId) {
 
         try {
 
             var entity = customersJpaRepository
-                  .findByCustomerId(
-                        request.customerId());
+                  .findByCustomerId(customerId);
 
             if (entity.isPresent()) {
                 return new CustomerLoadLoaded(

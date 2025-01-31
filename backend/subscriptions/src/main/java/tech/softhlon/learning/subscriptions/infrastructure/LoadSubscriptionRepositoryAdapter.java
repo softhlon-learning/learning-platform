@@ -25,12 +25,11 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
 
     @Override
     public LoadSubscriptionResult execute(
-          LoadSubscriptionRequest request) {
+          String subscriptionId) {
 
         try {
             var entity = subscriptionsJpaRepository
-                  .findBySubscriptionId(
-                        request.subscriptionId());
+                  .findBySubscriptionId(subscriptionId);
 
             if (entity.isPresent()) {
                 return new SubscriptionLoaded(

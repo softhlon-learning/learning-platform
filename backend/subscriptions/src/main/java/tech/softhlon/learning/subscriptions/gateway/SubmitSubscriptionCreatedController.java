@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Request;
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Succeeded;
@@ -43,10 +42,8 @@ class SubmitSubscriptionCreatedController {
         log.info("controller | request / Submit customer.subscription.created event");
 
         var result = service.execute(
-              new Request(
-                    httpRequest.getHeader("Stripe-Signature"),
-                    payload
-              ));
+              httpRequest.getHeader("Stripe-Signature"),
+              payload);
 
         log.info("controller | response / Submit customer.subscription.created event: {}", result);
 

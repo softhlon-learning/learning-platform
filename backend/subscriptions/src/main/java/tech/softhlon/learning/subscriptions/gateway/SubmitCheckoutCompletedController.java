@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Request;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.CheckoutNotFound;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
@@ -44,10 +43,8 @@ class SubmitCheckoutCompletedController {
         log.info("controller | request / Submit checkout.session.completed event");
 
         var result = service.execute(
-              new Request(
-                    httpRequest.getHeader("Stripe-Signature"),
-                    payload
-              ));
+              httpRequest.getHeader("Stripe-Signature"),
+              payload);
 
         log.info("controller | response / Submit checkout.session.completed event: {}", result);
 

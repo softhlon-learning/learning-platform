@@ -16,14 +16,12 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface RedirectToCustomerPortalService {
 
     Result execute(
-          Request request);
+          String customerName,
+          String sessionId);
 
     sealed interface Result {
         record Succeeded(String url) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(
-          String customerName,
-          String sessionId) {}
 }

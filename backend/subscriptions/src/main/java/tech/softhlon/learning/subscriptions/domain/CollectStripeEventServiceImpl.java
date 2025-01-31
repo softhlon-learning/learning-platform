@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.PersistEventLogRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersistenceFailed;
 
@@ -50,10 +49,9 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
             var customerId = customerId(event);
 
             var result = persistEventLogRepository.execute(
-                  new PersistEventLogRequest(
-                        event.getType(),
-                        customerId,
-                        payload));
+                  event.getType(),
+                  customerId,
+                  payload);
 
             return switch (result) {
                 case EventLogPersisted() -> new Succeeded();

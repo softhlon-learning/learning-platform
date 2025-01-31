@@ -16,16 +16,13 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 public interface PersistEventLogRepository {
 
     PersistEventLogResult execute(
-          PersistEventLogRequest request);
+          String eventType,
+          String customerId,
+          String payload);
 
     sealed interface PersistEventLogResult {
         record EventLogPersisted() implements PersistEventLogResult {}
         record EventLogPersistenceFailed(Throwable cause) implements PersistEventLogResult {}
     }
-
-    record PersistEventLogRequest(
-          String eventType,
-          String customerId,
-          String payload) {}
 
 }

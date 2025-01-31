@@ -16,16 +16,13 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface SubmitSubscriptionCreatedService {
 
     Result execute(
-          Request request);
+          String sigHeader,
+          String payload);
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record IncorrectEventType(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String sigHeader,
-          String payload) {}
 
 }

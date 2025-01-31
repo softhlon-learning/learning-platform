@@ -20,16 +20,13 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadSubscriptionRepository {
     LoadSubscriptionResult execute(
-          LoadSubscriptionRequest request);
+          String subscriptionId);
 
     sealed interface LoadSubscriptionResult {
         record SubscriptionLoaded(Subscription subscription) implements LoadSubscriptionResult {}
         record SubscriptionNotFound() implements LoadSubscriptionResult {}
         record SubscriptionLoadFailed(Throwable cause) implements LoadSubscriptionResult {}
     }
-
-    record LoadSubscriptionRequest(
-          String subscriptionId) {}
 
     record Subscription(
           UUID id,

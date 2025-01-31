@@ -58,12 +58,14 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
     }
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          String sigHeader,
+          String payload) {
 
         try {
             var event = Webhook.constructEvent(
-                  request.payload(),
-                  request.sigHeader(),
+                  payload,
+                  sigHeader,
                   webhookSecret);
 
             switch (event.getType()) {

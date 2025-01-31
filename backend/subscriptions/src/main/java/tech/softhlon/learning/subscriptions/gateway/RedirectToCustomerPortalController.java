@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Request;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
@@ -48,10 +47,9 @@ class RedirectToCustomerPortalController {
 
         log.info("controller | request / Redirect to Stripe customer portal");
         var result = service.execute(
-              new Request(
-                    "Name",
-                    request.sessionId()
-              ));
+              "Name",
+              request.sessionId()
+        );
 
         return switch (result) {
             case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);

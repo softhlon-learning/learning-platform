@@ -11,11 +11,9 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreated;
 import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.Customer;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
 
@@ -39,8 +37,7 @@ class CreateCustomerServiceImpl implements CreateCustomerService {
 
         try {
 
-            var result = loadCustomerRepository.execute(
-                  new LoadCustomerRequest(customerId));
+            var result = loadCustomerRepository.execute(customerId);
 
             return switch (result) {
                 case CustomerLoadLoaded(Customer customer) -> new CustomerCreated();
@@ -66,10 +63,9 @@ class CreateCustomerServiceImpl implements CreateCustomerService {
           UUID accountId) {
 
         var result = persistCustomersRepository.execute(
-              new PersistCustomerRequest(
-                    null,
-                    customerId,
-                    accountId));
+              null,
+              customerId,
+              accountId);
 
         return switch (result) {
             case CustomerPersisted() -> new CustomerCreated();

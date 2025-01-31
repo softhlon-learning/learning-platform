@@ -24,11 +24,17 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
 
     @Override
     public PersistEventLogResult execute(
-          PersistEventLogRequest request) {
+          String eventType,
+          String customerId,
+          String payload) {
 
         try {
 
-            eventLogJpaRepository.save(entity(request));
+            eventLogJpaRepository.save(EventLogEntity.builder()
+                  .eventType(eventType)
+                  .customerId(customerId)
+                  .payload(payload)
+                  .build());
             return new EventLogPersisted();
 
         } catch (Throwable cause) {
@@ -37,20 +43,7 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
             return new EventLogPersistenceFailed(cause);
 
         }
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private EventLogEntity entity(
-          PersistEventLogRequest request) {
-
-        return EventLogEntity.builder()
-              .eventType(request.eventType())
-              .customerId(request.customerId())
-              .payload(request.payload())
-              .build();
 
     }
+
 }

@@ -9,7 +9,6 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionNotFound;
@@ -46,12 +45,14 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     }
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          String sigHeader,
+          String payload) {
 
         try {
             var event = Webhook.constructEvent(
-                  request.payload(),
-                  request.sigHeader(),
+                  payload,
+                  sigHeader,
                   webhookSecret);
 
             switch (event.getType()) {
@@ -60,8 +61,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                     var subscriptionId = subscriptionId(event);
                     var customerId = customerId(event);
 
-                    var result = loadSubscriptionRepository.execute(
-                          new LoadSubscriptionRequest(subscriptionId));
+                    var result = loadSubscriptionRepository.execute(subscriptionId);
 
                     return switch (result) {
                         case SubscriptionNotFound() -> persist(subscriptionId, customerId, null);

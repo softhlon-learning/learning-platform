@@ -18,16 +18,13 @@ import java.util.UUID;
 public interface PersistCustomersRepository {
 
     PersistCustomerResult execute(
-          PersistCustomerRequest request);
+          UUID id,
+          String customerId,
+          UUID accountId);
 
     sealed interface PersistCustomerResult {
         record CustomerPersisted() implements PersistCustomerResult {}
         record CustomerPersistenceFailed(Throwable cause) implements PersistCustomerResult {}
     }
-
-    record PersistCustomerRequest(
-          UUID id,
-          String customerId,
-          UUID accountId) {}
 
 }

@@ -32,12 +32,14 @@ class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalSer
     }
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          String customerName,
+          String sessionId) {
 
         try {
 
             var checkoutSession = com.stripe.model.checkout.Session
-                  .retrieve(request.sessionId());
+                  .retrieve(sessionId);
 
             var sessionCreateParams =
                   new SessionCreateParams.Builder()

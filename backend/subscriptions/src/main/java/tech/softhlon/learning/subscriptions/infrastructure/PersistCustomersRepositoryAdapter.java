@@ -12,6 +12,8 @@ import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -24,11 +26,17 @@ class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
 
     @Override
     public PersistCustomerResult execute(
-          PersistCustomerRequest request) {
+          UUID id,
+          String customerId,
+          UUID accountId) {
 
         try {
             customersJpaRepository.save(
-                  entity(request));
+                  CustomerEntity.builder()
+                        .id(id)
+                        .customerId(customerId)
+                        .accountId(accountId)
+                        .build());
 
             return new CustomerPersisted();
 
@@ -38,21 +46,6 @@ class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
             return new CustomerPersistenceFailed(cause);
 
         }
-
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private CustomerEntity entity(
-          PersistCustomerRequest request) {
-
-        return CustomerEntity.builder()
-              .id(request.id())
-              .customerId(request.customerId())
-              .accountId(request.accountId())
-              .build();
 
     }
 

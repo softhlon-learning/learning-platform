@@ -16,7 +16,8 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 public interface SubmitCheckoutCompletedService {
 
     Result execute(
-          Request request);
+          String sigHeader,
+          String payload);
 
     sealed interface Result {
         record Succeeded() implements Result {}
@@ -24,9 +25,5 @@ public interface SubmitCheckoutCompletedService {
         record IncorrectEventType(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String sigHeader,
-          String payload) {}
 
 }
