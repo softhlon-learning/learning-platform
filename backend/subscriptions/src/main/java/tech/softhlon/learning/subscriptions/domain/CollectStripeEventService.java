@@ -9,16 +9,18 @@ package tech.softhlon.learning.subscriptions.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-interface CollectStripeEventService {
+public interface CollectStripeEventService {
 
     Result execute(
           Request request);
 
     sealed interface Result {
         record Succeeded() implements Result {}
-        record Failed() implements Result {}
+        record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(String payload) {}
+    record Request(
+          String sigHeader,
+          String payload) {}
 
 }
