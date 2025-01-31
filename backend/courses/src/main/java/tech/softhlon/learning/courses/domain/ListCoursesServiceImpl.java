@@ -17,6 +17,7 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
+import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator;
 
 import java.util.Comparator;
 import java.util.List;
@@ -33,6 +34,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
 
     private final LoadCoursesRepository loadCoursesRepository;
     private final LoadEnrollmentRepository loadEnrollmentRepository;
+    private final CheckSubscriptionOperator checkSubscriptionOperator;
 
     @Override
     public Result execute(

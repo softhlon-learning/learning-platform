@@ -1,4 +1,5 @@
 module subscriptions {
+    exports tech.softhlon.learning.subscriptions.gateway;
     requires common;
     requires static lombok;
     requires spring.context;

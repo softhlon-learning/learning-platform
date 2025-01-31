@@ -26,11 +26,11 @@ import java.util.UUID;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-class CheckSubscriptionOperator {
+public class CheckSubscriptionOperator {
 
     private final CheckSubscriptionByAccountRepository checkSubscriptionByAccountRepository;
 
-    CheckSusbcriptionResult execute(
+    public CheckSusbcriptionResult execute(
           CheckSusbcriptionRequest request) {
 
         var result = checkSubscriptionByAccountRepository.execute(
