@@ -1,8 +1,8 @@
 <div class="header">
-    <a *ngIf="!this.isSubscribed()" href="/subscribe">
+    <a *ngIf="!this.isSubscribed() && this.isAuthenticated()" href="/subscribe">
         Subscribe
     </a>
-    <span *ngIf="!this.isSubscribed()">|</span>
+    <span *ngIf="!this.isSubscribed() && this.isAuthenticated()">|</span>
     <a *ngIf="this.isAuthenticated()" href="/profile">
         Profile
     </a>
