@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
@@ -55,22 +54,24 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
     @Override
     public Result execute(
-          Request request) {
+          UUID acccountId,
+          String email,
+          String priceId) {
 
         try {
-            var customerId = customerId(request.acccountId());
+            var customerId = customerId(acccountId);
             SessionCreateParams params = new SessionCreateParams.Builder()
                   .setCustomer(customerId)
                   .setCustomerEmail(
                         customerId == null
-                              ? request.email()
+                              ? email
                               : null)
                   .setSuccessUrl(serviceBaseUrl + HOME_PATH)
                   .setCancelUrl(serviceBaseUrl + SUBSCRIBE_PATH)
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
-                        .setPrice(request.priceId())
+                        .setPrice(priceId)
                         .build())
                   .build();
 
@@ -78,7 +79,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
             var session = Session.create(params);
 
             var result = saveSession(
-                  request.acccountId(),
+                  acccountId,
                   session.getId());
 
             return switch (result) {
@@ -102,8 +103,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
     private String customerId(
           UUID accountId) {
 
-        var result = loadCustomerByAccountRepository.execute(new
-              LoadCustomerRequest(accountId));
+        var result = loadCustomerByAccountRepository.execute(accountId);
 
         return switch (result) {
             case CustomerNotFound(), CustomerLoadFailed(_) -> null;

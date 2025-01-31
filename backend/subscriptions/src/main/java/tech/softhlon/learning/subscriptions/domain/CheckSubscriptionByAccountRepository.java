@@ -20,15 +20,12 @@ import java.util.UUID;
 public interface CheckSubscriptionByAccountRepository {
 
     CheckSubscriptionByAccountResult execute(
-          CheckSubscriptionByAccountRequest request);
+          UUID accountId);
 
     sealed interface CheckSubscriptionByAccountResult {
         record SubscriptionExists() implements CheckSubscriptionByAccountResult {}
         record SubscriptionNotFound() implements CheckSubscriptionByAccountResult {}
         record CheckSubscriptionFailed(Throwable cause) implements CheckSubscriptionByAccountResult {}
     }
-
-    record CheckSubscriptionByAccountRequest(
-          UUID accountId) {}
 
 }

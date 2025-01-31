@@ -9,11 +9,9 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerRequest;
 import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreated;
 import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutRequest;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
@@ -71,7 +69,7 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
             switch (event.getType()) {
                 case "checkout.session.completed": {
                     var result = loadCheckoutRepository.execute(
-                          new LoadCheckoutRequest(sessionId(event)));
+                          sessionId(event));
 
                     return switch (result) {
                         case CheckoutLoaded(CheckoutSession checkout) -> persistCheckout(customerId(event), checkout);
@@ -117,16 +115,17 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
     private Result createCustomer(
           String customerId,
           CheckoutSession checkout) {
+
         var result = createCustomerService.execute(
-              new CreateCustomerRequest(
-                    customerId,
-                    checkout.accountId()
-              ));
+              customerId,
+              checkout.accountId()
+        );
 
         return switch (result) {
             case CustomerCreated() -> new Succeeded();
             case CustomerCreationFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     record DataObject(

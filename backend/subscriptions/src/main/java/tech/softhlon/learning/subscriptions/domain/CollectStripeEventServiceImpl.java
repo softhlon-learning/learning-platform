@@ -37,12 +37,14 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
     }
 
     @Override
-    public Result execute(Request request) {
+    public Result execute(
+          String sigHeader,
+          String payload) {
 
         try {
             var event = Webhook.constructEvent(
-                  request.payload(),
-                  request.sigHeader(),
+                  payload,
+                  sigHeader,
                   webhookSecret);
 
             var customerId = customerId(event);
@@ -51,7 +53,7 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
                   new PersistEventLogRequest(
                         event.getType(),
                         customerId,
-                        request.payload()));
+                        payload));
 
             return switch (result) {
                 case EventLogPersisted() -> new Succeeded();

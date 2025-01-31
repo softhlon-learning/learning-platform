@@ -18,16 +18,14 @@ import java.util.UUID;
 public interface InitializeCheckoutService {
 
     Result execute(
-          Request request);
+          UUID acccountId,
+          String email,
+          String priceId);
 
     sealed interface Result {
         record Succeeded(String url) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
-    record Request(
-          UUID acccountId,
-          String email,
-          String priceId) {}
 
 }

@@ -21,16 +21,13 @@ import java.util.UUID;
 public interface LoadCheckoutRepository {
 
     LoadCheckoutResult execute(
-          LoadCheckoutRequest request);
+          String sessionId);
 
     sealed interface LoadCheckoutResult {
         record CheckoutLoaded(CheckoutSession checkoutSession) implements LoadCheckoutResult {}
         record CheckoutNotFoundInDatabase() implements LoadCheckoutResult {}
         record CheckoutLoadFailed(Throwable cause) implements LoadCheckoutResult {}
     }
-
-    record LoadCheckoutRequest(
-          String sessionId) {}
 
     record CheckoutSession(
           UUID id,

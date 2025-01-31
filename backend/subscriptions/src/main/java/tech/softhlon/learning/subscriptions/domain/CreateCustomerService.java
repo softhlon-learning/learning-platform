@@ -14,15 +14,12 @@ import java.util.UUID;
 public interface CreateCustomerService {
 
     CreateCustomerResult execute(
-          CreateCustomerRequest request);
+          String customerId,
+          UUID accountId);
 
     sealed interface CreateCustomerResult {
         record CustomerCreated() implements CreateCustomerResult {}
         record CustomerCreationFailed(Throwable cause) implements CreateCustomerResult {}
     }
-
-    record CreateCustomerRequest(
-          String customerId,
-          UUID accountId) {}
 
 }

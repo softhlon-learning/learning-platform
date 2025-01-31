@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService;
-import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Request;
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
 
@@ -51,10 +50,9 @@ class InitializeCheckoutController {
         var accountId = authContext.accountId();
         var email = authContext.email();
         var result = service.execute(
-              new Request(
-                    accountId,
-                    email,
-                    request.priceId()));
+              accountId,
+              email,
+              request.priceId());
 
         return switch (result) {
             case Succeeded(String redirectUrl) -> successBody(redirectUrl);

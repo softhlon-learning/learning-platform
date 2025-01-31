@@ -12,15 +12,12 @@ package tech.softhlon.learning.subscriptions.domain;
 public interface CollectStripeEventService {
 
     Result execute(
-          Request request);
+          String sigHeader,
+          String payload);
 
     sealed interface Result {
         record Succeeded() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
-
-    record Request(
-          String sigHeader,
-          String payload) {}
 
 }

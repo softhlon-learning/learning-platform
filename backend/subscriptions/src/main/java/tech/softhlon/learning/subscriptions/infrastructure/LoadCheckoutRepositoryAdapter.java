@@ -24,12 +24,12 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
     private final CheckoutSessionsJpaRepository checkoutSessionsJpaRepository;
 
     @Override
-    public LoadCheckoutResult execute(LoadCheckoutRequest request) {
+    public LoadCheckoutResult execute(
+          String sessionId) {
 
         try {
             var entity = checkoutSessionsJpaRepository
-                  .findBySessionId(
-                        request.sessionId());
+                  .findBySessionId(sessionId);
 
             if (entity.isPresent()) {
                 return new CheckoutLoaded(

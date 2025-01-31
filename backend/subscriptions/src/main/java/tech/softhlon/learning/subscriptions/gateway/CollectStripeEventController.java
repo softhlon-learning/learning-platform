@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Request;
 import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
 
@@ -62,10 +61,9 @@ class CollectStripeEventController {
                     payload));
 
         var result = service.execute(
-              new Request(
-                    sigHeader,
-                    payload
-              ));
+              sigHeader,
+              payload
+        );
 
         return switch (result) {
             case Succeeded() -> successCreatedBody();

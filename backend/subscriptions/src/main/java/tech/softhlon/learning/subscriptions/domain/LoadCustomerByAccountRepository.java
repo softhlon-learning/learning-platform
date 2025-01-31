@@ -20,16 +20,13 @@ import java.util.UUID;
 public interface LoadCustomerByAccountRepository {
 
     LoadCustomerResult execute(
-          LoadCustomerRequest request);
+          UUID accountId);
 
     sealed interface LoadCustomerResult {
         record CustomerLoadLoaded(Customer customer) implements LoadCustomerResult {}
         record CustomerNotFound() implements LoadCustomerResult {}
         record CustomerLoadFailed(Throwable cause) implements LoadCustomerResult {}
     }
-
-    record LoadCustomerRequest(
-          UUID accountId) {}
 
     record Customer(
           UUID id,

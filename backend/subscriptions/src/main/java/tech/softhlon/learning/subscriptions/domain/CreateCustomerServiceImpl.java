@@ -19,6 +19,8 @@ import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.Pe
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -32,16 +34,17 @@ class CreateCustomerServiceImpl implements CreateCustomerService {
 
     @Override
     public CreateCustomerResult execute(
-          CreateCustomerRequest request) {
+          String customerId,
+          UUID accountId) {
 
         try {
 
             var result = loadCustomerRepository.execute(
-                  new LoadCustomerRequest(request.customerId()));
+                  new LoadCustomerRequest(customerId));
 
             return switch (result) {
                 case CustomerLoadLoaded(Customer customer) -> new CustomerCreated();
-                case CustomerNotFound() -> persist(request);
+                case CustomerNotFound() -> persist(customerId, accountId);
                 case CustomerLoadFailed(Throwable cause) -> new CustomerCreationFailed(cause);
             };
 
@@ -59,13 +62,14 @@ class CreateCustomerServiceImpl implements CreateCustomerService {
     // -----------------------------------------------------------------------------------------------------------------
 
     CreateCustomerResult persist(
-          CreateCustomerRequest request) {
+          String customerId,
+          UUID accountId) {
 
         var result = persistCustomersRepository.execute(
               new PersistCustomerRequest(
                     null,
-                    request.customerId(),
-                    request.accountId()));
+                    customerId,
+                    accountId));
 
         return switch (result) {
             case CustomerPersisted() -> new CustomerCreated();

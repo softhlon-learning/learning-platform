@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository;
-import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountRequest;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.CheckSubscriptionFailed;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
@@ -34,7 +33,7 @@ public class CheckSubscriptionOperator {
           CheckSusbcriptionRequest request) {
 
         var result = checkSubscriptionByAccountRepository.execute(
-              new CheckSubscriptionByAccountRequest(request.accountId()));
+              request.accountId());
 
         return switch (result) {
             case SubscriptionExists() -> new Subscribed();
