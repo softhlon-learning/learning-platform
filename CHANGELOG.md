@@ -1,9 +1,14 @@
 # Learning Platform Changelog
 
+## 0.41.11
+_release date: 2025-02-01_
+ * accounts: Implement LoadAccountByEmailOperator
+ * subscriptions: Integrate SubmitCustomerCreatedServiceImpl with LoadAccountByEmailOperator
+
 ## 0.41.10
 _release date: 2025-02-01_
- * Added SubmitCustomerCreatedController
- * Remove CreateCustomerService and its service 
+ * subscriptions: Add SubmitCustomerCreatedController
+ * subscriptions: Remove CreateCustomerService and its service 
 
 ## 0.41.9
 _release date: 2025-02-01_
