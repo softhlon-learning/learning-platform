@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.42.10
+_release date: 2025-02-02_
+ * database: Group objects by module
+ * database: Add extra columns to subscriptions table (period*, invoice_id, paid)
+ * database: Add invoices table
+
 ## 0.42.9
 _release date: 2025-02-02_
  * subscriptions: Run CancelExpiredSubscriptionService in schedule (demo)
