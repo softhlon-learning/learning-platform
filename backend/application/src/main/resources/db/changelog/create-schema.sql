@@ -95,7 +95,6 @@ CREATE TABLE subscriptions (
     period_start_at TIMESTAMP WITH TIME ZONE,
     period_end_at TIMESTAMP WITH TIME ZONE,
     invoice_id VARCHAR,
-    paid BOOLEAN DEFAULT false,
     canceled_at TIMESTAMP WITH TIME ZONE,
     cancel_at TIMESTAMP WITH TIME ZONE,
     cancel_reason VARCHAR NULL,
@@ -127,6 +126,16 @@ CREATE TABLE events_log (
     payload VARCHAR NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
+);
+
+CREATE TABLE invoices (
+    id uuid DEFAULT gen_random_uuid(),
+    invoice_id VARCHAR NOT NULL,
+    paid BOOLEAN DEFAULT false,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    UNIQUE (invoice_id)
 );
 
 -- common
