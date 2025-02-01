@@ -28,6 +28,17 @@ public class StripeEventUtil {
 
     }
 
+    static String email(Event event) {
+
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .object()
+              .email();
+
+    }
+
     static String sessionId(Event event) {
 
         return new Gson()
@@ -56,5 +67,7 @@ public class StripeEventUtil {
 
     private record Object(
           String id,
-          String customer) {}
+          String customer,
+          String email) {}
+
 }

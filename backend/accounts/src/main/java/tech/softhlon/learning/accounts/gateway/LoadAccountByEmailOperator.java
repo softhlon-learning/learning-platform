@@ -13,9 +13,9 @@ import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadA
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.Result.AccountLoadFailed;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.Result.AccountLoaded;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.Result.AccountNotLoaded;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
 
 import java.util.UUID;
 
@@ -29,7 +29,7 @@ public class LoadAccountByEmailOperator {
 
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
 
-    Result execute(String email) {
+    public LoadAccountResult execute(String email) {
         var result = loadAccountByEmailRepository.execute(email);
 
         return switch (result) {
@@ -39,10 +39,10 @@ public class LoadAccountByEmailOperator {
         };
     }
 
-    sealed interface Result {
-        record AccountLoaded(AccountView account) implements Result {}
-        record AccountNotLoaded() implements Result {}
-        record AccountLoadFailed(Throwable cause) implements Result {}
+    public sealed interface LoadAccountResult {
+        record AccountLoaded(AccountView account) implements LoadAccountResult {}
+        record AccountNotLoaded() implements LoadAccountResult {}
+        record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
 
     record AccountView(

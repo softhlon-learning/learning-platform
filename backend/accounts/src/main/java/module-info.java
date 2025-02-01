@@ -1,4 +1,5 @@
 module accounts {
+    exports tech.softhlon.learning.accounts.gateway;
     requires common;
     requires static lombok;
     requires spring.context;

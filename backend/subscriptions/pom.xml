@@ -29,5 +29,17 @@
             <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>tech.softhlon.learning</groupId>
+            <artifactId>accounts</artifactId>
+            <version>0.41.3-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>tech.softhlon.learning</groupId>
+            <artifactId>accounts</artifactId>
+            <version>0.41.11-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

@@ -9,6 +9,9 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.*;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
@@ -21,7 +24,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.
 import java.util.UUID;
 
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
-
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.email;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -34,15 +37,19 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
     private final String webhookSecret;
     private final LoadCustomerRepository loadCustomerRepository;
     private final PersistCustomersRepository persistCustomersRepository;
+    private final LoadAccountByEmailOperator loadAccountByEmailOperator;
 
     public SubmitCustomerCreatedServiceImpl(
           @Value("${stripe.customer-created.webhook.secret}") String webhookSecret,
           LoadCustomerRepository loadCustomerRepository,
-          PersistCustomersRepository persistCustomersRepository) {
+          PersistCustomersRepository persistCustomersRepository,
+          LoadAccountByEmailOperator loadAccountByEmailOperator
+    ) {
 
         this.webhookSecret = webhookSecret;
         this.loadCustomerRepository = loadCustomerRepository;
         this.persistCustomersRepository = persistCustomersRepository;
+        this.loadAccountByEmailOperator = loadAccountByEmailOperator;
     }
 
     @Override
@@ -61,6 +68,9 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
 
                     var customerId = customerId(event);
                     var result = loadCustomerRepository.execute(customerId);
+
+                    var email = email(event);
+                    var loadAccountResult = loadAccountByEmailOperator.execute(email);
 
                     return switch (result) {
                         case CustomerLoaded(_) -> new Succeeded();
@@ -81,6 +91,10 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
         }
 
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
 
     private Result persist(
           String customerId,
