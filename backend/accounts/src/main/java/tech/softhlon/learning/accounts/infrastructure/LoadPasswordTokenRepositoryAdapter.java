@@ -54,7 +54,7 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
               entity.getId(),
               entity.getAccountId(),
               entity.getToken(),
-              entity.getExpirationTime());
+              entity.getExpireAt());
 
     }
 

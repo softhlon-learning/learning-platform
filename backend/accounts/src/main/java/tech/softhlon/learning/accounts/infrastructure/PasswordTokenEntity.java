@@ -32,6 +32,6 @@ class PasswordTokenEntity {
     private UUID id;
     private UUID accountId;
     private String token;
-    private OffsetDateTime expirationTime;
+    private OffsetDateTime expireAt;
 
 }
