@@ -8,7 +8,7 @@ CREATE TABLE accounts (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    CONSTRAINT unique_accounts_email UNIQUE (email)
+    UNIQUE (email)
 );
 
 CREATE TABLE courses (
@@ -52,7 +52,8 @@ CREATE TABLE customers (
         CONSTRAINT fk_customers_accounts
              FOREIGN KEY (account_id)
              REFERENCES accounts (id),
-    CONSTRAINT unique_customers_email UNIQUE (customer_id)
+    UNIQUE (account_id),
+    UNIQUE (customer_id)
 );
 
 CREATE INDEX customers__customer_id_index ON customers (customer_id);
