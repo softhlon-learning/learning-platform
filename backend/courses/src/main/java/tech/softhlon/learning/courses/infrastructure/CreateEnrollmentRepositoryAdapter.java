@@ -69,7 +69,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
               .accountId(accountId)
               .course(course)
               .content(course.getContent())
-              .enrolledTime(enrolledTime)
+              .enrolledAt(enrolledTime)
               .build();
 
     }

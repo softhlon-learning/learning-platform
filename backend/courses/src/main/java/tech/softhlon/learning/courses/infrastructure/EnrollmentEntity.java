@@ -30,7 +30,7 @@ public class EnrollmentEntity {
     @ManyToOne
     private CourseEntity course;
     private String content;
-    private OffsetDateTime enrolledTime;
-    private OffsetDateTime completedTime;
+    private OffsetDateTime enrolledAt;
+    private OffsetDateTime completedAt;
 
 }
