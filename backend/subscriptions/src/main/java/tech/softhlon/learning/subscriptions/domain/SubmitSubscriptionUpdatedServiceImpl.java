@@ -124,10 +124,10 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
               subscription.customerId(),
               true,
               OffsetDateTime.ofInstant(
-                    Instant.ofEpochMilli(stripeObject.canceledAt()),
+                    Instant.ofEpochMilli(stripeObject.canceledAt() * 1000_000),
                     ZoneId.systemDefault()),
               OffsetDateTime.ofInstant(
-                    Instant.ofEpochMilli(stripeObject.cancelAt()),
+                    Instant.ofEpochMilli(stripeObject.cancelAt() * 1000_000),
                     ZoneId.systemDefault()),
               stripeObject.cancelationDetails() != null
                     ? stripeObject.cancelationDetails().feedback()
