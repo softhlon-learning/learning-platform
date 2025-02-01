@@ -35,7 +35,6 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOU
 @RequiredArgsConstructor
 class InitializeCheckoutController {
 
-    private static final String LOCATION = "Location";
     private final InitializeCheckoutService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;

@@ -20,6 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalServi
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
+import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOMER_PORTAL;
 
@@ -33,7 +34,6 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOME
 @RequiredArgsConstructor
 class RedirectToCustomerPortalController {
 
-    private static final String LOCATION = "Location";
     private final RedirectToCustomerPortalService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
@@ -46,7 +46,7 @@ class RedirectToCustomerPortalController {
         var accountId = authContext.accountId();
         var result = service.execute(accountId);
         return switch (result) {
-            case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);
+            case Succeeded(String redirectUrl) -> successBody(redirectUrl);
             case UnknownCustomer(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
@@ -57,32 +57,14 @@ class RedirectToCustomerPortalController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<?> redirect(
-          HttpServletResponse response,
+    private ResponseEntity<CreateCheckoutResponse> successBody(
           String redirectUrl) {
 
-        addSuccessfulRedirectHeaders(
-              response,
-              redirectUrl);
-
-        return redirectBody();
+        return status(HttpStatus.OK)
+              .body(new CreateCheckoutResponse(redirectUrl));
 
     }
 
-    private void addSuccessfulRedirectHeaders(
-          HttpServletResponse response,
-          String redirectUrl) {
-
-        response.setHeader(
-              LOCATION,
-              redirectUrl);
-
-        response.setStatus(HttpStatus
-              .SEE_OTHER.value());
-    }
-
-    record RedirectToPortalRequest(
-          String sessionId) {
-    }
-
+    record CreateCheckoutResponse(
+          String redirectUrl) {}
 }
