@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.6
+_release date: 2025-02-01_
+ * frontend: Add experimental spinner
+ * frontend: Polish spinner setup
+
 ## 0.42.5
 _release date: 2025-02-01_
  * frontend: Redirect to /customer-portal on /manage-subscription init
