@@ -5,7 +5,9 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.stripe.model.Event;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -63,7 +65,11 @@ public class StripeEventUtil {
 
     static StripeEventObject stripeObject(Event event) {
 
-        return new Gson()
+        Gson gson = new GsonBuilder()
+              .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+              .create();
+
+        return gson
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
