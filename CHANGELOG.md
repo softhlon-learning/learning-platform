@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.4
+_release date: 2025-02-01_
+ * frontend: Add fetchCustomerPortalUrl service
+ * rontend: Add manage-subscription.component
+
 ## 0.42.3
 _release date: 2025-02-01_
  * subscriptions: Fix for calculating cancel times (again)
