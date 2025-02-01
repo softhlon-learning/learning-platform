@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.13
+_release date: 2025-02-01_
+ * frontend/subscribe: Revert to original product/price
+ * database: Add fk_customers_accounts
+
 ## 0.41.12
 _release date: 2025-02-01_
  * accounts: Update code formatting
