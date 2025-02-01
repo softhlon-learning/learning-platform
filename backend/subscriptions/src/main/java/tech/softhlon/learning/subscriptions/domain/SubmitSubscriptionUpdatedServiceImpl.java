@@ -92,7 +92,7 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    Result persist(
+    private Result persist(
           String subscriptionId,
           String customerId,
           StripeEventObject stripeObject,
@@ -112,7 +112,7 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
         };
     }
 
-    PersistSubscriptionRequest prepareRequest(
+    private PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
           String customerId,
           StripeEventObject stripeObject,
@@ -123,16 +123,26 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
               subscription.subscriptionId(),
               subscription.customerId(),
               true,
-              OffsetDateTime.ofInstant(
-                    Instant.ofEpochMilli(stripeObject.canceledAt() * 1000),
-                    ZoneId.systemDefault()),
-              OffsetDateTime.ofInstant(
-                    Instant.ofEpochMilli(stripeObject.cancelAt() * 1000),
-                    ZoneId.systemDefault()),
+              offsetDateTime(stripeObject.canceledAt()),
+              offsetDateTime(stripeObject.cancelAt()),
               stripeObject.cancelationDetails() != null
                     ? stripeObject.cancelationDetails().feedback()
                     : null
         );
+    }
+
+    private OffsetDateTime offsetDateTime(String time) {
+
+        if (time == null)
+            return null;
+
+        var instant = Instant.ofEpochMilli(
+              Long.parseLong(time) * 1000);
+
+        return OffsetDateTime.ofInstant
+              (instant,
+                    ZoneId.systemDefault());
+
     }
 
 }
