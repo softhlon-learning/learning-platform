@@ -39,7 +39,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
     private final PersistSubscriptionRepository persistSubscriptionRepository;
 
     public SubmitSubscriptionDeletedServiceImpl(
-          @Value("${stripe.subscription-created.webhook.secret}")
+          @Value("${stripe.subscription-deleted.webhook.secret}")
           String webhookSecret,
           LoadSubscriptionRepository loadSubscriptionRepository,
           PersistSubscriptionRepository persistSubscriptionRepository) {

@@ -27,6 +27,7 @@ service.base-url: "http://localhost"
 stripe.api-key: "sk_test_51QmNzsIdZlPlV5wEyJEDGjierQfxyKkJVsuhjbvMMtxnjex89QWnOiRIkV8nwccigHjmX6Fqh0VCTSFnO0TwZJW500de6la5pX"
 stripe.checkout-completed.webhook.secret: "whsec_Nyb8rWd6bwKHWMspS0AMwBuJRizTzBDN"
 stripe.subscription-created.webhook.secret: "whsec_X9MWm4LodiEznxPCgxv09mIV2hoeSYaj"
+stripe.subscription-deleted.webhook.secret: "whsec_9cactNFNgHm0uXk2XUG2qBKV5kWvfpfQ"
 stripe.generic-event.webhook.secret: "whsec_dC3HqyfYzsAbXlaF64tkZjtV4nTDtXWV"
 
 ---
