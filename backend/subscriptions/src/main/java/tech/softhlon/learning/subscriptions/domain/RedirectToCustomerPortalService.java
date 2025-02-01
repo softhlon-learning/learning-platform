@@ -22,7 +22,7 @@ public interface RedirectToCustomerPortalService {
 
     sealed interface Result {
         record Succeeded(String url) implements Result {}
-        record CustomerNotFound(String url) implements Result {}
+        record UnknownCustomer(String url) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 

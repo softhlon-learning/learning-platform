@@ -11,14 +11,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.CustomerNotFound;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
@@ -49,7 +47,7 @@ class RedirectToCustomerPortalController {
         var result = service.execute(accountId);
         return switch (result) {
             case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);
-            case CustomerNotFound(String message) -> badRequestBody(httpRequest, message);
+            case UnknownCustomer(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 

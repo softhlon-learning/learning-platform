@@ -12,13 +12,14 @@ import com.stripe.param.billingportal.SessionCreateParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
-
-import static tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.*;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
 
 import java.util.UUID;
+
+import static tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -27,6 +28,7 @@ import java.util.UUID;
 @Slf4j
 @Service
 class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalService {
+    private static final String CUSTOMER_NOT_FOUND = "Customer not found";
     private final String serviceBaseUrl;
     private final LoadCustomerByAccountRepository loadCustomerByAccountRepository;
 
@@ -48,8 +50,8 @@ class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalSer
             var result = loadCustomerByAccountRepository.execute(accountId);
 
             return switch (result) {
-                case CustomerLoaded(Customer customer) -> null;
-                case CustomerNotFound() -> null;
+                case CustomerLoaded(Customer customer) -> customerPortal(customer.customerId());
+                case CustomerNotFound() -> new UnknownCustomer(CUSTOMER_NOT_FOUND);
                 case CustomerLoadFailed(Throwable cause) -> new Failed(cause);
             };
         } catch (Throwable cause) {
