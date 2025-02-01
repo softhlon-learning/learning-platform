@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService;
+import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
@@ -50,6 +51,7 @@ class SubmitCustomerCreatedController {
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();
             case IncorrectEventType(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotFound(String message) -> badRequestBody(httpRequest, message);
             case Failed(_) -> internalServerBody(httpRequest, null);
         };
 

@@ -45,7 +45,7 @@ public class LoadAccountByEmailOperator {
         record AccountLoadFailed(Throwable cause) implements LoadAccountResult {}
     }
 
-    record AccountView(
+    public record AccountView(
           UUID id,
           String email) {}
 

@@ -10,13 +10,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.*;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.AccountView;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
+import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
@@ -33,6 +34,7 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.email;
 @Slf4j
 @Service
 class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
+    private static final String ACCOUNT_NOT_FOUND = "Associated account not found";
 
     private final String webhookSecret;
     private final LoadCustomerRepository loadCustomerRepository;
@@ -69,13 +71,17 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
                     var customerId = customerId(event);
                     var result = loadCustomerRepository.execute(customerId);
 
+                    if (result instanceof CustomerLoaded) {
+                        return new Succeeded();
+                    }
+
                     var email = email(event);
                     var loadAccountResult = loadAccountByEmailOperator.execute(email);
 
-                    return switch (result) {
-                        case CustomerLoaded(_) -> new Succeeded();
-                        case CustomerNotFound() -> persist(customerId, null);
-                        case CustomerLoadFailed(Throwable cause) -> new Failed(cause);
+                    return switch (loadAccountResult) {
+                        case AccountLoaded(AccountView accountView) -> persist(customerId, accountView.id());
+                        case AccountNotLoaded() -> new AccountNotFound(ACCOUNT_NOT_FOUND);
+                        case AccountLoadFailed(Throwable cause) -> new Failed(cause);
                     };
 
                 }

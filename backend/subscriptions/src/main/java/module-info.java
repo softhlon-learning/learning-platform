@@ -10,4 +10,6 @@ module subscriptions {
     requires org.slf4j;
     requires jakarta.persistence;
     requires org.apache.tomcat.embed.core;
+    requires org.checkerframework.checker.qual;
+    requires spring.web;
 }

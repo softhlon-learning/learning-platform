@@ -22,6 +22,7 @@ public interface SubmitCustomerCreatedService {
     sealed interface Result {
         record Succeeded() implements Result {}
         record IncorrectEventType(String message) implements Result {}
+        record AccountNotFound(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
