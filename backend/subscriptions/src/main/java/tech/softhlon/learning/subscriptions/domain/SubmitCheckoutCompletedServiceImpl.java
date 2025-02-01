@@ -41,19 +41,16 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
     private final String webhookSecret;
     private final LoadCheckoutRepository loadCheckoutRepository;
     private final PersistCheckoutRepository persistCheckoutRepository;
-    private final CreateCustomerService createCustomerService;
 
     public SubmitCheckoutCompletedServiceImpl(
           @Value("${stripe.checkout-completed.webhook.secret}")
           String webhookSecret,
           LoadCheckoutRepository loadCheckoutRepository,
-          PersistCheckoutRepository persistCheckoutRepository,
-          CreateCustomerService createCustomerService) {
+          PersistCheckoutRepository persistCheckoutRepository) {
 
         this.webhookSecret = webhookSecret;
         this.loadCheckoutRepository = loadCheckoutRepository;
         this.persistCheckoutRepository = persistCheckoutRepository;
-        this.createCustomerService = createCustomerService;
 
     }
 
@@ -108,24 +105,8 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
               ));
 
         return switch (result) {
-            case CheckoutSessionPersisted() -> createCustomer(customerId, checkout);
+            case CheckoutSessionPersisted() -> new Succeeded();
             case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
-        };
-
-    }
-
-    private Result createCustomer(
-          String customerId,
-          CheckoutSession checkout) {
-
-        var result = createCustomerService.execute(
-              customerId,
-              checkout.accountId()
-        );
-
-        return switch (result) {
-            case CustomerCreated() -> new Succeeded();
-            case CustomerCreationFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
