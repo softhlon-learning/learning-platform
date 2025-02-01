@@ -62,7 +62,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
                   webhookSecret);
 
             switch (event.getType()) {
-                case "customer.subscription.created": {
+                case "customer.subscription.deleted": {
 
                     var subscriptionId = subscriptionId(event);
                     var customerId = customerId(event);
