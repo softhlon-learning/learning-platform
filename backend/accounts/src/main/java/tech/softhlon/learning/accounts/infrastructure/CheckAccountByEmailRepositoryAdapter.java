@@ -23,19 +23,22 @@ import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailReposito
 @RequiredArgsConstructor
 class CheckAccountByEmailRepositoryAdapter implements CheckAccountByEmailRepository {
 
-    private final AccountsJpaRepository accountsRepo;
+    private final AccountsJpaRepository accountsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CheckAccountByEmailResult execute(
           String email) {
 
         try {
-            var entity = accountsRepo.findByEmail(
-                  email);
 
+            var entity = accountsJpaRepository.findByEmail(email);
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();
+
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new CheckAccountFailed(cause);
