@@ -83,9 +83,9 @@ public class StripeEventUtil {
           String customer,
           String email,
           @SerializedName("cancel_at")
-          int cancelAt,
+          long cancelAt,
           @SerializedName("canceled_at")
-          int canceledAt,
+          long canceledAt,
           @SerializedName("cancellation_details")
           CancelationDetails cancelationDetails) {}
 
