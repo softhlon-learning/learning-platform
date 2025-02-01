@@ -42,6 +42,7 @@ class SecurityConfig {
                           "/api/v1/subscription/checkout-completed-event",
                           "/api/v1/subscription/customer-created-event",
                           "/api/v1/subscription/created-event",
+                          "/api/v1/subscription/updated-event",
                           "/api/v1/subscription/deleted-event",
                           "/api/v1/subscription/generic-event"
                     ).permitAll()
