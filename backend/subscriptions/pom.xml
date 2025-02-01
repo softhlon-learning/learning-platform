@@ -16,15 +16,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.stripe</groupId>
-            <artifactId>stripe-java</artifactId>
-            <version>${stripe-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-        <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>
@@ -32,14 +23,17 @@
         <dependency>
             <groupId>tech.softhlon.learning</groupId>
             <artifactId>accounts</artifactId>
-            <version>0.41.3-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>tech.softhlon.learning</groupId>
-            <artifactId>accounts</artifactId>
-            <version>0.41.14-SNAPSHOTT</version>
-            <scope>compile</scope>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>${stripe-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 </project>
