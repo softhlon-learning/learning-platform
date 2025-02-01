@@ -1,3 +1,5 @@
+-- accounts module
+
 CREATE TABLE accounts (
     id uuid DEFAULT gen_random_uuid(),
     name VARCHAR NOT NULL,
@@ -10,6 +12,31 @@ CREATE TABLE accounts (
     PRIMARY KEY (id),
     UNIQUE (email)
 );
+
+CREATE TABLE invalidated_tokens (
+    id uuid DEFAULT gen_random_uuid(),
+    token_hash VARCHAR NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
+
+CREATE TABLE reset_password_tokens (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid,
+    token VARCHAR NOT NULL,
+    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_reset_password_tokens_accounts
+         FOREIGN KEY (account_id)
+         REFERENCES accounts (id)
+);
+
+CREATE INDEX reset_password_tokens__token_index ON reset_password_tokens (token);
+
+-- courses module
 
 CREATE TABLE courses (
     id uuid,
@@ -43,6 +70,8 @@ CREATE TABLE enrollments (
          REFERENCES courses (id)
 );
 
+-- subscriptions
+
 CREATE TABLE customers (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid NOT NULL,
@@ -71,29 +100,6 @@ CREATE TABLE subscriptions (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE invalidated_tokens (
-    id uuid DEFAULT gen_random_uuid(),
-    token_hash VARCHAR NOT NULL,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE INDEX invalidated_tokens__token_hash_index ON invalidated_tokens (token_hash);
-
-CREATE TABLE reset_password_tokens (
-    id uuid DEFAULT gen_random_uuid(),
-    account_id uuid,
-    token VARCHAR NOT NULL,
-    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_reset_password_tokens_accounts
-         FOREIGN KEY (account_id)
-         REFERENCES accounts (id)
-);
-
-CREATE INDEX reset_password_tokens__token_index ON reset_password_tokens (token);
-
 CREATE TABLE checkout_sessions (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid,
@@ -118,6 +124,8 @@ CREATE TABLE events_log (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
+
+-- common
 
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
