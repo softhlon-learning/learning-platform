@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.14
+_release date: 2025-02-01_
+ * subscriptions: Repair logic in SubmitCustomerCreatedServiceImpl
+ * subscriptions: Testing integration with Stripe
+
 ## 0.41.13
 _release date: 2025-02-01_
  * frontend/subscribe: Revert to original product/price
