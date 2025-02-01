@@ -12,7 +12,7 @@ import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateC
 import tech.softhlon.learning.subscriptions.domain.CreateCustomerService.CreateCustomerResult.CustomerCreationFailed;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.Customer;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
@@ -40,7 +40,7 @@ class CreateCustomerServiceImpl implements CreateCustomerService {
             var result = loadCustomerRepository.execute(customerId);
 
             return switch (result) {
-                case CustomerLoadLoaded(Customer customer) -> new CustomerCreated();
+                case CustomerLoaded(Customer customer) -> new CustomerCreated();
                 case CustomerNotFound() -> persist(customerId, accountId);
                 case CustomerLoadFailed(Throwable cause) -> new CustomerCreationFailed(cause);
             };

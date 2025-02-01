@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoadLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerNotFound;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
                   .findByCustomerId(customerId);
 
             if (entity.isPresent()) {
-                return new CustomerLoadLoaded(
+                return new CustomerLoaded(
                       customer(entity.get()));
             } else {
                 return new CustomerNotFound();
