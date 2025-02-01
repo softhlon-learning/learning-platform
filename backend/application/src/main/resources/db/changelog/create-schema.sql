@@ -64,7 +64,7 @@ CREATE TABLE subscriptions (
     active BOOLEAN NOT NULL DEFAULT true,
     canceled_at TIMESTAMP WITH TIME ZONE,
     cancel_at TIMESTAMP WITH TIME ZONE,
-    cancel_reason VARCHAR NOT NULL,
+    cancel_reason VARCHAR NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
