@@ -30,6 +30,6 @@ class CheckoutSessionEntity {
     private UUID id;
     private UUID accountId;
     private String sessionId;
-    private OffsetDateTime expiredTime;
-    private OffsetDateTime completedTime;
+    private OffsetDateTime expiredAt;
+    private OffsetDateTime completedAt;
 }

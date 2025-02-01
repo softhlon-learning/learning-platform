@@ -49,8 +49,8 @@ class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
               .id(request.id())
               .sessionId(request.sessionId())
               .accountId(request.accountId())
-              .expiredTime(request.expiredTime())
-              .completedTime(request.completedTime())
+              .expiredAt(request.expiredTime())
+              .completedAt(request.completedTime())
               .build();
 
     }

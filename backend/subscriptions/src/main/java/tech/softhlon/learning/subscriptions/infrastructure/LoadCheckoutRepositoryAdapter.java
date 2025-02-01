@@ -53,8 +53,8 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
               entity.getId(),
               entity.getSessionId(),
               entity.getAccountId(),
-              entity.getExpiredTime(),
-              entity.getCompletedTime());
+              entity.getExpiredAt(),
+              entity.getCompletedAt());
     }
 
 }
