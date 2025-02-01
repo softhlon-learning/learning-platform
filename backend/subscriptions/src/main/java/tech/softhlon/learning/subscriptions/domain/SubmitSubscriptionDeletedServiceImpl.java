@@ -32,7 +32,6 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.subscr
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedService {
 
     private final String webhookSecret;
