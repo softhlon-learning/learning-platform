@@ -49,6 +49,9 @@ CREATE TABLE customers (
     customer_id VARCHAR NOT NULL,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
+        CONSTRAINT fk_customers_accounts
+             FOREIGN KEY (account_id)
+             REFERENCES accounts (id),
     CONSTRAINT unique_customers_email UNIQUE (customer_id)
 );
 
