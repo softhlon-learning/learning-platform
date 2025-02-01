@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.41.12
+_release date: 2025-02-01_
+ * accounts: Update code formatting
+
 ## 0.41.11
 _release date: 2025-02-01_
  * accounts: Implement LoadAccountByEmailOperator
