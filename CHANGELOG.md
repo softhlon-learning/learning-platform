@@ -8,7 +8,7 @@ _release date: 2025-02-01_
 ## 0.42.4
 _release date: 2025-02-01_
  * frontend: Add fetchCustomerPortalUrl service
- * rontend: Add manage-subscription.component
+ * frontend: Add manage-subscription.component
 
 ## 0.42.3
 _release date: 2025-02-01_
