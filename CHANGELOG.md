@@ -2,6 +2,13 @@
 
 ## 0.42.0
 _release date: 2025-02-01_
+ * database: Remove NOT NULL constraint from cancel_reason (subscriptions)
+ * subscriptions: Hotfix for StripeEventUtil
+ * database: Add UNIQUE on customers.account_id
+ *   
+
+## 0.42.0
+_release date: 2025-02-01_
  * application: Add stripe.subscription-updated.webhook.secret parameter
  * application: Add /api/v1/subscription/updated-event to permitted paths
  * subscriptions: Add SubmitSubscriptionUpdatedController
