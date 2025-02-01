@@ -20,7 +20,7 @@ public class StripeEventUtil {
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
-              .object();
+              .stripeEventObject();
 
         return object.customer() != null
               ? object.customer()
@@ -34,7 +34,7 @@ public class StripeEventUtil {
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
-              .object()
+              .stripeEventObject()
               .email();
 
     }
@@ -45,7 +45,7 @@ public class StripeEventUtil {
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
-              .object()
+              .stripeEventObject()
               .id();
 
     }
@@ -56,18 +56,35 @@ public class StripeEventUtil {
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
-              .object()
+              .stripeEventObject()
               .id();
 
     }
 
-    private record DataObject(
-          String type,
-          Object object) {}
+    static StripeEventObject stripeObject(Event event) {
 
-    private record Object(
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .stripeEventObject();
+
+    }
+
+    record DataObject(
+          String type,
+          StripeEventObject stripeEventObject) {}
+
+    record StripeEventObject(
           String id,
           String customer,
-          String email) {}
+          String email,
+          int cancelAt,
+          int canceledAt,
+          CancelationDetails cancelationDetails) {}
+
+    record CancelationDetails(
+          String feedback) {
+    }
 
 }
