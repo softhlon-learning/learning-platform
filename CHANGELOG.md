@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.42.9
+_release date: 2025-02-02_
+ * subscriptions: Run CancelExpiredSubscriptionService in schedule (demo)
+ * subscriptions: Set MDC in scheduler
+ * accounts: Add javadoc to CheckAccountByEmailRepository
+ * accounts: Add javadoc to CheckAccountByEmailRepositoryAdapter
+
 ## 0.42.8
 _release date: 2025-02-01_
  * subscriptions: Add CancelExpiredSubscriptionService and its empty implementation
