@@ -6,6 +6,7 @@
 import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
 import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
+import {NgxSpinnerService} from "ngx-spinner";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -14,6 +15,7 @@ import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.mo
 const PRICE_ID = 'price_1QmYo3IdZlPlV5wEDgbXc1Js'
 const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
 const HIDE_ERROR_DELAY = 2000
+const SPINNER_DELAY = 10000;
 
 @Component({
     selector: 'sign-up',
@@ -26,7 +28,8 @@ export class SubscribeComponent implements OnInit {
     error: string | undefined
 
     constructor(
-        private subscriptionsService: SubscriptionsService) {
+        private subscriptionsService: SubscriptionsService,
+        private spinner: NgxSpinnerService) {
     }
 
     /**
@@ -38,6 +41,11 @@ export class SubscribeComponent implements OnInit {
     }
 
     checkoutSession(): void {
+        this.spinner.show();
+        setTimeout(() => {
+            this.spinner.hide()
+        }, SPINNER_DELAY)
+
         this.subscriptionsService.createCheckoutSession(PRICE_ID).subscribe({
             next: (response) => this.handleSuccess(response),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
@@ -49,7 +57,6 @@ export class SubscribeComponent implements OnInit {
      * @private
      */
     private handleSuccess(response: CheckoutSessionResponse) {
-        console.log(response)
         location.href = response.redirectUrl
     }
 

@@ -37,7 +37,6 @@ export class ManageSubscriptionComponent implements OnInit {
     ngOnInit() {
         this.spinner.show();
         setTimeout(() => {
-            /** spinner ends after 5 seconds */
             this.spinner.hide();
         }, SPINNER_DELAY);
 
@@ -52,7 +51,6 @@ export class ManageSubscriptionComponent implements OnInit {
      * @private
      */
     private handleSuccess(response: CheckoutSessionResponse) {
-        console.log(response)
         location.href = response.redirectUrl
     }
 
