@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.41.8
+_release date: 2025-02-01_
+ * application: Added /api/v1/subscription/deleted-event to permitted paths
+ * application: Add stripe.subscription-deleted.webhook.secret parameter
+ * subscriptions: Fixed event type for SubmitSubscriptionDeletedService
+
 ## 0.41.7
 _release date: 2025-02-01_
  * subscriptions: Add SubmitSubscriptionDeletedService and its empty implementation
