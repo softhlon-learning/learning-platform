@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.3
+_release date: 2025-02-01_
+ * subscriptions: Fix for calculating cancel times (again)
+ * subscriptions: Improved cancel/canceled times calculations
+
 ## 0.42.2
 _release date: 2025-02-01_
  * subscriptions: Update StripeEventUtil.stripeObject to recognize snake case fields
