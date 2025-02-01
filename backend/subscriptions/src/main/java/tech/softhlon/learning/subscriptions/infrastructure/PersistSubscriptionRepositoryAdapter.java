@@ -32,10 +32,8 @@ class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionReposit
             return new SubscriptionPersisted();
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new SubscriptionPersistenceFailed(cause);
-
         }
 
     }
