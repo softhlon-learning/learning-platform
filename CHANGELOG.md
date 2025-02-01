@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.41.9
+_release date: 2025-02-01_
+ * subscriptions: Remove CreateCustomerService from SubmitCheckoutCompletedServiceImpl
+ * subscriptions: Add SubmitCustomerCreatedService
+ * application: Add stripe.customer-created.webhook.secret parameter
+ * subscriptions: Implemented SubmitCustomerCreatedServiceImpl
+
 ## 0.41.8
 _release date: 2025-02-01_
  * application: Added /api/v1/subscription/deleted-event to permitted paths
