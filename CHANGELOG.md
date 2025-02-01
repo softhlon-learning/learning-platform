@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.42.0
+_release date: 2025-02-01_
+ * application: Add stripe.subscription-updated.webhook.secret parameter
+ * application: Add /api/v1/subscription/updated-event to permitted paths
+ * subscriptions: Add SubmitSubscriptionUpdatedController
+
 ## 0.41.19
 _release date: 2025-02-01_
  * database: Rename (checkout_sessions) expired_time and completed_time to expired_at and completed_at, respectively
