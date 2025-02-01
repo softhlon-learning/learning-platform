@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.41.18
+_release date: 2025-02-01_
+ * database: Rename all created_time and updated_time columns to created_at and updated_at
+ * database: Rename (enrollments) enrolled_time and completed_time to enrolled_at and completed_at, respectively
+ * database: Rename (reset_password_tokens) expiration_time to expire_at
+ * accounts: Adjust PasswordTokenEntity and other models to new database columns
+    
 ## 0.41.17
 _release date: 2025-02-01_
  * database: Update subscriptions table (canceled_at, cancel_at, cancel_reason
