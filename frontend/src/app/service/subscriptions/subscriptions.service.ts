@@ -33,9 +33,8 @@ export class SubscriptionsService {
 
     fetchCustomerPortalUrl(): Observable<FetchCustomerPortalUrlResponse> {
         return this.http
-            .post<CheckoutSessionResponse>(
-                CUSTOMER_PORTAL_PATH,
-                null)
+            .get<CheckoutSessionResponse>(
+                CUSTOMER_PORTAL_PATH)
             .pipe()
     }
 }

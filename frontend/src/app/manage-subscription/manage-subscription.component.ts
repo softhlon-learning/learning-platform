@@ -33,11 +33,6 @@ export class ManageSubscriptionComponent implements OnInit {
      * Init page.
      */
     ngOnInit() {
-        this.error = undefined
-        this.success = false
-    }
-
-    checkoutSession(): void {
         this.subscriptionsService.fetchCustomerPortalUrl().subscribe({
             next: (response) => this.handleSuccess(response),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
