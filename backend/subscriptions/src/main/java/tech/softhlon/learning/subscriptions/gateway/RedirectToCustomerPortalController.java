@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.CustomerNotFound;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.redirectBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOMER_PORTAL;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -46,13 +46,11 @@ class RedirectToCustomerPortalController {
           HttpServletResponse response) {
 
         log.info("controller | request / Redirect to Stripe customer portal");
-        var result = service.execute(
-              "Name",
-              request.sessionId()
-        );
-
+        var accountId = authContext.accountId();
+        var result = service.execute(accountId);
         return switch (result) {
             case Succeeded(String redirectUrl) -> redirect(response, redirectUrl);
+            case CustomerNotFound(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 

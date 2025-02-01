@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
 
 import java.util.UUID;
@@ -34,7 +34,7 @@ class LoadCustomerByAccountRepositoryAdapter implements LoadCustomerByAccountRep
                   .findByAccountId(accountId);
 
             if (entity.isPresent()) {
-                return new CustomerLoadLoaded(
+                return new CustomerLoaded(
                       customer(entity.get()));
             } else {
                 return new CustomerNotFound();

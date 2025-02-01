@@ -23,7 +23,7 @@ public interface LoadCustomerByAccountRepository {
           UUID accountId);
 
     sealed interface LoadCustomerResult {
-        record CustomerLoadLoaded(Customer customer) implements LoadCustomerResult {}
+        record CustomerLoaded(Customer customer) implements LoadCustomerResult {}
         record CustomerNotFound() implements LoadCustomerResult {}
         record CustomerLoadFailed(Throwable cause) implements LoadCustomerResult {}
     }

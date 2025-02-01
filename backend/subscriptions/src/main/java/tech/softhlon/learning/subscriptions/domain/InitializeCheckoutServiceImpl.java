@@ -15,7 +15,7 @@ import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Res
 import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult;
@@ -103,7 +103,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
         return switch (result) {
             case CustomerNotFound(), CustomerLoadFailed(_) -> null;
-            case CustomerLoadLoaded(Customer customer) -> customer.customerId();
+            case CustomerLoaded(Customer customer) -> customer.customerId();
         };
 
     }
