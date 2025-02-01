@@ -14,6 +14,7 @@ import {ResetPasswordComponent} from "./reset-password/reset-password.component"
 import {ProfileComponent} from './profile/profile.component'
 import {UpdatePasswordComponent} from "./update-password/update-password.component"
 import {SubscribeComponent} from "./subscribe/subscribe.component";
+import {ManageSubscriptionComponent} from './manage-subscription/manage-subscription.component'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -25,6 +26,7 @@ const routes: Routes = [
     {path: 'sign-up', component: SignUpComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'subscribe', component: SubscribeComponent},
+    {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},
     {path: 'update-password', component: UpdatePasswordComponent},
     {path: 'home', component: HomeComponent},

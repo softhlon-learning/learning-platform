@@ -30,6 +30,7 @@ import {AccountsService} from "./service/accounts/accounts.service"
 import {CoursesService} from "./service/courses/courses.service"
 import {NgxStripeModule, provideNgxStripe} from 'ngx-stripe'
 import {SubscribeComponent} from "./subscribe/subscribe.component";
+import {ManageSubscriptionComponent} from "./manage-subscription/manage-subscription.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -53,7 +54,8 @@ import {SubscribeComponent} from "./subscribe/subscribe.component";
         ResetPasswordComponent,
         ProfileComponent,
         UpdatePasswordComponent,
-        SubscribeComponent
+        SubscribeComponent,
+        ManageSubscriptionComponent
     ],
     imports: [
         BrowserModule,
