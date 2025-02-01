@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.5
+_release date: 2025-02-01_
+ * frontend: Redirect to /customer-portal on /manage-subscription init
+ * frontend: Add /manage-subscription link to the header
+
 ## 0.42.4
 _release date: 2025-02-01_
  * frontend: Add fetchCustomerPortalUrl service
