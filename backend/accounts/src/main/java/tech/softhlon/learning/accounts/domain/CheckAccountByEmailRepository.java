@@ -19,11 +19,19 @@ import java.util.UUID;
 @FunctionalInterface
 public interface CheckAccountByEmailRepository {
 
+    /**
+     * Checks if account associated with given email exists in repostitory.
+     * @param email Email to be checked
+     * @return CheckAccountByEmailResult
+     */
     CheckAccountByEmailResult execute(
           String email);
 
+    /**
+     * Check account by email result.
+     */
     sealed interface CheckAccountByEmailResult {
-        record AccountExists(UUID id) implements CheckAccountByEmailResult {}
+        record AccountExists(UUID accountId) implements CheckAccountByEmailResult {}
         record AccountIsDeleted() implements CheckAccountByEmailResult {}
         record AccountNotFound() implements CheckAccountByEmailResult {}
         record CheckAccountFailed(Throwable cause) implements CheckAccountByEmailResult {}
