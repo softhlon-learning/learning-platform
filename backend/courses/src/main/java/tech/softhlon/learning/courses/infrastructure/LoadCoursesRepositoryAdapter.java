@@ -31,7 +31,6 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
     public LoadCoursesResult execute() {
 
         try {
-
             var stream = StreamSupport.stream(
                   coursesRepo.findAll().spliterator(),
                   false);
@@ -41,9 +40,7 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
                   .toList();
 
             return new CoursesLoaded(courses);
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CoursesLoadFailed(cause);
         }

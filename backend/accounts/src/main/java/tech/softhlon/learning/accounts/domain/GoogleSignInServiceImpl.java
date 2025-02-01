@@ -53,12 +53,13 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
 
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
-        verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
-              .setAudience(Collections.singletonList(clientId))
-              .build();
         this.checkAccountByEmailRepository = checkAccountByEmailRepository;
         this.createAccountRepository = createAccountRepository;
         this.jwtService = jwtService;
+        verifier =
+              new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
+                    .setAudience(Collections.singletonList(clientId))
+                    .build();
 
     }
 
@@ -67,7 +68,6 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
           String credential) {
 
         try {
-
             var idToken = verifier.verify(credential);
             if (idToken != null) {
                 IdToken.Payload payload = idToken.getPayload();
@@ -84,7 +84,6 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
             } else {
                 return new InvalidCredentialsFailed(INVALID_CREDENTIALS);
             }
-
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new Failed(cause);
@@ -117,7 +116,9 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
           UUID accountId,
           String email) {
 
-        return jwtService.generateToken(accountId, email);
+        return jwtService.generateToken(
+              accountId,
+              email);
 
     }
 

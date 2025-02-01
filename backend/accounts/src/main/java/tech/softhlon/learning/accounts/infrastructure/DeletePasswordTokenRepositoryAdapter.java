@@ -30,15 +30,11 @@ class DeletePasswordTokenRepositoryAdapter implements DeletePasswordTokenReposit
           UUID id) {
 
         try {
-
             passwordTokensJpaRepository.deleteById(id);
             return new TokenDeleted();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new TokenDeletionFailed(cause);
-
         }
 
     }

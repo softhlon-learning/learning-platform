@@ -37,12 +37,9 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
             } else {
                 return new CheckoutNotFoundInDatabase();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckoutLoadFailed(cause);
-
         }
 
     }

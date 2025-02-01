@@ -41,10 +41,8 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
                   : new SubscriptionNotFound();
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckSubscriptionFailed(cause);
-
         }
 
     }

@@ -33,7 +33,6 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
           OffsetDateTime expirationTime) {
 
         try {
-
             passwordTokensJpaRepository.save(
                   PasswordTokenEntity.builder()
                         .accountId(accountId)
@@ -42,12 +41,9 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
                         .build());
 
             return new PasswordTokenPersisted();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new PasswordTokenPersistenceFailed(cause);
-
         }
 
     }

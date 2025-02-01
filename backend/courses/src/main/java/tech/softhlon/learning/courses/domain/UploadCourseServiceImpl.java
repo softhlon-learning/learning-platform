@@ -34,7 +34,6 @@ class UploadCourseServiceImpl implements UploadCourseService {
           Request request) {
 
         try {
-
             var result = persistCourseRepository.execute(
                   prepareReuqest(request));
 
@@ -42,12 +41,9 @@ class UploadCourseServiceImpl implements UploadCourseService {
                 case CoursePersisted() -> mergeCourseWithEnrollments(request);
                 case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
             };
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new Failed(cause);
-
         }
 
     }

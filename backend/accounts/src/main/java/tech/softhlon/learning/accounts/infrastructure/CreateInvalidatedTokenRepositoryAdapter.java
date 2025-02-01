@@ -30,7 +30,6 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
           String tokenHash) {
 
         try {
-
             var createdAccount = invalidatedTokensRepo.save(
                   InvalidatedEntity.builder()
                         .tokenHash(tokenHash)
@@ -38,12 +37,9 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
 
             return new InvalidatedTokenPersisted(
                   createdAccount.getId());
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new InvalidatedTokenPersistenceFailed(cause);
-
         }
 
     }

@@ -36,7 +36,6 @@ class SignOutServiceImpl implements SignOutService {
           String token) {
 
         try {
-
             if (token == null) {
                 return new NotAuthorized("Authentication token not found");
             }
@@ -49,7 +48,6 @@ class SignOutServiceImpl implements SignOutService {
                 case TokenNotFound() -> persistInvalidatedToken(token);
                 case CheckTokenFailed(Throwable cause) -> new Failed(cause);
             };
-
         } catch (Throwable cause) {
             return new Failed(cause);
         }

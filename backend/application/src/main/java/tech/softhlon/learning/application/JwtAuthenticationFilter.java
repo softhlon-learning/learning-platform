@@ -106,11 +106,8 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
             if (result instanceof TokenExists) {
                 return true;
             }
-
         } catch (NoSuchAlgorithmException e) {
-
             return false;
-
         }
 
         return false;

@@ -80,9 +80,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
                     log.info("service | Event not handled '{}'", event.getType());
                     return new IncorrectEventType("Incorrect event type: " + event.getType());
             }
-
         } catch (Throwable cause) {
-
             log.error("Erro");
             return new Failed(cause);
         }

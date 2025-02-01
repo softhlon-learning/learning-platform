@@ -29,7 +29,6 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
           String payload) {
 
         try {
-
             eventLogJpaRepository.save(EventLogEntity.builder()
                   .eventType(eventType)
                   .customerId(customerId)
@@ -38,10 +37,8 @@ class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
             return new EventLogPersisted();
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EventLogPersistenceFailed(cause);
-
         }
 
     }

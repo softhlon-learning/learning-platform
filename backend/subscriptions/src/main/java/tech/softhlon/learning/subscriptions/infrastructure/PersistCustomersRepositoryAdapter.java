@@ -41,10 +41,8 @@ class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
             return new CustomerPersisted();
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CustomerPersistenceFailed(cause);
-
         }
 
     }

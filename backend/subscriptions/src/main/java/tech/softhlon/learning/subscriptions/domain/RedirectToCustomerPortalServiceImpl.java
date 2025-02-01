@@ -37,7 +37,6 @@ class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalSer
           String sessionId) {
 
         try {
-
             var checkoutSession = com.stripe.model.checkout.Session
                   .retrieve(sessionId);
 
@@ -54,7 +53,6 @@ class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalSer
                   session.getUrl());
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new Failed(cause);
         }

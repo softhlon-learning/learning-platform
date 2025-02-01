@@ -33,16 +33,12 @@ class CheckCourseRepositoryAdapter implements CheckCourseRepository {
           UUID courseId) {
 
         try {
-
             return coursesRepo.existsById(courseId)
                   ? new CourseExists()
                   : new CourseNotFound();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckCourseFailed(cause);
-
         }
 
     }

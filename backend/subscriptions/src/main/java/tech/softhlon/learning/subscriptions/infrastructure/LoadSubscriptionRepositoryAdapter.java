@@ -37,12 +37,9 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
             } else {
                 return new SubscriptionNotFound();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new SubscriptionLoadFailed(cause);
-
         }
 
     }

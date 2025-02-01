@@ -33,18 +33,13 @@ class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
           UUID accountId) {
 
         try {
-
             enrollmentsRepo.deleteByAccountIdAndCourseId(
                   accountId,
                   courseId);
-
             return new EnrollmentDeleted();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EnrollementDeletionFailed(cause);
-
         }
 
     }

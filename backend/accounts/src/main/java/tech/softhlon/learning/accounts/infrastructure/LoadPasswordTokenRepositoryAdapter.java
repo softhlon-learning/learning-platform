@@ -28,7 +28,6 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
     public LoadPasswordTokenResult execute(String token) {
 
         try {
-
             var enity = passwordTokensJpaRepository
                   .findByToken(token);
 
@@ -38,12 +37,9 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
             } else {
                 return new TokenNotFound();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new TokenLoadFailed(cause);
-
         }
 
     }

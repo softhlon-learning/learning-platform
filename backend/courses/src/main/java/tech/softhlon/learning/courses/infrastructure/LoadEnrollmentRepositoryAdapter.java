@@ -44,12 +44,9 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
             } else {
                 return new EnrollmentNotFoundInDatabase();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);
-
         }
 
     }

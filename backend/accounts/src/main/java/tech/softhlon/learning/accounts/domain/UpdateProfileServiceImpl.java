@@ -54,7 +54,8 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
     private Result persistAccount(
           PersistAccountRequest persistAccountRequest) {
 
-        var result = persistAccountRepository.execute(persistAccountRequest);
+        var result = persistAccountRepository.execute(
+              persistAccountRequest);
 
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded();

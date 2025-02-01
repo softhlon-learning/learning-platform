@@ -44,19 +44,15 @@ class MergeCourseServiceImpl implements MergeCourseService {
           MergeCourseReuqest reuqest) {
 
         try {
-
             var content = contentService.jsonToCurseContent(
                   reuqest.content());
 
             return processCourseContent(
                   reuqest,
                   content);
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CourseMergeFailed(cause);
-
         }
 
     }

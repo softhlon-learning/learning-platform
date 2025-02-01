@@ -30,7 +30,6 @@ class LoadCustomerByAccountRepositoryAdapter implements LoadCustomerByAccountRep
           UUID accountId) {
 
         try {
-
             var entity = customersJpaRepository
                   .findByAccountId(accountId);
 
@@ -40,12 +39,9 @@ class LoadCustomerByAccountRepositoryAdapter implements LoadCustomerByAccountRep
             } else {
                 return new CustomerNotFound();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CustomerLoadFailed(cause);
-
         }
 
     }

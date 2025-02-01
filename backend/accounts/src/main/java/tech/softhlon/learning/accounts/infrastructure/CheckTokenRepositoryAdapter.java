@@ -30,17 +30,13 @@ class CheckTokenRepositoryAdapter implements CheckTokenRepository {
           String tokenHash) {
 
         try {
-
             return invalidatedTokensRepo.existsByTokenHash(
                   tokenHash)
                   ? new TokenExists()
                   : new TokenNotFound();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckTokenFailed(cause);
-
         }
 
     }

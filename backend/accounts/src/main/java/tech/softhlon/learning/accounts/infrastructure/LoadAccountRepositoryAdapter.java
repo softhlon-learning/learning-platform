@@ -33,17 +33,13 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
           UUID accountId) {
 
         try {
-
             var accountEntity = accountsRepo.findById(accountId);
             return accountEntity.isPresent()
                   ? new AccountLoaded(toAccount(accountEntity.get()))
                   : new AccountNotFound();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new AccountLoadFailed(cause);
-
         }
 
     }

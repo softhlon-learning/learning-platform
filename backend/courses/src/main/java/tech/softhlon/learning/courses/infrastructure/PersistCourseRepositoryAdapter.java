@@ -47,12 +47,9 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
             }
 
             return new CoursePersisted();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CoursePersistenceFailed(cause);
-
         }
 
     }

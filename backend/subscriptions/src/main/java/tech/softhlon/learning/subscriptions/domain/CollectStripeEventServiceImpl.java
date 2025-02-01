@@ -57,9 +57,7 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
                 case EventLogPersisted() -> new Succeeded();
                 case EventLogPersistenceFailed(Throwable cause) -> new Failed(cause);
             };
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new Failed(cause);
         }

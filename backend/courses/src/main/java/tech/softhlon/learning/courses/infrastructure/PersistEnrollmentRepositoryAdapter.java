@@ -45,12 +45,9 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
             } else {
                 return new EnrollmentNotPresentFoundFailed();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EnrollmentPersistenceFailed(cause);
-
         }
 
     }

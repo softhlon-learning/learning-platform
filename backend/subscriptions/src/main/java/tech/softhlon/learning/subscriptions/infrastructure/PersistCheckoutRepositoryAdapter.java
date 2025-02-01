@@ -31,12 +31,9 @@ class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
                   entity(request));
 
             return new CheckoutSessionPersisted();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckoutSessionPersistenceFailed(cause);
-
         }
 
     }

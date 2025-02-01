@@ -28,7 +28,6 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
           String customerId) {
 
         try {
-
             var entity = customersJpaRepository
                   .findByCustomerId(customerId);
 
@@ -38,12 +37,9 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
             } else {
                 return new CustomerNotFound();
             }
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CustomerLoadFailed(cause);
-
         }
 
     }

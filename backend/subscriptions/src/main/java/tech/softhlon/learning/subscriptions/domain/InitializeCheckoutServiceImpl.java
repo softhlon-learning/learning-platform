@@ -75,7 +75,6 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                         .build())
                   .build();
 
-
             var session = Session.create(params);
 
             var result = saveSession(
@@ -86,12 +85,9 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                 case CheckoutSessionPersisted() -> new Succeeded(session.getUrl());
                 case CheckoutSessionPersistenceFailed(Throwable cause) -> new Failed(cause);
             };
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new Failed(cause);
-
         }
 
     }

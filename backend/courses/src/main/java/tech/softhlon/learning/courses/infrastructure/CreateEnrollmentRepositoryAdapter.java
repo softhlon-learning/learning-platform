@@ -36,7 +36,6 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
           OffsetDateTime enrolledTime) {
 
         try {
-
             var course = coursesRepo
                   .findById(courseId)
                   .get();
@@ -51,10 +50,8 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
                   createdEnrollment.getId());
 
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EnrollementPersistenceFailed(cause);
-
         }
 
     }

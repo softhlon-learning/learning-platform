@@ -38,12 +38,9 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
                   entities.stream()
                         .map(this::toEnrollment)
                         .toList());
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);
-
         }
 
     }

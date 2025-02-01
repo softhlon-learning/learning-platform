@@ -32,17 +32,13 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
           String email) {
 
         try {
-
             var entity = accountsRepo.findByEmail(email);
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new LoadAccountFailed(cause);
-
         }
 
     }

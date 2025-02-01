@@ -34,17 +34,13 @@ class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
           UUID courseId) {
 
         try {
-
             return enrollmentsRepo
                   .existsByAccountIdAndCourseId(accountId, courseId)
                   ? new EnrollmentExists()
                   : new EnrollmentNotFound();
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new CheckEnrollmentFailed(cause);
-
         }
 
     }

@@ -33,7 +33,6 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
           String password) {
 
         try {
-
             var createdAccount = accountsRepo.save(
                   AccountEntity.builder()
                         .type(type)
@@ -44,12 +43,9 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
 
             return new AccountPersisted(
                   createdAccount.getId());
-
         } catch (Throwable cause) {
-
             log.error("Error", cause);
             return new AccountPersistenceFailed(cause);
-
         }
 
     }
