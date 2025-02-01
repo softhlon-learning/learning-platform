@@ -5,7 +5,7 @@ CREATE TABLE accounts (
     email VARCHAR NOT NULL,
     password VARCHAR NULL,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
-    created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT unique_accounts_email UNIQUE (email)
@@ -83,7 +83,7 @@ CREATE TABLE reset_password_tokens (
     id uuid DEFAULT gen_random_uuid(),
     account_id uuid,
     token VARCHAR NOT NULL,
-    expiration_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     CONSTRAINT fk_reset_password_tokens_accounts
