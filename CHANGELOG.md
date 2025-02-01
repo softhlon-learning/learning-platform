@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.10
+_release date: 2025-02-01_
+ * Added SubmitCustomerCreatedController
+ * Remove CreateCustomerService and its service 
+
 ## 0.41.9
 _release date: 2025-02-01_
  * subscriptions: Remove CreateCustomerService from SubmitCheckoutCompletedServiceImpl
