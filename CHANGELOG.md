@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.42.7
+_release date: 2025-02-01_
+ * frontned: Add spinner to Subscribe action
+
 ## 0.42.6
 _release date: 2025-02-01_
  * frontend: Add experimental spinner
