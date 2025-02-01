@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.41.16
+_release date: 2025-02-01_
+ * subscriptions: Customer portal setup test
+
 ## 0.41.15
 _release date: 2025-02-01_
  * subscriptions: Implemented RedirectToCustomerPortalServiceImpl
