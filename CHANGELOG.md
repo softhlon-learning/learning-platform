@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.41.19
+_release date: 2025-02-01_
+ * database: Rename (checkout_sessions) expired_time and completed_time to expired_at and completed_at, respectively
+ * subscriptions: Adjust CheckoutSessionEntity and other models to new database columns
+ * subscriptions: Add SubmitSubscriptionUpdatedService
+ * subscriptions: Add StripeEventUtil.stripeObject method
+
 ## 0.41.18
 _release date: 2025-02-01_
  * database: Rename all created_time and updated_time columns to created_at and updated_at
