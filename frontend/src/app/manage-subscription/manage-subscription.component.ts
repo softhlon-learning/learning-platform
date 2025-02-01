@@ -6,6 +6,7 @@
 import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
 import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
+import { NgxSpinnerService } from 'ngx-spinner';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -26,13 +27,20 @@ export class ManageSubscriptionComponent implements OnInit {
     error: string | undefined
 
     constructor(
-        private subscriptionsService: SubscriptionsService) {
+        private subscriptionsService: SubscriptionsService,
+        private spinner: NgxSpinnerService) {
     }
 
     /**
      * Init page.
      */
     ngOnInit() {
+        this.spinner.show();
+        setTimeout(() => {
+            /** spinner ends after 5 seconds */
+            this.spinner.hide();
+        }, 3000);
+
         this.subscriptionsService.fetchCustomerPortalUrl().subscribe({
             next: (response) => this.handleSuccess(response),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),

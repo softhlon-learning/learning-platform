@@ -31,6 +31,7 @@ import {CoursesService} from "./service/courses/courses.service"
 import {NgxStripeModule, provideNgxStripe} from 'ngx-stripe'
 import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from "./manage-subscription/manage-subscription.component";
+import { NgxSpinnerModule } from 'ngx-spinner'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -61,7 +62,8 @@ import {ManageSubscriptionComponent} from "./manage-subscription/manage-subscrip
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        NgxStripeModule.forRoot()
+        NgxStripeModule.forRoot(),
+        NgxSpinnerModule
     ],
     providers: [
         AccountsService,

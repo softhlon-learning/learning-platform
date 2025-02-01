@@ -4740,6 +4740,13 @@ ngx-cookie-service@^19.0.0:
   dependencies:
     tslib "^2.8.0"
 
+ngx-spinner@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-spinner/-/ngx-spinner-17.0.0.tgz#b3e1d54bb4c4e3cf6f949ef8dd1927dfa1e9058d"
+  integrity sha512-VWDSvLlCnaWqu0W1L+ybQIRHTbd+GffkX1sWs++iMPXMGVJ2ZCuzW32FHnu+p0regMUHU8r1/rvUcFD0YooJxQ==
+  dependencies:
+    tslib "^2.3.0"
+
 ngx-stripe@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/ngx-stripe/-/ngx-stripe-19.0.0.tgz#8ce022ed47cba95235cb25233c935180b5ec2866"
