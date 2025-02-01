@@ -64,7 +64,7 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
                   webhookSecret);
 
             switch (event.getType()) {
-                case "customer.subscription.deleted": {
+                case "customer.created": {
 
                     var customerId = customerId(event);
                     var result = loadCustomerRepository.execute(customerId);
