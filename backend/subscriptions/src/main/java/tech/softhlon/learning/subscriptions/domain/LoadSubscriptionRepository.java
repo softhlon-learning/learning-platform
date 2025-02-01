@@ -33,7 +33,8 @@ public interface LoadSubscriptionRepository {
           String subscriptionId,
           String customerId,
           boolean active,
-          OffsetDateTime activatedTime,
-          OffsetDateTime deactivateTime) {}
+          OffsetDateTime canceledAt,
+          OffsetDateTime cancelAt,
+          String cancelReason) {}
 
 }

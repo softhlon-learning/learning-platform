@@ -114,8 +114,9 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                   subscription.subscriptionId(),
                   subscription.customerId(),
                   true,
-                  OffsetDateTime.now(),
-                  null
+                  subscription.canceledAt(),
+                  subscription.cancelAt(),
+                  subscription.cancelReason()
             );
         } else {
             return new PersistSubscriptionRequest(
@@ -123,7 +124,8 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                   subscriptionId,
                   customerId,
                   true,
-                  OffsetDateTime.now(),
+                  null,
+                  null,
                   null
             );
         }

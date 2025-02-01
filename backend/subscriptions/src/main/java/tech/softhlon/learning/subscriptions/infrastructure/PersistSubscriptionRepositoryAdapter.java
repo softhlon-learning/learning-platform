@@ -50,8 +50,9 @@ class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionReposit
               .subscriptionId(request.subscriptionId())
               .customerId(request.customerId())
               .active(request.active())
-              .activatedTime(request.activatedTime())
-              .deactivatedTime(request.deactivatedTime())
+              .canceledAt(request.canceledAt())
+              .cancelAt(request.cancelAt())
+              .cancelReason(request.cancelReason())
               .build();
 
     }

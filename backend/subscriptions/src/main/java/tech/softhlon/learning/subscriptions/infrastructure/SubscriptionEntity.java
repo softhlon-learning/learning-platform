@@ -32,7 +32,8 @@ public class SubscriptionEntity {
     private String subscriptionId;
     private String customerId;
     private boolean active;
-    private OffsetDateTime activatedTime;
-    private OffsetDateTime deactivatedTime;
+    private OffsetDateTime canceledAt;
+    private OffsetDateTime cancelAt;
+    private String cancelReason;
 
 }

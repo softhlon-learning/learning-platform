@@ -32,7 +32,7 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.subscr
 @Slf4j
 @Service
 class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedService {
-
+    private static final String MANUAL_DELETE_REASON = "manual_delete";
     private final String webhookSecret;
     private final LoadSubscriptionRepository loadSubscriptionRepository;
     private final PersistSubscriptionRepository persistSubscriptionRepository;
@@ -120,7 +120,8 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
               subscription.customerId(),
               false,
               OffsetDateTime.now(),
-              null
+              OffsetDateTime.now(),
+              MANUAL_DELETE_REASON
         );
 
     }

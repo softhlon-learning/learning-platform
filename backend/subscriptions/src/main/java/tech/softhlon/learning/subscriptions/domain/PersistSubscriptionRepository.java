@@ -31,7 +31,8 @@ public interface PersistSubscriptionRepository {
           String subscriptionId,
           String customerId,
           boolean active,
-          OffsetDateTime activatedTime,
-          OffsetDateTime deactivatedTime) {}
+          OffsetDateTime canceledAt,
+          OffsetDateTime cancelAt,
+          String cancelReason) {}
 
 }
