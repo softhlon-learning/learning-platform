@@ -42,7 +42,6 @@ class RedirectToCustomerPortalController {
 
     @GetMapping(CUSTOMER_PORTAL)
     ResponseEntity<?> redirectToStripePortal(
-          @Validated @RequestBody RedirectToPortalRequest request,
           HttpServletResponse response) {
 
         log.info("controller | request / Redirect to Stripe customer portal");
