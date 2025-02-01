@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.8
+_release date: 2025-02-01_
+ * subscriptions: Add CancelExpiredSubscriptionService and its empty implementation
+ * subscriptions: Analyzing improvements in creating/udating subscriptions
+
 ## 0.42.7
 _release date: 2025-02-01_
  * frontned: Add spinner to Subscribe action
