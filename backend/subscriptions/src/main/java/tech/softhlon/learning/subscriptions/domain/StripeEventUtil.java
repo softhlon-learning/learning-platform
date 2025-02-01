@@ -8,6 +8,7 @@ package tech.softhlon.learning.subscriptions.domain;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 import com.stripe.model.Event;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -65,11 +66,7 @@ public class StripeEventUtil {
 
     static StripeEventObject stripeObject(Event event) {
 
-        Gson gson = new GsonBuilder()
-              .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-              .create();
-
-        return gson
+        return new Gson()
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
@@ -85,8 +82,11 @@ public class StripeEventUtil {
           String id,
           String customer,
           String email,
+          @SerializedName("cancel_at")
           int cancelAt,
+          @SerializedName("canceled_at")
           int canceledAt,
+          @SerializedName("cancellation_details")
           CancelationDetails cancelationDetails) {}
 
     record CancelationDetails(
