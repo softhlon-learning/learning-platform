@@ -131,11 +131,4 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
         }
     }
 
-    record DataObject(
-          Object object) {}
-
-    record Object(
-          String id,
-          String customer) {}
-
 }

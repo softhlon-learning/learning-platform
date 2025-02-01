@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.7
+_release date: 2025-02-01_
+ * subscriptions: Add SubmitSubscriptionDeletedService and its empty implementation
+ * subscriptions: Add SubmitSubscriptionDeletedController
+
 ## 0.41.6
 _release date: 2025-02-01_
  * * subscriptions: Get rid of request objects (part 2) 
