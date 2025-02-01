@@ -12,9 +12,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const PRICE_ID = 'price_1QmYo3IdZlPlV5wEDgbXc1Js'
 const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
 const HIDE_ERROR_DELAY = 2000
+const SPINNER_DELAY = 10000;
 
 @Component({
     selector: 'sign-up',
@@ -39,7 +39,7 @@ export class ManageSubscriptionComponent implements OnInit {
         setTimeout(() => {
             /** spinner ends after 5 seconds */
             this.spinner.hide();
-        }, 3000);
+        }, SPINNER_DELAY);
 
         this.subscriptionsService.fetchCustomerPortalUrl().subscribe({
             next: (response) => this.handleSuccess(response),
