@@ -62,8 +62,9 @@ CREATE TABLE subscriptions (
     subscription_id VARCHAR NOT NULL,
     customer_id VARCHAR NOT NULL,
     active BOOLEAN NOT NULL DEFAULT true,
-    activated_time TIMESTAMP WITH TIME ZONE,
-    deactivated_time TIMESTAMP WITH TIME ZONE,
+    canceled_at TIMESTAMP WITH TIME ZONE,
+    cancel_at TIMESTAMP WITH TIME ZONE,
+    cancel_reason VARCHAR NOT NULL,
     created_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_time TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id)
