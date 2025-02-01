@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.41.17
+_release date: 2025-02-01_
+ * database: Update subscriptions table (canceled_at, cancel_at, cancel_reason
+ * subscriptions: Adjust entity and other models to new database columns
+
 ## 0.41.16
 _release date: 2025-02-01_
  * subscriptions: Customer portal setup test
