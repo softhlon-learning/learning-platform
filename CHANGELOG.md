@@ -1,11 +1,15 @@
 # Learning Platform Changelog
 
-## 0.42.0
+## 0.42.2
+_release date: 2025-02-01_
+ * subscriptions: Update StripeEventUtil.stripeObject to recognize snake case fields
+ * subscriptions: Testing Stripe integration
+
+## 0.42.1
 _release date: 2025-02-01_
  * database: Remove NOT NULL constraint from cancel_reason (subscriptions)
  * subscriptions: Hotfix for StripeEventUtil
  * database: Add UNIQUE on customers.account_id
- *   
 
 ## 0.42.0
 _release date: 2025-02-01_
