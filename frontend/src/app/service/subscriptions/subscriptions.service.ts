@@ -6,13 +6,14 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
-import {CheckoutSessionRequest, CheckoutSessionResponse} from "./subscriptions.model";
+import {CheckoutSessionRequest, CheckoutSessionResponse, FetchCustomerPortalUrlResponse} from "./subscriptions.model";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
 const SUBSCRIBE_PATH = '/api/v1/subscription/checkout-session'
+const CUSTOMER_PORTAL_PATH = '/api/v1/subscription/customer-portal'
 
 @Injectable({
     providedIn: 'root',
@@ -27,6 +28,14 @@ export class SubscriptionsService {
             .post<CheckoutSessionResponse>(
                 SUBSCRIBE_PATH,
                 new CheckoutSessionRequest(priceId || ''))
+            .pipe()
+    }
+
+    fetchCustomerPortalUrl(): Observable<FetchCustomerPortalUrlResponse> {
+        return this.http
+            .post<CheckoutSessionResponse>(
+                CUSTOMER_PORTAL_PATH,
+                null)
             .pipe()
     }
 }

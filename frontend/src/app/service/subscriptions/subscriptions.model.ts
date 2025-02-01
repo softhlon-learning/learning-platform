@@ -25,3 +25,12 @@ export class CheckoutSessionResponse {
         this.redirectUrl = redirectUrl;
     }
 }
+
+
+export class FetchCustomerPortalUrlResponse {
+    redirectUrl: string
+
+    constructor(redirectUrl: string) {
+        this.redirectUrl = redirectUrl;
+    }
+}
