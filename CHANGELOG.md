@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.42.18
+_release date: 2025-02-02_
+ * courses: Review and fix id uniqueness in Domain Driven Design course
+ * courses: Review and fix id uniqueness in Java course
+ * courses: Review and fix id uniqueness in Async Messaging course
+ * courses: Review and fix id uniqueness in Microservices course
+
 ## 0.42.17
 _release date: 2025-02-02_
  * frontend: Decrease UPDATE_LECTURE_DELAY to 100ms
