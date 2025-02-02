@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.0
+_release date: 2025-02-02_
+ * subscriptions: Add PersistInvoiceRepository
+ * subscriptions: Set /manage-subscription as success url for checkout form
+ * subscriptions: Set /home as cancel url for checkout form
+
 ## 0.42.19
 _release date: 2025-02-02_
  * courses: Review and fix id uniqueness in Spring course
