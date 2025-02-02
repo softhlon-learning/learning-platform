@@ -31,7 +31,8 @@ import {CoursesService} from "./service/courses/courses.service"
 import {NgxStripeModule, provideNgxStripe} from 'ngx-stripe'
 import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from "./manage-subscription/manage-subscription.component";
-import { NgxSpinnerModule } from 'ngx-spinner'
+import {NgxSpinnerModule} from 'ngx-spinner'
+import {AppFooterComponent} from "./footer/app-footer.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -56,7 +57,8 @@ import { NgxSpinnerModule } from 'ngx-spinner'
         ProfileComponent,
         UpdatePasswordComponent,
         SubscribeComponent,
-        ManageSubscriptionComponent
+        ManageSubscriptionComponent,
+        AppFooterComponent
     ],
     imports: [
         BrowserModule,
