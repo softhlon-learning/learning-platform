@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.8
+_release date: 2025-02-02_
+ * frontend: Tune footer design
+ * frontend: Tune header design
+
 ## 0.43.7
 _release date: 2025-02-02_
  * frontend: Add app-footer.component.ts
