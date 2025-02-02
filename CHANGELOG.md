@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.43.7
+_release date: 2025-02-02_
+ * frontend: Add app-footer.component.ts
+
 ## 0.43.6
 _release date: 2025-02-02_
  * subscriptions: Analyze payment flow
