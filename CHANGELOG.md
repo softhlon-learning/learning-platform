@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.5
+_release date: 2025-02-02_
+ * subscription: Fix InvoicesJpaRepository.avtivatePaidSubscription update statement
+ * subscription: Add @Transactional for SubmitInvoicePaidServiceImpl
+
 ## 0.43.4
 _release date: 2025-02-02_
  * subscriptions: Do not set subscription as active on created/updated subscription event
