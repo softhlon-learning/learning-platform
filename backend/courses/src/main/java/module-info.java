@@ -1,20 +1,22 @@
 module courses {
     requires common;
     requires subscriptions;
+
+    requires static lombok;
+
     requires spring.tx;
     requires spring.core;
-    requires com.fasterxml.jackson.databind;
-    requires com.fasterxml.jackson.dataformat.yaml;
-    requires org.hibernate.orm.core;
-    requires org.yaml.snakeyaml;
-    requires static lombok;
-    requires spring.context;
-    requires org.slf4j;
-    requires com.google.gson;
-    requires org.apache.tomcat.embed.core;
-    requires jakarta.persistence;
     requires spring.web;
     requires spring.data.commons;
     requires spring.beans;
+    requires spring.context;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.dataformat.yaml;
+    requires jakarta.persistence;
     requires java.rmi;
+    requires org.hibernate.orm.core;
+    requires org.yaml.snakeyaml;
+    requires org.slf4j;
+    requires com.google.gson;
+    requires org.apache.tomcat.embed.core;
 }
