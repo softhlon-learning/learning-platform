@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.13
+_release date: 2025-02-02_
+ * database: Fix native query in SubscriptionsJpaRepository.findByAccountId
+ * subscriptions: Add periodStartAt, periodEndAt and invoiceId to SubscriptionEntity and related models
+
 ## 0.42.12
 _release date: 2025-02-02_
  * all: Adjust entity annotations to new schemas
