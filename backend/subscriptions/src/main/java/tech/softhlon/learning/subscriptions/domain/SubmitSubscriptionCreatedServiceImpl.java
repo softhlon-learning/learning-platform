@@ -9,10 +9,6 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionNotFound;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.Subscription;
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersistenceFailed;
@@ -20,10 +16,11 @@ import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedServ
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Succeeded;
 
+import java.time.Instant;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.subscriptionId;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.*;
 
 @Slf4j
 @Service
@@ -60,20 +57,24 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
                     var subscriptionId = subscriptionId(event);
                     var customerId = customerId(event);
+                    var stripeObject = stripeObject(event);
 
-                    var result = loadSubscriptionRepository.execute(subscriptionId);
+                    var request = prepareRequest(
+                          subscriptionId,
+                          customerId,
+                          stripeObject);
 
+                    var result = persistSubscriptionRepository.execute(request);
                     return switch (result) {
-                        case SubscriptionNotFound() -> persist(subscriptionId, customerId, null);
-                        case SubscriptionLoaded(Subscription subscription) ->
-                              persist(subscriptionId, null, subscription);
-                        case SubscriptionLoadFailed(Throwable cause) -> new Failed(cause);
+                        case SubscriptionPersisted() -> new Succeeded();
+                        case SubscriptionPersistenceFailed(Throwable cause) -> new Failed(cause);
                     };
 
                 }
                 default:
                     log.info("service | Event not handled '{}'", event.getType());
                     return new IncorrectEventType("Incorrect event type: " + event.getType());
+
             }
         } catch (Throwable cause) {
             log.error("Erro");
@@ -89,12 +90,12 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     Result persist(
           String subscriptionId,
           String customerId,
-          Subscription subscription) {
+          StripeEventObject stripeEventObject) {
 
         var request = prepareRequest(
               subscriptionId,
               customerId,
-              subscription);
+              stripeEventObject);
 
         var result = persistSubscriptionRepository.execute(request);
 
@@ -107,28 +108,33 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
           String customerId,
-          Subscription subscription) {
-        if (subscription != null) {
-            return new PersistSubscriptionRequest(
-                  subscription.id(),
-                  subscription.subscriptionId(),
-                  subscription.customerId(),
-                  true,
-                  subscription.canceledAt(),
-                  subscription.cancelAt(),
-                  subscription.cancelReason()
-            );
-        } else {
-            return new PersistSubscriptionRequest(
-                  null,
-                  subscriptionId,
-                  customerId,
-                  true,
-                  null,
-                  null,
-                  null
-            );
-        }
+          StripeEventObject stripeEventObject) {
+        return new PersistSubscriptionRequest(
+              null,
+              subscriptionId,
+              customerId,
+              true,
+              null,
+              null,
+              null,
+              offsetDateTime(stripeEventObject.periodStartAt()),
+              offsetDateTime(stripeEventObject.periodEndAt()),
+              stripeEventObject.invoiceId()
+        );
+    }
+
+    private OffsetDateTime offsetDateTime(String time) {
+
+        if (time == null)
+            return null;
+
+        var instant = Instant.ofEpochMilli(
+              Long.parseLong(time) * 1000);
+
+        return OffsetDateTime.ofInstant
+              (instant,
+                    ZoneId.systemDefault());
+
     }
 
 }

@@ -53,6 +53,9 @@ class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionReposit
               .canceledAt(request.canceledAt())
               .cancelAt(request.cancelAt())
               .cancelReason(request.cancelReason())
+              .periodStartAt(request.periodStartAt())
+              .periodEndAt(request.periodEndAt())
+              .invoiceId(request.invoiceId())
               .build();
 
     }

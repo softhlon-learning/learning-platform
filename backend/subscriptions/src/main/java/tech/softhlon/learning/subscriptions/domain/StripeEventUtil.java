@@ -5,9 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import com.stripe.model.Event;
 
@@ -82,6 +80,12 @@ public class StripeEventUtil {
           String id,
           String customer,
           String email,
+          @SerializedName("current_period_start")
+          String periodStartAt,
+          @SerializedName("current_period_end")
+          String periodEndAt,
+          @SerializedName("latest_invoice")
+          String invoiceId,
           @SerializedName("cancel_at")
           String cancelAt,
           @SerializedName("canceled_at")

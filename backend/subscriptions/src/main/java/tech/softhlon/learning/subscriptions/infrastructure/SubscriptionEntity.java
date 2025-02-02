@@ -33,5 +33,8 @@ public class SubscriptionEntity {
     private OffsetDateTime canceledAt;
     private OffsetDateTime cancelAt;
     private String cancelReason;
+    private OffsetDateTime periodStartAt;
+    private OffsetDateTime periodEndAt;
+    private String invoiceId;
 
 }

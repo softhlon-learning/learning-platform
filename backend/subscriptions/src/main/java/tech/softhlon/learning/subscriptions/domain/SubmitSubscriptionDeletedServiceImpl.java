@@ -121,7 +121,10 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
               false,
               OffsetDateTime.now(),
               OffsetDateTime.now(),
-              MANUAL_DELETE_REASON
+              MANUAL_DELETE_REASON,
+              subscription.periodStartAt(),
+              subscription.periodEndAt(),
+              null
         );
 
     }

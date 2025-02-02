@@ -57,7 +57,11 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
               entity.isActive(),
               entity.getCanceledAt(),
               entity.getCancelAt(),
-              entity.getCancelReason());
+              entity.getCancelReason(),
+              entity.getPeriodStartAt(),
+              entity.getPeriodEndAt(),
+              entity.getInvoiceId()
+        );
 
     }
 

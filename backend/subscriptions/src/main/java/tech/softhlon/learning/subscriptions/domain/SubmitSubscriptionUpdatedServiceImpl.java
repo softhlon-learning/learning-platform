@@ -115,7 +115,7 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
     private PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
           String customerId,
-          StripeEventObject stripeObject,
+          StripeEventObject stripeEventObject,
           Subscription subscription) {
 
         return new PersistSubscriptionRequest(
@@ -123,11 +123,14 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
               subscription.subscriptionId(),
               subscription.customerId(),
               true,
-              offsetDateTime(stripeObject.canceledAt()),
-              offsetDateTime(stripeObject.cancelAt()),
-              stripeObject.cancelationDetails() != null
-                    ? stripeObject.cancelationDetails().feedback()
-                    : null
+              offsetDateTime(stripeEventObject.canceledAt()),
+              offsetDateTime(stripeEventObject.cancelAt()),
+              stripeEventObject.cancelationDetails() != null
+                    ? stripeEventObject.cancelationDetails().feedback()
+                    : null,
+              offsetDateTime(stripeEventObject.periodStartAt()),
+              offsetDateTime(stripeEventObject.periodEndAt()),
+              stripeEventObject.invoiceId()
         );
     }
 

@@ -35,6 +35,9 @@ public interface LoadSubscriptionRepository {
           boolean active,
           OffsetDateTime canceledAt,
           OffsetDateTime cancelAt,
-          String cancelReason) {}
+          String cancelReason,
+          OffsetDateTime periodStartAt,
+          OffsetDateTime periodEndAt,
+          String invloiceId) {}
 
 }
