@@ -19,9 +19,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadAccountByEmailRepository {
 
+    /**
+     * Load account by user's email from repository.
+     * @param email User's email
+     * @return LoadAccountByEmailResult
+     */
     LoadAccountByEmailResult execute(
           String email);
 
+    /**
+     * Load account by user's email from repository result.
+     */
     sealed interface LoadAccountByEmailResult {
         record AccountFound(Account account) implements LoadAccountByEmailResult {}
         record AccountNotFound() implements LoadAccountByEmailResult {}

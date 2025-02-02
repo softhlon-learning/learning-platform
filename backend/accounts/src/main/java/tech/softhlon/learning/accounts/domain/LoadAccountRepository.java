@@ -19,9 +19,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadAccountRepository {
 
+    /**
+     * Load account by id from repository.
+     * @param accountId Account Id
+     * @return LoadAccountResult
+     */
     LoadAccountResult execute(
           UUID accountId);
 
+    /**
+     * Load account by id from repository result.
+     */
     sealed interface LoadAccountResult {
         record AccountLoaded(Account account) implements LoadAccountResult {}
         record AccountNotFound() implements LoadAccountResult {}

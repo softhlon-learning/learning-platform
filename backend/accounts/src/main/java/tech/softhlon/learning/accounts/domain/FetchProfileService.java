@@ -17,9 +17,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface FetchProfileService {
 
+    /**
+     * Fetch user's profile.
+     * @param accountId Account Id
+     * @return ProfileView
+     */
     Result execute(
           UUID accountId);
 
+    /**
+     * Fetch user's profile result.
+     */
     sealed interface Result {
         record Succeeded(ProfileView profileView) implements Result {}
         record ProfileNotFoundFailed(String message) implements Result {}

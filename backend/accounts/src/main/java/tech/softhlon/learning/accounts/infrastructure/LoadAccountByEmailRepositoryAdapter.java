@@ -27,6 +27,9 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
 
     private final AccountsJpaRepository accountsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadAccountByEmailResult execute(
           String email) {

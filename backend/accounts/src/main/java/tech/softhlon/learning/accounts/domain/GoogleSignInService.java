@@ -15,9 +15,17 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface GoogleSignInService {
 
+    /**
+     * Sign in user with Google credential.
+     * @param credential User's Google credentioal
+     * @return Result
+     */
     Result execute(
           String credential);
 
+    /**
+     * Sign in user with Google credential result.
+     */
     sealed interface Result {
         record Succeeded(String token) implements Result {}
         record AccountIsDeletedFailed(String message) implements Result {}

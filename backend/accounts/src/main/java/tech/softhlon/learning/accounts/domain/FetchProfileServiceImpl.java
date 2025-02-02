@@ -28,6 +28,9 @@ class FetchProfileServiceImpl implements FetchProfileService {
     private static final String PROFILE_NOT_FOUND = "Profile not fould";
     private final LoadAccountRepository loadAccountRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId) {

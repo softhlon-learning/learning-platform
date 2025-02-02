@@ -20,9 +20,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadPasswordTokenRepository {
 
+    /**
+     * Load password token from repository.
+     * @param token Password token
+     * @return LoadPasswordTokenResult
+     */
     LoadPasswordTokenResult execute(
           String token);
 
+    /**
+     * Load password token from repository result.
+     */
     sealed interface LoadPasswordTokenResult {
         record TokenLoaded(PasswordToken passwordToken) implements LoadPasswordTokenResult {}
         record TokenNotFound() implements LoadPasswordTokenResult {}

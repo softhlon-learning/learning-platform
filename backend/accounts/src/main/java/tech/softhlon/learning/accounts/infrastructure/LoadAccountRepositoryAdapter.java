@@ -28,6 +28,9 @@ class LoadAccountRepositoryAdapter implements LoadAccountRepository {
 
     private final AccountsJpaRepository accountsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadAccountResult execute(
           UUID accountId) {

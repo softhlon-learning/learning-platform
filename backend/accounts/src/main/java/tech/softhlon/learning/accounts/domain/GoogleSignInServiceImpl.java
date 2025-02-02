@@ -63,6 +63,9 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String credential) {

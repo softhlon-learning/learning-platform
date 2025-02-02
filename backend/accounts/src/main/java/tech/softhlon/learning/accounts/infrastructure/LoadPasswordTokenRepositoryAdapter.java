@@ -24,6 +24,9 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
 
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadPasswordTokenResult execute(String token) {
 
