@@ -2,6 +2,12 @@
 
 ## 0.42.18
 _release date: 2025-02-02_
+ * courses: Review and fix id uniqueness in Spring course
+ * courses: Review and fix id uniqueness in Angular course
+ * subscriptions: Add InvoicesJpaRepository and entity
+
+## 0.42.18
+_release date: 2025-02-02_
  * courses: Review and fix id uniqueness in Domain Driven Design course
  * courses: Review and fix id uniqueness in Java course
  * courses: Review and fix id uniqueness in Async Messaging course
