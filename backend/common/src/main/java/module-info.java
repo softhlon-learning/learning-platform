@@ -12,6 +12,7 @@ module common {
     requires spring.web;
     requires spring.security.core;
     requires spring.beans;
+
     requires org.apache.tomcat.embed.core;
     requires org.slf4j;
 }

@@ -10,6 +10,7 @@ module courses {
     requires spring.data.commons;
     requires spring.beans;
     requires spring.context;
+
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.dataformat.yaml;
     requires jakarta.persistence;
