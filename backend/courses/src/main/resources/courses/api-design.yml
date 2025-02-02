@@ -10,7 +10,7 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
-        preview: false
+        preview: true
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v1
@@ -31,7 +31,7 @@ chapters:
       - name: Introduction to API Design
         id: no-video-yet.mov?v2
         type: Watch
-        preview: false
+        preview: true
         time: 3m15s
       - name: What is an API?
         id: no-video-yet.mov?v3

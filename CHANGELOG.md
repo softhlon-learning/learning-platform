@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.13
+_release date: 2025-02-02_
+ * common: Hide internal error details in REST response
+ * courses: Add preview fields to Angular course definition
+ * courses: Add preview fields to API Design course definition
+
 ## 0.43.12
 _release date: 2025-02-02_
  * accounts: Add javadocs (domain) - continuation
