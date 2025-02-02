@@ -10,16 +10,19 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
+        preview: true
         processed: false
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v1
         type: Watch
+        preview: false
         processed: false
         items:
         time: 2m5s
       - name: Course Structure
         type: Read
+        preview: false
         id: no-document-yet.html?v1
         processed: false
   - name: Introduction to Microservices
@@ -27,481 +30,597 @@ chapters:
       - name: What are Microservices?
         id: no-video-yet.mov?v2
         type: Watch
+        preview: true
         time: 3m15s
         processed: false
       - name: Monolithic vs. Distributed
         id: no-video-yet.mov?v3
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Benefits and Challenges
         id: no-video-yet.mov?v4
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Evolution of Distributed Systems
         id: no-video-yet.mov?v5
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Microservices in the Java Ecosystem
         id: no-video-yet.mov?v6
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Microservices and DevOps
         id: no-video-yet.mov?v611
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v2
         type: Read
+        preview: false
   - name: Java Microservices Fundamentals
     lectures:
       - name: Spring Boot for Microservices
         id: no-video-yet.mov?v7
         type: Watch
+        preview: false
         time: 3m15s
       - name: First Microservice
         id: no-video-yet.mov?v8
         type: Watch
+        preview: false
         time: 3m15s
       - name: RESTful Services in Java
         id: no-video-yet.mov?v9
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Microservices in Java
         id: no-video-yet.mov?v10
         type: Watch
+        preview: false
         time: 3m15s
       - name: Logging and Monitoring Basics
         id: no-video-yet.mov?v11
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v3
         type: Read
+        preview: false
   - name: Service Design and Patterns
     lectures:
       - name: Domain-Driven Design (DDD)
         id: no-video-yet.mov?v12
         type: Watch
+        preview: false
         time: 3m15s
       - name: API Gateway Pattern
         id: no-video-yet.mov?v13
         type: Watch
+        preview: false
         time: 3m15s
       - name: Database Per Service
         id: no-video-yet.mov?v14
         type: Watch
+        preview: false
         time: 3m15s
       - name: Saga for Data Consistency
         id: no-video-yet.mov?v15
         type: Watch
+        preview: false
         time: 3m15s
       - name: CQRS
         id: no-video-yet.mov?v16
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Discovery Patterns
         id: no-video-yet.mov?v17
         type: Watch
+        preview: false
         time: 3m15s
       - name: Circuit Breaker Pattern
         id: no-video-yet.mov?v18
         type: Watch
+        preview: false
         time: 3m15s
       - name: Bulkhead Pattern
         id: no-video-yet.mov?v19
         type: Watch
+        preview: false
         time: 3m15s
       - name: Strangler Fig for Migration
         id: no-video-yet.mov?v20
         type: Watch
+        preview: false
         time: 3m15s
       - name: Sidecar Pattern
         id: no-video-yet.mov?v21
         type: Watch
+        preview: false
         time: 3m15s
       - name: Adapter Pattern in Microservices
         id: no-video-yet.mov?v22
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+        preview: false
   - name: Building Microservices with Spring
     lectures:
       - name: Spring Cloud Overview
         id: no-video-yet.mov?v23
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Cloud Config
         id: no-video-yet.mov?v24
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Cloud Netflix Eureka
         id: no-video-yet.mov?v25
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Cloud Gateway
         id: no-video-yet.mov?v26
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Cloud Sleuth
         id: no-video-yet.mov?v27
         type: Watch
+        preview: false
         time: 3m15s
       - name: Resilience4j for Fault Tolerance
         id: no-video-yet.mov?v28
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Cloud Stream
         id: no-video-yet.mov?v29
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot Actuator
         id: no-video-yet.mov?v30
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Security
         id: no-video-yet.mov?v31
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v5
         type: Read
+        preview: false
   - name: Data Management in Microservices
     lectures:
       - name: Data Challenges in Microservices
         id: no-video-yet.mov?v32
         type: Watch
+        preview: false
         time: 3m15s
       - name: Eventual vs. Strong Consistency
         id: no-video-yet.mov?v33
         type: Watch
+        preview: false
         time: 3m15s
       - name: Saga Orchestration vs. Choreography
         id: no-video-yet.mov?v34
         type: Watch
+        preview: false
         time: 3m15s
       - name: Database Sharding and Partitioning
         id: no-video-yet.mov?v35
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transactions Across Services
         id: no-video-yet.mov?v36
         type: Watch
+        preview: false
         time: 3m15s
       - name: Data Replication Techniques
         id: no-video-yet.mov?v37
         type: Watch
+        preview: false
         time: 3m15s
       - name: Using NoSQL Databases
         id: no-video-yet.mov?v38
         type: Watch
+        preview: false
         time: 3m15s
       - name: Data Versioning and Migration
         id: no-video-yet.mov?v39
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v6
         type: Read
+        preview: false
   - name: Inter-service Communication
     lectures:
       - name: RESTful APIs
         id: no-video-yet.mov?v40
         type: Watch
+        preview: false
         time: 3m15s
       - name: gRPC in Java Microservices
         id: no-video-yet.mov?v41
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Brokers - Kafka, RabbitMQ
         id: no-video-yet.mov?v42
         type: Watch
+        preview: false
         time: 3m15s
       - name: Sync vs. Async Communication
         id: no-video-yet.mov?v43
         type: Watch
+        preview: false
         time: 3m15s
       - name: API Versioning
         id: no-video-yet.mov?v44
         type: Watch
+        preview: false
         time: 3m15s
       - name: Protocol Buffers
         id: no-video-yet.mov?v45
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Mesh - Istio, Linkerd
         id: no-video-yet.mov?v46
         type: Watch
+        preview: false
         time: 3m15s
       - name: HTTP/2 and WebSockets
         id: no-video-yet.mov?v47
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v7
         type: Read
+        preview: false
   - name: Security in Microservices
     lectures:
       - name: Security Challenges in Microservices
         id: no-video-yet.mov?v48
         type: Watch
+        preview: false
         time: 3m15s
       - name: OAuth 2.0 and OpenID Connect
         id: no-video-yet.mov?v49
         type: Watch
+        preview: false
         time: 3m15s
       - name: JWT (JSON Web Tokens)
         id: no-video-yet.mov?v50
         type: Watch
+        preview: false
         time: 3m15s
       - name: API Key Management
         id: no-video-yet.mov?v51
         type: Watch
+        preview: false
         time: 3m15s
       - name: Securing Service-to-Service
         id: no-video-yet.mov?v52
         type: Watch
+        preview: false
         time: 3m15s
       - name: Encryption at Rest and in Transit
         id: no-video-yet.mov?v53
         type: Watch
+        preview: false
         time: 3m15s
       - name: Identity and Access Management
         id: no-video-yet.mov?v54
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security in Service Mesh
         id: no-video-yet.mov?v55
         type: Watch
+        preview: false
         time: 3m15s
       - name: PenTesting and Security Audits
         id: no-video-yet.mov?v56
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+        preview: false
   - name: Containerization and Orchestration
     lectures:
       - name: Introduction to Docker
         id: no-video-yet.mov?v57
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dockerizing Java Applications
         id: no-video-yet.mov?v58
         type: Watch
+        preview: false
         time: 3m15s
       - name: Docker Compose
         id: no-video-yet.mov?v59
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kubernetes Basics
         id: no-video-yet.mov?v60
         type: Watch
+        preview: false
         time: 3m15s
       - name: K8s Deployments and Services
         id: no-video-yet.mov?v61
         type: Watch
+        preview: false
         time: 3m15s
       - name: Helm Charts for K8s
         id: no-video-yet.mov?v611
         type: Watch
+        preview: false
         time: 3m15s
       - name: Stateful Sets and Persistent Volumes
         id: no-video-yet.mov?v62
         type: Watch
+        preview: false
         time: 3m15s
       - name: K8s Networking and Ingress
         id: no-video-yet.mov?v63
         type: Watch
+        preview: false
         time: 3m15s
       - name: Monitoring and Logging in K8s
         id: no-video-yet.mov?v64
         type: Watch
+        preview: false
         time: 3m15s
       - name: Scaling and Auto-healing in K8s
         id: no-video-yet.mov?v65
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v9
         type: Read
+        preview: false
   - name: Continuous Integration and Deployment
     lectures:
       - name: CI/CD for Microservices
         id: no-video-yet.mov?v66
         type: Watch
+        preview: false
         time: 3m15s
       - name: Jenkins Pipelines
         id: no-video-yet.mov?v67
         type: Watch
+        preview: false
         time: 3m15s
       - name: GitOps with Kubernetes
         id: no-video-yet.mov?v68
         type: Watch
+        preview: false
         time: 3m15s
       - name: Docker Registry
         id: no-video-yet.mov?v69
         type: Watch
+        preview: false
         time: 3m15s
       - name: Blue-Green Deployments
         id: no-video-yet.mov?v70
         type: Watch
+        preview: false
         time: 3m15s
       - name: Canary Releases
         id: no-video-yet.mov?v71
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuration as Code
         id: no-video-yet.mov?v72
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Strategies for Microservices
         id: no-video-yet.mov?v73
         type: Watch
+        preview: false
         time: 3m15s
       - name: Feature Toggles
         id: no-video-yet.mov?v74
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v10
         type: Read
+        preview: false
   - name: Observability and Monitoring
     lectures:
       - name: Observability in Microservices
         id: no-video-yet.mov?v75
         type: Watch
+        preview: false
         time: 3m15s
       - name: Distributed Tracing
         id: no-video-yet.mov?v76
         type: Watch
+        preview: false
         time: 3m15s
       - name: Logging with ELK Stack or similar
         id: no-video-yet.mov?v77
         type: Watch
+        preview: false
         time: 3m15s
       - name: Metrics with Prometheus
         id: no-video-yet.mov?v78
         type: Watch
+        preview: false
         time: 3m15s
       - name: Monitoring with Grafana
         id: no-video-yet.mov?v79
         type: Watch
+        preview: false
         time: 3m15s
       - name: Alerting Systems
         id: no-video-yet.mov?v80
         type: Watch
+        preview: false
         time: 3m15s
       - name: Liveness/Readiness Probes
         id: no-video-yet.mov?v81
         type: Watch
+        preview: false
         time: 3m15s
       - name: Debugging Distributed Systems
         id: no-video-yet.mov?v82
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+        preview: false
   - name: Scaling and Performance
     lectures:
       - name: Horizontal vs. Vertical Scaling
         id: no-video-yet.mov?v83
         type: Watch
+        preview: false
         time: 3m15s
       - name: Load Balancing Strategies
         id: no-video-yet.mov?v84
         type: Watch
+        preview: false
         time: 3m15s
       - name: Caching Strategies
         id: no-video-yet.mov?v85
         type: Watch
+        preview: false
         time: 3m15s
       - name: Asyns Processing
         id: no-video-yet.mov?v86
         type: Watch
+        preview: false
         time: 3m15s
       - name: Rate Limiting and Throttling
         id: no-video-yet.mov?v87
         type: Watch
+        preview: false
         time: 3m15s
       - name: Optimizing Database Queries
         id: no-video-yet.mov?v88
         type: Watch
+        preview: false
         time: 3m15s
       - name: Resource Limits in Kubernetes
         id: no-video-yet.mov?v881
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v12
         type: Read
+        preview: false
   - name: Resilience and Fault Tolerance
     lectures:
       - name: Building Resilient Systems
         id: no-video-yet.mov?v89
         type: Watch
+        preview: false
         time: 3m15s
       - name: Implementing Retry Logic
         id: no-video-yet.mov?v90
         type: Watch
+        preview: false
         time: 3m15s
       - name: Circuit Breaker Implementation
         id: no-video-yet.mov?v901
         type: Watch
+        preview: false
         time: 3m15s
       - name: Timeouts and Bulkheads
         id: no-video-yet.mov?v91
         type: Watch
+        preview: false
         time: 3m15s
       - name: Failures in Distributed Systems
         id: no-video-yet.mov?v92
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v13
         type: Read
+        preview: false
   - name: Microservices Best Practices and Anti-Patterns
     lectures:
       - name: Best Practices in Microservices Design
         id: no-video-yet.mov?v93
         type: Watch
+        preview: false
         time: 3m15s
       - name: Avoiding Common Pitfalls
         id: no-video-yet.mov?v94
         type: Watch
+        preview: false
         time: 3m15s
       - name: Anti-Patterns in Microservices
         id: no-video-yet.mov?v95
         type: Watch
+        preview: false
         time: 3m15s
       - name: Managing Complexity
         id: no-video-yet.mov?v96
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Granularity
         id: no-video-yet.mov?v97
         type: Watch
+        preview: false
         time: 3m15s
       - name: Shared Libraries vs. Microservices
         id: no-video-yet.mov?v98
         type: Watch
+        preview: false
         time: 3m15s
       - name: Communication Patterns to Avoid
         id: no-video-yet.mov?v99
         type: Watch
+        preview: false
         time: 3m15s
       - name: When to Merge or Split Services
         id: no-video-yet.mov?v100
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v14
         type: Read
+        preview: false
