@@ -6,6 +6,7 @@
 package tech.softhlon.learning.subscriptions.domain;
 
 import com.stripe.net.Webhook;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.status
 
 @Slf4j
 @Service
+@Transactional
 class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
     private final String webhookSecret;
     private final PersistInvoiceRepository persistInvoiceRepository;
