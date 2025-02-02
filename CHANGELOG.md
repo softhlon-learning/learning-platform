@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.10
+_release date: 2025-02-02_
+ * accounts: Add javadocs in few interfaces
+ * accounts: Add missing @inheritDoc markers
+ * accounts: Rename GetProfile* to FetchProfile*
+
 ## 0.43.9
 _release date: 2025-02-02_
  * frontend: Fix index.html structure
