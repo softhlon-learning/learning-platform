@@ -243,7 +243,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Service Best Practices
-        id: no-video-yet.mov?v50
+        id: no-video-yet.mov?v501
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -316,7 +316,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Router Module Configuration
-        id: no-video-yet.mov?v68
+        id: no-video-yet.mov?v681
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -573,7 +573,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Date and Time Localization
-        id: no-video-yet.mov?v125
+        id: no-video-yet.mov?v1251
         type: Watch
         time: 3m15s
       - name: RTL Support
@@ -635,10 +635,6 @@ chapters:
         time: 3m15s
       - name: Internationalization
         id: no-video-yet.mov?v139
-        type: Watch
-        time: 3m15s
-      - name: Presentation and Review
-        id: no-video-yet.mov?v140
         type: Watch
         time: 3m15s
       - name: Presentation and Review
