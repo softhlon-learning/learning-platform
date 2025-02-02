@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.42.17
+_release date: 2025-02-02_
+ * frontend: Decrease UPDATE_LECTURE_DELAY to 100ms
+ * courses: Review and fix id uniqueness in API Design course
+ * courses: Review and fix id uniqueness in Architecture course
+
 ## 0.42.16
 _release date: 2025-02-02_
  * subscriptions: Fix SubmitInvoicePaidController path
