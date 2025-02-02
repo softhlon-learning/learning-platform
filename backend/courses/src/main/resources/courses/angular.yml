@@ -10,16 +10,19 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
+        preview: true
         processed: false
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v1
         type: Watch
+        preview: true
         processed: false
         items:
         time: 2m5s
       - name: Course Structure
         type: Read
+        preview: true
         id: no-document-yet.html?v1
         processed: false
   - name: Introduction to Angular
@@ -27,620 +30,771 @@ chapters:
       - name: What is Angular?
         id: no-video-yet.mov?v2
         type: Watch
+        preview: true
         time: 3m15s
         processed: false
       - name: Angular vs. Other Frameworks
         id: no-video-yet.mov?v3
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Setting Up Your Environment
         id: no-video-yet.mov?v4
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Angular CLI Overview
         id: no-video-yet.mov?v5
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: First Angular Application
         id: no-video-yet.mov?v6
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Project Structure
         id: no-video-yet.mov?v7
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Angular Application Workflow
         id: no-video-yet.mov?v8
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v2
         type: Read
+        preview: false
   - name: TypeScript Essentials
     lectures:
       - name: TypeScript Basics
         id: no-video-yet.mov?v9
         type: Watch
+        preview: false
         time: 3m15s
       - name: Classes and Interfaces
         id: no-video-yet.mov?v10
         type: Watch
+        preview: false
         time: 3m15s
       - name: Type Inference and Annotations
         id: no-video-yet.mov?v11
         type: Watch
+        preview: false
         time: 3m15s
       - name: Modules and Namespaces
         id: no-video-yet.mov?v12
         type: Watch
+        preview: false
         time: 3m15s
       - name: Generics
         id: no-video-yet.mov?v13
         type: Watch
+        preview: false
         time: 3m15s
       - name: Decorators in TypeScript
         id: no-video-yet.mov?v14
         type: Watch
+        preview: false
         time: 3m15s
       - name: this Context
         id: no-video-yet.mov?v15
         type: Watch
+        preview: false
         time: 3m15s
       - name: Import/Export Statements
         id: no-video-yet.mov?v16
         type: Watch
+        preview: false
         time: 3m15s
       - name: TypeScript Configuration
         id: no-video-yet.mov?v17
         type: Watch
+        preview: false
         time: 3m15s
       - name: Type Checking
         id: no-video-yet.mov?v18
         type: Watch
+        preview: false
         time: 3m15s
       - name: Enums
         id: no-video-yet.mov?v19
         type: Watch
+        preview: false
         time: 3m15s
       - name: Tuples and Unions
         id: no-video-yet.mov?v20
         type: Watch
+        preview: false
         time: 3m15s
       - name: Advanced Types
         id: no-video-yet.mov?v21
         type: Watch
+        preview: false
         time: 3m15s
       - name: Working with Async Code
         id: no-video-yet.mov?v22
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v3
         type: Read
+        preview: false
   - name: Components and Templates
     lectures:
       - name: Understanding Components
         id: no-video-yet.mov?v23
         type: Watch
+        preview: true
         time: 3m15s
       - name: Creating Components
         id: no-video-yet.mov?v24
         type: Watch
+        preview: true
         time: 3m15s
       - name: Component Lifecycle Hooks
         id: no-video-yet.mov?v25
         type: Watch
+        preview: false
         time: 3m15s
       - name: Template Syntax
         id: no-video-yet.mov?v26
         type: Watch
+        preview: false
         time: 3m15s
       - name: Data Binding
         id: no-video-yet.mov?v27
         type: Watch
+        preview: false
         time: 3m15s
       - name: Directives - ngIf, ngFor, ngSwitch
         id: no-video-yet.mov?v28
         type: Watch
+        preview: false
         time: 3m15s
       - name: Custom Directives
         id: no-video-yet.mov?v29
         type: Watch
+        preview: false
         time: 3m15s
       - name: Styling Components
         id: no-video-yet.mov?v30
         type: Watch
+        preview: false
         time: 3m15s
       - name: View Encapsulation
         id: no-video-yet.mov?v31
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dynamic Components
         id: no-video-yet.mov?v32
         type: Watch
+        preview: false
         time: 3m15s
       - name: Content Projection
         id: no-video-yet.mov?v33
         type: Watch
+        preview: false
         time: 3m15s
       - name: Component Interaction
         id: no-video-yet.mov?v34
         type: Watch
+        preview: false
         time: 3m15s
       - name: Host Binding and Listening
         id: no-video-yet.mov?v35
         type: Watch
+        preview: false
         time: 3m15s
       - name: Template Reference Variables
         id: no-video-yet.mov?v36
         type: Watch
+        preview: false
         time: 3m15s
       - name: Pipes - Built-in and Custom
         id: no-video-yet.mov?v37
         type: Watch
+        preview: false
         time: 3m15s
       - name: Change Detection Strategies
         id: no-video-yet.mov?v38
         type: Watch
+        preview: false
         time: 3m15s
       - name: Component Best Practices
         id: no-video-yet.mov?v39
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+        preview: false
   - name: Services and Dependency Injection
     lectures:
       - name: Role of Services in Angular
         id: no-video-yet.mov?v40
         type: Watch
+        preview: false
         time: 3m15s
       - name: Creating a Service
         id: no-video-yet.mov?v41
         type: Watch
+        preview: false
         time: 3m15s
       - name: DI Fundamentals
         id: no-video-yet.mov?v42
         type: Watch
+        preview: false
         time: 3m15s
       - name: Injector Hierarchy
         id: no-video-yet.mov?v43
         type: Watch
+        preview: false
         time: 3m15s
       - name: Providers and UseClass
         id: no-video-yet.mov?v44
         type: Watch
+        preview: false
         time: 3m15s
       - name: Singleton Services
         id: no-video-yet.mov?v45
         type: Watch
+        preview: false
         time: 3m15s
       - name: Token-Based Injection
         id: no-video-yet.mov?v46
         type: Watch
+        preview: false
         time: 3m15s
       - name: Optional Providers
         id: no-video-yet.mov?v47
         type: Watch
+        preview: false
         time: 3m15s
       - name: Factory Providers
         id: no-video-yet.mov?v48
         type: Watch
+        preview: false
         time: 3m15s
       - name: Multi-Providers
         id: no-video-yet.mov?v49
         type: Watch
+        preview: false
         time: 3m15s
       - name: Hierarchical Injectors
         id: no-video-yet.mov?v50
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Best Practices
         id: no-video-yet.mov?v501
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v5
         type: Read
+        preview: false
   - name: Routing and Navigation
     lectures:
       - name: Introduction to Routing
         id: no-video-yet.mov?v52
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuring Routes
         id: no-video-yet.mov?v53
         type: Watch
+        preview: false
         time: 3m15s
       - name: Router Outlet
         id: no-video-yet.mov?v54
         type: Watch
+        preview: false
         time: 3m15s
       - name: Route Parameters
         id: no-video-yet.mov?v55
         type: Watch
+        preview: false
         time: 3m15s
       - name: Query Parameters
         id: no-video-yet.mov?v56
         type: Watch
+        preview: false
         time: 3m15s
       - name: Route Guards
         id: no-video-yet.mov?v57
         type: Watch
+        preview: false
         time: 3m15s
       - name: Lazy Loading
         id: no-video-yet.mov?v58
         type: Watch
+        preview: false
         time: 3m15s
       - name: Preloading Strategies
         id: no-video-yet.mov?v59
         type: Watch
+        preview: false
         time: 3m15s
       - name: Navigation by Code
         id: no-video-yet.mov?v61
         type: Watch
+        preview: false
         time: 3m15s
       - name: Child Routes
         id: no-video-yet.mov?v62
         type: Watch
+        preview: false
         time: 3m15s
       - name: Route Resolvers
         id: no-video-yet.mov?v63
         type: Watch
+        preview: false
         time: 3m15s
       - name: Route Data
         id: no-video-yet.mov?v64
         type: Watch
+        preview: false
         time: 3m15s
       - name: Router Events
         id: no-video-yet.mov?v65
         type: Watch
+        preview: false
         time: 3m15s
       - name: URL Matching Strategies
         id: no-video-yet.mov?v66
         type: Watch
+        preview: false
         time: 3m15s
       - name: Navigation Extras
         id: no-video-yet.mov?v67
         type: Watch
+        preview: false
         time: 3m15s
       - name: Router State
         id: no-video-yet.mov?v68
         type: Watch
+        preview: false
         time: 3m15s
       - name: Router Module Configuration
         id: no-video-yet.mov?v681
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v6
         type: Read
+        preview: false
   - name: Forms in Angular
     lectures:
       - name: Template-Driven Forms
         id: no-video-yet.mov?v69
         type: Watch
+        preview: false
         time: 3m15s
       - name: Reactive Forms
         id: no-video-yet.mov?v70
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form Controls, Groups, and Arrays
         id: no-video-yet.mov?v71
         type: Watch
+        preview: false
         time: 3m15s
       - name: Validation - Built-in Validators
         id: no-video-yet.mov?v72
         type: Watch
+        preview: false
         time: 3m15s
       - name: Custom Validators
         id: no-video-yet.mov?v73
         type: Watch
+        preview: false
         time: 3m15s
       - name: Asynchronous Validation
         id: no-video-yet.mov?v74
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form State and Status Changes
         id: no-video-yet.mov?v75
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dynamic Forms
         id: no-video-yet.mov?v76
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form Submission
         id: no-video-yet.mov?v77
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Form Data
         id: no-video-yet.mov?v78
         type: Watch
+        preview: false
         time: 3m15s
       - name: Resetting Forms
         id: no-video-yet.mov?v79
         type: Watch
+        preview: false
         time: 3m15s
       - name: Cross-Field Validation
         id: no-video-yet.mov?v80
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form Arrays for Multiple Fields
         id: no-video-yet.mov?v81
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form State with Observables
         id: no-video-yet.mov?v82
         type: Watch
+        preview: false
         time: 3m15s
       - name: Form Best Practices
         id: no-video-yet.mov?v83
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Forms
         id: no-video-yet.mov?v84
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v7
         type: Read
+        preview: false
   - name: HTTP Client and Observables
     lectures:
       - name: HttpClient Module Setup
         id: no-video-yet.mov?v85
         type: Watch
+        preview: false
         time: 3m15s
       - name: Making GET Requests
         id: no-video-yet.mov?v86
         type: Watch
+        preview: false
         time: 3m15s
       - name: POST, PUT, PATCH, DELETE Requests
         id: no-video-yet.mov?v87
         type: Watch
+        preview: false
         time: 3m15s
       - name: Headers and Interceptors
         id: no-video-yet.mov?v88
         type: Watch
+        preview: false
         time: 3m15s
       - name: Observable Basics
         id: no-video-yet.mov?v89
         type: Watch
+        preview: false
         time: 3m15s
       - name: Subscribing to Observables
         id: no-video-yet.mov?v90
         type: Watch
+        preview: false
         time: 3m15s
       - name: Operators - map, filter, catchError
         id: no-video-yet.mov?v91
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Asynchronous Data
         id: no-video-yet.mov?v92
         type: Watch
+        preview: false
         time: 3m15s
       - name: RxJS Subjects
         id: no-video-yet.mov?v93
         type: Watch
+        preview: false
         time: 3m15s
       - name: Combining Observables
         id: no-video-yet.mov?v94
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Progress Events
         id: no-video-yet.mov?v95
         type: Watch
+        preview: false
         time: 3m15s
       - name: Caching Responses
         id: no-video-yet.mov?v96
         type: Watch
+        preview: false
         time: 3m15s
       - name: Mocking HTTP for Testing
         id: no-video-yet.mov?v97
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+        preview: false
   - name: Testing in Angular
     lectures:
       - name: Unit Testing Fundamentals
         id: no-video-yet.mov?v98
         type: Watch
+        preview: false
         time: 3m15s
       - name: Jasmine and Karma Setup
         id: no-video-yet.mov?v99
         type: Watch
+        preview: false
         time: 3m15s
       - name: Test Cases for Components
         id: no-video-yet.mov?v100
         type: Watch
+        preview: false
         time: 3m15s
       - name: Mocking Services
         id: no-video-yet.mov?v101
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Services
         id: no-video-yet.mov?v102
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Pipes
         id: no-video-yet.mov?v103
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Directives
         id: no-video-yet.mov?v104
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Forms
         id: no-video-yet.mov?v105
         type: Watch
+        preview: false
         time: 3m15s
       - name: Asynchronous Testing
         id: no-video-yet.mov?v106
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing HTTP Requests
         id: no-video-yet.mov?v107
         type: Watch
+        preview: false
         time: 3m15s
       - name: End-to-End Testing
         id: no-video-yet.mov?v108
         type: Watch
+        preview: false
         time: 3m15s
       - name: Mock Backend for Testing
         id: no-video-yet.mov?v109
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v9
         type: Read
+        preview: false
   - name: Security in Angular
     lectures:
       - name: Security in Web Applications
         id: no-video-yet.mov?v110
         type: Watch
+        preview: false
         time: 3m15s
       - name: Sanitization
         id: no-video-yet.mov?v111
         type: Watch
+        preview: false
         time: 3m15s
       - name: CSRF Protection
         id: no-video-yet.mov?v112
         type: Watch
+        preview: false
         time: 3m15s
       - name: CORS in Angular Applications
         id: no-video-yet.mov?v113
         type: Watch
+        preview: false
         time: 3m15s
       - name: Authentication and Authorization
         id: no-video-yet.mov?v114
         type: Watch
+        preview: false
         time: 3m15s
       - name: JWT in Angular
         id: no-video-yet.mov?v115
         type: Watch
+        preview: false
         time: 3m15s
       - name: Avoiding XSS Attacks
         id: no-video-yet.mov?v116
         type: Watch
+        preview: false
         time: 3m15s
       - name: Secure HTTP Calls
         id: no-video-yet.mov?v117
         type: Watch
+        preview: false
         time: 3m15s
       - name: Secure Storage
         id: no-video-yet.mov?v118
         type: Watch
+        preview: false
         time: 3m15s
       - name: Securing Routes
         id: no-video-yet.mov?v119
         type: Watch
+        preview: false
         time: 3m15s
       - name: Angular Security Best Practices
         id: no-video-yet.mov?v120
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v10
         type: Read
+        preview: false
   - name: Internationalization (i18n)
     lectures:
       - name: Basics of i18n in Angular
         id: no-video-yet.mov?v121
         type: Watch
+        preview: false
         time: 3m15s
       - name: Setting Up i18n
         id: no-video-yet.mov?v122
         type: Watch
+        preview: false
         time: 3m15s
       - name: Translation Files and Tools
         id: no-video-yet.mov?v123
         type: Watch
+        preview: false
         time: 3m15s
       - name: Pluralization
         id: no-video-yet.mov?v124
         type: Watch
+        preview: false
         time: 3m15s
       - name: Number Formatting
         id: no-video-yet.mov?v125
         type: Watch
+        preview: false
         time: 3m15s
       - name: Date and Time Localization
         id: no-video-yet.mov?v1251
         type: Watch
+        preview: false
         time: 3m15s
       - name: RTL Support
         id: no-video-yet.mov?v126
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dynamic Language Switching
         id: no-video-yet.mov?v127
         type: Watch
+        preview: false
         time: 3m15s
       - name: Custom Pipes for Localization
         id: no-video-yet.mov?v128
         type: Watch
+        preview: false
         time: 3m15s
       - name: AOT Compilation with i18n
         id: no-video-yet.mov?v129
         type: Watch
+        preview: false
         time: 3m15s
       - name: i18n Best Practices
         id: no-video-yet.mov?v130
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+        preview: false
   - name: Capstone Project
     lectures:
       - name: Project Proposal and Planning
         id: no-video-yet.mov?v131
         type: Watch
+        preview: false
         time: 3m15s
       - name: Architecture Design
         id: no-video-yet.mov?v132
         type: Watch
+        preview: false
         time: 3m15s
       - name: Implementing Core Features
         id: no-video-yet.mov?v133
         type: Watch
+        preview: false
         time: 3m15s
       - name: State Management Setup
         id: no-video-yet.mov?v134
         type: Watch
+        preview: false
         time: 3m15s
       - name: Routing and Navigation Setup
         id: no-video-yet.mov?v135
         type: Watch
+        preview: false
         time: 3m15s
       - name: Forms and Validation
         id: no-video-yet.mov?v136
         type: Watch
+        preview: false
         time: 3m15s
       - name: Backend Integration
         id: no-video-yet.mov?v137
         type: Watch
+        preview: false
         time: 3m15s
       - name: Authentication and Security
         id: no-video-yet.mov?v138
         type: Watch
+        preview: false
         time: 3m15s
       - name: Internationalization
         id: no-video-yet.mov?v139
         type: Watch
+        preview: false
         time: 3m15s
       - name: Presentation and Review
         id: no-video-yet.mov?v140
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v12
         type: Read
+        preview: false
