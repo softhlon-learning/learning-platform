@@ -73,14 +73,14 @@ public class StripeEventUtil {
 
     }
 
-    static boolean paid(Event event) {
+    static String status(Event event) {
 
-        return Boolean.getBoolean(new Gson()
+        return new Gson()
               .fromJson(
                     event.getData().toJson(),
                     DataObject.class)
               .object()
-              .paid());
+              .status() ;
 
     }
 
@@ -102,7 +102,7 @@ public class StripeEventUtil {
           String id,
           String customer,
           String email,
-          String paid,
+          String status,
           @SerializedName("current_period_start")
           String periodStartAt,
           @SerializedName("current_period_end")

@@ -17,7 +17,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Resu
 import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.invoiceId;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.paid;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.status;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -53,11 +53,11 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
                 case "invoice.paid": {
 
                     var invoiceId = invoiceId(event);
-                    var paid = paid(event);
+                    var status = status(event);
                     var result = persistInvoiceRepository.execute(
-                          new PersistInvoiceRequest(
+                          prepareRequest(
                                 invoiceId,
-                                paid));
+                                status));
 
                     return switch (result) {
                         case InvoicePersisted() -> new Succeeded();
@@ -72,6 +72,22 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
             log.error("Error", cause);
             return new Failed(cause);
         }
+    }
+
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private PersistInvoiceRequest prepareRequest(String invoiceId, String status) {
+
+        boolean paid = status != null && status.equals("paid")
+              ? true
+              : false;
+
+        return new PersistInvoiceRequest(
+              invoiceId,
+              paid);
     }
 
 }
