@@ -20,11 +20,21 @@ import java.util.UUID;
 @FunctionalInterface
 public interface CreatePasswordTokenRepository {
 
+    /**
+     * Create password token in repository.
+     * @param accountId      Account id
+     * @param token          Token to store in respository
+     * @param expirationTime Token expiration time
+     * @return CreatePasswordTokenResult
+     */
     CreatePasswordTokenResult execute(
           UUID accountId,
           String token,
           OffsetDateTime expirationTime);
 
+    /**
+     * Create password token result.
+     */
     sealed interface CreatePasswordTokenResult {
         record PasswordTokenPersisted() implements CreatePasswordTokenResult {}
         record PasswordTokenPersistenceFailed(Throwable cause) implements CreatePasswordTokenResult {}
