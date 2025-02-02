@@ -18,7 +18,7 @@ import {Observable} from "rxjs";
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const UPDATE_LECTURE_DELAY = 500;
+const UPDATE_LECTURE_DELAY = 200;
 
 @Component({
     selector: 'course-details',
