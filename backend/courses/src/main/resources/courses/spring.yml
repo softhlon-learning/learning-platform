@@ -523,7 +523,7 @@ chapters:
   - name: Spring Data JPA
     lectures:
       - name: Introduction to Spring Data
-        id: no-video-yet.mov?v101
+        id: no-video-yet.mov?v1011
         type: Watch
         time: 3m15s
       - name: JPA Basics
@@ -543,7 +543,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Custom Queries
-        id: no-video-yet.mov?v105
+        id: no-video-yet.mov?v1051
         type: Watch
         time: 3m15s
       - name: Query Methods
@@ -608,7 +608,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Spring Boot vs. Traditional Spring
-        id: no-video-yet.mov?v119
+        id: no-video-yet.mov?v1191
         type: Watch
         time: 3m15s
       - name: Externalized Configuration
@@ -705,7 +705,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Monitoring Batch Jobs
-        id: no-video-yet.mov?v143
+        id: no-video-yet.mov?v1431
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -880,7 +880,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Best Practices
-        id: no-video-yet.mov?v182
+        id: no-video-yet.mov?v1821
         type: Watch
         time: 3m15s
       - name: Wrap Up
