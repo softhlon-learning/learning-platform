@@ -20,7 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Resu
 import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_CREATED;
+import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_INVOICE_PAID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -35,7 +35,7 @@ class SubmitInvoicePaidController {
     private final SubmitInvoicePaidService service;
     private final HttpServletRequest httpRequest;
 
-    @PostMapping(SUBMIT_SUBSCRIPTION_CREATED)
+    @PostMapping(SUBMIT_INVOICE_PAID)
     ResponseEntity<?> submitSubscriptionCreated(
           @Validated @RequestBody String payload) {
 
