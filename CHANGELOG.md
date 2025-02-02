@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.42.12
+_release date: 2025-02-02_
+ * all: Adjust entity annotations to new schemas
+
 ## 0.42.11
 _release date: 2025-02-02_
  * database: Add schema per module and group tables accordingly
