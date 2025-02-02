@@ -23,6 +23,7 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.Respon
 
 @Slf4j
 public class ResponseBodyHelper {
+    private static final String INTERNAL_ERROR = "Server internal error";
 
     public static ResponseEntity successOkBody() {
 
@@ -61,7 +62,7 @@ public class ResponseBodyHelper {
                     ResponseBodyBuilder.builder()
                           .status(HttpStatus.INTERNAL_SERVER_ERROR)
                           .errorMessage(ErrorMessage.INTERNAL_SERVER_ERROR)
-                          .message(cause != null ? cause.getMessage() : null)
+                          .message(INTERNAL_ERROR)
                           .path(request.getRequestURI())
                           .build()
                           .body());
