@@ -14,5 +14,5 @@ module subscriptions {
     requires spring.web;
     requires spring.data.commons;
     requires spring.data.jpa;
-    requires jakarta.transaction;
+    requires spring.tx;
 }

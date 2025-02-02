@@ -6,10 +6,10 @@
 package tech.softhlon.learning.subscriptions.domain;
 
 import com.stripe.net.Webhook;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceRequest;
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
