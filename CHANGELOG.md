@@ -1,7 +1,16 @@
 # Learning Platform Changelog
 
+## 0.43.14
+_release date: 2025-02-03_
+ * courses: Add preview fields to Architecture course definition
+ * courses: Add preview fields to Domain Driven Design course definition
+ * courses: Add preview fields to Java course definition
+ * courses: Add preview fields to Async Messaging course definition
+ * courses: Add preview fields to Microservices definition
+ * courses: Add preview fields to Spring course definition
+
 ## 0.43.13
-_release date: 2025-02-02_
+_release date: 2025-02-03_
  * common: Hide internal error details in REST response
  * courses: Add preview fields to Angular course definition
  * courses: Add preview fields to API Design course definition
