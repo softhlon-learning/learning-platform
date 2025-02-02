@@ -1,5 +1,18 @@
 .footer {
     position: absolute;
+    text-align: center;
+    width:  98%;
     left: 20px;
     bottom: 20px;
+    font-size: 18px;
+}
+
+a {
+    color: var(--main);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+a:hover {
+    font-weight: bold;
 }
