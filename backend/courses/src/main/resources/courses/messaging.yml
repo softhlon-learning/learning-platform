@@ -10,16 +10,19 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
+        preview: true
         processed: false
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v1
         type: Watch
+        preview: false
         processed: false
         items:
         time: 2m5s
       - name: Course Structure
         type: Read
+        preview: false
         id: no-document-yet.html?v1
         processed: false
   - name: Introduction to Asynchronous Messaging
@@ -27,405 +30,503 @@ chapters:
       - name: What is Asynchronous Messaging?
         id: no-video-yet.mov?v2
         type: Watch
+        preview: true
         time: 3m15s
         processed: false
       - name: Benefits of Async Communication
         id: no-video-yet.mov?v3
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Synchronous vs. Asynchronous
         id: no-video-yet.mov?v4
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Messaging Patterns Overview
         id: no-video-yet.mov?v5
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Evolution of Messaging in Java
         id: no-video-yet.mov?v6
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v2
         type: Read
+        preview: false
   - name: Java Messaging Service (JMS)
     lectures:
       - name: JMS Overview
         id: no-video-yet.mov?v7
         type: Watch
+        preview: false
         time: 3m15s
       - name: JMS Architecture and Components
         id: no-video-yet.mov?v8
         type: Watch
+        preview: false
         time: 3m15s
       - name: Point-to-Point (Queue) Messaging
         id: no-video-yet.mov?v9
         type: Watch
+        preview: false
         time: 3m15s
       - name: Publish/Subscribe (Topic) Messaging
         id: no-video-yet.mov?v10
         type: Watch
+        preview: false
         time: 3m15s
       - name: JMS API in Detail
         id: no-video-yet.mov?v11
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Types and Properties
         id: no-video-yet.mov?v12
         type: Watch
+        preview: false
         time: 3m15s
       - name: JMS Providers
         id: no-video-yet.mov?v13
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Management in JMS
         id: no-video-yet.mov?v14
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Acknowledgment Modes
         id: no-video-yet.mov?v15
         type: Watch
+        preview: false
         time: 3m15s
       - name: Durable Subscriptions
         id: no-video-yet.mov?v16
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v3
         type: Read
+        preview: false
   - name: Apache Kafka
     lectures:
       - name: Kafka Architecture
         id: no-video-yet.mov?v17
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kafka Topics, Partitions, Brokers
         id: no-video-yet.mov?v18
         type: Watch
+        preview: false
         time: 3m15s
       - name: Producers and Consumers
         id: no-video-yet.mov?v19
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kafka Streams for Stream Processing
         id: no-video-yet.mov?v20
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kafka Connect for Data Integration
         id: no-video-yet.mov?v21
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kafka Cluster Management
         id: no-video-yet.mov?v22
         type: Watch
+        preview: false
         time: 3m15s
       - name: Scaling Kafka
         id: no-video-yet.mov?v23
         type: Watch
+        preview: false
         time: 3m15s
       - name: Guarantees and Consistency in Kafka
         id: no-video-yet.mov?v24
         type: Watch
+        preview: false
         time: 3m15s
       - name: Kafka Security
         id: no-video-yet.mov?v25
         type: Watch
+        preview: false
         time: 3m15s
       - name: Monitoring and Metrics
         id: no-video-yet.mov?v26
         type: Watch
+        preview: false
         time: 3m15s
       - name: Integration with Java Applications
         id: no-video-yet.mov?v27
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+        preview: false
   - name: RabbitMQ
     lectures:
       - name: RabbitMQ Overview
         id: no-video-yet.mov?v28
         type: Watch
+        preview: false
         time: 3m15s
       - name: AMQP Protocol Basics
         id: no-video-yet.mov?v29
         type: Watch
+        preview: false
         time: 3m15s
       - name: Exchanges, Queues, and Bindings
         id: no-video-yet.mov?v30
         type: Watch
+        preview: false
         time: 3m15s
       - name: RabbitMQ Message Flow
         id: no-video-yet.mov?v31
         type: Watch
+        preview: false
         time: 3m15s
       - name: RabbitMQ in Java - Client Libraries
         id: no-video-yet.mov?v32
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Persistence and Durability
         id: no-video-yet.mov?v33
         type: Watch
+        preview: false
         time: 3m15s
       - name: Clustering and High Availability
         id: no-video-yet.mov?v34
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dead Letter Queues
         id: no-video-yet.mov?v35
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Prioritization
         id: no-video-yet.mov?v36
         type: Watch
+        preview: false
         time: 3m15s
       - name: Monitoring and Management
         id: no-video-yet.mov?v37
         type: Watch
+        preview: false
         time: 3m15s
       - name: Performance Tuning
         id: no-video-yet.mov?v38
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v5
         type: Read
+        preview: false
   - name: Messaging Patterns
     lectures:
       - name: Command Message Pattern
         id: no-video-yet.mov?v39
         type: Watch
+        preview: false
         time: 3m15s
       - name: Document Message Pattern
         id: no-video-yet.mov?v40
         type: Watch
+        preview: false
         time: 3m15s
       - name: Event Message Pattern
         id: no-video-yet.mov?v41
         type: Watch
+        preview: false
         time: 3m15s
       - name: Request-Reply Pattern
         id: no-video-yet.mov?v42
         type: Watch
+        preview: false
         time: 3m15s
       - name: Correlation Identifier
         id: no-video-yet.mov?v43
         type: Watch
+        preview: false
         time: 3m15s
       - name: Return Address
         id: no-video-yet.mov?v44
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Expiration
         id: no-video-yet.mov?v45
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Sequence
         id: no-video-yet.mov?v46
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Router
         id: no-video-yet.mov?v47
         type: Watch
+        preview: false
         time: 3m15s
       - name: Content-Based Router
         id: no-video-yet.mov?v48
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Filter
         id: no-video-yet.mov?v50
         type: Watch
+        preview: false
         time: 3m15s
       - name: Aggregator Pattern
         id: no-video-yet.mov?v51
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v6
         type: Read
+        preview: false
   - name: Message Serialization
     lectures:
       - name: Serialization Necessity in Messaging
         id: no-video-yet.mov?v52
         type: Watch
+        preview: false
         time: 3m15s
       - name: Java Serialization
         id: no-video-yet.mov?v53
         type: Watch
+        preview: false
         time: 3m15s
       - name: JSON with Jackson in Messaging
         id: no-video-yet.mov?v54
         type: Watch
+        preview: false
         time: 3m15s
       - name: Protocol Buffers
         id: no-video-yet.mov?v55
         type: Watch
+        preview: false
         time: 3m15s
       - name: Avro for Schema Evolution
         id: no-video-yet.mov?v56
         type: Watch
+        preview: false
         time: 3m15s
       - name: XML and JAXB
         id: no-video-yet.mov?v57
         type: Watch
+        preview: false
         time: 3m15s
       - name: Binary vs. Text Serialization
         id: no-video-yet.mov?v571
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v7
         type: Read
+        preview: false
   - name: Error Handling and Fault Tolerance
     lectures:
       - name: Retry Mechanisms
         id: no-video-yet.mov?v58
         type: Watch
+        preview: false
         time: 3m15s
       - name: Dead Letter Queues
         id: no-video-yet.mov?v59
         type: Watch
+        preview: false
         time: 3m15s
       - name: Idempotency in Messaging
         id: no-video-yet.mov?v60
         type: Watch
+        preview: false
         time: 3m15s
       - name: Circuit Breakers with Messaging
         id: no-video-yet.mov?v61
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Network Partitions
         id: no-video-yet.mov?v62
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Redelivery
         id: no-video-yet.mov?v63
         type: Watch
+        preview: false
         time: 3m15s
       - name: Failures in Distributed Systems
         id: no-video-yet.mov?v64
         type: Watch
+        preview: false
         time: 3m15s
       - name: Graceful Degradation
         id: no-video-yet.mov?v65
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+        preview: false
   - name: Scaling and Load Balancing
     lectures:
       - name: Horizontal vs. Vertical Scaling
         id: no-video-yet.mov?v66
         type: Watch
+        preview: false
         time: 3m15s
       - name: Load Balancing in Messaging Systems
         id: no-video-yet.mov?v67
         type: Watch
+        preview: false
         time: 3m15s
       - name: Partitioning Strategies
         id: no-video-yet.mov?v68
         type: Watch
+        preview: false
         time: 3m15s
       - name: Consumer Group Scaling
         id: no-video-yet.mov?v69
         type: Watch
+        preview: false
         time: 3m15s
       - name: Sharding in Messaging
         id: no-video-yet.mov?v70
         type: Watch
+        preview: false
         time: 3m15s
       - name: Auto-scaling with Cloud Providers
         id: no-video-yet.mov?v71
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Backpressure
         id: no-video-yet.mov?v72
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Batching for Efficiency
         id: no-video-yet.mov?v73
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v9
         type: Read
+        preview: false
   - name: Security in Messaging
     lectures:
       - name: Authentication and Authorization
         id: no-video-yet.mov?v74
         type: Watch
+        preview: false
         time: 3m15s
       - name: Encryption at Rest and in Transit
         id: no-video-yet.mov?v75
         type: Watch
+        preview: false
         time: 3m15s
       - name: SSL/TLS in Messaging Systems
         id: no-video-yet.mov?v76
         type: Watch
+        preview: false
         time: 3m15s
       - name: Securing Kafka
         id: no-video-yet.mov?v77
         type: Watch
+        preview: false
         time: 3m15s
       - name: Securing RabbitMQ
         id: no-video-yet.mov?v78
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Tampering Prevention
         id: no-video-yet.mov?v79
         type: Watch
+        preview: false
         time: 3m15s
       - name: Access Control Lists
         id: no-video-yet.mov?v80
         type: Watch
+        preview: false
         time: 3m15s
       - name: Data Leakage Prevention
         id: no-video-yet.mov?v81
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v10
         type: Read
+        preview: false
   - name: Asynchronous Messaging in Microservices
     lectures:
       - name: Event-Driven Microservices
         id: no-video-yet.mov?v82
         type: Watch
+        preview: false
         time: 3m15s
       - name: Saga Pattern for Transactions
         id: no-video-yet.mov?v83
         type: Watch
+        preview: false
         time: 3m15s
       - name: CQRS with Messaging
         id: no-video-yet.mov?v84
         type: Watch
+        preview: false
         time: 3m15s
       - name: Event Sourcing in Java
         id: no-video-yet.mov?v85
         type: Watch
+        preview: false
         time: 3m15s
       - name: Integrating with API Gateways
         id: no-video-yet.mov?v86
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Mesh and Messaging
         id: no-video-yet.mov?v87
         type: Watch
+        preview: false
         time: 3m15s
       - name: Tracing in Distributed Systems
         id: no-video-yet.mov?v88
         type: Watch
+        preview: false
         time: 3m15s
       - name: Resilience in Microservices
         id: no-video-yet.mov?v89
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+        preview: false
