@@ -93,7 +93,7 @@ chapters:
   - name: Principles of Software Architecture
     lectures:
       - name: SOLID Principles
-        id: no-video-yet.mov?v14
+        id: no-video-yet.mov?v141
         type: Watch
         time: 3m15s
       - name: YAGNI and KISS Principles
@@ -184,7 +184,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Choreography
-        id: no-video-yet.mov?v57
+        id: no-video-yet.mov?v571
         type: Watch
         time: 3m15s
       - name: Circuit Breaker
@@ -390,7 +390,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Reliability and Fault Tolerance
-        id: no-video-yet.mov?v32
+        id: no-video-yet.mov?v321
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -423,7 +423,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Event Sourcing and CQRS
-        id: no-video-yet.mov?v38
+        id: no-video-yet.mov?v381
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -478,7 +478,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Monitoring and Logging in DevOps
-        id: no-video-yet.mov?v99
+        id: no-video-yet.mov?v991
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -591,7 +591,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Security in IoT and Mobile
-        id: no-video-yet.mov?v122
+        id: no-video-yet.mov?v1221
         type: Watch
         time: 3m15s
       - name: Device Management and Updates
@@ -654,7 +654,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Service Level Agreements
-        id: no-video-yet.mov?v135
+        id: no-video-yet.mov?v1351
         type: Watch
         time: 3m15s
       - name: Wrap Up
