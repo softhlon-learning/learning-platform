@@ -34,6 +34,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
     private static final String HOME_PATH = "/home";
     private static final String SUBSCRIBE_PATH = "/subscribe";
+    private static final String MANAGE_SUBSCRIPTION_PATH = "/manage-subscription";
 
     private final String serviceBaseUrl;
     private final PersistCheckoutRepository persistCheckoutRepository;
@@ -68,6 +69,7 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                               : null)
                   .setSuccessUrl(serviceBaseUrl + HOME_PATH)
                   .setCancelUrl(serviceBaseUrl + SUBSCRIBE_PATH)
+                  .setReturnUrl(serviceBaseUrl + MANAGE_SUBSCRIPTION_PATH)
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
