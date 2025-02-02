@@ -60,7 +60,7 @@ chapters:
         time: 3m15s
         processed: false
       - name: Wrap Up
-        id: no-document-yet.html?v1
+        id: no-document-yet.html?v11
         type: Read
   - name: Core Concepts of DDD
     lectures:
@@ -138,11 +138,11 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Published Language
-        id: no-video-yet.mov?v25
+        id: no-video-yet.mov?v251
         type: Watch
         time: 3m15s
       - name: Subdomain Decomposition
-        id: no-video-yet.mov?v25
+        id: no-video-yet.mov?v252
         type: Watch
         time: 3m15s
   - name: Tactical Design Patterns
@@ -180,11 +180,11 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Domain-Driven Security
-        id: no-video-yet.mov?v33
+        id: no-video-yet.mov?v331
         type: Watch
         time: 3m15s
       - name: CQRS
-        id: no-video-yet.mov?v33
+        id: no-video-yet.mov?v332
         type: Watch
         time: 3m15s
       - name: Event Storming
@@ -226,7 +226,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Evolution of Bounded Contexts
-        id: no-video-yet.mov?v42
+        id: no-video-yet.mov?v421
         type: Watch
         time: 3m15s
   - name: Implementation and Best Practices
