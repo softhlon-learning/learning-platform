@@ -9,8 +9,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.CheckoutSessionPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -28,11 +28,11 @@ class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
         try {
             invoicesJpaRepository.save(
                   entity(request));
-            return new CheckoutSessionPersisted();
+            return new InvoicePersisted();
 
         } catch (Throwable cause) {
             log.error("Error", cause);
-            return new CheckoutSessionPersistenceFailed(cause);
+            return new InvoicePersistenceFailed(cause);
         }
 
     }
