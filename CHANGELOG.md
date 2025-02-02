@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.42.16
+_release date: 2025-02-02_
+ * subscriptions: Fix SubmitInvoicePaidController path
+ * all: Update license headers
+
 ## 0.42.15
 _release date: 2025-02-02_
  * subscriptions: Add SubmitInvoicePaidController
