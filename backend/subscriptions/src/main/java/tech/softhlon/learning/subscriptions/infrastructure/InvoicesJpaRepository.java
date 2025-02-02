@@ -5,7 +5,10 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.UUID;
 
@@ -14,4 +17,13 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 interface InvoicesJpaRepository extends CrudRepository<InvoiceEntity, UUID> {
+
+    @Query(value = """
+              UPDATE _subscriptions.subscriptions 
+              SET active = true WHERE invoiceId = :invoiceId
+          """,
+          nativeQuery = true)
+    @Modifying
+    void avtivatePaidSusbcription(@Param("invoiceId") String invoiceId);
+
 }

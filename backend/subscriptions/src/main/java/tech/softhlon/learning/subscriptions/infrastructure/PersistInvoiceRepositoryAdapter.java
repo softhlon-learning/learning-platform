@@ -28,6 +28,10 @@ class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
         try {
             invoicesJpaRepository.save(
                   entity(request));
+
+            invoicesJpaRepository.avtivatePaidSusbcription(
+                  request.invoiceId());
+
             return new InvoicePersisted();
 
         } catch (Throwable cause) {
