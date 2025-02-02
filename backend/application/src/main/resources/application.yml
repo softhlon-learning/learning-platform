@@ -31,6 +31,7 @@ stripe.subscription-created.webhook.secret: "whsec_X9MWm4LodiEznxPCgxv09mIV2hoeS
 stripe.subscription-updated.webhook.secret: "whsec_dzQA5hLseKTXdKzJbHhvNYcuPyugauDd"
 stripe.subscription-deleted.webhook.secret: "whsec_9cactNFNgHm0uXk2XUG2qBKV5kWvfpfQ"
 stripe.generic-event.webhook.secret: "whsec_dC3HqyfYzsAbXlaF64tkZjtV4nTDtXWV"
+stripe.invoice-paid.webhook.secret: "whsec_ovQ07fYwLsKlhHtRXAjqSRHUOGwJeiUr"
 
 ---
 spring:
