@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.9
+_release date: 2025-02-02_
+ * frontend: Fix index.html structure
+ * accounts: Add javadocs to CreateInvalidatedTokenRepository and CreatePasswordTokenRepository
+
 ## 0.43.8
 _release date: 2025-02-02_
  * frontend: Tune footer design
