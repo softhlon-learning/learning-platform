@@ -26,6 +26,9 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
 
     private final PasswordTokensJpaRepository passwordTokensJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CreatePasswordTokenResult execute(
           UUID accountId,

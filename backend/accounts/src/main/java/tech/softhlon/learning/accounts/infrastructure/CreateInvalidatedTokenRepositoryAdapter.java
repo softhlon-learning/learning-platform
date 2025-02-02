@@ -25,6 +25,9 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
 
     private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CreateInvalidatedTokenResult execute(
           String tokenHash) {

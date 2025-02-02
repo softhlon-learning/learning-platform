@@ -34,6 +34,9 @@ class DeleteAccountServiceImpl implements DeleteAccountService {
     private final LoadAccountRepository loadAccountRepository;
     private final PersistAccountRepository persistAccountRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId) {

@@ -20,6 +20,9 @@ class EmailServiceImpl implements EmailService {
 
     private final JavaMailSender emailSender;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void sendMessage(
           String to,
