@@ -11,10 +11,15 @@ package tech.softhlon.learning.accounts.domain;
 
 interface EmailService {
 
+    /**
+     * Send email message.
+     * @param to      Email recipient
+     * @param subject Email subject
+     * @param text    Email texgt
+     */
     void sendMessage(
           String to,
           String subject,
           String text);
 
 }
-

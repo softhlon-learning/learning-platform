@@ -17,9 +17,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface DeleteAccountService {
 
+    /**
+     * Delete account in repository (mark as deleted).
+     * @param accountId Account Id
+     * @return Result
+     */
     Result execute(
           UUID accountId);
 
+    /**
+     * Delete account result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotFoundFailed(String message) implements Result {}

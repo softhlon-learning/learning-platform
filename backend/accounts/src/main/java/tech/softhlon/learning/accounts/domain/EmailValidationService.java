@@ -11,6 +11,11 @@ package tech.softhlon.learning.accounts.domain;
 
 interface EmailValidationService {
 
+    /**
+     * Validate email format.
+     * @param email Email to validate
+     * @return True if valid
+     */
     boolean isEmailValid(
           String email);
 

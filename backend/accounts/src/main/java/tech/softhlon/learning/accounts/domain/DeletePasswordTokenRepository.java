@@ -17,9 +17,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface DeletePasswordTokenRepository {
 
+    /**
+     * Delete password token in repository.
+     * @param id Password token id
+     * @return DeletePasswordTokenResult
+     */
     DeletePasswordTokenResult execute(
           UUID id);
 
+    /**
+     * Delete apssword token result.
+     */
     sealed interface DeletePasswordTokenResult {
         record TokenDeleted() implements DeletePasswordTokenResult {}
         record TokenDeletionFailed(Throwable cause) implements DeletePasswordTokenResult {}
