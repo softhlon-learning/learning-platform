@@ -7,9 +7,9 @@ package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.GetProfileService.Result.ProfileNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.GetProfileService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.ProfileNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Succeeded;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
@@ -23,7 +23,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-class GetProfileServiceImpl implements GetProfileService {
+class FetchProfileServiceImpl implements FetchProfileService {
 
     private static final String PROFILE_NOT_FOUND = "Profile not fould";
     private final LoadAccountRepository loadAccountRepository;

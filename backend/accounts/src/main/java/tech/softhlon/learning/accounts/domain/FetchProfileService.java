@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @InboundPort
 @FunctionalInterface
-public interface GetProfileService {
+public interface FetchProfileService {
 
     Result execute(
           UUID accountId);
