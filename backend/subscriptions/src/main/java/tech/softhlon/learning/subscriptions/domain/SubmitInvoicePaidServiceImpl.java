@@ -13,6 +13,7 @@ import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.Pers
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
 import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
 import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.IncorrectEventType;
 import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.invoiceId;
@@ -47,18 +48,26 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
                   payload,
                   sigHeader,
                   webhookSecret);
-            var invoiceId = invoiceId(event);
-            var paid = paid(event);
-            var result = persistInvoiceRepository.execute(
-                  new PersistInvoiceRequest(
-                        invoiceId,
-                        paid));
 
-            return switch (result) {
-                case InvoicePersisted() -> new Succeeded();
-                case InvoicePersistenceFailed(Throwable cause) -> new Failed(cause);
-            };
+            switch (event.getType()) {
+                case "invoice.paid": {
 
+                    var invoiceId = invoiceId(event);
+                    var paid = paid(event);
+                    var result = persistInvoiceRepository.execute(
+                          new PersistInvoiceRequest(
+                                invoiceId,
+                                paid));
+
+                    return switch (result) {
+                        case InvoicePersisted() -> new Succeeded();
+                        case InvoicePersistenceFailed(Throwable cause) -> new Failed(cause);
+                    };
+                }
+                default:
+                    log.info("service | Event not handled '{}'", event.getType());
+                    return new IncorrectEventType("Incorrect event type: " + event.getType());
+            }
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new Failed(cause);

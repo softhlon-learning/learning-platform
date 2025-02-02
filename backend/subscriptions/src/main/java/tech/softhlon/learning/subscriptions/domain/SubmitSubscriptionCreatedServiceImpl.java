@@ -74,7 +74,6 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
                 default:
                     log.info("service | Event not handled '{}'", event.getType());
                     return new IncorrectEventType("Incorrect event type: " + event.getType());
-
             }
         } catch (Throwable cause) {
             log.error("Erro");
