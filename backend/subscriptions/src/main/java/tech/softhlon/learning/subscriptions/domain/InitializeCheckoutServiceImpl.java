@@ -67,9 +67,8 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                         customerId == null
                               ? email
                               : null)
-                  .setSuccessUrl(serviceBaseUrl + HOME_PATH)
+                  .setSuccessUrl(serviceBaseUrl + MANAGE_SUBSCRIPTION_PATH)
                   .setCancelUrl(serviceBaseUrl + SUBSCRIBE_PATH)
-                  .setReturnUrl(serviceBaseUrl + MANAGE_SUBSCRIPTION_PATH)
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
