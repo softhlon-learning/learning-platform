@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.43.11
+_release date: 2025-02-02_
+ * accounts: Add javadocs (domain) - continuation
+ * accounts: Sort/clean up module-info.java
+ * common: Sort/clean up module-info.java
+ * courses: Sort/clean up module-info.java
+ * subscriptions: Sort/clean up module-info.java
+
 ## 0.43.10
 _release date: 2025-02-02_
  * accounts: Add javadocs in few interfaces
