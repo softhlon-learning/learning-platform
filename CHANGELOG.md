@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.42.14
+_release date: 2025-02-02_
+ * subscriptions: Add SubmitInvoicePaidService and its empty service
+
 ## 0.42.13
 _release date: 2025-02-02_
  * database: Fix native query in SubscriptionsJpaRepository.findByAccountId
