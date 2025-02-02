@@ -1,6 +1,6 @@
 # Learning Platform Changelog
 
-## 0.42.18
+## 0.42.19
 _release date: 2025-02-02_
  * courses: Review and fix id uniqueness in Spring course
  * courses: Review and fix id uniqueness in Angular course
