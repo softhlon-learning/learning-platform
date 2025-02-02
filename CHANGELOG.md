@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.2
+_release date: 2025-02-02_
+ * application: Add stripe.invoice-paid.webhook.secret parameter
+ * subscriptions: Improved SubmitSubscriptionCreatedServiceImpl
+ * stripe: Add /invoice-paid-event webhook
+
 ## 0.43.1
 _release date: 2025-02-02_
  * subscriptions: Implement PersistInvoiceRepositoryAdapter
