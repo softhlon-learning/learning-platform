@@ -10,16 +10,19 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
+        preview: true
         processed: false
         time: 2m5s
       - name: Prerequisites
         id: no-video-yet.mov?v1
         type: Watch
+        preview: false
         processed: false
         items:
         time: 2m5s
       - name: Course Structure
         type: Read
+        preview: false
         id: no-document-yet.html?v1
         processed: false
   - name: Introduction to Spring Framework
@@ -27,981 +30,1206 @@ chapters:
       - name: What is Spring?
         id: no-video-yet.mov?v2
         type: Watch
+        preview: true
         time: 3m15s
         processed: false
       - name: History and Evolution of Spring
         id: no-video-yet.mov?v3
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Core Features of Spring
         id: no-video-yet.mov?v4
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring's Ecosystem
         id: no-video-yet.mov?v5
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Benefits of Using Spring
         id: no-video-yet.mov?v6
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring vs. Other Frameworks
         id: no-video-yet.mov?v7
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Setting Up Spring Environment
         id: no-video-yet.mov?v8
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring Tool Suite (STS)
         id: no-video-yet.mov?v9
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring Initializr
         id: no-video-yet.mov?v10
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v2
         type: Read
+        preview: false
   - name: Spring Core Concepts
     lectures:
       - name: Inversion of Control (IoC)
         id: no-video-yet.mov?v11
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Dependency Injection (DI)
         id: no-video-yet.mov?v12
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Bean Lifecycle
         id: no-video-yet.mov?v13
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Bean Scopes
         id: no-video-yet.mov?v14
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring Container
         id: no-video-yet.mov?v15
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Bean Definition and Configuration
         id: no-video-yet.mov?v16
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: XML vs. Annotation Configuration
         id: no-video-yet.mov?v17
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Java-based Configuration
         id: no-video-yet.mov?v18
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Property Placeholder Configuration
         id: no-video-yet.mov?v19
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Autowiring
         id: no-video-yet.mov?v20
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Component Scanning
         id: no-video-yet.mov?v21
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Profiles
         id: no-video-yet.mov?v22
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Conditional Beans
         id: no-video-yet.mov?v23
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Event Handling in Spring
         id: no-video-yet.mov?v24
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Resource Management
         id: no-video-yet.mov?v25
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring Expression Language (SpEL)
         id: no-video-yet.mov?v26
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Circular Dependencies
         id: no-video-yet.mov?v27
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Bean Post Processors
         id: no-video-yet.mov?v28
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v3
         type: Read
+        preview: false
   - name: Aspect-Oriented Programming (AOP)
     lectures:
       - name: What is AOP?
         id: no-video-yet.mov?v29
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Concepts
         id: no-video-yet.mov?v30
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Aspects
         id: no-video-yet.mov?v31
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Advice
         id: no-video-yet.mov?v32
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Pointcuts and Joinpoints
         id: no-video-yet.mov?v33
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring AOP vs. AspectJ
         id: no-video-yet.mov?v34
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Declaring Aspects in Spring
         id: no-video-yet.mov?v35
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Types of Advice
         id: no-video-yet.mov?v36
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Pointcut Designators
         id: no-video-yet.mov?v37
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Creating Custom Aspects
         id: no-video-yet.mov?v38
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Annotations
         id: no-video-yet.mov?v39
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: XML Configuration for AOP
         id: no-video-yet.mov?v40
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
         processed: false
       - name: Proxies in Spring AOP
         id: no-video-yet.mov?v41
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AspectJ Annotations
         id: no-video-yet.mov?v42
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Load-time Weaving
         id: no-video-yet.mov?v43
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Compile-time Weaving
         id: no-video-yet.mov?v44
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Introduction to New Instances
         id: no-video-yet.mov?v45
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: AOP Best Practices
         id: no-video-yet.mov?v46
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Performance Considerations
         id: no-video-yet.mov?v47
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Debugging AOP
         id: no-video-yet.mov?v48
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Testing Aspects
         id: no-video-yet.mov?v49
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v4
         type: Read
+        preview: false
   - name: Spring JDBC
     lectures:
       - name: Introduction to Spring JDBC
         id: no-video-yet.mov?v50
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: JDBC Template
         id: no-video-yet.mov?v51
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: RowMapper and ResultSetExtractor
         id: no-video-yet.mov?v52
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: NamedParameterJdbcTemplate
         id: no-video-yet.mov?v53
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: SimpleJdbcInsert
         id: no-video-yet.mov?v54
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: SimpleJdbcCall
         id: no-video-yet.mov?v55
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Transaction Management
         id: no-video-yet.mov?v56
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Batch Processing
         id: no-video-yet.mov?v57
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Exception Translation
         id: no-video-yet.mov?v58
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Database Connection
         id: no-video-yet.mov?v59
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: DataSource Configuration
         id: no-video-yet.mov?v60
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: JdbcDaoSupport
         id: no-video-yet.mov?v61
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Querying with Spring JDBC
         id: no-video-yet.mov?v62
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Handling LOBs
         id: no-video-yet.mov?v63
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Stored Procedures and Functions
         id: no-video-yet.mov?v64
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Spring JDBC vs. ORM
         id: no-video-yet.mov?v65
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Best Practices
         id: no-video-yet.mov?v66
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Testing Spring JDBC
         id: no-video-yet.mov?v67
         type: Watch
+        preview: false
         time: 3m15s
         processed: false
       - name: Wrap Up
         id: no-document-yet.html?v5
         type: Read
+        preview: false
   - name: Spring MVC
     lectures:
       - name: Introduction to Spring MVC
         id: no-video-yet.mov?v68
         type: Watch
+        preview: false
         time: 3m15s
       - name: MVC Pattern in Spring
         id: no-video-yet.mov?v69
         type: Watch
+        preview: false
         time: 3m15s
       - name: DispatcherServlet
         id: no-video-yet.mov?v70
         type: Watch
+        preview: false
         time: 3m15s
       - name: Controllers and Request Mapping
         id: no-video-yet.mov?v71
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Forms
         id: no-video-yet.mov?v72
         type: Watch
+        preview: false
         time: 3m15s
       - name: Validation
         id: no-video-yet.mov?v73
         type: Watch
+        preview: false
         time: 3m15s
       - name: View Resolution
         id: no-video-yet.mov?v74
         type: Watch
+        preview: false
         time: 3m15s
       - name: Interceptors
         id: no-video-yet.mov?v75
         type: Watch
+        preview: false
         time: 3m15s
       - name: Exception Handling
         id: no-video-yet.mov?v76
         type: Watch
+        preview: false
         time: 3m15s
       - name: RESTful Services with Spring MVC
         id: no-video-yet.mov?v77
         type: Watch
+        preview: false
         time: 3m15s
       - name: Content Negotiation
         id: no-video-yet.mov?v78
         type: Watch
+        preview: false
         time: 3m15s
       - name: Internationalization (i18n)
         id: no-video-yet.mov?v79
         type: Watch
+        preview: false
         time: 3m15s
       - name: File Upload
         id: no-video-yet.mov?v80
         type: Watch
+        preview: false
         time: 3m15s
       - name: CORS Support
         id: no-video-yet.mov?v81
         type: Watch
+        preview: false
         time: 3m15s
       - name: WebSocket Support
         id: no-video-yet.mov?v82
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring MVC Testing
         id: no-video-yet.mov?v83
         type: Watch
+        preview: false
         time: 3m15s
       - name: Thymeleaf Integration
         id: no-video-yet.mov?v84
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v6
         type: Read
+        preview: false
   - name: Spring Security
     lectures:
       - name: Introduction to Spring Security
         id: no-video-yet.mov?v85
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security Configuration
         id: no-video-yet.mov?v86
         type: Watch
+        preview: false
         time: 3m15s
       - name: Authentication
         id: no-video-yet.mov?v87
         type: Watch
+        preview: false
         time: 3m15s
       - name: Authorization
         id: no-video-yet.mov?v88
         type: Watch
+        preview: false
         time: 3m15s
       - name: User Details Service
         id: no-video-yet.mov?v89
         type: Watch
+        preview: false
         time: 3m15s
       - name: Password Encoding
         id: no-video-yet.mov?v90
         type: Watch
+        preview: false
         time: 3m15s
         time: 3m15s
       - name: Remember Me Functionality
         id: no-video-yet.mov?v91
         type: Watch
+        preview: false
         time: 3m15s
       - name: Session Management
         id: no-video-yet.mov?v92
         type: Watch
+        preview: false
         time: 3m15s
       - name: CSRF Protection
         id: no-video-yet.mov?v93
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security Headers
         id: no-video-yet.mov?v94
         type: Watch
+        preview: false
         time: 3m15s
       - name: Method Security
         id: no-video-yet.mov?v95
         type: Watch
+        preview: false
         time: 3m15s
       - name: OAuth2 and JWT
         id: no-video-yet.mov?v96
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Security with JDBC
         id: no-video-yet.mov?v97
         type: Watch
+        preview: false
         time: 3m15s
       - name: Customizing Security Filters
         id: no-video-yet.mov?v98
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security for REST Services
         id: no-video-yet.mov?v99
         type: Watch
+        preview: false
         time: 3m15s
       - name: Single Sign-On (SSO)
         id: no-video-yet.mov?v100
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security Testing
         id: no-video-yet.mov?v101
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v7
         type: Read
+        preview: false
   - name: Spring Data JPA
     lectures:
       - name: Introduction to Spring Data
         id: no-video-yet.mov?v1011
         type: Watch
+        preview: false
         time: 3m15s
       - name: JPA Basics
         id: no-video-yet.mov?v102
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuring Spring Data JPA
         id: no-video-yet.mov?v103
         type: Watch
+        preview: false
         time: 3m15s
       - name: Entity Management
         id: no-video-yet.mov?v104
         type: Watch
+        preview: false
         time: 3m15s
       - name: Repository Interfaces
         id: no-video-yet.mov?v105
         type: Watch
+        preview: false
         time: 3m15s
       - name: Custom Queries
         id: no-video-yet.mov?v1051
         type: Watch
+        preview: false
         time: 3m15s
       - name: Query Methods
         id: no-video-yet.mov?v106
         type: Watch
+        preview: false
         time: 3m15s
       - name: Specifications
         id: no-video-yet.mov?v107
         type: Watch
+        preview: false
         time: 3m15s
       - name: Auditing
         id: no-video-yet.mov?v108
         type: Watch
+        preview: false
         time: 3m15s
       - name: Pagination and Sorting
         id: no-video-yet.mov?v109
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Management
         id: no-video-yet.mov?v110
         type: Watch
+        preview: false
         time: 3m15s
       - name: Mapping Relationships
         id: no-video-yet.mov?v111
         type: Watch
+        preview: false
         time: 3m15s
       - name: Performance Tuning
         id: no-video-yet.mov?v112
         type: Watch
+        preview: false
         time: 3m15s
       - name: Caching
         id: no-video-yet.mov?v113
         type: Watch
+        preview: false
         time: 3m15s
       - name: Advanced Mapping Techniques
         id: no-video-yet.mov?v114
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v8
         type: Read
+        preview: false
   - name: Spring Boot
     lectures:
       - name: What is Spring Boot?
         id: no-video-yet.mov?v115
         type: Watch
+        preview: false
         time: 3m15s
       - name: Auto-configuration
         id: no-video-yet.mov?v116
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot Starters
         id: no-video-yet.mov?v117
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot CLI
         id: no-video-yet.mov?v118
         type: Watch
+        preview: false
         time: 3m15s
       - name: Actuator
         id: no-video-yet.mov?v119
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot vs. Traditional Spring
         id: no-video-yet.mov?v1191
         type: Watch
+        preview: false
         time: 3m15s
       - name: Externalized Configuration
         id: no-video-yet.mov?v120
         type: Watch
+        preview: false
         time: 3m15s
       - name: Profiles in Spring Boot
         id: no-video-yet.mov?v121
         type: Watch
+        preview: false
         time: 3m15s
       - name: Logging in Spring Boot
         id: no-video-yet.mov?v122
         type: Watch
+        preview: false
         time: 3m15s
       - name: RESTful Services with Spring Boot
         id: no-video-yet.mov?v123
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot with JPA
         id: no-video-yet.mov?v124
         type: Watch
+        preview: false
         time: 3m15s
       - name: Packaging and Deployment
         id: no-video-yet.mov?v125
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing in Spring Boot
         id: no-video-yet.mov?v126
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v9
         type: Read
+        preview: false
   - name: Spring Batch
     lectures:
       - name: Batch Processing
         id: no-video-yet.mov?v127
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Batch Architecture
         id: no-video-yet.mov?v128
         type: Watch
+        preview: false
         time: 3m15s
       - name: Job and Step Definitions
         id: no-video-yet.mov?v129
         type: Watch
+        preview: false
         time: 3m15s
       - name: Readers, Writers, and Processors
         id: no-video-yet.mov?v130
         type: Watch
+        preview: false
         time: 3m15s
       - name: Job Repository and Job Launcher
         id: no-video-yet.mov?v132
         type: Watch
+        preview: false
         time: 3m15s
       - name: Execution Context
         id: no-video-yet.mov?v133
         type: Watch
+        preview: false
         time: 3m15s
       - name: Chunk-Oriented Processing
         id: no-video-yet.mov?v134
         type: Watch
+        preview: false
         time: 3m15s
       - name: Tasklet Steps
         id: no-video-yet.mov?v135
         type: Watch
+        preview: false
         time: 3m15s
       - name: Batch Configuration
         id: no-video-yet.mov?v136
         type: Watch
+        preview: false
         time: 3m15s
       - name: Retry and Skip Policies
         id: no-video-yet.mov?v138
         type: Watch
+        preview: false
         time: 3m15s
       - name: Error Handling and Recovery
         id: no-video-yet.mov?v139
         type: Watch
+        preview: false
         time: 3m15s
       - name: Scaling and Parallel Processing
         id: no-video-yet.mov?v140
         type: Watch
+        preview: false
         time: 3m15s
       - name: Job Partitioning
         id: no-video-yet.mov?v141
         type: Watch
+        preview: false
         time: 3m15s
       - name: Integrating with Spring Boot
         id: no-video-yet.mov?v142
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Batch Jobs
         id: no-video-yet.mov?v143
         type: Watch
+        preview: false
         time: 3m15s
       - name: Monitoring Batch Jobs
         id: no-video-yet.mov?v1431
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v10
         type: Read
+        preview: false
   - name: Spring Integration
     lectures:
       - name: Overview of Spring Integration
         id: no-video-yet.mov?v144
         type: Watch
+        preview: false
         time: 3m15s
       - name: Integration Patterns
         id: no-video-yet.mov?v145
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Channels
         id: no-video-yet.mov?v146
         type: Watch
+        preview: false
         time: 3m15s
       - name: Message Endpoints
         id: no-video-yet.mov?v147
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transformers
         id: no-video-yet.mov?v148
         type: Watch
+        preview: false
         time: 3m15s
       - name: Routers
         id: no-video-yet.mov?v149
         type: Watch
+        preview: false
         time: 3m15s
       - name: Filters
         id: no-video-yet.mov?v150
         type: Watch
+        preview: false
         time: 3m15s
       - name: Splitters and Aggregators
         id: no-video-yet.mov?v151
         type: Watch
+        preview: false
         time: 3m15s
       - name: Service Activators
         id: no-video-yet.mov?v152
         type: Watch
+        preview: false
         time: 3m15s
       - name: Adapters for External Systems
         id: no-video-yet.mov?v153
         type: Watch
+        preview: false
         time: 3m15s
       - name: Error Handling
         id: no-video-yet.mov?v154
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Management
         id: no-video-yet.mov?v155
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuring with XML
         id: no-video-yet.mov?v156
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuring with Annotations
         id: no-video-yet.mov?v157
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security in Integration
         id: no-video-yet.mov?v158
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v11
         type: Read
+        preview: false
   - name: Spring WebFlux
     lectures:
       - name: Reactive Programming
         id: no-video-yet.mov?v159
         type: Watch
+        preview: false
         time: 3m15s
       - name: WebFlux vs. MVC
         id: no-video-yet.mov?v160
         type: Watch
+        preview: false
         time: 3m15s
       - name: Project Reactor Basics
         id: no-video-yet.mov?v161
         type: Watch
+        preview: false
         time: 3m15s
       - name: Reactive REST Services
         id: no-video-yet.mov?v162
         type: Watch
+        preview: false
         time: 3m15s
       - name: WebClient
         id: no-video-yet.mov?v163
         type: Watch
+        preview: false
         time: 3m15s
       - name: Functional Endpoints
         id: no-video-yet.mov?v164
         type: Watch
+        preview: false
         time: 3m15s
       - name: WebSockets with WebFlux
         id: no-video-yet.mov?v165
         type: Watch
+        preview: false
         time: 3m15s
       - name: Server-Sent Events (SSE)
         id: no-video-yet.mov?v166
         type: Watch
+        preview: false
         time: 3m15s
       - name: Error Handling in WebFlux
         id: no-video-yet.mov?v167
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Reactive Applications
         id: no-video-yet.mov?v168
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security in Reactive Applications
         id: no-video-yet.mov?v169
         type: Watch
+        preview: false
         time: 3m15s
       - name: Backpressure Management
         id: no-video-yet.mov?v170
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v12
         type: Read
+        preview: false
   - name: Spring Transaction Management
     lectures:
       - name: Basics of Transactions
         id: no-video-yet.mov?v171
         type: Watch
+        preview: false
         time: 3m15s
       - name: Declarative vs. Programmatic
         id: no-video-yet.mov?v172
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Isolation Levels
         id: no-video-yet.mov?v173
         type: Watch
+        preview: false
         time: 3m15s
       - name: Propagation Behaviors
         id: no-video-yet.mov?v174
         type: Watch
+        preview: false
         time: 3m15s
       - name: Rollback Rules
         id: no-video-yet.mov?v175
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Attributes
         id: no-video-yet.mov?v176
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Boundaries
         id: no-video-yet.mov?v177
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transactions with JPA
         id: no-video-yet.mov?v178
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transaction Events
         id: no-video-yet.mov?v179
         type: Watch
+        preview: false
         time: 3m15s
       - name: Chained Transactions
         id: no-video-yet.mov?v180
         type: Watch
+        preview: false
         time: 3m15s
       - name: Handling Deadlocks
         id: no-video-yet.mov?v181
         type: Watch
+        preview: false
         time: 3m15s
       - name: Distributed Transactions
         id: no-video-yet.mov?v182
         type: Watch
+        preview: false
         time: 3m15s
       - name: Best Practices
         id: no-video-yet.mov?v1821
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v13
         type: Read
+        preview: false
   - name: Spring Profiles and Environment Management
     lectures:
       - name: Understanding Spring Profiles
         id: no-video-yet.mov?v183
         type: Watch
+        preview: false
         time: 3m15s
       - name: Configuring Profiles
         id: no-video-yet.mov?v184
         type: Watch
+        preview: false
         time: 3m15s
       - name: Activating Profiles
         id: no-video-yet.mov?v185
         type: Watch
+        preview: false
         time: 3m15s
       - name: Environment Abstraction
         id: no-video-yet.mov?v186
         type: Watch
+        preview: false
         time: 3m15s
       - name: Property Management
         id: no-video-yet.mov?v187
         type: Watch
+        preview: false
         time: 3m15s
       - name: Externalized Configuration
         id: no-video-yet.mov?v188
         type: Watch
+        preview: false
         time: 3m15s
       - name: Conditional Bean Creation
         id: no-video-yet.mov?v189
         type: Watch
+        preview: false
         time: 3m15s
       - name: Profiles in Testing
         id: no-video-yet.mov?v190
         type: Watch
+        preview: false
         time: 3m15s
       - name: Profiles in Testing
         id: no-video-yet.mov?v191
         type: Watch
+        preview: false
         time: 3m15s
       - name: Managing Multiple Environments
         id: no-video-yet.mov?v192
         type: Watch
+        preview: false
         time: 3m15s
       - name: Spring Boot Profiles
         id: no-video-yet.mov?v193
         type: Watch
+        preview: false
         time: 3m15s
       - name: Overriding Properties
         id: no-video-yet.mov?v194
         type: Watch
+        preview: false
         time: 3m15s
       - name: Property Sources
         id: no-video-yet.mov?v195
         type: Watch
+        preview: false
         time: 3m15s
       - name: Encrypting Properties
         id: no-video-yet.mov?v196
         type: Watch
+        preview: false
         time: 3m15s
       - name: Config Server with Profiles
         id: no-video-yet.mov?v197
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v14
         type: Read
+        preview: false
   - name: Spring Testing
     lectures:
       - name: Unit Testing
         id: no-video-yet.mov?v198
         type: Watch
+        preview: false
         time: 3m15s
       - name: Integration Testing
         id: no-video-yet.mov?v199
         type: Watch
+        preview: false
         time: 3m15s
       - name: String Test Context Framework
         id: no-video-yet.mov?v200
         type: Watch
+        preview: false
         time: 3m15s
       - name: Mocking Beans
         id: no-video-yet.mov?v201
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing REST Services
         id: no-video-yet.mov?v202
         type: Watch
+        preview: false
         time: 3m15s
       - name: Database Testing with Spring
         id: no-video-yet.mov?v203
         type: Watch
+        preview: false
         time: 3m15s
       - name: Transactional Testing
         id: no-video-yet.mov?v204
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Web Applications
         id: no-video-yet.mov?v205
         type: Watch
+        preview: false
         time: 3m15s
       - name: Security Testing
         id: no-video-yet.mov?v206
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testing Asynchronous Code
         id: no-video-yet.mov?v207
         type: Watch
+        preview: false
         time: 3m15s
       - name: MockMvc and WebTestClient
         id: no-video-yet.mov?v208
         type: Watch
+        preview: false
         time: 3m15s
       - name: Testcontainers for Database Testing
         id: no-video-yet.mov?v209
         type: Watch
+        preview: false
         time: 3m15s
       - name: Wrap Up
         id: no-document-yet.html?v15
         type: Read
+        preview: false
 
