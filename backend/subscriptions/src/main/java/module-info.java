@@ -13,4 +13,5 @@ module subscriptions {
     requires org.checkerframework.checker.qual;
     requires spring.web;
     requires spring.data.commons;
+    requires spring.data.jpa;
 }
