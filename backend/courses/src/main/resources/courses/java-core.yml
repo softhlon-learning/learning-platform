@@ -268,7 +268,7 @@ chapters:
         type: Watch
         time: 2m5s
       - name: Equals and Hashcode
-        id: no-video-yet.mov?v673
+        id: no-video-yet.mov?v6731
         type: Watch
         time: 2m5s
       - name: InstanceOf Operator
@@ -1279,7 +1279,7 @@ chapters:
         type: Watch
         time: 2m5s
       - name: TCP Client-Server
-        id: no-video-yet.mov?v915
+        id: no-video-yet.mov?v9151
         type: Watch
         time: 2m5s
       - name: Datagrams (UDP)
@@ -1480,7 +1480,7 @@ chapters:
         type: Watch
         time: 2m5s
       - name: Apache Commons Validator
-        id: no-video-yet.mov?v963
+        id: no-video-yet.mov?v9631
         type: Watch
         time: 2m5s
       - name: Guava Overview
