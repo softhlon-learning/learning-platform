@@ -39,6 +39,14 @@ public class LoadAccountByEmailOperator {
         };
     }
 
+    private AccountView accountView(
+          Account account) {
+
+        return new AccountView(
+              account.id(),
+              account.email());
+    }
+
     public sealed interface LoadAccountResult {
         record AccountLoaded(AccountView account) implements LoadAccountResult {}
         record AccountNotLoaded() implements LoadAccountResult {}
@@ -48,12 +56,4 @@ public class LoadAccountByEmailOperator {
     public record AccountView(
           UUID id,
           String email) {}
-
-    private AccountView accountView(
-          Account account) {
-
-        return new AccountView(
-              account.id(),
-              account.email());
-    }
 }

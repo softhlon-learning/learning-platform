@@ -16,12 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.subscriptions.gateway.RestResources.CUSTOMER_PORTAL;
 
 // ---------------------------------------------------------------------------------------------------------------------
