@@ -50,7 +50,7 @@ chapters:
         time: 3m15s
         processed: false
       - name: Microservices and DevOps
-        id: no-video-yet.mov?v6
+        id: no-video-yet.mov?v611
         type: Watch
         time: 3m15s
         processed: false
@@ -310,7 +310,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Helm Charts for K8s
-        id: no-video-yet.mov?v61
+        id: no-video-yet.mov?v611
         type: Watch
         time: 3m15s
       - name: Stateful Sets and Persistent Volumes
@@ -437,7 +437,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Resource Limits in Kubernetes
-        id: no-video-yet.mov?v88
+        id: no-video-yet.mov?v881
         type: Watch
         time: 3m15s
       - name: Wrap Up
@@ -454,7 +454,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Circuit Breaker Implementation
-        id: no-video-yet.mov?v90
+        id: no-video-yet.mov?v901
         type: Watch
         time: 3m15s
       - name: Timeouts and Bulkheads
