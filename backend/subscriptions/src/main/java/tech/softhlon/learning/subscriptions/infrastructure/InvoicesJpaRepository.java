@@ -20,10 +20,10 @@ interface InvoicesJpaRepository extends CrudRepository<InvoiceEntity, UUID> {
 
     @Query(value = """
               UPDATE _subscriptions.subscriptions 
-              SET active = true WHERE invoiceId = :invoiceId
+              SET active = true WHERE invoice_iod = :invoiceId
           """,
           nativeQuery = true)
     @Modifying
-    void avtivatePaidSusbcription(@Param("invoiceId") String invoiceId);
+    void avtivatePaidSubscription(@Param("invoiceId") String invoiceId);
 
 }

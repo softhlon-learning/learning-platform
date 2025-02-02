@@ -29,7 +29,7 @@ class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
             invoicesJpaRepository.save(
                   entity(request));
 
-            invoicesJpaRepository.avtivatePaidSusbcription(
+            invoicesJpaRepository.avtivatePaidSubscription(
                   request.invoiceId());
 
             return new InvoicePersisted();
