@@ -5,17 +5,16 @@
     top: 0;
     right: 0;
     text-align: right;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.footer {
+.version {
     margin-left: 20px;
     position: absolute;
     top: 0px;
     left: 0;
     text-align: left;
-    font-size: 20px;
-    color: var(--gray);
+    font-size: 18px;
 }
 
 button {
