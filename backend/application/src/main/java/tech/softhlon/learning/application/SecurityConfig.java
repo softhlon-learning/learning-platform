@@ -44,6 +44,7 @@ class SecurityConfig {
                           "/api/v1/subscription/created-event",
                           "/api/v1/subscription/updated-event",
                           "/api/v1/subscription/deleted-event",
+                          "/api/v1/subscription/invoice-paid-event",
                           "/api/v1/subscription/generic-event"
                     ).permitAll()
                     .anyRequest().authenticated())
