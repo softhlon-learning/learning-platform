@@ -19,8 +19,8 @@ public interface PersistInvoiceRepository {
           PersistInvoiceRequest request);
 
     sealed interface PersistInvoiceResult {
-        record CheckoutSessionPersisted() implements PersistInvoiceResult {}
-        record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistInvoiceResult {}
+        record InvoicePersisted() implements PersistInvoiceResult {}
+        record InvoicePersistenceFailed(Throwable cause) implements PersistInvoiceResult {}
     }
 
     record PersistInvoiceRequest(

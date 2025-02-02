@@ -62,6 +62,28 @@ public class StripeEventUtil {
 
     }
 
+    static String invoiceId(Event event) {
+
+        return new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .object()
+              .id();
+
+    }
+
+    static boolean paid(Event event) {
+
+        return Boolean.getBoolean(new Gson()
+              .fromJson(
+                    event.getData().toJson(),
+                    DataObject.class)
+              .object()
+              .paid());
+
+    }
+
     static StripeEventObject stripeObject(Event event) {
 
         return new Gson()
@@ -80,6 +102,7 @@ public class StripeEventUtil {
           String id,
           String customer,
           String email,
+          String paid,
           @SerializedName("current_period_start")
           String periodStartAt,
           @SerializedName("current_period_end")
