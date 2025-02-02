@@ -5,10 +5,7 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -18,9 +15,10 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Entity
 @Getter
 @Builder
-@Entity(name = "invalidated_tokens")
+@Table(name = "invalidated_tokens", schema = "_accounts")
 class InvalidatedEntity {
 
     @Id

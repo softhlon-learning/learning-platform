@@ -5,10 +5,7 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
@@ -19,12 +16,13 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 
+@Entity
 @Getter
 @Setter
 @Builder
-@Entity(name = "reset_password_tokens")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "reset_password_tokens", schema = "_accounts")
 class PasswordTokenEntity {
 
     @Id

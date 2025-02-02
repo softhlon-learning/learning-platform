@@ -5,10 +5,7 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
@@ -17,10 +14,11 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Entity
 @Getter
 @Setter
 @Builder
-@Entity(name = "accounts")
+@Table(name = "accounts", schema = "_accounts")
 @AllArgsConstructor
 @NoArgsConstructor
 class AccountEntity {

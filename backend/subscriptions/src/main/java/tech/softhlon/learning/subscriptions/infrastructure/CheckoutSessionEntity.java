@@ -5,25 +5,23 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+@Entity
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "checkout_sessions")
+@Table(name = "checkout_sessions", schema = "_subscriptions")
 class CheckoutSessionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

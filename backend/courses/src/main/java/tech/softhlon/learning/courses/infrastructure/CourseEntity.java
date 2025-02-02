@@ -7,6 +7,7 @@ package tech.softhlon.learning.courses.infrastructure;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.util.UUID;
@@ -15,10 +16,11 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Entity
 @Getter
 @Setter
 @Builder
-@Entity(name = "courses")
+@Table(name = "courses", schema = "_courses")
 @AllArgsConstructor
 @NoArgsConstructor
 class CourseEntity {

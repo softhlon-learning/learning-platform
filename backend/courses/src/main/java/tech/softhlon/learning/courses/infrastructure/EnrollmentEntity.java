@@ -15,10 +15,11 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Entity
 @Getter
 @Setter
 @Builder
-@Entity(name = "enrollments")
+@Table(name = "enrollments", schema = "_courses")
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnrollmentEntity {

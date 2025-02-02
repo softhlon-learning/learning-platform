@@ -5,10 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,10 +16,11 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+@Entity
 @Getter
 @Setter
 @Builder
-@Entity(name = "events_log")
+@Table(name = "events_log", schema = "_subscriptions")
 public class EventLogEntity {
 
     @Id
