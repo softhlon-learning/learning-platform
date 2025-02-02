@@ -494,7 +494,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Why GraphQL?
-        id: no-video-yet.mov?v108
+        id: no-video-yet.mov?v1081
         type: Watch
         time: 3m15s
       - name: Schemas, Queries, and Mutations
@@ -791,7 +791,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Localization Techniques
-        id: no-video-yet.mov?v175
+        id: no-video-yet.mov?v1751
         type: Watch
         time: 3m15s
       - name: Date and Time Formats
@@ -889,7 +889,7 @@ chapters:
         type: Watch
         time: 3m15s
       - name: Mitigation Strategies
-        id: no-video-yet.mov?v196
+        id: no-video-yet.mov?v1961
         type: Watch
         time: 3m15s
       - name: Wrap Up
