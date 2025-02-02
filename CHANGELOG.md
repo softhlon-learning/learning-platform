@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.12
+_release date: 2025-02-02_
+ * accounts: Add javadocs (domain) - continuation
+ * accounts: Add javadocs (domain) - finish
+
 ## 0.43.11
 _release date: 2025-02-02_
  * accounts: Add javadocs (domain) - continuation
