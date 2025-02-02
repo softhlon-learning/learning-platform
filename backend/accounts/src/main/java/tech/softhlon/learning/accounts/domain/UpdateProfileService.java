@@ -17,10 +17,19 @@ import java.util.UUID;
 @FunctionalInterface
 public interface UpdateProfileService {
 
+    /**
+     * Update user's profile.
+     * @param accountId Account Id
+     * @param name      User's name
+     * @return Result
+     */
     Result execute(
           UUID accountId,
           String name);
 
+    /**
+     * Update user's profile result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotFoundFailed(String message) implements Result {}

@@ -17,11 +17,21 @@ import java.util.UUID;
 @FunctionalInterface
 public interface SignUpService {
 
+    /**
+     * Sign up a new user.
+     * @param name     User's name
+     * @param email    User's email
+     * @param password User's password
+     * @return Result
+     */
     Result execute(
           String name,
           String email,
           String password);
 
+    /**
+     * Sign up a new user result.
+     */
     sealed interface Result {
         record Succeeded(UUID id, String token) implements Result {}
         record AccountAlreadyExistsFailed(String message) implements Result {}

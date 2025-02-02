@@ -42,6 +42,9 @@ class SignUpServiceImpl implements SignUpService {
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final JwtService jwtService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String name,

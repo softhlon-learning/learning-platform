@@ -33,6 +33,9 @@ class UpdateProfileServiceImpl implements UpdateProfileService {
     private final LoadAccountRepository loadAccountRepository;
     private final PersistAccountRepository persistAccountRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId,

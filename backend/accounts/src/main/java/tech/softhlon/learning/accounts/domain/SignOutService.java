@@ -15,9 +15,17 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface SignOutService {
 
+    /**
+     * Sign out user.
+     * @param token Authentication token
+     * @return Result
+     */
     Result execute(
           String token);
 
+    /**
+     * Sing out user result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record NotAuthorized(String message) implements Result {}

@@ -31,6 +31,9 @@ class SignOutServiceImpl implements SignOutService {
     private final CreateInvalidatedTokenRepository createInvalidatedTokenRepository;
     private final JwtService jwtService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String token) {

@@ -15,10 +15,19 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface UpdatePasswordService {
 
+    /**
+     * Update user's password.
+     * @param token    Reset password token
+     * @param password New password
+     * @return Result
+     */
     Result execute(
           String token,
           String password);
 
+    /**
+     * Update user's password result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record PasswordPolicyFailed(String message) implements Result {}

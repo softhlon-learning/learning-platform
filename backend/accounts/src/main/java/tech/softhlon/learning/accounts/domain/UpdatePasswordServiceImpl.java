@@ -46,6 +46,9 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     private final DeletePasswordTokenRepository deletePasswordTokenRepository;
     private final PasswordValidationService passwordValidationService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String token,
