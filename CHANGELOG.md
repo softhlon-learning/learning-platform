@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.3
+_release date: 2025-02-02_
+ * application: Add /api/v1/subscription/invoice-paid-event to permitted paths
+ * subscriptions: Fix read payment status from 'invoice.paid' event
+ * subscriptions: Test integration wirh Stripe
+
 ## 0.43.2
 _release date: 2025-02-02_
  * application: Add stripe.invoice-paid.webhook.secret parameter
