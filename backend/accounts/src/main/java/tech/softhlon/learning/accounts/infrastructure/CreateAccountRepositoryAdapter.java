@@ -25,6 +25,9 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
 
     private final AccountsJpaRepository accountsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CreateAccountResult execute(
           String type,

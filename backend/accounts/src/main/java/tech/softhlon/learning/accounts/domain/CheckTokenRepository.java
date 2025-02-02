@@ -18,7 +18,7 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 public interface CheckTokenRepository {
 
     /**
-     * Checks if given token hash exists in repository.
+     * Check if given token hash exists in repository.
      * @param tokenHash Token hash to be checked
      * @return CheckTokenResult
      */

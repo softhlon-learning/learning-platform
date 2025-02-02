@@ -20,7 +20,7 @@ import java.util.UUID;
 public interface CheckAccountByEmailRepository {
 
     /**
-     * Checks if account associated with given email exists in repostitory.
+     * Check if account associated with given email exists in repostitory.
      * @param email Email to be checked
      * @return CheckAccountByEmailResult
      */

@@ -19,12 +19,23 @@ import java.util.UUID;
 @FunctionalInterface
 public interface CreateAccountRepository {
 
+    /**
+     * Create account in repository.
+     * @param type     Account type (GOOGLE, PASSWORD, etc...)
+     * @param name     User's name
+     * @param email    User's email
+     * @param password User's password
+     * @return CreateAccountResult
+     */
     CreateAccountResult execute(
           String type,
           String name,
           String email,
           String password);
 
+    /**
+     * Create account result.
+     */
     sealed interface CreateAccountResult {
         record AccountPersisted(UUID uuid) implements CreateAccountResult {}
         record AccountPersistenceFailed(Throwable cause) implements CreateAccountResult {}
