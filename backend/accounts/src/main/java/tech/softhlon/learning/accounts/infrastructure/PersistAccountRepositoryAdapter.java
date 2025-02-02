@@ -24,6 +24,9 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
 
     private final AccountsJpaRepository accountsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistAccountResult execute(
           PersistAccountRequest request) {

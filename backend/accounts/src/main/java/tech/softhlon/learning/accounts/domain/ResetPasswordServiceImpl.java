@@ -63,6 +63,9 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String email) {

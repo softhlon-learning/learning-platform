@@ -11,6 +11,11 @@ package tech.softhlon.learning.accounts.domain;
 
 interface PasswordValidationService {
 
+    /**
+     * Check if password is in correct format.
+     * @param password User's password
+     * @return True if passsword format is correct
+     */
     boolean isPasswordValid(
           String password);
 

@@ -19,6 +19,9 @@ class PasswordValidationServiceImpl implements PasswordValidationService {
     private final Pattern passwordCharsPattern =
           Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isPasswordValid(
           String password) {

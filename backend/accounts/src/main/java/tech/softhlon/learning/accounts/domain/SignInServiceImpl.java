@@ -26,6 +26,9 @@ class SignInServiceImpl implements SignInService {
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final JwtService jwtService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String email,

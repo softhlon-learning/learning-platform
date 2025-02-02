@@ -17,9 +17,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface PersistAccountRepository {
 
+    /**
+     * Persist account in repository.
+     * @param request Account data
+     * @return PersistAccountResult
+     */
     PersistAccountResult execute(
           PersistAccountRequest request);
 
+    /**
+     * Persist account in repository result.
+     */
     sealed interface PersistAccountResult {
         record AccountPersisted(UUID uuid) implements PersistAccountResult {}
         record AccountNotFoundInDatabase() implements PersistAccountResult {}

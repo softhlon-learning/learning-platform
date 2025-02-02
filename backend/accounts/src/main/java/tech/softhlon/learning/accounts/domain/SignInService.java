@@ -15,10 +15,19 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface SignInService {
 
+    /**
+     * Sign in with email and password.
+     * @param email    User's email
+     * @param password USer's apssword
+     * @return Result
+     */
     Result execute(
           String email,
           String password);
 
+    /**
+     * Sign in with email and password result.
+     */
     sealed interface Result {
         record Succeeded(String token) implements Result {}
         record EmailPolicyFailed(String message) implements Result {}

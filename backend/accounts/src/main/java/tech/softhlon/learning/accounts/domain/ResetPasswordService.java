@@ -15,9 +15,17 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 @FunctionalInterface
 public interface ResetPasswordService {
 
+    /**
+     * Reset password for given email.
+     * @param email User's email
+     * @return Result
+     */
     Result execute(
           String email);
 
+    /**
+     * Reset password for given email result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record EmailPolicyFailed(String message) implements Result {}
