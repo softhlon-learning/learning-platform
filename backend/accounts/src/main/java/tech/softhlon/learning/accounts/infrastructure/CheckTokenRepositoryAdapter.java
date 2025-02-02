@@ -25,6 +25,9 @@ class CheckTokenRepositoryAdapter implements CheckTokenRepository {
 
     private final InvalidatedTokensJpaRepository invalidatedTokensRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CheckTokenResult execute(
           String tokenHash) {

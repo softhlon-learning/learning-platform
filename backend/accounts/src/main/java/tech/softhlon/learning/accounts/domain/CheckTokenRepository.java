@@ -17,9 +17,17 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 @FunctionalInterface
 public interface CheckTokenRepository {
 
+    /**
+     * Checks if given token hash exists in repository.
+     * @param tokenHash Token hash to be checked
+     * @return CheckTokenResult
+     */
     CheckTokenResult execute(
           String tokenHash);
 
+    /**
+     * Check token hash result.
+     */
     sealed interface CheckTokenResult {
         record TokenExists() implements CheckTokenResult {}
         record TokenNotFound() implements CheckTokenResult {}
