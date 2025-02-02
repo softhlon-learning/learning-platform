@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.1
+_release date: 2025-02-02_
+ * subscriptions: Implement PersistInvoiceRepositoryAdapter
+ * subscriptions: Implement SubmitInvoicePaidServiceImpl
+
 ## 0.43.0
 _release date: 2025-02-02_
  * subscriptions: Add PersistInvoiceRepository
