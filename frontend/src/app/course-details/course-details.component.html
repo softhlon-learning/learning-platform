@@ -24,8 +24,9 @@
                   class="{{this.getLectureClass(lecture)}}">
                 <label class="checkbox">
                   <input [checked]="lecture.processed" [disabled]="true" class="course-checked" type="checkbox"/>
-                  <span *ngIf="!lecture.preview" class="name-inactive">{{ lecture.name }}</span>
-                  <span *ngIf="lecture.preview" class="name">{{ lecture.name }} (Preview)</span>
+                  <span *ngIf="this.displayMode(lecture) === 'unlocked'" class="name">{{ lecture.name }}</span>
+                  <span *ngIf="this.displayMode(lecture) === 'preview'" class="name">{{ lecture.name }} (Preview)</span>
+                  <span *ngIf="this.displayMode(lecture) === 'locked'" class="name-inactive">{{ lecture.name }}</span>
                   <span *ngIf="lecture.type" class="type">&nbsp; - {{ lecture.type }}</span>
                   <span *ngIf="lecture.time" class="type">&nbsp;({{ lecture.time }})</span>
                 </label>
