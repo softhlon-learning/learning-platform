@@ -6,6 +6,11 @@
 import {Component, Input, OnInit} from '@angular/core'
 import {CourseNavigation} from "../course-navigation/course-navigation"
 import {CourseDetailsComponent} from "../course-details/course-details.component"
+import {FormBuilder} from "@angular/forms";
+import {AccountsService} from "../service/accounts/accounts.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
+import {GO_BACK_APTH_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -27,9 +32,12 @@ export class LockedLectureComponent implements OnInit {
     @Input()
     coursePath: string = ''
 
-    constructor() {
+    constructor(
+        private cookieService: CookieService,
+        private router: Router) {
     }
 
     ngOnInit(): void {
+        this.cookieService.set(GO_BACK_APTH_COOKIE, this.router.url)
     }
 }

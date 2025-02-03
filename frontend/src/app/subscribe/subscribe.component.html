@@ -20,7 +20,7 @@
                     <div style="font-size: 20px; font-weight: bold">Subscribe & Pay</div>
                 </div>
             </button>
-            <button class="cancel" routerLink="/home">Close</button>
+            <button (click)="this.close()" class="cancel" >Close</button>
             <div class="error">{{ error }}</div>
         </div>
         <div *ngIf="this.success">

@@ -10,7 +10,7 @@ import {CourseContent} from "../model/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
 import {CoursesService} from "../service/courses/courses.service";
-import {AUTHENTICATED_COOKIE} from "../common/constants";
+import {AUTHENTICATED_COOKIE, GO_BACK_APTH_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -36,6 +36,10 @@ export class CourseTocComponent implements OnInit {
 
     ngOnInit() {
         this.fetchCourses()
+    }
+
+    ngAfterViewInit() {
+        this.cookieService.set(GO_BACK_APTH_COOKIE, this.router.url)
     }
 
     /**

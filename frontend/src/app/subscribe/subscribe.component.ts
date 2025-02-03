@@ -7,6 +7,9 @@ import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
 import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
 import {NgxSpinnerService} from "ngx-spinner";
+import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
+import {GO_BACK_APTH_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -29,6 +32,8 @@ export class SubscribeComponent implements OnInit {
 
     constructor(
         private subscriptionsService: SubscriptionsService,
+        private router: Router,
+        private cookieService: CookieService,
         private spinner: NgxSpinnerService) {
     }
 
@@ -50,6 +55,16 @@ export class SubscribeComponent implements OnInit {
             next: (response) => this.handleSuccess(response),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         })
+    }
+
+    close() {
+        const goBackUJrl = this.cookieService.get(GO_BACK_APTH_COOKIE);
+        if (goBackUJrl != null) {
+            this.cookieService.delete(GO_BACK_APTH_COOKIE)
+            this.router.navigate([goBackUJrl])
+        } else {
+            this.router.navigate(['/home'])
+        }
     }
 
     /**
