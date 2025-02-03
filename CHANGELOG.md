@@ -2,6 +2,12 @@
 
 ## 0.44.1
 _release date: 2025-02-03_
+ * frontend: Improved styling for locked-lecture
+ * frontend: Add constants.ts
+ * frontend: Use constants.ts
+
+## 0.44.1
+_release date: 2025-02-03_
  * courses: Update preview flag for selected lectures
  * frontend: Add locked-lecture.component
  * frontend: Display locked-lecture when needed
