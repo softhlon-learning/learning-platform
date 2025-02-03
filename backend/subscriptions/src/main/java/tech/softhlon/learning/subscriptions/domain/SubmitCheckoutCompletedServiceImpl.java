@@ -108,10 +108,4 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
 
     }
 
-    record DataObject(
-          Object object) {}
-
-    record Object(
-          String id,
-          String customer) {}
 }

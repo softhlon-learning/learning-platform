@@ -83,7 +83,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    Result persist(
+    private Result persist(
           StripeEventObject stripeEventObject) {
 
         var request = prepareRequest(
@@ -97,7 +97,7 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
         };
     }
 
-    PersistSubscriptionRequest prepareRequest(
+    private PersistSubscriptionRequest prepareRequest(
           StripeEventObject stripeEventObject) {
         return new PersistSubscriptionRequest(
               null,

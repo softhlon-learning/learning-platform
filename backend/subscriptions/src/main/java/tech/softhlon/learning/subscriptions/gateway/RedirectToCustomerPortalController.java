@@ -54,6 +54,9 @@ class RedirectToCustomerPortalController {
 
     }
 
+    record CreateCheckoutResponse(
+          String redirectUrl) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
@@ -66,6 +69,5 @@ class RedirectToCustomerPortalController {
 
     }
 
-    record CreateCheckoutResponse(
-          String redirectUrl) {}
+
 }

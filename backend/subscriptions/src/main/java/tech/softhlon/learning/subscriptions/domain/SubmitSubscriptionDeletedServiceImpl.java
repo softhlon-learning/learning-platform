@@ -90,7 +90,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    Result persist(
+    private Result persist(
           String subscriptionId,
           Subscription subscription) {
 
@@ -106,7 +106,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
         };
     }
 
-    PersistSubscriptionRequest prepareRequest(
+    private PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
           Subscription subscription) {
 
