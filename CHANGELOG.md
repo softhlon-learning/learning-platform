@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.43.17
+_release date: 2025-02-03_
+ * subscriptions: Remove Deactivate* stuff
+
 ## 0.43.16
 _release date: 2025-02-03_
  * subscriptions: Do not deactivate subscription SubmitSubscriptionUpdatedService
