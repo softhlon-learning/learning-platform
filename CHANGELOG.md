@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.4
+_release date: 2025-02-03_
+ * courses: Implement HideCourseContentService
+ * courses: Integrate ListCoursesServiceImpl with HideCourseContentService
+
 ## 0.44.3
 _release date: 2025-02-03_
  * frontend: Set proper GoBackPath cookie values
