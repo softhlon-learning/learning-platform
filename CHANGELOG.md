@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.44.8
+_release date: 2025-02-03_
+ * courses: Private sections cleanup (infrastructure)
+ * accounts: Add gateway sub-packages (controller, operator)
+ * subscriptions: Add gateway sub-packages (controller, operator)
+ * subscriptions: Private sections cleanup (infrastructure)
+
 ## 0.44.7
 _release date: 2025-02-03_
  * accounts: Private sections cleanup (gateway)
