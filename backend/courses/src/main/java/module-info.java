@@ -20,4 +20,5 @@ module courses {
     requires org.slf4j;
     requires com.google.gson;
     requires org.apache.tomcat.embed.core;
+    requires org.checkerframework.checker.qual;
 }

@@ -37,6 +37,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private final LoadCoursesRepository loadCoursesRepository;
     private final LoadEnrollmentRepository loadEnrollmentRepository;
     private final CheckSubscriptionOperator checkSubscriptionOperator;
+    private final HideCourseContentService hideCourseContentService;
 
     @Override
     public Result execute(
@@ -71,6 +72,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
               courses.stream()
                     .map(course -> courseView(course, accountId))
                     .map(courseView -> mapEnrolled(courseView, accountId))
+                    .map(courseView -> hideLockedLectures(result instanceof Subscribed, courseView))
                     .sorted(Comparator.comparing(CourseView::orderNo))
                     .toList(),
               subscribed);
@@ -89,6 +91,28 @@ class ListCoursesServiceImpl implements ListCoursesService {
               course.description(),
               course.content(),
               false);
+
+    }
+
+    private CourseView hideLockedLectures(
+          boolean subscribed,
+          CourseView courseView) {
+
+        if (subscribed) {
+            return courseView;
+        } else {
+            String contentJson = courseView.content();
+            String updatedContentJson = hideCourseContentService.execute(contentJson);
+            return new CourseView(
+                  courseView.id(),
+                  courseView.code(),
+                  courseView.orderNo(),
+                  courseView.name(),
+                  courseView.description(),
+                  updatedContentJson,
+                  courseView.enrolled()
+            );
+        }
 
     }
 
