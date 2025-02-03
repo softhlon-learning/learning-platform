@@ -36,6 +36,22 @@ class ContentService {
 
     }
 
+    record CourseContent(
+          List<Chapter> chapters) {}
+
+    record Chapter(
+          String name,
+          List<Lecture> lectures) {}
+
+    record Lecture(
+          String id,
+          String name,
+          String type,
+          boolean preview,
+          boolean processed,
+          String time,
+          boolean selected) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
@@ -77,21 +93,5 @@ class ContentService {
               .encodeToString(value.getBytes());
 
     }
-
-    record CourseContent(
-          List<Chapter> chapters) {}
-
-    record Chapter(
-          String name,
-          List<Lecture> lectures) {}
-
-    record Lecture(
-          String id,
-          String name,
-          String type,
-          boolean preview,
-          boolean processed,
-          String time,
-          boolean selected) {}
 
 }

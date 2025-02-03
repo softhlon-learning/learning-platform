@@ -140,7 +140,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
 
     }
 
-    MergeCourseResult persistEnrollment(
+    private MergeCourseResult persistEnrollment(
           MergeCourseReuqest reuqest,
           Enrollment enrollment,
           CourseContent enrollmentContent) {

@@ -65,22 +65,6 @@ class UpdateLectureController {
 
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
-    // Private Section
-    // -----------------------------------------------------------------------------------------------------------------
-
-    private Request prepareRequest(
-          UUID courseId,
-          UpdateLectureRequest updateEnrollmentRequest) {
-
-        return new Request(
-              authContext.accountId(),
-              courseId,
-              updateEnrollmentRequest.lectureId(),
-              updateEnrollmentRequest.processed());
-
-    }
-
     record UpdateLectureRequest(
           String lectureId,
           boolean processed) {
@@ -94,6 +78,22 @@ class UpdateLectureController {
                         processed);
 
         }
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Request prepareRequest(
+          UUID courseId,
+          UpdateLectureRequest updateEnrollmentRequest) {
+
+        return new Request(
+              authContext.accountId(),
+              courseId,
+              updateEnrollmentRequest.lectureId(),
+              updateEnrollmentRequest.processed());
 
     }
 
