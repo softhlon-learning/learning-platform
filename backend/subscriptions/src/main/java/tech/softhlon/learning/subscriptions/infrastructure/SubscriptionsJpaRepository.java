@@ -5,8 +5,10 @@
 
 package tech.softhlon.learning.subscriptions.infrastructure;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -29,4 +31,14 @@ interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, 
           """, nativeQuery = true)
     Optional<SubscriptionEntity> findByAccountId(
           UUID accountId);
+
+
+    @Query(value = """
+              UPDATE _subscriptions.subscriptions 
+              SET active = false WHERE cancel_at < now()
+          """,
+          nativeQuery = true)
+    @Modifying
+    void deactivateCanceledSubscriptions();
+
 }
