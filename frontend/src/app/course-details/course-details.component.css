@@ -85,6 +85,13 @@ ul {
     font-family: Verdana;
 }
 
+.name-inactive {
+    font-size: 13px;
+    font-weight: normal;
+    font-family: Verdana;
+    color: var(--light);
+}
+
 .type {
     font-family: Verdana;
     font-size: 13px;
