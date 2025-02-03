@@ -33,7 +33,7 @@ class DeactivateCanceledSubscriptionServiceImpl implements DeactivateCanceledSub
     @Scheduled(fixedRate = 1800_000)
     public void execute() {
         MDC.put(ACCOUNT, SCHEDULER);
-        log.info("service | Run cancel expired subscriptions");
+        log.info("service | Deactivate canceled subscriptions");
         deactivateSubscriptionsRepository.execute();
     }
 
