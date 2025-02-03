@@ -51,8 +51,8 @@ class SubmitInvoicePaidController {
         log.info("controller | request / Submit invoice.paid event");
 
         var result = service.execute(
-              httpRequest.getHeader(STRIPE_SIGNATURE),
-              payload);
+              payload,
+              httpRequest.getHeader(STRIPE_SIGNATURE));
 
         log.info("controller | response / Submit invoice.paid event: {}", result);
 

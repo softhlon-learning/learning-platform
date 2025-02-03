@@ -51,8 +51,8 @@ class SubmitSubscriptionCreatedController {
         log.info("controller | request / Submit customer.subscription.created event");
 
         var result = service.execute(
-              httpRequest.getHeader(STRIPE_SIGNATURE),
-              payload);
+              payload,
+              httpRequest.getHeader(STRIPE_SIGNATURE));
 
         log.info("controller | response / Submit customer.subscription.created event: {}", result);
 

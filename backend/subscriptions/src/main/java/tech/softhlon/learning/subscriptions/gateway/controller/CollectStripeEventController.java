@@ -66,12 +66,12 @@ class CollectStripeEventController {
 
         log.info("controller | request / Collect {} event",
               eventType(
-                    sigHeader,
-                    payload));
+                    payload,
+                    sigHeader));
 
         var result = service.execute(
-              sigHeader,
-              payload
+              payload,
+              sigHeader
         );
 
         return switch (result) {
@@ -85,8 +85,8 @@ class CollectStripeEventController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private String eventType(
-          String sigHeader,
-          String payload) throws SignatureVerificationException {
+          String payload,
+          String sigHeader) throws SignatureVerificationException {
 
         return Webhook.constructEvent(
               payload,

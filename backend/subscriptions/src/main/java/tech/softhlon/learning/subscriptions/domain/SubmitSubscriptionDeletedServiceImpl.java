@@ -57,8 +57,8 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
      */
     @Override
     public Result execute(
-          String sigHeader,
-          String payload) {
+          String payload,
+          String sigHeader) {
 
         try {
             var event = Webhook.constructEvent(

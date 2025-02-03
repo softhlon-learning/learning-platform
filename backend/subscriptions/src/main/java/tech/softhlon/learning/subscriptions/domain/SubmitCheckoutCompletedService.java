@@ -25,8 +25,8 @@ public interface SubmitCheckoutCompletedService {
      * @return Result
      */
     Result execute(
-          String sigHeader,
-          String payload);
+          String payload,
+          String sigHeader);
 
     /**
      * Submit checkout session completed Stripe event result.

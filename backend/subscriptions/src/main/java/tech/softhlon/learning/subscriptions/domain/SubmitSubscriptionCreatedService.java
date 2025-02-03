@@ -25,8 +25,8 @@ public interface SubmitSubscriptionCreatedService {
      * @return Result
      */
     Result execute(
-          String sigHeader,
-          String payload);
+          String payload,
+          String sigHeader);
 
     /**
      * Submit subscription created Stripe event result.

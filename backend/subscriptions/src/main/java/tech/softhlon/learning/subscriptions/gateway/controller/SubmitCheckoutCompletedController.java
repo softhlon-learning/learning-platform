@@ -52,8 +52,8 @@ class SubmitCheckoutCompletedController {
         log.info("controller | request / Submit checkout.session.completed event");
 
         var result = service.execute(
-              httpRequest.getHeader(STRIPE_SIGNATURE),
-              payload);
+              payload,
+              httpRequest.getHeader(STRIPE_SIGNATURE));
 
         log.info("controller | response / Submit checkout.session.completed event: {}", result);
 

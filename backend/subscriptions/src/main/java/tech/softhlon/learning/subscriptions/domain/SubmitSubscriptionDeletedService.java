@@ -25,8 +25,8 @@ public interface SubmitSubscriptionDeletedService {
      * @return Result
      */
     Result execute(
-          String sigHeader,
-          String payload);
+          String payload,
+          String sigHeader);
 
     /**
      * Submit subscription deleted Stripe event result.

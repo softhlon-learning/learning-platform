@@ -25,8 +25,8 @@ public interface SubmitInvoicePaidService {
      * @return Result
      */
     Result execute(
-          String sigHeader,
-          String payload);
+          String payload,
+          String sigHeader);
 
     /**
      * Submit invoice paid Stripe event result.

@@ -22,8 +22,8 @@ public interface CollectStripeEventService {
      * @return Result
      */
     Result execute(
-          String sigHeader,
-          String payload);
+          String payload,
+          String sigHeader);
 
     /**
      * Collect generic Stripe event result.
