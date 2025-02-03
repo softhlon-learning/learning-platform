@@ -1,5 +1,5 @@
 module accounts {
-    exports tech.softhlon.learning.accounts.gateway;
+    exports tech.softhlon.learning.accounts.gateway.operator;
     requires common;
 
     requires static lombok;

@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.operator;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,9 +13,9 @@ import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadA
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
 import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
-import tech.softhlon.learning.accounts.gateway.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
+import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
+import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
+import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
 
 import java.util.UUID;
 

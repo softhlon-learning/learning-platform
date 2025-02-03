@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +21,7 @@ import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Failed
 import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
-import static tech.softhlon.learning.accounts.gateway.RestResources.RESET_PASSWORD;
+import static tech.softhlon.learning.accounts.gateway.controller.RestResources.RESET_PASSWORD;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------

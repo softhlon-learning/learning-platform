@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,7 +20,7 @@ import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_UP;
+import static tech.softhlon.learning.accounts.gateway.controller.RestResources.SIGN_UP;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------

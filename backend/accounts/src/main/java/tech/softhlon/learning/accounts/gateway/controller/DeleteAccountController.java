@@ -3,24 +3,24 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.SignOutService;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
+import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.softhlon.learning.common.security.AuthenticationContext;
 
-import static tech.softhlon.learning.accounts.gateway.AuthCookiesService.AUTHORIZATION;
-import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_OUT;
+import static tech.softhlon.learning.accounts.gateway.controller.RestResources.ACCOUNT;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -31,30 +31,29 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class SignOutController {
+class DeleteAccountController {
 
-    private final SignOutService service;
+    private final DeleteAccountService deleteAccountService;
     private final AuthCookiesService authCookiesService;
+    private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
 
     /**
-     * POST /api/v1/account/auth/sign-out endpoint.
+     * DELETE /api/v1/account endpoint.
      */
-    @PostMapping(SIGN_OUT)
-    ResponseEntity<?> signOut(
+    @DeleteMapping(path = ACCOUNT)
+    ResponseEntity<?> delete(
           HttpServletResponse response) {
 
-        log.info("controller | request / Sign out");
+        log.info("controller | request / Delete account");
 
-        var result = service.execute(
-              extractToken());
-
-        authCookiesService.resetAuthCookies(
-              response);
+        var accountId = authContext.accountId();
+        var result = deleteAccountService.execute(accountId);
 
         return switch (result) {
-            case Succeeded() -> successCreatedBody();
-            case NotAuthorized(String message) -> unAuthorizedBody(httpRequest, message);
+            case Succeeded() -> successResponse(response);
+            case AccountIsAlreadyDeletedFailed(String message) -> badRequestBody(httpRequest, message);
+            case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 
@@ -64,16 +63,11 @@ class SignOutController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private String extractToken() {
+    private ResponseEntity<?> successResponse(
+          HttpServletResponse response) {
 
-        var cookies = httpRequest.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals(AUTHORIZATION)) {
-                return cookie.getValue();
-            }
-        }
-
-        return null;
+        authCookiesService.resetAuthCookies(response);
+        return successAcceptedBody();
 
     }
 

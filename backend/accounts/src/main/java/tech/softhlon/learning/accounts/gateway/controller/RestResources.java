@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

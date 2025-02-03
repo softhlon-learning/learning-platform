@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +21,7 @@ import tech.softhlon.learning.accounts.domain.SignInService.Result.InvalidCreden
 import tech.softhlon.learning.accounts.domain.SignInService.Result.Succeeded;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 
-import static tech.softhlon.learning.accounts.gateway.RestResources.SIGN_IN;
+import static tech.softhlon.learning.accounts.gateway.controller.RestResources.SIGN_IN;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------

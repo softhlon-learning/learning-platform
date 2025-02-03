@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway;
+package tech.softhlon.learning.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,17 +11,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.AccountNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Succeeded;
+import tech.softhlon.learning.accounts.domain.UpdatePasswordService;
+import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.*;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
 
-import static tech.softhlon.learning.accounts.gateway.RestResources.PROFILE;
+import static tech.softhlon.learning.accounts.gateway.controller.RestResources.UPDATE_PASSWORD;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -32,43 +29,45 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class UpdateProfileController {
+class UpdatePasswordController {
 
-    private final UpdateProfileService service;
-    private final AuthenticationContext authContext;
+    private final UpdatePasswordService service;
     private final HttpServletRequest httpRequest;
 
     /**
-     * PUT /api/v1/account/profile endpoint.
+     * POST /api/v1/account/update-password endpoint.
      */
-    @PutMapping(PROFILE)
-    ResponseEntity<?> updateProfile(
-          @Validated @RequestBody Profile request,
+    @PostMapping(UPDATE_PASSWORD)
+    ResponseEntity<?> updatePasswrd(
+          @Validated @RequestBody PasswordUpdate request,
           HttpServletResponse response) {
 
-        log.info("controller | request / Update profile, {}",
+        log.info("controller | request / Update password, {}",
               request);
 
-        var accountId = authContext.accountId();
         var result = service.execute(
-              accountId,
-              request.name());
+              request.token(),
+              request.password);
 
         return switch (result) {
-            case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+            case Succeeded succeeded -> successCreatedBody();
+            case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
+            case ExpiredTokenFailed(String message) -> badRequestBody(httpRequest, message);
+            case InvalidTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
-            case Succeeded succeeded -> successOkBody();
         };
 
     }
 
-    record Profile(String name) {
+    record PasswordUpdate(
+          String token,
+          String password) {
 
         @Override
         public String toString() {
             return """
-                  [name: %s]"""
-                  .formatted(name);
+                  [token: %s, password: ************]"""
+                  .formatted(token);
         }
 
     }
