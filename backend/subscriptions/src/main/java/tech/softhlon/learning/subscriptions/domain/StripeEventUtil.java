@@ -80,7 +80,7 @@ public class StripeEventUtil {
                     event.getData().toJson(),
                     DataObject.class)
               .object()
-              .status() ;
+              .status();
 
     }
 
