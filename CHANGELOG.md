@@ -1,6 +1,6 @@
 # Learning Platform Changelog
 
-## 0.44.1
+## 0.44.2
 _release date: 2025-02-03_
  * frontend: Improved styling for locked-lecture
  * frontend: Add constants.ts
