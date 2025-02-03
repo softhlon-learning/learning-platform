@@ -51,7 +51,8 @@ class SignInController {
 
         var result = service.execute(
               request.email(),
-              request.password());
+              request.password()
+        );
 
         return switch (result) {
             case Succeeded(String token) -> success(response, token);
@@ -76,7 +77,8 @@ class SignInController {
 
         authCookiesService.addAuthSucceededCookies(
               response,
-              token);
+              token
+        );
 
         return successOkBody();
 
@@ -86,12 +88,11 @@ class SignInController {
           HttpServletResponse response,
           String message) {
 
-        authCookiesService.addAuthFailedCookies(
-              response);
-
+        authCookiesService.addAuthFailedCookies(response);
         return unAuthorizedBody(
               httpRequest,
-              message);
+              message
+        );
 
     }
 

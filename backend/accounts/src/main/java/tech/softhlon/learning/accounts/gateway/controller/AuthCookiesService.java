@@ -38,14 +38,16 @@ class AuthCookiesService {
               AUTHORIZATION,
               token,
               true,
-              maxAge);
+              maxAge
+        );
 
         addCookie(
               response,
               AUTHENTICATED,
               "true",
               false,
-              maxAge);
+              maxAge
+        );
 
     }
 
@@ -57,14 +59,16 @@ class AuthCookiesService {
               AUTHORIZATION,
               null,
               true,
-              0);
+              0
+        );
 
         addCookie(
               response,
               AUTHENTICATED,
               "false",
               false,
-              Integer.MAX_VALUE);
+              Integer.MAX_VALUE
+        );
 
     }
 
@@ -76,21 +80,24 @@ class AuthCookiesService {
               AUTHORIZATION,
               null,
               true,
-              0);
+              0
+        );
 
         addCookie(
               response,
               AUTHENTICATED,
               "false",
               false,
-              Integer.MAX_VALUE);
+              Integer.MAX_VALUE
+        );
 
         addCookie(
               response,
               SUBSCRIBED,
               null,
               true,
-              0);
+              0
+        );
 
     }
 
@@ -107,7 +114,8 @@ class AuthCookiesService {
 
         var cookie = new Cookie(
               name,
-              value);
+              value
+        );
 
         cookie.setPath("/");
         cookie.setSecure(true);

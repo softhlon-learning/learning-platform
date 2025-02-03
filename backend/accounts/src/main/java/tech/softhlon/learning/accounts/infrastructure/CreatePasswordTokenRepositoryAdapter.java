@@ -41,7 +41,8 @@ class CreatePasswordTokenRepositoryAdapter implements CreatePasswordTokenReposit
                         .accountId(accountId)
                         .token(token)
                         .expireAt(expirationTime)
-                        .build());
+                        .build()
+            );
 
             return new PasswordTokenPersisted();
         } catch (Throwable cause) {

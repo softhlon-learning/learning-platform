@@ -52,7 +52,8 @@ class UpdateProfileController {
         var accountId = authContext.accountId();
         var result = service.execute(
               accountId,
-              request.name());
+              request.name()
+        );
 
         return switch (result) {
             case AccountNotFoundFailed(String message) -> badRequestBody(httpRequest, message);

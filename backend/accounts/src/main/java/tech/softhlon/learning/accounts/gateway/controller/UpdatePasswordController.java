@@ -47,7 +47,8 @@ class UpdatePasswordController {
 
         var result = service.execute(
               request.token(),
-              request.password);
+              request.password
+        );
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();

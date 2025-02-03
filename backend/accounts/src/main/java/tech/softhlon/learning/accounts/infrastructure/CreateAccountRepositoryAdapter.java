@@ -42,7 +42,8 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
                         .name(name)
                         .email(email)
                         .password(password)
-                        .build());
+                        .build()
+            );
 
             return new AccountPersisted(
                   createdAccount.getId());

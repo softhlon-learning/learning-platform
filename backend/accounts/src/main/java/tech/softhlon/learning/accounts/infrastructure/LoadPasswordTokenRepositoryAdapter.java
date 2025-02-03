@@ -35,8 +35,7 @@ class LoadPasswordTokenRepositoryAdapter implements LoadPasswordTokenRepository 
                   .findByToken(token);
 
             if (enity.isPresent()) {
-                return new TokenLoaded(
-                      toPasswordToken(enity.get()));
+                return new TokenLoaded(toPasswordToken(enity.get()));
             } else {
                 return new TokenNotFound();
             }

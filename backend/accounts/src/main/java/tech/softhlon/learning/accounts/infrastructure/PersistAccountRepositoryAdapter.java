@@ -32,18 +32,17 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
           PersistAccountRequest request) {
 
         try {
-            var entity = accountsJpaRepository.findById(
-                  request.id());
+            var entity = accountsJpaRepository.findById(request.id());
 
             if (entity.isEmpty())
                 return new AccountNotFoundInDatabase();
 
             updateEntity(
                   entity.get(),
-                  request);
-            accountsJpaRepository.save(
-                  entity.get());
+                  request
+            );
 
+            accountsJpaRepository.save(entity.get());
             return new AccountPersisted(request.id());
 
         } catch (Throwable cause) {

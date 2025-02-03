@@ -65,7 +65,8 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
         return new Account(
               entity.getId(),
               entity.getEmail(),
-              entity.getPassword());
+              entity.getPassword()
+        );
 
     }
 

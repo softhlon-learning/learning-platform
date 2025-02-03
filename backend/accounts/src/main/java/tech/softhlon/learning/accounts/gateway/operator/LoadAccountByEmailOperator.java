@@ -30,13 +30,14 @@ public class LoadAccountByEmailOperator {
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
 
     public LoadAccountResult execute(String email) {
-        var result = loadAccountByEmailRepository.execute(email);
 
+        var result = loadAccountByEmailRepository.execute(email);
         return switch (result) {
             case AccountFound(Account account) -> new AccountLoaded(accountView(account));
             case AccountIsDeleted(), AccountNotFound() -> new AccountNotLoaded();
             case LoadAccountFailed(Throwable cause) -> new AccountLoadFailed(cause);
         };
+
     }
 
     public sealed interface LoadAccountResult {

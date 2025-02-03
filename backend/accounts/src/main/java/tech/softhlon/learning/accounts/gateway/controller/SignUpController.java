@@ -51,7 +51,8 @@ class SignUpController {
         var result = service.execute(
               request.name(),
               request.email(),
-              request.password());
+              request.password()
+        );
 
         return switch (result) {
             case Succeeded(UUID id, String token) -> success(response, token);
@@ -91,7 +92,8 @@ class SignUpController {
 
         authCookiesService.addAuthSucceededCookies(
               response,
-              token);
+              token
+        );
 
         return successCreatedBody();
 

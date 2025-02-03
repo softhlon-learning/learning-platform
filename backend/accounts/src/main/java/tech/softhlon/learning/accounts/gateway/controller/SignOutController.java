@@ -46,11 +46,8 @@ class SignOutController {
 
         log.info("controller | request / Sign out");
 
-        var result = service.execute(
-              extractToken());
-
-        authCookiesService.resetAuthCookies(
-              response);
+        var result = service.execute(extractToken());
+        authCookiesService.resetAuthCookies(response);
 
         return switch (result) {
             case Succeeded() -> successCreatedBody();

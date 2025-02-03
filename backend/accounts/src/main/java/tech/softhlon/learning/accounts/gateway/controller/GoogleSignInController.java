@@ -67,8 +67,7 @@ class GoogleSignInController {
 
         log.info("controller | request / Google sign-in");
 
-        var result = service.execute(
-              body.get(CREDENTIAL));
+        var result = service.execute(body.get(CREDENTIAL));
 
         switch (result) {
             case Succeeded(String token) -> {
@@ -103,7 +102,8 @@ class GoogleSignInController {
 
         response.setHeader(
               LOCATION,
-              loginRedirectSuccessUri);
+              loginRedirectSuccessUri
+        );
 
         response.setStatus(
               HttpStatus.FOUND.value());
@@ -116,7 +116,8 @@ class GoogleSignInController {
 
         response.setHeader(
               LOCATION,
-              loginRedirectFailUri + "?error=" + errorMessage);
+              loginRedirectFailUri + "?error=" + errorMessage
+        );
 
         response.setStatus(
               HttpStatus.FOUND.value());

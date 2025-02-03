@@ -36,7 +36,8 @@ class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenR
             var createdAccount = invalidatedTokensRepo.save(
                   InvalidatedEntity.builder()
                         .tokenHash(tokenHash)
-                        .build());
+                        .build()
+            );
 
             return new InvalidatedTokenPersisted(
                   createdAccount.getId());
