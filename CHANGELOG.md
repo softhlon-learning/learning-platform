@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.19
+_release date: 2025-02-03_
+ * frontend: Extend Lecture model by preview field
+ * courses: Add preview field to the CourseContent model
+ * frontend: Experimental lecture preview display
+
 ## 0.43.18
 _release date: 2025-02-03_
  * frontend: Improve styling in footer
