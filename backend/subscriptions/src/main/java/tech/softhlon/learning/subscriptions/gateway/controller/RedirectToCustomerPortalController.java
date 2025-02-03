@@ -29,6 +29,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Redirect to customer portal controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -39,6 +42,11 @@ class RedirectToCustomerPortalController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * GET /api/v1/subscription/customer_portal endpoint.
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
+     */
     @GetMapping(CUSTOMER_PORTAL)
     ResponseEntity<?> redirectToStripePortal(
           HttpServletResponse response) {
@@ -68,6 +76,5 @@ class RedirectToCustomerPortalController {
               .body(new CreateCheckoutResponse(redirectUrl));
 
     }
-
 
 }

@@ -26,6 +26,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit subscription deleted Stripe event controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -35,6 +38,11 @@ class SubmitSubscriptionDeletedController {
     private final SubmitSubscriptionDeletedService service;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/subscription/deleted-event ednpoint.
+     * @param payload Stripe event payload
+     * @return ResponseEntity<?>
+     */
     @PostMapping(SUBMIT_SUBSCRIPTION_DELETED)
     ResponseEntity<?> submitSubscriptionDeleted(
           @Validated @RequestBody String payload) {

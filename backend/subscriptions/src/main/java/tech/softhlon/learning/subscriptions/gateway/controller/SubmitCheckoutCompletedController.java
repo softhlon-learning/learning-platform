@@ -27,6 +27,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit checkout completed Stripe event controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -36,6 +39,11 @@ class SubmitCheckoutCompletedController {
     private final SubmitCheckoutCompletedService service;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/subscription/checkout-completed-event ednpoint.
+     * @param payload Stripe event payload
+     * @return ResponseEntity<?>
+     */
     @PostMapping(SUBMIT_CHECKOUT_COMPLETED)
     ResponseEntity<?> submitCheckoutCompleted(
           @Validated @RequestBody String payload) {

@@ -28,6 +28,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Collect Stripe event controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -48,6 +51,12 @@ class CollectStripeEventController {
         this.httpRequest = httpRequest;
     }
 
+    /**
+     * POST /api/v1/subscription/generic-event endpoint.
+     * @param payload Stripe event payload
+     * @return ResponseEntity<?>
+     * @throws SignatureVerificationException
+     */
     @PostMapping(SUBMIT_SUBSCRIPTION_GENERIC)
     ResponseEntity<?> collectStripeEvent(
           @Validated @RequestBody String payload) throws SignatureVerificationException {

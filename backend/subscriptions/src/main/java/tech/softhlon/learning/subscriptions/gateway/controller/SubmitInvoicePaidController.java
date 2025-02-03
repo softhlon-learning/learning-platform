@@ -26,6 +26,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit invoice paid Stripe event controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -35,6 +38,11 @@ class SubmitInvoicePaidController {
     private final SubmitInvoicePaidService service;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/subscription/invoice-paid-event ednpoint.
+     * @param payload Stripe event payload
+     * @return ResponseEntity<?>
+     */
     @PostMapping(SUBMIT_INVOICE_PAID)
     ResponseEntity<?> submitSubscriptionCreated(
           @Validated @RequestBody String payload) {

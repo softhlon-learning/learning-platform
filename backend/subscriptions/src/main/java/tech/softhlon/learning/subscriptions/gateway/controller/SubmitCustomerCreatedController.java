@@ -27,6 +27,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit customer created Stripe event controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -36,6 +39,11 @@ class SubmitCustomerCreatedController {
     private final SubmitCustomerCreatedService service;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * POST /api/v1/subscription/customer-created-event ednpoint.
+     * @param payload Stripe event payload
+     * @return ResponseEntity<?>
+     */
     @PostMapping(SUBMIT_CUSTOMER_CREATED)
     ResponseEntity<?> submitCustomerCreated(
           @Validated @RequestBody String payload) {

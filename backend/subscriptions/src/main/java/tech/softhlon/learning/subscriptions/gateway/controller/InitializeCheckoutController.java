@@ -29,6 +29,9 @@ import static tech.softhlon.learning.subscriptions.gateway.controller.RestResour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Initialize checkout session controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -39,6 +42,12 @@ class InitializeCheckoutController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    /**
+     * POST /api/v1/subscription/checkout-session endpoint.
+     * @param request  CreateCheckoutRequest
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
+     */
     @PostMapping(CHECKOUT_SESSION)
     ResponseEntity<?> checkoutSession(
           @Validated @RequestBody CreateCheckoutRequest request,
