@@ -99,6 +99,7 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 lecture.id(),
                                 lecture.name(),
                                 lecture.type(),
+                                lecture.preview(),
                                 request.processed(),
                                 lecture.time(),
                                 true));
@@ -109,6 +110,7 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 lecture.id(),
                                 lecture.name(),
                                 lecture.type(),
+                                lecture.preview(),
                                 lecture.processed(),
                                 lecture.time(),
                                 false));

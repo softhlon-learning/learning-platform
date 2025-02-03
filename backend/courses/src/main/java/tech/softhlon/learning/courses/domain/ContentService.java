@@ -89,6 +89,7 @@ class ContentService {
           String id,
           String name,
           String type,
+          boolean preview,
           boolean processed,
           String time,
           boolean selected) {}

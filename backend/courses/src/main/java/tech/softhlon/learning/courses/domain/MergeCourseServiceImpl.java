@@ -126,6 +126,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
                             lecture.id(),
                             lecture.name(),
                             lecture.type(),
+                            lecture.preview(),
                             processed,
                             lecture.time(),
                             selected));
