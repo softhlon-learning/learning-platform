@@ -1,5 +1,12 @@
 # Learning Platform Changelog
 
+## 0.43.18
+_release date: 2025-02-03_
+ * frontend: Improve styling in footer
+ * subscriptions: Improve SubmitSubscriptionUpdatedServiceImpl (using stripeObject only)
+ * subscriptions: Cleanup in SubmitSubscriptionDeletedServiceImpl
+ * subscriptions: Cleanup in SubmitSubscriptionCreatedServiceImpl 
+
 ## 0.43.17
 _release date: 2025-02-03_
  * subscriptions: Remove Deactivate* stuff
