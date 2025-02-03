@@ -29,7 +29,7 @@ class EmailServiceImpl implements EmailService {
           String subject,
           String text) {
 
-        SimpleMailMessage message = new SimpleMailMessage();
+        var message = new SimpleMailMessage();
         message.setFrom("noreply@softhlon-learning.tech");
         message.setTo(to);
         message.setSubject(subject);

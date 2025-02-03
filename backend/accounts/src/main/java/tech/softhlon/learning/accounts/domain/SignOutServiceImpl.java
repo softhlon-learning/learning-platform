@@ -44,7 +44,8 @@ class SignOutServiceImpl implements SignOutService {
             }
 
             var exists = checkTokenRepository.execute(
-                  tokenHash(token));
+                  tokenHash(token)
+            );
 
             return switch (exists) {
                 case TokenExists() -> new Succeeded();
@@ -73,7 +74,8 @@ class SignOutServiceImpl implements SignOutService {
           String token) throws NoSuchAlgorithmException {
 
         var result = createInvalidatedTokenRepository.execute(
-              jwtService.tokenHash(token));
+              jwtService.tokenHash(token)
+        );
 
         return switch (result) {
             case InvalidatedTokenPersisted(UUID id) -> new Succeeded();

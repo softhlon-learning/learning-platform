@@ -106,7 +106,8 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
               GOOGLE,
               name,
               email,
-              null);
+              null
+        );
 
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(token(id, email));

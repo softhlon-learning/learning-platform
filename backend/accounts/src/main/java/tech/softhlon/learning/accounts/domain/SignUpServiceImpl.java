@@ -54,13 +54,13 @@ class SignUpServiceImpl implements SignUpService {
         var validationResult = validateInput(
               name,
               email,
-              password);
+              password
+        );
 
         if (validationResult != null)
             return validationResult;
 
-        var exists = checkAccountByEmailRepository.execute(
-              email);
+        var exists = checkAccountByEmailRepository.execute(email);
 
         return switch (exists) {
             case AccountExists(_) -> new AccountAlreadyExistsFailed(ACCOUNT_ALREADY_EXISTS);
@@ -104,7 +104,8 @@ class SignUpServiceImpl implements SignUpService {
         var result = createAccountRepository.execute(PASSWORD,
               name,
               email,
-              encryptPassword(password));
+              encryptPassword(password)
+        );
 
         return switch (result) {
             case AccountPersisted(UUID id) -> new Succeeded(id, token(email, id));
@@ -125,7 +126,8 @@ class SignUpServiceImpl implements SignUpService {
 
         return jwtService.generateToken(
               id,
-              email);
+              email
+        );
 
     }
 

@@ -56,7 +56,8 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
         var validationResult = validateInput(
               token,
-              password);
+              password
+        );
 
         if (validationResult != null)
             return validationResult;
@@ -118,7 +119,8 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
                     account.email(),
                     encryptPassword(password),
                     account.isDeleted()
-              ));
+              )
+        );
 
         return switch (result) {
             case AccountPersisted(_) -> deleteToken(token);

@@ -36,7 +36,8 @@ class SignInServiceImpl implements SignInService {
 
         var validationResult = validateInput(
               email,
-              password);
+              password
+        );
 
         if (validationResult != null)
             return validationResult;
@@ -76,7 +77,8 @@ class SignInServiceImpl implements SignInService {
         var passwordEncoder = new BCryptPasswordEncoder();
         var matches = passwordEncoder.matches(
               password,
-              account.password());
+              account.password()
+        );
 
         return matches
               ? new Succeeded(token(account))
@@ -88,7 +90,8 @@ class SignInServiceImpl implements SignInService {
 
         return jwtService.generateToken(
               account.id(),
-              account.email());
+              account.email()
+        );
 
     }
 

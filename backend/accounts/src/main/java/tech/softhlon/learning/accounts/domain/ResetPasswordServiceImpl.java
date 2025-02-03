@@ -110,7 +110,8 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
         var result = createPasswordTokenRepository.execute(
               account.id(),
               token,
-              expirationTime());
+              expirationTime()
+        );
 
         return switch (result) {
             case PasswordTokenPersisted passwordTokenPersisted -> sendEmail(account, token);
@@ -134,7 +135,8 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
         emailService.sendMessage(
               account.email(),
               SUBJECT,
-              EMAIL_CONTENT.formatted(baseUrl + token));
+              EMAIL_CONTENT.formatted(baseUrl + token)
+        );
 
         return new Succeeded();
 
