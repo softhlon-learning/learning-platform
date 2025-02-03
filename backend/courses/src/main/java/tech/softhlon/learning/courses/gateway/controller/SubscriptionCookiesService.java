@@ -44,7 +44,8 @@ class SubscriptionCookiesService {
               SUBSCRIBED,
               String.valueOf(subscribed),
               false,
-              maxAge);
+              maxAge
+        );
 
     }
 
@@ -61,7 +62,8 @@ class SubscriptionCookiesService {
 
         var cookie = new Cookie(
               name,
-              value);
+              value
+        );
 
         cookie.setPath("/");
         cookie.setSecure(true);

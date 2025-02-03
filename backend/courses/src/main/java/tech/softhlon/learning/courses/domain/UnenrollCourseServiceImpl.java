@@ -40,7 +40,10 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
           UUID courseId) {
 
         var enrollmentExists = checkEnrollmentRepository
-              .execute(accountId, courseId);
+              .execute(
+                    accountId,
+                    courseId
+              );
 
         return switch (enrollmentExists) {
             case EnrollmentExists() -> deleteEnrollment(accountId, courseId);

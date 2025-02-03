@@ -75,7 +75,8 @@ class ListCoursesServiceImpl implements ListCoursesService {
                     .map(courseView -> hideLockedLectures(result instanceof Subscribed, courseView))
                     .sorted(Comparator.comparing(CourseView::orderNo))
                     .toList(),
-              subscribed);
+              subscribed
+        );
 
     }
 
@@ -90,7 +91,8 @@ class ListCoursesServiceImpl implements ListCoursesService {
               course.name(),
               course.description(),
               course.content(),
-              false);
+              false
+        );
 
     }
 

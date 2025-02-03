@@ -44,10 +44,10 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
                   toEnrollment(
                         accountId,
                         enrolledTime,
-                        course));
+                        course)
+            );
 
-            return new EnrollmentPersisted(
-                  createdEnrollment.getId());
+            return new EnrollmentPersisted(createdEnrollment.getId());
 
         } catch (Throwable cause) {
             log.error("Error", cause);

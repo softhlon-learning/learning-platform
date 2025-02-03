@@ -43,7 +43,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
 
         var result = loadEnrollmentRepository.execute(
               request.accountId(),
-              request.courseId());
+              request.courseId()
+        );
 
         return switch (result) {
             case EnrollmentLoaded(Enrollment enrollment) -> processLectureUpdate(request, enrollment);
@@ -69,7 +70,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                     enrollment.accountId(),
                     contentService.courseContentToJson(updatedContent),
                     enrollment.enrolledTime(),
-                    enrollment.completedTime()));
+                    enrollment.completedTime())
+        );
 
         return switch (result) {
             case EnrollmentPersisted() -> new Succeeded();
@@ -83,8 +85,7 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
           Request request,
           Enrollment enrollment) {
 
-        var enrollmentContent = contentService.jsonToCurseContent(
-              enrollment.content());
+        var enrollmentContent = contentService.jsonToCurseContent(enrollment.content());
 
         // create/update processed flag in new content
         List<Chapter> chaptersCopy = new ArrayList<>();
@@ -102,7 +103,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 lecture.preview(),
                                 request.processed(),
                                 lecture.time(),
-                                true));
+                                true)
+                    );
 
                 } else {
                     lecturesCopy.add(
@@ -113,7 +115,8 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
                                 lecture.preview(),
                                 lecture.processed(),
                                 lecture.time(),
-                                false));
+                                false)
+                    );
                 }
 
             }

@@ -45,7 +45,8 @@ public class CreateCoursesOperator {
         var objectMapper = new ObjectMapper(new YAMLFactory());
         objectMapper.configure(
               DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
-              false);
+              false
+        );
         this.mapper = objectMapper;
 
     }
@@ -86,7 +87,8 @@ public class CreateCoursesOperator {
 
         uploadCourseService.execute(prepareRequest(
               courseDefinition,
-              content));
+              content)
+        );
 
     }
 
@@ -112,20 +114,19 @@ public class CreateCoursesOperator {
         return Base64
               .getEncoder()
               .encodeToString(
-                    convertToJson(new String(
-                          content,
-                          Charset.defaultCharset())));
+                    convertToJson(
+                          new String(
+                                content,
+                                Charset.defaultCharset()
+                          ))
+              );
     }
 
     private byte[] convertToJson(
           String yamlString) throws JsonProcessingException {
 
-        var yamlMapper = new ObjectMapper(
-              new YAMLFactory());
-
-        var jsonNode = yamlMapper
-              .readTree(yamlString);
-
+        var yamlMapper = new ObjectMapper(new YAMLFactory());
+        var jsonNode = yamlMapper.readTree(yamlString);
         var jsonMapper = new ObjectMapper();
 
         return jsonMapper

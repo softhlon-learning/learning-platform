@@ -30,8 +30,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
           PersistCourseRequest request) {
 
         try {
-            var entityOpt = coursesRepo
-                  .findById(request.id());
+            var entityOpt = coursesRepo.findById(request.id());
 
             if (entityOpt.isPresent()) {
 
@@ -40,10 +39,7 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
                 coursesRepo.save(entity);
 
             } else {
-
-                coursesRepo.save(
-                      prepareEntity(request));
-
+                coursesRepo.save(prepareEntity(request));
             }
 
             return new CoursePersisted();

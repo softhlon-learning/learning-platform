@@ -36,7 +36,8 @@ class LoadEnrollmentRepositoryAdapter implements LoadEnrollmentRepository {
         try {
             var entity = enrollmentsRepo.findByAccountIdAndCourseId(
                   accountId,
-                  courseId);
+                  courseId
+            );
 
             if (entity.isPresent()) {
                 return new EnrollmentLoaded(

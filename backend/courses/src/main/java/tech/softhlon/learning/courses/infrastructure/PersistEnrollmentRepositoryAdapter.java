@@ -33,15 +33,13 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
         try {
             var entityOpt = enrollmentsJpaRepository.findByAccountIdAndCourseId(
                   request.accountId(),
-                  request.courseId());
-
+                  request.courseId()
+            );
             if (entityOpt.isPresent()) {
-
                 var entity = entityOpt.get();
                 updateEntity(request, entity);
                 enrollmentsJpaRepository.save(entity);
                 return new EnrollmentPersisted();
-
             } else {
                 return new EnrollmentNotPresentFoundFailed();
             }

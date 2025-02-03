@@ -58,7 +58,10 @@ class UpdateLectureController {
               request);
 
         var result = service.execute(
-              prepareRequest(courseId, request));
+              prepareRequest(
+                    courseId,
+                    request)
+        );
 
         return switch (result) {
             case Succeeded succeeded -> successOkBody();
@@ -96,7 +99,8 @@ class UpdateLectureController {
               authContext.accountId(),
               courseId,
               updateEnrollmentRequest.lectureId(),
-              updateEnrollmentRequest.processed());
+              updateEnrollmentRequest.processed()
+        );
 
     }
 

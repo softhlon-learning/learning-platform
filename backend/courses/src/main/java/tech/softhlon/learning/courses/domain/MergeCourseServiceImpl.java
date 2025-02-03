@@ -44,12 +44,11 @@ class MergeCourseServiceImpl implements MergeCourseService {
           MergeCourseReuqest reuqest) {
 
         try {
-            var content = contentService.jsonToCurseContent(
-                  reuqest.content());
-
+            var content = contentService.jsonToCurseContent(reuqest.content());
             return processCourseContent(
                   reuqest,
-                  content);
+                  content
+            );
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new CourseMergeFailed(cause);
@@ -65,9 +64,7 @@ class MergeCourseServiceImpl implements MergeCourseService {
           MergeCourseReuqest reuqest,
           CourseContent content) {
 
-        var result = loadEnrollmentsRepository.execute(
-              reuqest.courseId());
-
+        var result = loadEnrollmentsRepository.execute(reuqest.courseId());
         return switch (result) {
             case EnrollmentLoadFailed(Throwable cause) -> new CourseMergeFailed(cause);
             case EnrollmentsLoaded(List<Enrollment> enrollments) -> processEnrollments(reuqest, content, enrollments);
@@ -84,7 +81,6 @@ class MergeCourseServiceImpl implements MergeCourseService {
             var enrollmentContent = contentService.jsonToCurseContent(enrollment.content());
             var updatedContent = updateContent(content, enrollmentContent);
             persistEnrollment(reuqest, enrollment, updatedContent);
-
         }
 
         return new CourseMerged();
@@ -129,7 +125,8 @@ class MergeCourseServiceImpl implements MergeCourseService {
                             lecture.preview(),
                             processed,
                             lecture.time(),
-                            selected));
+                            selected)
+                );
             }
 
             chaptersCopy.add(new Chapter(chaper.name(), lecturesCopy));
@@ -151,7 +148,8 @@ class MergeCourseServiceImpl implements MergeCourseService {
                     enrollment.accountId(),
                     contentService.courseContentToJson(enrollmentContent),
                     enrollment.enrolledTime(),
-                    enrollment.completedTime()));
+                    enrollment.completedTime())
+        );
 
         return switch (result) {
             case EnrollmentPersisted() -> new CourseMerged();

@@ -38,7 +38,8 @@ class HideCourseContentService {
                           lecture.preview(),
                           lecture.processed(),
                           lecture.time(),
-                          lecture.selected());
+                          lecture.selected()
+                    );
                     newLectures.add(newLecture);
                 } else {
                     newLectures.add(lecture);
@@ -48,11 +49,8 @@ class HideCourseContentService {
             newChapters.add(newChapter);
         }
 
-        var updatedCourseContent =
-              new CourseContent(newChapters);
-
-        return contentService
-              .courseContentToJson(updatedCourseContent);
+        var updatedCourseContent = new CourseContent(newChapters);
+        return contentService.courseContentToJson(updatedCourseContent);
 
     }
 

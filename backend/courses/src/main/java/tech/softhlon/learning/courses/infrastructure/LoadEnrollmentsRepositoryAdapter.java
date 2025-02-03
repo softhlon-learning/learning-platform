@@ -31,13 +31,12 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
           UUID courseId) {
 
         try {
-            var entities = enrollmentsJpaRepository.
-                  findByCourseId(courseId);
-
+            var entities = enrollmentsJpaRepository.findByCourseId(courseId);
             return new EnrollmentsLoaded(
                   entities.stream()
                         .map(this::toEnrollment)
-                        .toList());
+                        .toList()
+            );
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new EnrollmentLoadFailed(cause);

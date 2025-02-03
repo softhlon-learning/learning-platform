@@ -60,7 +60,8 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
         var result = createEnrollmentRepository.execute(
               courseId,
               accountId,
-              OffsetDateTime.now());
+              OffsetDateTime.now()
+        );
 
         return switch (result) {
             case EnrollmentPersisted(UUID id) -> new Succeeded();

@@ -57,9 +57,7 @@ class ListCoursesController {
         log.info("controller | request / List courseList",
               printShort(accountId));
 
-        var result = service.execute(
-              authContext.accountId());
-
+        var result = service.execute(authContext.accountId());
         return switch (result) {
             case Succeeded(CoursesView courses) -> successBody(courses, response);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
@@ -77,7 +75,8 @@ class ListCoursesController {
 
         subscriptionCookiesService.addSubscriptionCookie(
               response,
-              courses.subscribed());
+              courses.subscribed()
+        );
 
         return status(HttpStatus.OK)
               .body(courses.courseList());

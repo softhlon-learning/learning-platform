@@ -62,7 +62,8 @@ class ContentService {
         return new Gson()
               .fromJson(
                     json,
-                    CourseContent.class);
+                    CourseContent.class
+              );
 
     }
 

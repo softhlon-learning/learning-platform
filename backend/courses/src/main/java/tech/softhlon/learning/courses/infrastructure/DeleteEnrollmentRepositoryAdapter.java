@@ -35,7 +35,8 @@ class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
         try {
             enrollmentsRepo.deleteByAccountIdAndCourseId(
                   accountId,
-                  courseId);
+                  courseId
+            );
             return new EnrollmentDeleted();
         } catch (Throwable cause) {
             log.error("Error", cause);

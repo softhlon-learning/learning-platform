@@ -30,17 +30,16 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
           Enrollment enrollment) {
 
         try {
-            var entity = enrollmentsRepo.
-                  findById(enrollment.id()).get();
+            var entity = enrollmentsRepo.findById(enrollment.id()).get();
 
             updateEntity(
                   enrollment,
-                  entity);
+                  entity
+            );
 
-            enrollmentsRepo.save(
-                  entity);
-
+            enrollmentsRepo.save(entity);
             return new EnrollmentUpdated(enrollment.id());
+
         } catch (Throwable cause) {
             log.error("Error", cause);
             return new EnrollmentUpdateFailed(cause);

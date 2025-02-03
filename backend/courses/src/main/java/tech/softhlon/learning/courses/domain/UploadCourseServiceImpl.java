@@ -34,9 +34,7 @@ class UploadCourseServiceImpl implements UploadCourseService {
           Request request) {
 
         try {
-            var result = persistCourseRepository.execute(
-                  prepareReuqest(request));
-
+            var result = persistCourseRepository.execute(prepareReuqest(request));
             return switch (result) {
                 case CoursePersisted() -> mergeCourseWithEnrollments(request);
                 case CoursePersistenceFailed(Throwable cause) -> new Failed(cause);
@@ -70,9 +68,7 @@ class UploadCourseServiceImpl implements UploadCourseService {
     private Result mergeCourseWithEnrollments(
           Request request) {
 
-        var result = mergeCourseService.execute(
-              prepareMergeRequest(request));
-
+        var result = mergeCourseService.execute(prepareMergeRequest(request));
         return switch (result) {
             case CourseMergeFailed(Throwable cause) -> new Failed(cause);
             case CourseMerged() -> new Succeeded();
