@@ -4,7 +4,7 @@
     <parent>
         <groupId>tech.softhlon.learning</groupId>
         <artifactId>backend</artifactId>
-        <version>0.44.15-SNAPSHOT</version>
+        <version>0.44.16-SNAPSHOT</version>
     </parent>
 
     <artifactId>application</artifactId>

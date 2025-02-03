@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.15
+_release date: 2025-02-03_
+ * accounts: Code format update (domain)
+ * accounts: Code format update (gateway, infrastructure)
+
 ## 0.44.14
 _release date: 2025-02-03_
  * subscriptions: Add STRIPE_SIGNATURE constant
