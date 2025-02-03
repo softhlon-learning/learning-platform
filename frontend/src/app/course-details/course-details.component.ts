@@ -13,6 +13,7 @@ import {Lecture} from "../model/lecture"
 import {KeyboardInputCourseDetails} from "./keyboard-input"
 import {CoursesService} from '../service/courses/courses.service'
 import {Observable} from "rxjs";
+import {AUTHENTICATED_COOKIE, SUBSCRIBED_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -56,7 +57,7 @@ export class CourseDetailsComponent implements OnInit {
      * Otherwise course is fetched from service to initialize to the component.
      */
     ngOnInit() {
-        if (this.cookieService.get('Authenticated') !== 'true') {
+        if (this.cookieService.get(AUTHENTICATED_COOKIE) !== 'true') {
             this.router.navigate(['/sign-in'])
                 .then(() => {
                     window.location.reload()
@@ -338,7 +339,7 @@ export class CourseDetailsComponent implements OnInit {
      * @param lecture Lecture to operate on
      */
     displayMode(lecture: Lecture): string {
-        const subscribed = this.cookieService.get('Subscribed') === 'true';
+        const subscribed = this.cookieService.get(SUBSCRIBED_COOKIE) === 'true';
 
         if (subscribed === false && lecture.preview) {
             return PREVIEW

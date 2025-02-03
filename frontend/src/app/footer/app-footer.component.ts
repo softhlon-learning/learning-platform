@@ -9,6 +9,7 @@ import {Component, OnInit} from '@angular/core'
 import {CookieService} from "ngx-cookie-service"
 import {Router} from "@angular/router"
 import {AccountsService} from '../service/accounts/accounts.service'
+import {AUTHENTICATED_COOKIE, SUBSCRIBED_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -36,14 +37,14 @@ export class AppFooterComponent implements OnInit {
      * Check if user is authenticated.
      */
     isAuthenticated(): boolean {
-        return this.cookieService.get('Authenticated') === 'true'
+        return this.cookieService.get(AUTHENTICATED_COOKIE) === 'true'
     }
 
     /**
      * Check if user is subscribed.
      */
     isSubscribed(): boolean {
-        return this.cookieService.get('Subscribed') === 'true'
+        return this.cookieService.get(SUBSCRIBED_COOKIE) === 'true'
     }
 
     /**

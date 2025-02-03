@@ -10,6 +10,7 @@ import {CourseContent} from "../model/course-content";
 import {CookieService} from "ngx-cookie-service";
 import {KeyboardInputCourseToc} from "./keyboard-input";
 import {CoursesService} from "../service/courses/courses.service";
+import {AUTHENTICATED_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -115,7 +116,7 @@ export class CourseTocComponent implements OnInit {
      * Check is user is aiuthenticated.
      */
     isAuthenticated(): boolean {
-        return this.cookieService.get('Authenticated') === 'true'
+        return this.cookieService.get(AUTHENTICATED_COOKIE) === 'true'
     }
 
     /**

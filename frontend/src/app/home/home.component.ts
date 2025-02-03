@@ -8,6 +8,7 @@ import {Course} from "./course"
 import {Router} from "@angular/router"
 import {CookieService} from "ngx-cookie-service"
 import {CoursesService} from '../service/courses/courses.service'
+import {REDIRECT_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
      */
     ngOnInit() {
         this.fetchCourses()
-        const redirect = this.cookieService.get('Redirect') || ''
+        const redirect = this.cookieService.get(REDIRECT_COOKIE) || ''
         if (redirect != '') {
             this.router.navigate([redirect])
             this.cookieService.delete('Redirect')

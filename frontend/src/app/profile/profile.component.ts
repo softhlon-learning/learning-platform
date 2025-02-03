@@ -10,6 +10,7 @@ import {AccountsService} from '../service/accounts/accounts.service'
 import {Profile} from '../service/accounts/accounts.model'
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
+import {AUTHENTICATED_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -45,7 +46,7 @@ export class ProfileComponent implements OnInit {
      */
     ngOnInit() {
         this.error = undefined
-        if (this.cookieService.get('Authenticated') !== 'true') {
+        if (this.cookieService.get(AUTHENTICATED_COOKIE) !== 'true') {
             this.router.navigate(['/sign-in'])
                 .then(() => {
                     window.location.reload()
