@@ -35,6 +35,9 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
         this.webhookSecret = webhookSecret;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

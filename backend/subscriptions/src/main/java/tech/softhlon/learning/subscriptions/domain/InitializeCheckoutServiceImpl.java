@@ -40,6 +40,9 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
     private final PersistCheckoutRepository persistCheckoutRepository;
     private final LoadCustomerByAccountRepository loadCustomerByAccountRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     public InitializeCheckoutServiceImpl(
           @Value("${stripe.api-key}") String stripeApiKey,
           @Value("${service.base-url}") String serviceBaseUrl,

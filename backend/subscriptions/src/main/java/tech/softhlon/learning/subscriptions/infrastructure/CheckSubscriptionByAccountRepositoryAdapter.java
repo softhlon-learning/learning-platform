@@ -28,6 +28,9 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
 
     private final SubscriptionsJpaRepository subscriptionsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CheckSubscriptionByAccountResult execute(
           UUID accountId) {
