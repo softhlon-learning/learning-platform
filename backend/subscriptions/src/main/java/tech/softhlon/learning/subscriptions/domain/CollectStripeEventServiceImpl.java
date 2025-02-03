@@ -20,6 +20,9 @@ import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.Per
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * CollectStripeEventService implementation.
+ */
 @Slf4j
 @Service
 class CollectStripeEventServiceImpl implements CollectStripeEventService {

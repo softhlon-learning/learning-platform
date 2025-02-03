@@ -28,6 +28,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * InitializeCheckoutService implementation.
+ */
 @Slf4j
 @Service
 class InitializeCheckoutServiceImpl implements InitializeCheckoutService {

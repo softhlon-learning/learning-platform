@@ -20,6 +20,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * CheckSubscriptionByAccountRepository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

@@ -19,12 +19,18 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * LoadCustomerByAccountRepository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class LoadCustomerByAccountRepositoryAdapter implements LoadCustomerByAccountRepository {
     private final CustomersJpaRepository customersJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadCustomerResult execute(
           UUID accountId) {

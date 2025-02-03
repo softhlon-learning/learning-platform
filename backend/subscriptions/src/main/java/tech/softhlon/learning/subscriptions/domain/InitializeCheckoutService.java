@@ -22,7 +22,7 @@ public interface InitializeCheckoutService {
 
     /**
      * Initialize Stripe checkout session.
-     * @param acccountId Account id
+     * @param acccountId Account Id
      * @param email      User's email
      * @param priceId    Stripe price id
      * @return

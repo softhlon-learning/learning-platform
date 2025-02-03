@@ -14,14 +14,25 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load customer by account repository.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
 public interface LoadCustomerByAccountRepository {
 
+    /**
+     * Load customer from repository.
+     * @param accountId Account Id
+     * @return LoadCustomerResult
+     */
     LoadCustomerResult execute(
           UUID accountId);
 
+    /**
+     * Load customer from repository result.
+     */
     sealed interface LoadCustomerResult {
         record CustomerLoaded(Customer customer) implements LoadCustomerResult {}
         record CustomerNotFound() implements LoadCustomerResult {}

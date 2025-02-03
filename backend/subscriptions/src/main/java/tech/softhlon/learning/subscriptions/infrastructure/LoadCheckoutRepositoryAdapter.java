@@ -17,12 +17,16 @@ import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCh
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
     private final CheckoutSessionsJpaRepository checkoutSessionsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadCheckoutResult execute(
           String sessionId) {
