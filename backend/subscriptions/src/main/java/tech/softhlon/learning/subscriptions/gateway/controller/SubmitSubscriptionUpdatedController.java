@@ -21,6 +21,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedServ
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_UPDATED;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -51,7 +52,7 @@ class SubmitSubscriptionUpdatedController {
         log.info("controller | request / Submit customer.subscription.updated event");
 
         var result = service.execute(
-              httpRequest.getHeader("Stripe-Signature"),
+              httpRequest.getHeader(STRIPE_SIGNATURE),
               payload);
 
         log.info("controller | response / Submit customer.subscription.updated event: {}", result);

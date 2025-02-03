@@ -22,6 +22,7 @@ import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Res
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
+import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -61,8 +62,7 @@ class CollectStripeEventController {
     ResponseEntity<?> collectStripeEvent(
           @Validated @RequestBody String payload) throws SignatureVerificationException {
 
-        var sigHeader = httpRequest
-              .getHeader("Stripe-Signature");
+        var sigHeader = httpRequest.getHeader(STRIPE_SIGNATURE);
 
         log.info("controller | request / Collect {} event",
               eventType(

@@ -21,6 +21,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedServic
 import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_CHECKOUT_COMPLETED;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -51,7 +52,7 @@ class SubmitCheckoutCompletedController {
         log.info("controller | request / Submit checkout.session.completed event");
 
         var result = service.execute(
-              httpRequest.getHeader("Stripe-Signature"),
+              httpRequest.getHeader(STRIPE_SIGNATURE),
               payload);
 
         log.info("controller | response / Submit checkout.session.completed event: {}", result);

@@ -20,6 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionDeletedServ
 import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionDeletedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_DELETED;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -50,7 +51,7 @@ class SubmitSubscriptionDeletedController {
         log.info("controller | request / Submit customer.subscription.deleted event");
 
         var result = service.execute(
-              httpRequest.getHeader("Stripe-Signature"),
+              httpRequest.getHeader(STRIPE_SIGNATURE),
               payload);
 
         log.info("controller | response / Submit customer.subscription.deleted event: {}", result);

@@ -20,6 +20,7 @@ import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Resu
 import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_INVOICE_PAID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -50,7 +51,7 @@ class SubmitInvoicePaidController {
         log.info("controller | request / Submit invoice.paid event");
 
         var result = service.execute(
-              httpRequest.getHeader("Stripe-Signature"),
+              httpRequest.getHeader(STRIPE_SIGNATURE),
               payload);
 
         log.info("controller | response / Submit invoice.paid event: {}", result);
