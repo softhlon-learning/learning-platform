@@ -50,6 +50,9 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

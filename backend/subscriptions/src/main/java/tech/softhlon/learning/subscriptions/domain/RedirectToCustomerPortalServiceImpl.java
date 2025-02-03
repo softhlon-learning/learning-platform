@@ -42,6 +42,9 @@ class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalSer
         this.loadCustomerByAccountRepository = loadCustomerByAccountRepository;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId) {

@@ -52,6 +52,9 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

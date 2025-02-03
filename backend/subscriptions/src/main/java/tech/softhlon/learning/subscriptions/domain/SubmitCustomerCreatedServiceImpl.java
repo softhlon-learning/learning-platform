@@ -54,6 +54,9 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
         this.loadAccountByEmailOperator = loadAccountByEmailOperator;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

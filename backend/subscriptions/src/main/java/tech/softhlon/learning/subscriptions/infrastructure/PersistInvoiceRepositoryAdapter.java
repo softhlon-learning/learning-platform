@@ -16,12 +16,18 @@ import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.Pers
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist invoice repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
     private final InvoicesJpaRepository invoicesJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistInvoiceResult execute(PersistInvoiceRequest request) {
 

@@ -17,7 +17,9 @@ import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCh
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-
+/**
+ * Load checkout repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

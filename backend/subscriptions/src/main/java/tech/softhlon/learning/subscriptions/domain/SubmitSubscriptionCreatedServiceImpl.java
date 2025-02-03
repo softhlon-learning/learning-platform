@@ -42,6 +42,9 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

@@ -16,12 +16,18 @@ import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist subscription repositry adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionRepository {
     private final SubscriptionsJpaRepository subscriptionsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistSubscriptionResult execute(PersistSubscriptionRequest request) {
 

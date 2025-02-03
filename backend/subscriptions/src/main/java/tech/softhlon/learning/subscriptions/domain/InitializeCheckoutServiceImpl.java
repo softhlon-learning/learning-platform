@@ -59,6 +59,9 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID acccountId,

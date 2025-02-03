@@ -49,6 +49,9 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,

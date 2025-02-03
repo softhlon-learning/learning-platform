@@ -40,6 +40,9 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           String sigHeader,
