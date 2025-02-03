@@ -30,6 +30,9 @@ import static tech.softhlon.learning.courses.gateway.controller.RestResources.EN
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Enroll course controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -41,7 +44,7 @@ class EnrollCourseController {
     private final AuthenticationContext authContext;
 
     /**
-     * POST /api/v1/course/{courseId}/enrollment.
+     * POST /api/v1/course/{courseId}/enrollment endpoint.
      */
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(

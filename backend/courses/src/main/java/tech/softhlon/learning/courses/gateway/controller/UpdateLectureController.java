@@ -32,6 +32,9 @@ import static tech.softhlon.learning.courses.gateway.controller.RestResources.UP
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update lecture controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController

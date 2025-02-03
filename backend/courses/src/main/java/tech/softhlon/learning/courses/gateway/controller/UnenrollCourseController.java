@@ -29,6 +29,9 @@ import static tech.softhlon.learning.courses.gateway.controller.RestResources.UN
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Unenroll course controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -40,7 +43,7 @@ class UnenrollCourseController {
     private final AuthenticationContext authContext;
 
     /**
-     * DEELTE /api/v1/course/{courseId}/enrollment.
+     * DEELTE /api/v1/course/{courseId}/enrollment endpoint.
      */
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(

@@ -30,8 +30,11 @@ import static tech.softhlon.learning.courses.gateway.controller.RestResources.LI
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
-// ---------
+// ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * List courses controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController
@@ -44,7 +47,7 @@ class ListCoursesController {
     private final SubscriptionCookiesService subscriptionCookiesService;
 
     /**
-     * GET /api/v1/course.
+     * GET /api/v1/course endpoint.
      */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses(
@@ -72,7 +75,7 @@ class ListCoursesController {
           CoursesView courses,
           HttpServletResponse response) {
 
-        subscriptionCookiesService.addASubscriptionCookie(
+        subscriptionCookiesService.addSubscriptionCookie(
               response,
               courses.subscribed());
 

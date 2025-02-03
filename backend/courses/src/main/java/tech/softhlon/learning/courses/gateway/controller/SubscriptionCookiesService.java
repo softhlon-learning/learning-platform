@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Subscription cookie service.
+ */
 @Service
 class SubscriptionCookiesService {
 
@@ -27,7 +30,12 @@ class SubscriptionCookiesService {
 
     }
 
-    void addASubscriptionCookie(
+    /**
+     * Add Subscribed cookie to http response.
+     * @param response   Http response
+     * @param subscribed Subscribed cookie value
+     */
+    void addSubscriptionCookie(
           HttpServletResponse response,
           boolean subscribed) {
 
