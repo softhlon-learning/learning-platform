@@ -39,22 +39,27 @@
 
     <div class="course-item">
       <video-lecture
-              *ngIf="navigation.currentLecture.type == 'Watch'"
+              *ngIf="navigation.currentLecture.type == 'Watch' && (this.displayMode(navigation.currentLecture) !== 'locked')"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigation"
               [progress]="this">
       </video-lecture>
       <document-lecture
-              *ngIf="navigation.currentLecture.type == 'Read'"
+              *ngIf="navigation.currentLecture.type == 'Read' && (this.displayMode(navigation.currentLecture) !== 'locked')"
               [coursePath]="course.code + '-course'"
               [navigationItems]="navigation"
               [progress]="this">
       </document-lecture>
       <quiz-lecture
-              *ngIf="navigation.currentLecture.type == 'Interact'"
+              *ngIf="navigation.currentLecture.type == 'Interact' && (this.displayMode(navigation.currentLecture) !== 'locked')"
               [navigationItems]="navigation"
               [progress]="this">
       </quiz-lecture>
+      <locked-lecture
+                *ngIf="this.displayMode(navigation.currentLecture) == 'locked'"
+                [navigationItems]="navigation"
+                [progress]="this">
+      </locked-lecture>
     </div>
   </div>
 </span>

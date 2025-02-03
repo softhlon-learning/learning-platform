@@ -12,7 +12,7 @@ import {CourseDetailsComponent} from "../course-details/course-details.component
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Component({
-    selector: 'document-lecture',
+    selector: 'locked-lecture',
     templateUrl: './locked-lecture.component.html',
     styleUrls: ['./locked-lecture.component.css'],
     standalone: false
