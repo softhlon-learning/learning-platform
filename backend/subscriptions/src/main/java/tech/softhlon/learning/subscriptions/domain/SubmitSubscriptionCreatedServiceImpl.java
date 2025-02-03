@@ -20,7 +20,8 @@ import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.*;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.StripeEventObject;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.stripeObject;
 
 @Slf4j
 @Service
@@ -55,13 +56,9 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
             switch (event.getType()) {
                 case "customer.subscription.created": {
 
-                    var subscriptionId = subscriptionId(event);
-                    var customerId = customerId(event);
                     var stripeObject = stripeObject(event);
 
                     var request = prepareRequest(
-                          subscriptionId,
-                          customerId,
                           stripeObject);
 
                     var result = persistSubscriptionRepository.execute(request);
@@ -87,13 +84,9 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     // -----------------------------------------------------------------------------------------------------------------
 
     Result persist(
-          String subscriptionId,
-          String customerId,
           StripeEventObject stripeEventObject) {
 
         var request = prepareRequest(
-              subscriptionId,
-              customerId,
               stripeEventObject);
 
         var result = persistSubscriptionRepository.execute(request);
@@ -105,13 +98,11 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
     }
 
     PersistSubscriptionRequest prepareRequest(
-          String subscriptionId,
-          String customerId,
           StripeEventObject stripeEventObject) {
         return new PersistSubscriptionRequest(
               null,
-              subscriptionId,
-              customerId,
+              stripeEventObject.id(),
+              stripeEventObject.customer(),
               false,
               null,
               null,
