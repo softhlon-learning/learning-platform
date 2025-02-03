@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.3
+_release date: 2025-02-03_
+ * frontend: Set proper GoBackPath cookie values
+ * frontend: Testing navigation
+
 ## 0.44.2
 _release date: 2025-02-03_
  * frontend: Improved styling for locked-lecture
