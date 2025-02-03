@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.5
+_release date: 2025-02-03_
+ * frontend: Prevent marking as Viewed/Not Viewed for locked lectures
+ * frontend: Prevent updateLecture service call for locked lectures
+
 ## 0.44.4
 _release date: 2025-02-03_
  * courses: Implement HideCourseContentService
