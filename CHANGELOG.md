@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.6
+_release date: 2025-02-03_
+ * frontend: Improve view of locked-lecture.component
+ * general: Free Trial approach - analysis
+
 ## 0.44.5
 _release date: 2025-02-03_
  * frontend: Prevent marking as Viewed/Not Viewed for locked lectures
