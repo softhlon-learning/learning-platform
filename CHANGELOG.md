@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.43.15
+_release date: 2025-02-03_
+ * subscriptions: Implement DeactivateCanceledSubscriptionServiceImpl
+ * subscriptions: Implement DeactivateSubscriptionsRepositoryAdapter
+
 ## 0.43.14
 _release date: 2025-02-03_
  * courses: Add preview fields to Architecture course definition
