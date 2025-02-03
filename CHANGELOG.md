@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.43.16
+_release date: 2025-02-03_
+ * subscriptions: Do not deactivate subscription SubmitSubscriptionUpdatedService
+ * subscriptions: Improve logging in DeactivateCanceledSubscriptionServiceImpl
+ * subscriptions: Testing subscription deactivation
+
 ## 0.43.15
 _release date: 2025-02-03_
  * subscriptions: Implement DeactivateCanceledSubscriptionServiceImpl
