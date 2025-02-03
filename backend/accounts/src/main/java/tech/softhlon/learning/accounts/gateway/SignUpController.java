@@ -65,6 +65,14 @@ class SignUpController {
 
     }
 
+    record Request(
+          String name,
+          String email,
+          String password) {}
+
+    record Response(
+          UUID accountId) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
@@ -88,13 +96,5 @@ class SignUpController {
         return successCreatedBody();
 
     }
-
-    record Request(
-          String name,
-          String email,
-          String password) {}
-
-    record Response(
-          UUID accountId) {}
 
 }

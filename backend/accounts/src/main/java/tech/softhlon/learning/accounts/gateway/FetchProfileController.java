@@ -55,6 +55,10 @@ class FetchProfileController {
 
     }
 
+    record Profile(
+          String email,
+          String name) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
@@ -75,9 +79,5 @@ class FetchProfileController {
               profileView.name());
 
     }
-
-    record Profile(
-          String email,
-          String name) {}
 
 }

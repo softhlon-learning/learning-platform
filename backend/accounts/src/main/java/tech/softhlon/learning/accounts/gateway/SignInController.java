@@ -62,6 +62,10 @@ class SignInController {
 
     }
 
+    record Request(
+          String email,
+          String password) {}
+
     // -----------------------------------------------------------------------------------------------------------------
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
@@ -90,9 +94,5 @@ class SignInController {
               message);
 
     }
-
-    record Request(
-          String email,
-          String password) {}
 
 }
