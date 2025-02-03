@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.14
+_release date: 2025-02-03_
+ * subscriptions: Add STRIPE_SIGNATURE constant
+ * subscriptions: Re-order sigHeader and payload arguments
+
 ## 0.44.13
 _release date: 2025-02-03_
  * courses: Add javadocs (gateway)
