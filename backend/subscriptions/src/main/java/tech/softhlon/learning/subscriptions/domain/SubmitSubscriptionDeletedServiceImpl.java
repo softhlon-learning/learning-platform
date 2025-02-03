@@ -70,8 +70,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
 
                     return switch (result) {
                         case SubscriptionNotFound() -> new Failed(null);
-                        case SubscriptionLoaded(Subscription subscription) ->
-                              persist(subscriptionId, null, subscription);
+                        case SubscriptionLoaded(Subscription subscription) -> persist(subscriptionId, subscription);
                         case SubscriptionLoadFailed(Throwable cause) -> new Failed(cause);
                     };
 
@@ -93,12 +92,10 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
 
     Result persist(
           String subscriptionId,
-          String customerId,
           Subscription subscription) {
 
         var request = prepareRequest(
               subscriptionId,
-              customerId,
               subscription);
 
         var result = persistSubscriptionRepository.execute(request);
@@ -111,7 +108,6 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
 
     PersistSubscriptionRequest prepareRequest(
           String subscriptionId,
-          String customerId,
           Subscription subscription) {
 
         return new PersistSubscriptionRequest(
