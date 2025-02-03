@@ -19,6 +19,9 @@ import {Observable} from "rxjs";
 // ---------------------------------------------------------------------------------------------------------------------
 
 const UPDATE_LECTURE_DELAY = 100;
+const UNLOCKED = "unlocked";
+const LOCKED = "locked";
+const PREVIEW = "preview";
 
 @Component({
     selector: 'course-details',
@@ -328,6 +331,24 @@ export class CourseDetailsComponent implements OnInit {
      */
     moveToHome() {
         this.router.navigate(['/home'])
+    }
+
+    /**
+     * Return lecture display mode (preview, locked, unlocked)
+     * @param lecture Lecture to operate on
+     */
+    displayMode(lecture: Lecture): string {
+        const subscribed = this.cookieService.get('Subscribed') === 'true';
+
+        if (subscribed === false && lecture.preview) {
+            return PREVIEW
+        }
+
+        if (subscribed === false && !lecture.preview) {
+            return LOCKED
+        }
+
+        return UNLOCKED
     }
 
     /**
