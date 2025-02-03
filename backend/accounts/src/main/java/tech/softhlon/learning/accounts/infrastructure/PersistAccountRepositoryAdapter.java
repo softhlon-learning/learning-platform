@@ -53,6 +53,10 @@ class PersistAccountRepositoryAdapter implements PersistAccountRepository {
 
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
     private void updateEntity(
           AccountEntity entity,
           PersistAccountRequest request) {
