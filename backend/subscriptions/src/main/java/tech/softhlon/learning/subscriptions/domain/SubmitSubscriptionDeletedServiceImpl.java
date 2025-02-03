@@ -5,10 +5,6 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +25,13 @@ import java.time.OffsetDateTime;
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.subscriptionId;
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Submit deleted subscription Stripe event service iomplementation.
+ */
 @Slf4j
 @Service
 class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedService {

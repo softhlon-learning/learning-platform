@@ -31,6 +31,9 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.email;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit customer created Stripe event service implementation.
+ */
 @Slf4j
 @Service
 class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
@@ -45,13 +48,13 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
           @Value("${stripe.customer-created.webhook.secret}") String webhookSecret,
           LoadCustomerRepository loadCustomerRepository,
           PersistCustomersRepository persistCustomersRepository,
-          LoadAccountByEmailOperator loadAccountByEmailOperator
-    ) {
+          LoadAccountByEmailOperator loadAccountByEmailOperator) {
 
         this.webhookSecret = webhookSecret;
         this.loadCustomerRepository = loadCustomerRepository;
         this.persistCustomersRepository = persistCustomersRepository;
         this.loadAccountByEmailOperator = loadAccountByEmailOperator;
+
     }
 
     /**

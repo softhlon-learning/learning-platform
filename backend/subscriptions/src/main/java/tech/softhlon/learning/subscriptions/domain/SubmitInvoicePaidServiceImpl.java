@@ -24,6 +24,9 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.status
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit invoice paid Stripe event service implementation.
+ */
 @Slf4j
 @Service
 @Transactional

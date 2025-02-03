@@ -29,6 +29,9 @@ import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.sessio
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit checkout session completed Stripe event service implementation.
+ */
 @Slf4j
 @Service
 class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedService {

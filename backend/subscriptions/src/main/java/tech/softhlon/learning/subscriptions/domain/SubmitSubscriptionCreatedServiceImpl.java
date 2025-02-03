@@ -23,6 +23,13 @@ import java.time.ZoneId;
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.StripeEventObject;
 import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.stripeObject;
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Submit created subscription Stripe event service implementation.
+ */
 @Slf4j
 @Service
 class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedService {
