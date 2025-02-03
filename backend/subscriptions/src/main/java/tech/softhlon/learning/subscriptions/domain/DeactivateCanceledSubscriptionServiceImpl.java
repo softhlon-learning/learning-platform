@@ -20,16 +20,19 @@ import org.springframework.stereotype.Service;
 @Service
 @EnableAsync
 @RequiredArgsConstructor
-class CancelExpiredSubscriptionServiceImpl implements CancelExpiredSubscriptionService {
+class DeactivateCanceledSubscriptionServiceImpl implements DeactivateCanceledSubscriptionService {
 
     private static final String ACCOUNT = "account";
     private static final String SCHEDULER = "scheduler";
+
+    private final DeactivateSusbcriptionsRepository deactivateSusbcriptionsRepository;
 
     @Override
     @Scheduled(fixedRate = 1800_000)
     public void execute() {
         MDC.put(ACCOUNT, SCHEDULER);
         log.info("service | Run cancel expired subscriptions");
+        deactivateSusbcriptionsRepository.execute();
     }
 
 }
