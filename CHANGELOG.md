@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.44.1
+_release date: 2025-02-03_
+ * courses: Update preview flag for selected lectures
+ * frontend: Add locked-lecture.component
+ * frontend: Display locked-lecture when needed
+
 ## 0.44.0
 _release date: 2025-02-03_
  * frontend: Add displayMode in course-details.component.ts
