@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.0
+_release date: 2025-02-03_
+ * frontend: Add displayMode in course-details.component.ts
+ * frontend: Adjust view to new displayMode method
+
 ## 0.43.19
 _release date: 2025-02-03_
  * frontend: Extend Lecture model by preview field
