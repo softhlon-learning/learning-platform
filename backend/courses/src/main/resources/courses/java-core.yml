@@ -10,7 +10,7 @@ chapters:
       - name: Welcome to the Course
         id: welcome.mov
         type: Watch
-        preview: false
+        preview: true
         time: 1m57s
       - name: Prerequisites
         id: no-video-yet.mov?v2
@@ -26,7 +26,7 @@ chapters:
       - name: Introduction to Java
         id: no-video-yet.mov?v5
         type: Watch
-        preview: false
+        preview: true
         time: 3m15s
       - name: Java Virtual Machine
         id: no-video-yet.mov?v6

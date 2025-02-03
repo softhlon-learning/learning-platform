@@ -30,13 +30,13 @@ chapters:
       - name: Defining Software Architecture
         id: no-video-yet.mov?v2
         type: Watch
-        preview: true
+        preview: false
         time: 3m15s
         processed: false
       - name: The Role of an Architect
         id: no-video-yet.mov?v3
         type: Watch
-        preview: false
+        preview: true
         time: 3m15s
         processed: false
       - name: Historical Context
