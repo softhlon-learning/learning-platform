@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.44.7
+_release date: 2025-02-03_
+ * accounts: Private sections cleanup (gateway)
+ * courses: Private sections cleanup (gateway, domain)
+ * subscriptions: Private sections cleanup (gateway, domain)
+
 ## 0.44.6
 _release date: 2025-02-03_
  * frontend: Improve view of locked-lecture.component
