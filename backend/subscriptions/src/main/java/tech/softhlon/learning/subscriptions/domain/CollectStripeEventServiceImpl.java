@@ -83,7 +83,7 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
     }
 
     private record DataObject(
-          SubmitCheckoutCompletedServiceImpl.Object object) {}
+          Object object) {}
 
     private record Object(
           String id,
