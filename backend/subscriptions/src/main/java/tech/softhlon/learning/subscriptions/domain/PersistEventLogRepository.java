@@ -20,9 +20,9 @@ public interface PersistEventLogRepository {
 
     /**
      * Persist event log in repository.
-     * @param eventType Stripe event type
+     * @param eventType  Stripe event type
      * @param customerId Stripe customer id
-     * @param payload Stripe event payload
+     * @param payload    Stripe event payload
      * @return PersistEventLogResult
      */
     PersistEventLogResult execute(
