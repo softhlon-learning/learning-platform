@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.13
+_release date: 2025-02-03_
+ * courses: Add javadocs (gateway)
+ * subscriptions: Add javadocs (gateway)
+
 ## 0.44.12
 _release date: 2025-02-03_
  * subscriptions: Add javadocs (domain and infrastructure) - part 6
