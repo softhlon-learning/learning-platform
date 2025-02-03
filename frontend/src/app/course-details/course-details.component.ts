@@ -150,7 +150,7 @@ export class CourseDetailsComponent implements OnInit {
                 }
         }
 
-        if (persist == true) {
+        if (persist == true && selectedLecture.id != null) {
             this.persisteLectureState(selectedLecture)
         }
 
