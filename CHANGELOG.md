@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.11
+_release date: 2025-02-03_
+ * subscriptions: Add javadocs (domain and infrastructure) - part 4
+ * subscriptions: Add javadocs (domain and infrastructure) - part 5
+
 ## 0.44.10
 _release date: 2025-02-03_
  * subscriptions: Add javadocs (domain and infrastructure) - part 3
