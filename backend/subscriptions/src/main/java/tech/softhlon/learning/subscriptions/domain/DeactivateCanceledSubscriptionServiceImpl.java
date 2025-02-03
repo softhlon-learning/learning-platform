@@ -11,6 +11,7 @@ import org.slf4j.MDC;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @EnableAsync
+@Transactional
 @RequiredArgsConstructor
 class DeactivateCanceledSubscriptionServiceImpl implements DeactivateCanceledSubscriptionService {
 
