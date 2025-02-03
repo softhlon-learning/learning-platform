@@ -248,10 +248,10 @@ export class CourseDetailsComponent implements OnInit {
     private markLectureViewedFlag(viewed: boolean): void {
         let lecture: Lecture | null = this.selectedLecture()
 
-        if (lecture != null) {
+        if (lecture != null && lecture.id != null) {
             lecture.processed = viewed
+            this.persisteLectureState(lecture as Lecture)
         }
-        this.persisteLectureState(lecture as Lecture)
     }
 
     /**
@@ -259,7 +259,7 @@ export class CourseDetailsComponent implements OnInit {
      */
     switchLectureViewedFlag(): void {
         let lecture: Lecture | null = this.selectedLecture()
-        if (lecture != null) {
+        if (lecture != null && lecture.id != null) {
             lecture.processed = !lecture.processed
             this.selectAndPersistLecture(lecture)
         }
