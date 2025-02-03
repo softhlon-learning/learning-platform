@@ -25,7 +25,8 @@ import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.*;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.StripeEventObject;
+import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.stripeObject;
 
 @Slf4j
 @Service
@@ -63,16 +64,12 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
             switch (event.getType()) {
                 case "customer.subscription.updated": {
 
-                    var subscriptionId = subscriptionId(event);
-                    var customerId = customerId(event);
                     var stripeObject = stripeObject(event);
-
-                    var result = loadSubscriptionRepository.execute(subscriptionId);
+                    var result = loadSubscriptionRepository.execute(stripeObject.id());
 
                     return switch (result) {
                         case SubscriptionNotFound() -> new IncorrectSubscription(INCORRECT_SUBSRIPTION);
-                        case SubscriptionLoaded(Subscription subscription) ->
-                              persist(subscriptionId, customerId, stripeObject, subscription);
+                        case SubscriptionLoaded(Subscription subscription) -> persist(stripeObject, subscription);
                         case SubscriptionLoadFailed(Throwable cause) -> new Failed(cause);
                     };
 
@@ -93,14 +90,10 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
     // -----------------------------------------------------------------------------------------------------------------
 
     private Result persist(
-          String subscriptionId,
-          String customerId,
           StripeEventObject stripeObject,
           Subscription subscription) {
 
         var request = prepareRequest(
-              subscriptionId,
-              customerId,
               stripeObject,
               subscription);
 
@@ -113,8 +106,6 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
     }
 
     private PersistSubscriptionRequest prepareRequest(
-          String subscriptionId,
-          String customerId,
           StripeEventObject stripeEventObject,
           Subscription subscription) {
 
