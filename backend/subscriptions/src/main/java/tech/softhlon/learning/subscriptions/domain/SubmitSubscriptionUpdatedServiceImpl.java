@@ -122,7 +122,7 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
               subscription.id(),
               subscription.subscriptionId(),
               subscription.customerId(),
-              false,
+              subscription.active(),
               offsetDateTime(stripeEventObject.canceledAt()),
               offsetDateTime(stripeEventObject.cancelAt()),
               stripeEventObject.cancelationDetails() != null
