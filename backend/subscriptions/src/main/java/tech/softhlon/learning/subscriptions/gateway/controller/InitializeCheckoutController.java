@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,7 +23,7 @@ import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Res
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.CHECKOUT_SESSION;
+import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.CHECKOUT_SESSION;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

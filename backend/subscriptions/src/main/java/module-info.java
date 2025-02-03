@@ -1,5 +1,5 @@
 module subscriptions {
-    exports tech.softhlon.learning.subscriptions.gateway;
+    exports tech.softhlon.learning.subscriptions.gateway.operator;
     requires common;
     requires accounts;
 

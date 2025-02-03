@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectSubscription;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.CheckoutNotFound;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
+import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_UPDATED;
+import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_CHECKOUT_COMPLETED;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -31,27 +31,27 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class SubmitSubscriptionUpdatedController {
+class SubmitCheckoutCompletedController {
 
-    private final SubmitSubscriptionUpdatedService service;
+    private final SubmitCheckoutCompletedService service;
     private final HttpServletRequest httpRequest;
 
-    @PostMapping(SUBMIT_SUBSCRIPTION_UPDATED)
-    ResponseEntity<?> submitSubscriptionCreated(
+    @PostMapping(SUBMIT_CHECKOUT_COMPLETED)
+    ResponseEntity<?> submitCheckoutCompleted(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | request / Submit customer.subscription.updated event");
+        log.info("controller | request / Submit checkout.session.completed event");
 
         var result = service.execute(
               httpRequest.getHeader("Stripe-Signature"),
               payload);
 
-        log.info("controller | response / Submit customer.subscription.updated event: {}", result);
+        log.info("controller | response / Submit checkout.session.completed event: {}", result);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();
+            case CheckoutNotFound(String message) -> badRequestBody(httpRequest, message);
             case IncorrectEventType(String message) -> badRequestBody(httpRequest, message);
-            case IncorrectSubscription(String message) -> badRequestBody(httpRequest, message);
             case Failed(_) -> internalServerBody(httpRequest, null);
         };
 

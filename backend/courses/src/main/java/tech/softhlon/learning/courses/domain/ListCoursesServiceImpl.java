@@ -17,9 +17,9 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.Enrollment
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoadFailed;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentLoaded;
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
-import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator;
-import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionRequest;
-import tech.softhlon.learning.subscriptions.gateway.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionRequest;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
 import java.util.Comparator;
 import java.util.List;

@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway.controller;
 
 import com.stripe.exception.SignatureVerificationException;
 import com.stripe.net.Webhook;
@@ -22,7 +22,7 @@ import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Res
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
+import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

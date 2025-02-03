@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway;
+package tech.softhlon.learning.subscriptions.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionCreatedService.Result.Succeeded;
+import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService;
+import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Failed;
+import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.IncorrectEventType;
+import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_SUBSCRIPTION_CREATED;
+import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_INVOICE_PAID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -30,22 +30,22 @@ import static tech.softhlon.learning.subscriptions.gateway.RestResources.SUBMIT_
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class SubmitSubscriptionCreatedController {
+class SubmitInvoicePaidController {
 
-    private final SubmitSubscriptionCreatedService service;
+    private final SubmitInvoicePaidService service;
     private final HttpServletRequest httpRequest;
 
-    @PostMapping(SUBMIT_SUBSCRIPTION_CREATED)
+    @PostMapping(SUBMIT_INVOICE_PAID)
     ResponseEntity<?> submitSubscriptionCreated(
           @Validated @RequestBody String payload) {
 
-        log.info("controller | request / Submit customer.subscription.created event");
+        log.info("controller | request / Submit invoice.paid event");
 
         var result = service.execute(
               httpRequest.getHeader("Stripe-Signature"),
               payload);
 
-        log.info("controller | response / Submit customer.subscription.created event: {}", result);
+        log.info("controller | response / Submit invoice.paid event: {}", result);
 
         return switch (result) {
             case Succeeded succeeded -> successCreatedBody();
