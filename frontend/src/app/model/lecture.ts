@@ -11,6 +11,7 @@ export class Lecture {
     id: string = ''
     name: string = ''
     type: string = ''
+    preview: boolean = false
     processed: boolean = false
     time: string = ''
     selected: boolean = false
