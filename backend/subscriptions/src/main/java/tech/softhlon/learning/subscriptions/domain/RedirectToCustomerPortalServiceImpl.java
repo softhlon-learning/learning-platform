@@ -25,6 +25,9 @@ import static tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountR
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Redirect to Stripe customer portal service implementation.
+ */
 @Slf4j
 @Service
 class RedirectToCustomerPortalServiceImpl implements RedirectToCustomerPortalService {

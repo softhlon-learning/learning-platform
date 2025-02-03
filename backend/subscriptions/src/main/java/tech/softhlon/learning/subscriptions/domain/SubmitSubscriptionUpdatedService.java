@@ -11,14 +11,26 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Submit subscription updated Stripe event service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface SubmitSubscriptionUpdatedService {
 
+    /**
+     * Submit subscription updated Stripe event.
+     * @param sigHeader Stripe-Signature header
+     * @param payload   Stripe payload
+     * @return Result
+     */
     Result execute(
           String sigHeader,
           String payload);
 
+    /**
+     * Submit subscription updated Stripe event result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record IncorrectSubscription(String message) implements Result {}
