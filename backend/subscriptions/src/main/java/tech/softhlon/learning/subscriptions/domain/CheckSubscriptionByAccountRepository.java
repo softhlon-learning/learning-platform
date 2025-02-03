@@ -15,7 +15,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Check active subscription for account service.
+ * Check active subscription for account service interface.
  */
 @OutboundPort
 @DomainRepository
@@ -31,7 +31,7 @@ public interface CheckSubscriptionByAccountRepository {
           UUID accountId);
 
     /**
-     * Check if given account has active subscription - result.
+     * Check if given account has active subscription result.
      */
     sealed interface CheckSubscriptionByAccountResult {
         record SubscriptionExists() implements CheckSubscriptionByAccountResult {}

@@ -10,7 +10,7 @@ package tech.softhlon.learning.subscriptions.domain;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Collect Stripe event service.
+ * Collect Stripe event service interface.
  */
 public interface CollectStripeEventService {
 

@@ -16,12 +16,18 @@ import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.Per
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist event log in repository adapter imeplementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class PersistEventLogRepositoryAdapter implements PersistEventLogRepository {
     private final EventLogJpaRepository eventLogJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistEventLogResult execute(
           String eventType,

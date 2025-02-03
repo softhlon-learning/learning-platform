@@ -17,12 +17,18 @@ import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.Lo
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load subscription repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
     private final SubscriptionsJpaRepository subscriptionsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadSubscriptionResult execute(
           String subscriptionId) {

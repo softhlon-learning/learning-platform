@@ -15,7 +15,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Load customer by account repository.
+ * Load customer by account repository interface.
  */
 @OutboundPort
 @DomainRepository
@@ -23,7 +23,7 @@ import java.util.UUID;
 public interface LoadCustomerByAccountRepository {
 
     /**
-     * Load customer from repository.
+     * Load Stripe customer from repository.
      * @param accountId Account Id
      * @return LoadCustomerResult
      */

@@ -18,12 +18,18 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist Stripe customer repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
     private final CustomersJpaRepository customersJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistCustomerResult execute(
           UUID id,

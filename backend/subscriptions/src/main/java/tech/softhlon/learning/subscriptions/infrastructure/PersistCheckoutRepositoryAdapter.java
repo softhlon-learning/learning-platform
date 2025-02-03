@@ -16,12 +16,18 @@ import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.Per
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist checkout session repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class PersistCheckoutRepositoryAdapter implements PersistCheckoutRepository {
     private final CheckoutSessionsJpaRepository checkoutSessionsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistCheckoutSessionResult execute(
           PersistCheckoutSessionRequest request) {

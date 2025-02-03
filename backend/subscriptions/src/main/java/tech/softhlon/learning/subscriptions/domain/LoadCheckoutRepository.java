@@ -16,7 +16,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Load checkout session repository.
+ * Load checkout session repository interface.
  */
 @OutboundPort
 @DomainRepository

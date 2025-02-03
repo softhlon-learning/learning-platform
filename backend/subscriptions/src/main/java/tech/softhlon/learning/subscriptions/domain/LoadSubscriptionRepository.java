@@ -15,13 +15,25 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load subscription repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
 public interface LoadSubscriptionRepository {
+
+    /**
+     * Load subsciption from repository.
+     * @param subscriptionId Subscription Id
+     * @return LoadSubscriptionResult
+     */
     LoadSubscriptionResult execute(
           String subscriptionId);
 
+    /**
+     * Load subsciption from repository result.
+     */
     sealed interface LoadSubscriptionResult {
         record SubscriptionLoaded(Subscription subscription) implements LoadSubscriptionResult {}
         record SubscriptionNotFound() implements LoadSubscriptionResult {}

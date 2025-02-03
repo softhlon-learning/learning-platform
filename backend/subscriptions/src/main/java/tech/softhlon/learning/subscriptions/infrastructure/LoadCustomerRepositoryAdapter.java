@@ -17,12 +17,18 @@ import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCu
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load customer repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
     private final CustomersJpaRepository customersJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadCustomerResult execute(
           String customerId) {

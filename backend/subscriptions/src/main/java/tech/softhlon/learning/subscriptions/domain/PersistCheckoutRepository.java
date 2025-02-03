@@ -14,13 +14,24 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist checkout session repository interface.
+ */
 @OutboundPort
 @FunctionalInterface
 public interface PersistCheckoutRepository {
 
+    /**
+     * Persist checkout session in repository.
+     * @param request Operation request
+     * @return PersistCheckoutSessionResult
+     */
     PersistCheckoutSessionResult execute(
           PersistCheckoutSessionRequest request);
 
+    /**
+     * Persist checkout session in repository result.
+     */
     sealed interface PersistCheckoutSessionResult {
         record CheckoutSessionPersisted() implements PersistCheckoutSessionResult {}
         record CheckoutSessionPersistenceFailed(Throwable cause) implements PersistCheckoutSessionResult {}

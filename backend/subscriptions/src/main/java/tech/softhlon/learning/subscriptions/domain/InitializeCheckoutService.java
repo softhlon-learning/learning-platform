@@ -14,7 +14,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Initialize Stripe checkout session service.
+ * Initialize Stripe checkout session service interface.
  */
 @InboundPort
 @FunctionalInterface
