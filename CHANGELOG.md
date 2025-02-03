@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.44.16
+_release date: 2025-02-03_
+ * courses: Code format update
+
 ## 0.44.15
 _release date: 2025-02-03_
  * accounts: Code format update (domain)
