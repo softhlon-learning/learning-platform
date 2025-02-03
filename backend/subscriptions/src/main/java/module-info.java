@@ -18,4 +18,5 @@ module subscriptions {
     requires org.apache.tomcat.embed.core;
     requires org.checkerframework.checker.qual;
     requires stripe.java;
+    requires spring.boot.autoconfigure;
 }

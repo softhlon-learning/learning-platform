@@ -48,7 +48,7 @@ class LoadSubscriptionRepositoryAdapter implements LoadSubscriptionRepository {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    Subscription subscription(SubscriptionEntity entity) {
+    private Subscription subscription(SubscriptionEntity entity) {
 
         return new Subscription(
               entity.getId(),

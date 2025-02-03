@@ -48,7 +48,7 @@ class LoadCustomerRepositoryAdapter implements LoadCustomerRepository {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    Customer customer(CustomerEntity entity) {
+    private Customer customer(CustomerEntity entity) {
 
         return new Customer(
               entity.getId(),

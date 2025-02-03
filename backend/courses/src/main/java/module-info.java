@@ -21,4 +21,6 @@ module courses {
     requires com.google.gson;
     requires org.apache.tomcat.embed.core;
     requires org.checkerframework.checker.qual;
+    requires spring.data.jpa;
+    requires spring.boot.autoconfigure;
 }
