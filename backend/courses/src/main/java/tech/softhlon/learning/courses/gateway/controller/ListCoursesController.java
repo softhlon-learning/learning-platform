@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,7 +26,7 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
 import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-import static tech.softhlon.learning.courses.gateway.RestResources.LIST_COURSES;
+import static tech.softhlon.learning.courses.gateway.controller.RestResources.LIST_COURSES;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

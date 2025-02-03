@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import tech.softhlon.learning.courses.gateway.CreateCoursesOperator;
+import tech.softhlon.learning.courses.gateway.operator.CreateCoursesOperator;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,28 +3,27 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
 import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.domain.EnrollCourseService;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.AccountNotSubscribedFailed;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Failed;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Succeeded;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
+import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
 
 import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-import static tech.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE;
+import static tech.softhlon.learning.courses.gateway.controller.RestResources.UNENROLL_COURSE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -34,31 +33,26 @@ import static tech.softhlon.learning.courses.gateway.RestResources.ENROLL_COURSE
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class EnrollCourseController {
+class UnenrollCourseController {
 
-    private final EnrollCourseService service;
+    private final UnenrollCourseService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
     /**
-     * POST /api/v1/course/{courseId}/enrollment.
+     * DEELTE /api/v1/course/{courseId}/enrollment.
      */
-    @PostMapping(ENROLL_COURSE)
-    ResponseEntity<?> enrollCourse(
+    @DeleteMapping(UNENROLL_COURSE)
+    ResponseEntity<?> unenrollCourse(
           @PathVariable("courseId") UUID courseId) {
 
         var accountId = authContext.accountId();
-        log.info("controller | request / Enroll course, courseId: {}",
+        log.info("controller | request / Unenroll course, courseId: {}",
               printShort(courseId));
 
-        var result = service.execute(
-              accountId,
-              courseId);
-
-        return switch (result) {
-            case Succeeded() -> successCreatedBody();
-            case AccountNotSubscribedFailed(String message) -> badRequestBody(httpRequest, message);
-            case CourseNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
+        return switch (service.execute(accountId, courseId)) {
+            case Succeeded() -> successAcceptedBody();
+            case EnrollmentNotFoundFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 

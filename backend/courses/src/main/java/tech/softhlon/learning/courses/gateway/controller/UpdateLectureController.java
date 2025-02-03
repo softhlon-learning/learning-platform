@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway;
+package tech.softhlon.learning.courses.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ import java.util.UUID;
 
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-import static tech.softhlon.learning.courses.gateway.RestResources.UPDATE_LECTURE;
+import static tech.softhlon.learning.courses.gateway.controller.RestResources.UPDATE_LECTURE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
