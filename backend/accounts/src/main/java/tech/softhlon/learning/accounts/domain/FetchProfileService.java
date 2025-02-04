@@ -23,7 +23,7 @@ public interface FetchProfileService {
     /**
      * Fetch user's profile.
      * @param accountId Account Id
-     * @return ProfileView
+     * @return Result
      */
     Result execute(
           UUID accountId);
