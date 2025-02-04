@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.45.8
+_release date: 2025-02-04_
+ * accounts: Review and update javadocs for class and interface headers - part 1
+
 ## 0.45.7
 _release date: 2025-02-04_
  * general: Added /page404.html
