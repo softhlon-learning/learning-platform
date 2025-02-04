@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.18
+_release date: 2025-02-04_
+ * subscriptions: Add LoadFreeTrialRepository
+ * subscriptions: Add LoadFreeTrialRepositoryAdapter
+
 ## 0.45.17
 _release date: 2025-02-04_
  * subscriptions: Add _subscriptions.free_trials table
