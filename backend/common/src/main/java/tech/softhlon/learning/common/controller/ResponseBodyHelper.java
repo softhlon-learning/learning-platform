@@ -21,41 +21,60 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.Respon
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Http response body helper utility.
+ */
 @Slf4j
 public class ResponseBodyHelper {
     private static final String INTERNAL_ERROR = "Server internal error";
 
+    /**
+     * HTTP 200 response body.
+     * @return ResponseEntity
+     */
     public static ResponseEntity successOkBody() {
-
         return status(HttpStatus.OK)
               .build();
     }
 
+    /**
+     * HTTP 201 response body.
+     * @return ResponseEntity
+     */
     public static ResponseEntity successCreatedBody() {
-
         return status(HttpStatus.CREATED)
               .build();
-
     }
 
+    /**
+     * HTTP 202 response body.
+     * @return ResponseEntity
+     */
     public static ResponseEntity successAcceptedBody() {
-
         return status(HttpStatus.ACCEPTED)
               .build();
     }
 
+    /**
+     * HTTP 303 response body.
+     * @return ResponseEntity
+     */
     public static ResponseEntity redirectBody() {
-
         return status(HttpStatus.SEE_OTHER)
               .build();
     }
 
+    /**
+     * HTTP 505 response body.
+     * @param request HttpServletRequest
+     * @param cause   Throwable
+     * @return ResponseEntity
+     */
     public static ResponseEntity<?> internalServerBody(
           HttpServletRequest request,
           Throwable cause) {
 
         log.error("Unexpected error:", cause);
-
         return ResponseEntity
               .internalServerError()
               .body(
@@ -65,10 +84,17 @@ public class ResponseBodyHelper {
                           .message(INTERNAL_ERROR)
                           .path(request.getRequestURI())
                           .build()
-                          .body());
+                          .body()
+              );
 
     }
 
+    /**
+     * HTTP 400 response body.
+     * @param request HttpServletRequest
+     * @param message Error message
+     * @return ResponseEntity
+     */
     public static ResponseEntity<?> badRequestBody(
           HttpServletRequest request,
           String message) {
@@ -82,10 +108,17 @@ public class ResponseBodyHelper {
                           .message(message)
                           .path(request.getRequestURI())
                           .build()
-                          .body());
+                          .body()
+              );
 
     }
 
+    /**
+     * HTTP 201 response body.
+     * @param request HttpServletRequest
+     * @param message Error message
+     * @return ResponseEntity
+     */
     public static ResponseEntity<?> unAuthorizedBody(
           HttpServletRequest request,
           String message) {
@@ -99,10 +132,14 @@ public class ResponseBodyHelper {
                           .message(message)
                           .path(request.getRequestURI())
                           .build()
-                          .body());
+                          .body()
+              );
 
     }
 
+    /**
+     * HTTP response fields.
+     */
     enum ResponseField {
 
         TIMESTAMP("timestamp"),
@@ -119,7 +156,10 @@ public class ResponseBodyHelper {
 
     }
 
-    enum ErrorMessage {
+    /**
+     * Errot message enum.
+     */
+    private enum ErrorMessage {
 
         AUTHENTICATION_ERROR("Authentication Error"),
         VALIDATION_ERROR("Validation Error"),
@@ -132,8 +172,12 @@ public class ResponseBodyHelper {
         }
 
     }
+
+    /**
+     * HTTP response body builder.
+     */
     @Builder
-    static class ResponseBodyBuilder {
+    private static class ResponseBodyBuilder {
 
         private HttpStatus status;
         private ErrorMessage errorMessage;

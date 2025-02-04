@@ -11,8 +11,16 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Id printer utility.
+ */
 public class IdPrinter {
 
+    /**
+     * Print UUID as short (8 chars) string.
+     * @param id UUID
+     * @return Short UUID
+     */
     public static String printShort(
           UUID id) {
 

@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Domain aggregate annotation.
+ */
 public @interface DomainAggregate {}

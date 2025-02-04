@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Domain factory annotation.
+ */
 public @interface DomainFactory {}

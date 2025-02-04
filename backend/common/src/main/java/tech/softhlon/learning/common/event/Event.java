@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.event;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Event annotation.
+ */
 public @interface Event {}

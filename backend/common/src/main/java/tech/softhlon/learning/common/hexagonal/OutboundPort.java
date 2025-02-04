@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.hexagonal;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Outbound port annotation.
+ */
 public @interface OutboundPort {}

@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.hexagonal;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * REST Api adapter annotation.
+ */
 public @interface RestApiAdapter {}

@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Domain value object annotation.
+ */
 public @interface DomainValueObject {}

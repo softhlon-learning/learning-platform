@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.hexagonal;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Inbound port annotation.
+ */
 public @interface InboundPort {}

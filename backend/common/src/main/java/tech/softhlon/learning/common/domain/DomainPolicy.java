@@ -9,4 +9,7 @@ package tech.softhlon.learning.common.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Domain policy annotation.
+ */
 public @interface DomainPolicy {}
