@@ -5,16 +5,19 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Load password token repositry interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

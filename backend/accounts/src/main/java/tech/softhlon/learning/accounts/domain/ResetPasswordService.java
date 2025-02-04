@@ -11,6 +11,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Reset password service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface ResetPasswordService {

@@ -5,10 +5,6 @@
 
 package tech.softhlon.learning.accounts.infrastructure;
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Implementation
-// ---------------------------------------------------------------------------------------------------------------------
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -17,6 +13,13 @@ import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAc
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Implementation
+// ---------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Persist account repository adapter implementation.
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor

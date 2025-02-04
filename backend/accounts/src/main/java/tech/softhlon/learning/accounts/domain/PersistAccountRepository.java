@@ -13,6 +13,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist account repository interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface PersistAccountRepository {

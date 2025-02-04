@@ -26,6 +26,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Reset password service implementation.
+ */
 @Service
 class ResetPasswordServiceImpl implements ResetPasswordService {
 

@@ -17,6 +17,9 @@ import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPa
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load password token repositry adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

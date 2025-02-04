@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load account by email repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

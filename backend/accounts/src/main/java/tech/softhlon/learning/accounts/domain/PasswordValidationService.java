@@ -9,6 +9,9 @@ package tech.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Password validation service interface.
+ */
 interface PasswordValidationService {
 
     /**

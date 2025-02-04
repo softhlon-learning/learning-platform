@@ -19,6 +19,9 @@ import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load account by email repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

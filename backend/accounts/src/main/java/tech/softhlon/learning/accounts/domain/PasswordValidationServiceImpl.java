@@ -13,6 +13,9 @@ import java.util.regex.Pattern;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Password validation service implementation.
+ */
 @Service
 class PasswordValidationServiceImpl implements PasswordValidationService {
 

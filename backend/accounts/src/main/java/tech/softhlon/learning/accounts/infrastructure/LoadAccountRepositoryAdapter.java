@@ -20,6 +20,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load account repository adapter implementation..
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
