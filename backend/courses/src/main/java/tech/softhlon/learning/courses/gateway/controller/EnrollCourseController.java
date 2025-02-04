@@ -45,6 +45,8 @@ class EnrollCourseController {
 
     /**
      * POST /api/v1/course/{courseId}/enrollment endpoint.
+     * @param courseId Course Id
+     * @return ResponseEntity<?>
      */
     @PostMapping(ENROLL_COURSE)
     ResponseEntity<?> enrollCourse(

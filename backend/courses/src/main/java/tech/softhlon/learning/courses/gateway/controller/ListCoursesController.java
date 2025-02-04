@@ -48,6 +48,8 @@ class ListCoursesController {
 
     /**
      * GET /api/v1/course endpoint.
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
      */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses(

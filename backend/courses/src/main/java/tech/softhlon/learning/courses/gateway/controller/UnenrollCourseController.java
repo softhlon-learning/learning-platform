@@ -44,6 +44,8 @@ class UnenrollCourseController {
 
     /**
      * DEELTE /api/v1/course/{courseId}/enrollment endpoint.
+     * @param courseId Course Id
+     * @return ResponseEntity<?>
      */
     @DeleteMapping(UNENROLL_COURSE)
     ResponseEntity<?> unenrollCourse(

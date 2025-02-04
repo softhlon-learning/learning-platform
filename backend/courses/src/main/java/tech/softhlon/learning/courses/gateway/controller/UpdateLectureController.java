@@ -46,6 +46,9 @@ class UpdateLectureController {
 
     /**
      * PATCH /api/v1/course/{courseId}/enrollment/lecture.
+     * @param courseId Course Id
+     * @param request  UpdateLectureRequest
+     * @return ResponseEntity<?>
      */
     @PatchMapping(UPDATE_LECTURE)
     ResponseEntity<?> updateLecture(
