@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.14
+_release date: 2025-02-04_
+ * courses/accounts: Changed subscription cookie name and type
+ * frontend: Update subscription cookie name
+
 ## 0.45.13
 _release date: 2025-02-04_
  * accounts: Update javadocs in controllers
