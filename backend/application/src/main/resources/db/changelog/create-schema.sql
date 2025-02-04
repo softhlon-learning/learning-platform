@@ -144,6 +144,16 @@ CREATE TABLE _subscriptions.invoices (
     UNIQUE (invoice_id)
 );
 
+CREATE TABLE _subscriptions.free_trials (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid NOT NULL,
+    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    UNIQUE (invoice_id)
+);
+
 ---- common
 
 CREATE OR REPLACE FUNCTION update_modified_column()
@@ -163,3 +173,4 @@ CREATE TRIGGER update_courses_updated_at BEFORE UPDATE ON _courses.courses FOR E
 CREATE TRIGGER update_enrollments_updated_at BEFORE UPDATE ON _courses.enrollments FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_subscriptions_updated_at BEFORE UPDATE ON _subscriptions.subscriptions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 CREATE TRIGGER update_checkout_sessions_updated_at BEFORE UPDATE ON _subscriptions.checkout_sessions FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_free_trials_updated_at BEFORE UPDATE ON _subscriptions.free_trials FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
