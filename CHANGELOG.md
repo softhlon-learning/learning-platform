@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.12
+_release date: 2025-02-04_
+ * courses: Review and update javadocs
+ * subscriptions: Review and update javadocs
+
 ## 0.45.11
 _release date: 2025-02-04_
  * application: Review and update javadocs
