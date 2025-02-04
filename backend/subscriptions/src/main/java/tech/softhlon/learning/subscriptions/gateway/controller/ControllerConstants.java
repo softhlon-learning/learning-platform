@@ -9,6 +9,9 @@ package tech.softhlon.learning.subscriptions.gateway.controller;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Controller constants.
+ */
 class ControllerConstants {
 
     static final String STRIPE_SIGNATURE = "Stripe-Signature";

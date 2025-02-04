@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Customers JPA repository interface.
+ */
 interface CustomersJpaRepository extends CrudRepository<CustomerEntity, UUID> {
 
     Optional<CustomerEntity> findByCustomerId(

@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Checkout sessions JPA repository interface.
+ */
 interface CheckoutSessionsJpaRepository extends CrudRepository<CheckoutSessionEntity, UUID> {
 
     Optional<CheckoutSessionEntity> findBySessionId(

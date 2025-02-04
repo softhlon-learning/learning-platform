@@ -17,6 +17,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Subscriptions JPA repository interface.
+ */
 @Repository
 interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, UUID> {
 
@@ -30,7 +33,6 @@ interface SubscriptionsJpaRepository extends CrudRepository<SubscriptionEntity, 
           """, nativeQuery = true)
     Optional<SubscriptionEntity> findByAccountId(
           UUID accountId);
-
 
     @Query(value = """
               UPDATE _subscriptions.subscriptions 

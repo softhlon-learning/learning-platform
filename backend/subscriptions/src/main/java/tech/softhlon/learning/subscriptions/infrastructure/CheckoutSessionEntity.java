@@ -15,6 +15,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Checkout session JPA entity.
+ */
 @Entity
 @Getter
 @Setter
@@ -23,6 +26,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name = "checkout_sessions", schema = "_subscriptions")
 class CheckoutSessionEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -30,4 +34,5 @@ class CheckoutSessionEntity {
     private String sessionId;
     private OffsetDateTime expiredAt;
     private OffsetDateTime completedAt;
+
 }

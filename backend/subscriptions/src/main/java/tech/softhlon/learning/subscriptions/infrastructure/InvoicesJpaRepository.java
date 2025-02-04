@@ -16,6 +16,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Invoices JPA repository interface.
+ */
 interface InvoicesJpaRepository extends CrudRepository<InvoiceEntity, UUID> {
 
     @Query(value = """

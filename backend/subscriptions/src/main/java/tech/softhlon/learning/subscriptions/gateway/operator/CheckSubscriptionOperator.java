@@ -22,6 +22,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check subscriptions operator.
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -29,6 +32,11 @@ public class CheckSubscriptionOperator {
 
     private final CheckSubscriptionByAccountRepository checkSubscriptionByAccountRepository;
 
+    /**
+     * Check if accont is ssubscribed.
+     * @param request CheckSusbcriptionRequest
+     * @return CheckSusbcriptionResult
+     */
     public CheckSusbcriptionResult execute(
           CheckSusbcriptionRequest request) {
 

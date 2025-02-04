@@ -14,6 +14,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Subscriptions module configuration.
+ */
 @EntityScan
 @EnableJpaRepositories
 @Configuration(proxyBeanMethods = false)

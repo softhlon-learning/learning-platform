@@ -13,5 +13,8 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Events log JPA repository interface.
+ */
 interface EventLogJpaRepository extends CrudRepository<EventLogEntity, UUID> {
 }

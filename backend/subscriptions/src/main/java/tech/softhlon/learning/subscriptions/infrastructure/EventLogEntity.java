@@ -16,6 +16,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Event log JPA entity.
+ */
 @Entity
 @Getter
 @Setter

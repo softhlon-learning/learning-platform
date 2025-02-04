@@ -9,6 +9,9 @@ package tech.softhlon.learning.subscriptions.gateway.controller;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * REST endpoints constants.
+ */
 class RestResources {
 
     static final String API_PREFIX = "/api/v1";

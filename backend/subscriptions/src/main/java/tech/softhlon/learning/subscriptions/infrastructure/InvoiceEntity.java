@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Invoice JPA entity.
+ */
 @Entity
 @Getter
 @Setter

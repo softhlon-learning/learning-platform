@@ -15,6 +15,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Subscription JPA entity.
+ */
 @Entity
 @Getter
 @Setter
