@@ -15,8 +15,8 @@ import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperat
 import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
 import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersistenceFailed;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
 import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
@@ -41,18 +41,18 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
 
     private final String webhookSecret;
     private final LoadCustomerRepository loadCustomerRepository;
-    private final PersistCustomersRepository persistCustomersRepository;
+    private final PersistCustomerRepository persistCustomerRepository;
     private final LoadAccountByEmailOperator loadAccountByEmailOperator;
 
     public SubmitCustomerCreatedServiceImpl(
           @Value("${stripe.customer-created.webhook.secret}") String webhookSecret,
           LoadCustomerRepository loadCustomerRepository,
-          PersistCustomersRepository persistCustomersRepository,
+          PersistCustomerRepository persistCustomerRepository,
           LoadAccountByEmailOperator loadAccountByEmailOperator) {
 
         this.webhookSecret = webhookSecret;
         this.loadCustomerRepository = loadCustomerRepository;
-        this.persistCustomersRepository = persistCustomersRepository;
+        this.persistCustomerRepository = persistCustomerRepository;
         this.loadAccountByEmailOperator = loadAccountByEmailOperator;
 
     }
@@ -110,7 +110,7 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
           String customerId,
           UUID accountId) {
 
-        var result = persistCustomersRepository.execute(
+        var result = persistCustomerRepository.execute(
               null,
               customerId,
               accountId

@@ -8,9 +8,9 @@ package tech.softhlon.learning.subscriptions.infrastructure;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomersRepository.PersistCustomerResult.CustomerPersistenceFailed;
+import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository;
+import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersisted;
+import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersistenceFailed;
 
 import java.util.UUID;
 
@@ -24,7 +24,7 @@ import java.util.UUID;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
+class PersistCustomerRepositoryAdapter implements PersistCustomerRepository {
     private final CustomersJpaRepository customersJpaRepository;
 
     /**

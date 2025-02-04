@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 @OutboundPort
 @FunctionalInterface
-public interface PersistCustomersRepository {
+public interface PersistCustomerRepository {
 
     /**
      * Persist Stripe customer in repository.
