@@ -20,6 +20,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check if given course exists repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
@@ -28,6 +31,9 @@ class CheckCourseRepositoryAdapter implements CheckCourseRepository {
 
     private final CoursesJpaRepository coursesRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CheckCourseResult execute(
           UUID courseId) {

@@ -28,6 +28,9 @@ class CheckEnrollmentRepositoryAdapter implements CheckEnrollmentRepository {
 
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CheckEnrollmentResult execute(
           UUID accountId,

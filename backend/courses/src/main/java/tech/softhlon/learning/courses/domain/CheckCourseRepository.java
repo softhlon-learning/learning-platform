@@ -14,14 +14,25 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check if given course exists repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
 public interface CheckCourseRepository {
 
+    /**
+     * Check if given course exists in repository.
+     * @param courseId Course Id
+     * @return CheckCourseResult
+     */
     CheckCourseResult execute(
           UUID courseId);
 
+    /**
+     * Check if given course exists in repository result.
+     */
     sealed interface CheckCourseResult {
         record CourseExists() implements CheckCourseResult {}
         record CourseNotFound() implements CheckCourseResult {}

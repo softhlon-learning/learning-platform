@@ -27,6 +27,9 @@ class LoadCoursesRepositoryAdapter implements LoadCoursesRepository {
 
     private final CoursesJpaRepository coursesRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LoadCoursesResult execute() {
 

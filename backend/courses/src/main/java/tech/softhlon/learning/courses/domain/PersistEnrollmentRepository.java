@@ -12,6 +12,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist enrollment repository interface.
+ */
 public interface PersistEnrollmentRepository {
 
     PersistEnrollmentResult execute(

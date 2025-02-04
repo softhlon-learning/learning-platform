@@ -26,6 +26,9 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
 
     private final EnrollmentsJpaRepository enrollmentsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ListEnrollmentsResult execute(
           UUID courseId) {

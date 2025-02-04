@@ -27,6 +27,9 @@ class DeleteEnrollmentRepositoryAdapter implements DeleteEnrollmentRepository {
 
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DeleteEnrollmentResult execute(
           UUID courseId,

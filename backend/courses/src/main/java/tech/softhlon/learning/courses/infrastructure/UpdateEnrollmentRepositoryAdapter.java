@@ -17,6 +17,9 @@ import tech.softhlon.learning.courses.domain.UpdateEnrollmentRepository.UpdateEn
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update enrollment repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
@@ -25,6 +28,9 @@ class UpdateEnrollmentRepositoryAdapter implements UpdateEnrollmentRepository {
 
     private final EnrollmentsJpaRepository enrollmentsRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public UpdateEnrollmentResult execute(
           Enrollment enrollment) {

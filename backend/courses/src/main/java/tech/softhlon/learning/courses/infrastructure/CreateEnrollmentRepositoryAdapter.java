@@ -29,6 +29,9 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
     private final EnrollmentsJpaRepository enrollmentsRepo;
     private final CoursesJpaRepository coursesRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CreateEnrollmentResult execute(
           UUID courseId,

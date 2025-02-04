@@ -11,6 +11,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist course repository interface.
+ */
 public interface PersistCourseRepository {
 
     PersistCourseResult execute(

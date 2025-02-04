@@ -18,6 +18,9 @@ import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.Persist
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist enrollment repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
@@ -26,6 +29,9 @@ class PersistEnrollmentRepositoryAdapter implements PersistEnrollmentRepository 
 
     private final EnrollmentsJpaRepository enrollmentsJpaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistEnrollmentResult execute(
           PersistEnrollmentRequest request) {

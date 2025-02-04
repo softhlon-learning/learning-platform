@@ -17,6 +17,9 @@ import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCour
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Persist course repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
@@ -25,6 +28,9 @@ class PersistCourseRepositoryAdapter implements PersistCourseRepository {
 
     private final CoursesJpaRepository coursesRepo;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PersistCourseResult execute(
           PersistCourseRequest request) {
