@@ -46,6 +46,7 @@ class PersistFreeTrialRepositoryAdapter implements PersistFreeTrialRepository {
                         .expireAt(expireAt)
                         .build()
             );
+
             return new FreeTrialPersisted();
 
         } catch (Throwable cause) {
