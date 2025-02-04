@@ -27,6 +27,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * JWT service implementation.
+ */
 @Component
 public class JwtService {
 

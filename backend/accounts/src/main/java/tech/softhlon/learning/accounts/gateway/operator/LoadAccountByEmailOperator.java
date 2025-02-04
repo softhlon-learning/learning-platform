@@ -23,6 +23,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load account by email operator.
+ */
 @Service
 @RequiredArgsConstructor
 public class LoadAccountByEmailOperator {

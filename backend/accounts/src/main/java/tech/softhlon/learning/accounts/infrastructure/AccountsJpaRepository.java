@@ -15,6 +15,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Accounts JPA repository interface.
+ */
 @Repository
 interface AccountsJpaRepository extends CrudRepository<AccountEntity, UUID> {
 

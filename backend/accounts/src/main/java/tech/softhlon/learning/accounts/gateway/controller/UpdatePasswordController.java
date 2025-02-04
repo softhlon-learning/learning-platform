@@ -25,6 +25,9 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update password controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController

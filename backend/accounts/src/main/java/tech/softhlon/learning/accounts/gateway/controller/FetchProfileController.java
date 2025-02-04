@@ -29,6 +29,9 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.intern
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Fetch profile controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController

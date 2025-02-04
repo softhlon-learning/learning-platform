@@ -19,12 +19,21 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Spring authentication manager.
+ */
 @Component
 @RequiredArgsConstructor
 class CustomAuthenticationManager implements AuthenticationManager {
 
     private final JwtService jwtService;
 
+    /**
+     * Authenticate user.
+     * @param authentication Authentication token
+     * @return Authentication
+     * @throws AuthenticationException
+     */
     @Override
     public Authentication authenticate(
           Authentication authentication) throws AuthenticationException {

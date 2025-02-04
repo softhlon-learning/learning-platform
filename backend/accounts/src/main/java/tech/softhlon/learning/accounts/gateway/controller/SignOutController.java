@@ -27,6 +27,9 @@ import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign out controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController

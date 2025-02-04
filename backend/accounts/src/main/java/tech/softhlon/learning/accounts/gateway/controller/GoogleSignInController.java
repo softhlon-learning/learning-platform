@@ -29,6 +29,9 @@ import static tech.softhlon.learning.accounts.gateway.controller.RestResources.G
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Google sing in controller.
+ */
 @Slf4j
 @RestApiAdapter
 @RestController

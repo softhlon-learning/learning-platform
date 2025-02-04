@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Invalidated authentication tokens repsitory interface.
+ */
 @Repository
 interface InvalidatedTokensJpaRepository extends CrudRepository<InvalidatedEntity, UUID> {
 
