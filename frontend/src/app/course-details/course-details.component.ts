@@ -13,7 +13,7 @@ import {Lecture} from "../model/lecture"
 import {KeyboardInputCourseDetails} from "./keyboard-input"
 import {CoursesService} from '../service/courses/courses.service'
 import {Observable} from "rxjs";
-import {AUTHENTICATED_COOKIE, SUBSCRIBED_COOKIE} from "../common/constants";
+import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -339,7 +339,7 @@ export class CourseDetailsComponent implements OnInit {
      * @param lecture Lecture to operate on
      */
     displayMode(lecture: Lecture): string {
-        const subscribed = this.cookieService.get(SUBSCRIBED_COOKIE) === 'true';
+        const subscribed = this.cookieService.get(SUBSCRIPTION_COOKIE) === 'true';
 
         if (subscribed === false && lecture.preview) {
             return PREVIEW
