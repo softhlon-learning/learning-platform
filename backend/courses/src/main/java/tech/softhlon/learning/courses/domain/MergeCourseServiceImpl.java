@@ -30,6 +30,9 @@ import java.util.Map;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Merge enrollment with the latest course service implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

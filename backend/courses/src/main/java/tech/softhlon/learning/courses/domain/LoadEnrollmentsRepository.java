@@ -24,9 +24,17 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadEnrollmentsRepository {
 
+    /**
+     * Load all enrollments for given course from repository.
+     * @param courseId Course Id
+     * @return LoadEnrollmentResult
+     */
     ListEnrollmentsResult execute(
           UUID courseId);
 
+    /**
+     * Load all enrollments for given course from repository result.
+     */
     sealed interface ListEnrollmentsResult {
         record EnrollmentsLoaded(List<Enrollment> enrollments) implements ListEnrollmentsResult {}
         record EnrollmentLoadFailed(Throwable cause) implements ListEnrollmentsResult {}

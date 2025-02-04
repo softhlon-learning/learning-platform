@@ -16,9 +16,17 @@ import java.util.UUID;
  */
 public interface PersistCourseRepository {
 
+    /**
+     * Persist course in repository.
+     * @param course Course to persist
+     * @return PersistCourseResult
+     */
     PersistCourseResult execute(
           PersistCourseRequest course);
 
+    /**
+     * Persist course in repository result.
+     */
     sealed interface PersistCourseResult {
         record CoursePersisted() implements PersistCourseResult {}
         record CoursePersistenceFailed(Throwable cause) implements PersistCourseResult {}
