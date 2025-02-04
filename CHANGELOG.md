@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.45.17
+_release date: 2025-02-04_
+ * subscriptions: Add _subscriptions.free_trials table
+ * subscriptions: Update foreign key names
+ * subscriptions: Create FreeTrialsJpaRepository and entity
+
 ## 0.45.16
 _release date: 2025-02-04_
  * freebsd: Update /usr/loca/etc/rc.d/frontend to log output
