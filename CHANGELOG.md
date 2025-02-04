@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.4
+_release date: 2025-02-04_
+ * frontend: Remove not-found.component
+ * frontend: Update yarn.lock
+
 ## 0.45.3
 _release date: 2025-02-04_
  * security: Analysing nginx setup for correct 404 responses
