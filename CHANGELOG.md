@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.45.6
+_release date: 2025-02-04_
+ * general: Document Nginx configuration
+
 ## 0.45.5
 _release date: 2025-02-04_
  * security: Nginx setup for 404 responses
