@@ -7,7 +7,6 @@ package tech.softhlon.learning.subscriptions.infrastructure;
 
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.Optional;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
