@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.44.18
+_release date: 2025-02-04_
+ * courses: Add javadocs (domain and infrastructure) - part 1
+ * courses: Add javadocs (domain and infrastructure) - part 2
+
 ## 0.44.17
 _release date: 2025-02-04_
  * subscriptions: Code format update
