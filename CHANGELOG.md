@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.45.3
+_release date: 2025-02-04_
+ * security: Analysing nginx setup for correct 404 responses
+
 ## 0.45.2
 _release date: 2025-02-04_
 * security: nmap vulnerability scans - part 2
