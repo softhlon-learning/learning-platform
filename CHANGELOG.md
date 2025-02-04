@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.13
+_release date: 2025-02-04_
+ * accounts: Update javadocs in controllers
+ * courses: Update javadocs in controllers
+
 ## 0.45.12
 _release date: 2025-02-04_
  * courses: Review and update javadocs
