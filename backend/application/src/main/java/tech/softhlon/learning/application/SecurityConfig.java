@@ -18,6 +18,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Security configuration.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -26,6 +29,12 @@ class SecurityConfig {
     private final AuthenticationManager authenticationManager;
     private final JwtAuthenticationFilter authFilter;
 
+    /**
+     * Security filter chain mehtod.
+     * @param http HttpSecurity
+     * @return SecurityFilterChain
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(
           HttpSecurity http) throws Exception {

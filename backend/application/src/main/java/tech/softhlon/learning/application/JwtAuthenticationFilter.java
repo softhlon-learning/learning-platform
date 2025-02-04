@@ -29,11 +29,17 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * JWT authentication filter.
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
 class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final String ACCOUNT = "account";
+    private static final String ANONYMOUS = "anonymous";
+    private static final String ACCOUNT_ID = "accountId";
+    private static final String SUB = "sub";
 
     private final JwtService jwtService;
     private final CheckTokenRepository checkTokenRepository;
@@ -59,8 +65,8 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                       token);
 
                 var authToken = new AuthenticationToken(
-                      (String) claims.get("sub"),
-                      (String) claims.get("accountId"),
+                      (String) claims.get(SUB),
+                      (String) claims.get(ACCOUNT_ID),
                       List.of());
 
                 authToken
@@ -74,13 +80,11 @@ class JwtAuthenticationFilter extends OncePerRequestFilter {
                 setMDC(authToken.getName());
 
             } else {
-                setMDC("anonymous");
+                setMDC(ANONYMOUS);
             }
         } catch (Throwable cause) {
-
             log.error("", cause);
-            setMDC("anonymous");
-
+            setMDC(ANONYMOUS);
         }
 
         filterChain.doFilter(

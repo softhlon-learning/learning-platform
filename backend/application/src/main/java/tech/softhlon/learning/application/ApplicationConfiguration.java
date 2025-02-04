@@ -18,6 +18,9 @@ import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Application configuration configuration.
+ */
 @EnableAutoConfiguration
 @Configuration(proxyBeanMethods = false)
 @Import({

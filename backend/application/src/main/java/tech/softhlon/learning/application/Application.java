@@ -13,10 +13,17 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Main application class.
+ */
 @EnableScheduling
 @SpringBootApplication
 class Application {
 
+    /**
+     * Main program entry.
+     * @param args Program arguments
+     */
     public static void main(
           String[] args) {
 
