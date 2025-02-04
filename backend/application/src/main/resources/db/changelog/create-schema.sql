@@ -31,7 +31,7 @@ CREATE TABLE _accounts.reset_password_tokens (
     expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    CONSTRAINT fk_reset_password_tokens_accounts
+    CONSTRAINT fk_reset_password_tokens__accounts
          FOREIGN KEY (account_id)
          REFERENCES _accounts.accounts (id)
 );
@@ -66,10 +66,10 @@ CREATE TABLE _courses.enrollments (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
     UNIQUE (account_id, course_id),
-    CONSTRAINT fk_enrollments_accounts
+    CONSTRAINT fk_enrollments__accounts
          FOREIGN KEY (account_id)
          REFERENCES _accounts.accounts (id),
-    CONSTRAINT fk_enrollments_courses
+    CONSTRAINT fk_enrollments__courses
          FOREIGN KEY (course_id)
          REFERENCES _courses.courses (id)
 );
@@ -84,9 +84,9 @@ CREATE TABLE _subscriptions.customers (
     customer_id VARCHAR NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-        CONSTRAINT fk_customers_accounts
-             FOREIGN KEY (account_id)
-             REFERENCES _accounts.accounts (id),
+    CONSTRAINT fk_customers__accounts
+        FOREIGN KEY (account_id)
+        REFERENCES _accounts.accounts (id),
     UNIQUE (account_id),
     UNIQUE (customer_id)
 );
@@ -118,7 +118,7 @@ CREATE TABLE _subscriptions.checkout_sessions (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    CONSTRAINT fk_checkout_sessions_accounts
+    CONSTRAINT fk_checkout_sessions__accounts
          FOREIGN KEY (account_id)
          REFERENCES _accounts.accounts (id)
 );
@@ -151,7 +151,9 @@ CREATE TABLE _subscriptions.free_trials (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    UNIQUE (invoice_id)
+    CONSTRAINT fk_free_trials__accounts
+        FOREIGN KEY (account_id)
+        REFERENCES _accounts.accounts (id)
 );
 
 ---- common
