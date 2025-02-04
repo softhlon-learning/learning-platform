@@ -13,13 +13,24 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Upload course service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface UploadCourseService {
 
+    /**
+     * Upload course.
+     * @param request Operation request
+     * @return Result
+     */
     Result execute(
           Request request);
 
+    /**
+     * Upload course result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record Failed(Throwable cause) implements Result {}

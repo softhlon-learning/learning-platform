@@ -17,9 +17,17 @@ import java.util.UUID;
  */
 public interface PersistEnrollmentRepository {
 
+    /**
+     * Persist enrollment in repository.
+     * @param request Operation request
+     * @return PersistEnrollmentResult
+     */
     PersistEnrollmentResult execute(
-          PersistEnrollmentRequest course);
+          PersistEnrollmentRequest request);
 
+    /**
+     * Persist enrollment in repository result.
+     */
     sealed interface PersistEnrollmentResult {
         record EnrollmentPersisted() implements PersistEnrollmentResult {}
         record EnrollmentNotPresentFoundFailed() implements PersistEnrollmentResult {}

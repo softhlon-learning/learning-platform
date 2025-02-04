@@ -13,13 +13,24 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update lecture service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface UpdateLectureService {
 
+    /**
+     * Update lecture.
+     * @param request Operation request
+     * @return Result
+     */
     Result execute(
           Request request);
 
+    /**
+     * Update lecture result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record LectureNotFoundFailed() implements Result {}

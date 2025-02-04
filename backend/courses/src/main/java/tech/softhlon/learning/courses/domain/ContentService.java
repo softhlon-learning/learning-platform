@@ -15,11 +15,19 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Convert from/to json to CourseContent service.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 class ContentService {
 
+    /**
+     * Convert from JSON to CourseContent.
+     * @param json JSON (base64)
+     * @return CourseContent
+     */
     CourseContent jsonToCurseContent(
           String json) {
 
@@ -28,6 +36,11 @@ class ContentService {
 
     }
 
+    /**
+     * Cponvert from CourseContent to JSON.
+     * @param content CourseContent
+     * @return JSON (base64)
+     */
     String courseContentToJson(
           CourseContent content) {
 

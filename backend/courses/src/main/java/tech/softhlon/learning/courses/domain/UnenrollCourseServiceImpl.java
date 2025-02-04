@@ -24,6 +24,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Unenroll course service implementation..
+ */
 @Slf4j
 @Service
 @Transactional

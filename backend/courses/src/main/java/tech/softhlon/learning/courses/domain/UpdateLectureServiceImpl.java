@@ -29,6 +29,9 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update lecture service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class UpdateLectureServiceImpl implements UpdateLectureService {
