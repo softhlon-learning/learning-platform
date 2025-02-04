@@ -26,7 +26,7 @@ public interface LoadEnrollmentRepository {
     /**
      * Load enrollment from repository.
      * @param accountId Account Id
-     * @param courseId Course Id
+     * @param courseId  Course Id
      * @return LoadEnrollmentResult
      */
     LoadEnrollmentResult execute(

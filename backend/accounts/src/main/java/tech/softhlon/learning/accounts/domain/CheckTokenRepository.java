@@ -12,6 +12,9 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check password token repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

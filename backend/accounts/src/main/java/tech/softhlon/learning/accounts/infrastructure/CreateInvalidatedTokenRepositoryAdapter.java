@@ -17,6 +17,9 @@ import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepos
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create invalidated token repository adapter implementation.
+ */
 @Slf4j
 @Service
 @tech.softhlon.learning.common.hexagonal.PersistenceAdapter

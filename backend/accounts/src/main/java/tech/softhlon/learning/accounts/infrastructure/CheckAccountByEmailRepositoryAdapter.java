@@ -17,6 +17,9 @@ import static tech.softhlon.learning.accounts.domain.CheckAccountByEmailReposito
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Checkout account by email repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

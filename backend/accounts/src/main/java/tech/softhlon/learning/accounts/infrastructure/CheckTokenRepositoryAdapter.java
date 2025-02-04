@@ -17,6 +17,9 @@ import static tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckT
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check password token repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

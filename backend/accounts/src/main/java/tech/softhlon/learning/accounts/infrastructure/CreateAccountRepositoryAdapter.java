@@ -17,6 +17,9 @@ import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create account repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

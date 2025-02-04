@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create invalidated token repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

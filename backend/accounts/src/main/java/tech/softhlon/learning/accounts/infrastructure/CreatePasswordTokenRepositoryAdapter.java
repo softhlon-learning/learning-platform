@@ -19,6 +19,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create password token repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
