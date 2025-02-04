@@ -21,6 +21,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Fetch profile service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class FetchProfileServiceImpl implements FetchProfileService {

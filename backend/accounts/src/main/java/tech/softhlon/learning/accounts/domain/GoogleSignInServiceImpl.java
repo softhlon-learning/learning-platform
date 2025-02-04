@@ -32,6 +32,9 @@ import static tech.softhlon.learning.accounts.domain.AccountType.GOOGLE;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Google sing in service implementation.
+ */
 @Slf4j
 @Service
 class GoogleSignInServiceImpl implements GoogleSignInService {
@@ -40,6 +43,7 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     private static final String INVALID_CREDENTIALS = "Invalid token/credentials";
     private static final String EMAIL = "email";
     private static final String GIVEN_NAME = "given_name";
+
     private final GoogleIdTokenVerifier verifier;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final CreateAccountRepository createAccountRepository;

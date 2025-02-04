@@ -11,6 +11,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Google sing in service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface GoogleSignInService {

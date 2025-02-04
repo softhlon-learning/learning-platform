@@ -13,12 +13,15 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Delete account service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface DeleteAccountService {
 
     /**
-     * Delete account in repository (mark as deleted).
+     * Delete account (mark as deleted).
      * @param accountId Account Id
      * @return Result
      */

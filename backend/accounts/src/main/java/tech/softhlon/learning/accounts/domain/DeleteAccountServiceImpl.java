@@ -26,6 +26,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Delete account service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class DeleteAccountServiceImpl implements DeleteAccountService {

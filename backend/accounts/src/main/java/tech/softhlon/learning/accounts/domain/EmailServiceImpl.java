@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Email service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class EmailServiceImpl implements EmailService {

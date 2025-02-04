@@ -13,6 +13,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Fetch profile service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface FetchProfileService {

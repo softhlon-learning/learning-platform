@@ -13,6 +13,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Delete password token repository interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface DeletePasswordTokenRepository {

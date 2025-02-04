@@ -18,6 +18,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Delete password token repository adapter implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

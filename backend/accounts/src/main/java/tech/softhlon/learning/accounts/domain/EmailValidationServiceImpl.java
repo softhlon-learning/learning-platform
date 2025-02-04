@@ -13,6 +13,9 @@ import java.util.regex.Pattern;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Email validation service implementation.
+ */
 @Service
 class EmailValidationServiceImpl implements EmailValidationService {
 

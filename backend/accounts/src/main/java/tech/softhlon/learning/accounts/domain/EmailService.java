@@ -9,6 +9,9 @@ package tech.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Email service interface.
+ */
 interface EmailService {
 
     /**
