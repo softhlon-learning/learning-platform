@@ -77,7 +77,7 @@ class ListCoursesController {
 
         subscriptionCookiesService.addSubscriptionCookie(
               response,
-              courses.subscribed()
+              String.valueOf(courses.subscribed())
         );
 
         return status(HttpStatus.OK)

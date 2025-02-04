@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Service
 class SubscriptionCookiesService {
 
-    private static final String SUBSCRIBED = "Subscribed";
+    private static final String SUBSCRIPTION = "Subscription";
     private final int maxAge;
 
     public SubscriptionCookiesService(
@@ -37,12 +37,12 @@ class SubscriptionCookiesService {
      */
     void addSubscriptionCookie(
           HttpServletResponse response,
-          boolean subscribed) {
+          String value) {
 
         addCookie(
               response,
-              SUBSCRIBED,
-              String.valueOf(subscribed),
+              SUBSCRIPTION,
+              value,
               false,
               maxAge
         );
