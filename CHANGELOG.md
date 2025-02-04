@@ -1,7 +1,12 @@
 # Learning Platform Changelog
 
+## 0.46.0
+_release date: 2025-02-05_
+ * subscriptions: Add CreateFreeTrialService
+ * subscriptions: Implement CreateFreeTrialServiceImpl
+
 ## 0.45.19
-_release date: 2025-02-04_
+_release date: 2025-02-05_
  * subscriptions: Rename PersistCustomers* to PersistCustomer*
  * subscriptions: Add PersistFreeTrialRepository
  * subscriptions: Implement PersistFreeTrialRepositoryAdapter
