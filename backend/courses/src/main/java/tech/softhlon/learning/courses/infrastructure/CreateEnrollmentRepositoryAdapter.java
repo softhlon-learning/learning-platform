@@ -39,7 +39,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
     public CreateEnrollmentResult execute(
           UUID courseId,
           UUID accountId,
-          OffsetDateTime enrolledTime) {
+          OffsetDateTime enrolledAt) {
 
         try {
             var course = coursesRepo
@@ -49,7 +49,7 @@ class CreateEnrollmentRepositoryAdapter implements CreateEnrollmentRepository {
             var createdEnrollment = enrollmentsRepo.save(
                   toEnrollment(
                         accountId,
-                        enrolledTime,
+                        enrolledAt,
                         course)
             );
 

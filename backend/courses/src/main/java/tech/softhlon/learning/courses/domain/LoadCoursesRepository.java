@@ -23,8 +23,15 @@ import java.util.UUID;
 @FunctionalInterface
 public interface LoadCoursesRepository {
 
+    /**
+     * Load all available courses from repository.
+     * @return LoadCoursesResult
+     */
     LoadCoursesResult execute();
 
+    /**
+     * Load all available courses from repository result.
+     */
     sealed interface LoadCoursesResult {
         record CoursesLoaded(List<Course> course) implements LoadCoursesResult {}
         record CoursesLoadFailed(Throwable cause) implements LoadCoursesResult {}

@@ -22,10 +22,19 @@ import java.util.UUID;
 @FunctionalInterface
 public interface DeleteEnrollmentRepository {
 
+    /**
+     * Delete enrollment in repository.
+     * @param courseId  Course Id
+     * @param accountId Accout Id
+     * @return DeleteEnrollmentResult
+     */
     DeleteEnrollmentResult execute(
           UUID courseId,
           UUID accountId);
 
+    /**
+     * Delete enrollment in repository result.
+     */
     sealed interface DeleteEnrollmentResult {
         record EnrollmentDeleted() implements DeleteEnrollmentResult {}
         record EnrollementDeletionFailed(Throwable cause) implements DeleteEnrollmentResult {}

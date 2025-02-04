@@ -34,6 +34,9 @@ class UnenrollCourseServiceImpl implements UnenrollCourseService {
     private final CheckEnrollmentRepository checkEnrollmentRepository;
     private final DeleteEnrollmentRepository deleteEnrollmentRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId,

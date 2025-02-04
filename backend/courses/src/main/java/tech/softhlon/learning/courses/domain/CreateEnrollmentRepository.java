@@ -23,11 +23,21 @@ import java.util.UUID;
 @FunctionalInterface
 public interface CreateEnrollmentRepository {
 
+    /**
+     * Create enrollment in repository.
+     * @param courseId   Course Id
+     * @param accountId  Account Id
+     * @param enrolledAt Enrollment time
+     * @return CreateEnrollmentResult
+     */
     CreateEnrollmentResult execute(
           UUID courseId,
           UUID accountId,
-          OffsetDateTime enrolledTime);
+          OffsetDateTime enrolledAt);
 
+    /**
+     * Create enrollment in repository result.
+     */
     sealed interface CreateEnrollmentResult {
         record EnrollmentPersisted(UUID uuid) implements CreateEnrollmentResult {}
         record EnrollementPersistenceFailed(Throwable cause) implements CreateEnrollmentResult {}

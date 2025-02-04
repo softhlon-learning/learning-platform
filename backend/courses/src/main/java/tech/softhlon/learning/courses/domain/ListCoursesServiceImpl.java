@@ -29,6 +29,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * List courses service implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -39,6 +42,9 @@ class ListCoursesServiceImpl implements ListCoursesService {
     private final CheckSubscriptionOperator checkSubscriptionOperator;
     private final HideCourseContentService hideCourseContentService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId) {

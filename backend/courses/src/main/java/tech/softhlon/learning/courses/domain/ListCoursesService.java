@@ -12,11 +12,22 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * List courses service interface.
+ */
 public interface ListCoursesService {
 
+    /**
+     * List all available courses.
+     * @param accountId Account Id
+     * @return Result
+     */
     Result execute(
           UUID accountId);
 
+    /**
+     * List all available courses result.
+     */
     sealed interface Result {
         record Succeeded(CoursesView courses) implements Result {}
         record Failed(Throwable cause) implements Result {}

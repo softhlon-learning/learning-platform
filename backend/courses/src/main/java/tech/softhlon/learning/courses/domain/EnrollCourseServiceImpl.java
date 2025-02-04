@@ -24,6 +24,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Enroll course service implementation.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -33,6 +36,9 @@ class EnrollCourseServiceImpl implements EnrollCourseService {
     private final CheckCourseRepository checkCourseRepository;
     private final CreateEnrollmentRepository createEnrollmentRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           UUID accountId,

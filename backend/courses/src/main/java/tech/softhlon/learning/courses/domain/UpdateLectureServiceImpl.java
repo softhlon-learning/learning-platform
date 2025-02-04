@@ -37,6 +37,9 @@ class UpdateLectureServiceImpl implements UpdateLectureService {
     private final PersistEnrollmentRepository persistEnrollmentRepository;
     private final ContentService contentService;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           Request request) {

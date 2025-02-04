@@ -29,6 +29,9 @@ class UploadCourseServiceImpl implements UploadCourseService {
     private final MergeCourseService mergeCourseService;
     private final PersistCourseRepository persistCourseRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Result execute(
           Request request) {

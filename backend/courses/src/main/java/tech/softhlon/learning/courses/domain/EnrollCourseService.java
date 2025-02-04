@@ -13,14 +13,26 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Enroll course service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface EnrollCourseService {
 
+    /**
+     * Enroll course.
+     * @param accountId Account Id
+     * @param courseId  Course Id
+     * @return REsult
+     */
     Result execute(
           UUID accountId,
           UUID courseId);
 
+    /**
+     * Enroll course result.
+     */
     sealed interface Result {
         record Succeeded() implements Result {}
         record AccountNotSubscribedFailed(String message) implements Result {}

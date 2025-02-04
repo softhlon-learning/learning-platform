@@ -22,10 +22,19 @@ import java.util.UUID;
 @FunctionalInterface
 public interface CheckEnrollmentRepository {
 
+    /**
+     * Check if given enrollment exist in repository.
+     * @param accountId Account Id
+     * @param courseId  Course Id
+     * @return
+     */
     CheckEnrollmentResult execute(
           UUID accountId,
           UUID courseId);
 
+    /**
+     * Check if given enrollment exist in repository result.
+     */
     sealed interface CheckEnrollmentResult {
         record EnrollmentExists() implements CheckEnrollmentResult {}
         record EnrollmentNotFound() implements CheckEnrollmentResult {}

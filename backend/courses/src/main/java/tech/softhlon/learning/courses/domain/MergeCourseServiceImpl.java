@@ -39,6 +39,9 @@ class MergeCourseServiceImpl implements MergeCourseService {
     private final LoadEnrollmentsRepository loadEnrollmentsRepository;
     private final PersistEnrollmentRepository persistEnrollmentRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MergeCourseResult execute(
           MergeCourseReuqest reuqest) {
