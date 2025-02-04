@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.45.5
+_release date: 2025-02-04_
+ * security: Nginx setup for 404 responses
+
 ## 0.45.4
 _release date: 2025-02-04_
  * frontend: Remove not-found.component
@@ -11,15 +15,15 @@ _release date: 2025-02-04_
 
 ## 0.45.2
 _release date: 2025-02-04_
-* security: nmap vulnerability scans - part 2
+ * security: Nmap vulnerability scans - part 2
 
 ## 0.45.1
 _release date: 2025-02-04_
- * security: nmap vulnerability scans - part 1
+ * security: Nmap vulnerability scans - part 1
 
 ## 0.45.0
 _release date: 2025-02-04_
- * courses  : Remove UpdateEnrollmentRepository and adapter
+ * courses: Remove UpdateEnrollmentRepository and adapter
  * courses: Add javadocs (domain and infrastructure) - part 5
 
 ## 0.44.19
