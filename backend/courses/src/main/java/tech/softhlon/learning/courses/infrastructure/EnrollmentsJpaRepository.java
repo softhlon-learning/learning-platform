@@ -16,6 +16,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Enrollments JPA repository interface.
+ */
 @Repository
 interface EnrollmentsJpaRepository extends CrudRepository<EnrollmentEntity, UUID> {
 

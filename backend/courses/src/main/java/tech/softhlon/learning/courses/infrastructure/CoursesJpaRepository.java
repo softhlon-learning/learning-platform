@@ -14,5 +14,8 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Courses JPA repository interface.
+ */
 @Repository
 interface CoursesJpaRepository extends CrudRepository<CourseEntity, UUID> {}

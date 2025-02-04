@@ -18,11 +18,19 @@ import java.util.List;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Hide course content service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class HideCourseContentService {
     private final ContentService contentService;
 
+    /**
+     * Hide course content (for lecture with preview false flag).
+     * @param contentJson Course content JSON
+     * @return Updated course content JSON
+     */
     String execute(String contentJson) {
         var courseContent = contentService.jsonToCurseContent(contentJson);
 

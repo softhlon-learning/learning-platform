@@ -25,6 +25,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Create/upload courses operator.
+ */
 @Slf4j
 @Component
 public class CreateCoursesOperator {
@@ -51,6 +54,10 @@ public class CreateCoursesOperator {
 
     }
 
+    /**
+     * Create/upload all courses
+     * @throws IOException
+     */
     public void execute() throws IOException {
 
         MDC.put(ACCOUNT,

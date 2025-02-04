@@ -16,7 +16,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Password token entity.
+ * Password token JPA entity.
  */
 @Entity
 @Getter

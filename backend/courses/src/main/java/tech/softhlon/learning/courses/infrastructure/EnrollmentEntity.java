@@ -15,6 +15,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Enrollment JPA entity.
+ */
 @Entity
 @Getter
 @Setter

@@ -17,6 +17,9 @@ import tech.softhlon.learning.courses.gateway.operator.CreateCoursesOperator;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Courses module initializer.
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -24,6 +27,10 @@ class ModuleInitializer implements ApplicationListener<ContextRefreshedEvent> {
 
     private final CreateCoursesOperator createCoursesOperator;
 
+    /**
+     * Initialize courses module.
+     * @param event ContextRefreshedEvent
+     */
     @Override
     @SneakyThrows
     public void onApplicationEvent(

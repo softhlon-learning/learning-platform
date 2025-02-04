@@ -16,7 +16,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Ivalidated token entity.
+ * Ivalidated token JPA entity.
  */
 @Entity
 @Getter

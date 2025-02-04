@@ -14,6 +14,9 @@ import org.springframework.stereotype.Component;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Course definition resources.
+ */
 @Getter
 @Component
 class CourseDefinitions {
