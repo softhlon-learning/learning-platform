@@ -53,6 +53,11 @@ public class JwtService {
 
     }
 
+    /**
+     * Get all claims from token.
+     * @param token JWT token
+     * @return Claims
+     */
     public Claims getAllClaimsFromToken(
           String token) {
 
@@ -63,6 +68,11 @@ public class JwtService {
 
     }
 
+    /**
+     * Check if token is valid.
+     * @param token JWT token
+     * @return True if token is valid
+     */
     public Boolean isTokenValid(
           String token) {
 
@@ -74,6 +84,11 @@ public class JwtService {
 
     }
 
+    /**
+     * Extract token from cookie.
+     * @param request HttpServletRequest
+     * @return JWT token
+     */
     public String extractToken(
           HttpServletRequest request) {
 
@@ -92,6 +107,12 @@ public class JwtService {
 
     }
 
+    /**
+     * Fetch JWT token.
+     * @param token JWT token
+     * @return JWT token hash
+     * @throws NoSuchAlgorithmException
+     */
     public String tokenHash(
           String token) throws NoSuchAlgorithmException {
 
@@ -105,6 +126,12 @@ public class JwtService {
 
     }
 
+    /**
+     * Generate JWT token
+     * @param accountId Account Id
+     * @param email     User's email
+     * @return JWT token
+     */
     public String generateToken(
           UUID accountId,
           String email) {

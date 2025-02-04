@@ -32,6 +32,11 @@ public class LoadAccountByEmailOperator {
 
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
 
+    /**
+     * Load account by email.
+     * @param email User's email
+     * @return LoadAccountResult
+     */
     public LoadAccountResult execute(String email) {
 
         var result = loadAccountByEmailRepository.execute(email);

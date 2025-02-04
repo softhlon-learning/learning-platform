@@ -9,6 +9,9 @@ package tech.softhlon.learning.accounts.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Account type constants.
+ */
 class AccountType {
 
     static final String PASSWORD = "PASSWORD";

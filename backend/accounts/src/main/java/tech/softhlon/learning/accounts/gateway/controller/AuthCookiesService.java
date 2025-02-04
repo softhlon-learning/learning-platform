@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Authentication cookies service.
+ */
 @Service
 class AuthCookiesService {
 
@@ -29,6 +32,11 @@ class AuthCookiesService {
 
     }
 
+    /**
+     * Add authentication success cookies.
+     * @param response HttpServletResponse
+     * @param token    JWT token
+     */
     void addAuthSucceededCookies(
           HttpServletResponse response,
           String token) {
@@ -51,6 +59,10 @@ class AuthCookiesService {
 
     }
 
+    /**
+     * Add authentication fail cookies.
+     * @param response HttpServletResponse
+     */
     void addAuthFailedCookies(
           HttpServletResponse response) {
 
@@ -72,6 +84,10 @@ class AuthCookiesService {
 
     }
 
+    /**
+     * Reset authentication cookies,
+     * @param response HttpServletResponse
+     */
     void resetAuthCookies(
           HttpServletResponse response) {
 

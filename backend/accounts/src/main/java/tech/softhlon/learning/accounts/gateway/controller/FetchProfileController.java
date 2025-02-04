@@ -42,6 +42,9 @@ class FetchProfileController {
     private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
 
+    /**
+     * GET /api/v1/account/profile endpoint.
+     */
     @GetMapping(PROFILE)
     ResponseEntity<?> getProfile() {
 

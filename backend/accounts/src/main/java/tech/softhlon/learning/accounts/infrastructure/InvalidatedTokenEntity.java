@@ -15,11 +15,14 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Ivalidated token entity.
+ */
 @Entity
 @Getter
 @Builder
 @Table(name = "invalidated_tokens", schema = "_accounts")
-class InvalidatedEntity {
+class InvalidatedTokenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

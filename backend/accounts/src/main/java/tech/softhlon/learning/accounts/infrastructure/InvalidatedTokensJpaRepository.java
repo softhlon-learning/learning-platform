@@ -18,7 +18,7 @@ import java.util.UUID;
  * Invalidated authentication tokens repsitory interface.
  */
 @Repository
-interface InvalidatedTokensJpaRepository extends CrudRepository<InvalidatedEntity, UUID> {
+interface InvalidatedTokensJpaRepository extends CrudRepository<InvalidatedTokenEntity, UUID> {
 
     boolean existsByTokenHash(
           String tokenHash);

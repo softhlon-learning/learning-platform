@@ -9,4 +9,7 @@ package tech.softhlon.learning.accounts.infrastructure;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Invalid token exception.
+ */
 class InvalidTokenException extends RuntimeException {}
