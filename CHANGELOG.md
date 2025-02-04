@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.11
+_release date: 2025-02-04_
+ * application: Review and update javadocs
+ * common: Review and update javadocs 
+
 ## 0.45.10
 _release date: 2025-02-04_
  * accounts: Review and update javadocs for class and interface headers - part 4
