@@ -15,6 +15,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load courses repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

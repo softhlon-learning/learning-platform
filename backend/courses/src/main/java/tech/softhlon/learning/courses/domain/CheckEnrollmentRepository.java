@@ -14,6 +14,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check enrollment repository interface.
+ */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface

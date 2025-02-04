@@ -18,6 +18,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load enrollments repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
@@ -63,4 +66,5 @@ class LoadEnrollmentsRepositoryAdapter implements LoadEnrollmentsRepository {
         );
 
     }
+
 }

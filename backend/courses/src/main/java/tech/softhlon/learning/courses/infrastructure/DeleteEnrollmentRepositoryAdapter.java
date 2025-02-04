@@ -19,6 +19,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Delete enrollment repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

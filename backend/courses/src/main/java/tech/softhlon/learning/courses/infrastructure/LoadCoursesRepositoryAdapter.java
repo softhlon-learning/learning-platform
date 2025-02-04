@@ -19,6 +19,9 @@ import java.util.stream.StreamSupport;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Load courses repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter

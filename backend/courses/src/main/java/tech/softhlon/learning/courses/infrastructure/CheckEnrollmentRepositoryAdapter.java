@@ -20,6 +20,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Check enrollment repository adapter implementation.
+ */
 @Slf4j
 @Service
 @PersistenceAdapter
