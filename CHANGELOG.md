@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.16
+_release date: 2025-02-04_
+ * freebsd: Update /usr/loca/etc/rc.d/frontend to log output
+ * general: Free trial design
+
 ## 0.45.15
 _release date: 2025-02-04_
  * freebsd: Add nginx.log to ~/.screenrc
