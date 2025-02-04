@@ -30,6 +30,9 @@ import java.time.OffsetDateTime;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update password service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class UpdatePasswordServiceImpl implements UpdatePasswordService {

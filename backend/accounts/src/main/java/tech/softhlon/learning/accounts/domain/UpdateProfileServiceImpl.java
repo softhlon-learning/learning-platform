@@ -25,6 +25,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Updated profile service implemtation.
+ */
 @Service
 @RequiredArgsConstructor
 class UpdateProfileServiceImpl implements UpdateProfileService {

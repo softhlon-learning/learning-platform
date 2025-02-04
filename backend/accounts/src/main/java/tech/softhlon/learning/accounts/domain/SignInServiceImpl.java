@@ -17,6 +17,9 @@ import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign in with email and password service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class SignInServiceImpl implements SignInService {

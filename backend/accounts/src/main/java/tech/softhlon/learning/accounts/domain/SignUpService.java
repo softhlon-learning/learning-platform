@@ -13,6 +13,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign up service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface SignUpService {

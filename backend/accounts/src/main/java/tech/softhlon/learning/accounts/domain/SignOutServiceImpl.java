@@ -23,6 +23,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign out service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class SignOutServiceImpl implements SignOutService {

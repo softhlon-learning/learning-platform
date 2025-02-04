@@ -11,6 +11,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Update password service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface UpdatePasswordService {

@@ -11,6 +11,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign in with email and password service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface SignInService {

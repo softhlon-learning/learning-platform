@@ -11,6 +11,9 @@ import tech.softhlon.learning.common.hexagonal.InboundPort;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign out service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface SignOutService {

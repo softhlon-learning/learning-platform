@@ -13,6 +13,9 @@ import java.util.UUID;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Updated profile service interface.
+ */
 @InboundPort
 @FunctionalInterface
 public interface UpdateProfileService {

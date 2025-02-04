@@ -24,6 +24,9 @@ import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Sign up service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class SignUpServiceImpl implements SignUpService {
