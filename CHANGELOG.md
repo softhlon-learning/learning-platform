@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.15
+_release date: 2025-02-04_
+ * freebsd: Add nginx.log to ~/.screenrc
+ * freebsd: Add frontend.log to ~/.screenrc
+
 ## 0.45.14
 _release date: 2025-02-04_
  * courses/accounts: Changed subscription cookie name and type
