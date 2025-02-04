@@ -43,13 +43,14 @@ class DeleteAccountController {
 
     /**
      * DELETE /api/v1/account endpoint.
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
      */
     @DeleteMapping(path = ACCOUNT)
     ResponseEntity<?> delete(
           HttpServletResponse response) {
 
         log.info("controller | request / Delete account");
-
         var accountId = authContext.accountId();
         var result = deleteAccountService.execute(accountId);
 

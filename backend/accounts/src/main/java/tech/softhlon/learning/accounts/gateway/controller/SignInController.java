@@ -43,6 +43,9 @@ class SignInController {
 
     /**
      * POST /api/v1/account/auth/sign-in endpoint.
+     * @param request  Request
+     * @param response
+     * @return HttpServletResponse
      */
     @PostMapping(SIGN_IN)
     ResponseEntity<?> signIn(

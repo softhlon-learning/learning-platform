@@ -44,6 +44,7 @@ class FetchProfileController {
 
     /**
      * GET /api/v1/account/profile endpoint.
+     * @return ResponseEntity<?>
      */
     @GetMapping(PROFILE)
     ResponseEntity<?> getProfile() {

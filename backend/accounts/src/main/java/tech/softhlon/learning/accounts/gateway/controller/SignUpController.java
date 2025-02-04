@@ -42,6 +42,9 @@ class SignUpController {
 
     /**
      * POST /api/v1/account/sign-up endpoint.
+     * @param request  Request
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
      */
     @PostMapping(SIGN_UP)
     ResponseEntity<?> signUp(

@@ -43,6 +43,9 @@ class UpdateProfileController {
 
     /**
      * PUT /api/v1/account/profile endpoint.
+     * @param request  Profile
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
      */
     @PutMapping(PROFILE)
     ResponseEntity<?> updateProfile(

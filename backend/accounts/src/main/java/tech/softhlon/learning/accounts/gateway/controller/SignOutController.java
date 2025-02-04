@@ -42,6 +42,8 @@ class SignOutController {
 
     /**
      * POST /api/v1/account/auth/sign-out endpoint.
+     * @param response HttpServletResponse
+     * @return ResponseEntity<?>
      */
     @PostMapping(SIGN_OUT)
     ResponseEntity<?> signOut(

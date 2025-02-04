@@ -62,6 +62,8 @@ class GoogleSignInController {
 
     /**
      * POST /api/v1/account/auth/google-sign-in endpoint.
+     * @param body     Body params map
+     * @param response HttpServletResponse
      */
     @PostMapping(path = GOOGLE_SIGN_IN, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     void signIn(
@@ -69,7 +71,6 @@ class GoogleSignInController {
           HttpServletResponse response) {
 
         log.info("controller | request / Google sign-in");
-
         var result = service.execute(body.get(CREDENTIAL));
 
         switch (result) {

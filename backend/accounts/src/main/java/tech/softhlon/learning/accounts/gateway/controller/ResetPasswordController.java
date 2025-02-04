@@ -42,6 +42,9 @@ class ResetPasswordController {
 
     /**
      * POST /api/v1/account/reset-password endpoint.
+     * @param request  ResetPasswordRequest
+     * @param response HttpServletResponse
+     * @return
      */
     @PostMapping(RESET_PASSWORD)
     ResponseEntity<?> resetPassword(
