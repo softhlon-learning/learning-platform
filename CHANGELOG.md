@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.45.2
+_release date: 2025-02-04_
+* security: nmap vulnerability scans - part 2
+
 ## 0.45.1
 _release date: 2025-02-04_
  * security: nmap vulnerability scans - part 1
