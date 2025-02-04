@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.45.0
+_release date: 2025-02-04_
+ * courses  : Remove UpdateEnrollmentRepository and adapter
+ * courses: Add javadocs (domain and infrastructure) - part 5
+
 ## 0.44.19
 _release date: 2025-02-04_
  * courses: Add javadocs (domain and infrastructure) - part 3
