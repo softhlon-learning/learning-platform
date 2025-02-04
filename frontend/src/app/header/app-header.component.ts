@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core'
 import {CookieService} from "ngx-cookie-service"
 import {Router} from "@angular/router"
 import {AccountsService} from '../service/accounts/accounts.service'
-import {AUTHENTICATED_COOKIE, SUBSCRIBED_COOKIE} from "../common/constants";
+import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -44,7 +44,7 @@ export class AppHeaderComponent implements OnInit {
      * Check if user is subscribed.
      */
     isSubscribed(): boolean {
-        return this.cookieService.get(SUBSCRIBED_COOKIE) === 'true'
+        return this.cookieService.get(SUBSCRIPTION_COOKIE) === 'true'
     }
 
     /**
