@@ -37,13 +37,14 @@ class PersistCustomersRepositoryAdapter implements PersistCustomersRepository {
           UUID accountId) {
 
         try {
+
             customersJpaRepository.save(
                   CustomerEntity.builder()
                         .id(id)
                         .customerId(customerId)
                         .accountId(accountId)
-                        .build());
-
+                        .build()
+            );
             return new CustomerPersisted();
 
         } catch (Throwable cause) {

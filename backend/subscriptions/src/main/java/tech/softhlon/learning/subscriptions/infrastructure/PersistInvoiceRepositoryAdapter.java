@@ -32,12 +32,9 @@ class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
     public PersistInvoiceResult execute(PersistInvoiceRequest request) {
 
         try {
-            invoicesJpaRepository.save(
-                  entity(request));
 
-            invoicesJpaRepository.avtivatePaidSubscription(
-                  request.invoiceId());
-
+            invoicesJpaRepository.save(entity(request));
+            invoicesJpaRepository.avtivatePaidSubscription(request.invoiceId());
             return new InvoicePersisted();
 
         } catch (Throwable cause) {
@@ -52,10 +49,12 @@ class PersistInvoiceRepositoryAdapter implements PersistInvoiceRepository {
     // -----------------------------------------------------------------------------------------------------------------
 
     private InvoiceEntity entity(PersistInvoiceRequest request) {
+
         return InvoiceEntity.builder()
               .invoiceId(request.invoiceId())
               .paid(request.paid())
               .build();
+
     }
 
 }

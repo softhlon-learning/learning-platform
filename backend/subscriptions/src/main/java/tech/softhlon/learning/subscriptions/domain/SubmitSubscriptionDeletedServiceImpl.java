@@ -64,14 +64,13 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
             var event = Webhook.constructEvent(
                   payload,
                   sigHeader,
-                  webhookSecret);
-
+                  webhookSecret
+            );
             switch (event.getType()) {
                 case "customer.subscription.deleted": {
 
                     var subscriptionId = subscriptionId(event);
                     var customerId = customerId(event);
-
                     var result = loadSubscriptionRepository.execute(subscriptionId);
 
                     return switch (result) {
@@ -110,6 +109,7 @@ class SubmitSubscriptionDeletedServiceImpl implements SubmitSubscriptionDeletedS
             case SubscriptionPersisted() -> new Succeeded();
             case SubscriptionPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     private PersistSubscriptionRequest prepareRequest(

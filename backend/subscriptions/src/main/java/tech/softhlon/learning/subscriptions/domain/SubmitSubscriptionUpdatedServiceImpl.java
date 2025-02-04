@@ -69,8 +69,8 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
             var event = Webhook.constructEvent(
                   payload,
                   sigHeader,
-                  webhookSecret);
-
+                  webhookSecret
+            );
             switch (event.getType()) {
                 case "customer.subscription.updated": {
 
@@ -105,7 +105,8 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
 
         var request = prepareRequest(
               stripeObject,
-              subscription);
+              subscription
+        );
 
         var result = persistSubscriptionRepository.execute(request);
 
@@ -143,9 +144,10 @@ class SubmitSubscriptionUpdatedServiceImpl implements SubmitSubscriptionUpdatedS
         var instant = Instant.ofEpochMilli(
               Long.parseLong(time) * 1000);
 
-        return OffsetDateTime.ofInstant
-              (instant,
-                    ZoneId.systemDefault());
+        return OffsetDateTime.ofInstant(
+              instant,
+              ZoneId.systemDefault()
+        );
 
     }
 

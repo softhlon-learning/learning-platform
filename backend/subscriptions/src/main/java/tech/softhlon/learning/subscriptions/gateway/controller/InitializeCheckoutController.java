@@ -60,7 +60,8 @@ class InitializeCheckoutController {
         var result = service.execute(
               accountId,
               email,
-              request.priceId());
+              request.priceId()
+        );
 
         return switch (result) {
             case Succeeded(String redirectUrl) -> successBody(redirectUrl);

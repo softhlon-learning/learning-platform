@@ -52,7 +52,8 @@ class SubmitSubscriptionDeletedController {
 
         var result = service.execute(
               payload,
-              httpRequest.getHeader(STRIPE_SIGNATURE));
+              httpRequest.getHeader(STRIPE_SIGNATURE)
+        );
 
         log.info("controller | response / Submit customer.subscription.deleted event: {}", result);
 

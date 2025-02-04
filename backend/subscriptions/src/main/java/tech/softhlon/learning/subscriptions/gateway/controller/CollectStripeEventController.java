@@ -67,7 +67,8 @@ class CollectStripeEventController {
         log.info("controller | request / Collect {} event",
               eventType(
                     payload,
-                    sigHeader));
+                    sigHeader)
+        );
 
         var result = service.execute(
               payload,
@@ -91,7 +92,8 @@ class CollectStripeEventController {
         return Webhook.constructEvent(
               payload,
               sigHeader,
-              webhookSecret).getType();
+              webhookSecret
+        ).getType();
 
     }
 }

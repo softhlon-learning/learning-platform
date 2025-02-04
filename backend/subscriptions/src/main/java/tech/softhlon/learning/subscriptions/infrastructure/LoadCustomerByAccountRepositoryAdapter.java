@@ -40,8 +40,7 @@ class LoadCustomerByAccountRepositoryAdapter implements LoadCustomerByAccountRep
                   .findByAccountId(accountId);
 
             if (entity.isPresent()) {
-                return new CustomerLoaded(
-                      customer(entity.get()));
+                return new CustomerLoaded(customer(entity.get()));
             } else {
                 return new CustomerNotFound();
             }

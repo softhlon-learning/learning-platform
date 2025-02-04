@@ -61,8 +61,8 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
             var event = Webhook.constructEvent(
                   payload,
                   sigHeader,
-                  webhookSecret);
-
+                  webhookSecret
+            );
             switch (event.getType()) {
                 case "customer.subscription.created": {
 
@@ -131,9 +131,10 @@ class SubmitSubscriptionCreatedServiceImpl implements SubmitSubscriptionCreatedS
         var instant = Instant.ofEpochMilli(
               Long.parseLong(time) * 1000);
 
-        return OffsetDateTime.ofInstant
-              (instant,
-                    ZoneId.systemDefault());
+        return OffsetDateTime.ofInstant(
+              instant,
+              ZoneId.systemDefault()
+        );
 
     }
 

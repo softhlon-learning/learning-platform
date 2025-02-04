@@ -39,9 +39,8 @@ class CheckSubscriptionByAccountRepositoryAdapter implements CheckSubscriptionBy
           UUID accountId) {
 
         try {
-            var subsription = subscriptionsRepo.findByAccountId(
-                  accountId);
 
+            var subsription = subscriptionsRepo.findByAccountId(accountId);
             return subsription.isPresent()
                   ? new SubscriptionExists()
                   : new SubscriptionNotFound();

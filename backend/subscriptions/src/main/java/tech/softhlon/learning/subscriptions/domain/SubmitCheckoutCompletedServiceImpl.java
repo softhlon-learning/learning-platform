@@ -67,13 +67,11 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
             var event = Webhook.constructEvent(
                   payload,
                   sigHeader,
-                  webhookSecret);
-
+                  webhookSecret
+            );
             switch (event.getType()) {
                 case "checkout.session.completed": {
-                    var result = loadCheckoutRepository.execute(
-                          sessionId(event));
-
+                    var result = loadCheckoutRepository.execute(sessionId(event));
                     return switch (result) {
                         case CheckoutLoaded(CheckoutSession checkout) -> persistCheckout(customerId(event), checkout);
                         case CheckoutNotFoundInDatabase() -> new Result.CheckoutNotFound(SESSION_NOT_FOUND);
@@ -105,7 +103,8 @@ class SubmitCheckoutCompletedServiceImpl implements SubmitCheckoutCompletedServi
                     checkout.accountId(),
                     checkout.expiredTime(),
                     OffsetDateTime.now()
-              ));
+              )
+        );
 
         return switch (result) {
             case CheckoutSessionPersisted() -> new Succeeded();

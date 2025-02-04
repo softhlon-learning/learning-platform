@@ -55,12 +55,15 @@ class LoadCheckoutRepositoryAdapter implements LoadCheckoutRepository {
     // -----------------------------------------------------------------------------------------------------------------
 
     private CheckoutSession checkoutSession(CheckoutSessionEntity entity) {
+
         return new CheckoutSession(
               entity.getId(),
               entity.getSessionId(),
               entity.getAccountId(),
               entity.getExpiredAt(),
-              entity.getCompletedAt());
+              entity.getCompletedAt()
+        );
+
     }
 
 }

@@ -113,7 +113,8 @@ class SubmitCustomerCreatedServiceImpl implements SubmitCustomerCreatedService {
         var result = persistCustomersRepository.execute(
               null,
               customerId,
-              accountId);
+              accountId
+        );
 
         return switch (result) {
             case CustomerPersisted() -> new Succeeded();

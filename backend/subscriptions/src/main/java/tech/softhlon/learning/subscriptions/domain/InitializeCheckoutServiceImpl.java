@@ -75,21 +75,24 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                   .setCustomerEmail(
                         customerId == null
                               ? email
-                              : null)
+                              : null
+                  )
                   .setSuccessUrl(serviceBaseUrl + MANAGE_SUBSCRIPTION_PATH)
                   .setCancelUrl(serviceBaseUrl + HOME_PATH)
                   .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                   .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
                         .setPrice(priceId)
-                        .build())
+                        .build()
+                  )
                   .build();
 
             var session = Session.create(params);
 
             var result = saveSession(
                   acccountId,
-                  session.getId());
+                  session.getId()
+            );
 
             return switch (result) {
                 case CheckoutSessionPersisted() -> new Succeeded(session.getUrl());
@@ -128,7 +131,8 @@ class InitializeCheckoutServiceImpl implements InitializeCheckoutService {
                     sessionId,
                     accountId,
                     null,
-                    null));
+                    null)
+        );
 
     }
 

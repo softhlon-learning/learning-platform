@@ -32,9 +32,8 @@ class PersistSubscriptionRepositoryAdapter implements PersistSubscriptionReposit
     public PersistSubscriptionResult execute(PersistSubscriptionRequest request) {
 
         try {
-            subscriptionsJpaRepository.save(
-                  entity(request));
 
+            subscriptionsJpaRepository.save(entity(request));
             return new SubscriptionPersisted();
 
         } catch (Throwable cause) {

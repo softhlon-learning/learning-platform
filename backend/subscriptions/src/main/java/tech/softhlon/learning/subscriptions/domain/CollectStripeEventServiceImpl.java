@@ -50,14 +50,16 @@ class CollectStripeEventServiceImpl implements CollectStripeEventService {
             var event = Webhook.constructEvent(
                   payload,
                   sigHeader,
-                  webhookSecret);
+                  webhookSecret
+            );
 
             var customerId = customerId(event);
 
             var result = persistEventLogRepository.execute(
                   event.getType(),
                   customerId,
-                  payload);
+                  payload
+            );
 
             return switch (result) {
                 case EventLogPersisted() -> new Succeeded();

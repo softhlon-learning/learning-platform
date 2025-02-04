@@ -32,14 +32,13 @@ public class CheckSubscriptionOperator {
     public CheckSusbcriptionResult execute(
           CheckSusbcriptionRequest request) {
 
-        var result = checkSubscriptionByAccountRepository.execute(
-              request.accountId());
-
+        var result = checkSubscriptionByAccountRepository.execute(request.accountId());
         return switch (result) {
             case SubscriptionExists() -> new Subscribed();
             case SubscriptionNotFound() -> new NotSubscribed();
             case CheckSubscriptionFailed(Throwable cause) -> new CheckSubsriptionFailed(cause);
         };
+
     }
 
     public sealed interface CheckSusbcriptionResult {

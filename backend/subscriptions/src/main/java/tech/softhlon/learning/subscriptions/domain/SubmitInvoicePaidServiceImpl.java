@@ -65,7 +65,9 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
                     var result = persistInvoiceRepository.execute(
                           prepareRequest(
                                 invoiceId,
-                                status));
+                                status
+                          )
+                    );
 
                     return switch (result) {
                         case InvoicePersisted() -> new Succeeded();
@@ -95,7 +97,9 @@ class SubmitInvoicePaidServiceImpl implements SubmitInvoicePaidService {
 
         return new PersistInvoiceRequest(
               invoiceId,
-              paid);
+              paid
+        );
+
     }
 
 }
