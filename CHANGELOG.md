@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.15
+_release date: 2025-02-05_
+ * frontend: Refresh free trial status in 1 minute intervals
+ * subscriptions: Improve timeLeftString function
+
 ## 0.46.14
 _release date: 2025-02-05_
  * frontend: Integrate app-header with fetchFreeTrialInfo service
