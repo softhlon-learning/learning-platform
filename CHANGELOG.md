@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.46.3
+_release date: 2025-02-05_
+ * frontend: Add isFreeTrial() method (app-header)
+ * subscriptions: Delete CreateFreeTrialService and implementation
+ * subscriptions: Implemented CreateFreeTrialOperator
+
 ## 0.46.2
 _release date: 2025-02-05_
  * subscriptions: Updated CheckSubscriptionOperator interface (by adding FreeTrial type)
