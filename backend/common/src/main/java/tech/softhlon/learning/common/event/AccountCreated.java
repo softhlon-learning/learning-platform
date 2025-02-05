@@ -7,6 +7,7 @@ package tech.softhlon.learning.common.event;
 
 import lombok.Builder;
 import lombok.Generated;
+import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
 import java.util.UUID;
@@ -19,8 +20,8 @@ import java.util.UUID;
  * Account created event.
  */
 @Event
+@Getter
 @Builder
-@Generated
 public class AccountCreated extends ApplicationEvent {
 
     private UUID acountId;
