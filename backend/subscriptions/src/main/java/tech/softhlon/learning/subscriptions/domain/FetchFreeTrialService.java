@@ -33,12 +33,12 @@ public interface FetchFreeTrialService {
      * Fetch free trial result.
      */
     sealed interface Result {
-        record Succeeded(FreeTrial freeTrial) implements Result {}
-        record FreeTrialNotFoundFailed(String message) implements Result {}
+        record Succeeded(FreeTrialView freeTrial) implements Result {}
+        record FreeTrialNotFoundFailed() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
-    record FreeTrial(
+    record FreeTrialView(
           UUID id,
           UUID accountId,
           OffsetDateTime expireAt) {}
