@@ -36,8 +36,7 @@ class LoadFreeTrialRepositoryAdapter implements LoadFreeTrialRepository {
           UUID accountId) {
 
         try {
-            var entity = freeTrialsJpaRepository.findActive(accountId);
-
+            var entity = freeTrialsJpaRepository.findByAccountId(accountId);
             if (entity.isPresent()) {
                 return new FreeTrialLoaded(customer(entity.get()));
             } else {
