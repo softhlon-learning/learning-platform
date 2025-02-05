@@ -34,3 +34,13 @@ export class FetchCustomerPortalUrlResponse {
         this.redirectUrl = redirectUrl;
     }
 }
+
+export class FetchFreeTrialResponse {
+    timeLeft: string
+    active: boolean
+
+    constructor(timeLeft: string, active: boolean) {
+        this.timeLeft = timeLeft;
+        this.active = active;
+    }
+}
