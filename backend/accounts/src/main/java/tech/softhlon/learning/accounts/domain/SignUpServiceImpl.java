@@ -6,6 +6,7 @@
 package tech.softhlon.learning.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
@@ -15,6 +16,7 @@ import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.Chec
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
+import tech.softhlon.learning.common.event.AccountCreated;
 
 import java.util.UUID;
 
@@ -43,6 +45,7 @@ class SignUpServiceImpl implements SignUpService {
     private final PasswordValidationService passwordValidationService;
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
+    private final ApplicationEventPublisher applicationEventPublisher;
     private final JwtService jwtService;
 
     /**
@@ -111,9 +114,21 @@ class SignUpServiceImpl implements SignUpService {
         );
 
         return switch (result) {
-            case AccountPersisted(UUID id) -> new Succeeded(id, token(email, id));
+            case AccountPersisted(UUID id) -> publishEvent(id, email);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
+    }
+
+    private Succeeded publishEvent(UUID id, String email) {
+
+        applicationEventPublisher.publishEvent(
+              AccountCreated.builder()
+                    .acountId(id)
+                    .build()
+        );
+
+        return new Succeeded(id, token(id, email));
 
     }
 
@@ -125,7 +140,7 @@ class SignUpServiceImpl implements SignUpService {
 
     }
 
-    private String token(String email, UUID id) {
+    private String token(UUID id, String email) {
 
         return jwtService.generateToken(
               id,
