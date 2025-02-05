@@ -28,6 +28,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
+import static tech.softhlon.learning.courses.domain.ListCoursesService.SubcriptionType.*;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -72,21 +74,22 @@ class ListCoursesServiceImpl implements ListCoursesService {
         var result = checkSubscriptionOperator.execute(
               new CheckSusbcriptionRequest(accountId));
 
-        SubcriptionType subscribed;
+        SubcriptionType subcriptionType = NOT_SUBSCRIBED;
         switch (result) {
-            case FreeTrial() -> subscribed = SubcriptionType.FREE_TRIAL;
-            case Subscribed() -> subscribed = SubcriptionType.SUBSCRIBED;
-            case NotSubscribed(), CheckSubsriptionFailed(_) -> subscribed = SubcriptionType.NOT_SUBSCRIBED;
+            case FreeTrial() -> subcriptionType = SubcriptionType.FREE_TRIAL;
+            case Subscribed() -> subcriptionType = SUBSCRIBED;
+            case NotSubscribed(), CheckSubsriptionFailed(_) -> subcriptionType = NOT_SUBSCRIBED;
         }
 
+        var finalSubcriptionType = subcriptionType;
         return new CoursesView(
               courses.stream()
                     .map(course -> courseView(course, accountId))
                     .map(courseView -> mapEnrolled(courseView, accountId))
-                    .map(courseView -> hideLockedLectures(result instanceof Subscribed, courseView))
+                    .map(courseView -> hideLockedLectures(finalSubcriptionType, courseView))
                     .sorted(Comparator.comparing(CourseView::orderNo))
                     .toList(),
-              subscribed
+              subcriptionType
         );
 
     }
@@ -108,10 +111,10 @@ class ListCoursesServiceImpl implements ListCoursesService {
     }
 
     private CourseView hideLockedLectures(
-          boolean subscribed,
+          SubcriptionType subcriptionType,
           CourseView courseView) {
 
-        if (subscribed) {
+        if (subcriptionType == SUBSCRIBED || subcriptionType == FREE_TRIAL) {
             return courseView;
         } else {
             String contentJson = courseView.content();
