@@ -21,10 +21,12 @@ import java.util.UUID;
  */
 interface FreeTrialsJpaRepository extends CrudRepository<FreeTrialEntity, UUID> {
 
-    @Query(name = """
-          SELECT f.* FROM _subscriptions.free_trials f
-          WHERE f.account_id = :accountId AND f.expire_at < now() 
-          """ , nativeQuery = true)
+    @Query(
+          value = """
+                SELECT f.* FROM _subscriptions.free_trials f
+                WHERE f.account_id = :accountId AND f.expire_at < now() 
+                """,
+          nativeQuery = true)
     Optional<FreeTrialEntity> findActive(@Param("accountId") UUID accountId);
 
 }
