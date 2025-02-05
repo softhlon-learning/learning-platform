@@ -70,31 +70,47 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     }
 
     private String timeLeftString(Duration duration) {
-        long hours = duration.toHours();
-        long minutes = duration.toMinutes();
+        if (duration.isNegative()) {
+            return null; // Or handle negative durations as needed
+        }
 
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60; // Get remaining minutes after hours
+
+        StringBuilder timeLeft = new StringBuilder();
+
+        // Handle hours
         switch ((int) hours) {
-            case 1:
-                return "1 hour";
             case 0:
-                switch ((int) minutes) {
-                    case 1:
-                        return "1 minute";
-                    case 0:
-                        return null;
-                    default:
-                        if (minutes > 1) {
-                            return minutes + " minutes";
-                        }
-                }
+                // Only show hours if non-zero
+                break;
+            case 1:
+                timeLeft.append("1 hour ");
                 break;
             default:
                 if (hours > 1) {
-                    return hours + " hours";
+                    timeLeft.append(hours).append(" hours ");
                 }
         }
 
-        return null;
+        // Handle minutes
+        switch ((int) minutes) {
+            case 0:
+                // Only show minutes if non-zero and hours is zero
+                if (hours == 0) {
+                    timeLeft.append("0 minutes");
+                }
+                break;
+            case 1:
+                timeLeft.append("1 minute");
+                break;
+            default:
+                if (minutes > 1) {
+                    timeLeft.append(minutes).append(" minutes");
+                }
+        }
+
+        return timeLeft.toString().trim();
     }
 
 }
