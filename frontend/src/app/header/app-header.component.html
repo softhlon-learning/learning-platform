@@ -1,4 +1,4 @@
-<div class="header">
+<div *ngIf="initialized" class="header">
     <a *ngIf="this.isFreeTrial() && this.isAuthenticated() && !this.freeTrialExpired" class="free-trial">
         Free Trial ends in {{ freeTrialTimeLeft }}
     </a>

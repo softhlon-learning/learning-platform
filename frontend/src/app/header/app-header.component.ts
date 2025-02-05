@@ -29,6 +29,7 @@ export class AppHeaderComponent implements OnInit {
     freeTrialTimeLeft?: string
     freeTrialExpired = false
     stopRefresh = false
+    initialized?: boolean
 
     constructor(
         private router: Router,
@@ -38,10 +39,10 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.fetchFreeTrial(true);
+        this.fetchFreeTrial(true)
         setInterval(() => {
-            this.fetchFreeTrial();
-        }, FREE_TRIAL_REFRESH_DELAY);
+            this.fetchFreeTrial()
+        }, FREE_TRIAL_REFRESH_DELAY)
     }
 
     private fetchFreeTrial(init: boolean = false) {
@@ -50,14 +51,15 @@ export class AppHeaderComponent implements OnInit {
         }
         this.subscriptionsService.fetchFreeTrial().subscribe(
             freeTrialInfo => {
+                this.initialized = true
                 if (freeTrialInfo.expired === false || init) {
-                    this.freeTrialTimeLeft = freeTrialInfo.timeLeft;
-                    this.freeTrialExpired = freeTrialInfo.expired;
+                    this.freeTrialTimeLeft = freeTrialInfo.timeLeft
+                    this.freeTrialExpired = freeTrialInfo.expired
                 }
 
                 if (freeTrialInfo.expired === true && !init) {
-                    this.stopRefresh = true;
-                    window.location.reload();
+                    this.stopRefresh = true
+                    window.location.reload()
                 }
             }
         );
