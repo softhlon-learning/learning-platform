@@ -9,9 +9,13 @@ package tech.softhlon.learning.subscriptions.domain;
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+import tech.softhlon.learning.common.hexagonal.InboundPort;
+
 /**
  * Collect Stripe event service interface.
  */
+@InboundPort
+@FunctionalInterface
 public interface CollectStripeEventService {
 
     /**

@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -15,6 +16,7 @@ import tech.softhlon.learning.common.hexagonal.OutboundPort;
  * Persist invoice repository interface.
  */
 @OutboundPort
+@DomainRepository
 @FunctionalInterface
 public interface PersistInvoiceRepository {
 

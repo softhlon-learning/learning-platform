@@ -5,6 +5,7 @@
 
 package tech.softhlon.learning.subscriptions.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
@@ -17,6 +18,7 @@ import java.util.UUID;
  * Persist Stripe customer repository interface.
  */
 @OutboundPort
+@DomainRepository
 @FunctionalInterface
 public interface PersistCustomerRepository {
 
