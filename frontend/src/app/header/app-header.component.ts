@@ -16,6 +16,8 @@ import {SubscriptionsService} from "../service/subscriptions/subscriptions.servi
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+const FREE_TRIAL_REFRESH_DELAY = 60000;
+
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.component.html',
@@ -26,6 +28,7 @@ export class AppHeaderComponent implements OnInit {
     protected readonly version = version.version
     freeTrialTimeLeft?: string
     freeTrialExpired = false
+    stopRefresh = false
 
     constructor(
         private router: Router,
@@ -35,10 +38,25 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.fetchFreeTrial(true);
+        setInterval(() => {
+            this.fetchFreeTrial();
+        }, FREE_TRIAL_REFRESH_DELAY);
+    }
+
+    private fetchFreeTrial(init: boolean = false) {
+        if (this.stopRefresh) {
+            return
+        }
         this.subscriptionsService.fetchFreeTrial().subscribe(
             freeTrialInfo => {
                 this.freeTrialTimeLeft = freeTrialInfo.timeLeft;
                 this.freeTrialExpired = freeTrialInfo.expired;
+
+                if (freeTrialInfo.expired === true && !init) {
+                    this.stopRefresh = true;
+                    window.location.reload();
+                }
             }
         );
     }
