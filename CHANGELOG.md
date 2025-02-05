@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.7
+_release date: 2025-02-05_
+ * subscriptions: Update/fix CheckSubscriptionOperator to read free trial properly
+ * subscriptions: Fix FreeTrialsJpaRepository.findActive query
+
 ## 0.46.6
 _release date: 2025-02-05_
  * subscriptions: Implement AccountCreatedListener
