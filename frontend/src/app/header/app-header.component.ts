@@ -50,8 +50,10 @@ export class AppHeaderComponent implements OnInit {
         }
         this.subscriptionsService.fetchFreeTrial().subscribe(
             freeTrialInfo => {
-                this.freeTrialTimeLeft = freeTrialInfo.timeLeft;
-                this.freeTrialExpired = freeTrialInfo.expired;
+                if (freeTrialInfo.expired === false || init) {
+                    this.freeTrialTimeLeft = freeTrialInfo.timeLeft;
+                    this.freeTrialExpired = freeTrialInfo.expired;
+                }
 
                 if (freeTrialInfo.expired === true && !init) {
                     this.stopRefresh = true;
