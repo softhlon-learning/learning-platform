@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.11
+_release date: 2025-02-05_
+ * subscriptions: Update FetchFreeTrialService interface (result model)
+ * subscriptions: Implement timeLeftString method (FetchFreeTrialServiceImpl)
+
 ## 0.46.10
 _release date: 2025-02-05_
  * accounts: Add missing @RequestBody in SignUpController
