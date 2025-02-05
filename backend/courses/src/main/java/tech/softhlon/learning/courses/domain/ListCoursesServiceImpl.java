@@ -20,7 +20,7 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnroll
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionRequest;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
-import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.FreeTrial;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.ActiveFreeTrial;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
@@ -76,7 +76,7 @@ class ListCoursesServiceImpl implements ListCoursesService {
 
         SubcriptionType subcriptionType = NOT_SUBSCRIBED;
         switch (result) {
-            case FreeTrial() -> subcriptionType = SubcriptionType.FREE_TRIAL;
+            case ActiveFreeTrial() -> subcriptionType = SubcriptionType.FREE_TRIAL;
             case Subscribed() -> subcriptionType = SUBSCRIBED;
             case NotSubscribed(), CheckSubsriptionFailed(_) -> subcriptionType = NOT_SUBSCRIBED;
         }
