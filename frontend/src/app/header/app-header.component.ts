@@ -16,7 +16,7 @@ import {SubscriptionsService} from "../service/subscriptions/subscriptions.servi
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-const FREE_TRIAL_REFRESH_DELAY = 60000;
+const FREE_TRIAL_REFRESH_DELAY = 60 * 1000;
 
 @Component({
     selector: 'app-header',
@@ -39,12 +39,21 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        if (!this.isAuthenticated()) {
+            this.initialized = true
+        }
+
         this.fetchFreeTrial(true)
         setInterval(() => {
             this.fetchFreeTrial()
         }, FREE_TRIAL_REFRESH_DELAY)
     }
 
+    /**
+     * Fetch free trial info from service.
+     * @param init Init flag
+     * @private
+     */
     private fetchFreeTrial(init: boolean = false) {
         if (this.stopRefresh) {
             return
