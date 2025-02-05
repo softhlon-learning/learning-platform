@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.46.12
+_release date: 2025-02-05_
+ * subscriptions: Implement FetchSubscriptionController
+ * subscriptions: Update FetchSubscriptionController to return 404, when needed
+ * subscriptions: Update FreeTrialsJpaRepository main method
+
 ## 0.46.11
 _release date: 2025-02-05_
  * subscriptions: Update FetchFreeTrialService interface (result model)
