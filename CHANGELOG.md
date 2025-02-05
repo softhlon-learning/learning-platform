@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.1
+_release date: 2025-02-05_
+ * subscriptions: Add FetchFreeTrialService
+ * subscriptions: Implemented FetchFreeTrialServiceImpl
+
 ## 0.46.0
 _release date: 2025-02-05_
  * subscriptions: Add CreateFreeTrialService
