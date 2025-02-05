@@ -19,6 +19,9 @@ import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnroll
 import tech.softhlon.learning.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionRequest;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.FreeTrial;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
 import java.util.Comparator;
@@ -69,9 +72,11 @@ class ListCoursesServiceImpl implements ListCoursesService {
         var result = checkSubscriptionOperator.execute(
               new CheckSusbcriptionRequest(accountId));
 
-        boolean subscribed = false;
-        if (result instanceof Subscribed) {
-            subscribed = true;
+        SubcriptionType subscribed;
+        switch (result) {
+            case FreeTrial() -> subscribed = SubcriptionType.FREE_TRIAL;
+            case Subscribed() -> subscribed = SubcriptionType.SUBSCRIBED;
+            case NotSubscribed(), CheckSubsriptionFailed(_) -> subscribed = SubcriptionType.NOT_SUBSCRIBED;
         }
 
         return new CoursesView(

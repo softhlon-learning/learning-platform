@@ -35,7 +35,7 @@ public interface ListCoursesService {
 
     record CoursesView(
           List<CourseView> courseList,
-          boolean subscribed) {
+          SubcriptionType subcriptionType) {
     }
 
     record CourseView(
@@ -47,4 +47,9 @@ public interface ListCoursesService {
           String content,
           boolean enrolled) {}
 
+    enum SubcriptionType {
+        FREE_TRIAL,
+        SUBSCRIBED,
+        NOT_SUBSCRIBED
+    }
 }
