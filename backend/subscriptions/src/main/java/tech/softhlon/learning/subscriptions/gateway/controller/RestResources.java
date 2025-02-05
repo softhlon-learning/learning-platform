@@ -25,5 +25,6 @@ class RestResources {
     static final String SUBMIT_SUBSCRIPTION_UPDATED = SUBSCRIPTION + "/updated-event";
     static final String SUBMIT_SUBSCRIPTION_GENERIC = SUBSCRIPTION + "/generic-event";
     static final String SUBMIT_INVOICE_PAID = SUBSCRIPTION + "/invoice-paid-event";
+    static final String FETCH_FREE_TRIAL = SUBSCRIPTION + "/free-trial";
 
 }
