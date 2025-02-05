@@ -1,9 +1,14 @@
 # Learning Platform Changelog
 
+## 0.46.5
+_release date: 2025-02-05_
+ * accounts: Publish AccountCreated event (GoogleSignInServiceImpl)
+ * accounts: Publish AccountCreated event (SignUServiceImpl)
+
 ## 0.46.4
 _release date: 2025-02-05_
  * subscriptions: Delete CreateFreeTrialOperator (cyclic dependency)
- * 
+ * subscriptions: Delete CreateFreeTrialOperator
 
 ## 0.46.3
 _release date: 2025-02-05_
