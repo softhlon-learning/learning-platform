@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.47.0
+_release date: 2025-02-05_
+ * accounts: Add missing annotations
+ * courses: Add missing annotations
+ * subscriptions: Add missing annotations
+
 ## 0.46.19
 _release date: 2025-02-05_
  * general: Regression tests (free trial and subscriptiions)
