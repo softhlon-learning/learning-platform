@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.2
+_release date: 2025-02-05_
+ * subscriptions: Updated CheckSubscriptionOperator interface (by adding FreeTrial type)
+ * courses: Updated ListCourses* interface (FreeTrial)
+
 ## 0.46.1
 _release date: 2025-02-05_
  * subscriptions: Add FetchFreeTrialService
