@@ -15,6 +15,8 @@ import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadF
 import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
 import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
 
+import java.time.Duration;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -53,12 +55,46 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     private FreeTrialInfo freeTrial(
           FreeTrial freeTrial) {
 
+        Duration duration = Duration.between(
+              OffsetDateTime.now(),
+              freeTrial.expireAt());
+
         return new FreeTrialInfo(
-              false,
+              duration.isNegative()
+                    ? true
+                    : false,
               freeTrial.expireAt(),
-              null
+              timeLeftString(duration)
         );
 
+    }
+
+    private String timeLeftString(Duration duration) {
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes();
+
+        switch ((int) hours) {
+            case 1:
+                return "1 hour";
+            case 0:
+                switch ((int) minutes) {
+                    case 1:
+                        return "1 minute";
+                    case 0:
+                        return null;
+                    default:
+                        if (minutes > 1) {
+                            return minutes + " minutes";
+                        }
+                }
+                break;
+            default:
+                if (hours > 1) {
+                    return hours + " hours";
+                }
+        }
+
+        return null;
     }
 
 }
