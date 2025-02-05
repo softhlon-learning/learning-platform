@@ -37,10 +37,10 @@ export class FetchCustomerPortalUrlResponse {
 
 export class FetchFreeTrialResponse {
     timeLeft: string
-    active: boolean
+    expired: boolean
 
-    constructor(timeLeft: string, active: boolean) {
+    constructor(timeLeft: string, expired: boolean) {
         this.timeLeft = timeLeft;
-        this.active = active;
+        this.expired = expired;
     }
 }
