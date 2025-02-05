@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.16
+_release date: 2025-02-05_
+ * frontend: Improve free trial status refresh
+ * general: Testing free trials
+
 ## 0.46.15
 _release date: 2025-02-05_
  * frontend: Refresh free trial status in 1 minute intervals
