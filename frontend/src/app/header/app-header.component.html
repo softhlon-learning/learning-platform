@@ -1,12 +1,16 @@
 <div class="header">
+    <a *ngIf="this.isFreeTrial() && this.isAuthenticated()">
+        Free Trial
+    </a>
+    <span *ngIf="this.isFreeTrial() && this.isAuthenticated()">|</span>
     <a *ngIf="this.isSubscribed() && this.isAuthenticated()" href="/manage-subscription">
         Subscription
     </a>
     <span *ngIf="this.isSubscribed() && this.isAuthenticated()">|</span>
-    <a *ngIf="!this.isSubscribed() && this.isAuthenticated()" href="/subscribe">
+    <a *ngIf="this.isNotSubscribed() && this.isAuthenticated()" href="/subscribe">
         Subscribe
     </a>
-    <span *ngIf="!this.isSubscribed() && this.isAuthenticated()">|</span>
+    <span *ngIf="this.isNotSubscribed() && this.isAuthenticated()">|</span>
     <a *ngIf="this.isAuthenticated()" href="/profile">
         Profile
     </a>

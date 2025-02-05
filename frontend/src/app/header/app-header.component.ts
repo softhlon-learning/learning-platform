@@ -48,6 +48,13 @@ export class AppHeaderComponent implements OnInit {
     }
 
     /**
+     * Check if user is not subscribed.
+     */
+    isNotSubscribed(): boolean {
+        return this.cookieService.get(SUBSCRIPTION_COOKIE) === 'not_subscribed'
+    }
+
+    /**
      * Check if user has free trial.
      */
     isFreeTrial(): boolean {
