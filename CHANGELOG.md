@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.46.10
+_release date: 2025-02-05_
+ * accounts: Add missing @RequestBody in SignUpController
+ * frontend: Updated sign-up button name (Submit & Start Free Trial)
+ * frontend: Header positioning improvement and new demo text for free trial
+
 ## 0.46.9
 _release date: 2025-02-05_
  * local: Set local postgtresql service (to replace docker)
