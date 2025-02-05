@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.46.13
+_release date: 2025-02-05_
+ * courses/subscriptions: Add/fix active/not active free trial support
+ * frontend: Add fetchFreeTrial service method
+ * frontend: Update FetchFreeTrialResponse model
+
 ## 0.46.12
 _release date: 2025-02-05_
  * subscriptions: Implement FetchSubscriptionController
