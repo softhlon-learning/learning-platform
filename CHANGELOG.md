@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.18
+_release date: 2025-02-05_
+ * frontend: Fix display header 'Sing In'
+ * frontend: Orange color for expired message info
+
 ## 0.46.17
 _release date: 2025-02-05_
  * frontend: Improve overlay settings
