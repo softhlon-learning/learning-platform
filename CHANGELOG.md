@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.4
+_release date: 2025-02-05_
+ * subscriptions: Delete CreateFreeTrialOperator (cyclic dependency)
+ * 
+
 ## 0.46.3
 _release date: 2025-02-05_
  * frontend: Add isFreeTrial() method (app-header)
