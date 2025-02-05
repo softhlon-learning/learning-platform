@@ -5,6 +5,9 @@
 
 package tech.softhlon.learning.courses.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
+
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -14,6 +17,9 @@ import java.util.UUID;
 /**
  * Persist course repository interface.
  */
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
 public interface PersistCourseRepository {
 
     /**

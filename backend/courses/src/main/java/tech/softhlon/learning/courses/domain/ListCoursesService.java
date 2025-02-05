@@ -5,6 +5,8 @@
 
 package tech.softhlon.learning.courses.domain;
 
+import tech.softhlon.learning.common.hexagonal.InboundPort;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -15,6 +17,8 @@ import java.util.UUID;
 /**
  * List courses service interface.
  */
+@InboundPort
+@FunctionalInterface
 public interface ListCoursesService {
 
     /**

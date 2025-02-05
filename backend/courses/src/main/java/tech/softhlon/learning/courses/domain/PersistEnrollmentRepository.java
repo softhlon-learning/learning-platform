@@ -5,6 +5,9 @@
 
 package tech.softhlon.learning.courses.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
+
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -15,6 +18,9 @@ import java.util.UUID;
 /**
  * Persist enrollment repository interface.
  */
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
 public interface PersistEnrollmentRepository {
 
     /**

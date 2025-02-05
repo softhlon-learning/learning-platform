@@ -5,6 +5,8 @@
 
 package tech.softhlon.learning.courses.domain;
 
+import tech.softhlon.learning.common.hexagonal.InboundPort;
+
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -14,6 +16,8 @@ import java.util.UUID;
 /**
  * Unenroll course service interface.
  */
+@InboundPort
+@FunctionalInterface
 public interface UnenrollCourseService {
 
     /**
