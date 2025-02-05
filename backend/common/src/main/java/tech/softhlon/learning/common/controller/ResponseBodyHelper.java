@@ -65,6 +65,15 @@ public class ResponseBodyHelper {
     }
 
     /**
+     * HTTP 404 response body.
+     * @return ResponseEntity
+     */
+    public static ResponseEntity notFoundBody() {
+        return status(HttpStatus.NOT_FOUND)
+              .build();
+    }
+
+    /**
      * HTTP 505 response body.
      * @param request HttpServletRequest
      * @param cause   Throwable
