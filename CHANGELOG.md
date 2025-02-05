@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.46.19
+_release date: 2025-02-05_
+ * general: Regression tests (free trial and subscriptiions)
+
 ## 0.46.18
 _release date: 2025-02-05_
  * frontend: Fix display header 'Sing In'
