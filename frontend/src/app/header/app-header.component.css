@@ -36,3 +36,8 @@ a {
 a:hover {
     font-weight: bold;
 }
+
+.free-trial {
+    color: var(--green);
+    font-weight: bold;
+}

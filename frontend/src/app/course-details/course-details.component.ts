@@ -339,13 +339,13 @@ export class CourseDetailsComponent implements OnInit {
      * @param lecture Lecture to operate on
      */
     displayMode(lecture: Lecture): string {
-        const subscribed = this.cookieService.get(SUBSCRIPTION_COOKIE) === 'true';
+        const locked = (this.cookieService.get(SUBSCRIPTION_COOKIE) === 'not_subscribed')
 
-        if (subscribed === false && lecture.preview) {
+        if (locked && lecture.preview) {
             return PREVIEW
         }
 
-        if (subscribed === false && !lecture.preview) {
+        if (locked && !lecture.preview) {
             return LOCKED
         }
 

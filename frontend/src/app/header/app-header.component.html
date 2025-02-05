@@ -1,5 +1,5 @@
 <div class="header">
-    <a *ngIf="this.isFreeTrial() && this.isAuthenticated()">
+    <a *ngIf="this.isFreeTrial() && this.isAuthenticated()" class="free-trial">
         Free Trial
     </a>
     <span *ngIf="this.isFreeTrial() && this.isAuthenticated()">|</span>
