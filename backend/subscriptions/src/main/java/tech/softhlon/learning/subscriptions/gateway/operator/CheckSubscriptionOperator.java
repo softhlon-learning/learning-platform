@@ -33,7 +33,7 @@ public class CheckSubscriptionOperator {
     private final CheckSubscriptionByAccountRepository checkSubscriptionByAccountRepository;
 
     /**
-     * Check if accont is ssubscribed.
+     * Check if account is subscribed.
      * @param request CheckSusbcriptionRequest
      * @return CheckSusbcriptionResult
      */
