@@ -10,6 +10,7 @@ import {CookieService} from "ngx-cookie-service"
 import {Router} from "@angular/router"
 import {AccountsService} from '../service/accounts/accounts.service'
 import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
+import {SubscriptionsService} from "../service/subscriptions/subscriptions.service"
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,14 +24,23 @@ import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
 })
 export class AppHeaderComponent implements OnInit {
     protected readonly version = version.version
+    freeTrialTimeLeft?: string
+    freeTrialExpired = false
 
     constructor(
         private router: Router,
         private accountsService: AccountsService,
+        private subscriptionsService: SubscriptionsService,
         private cookieService: CookieService) {
     }
 
     ngOnInit(): void {
+        this.subscriptionsService.fetchFreeTrial().subscribe(
+            freeTrialInfo => {
+                this.freeTrialTimeLeft = freeTrialInfo.timeLeft;
+                this.freeTrialExpired = freeTrialInfo.expired;
+            }
+        );
     }
 
     /**

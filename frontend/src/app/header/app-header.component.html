@@ -1,6 +1,6 @@
 <div class="header">
     <a *ngIf="this.isFreeTrial() && this.isAuthenticated()" class="free-trial">
-        Free Trial ends in 24 hours
+        Free Trial ends in {{ freeTrialTimeLeft }}
     </a>
     <span *ngIf="this.isFreeTrial() && this.isAuthenticated()">|</span>
     <a *ngIf="this.isSubscribed() && this.isAuthenticated()" href="/manage-subscription">
