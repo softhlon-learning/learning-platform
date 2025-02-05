@@ -23,6 +23,7 @@ import tech.softhlon.learning.subscriptions.domain.FetchFreeTrialService.Result.
 import static org.springframework.http.ResponseEntity.status;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
 import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.softhlon.learning.common.controller.ResponseBodyHelper.notFoundBody;
 import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.FETCH_FREE_TRIAL;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -57,7 +58,7 @@ class FetchSubscriptionController {
 
         return switch (result) {
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
-            case FreeTrialNotFoundFailed() -> badRequestBody(httpRequest, null);
+            case FreeTrialNotFoundFailed() -> notFoundBody();
             case Succeeded(FreeTrialInfo freeTrialInfo) -> successBody(freeTrialInfo);
         };
 
