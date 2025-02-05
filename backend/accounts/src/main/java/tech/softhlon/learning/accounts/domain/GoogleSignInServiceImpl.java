@@ -11,6 +11,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
@@ -22,6 +23,7 @@ import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Account
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
 import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
+import tech.softhlon.learning.common.event.AccountCreated;
 
 import java.util.Collections;
 import java.util.UUID;
@@ -47,18 +49,21 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
     private final GoogleIdTokenVerifier verifier;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final CreateAccountRepository createAccountRepository;
+    private final ApplicationEventPublisher applicationEventPublisher;
     private final JwtService jwtService;
 
     public GoogleSignInServiceImpl(
           @Value("${google-client-id}") String clientId,
           CheckAccountByEmailRepository checkAccountByEmailRepository,
           CreateAccountRepository createAccountRepository,
+          ApplicationEventPublisher applicationEventPublisher,
           JwtService jwtService) {
 
         var transport = new NetHttpTransport();
         var jsonFactory = GsonFactory.getDefaultInstance();
         this.checkAccountByEmailRepository = checkAccountByEmailRepository;
         this.createAccountRepository = createAccountRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
         this.jwtService = jwtService;
         verifier =
               new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
@@ -114,9 +119,21 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
         );
 
         return switch (result) {
-            case AccountPersisted(UUID id) -> new Succeeded(token(id, email));
+            case AccountPersisted(UUID id) -> publishEvent(id, email);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
+    }
+
+    private Succeeded publishEvent(UUID id, String email) {
+
+        applicationEventPublisher.publishEvent(
+              AccountCreated.builder()
+                    .acountId(id)
+                    .build()
+        );
+
+        return new Succeeded(token(id, email));
 
     }
 
