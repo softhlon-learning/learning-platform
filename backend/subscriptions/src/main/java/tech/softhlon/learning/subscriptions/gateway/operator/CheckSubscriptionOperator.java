@@ -12,7 +12,12 @@ import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRep
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.CheckSubscriptionFailed;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionExists;
 import tech.softhlon.learning.subscriptions.domain.CheckSubscriptionByAccountRepository.CheckSubscriptionByAccountResult.SubscriptionNotFound;
+import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository;
+import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoadFailed;
+import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
+import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
+import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.FreeTrial;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.softhlon.learning.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
@@ -31,19 +36,19 @@ import java.util.UUID;
 public class CheckSubscriptionOperator {
 
     private final CheckSubscriptionByAccountRepository checkSubscriptionByAccountRepository;
+    private final LoadFreeTrialRepository loadFreeTrialRepository;
 
     /**
      * Check if account is subscribed.
      * @param request CheckSusbcriptionRequest
      * @return CheckSusbcriptionResult
      */
-    public CheckSusbcriptionResult execute(
-          CheckSusbcriptionRequest request) {
+    public CheckSusbcriptionResult execute(CheckSusbcriptionRequest request) {
 
         var result = checkSubscriptionByAccountRepository.execute(request.accountId());
         return switch (result) {
             case SubscriptionExists() -> new Subscribed();
-            case SubscriptionNotFound() -> new NotSubscribed();
+            case SubscriptionNotFound() -> checkFreeTrial(request.accountId());
             case CheckSubscriptionFailed(Throwable cause) -> new CheckSubsriptionFailed(cause);
         };
 
@@ -58,5 +63,19 @@ public class CheckSubscriptionOperator {
 
     public record CheckSusbcriptionRequest(
           UUID accountId) {}
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private CheckSusbcriptionResult checkFreeTrial(UUID accountId) {
+
+        var result = loadFreeTrialRepository.execute(accountId);
+        return switch (result) {
+            case FreeTrialLoaded(_) -> new FreeTrial();
+            case FreeTrialNotFound(), FreeTrialLoadFailed(_) -> new NotSubscribed();
+        };
+
+    }
 
 }
