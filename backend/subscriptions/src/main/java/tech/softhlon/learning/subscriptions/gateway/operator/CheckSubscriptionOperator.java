@@ -52,6 +52,7 @@ public class CheckSubscriptionOperator {
     public sealed interface CheckSusbcriptionResult {
         record Subscribed() implements CheckSusbcriptionResult {}
         record NotSubscribed() implements CheckSusbcriptionResult {}
+        record FreeTrial() implements CheckSusbcriptionResult {}
         record CheckSubsriptionFailed(Throwable cause) implements CheckSusbcriptionResult {}
     }
 
