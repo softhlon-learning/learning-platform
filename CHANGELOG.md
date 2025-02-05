@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.46.9
+_release date: 2025-02-05_
+ * local: Set local postgtresql service (to replace docker)
+
 ## 0.46.8
 _release date: 2025-02-05_
  * frontend: Display Free Trial in app-header, when needed
