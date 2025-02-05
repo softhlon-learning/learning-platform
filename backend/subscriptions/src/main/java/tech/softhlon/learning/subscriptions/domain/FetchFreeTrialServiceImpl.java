@@ -98,7 +98,7 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
             case 0:
                 // Only show minutes if non-zero and hours is zero
                 if (hours == 0) {
-                    timeLeft.append("0 minutes");
+                    timeLeft.append("any moment");
                 }
                 break;
             case 1:
