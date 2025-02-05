@@ -122,12 +122,7 @@ class SignUpServiceImpl implements SignUpService {
 
     private Succeeded publishEvent(UUID id, String email) {
 
-        applicationEventPublisher.publishEvent(
-              AccountCreated.builder()
-                    .acountId(id)
-                    .build()
-        );
-
+        applicationEventPublisher.publishEvent(new AccountCreated(this, id));
         return new Succeeded(id, token(id, email));
 
     }

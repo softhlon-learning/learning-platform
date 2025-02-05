@@ -21,13 +21,13 @@ import java.util.UUID;
  */
 @Event
 @Getter
-@Builder
 public class AccountCreated extends ApplicationEvent {
 
-    private UUID acountId;
+    private final UUID acountId;
 
-    public AccountCreated(Object source) {
+    public AccountCreated(Object source, UUID aacountId) {
         super(source);
+        this.acountId = aacountId;
     }
 
 }
