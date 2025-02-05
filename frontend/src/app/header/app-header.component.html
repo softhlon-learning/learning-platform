@@ -2,7 +2,7 @@
     <a *ngIf="this.isFreeTrial() && this.isAuthenticated() && !this.freeTrialExpired" class="free-trial">
         Free Trial ends in {{ freeTrialTimeLeft }}
     </a>
-    <a *ngIf="this.isNotSubscribed() && this.isAuthenticated() && this.freeTrialExpired" class="free-trial">
+    <a *ngIf="this.isNotSubscribed() && this.isAuthenticated() && this.freeTrialExpired" class="free-trial expired">
         Free Trial has expired
     </a>
     <span *ngIf="this.isFreeTrial() && this.isAuthenticated()">|</span>

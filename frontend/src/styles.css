@@ -21,6 +21,7 @@
     --subscribe: #ecffe6;
     --subscribe-hover: #ecffe6;
     --green: #21c006;
+    --expired: #ef8b08;
 }
 
 @media (max-width: 1500px) {

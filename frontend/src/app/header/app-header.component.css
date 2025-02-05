@@ -45,3 +45,7 @@ a:hover {
 .free-trial:hover {
     cursor: default;
 }
+
+.expired {
+    color: var(--expired);
+}
