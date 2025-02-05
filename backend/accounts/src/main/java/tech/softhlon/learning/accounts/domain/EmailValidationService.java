@@ -12,6 +12,7 @@ package tech.softhlon.learning.accounts.domain;
 /**
  * Email validation service interface.
  */
+@FunctionalInterface
 interface EmailValidationService {
 
     /**

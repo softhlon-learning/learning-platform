@@ -12,6 +12,7 @@ package tech.softhlon.learning.accounts.domain;
 /**
  * Email service interface.
  */
+@FunctionalInterface
 interface EmailService {
 
     /**

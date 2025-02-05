@@ -12,6 +12,7 @@ package tech.softhlon.learning.accounts.domain;
 /**
  * Password validation service interface.
  */
+@FunctionalInterface
 interface PasswordValidationService {
 
     /**

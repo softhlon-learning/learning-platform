@@ -5,7 +5,9 @@
 
 package tech.softhlon.learning.accounts.domain;
 
+import tech.softhlon.learning.common.domain.DomainRepository;
 import tech.softhlon.learning.common.hexagonal.InboundPort;
+import tech.softhlon.learning.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
 
@@ -16,7 +18,8 @@ import java.util.UUID;
 /**
  * Persist account repository interface.
  */
-@InboundPort
+@OutboundPort
+@DomainRepository
 @FunctionalInterface
 public interface PersistAccountRepository {
 
