@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.46.17
+_release date: 2025-02-05_
+ * frontend: Improve overlay settings
+ * frontend: Improve refresh when free trial expires
+
 ## 0.46.16
 _release date: 2025-02-05_
  * frontend: Improve free trial status refresh
