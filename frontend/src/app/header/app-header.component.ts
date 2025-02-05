@@ -44,7 +44,14 @@ export class AppHeaderComponent implements OnInit {
      * Check if user is subscribed.
      */
     isSubscribed(): boolean {
-        return this.cookieService.get(SUBSCRIPTION_COOKIE) === 'true'
+        return this.cookieService.get(SUBSCRIPTION_COOKIE) === 'subscribed'
+    }
+
+    /**
+     * Check if user has free trial.
+     */
+    isFreeTrial(): boolean {
+        return this.cookieService.get(SUBSCRIPTION_COOKIE) === 'free_trial'
     }
 
     /**
