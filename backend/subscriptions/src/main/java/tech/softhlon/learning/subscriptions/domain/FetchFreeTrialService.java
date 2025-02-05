@@ -15,14 +15,14 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Fetch free trial service interface.
+ * Fetch free trial time left service interface.
  */
 @InboundPort
 @FunctionalInterface
 public interface FetchFreeTrialService {
 
     /**
-     * Fetch user's free trial.
+     * Fetch user's free trial time left.
      * @param accountId Account Id
      * @return Result
      */
@@ -30,18 +30,18 @@ public interface FetchFreeTrialService {
           UUID accountId);
 
     /**
-     * Fetch free trial result.
+     * Fetch free trial time leftresult.
      */
     sealed interface Result {
-        record Succeeded(FreeTrialView freeTrial) implements Result {}
+        record Succeeded(FreeTrialInfo freeTrial) implements Result {}
         record FreeTrialNotFoundFailed() implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
-    record FreeTrialView(
-          UUID id,
-          UUID accountId,
-          OffsetDateTime expireAt) {}
+    record FreeTrialInfo(
+          boolean expired,
+          OffsetDateTime expireAt,
+          String timeLeft) {}
 
 }
 

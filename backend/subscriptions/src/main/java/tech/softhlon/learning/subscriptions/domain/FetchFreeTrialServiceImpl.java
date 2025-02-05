@@ -50,13 +50,13 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private FreeTrialView freeTrial(
+    private FreeTrialInfo freeTrial(
           FreeTrial freeTrial) {
 
-        return new FreeTrialView(
-              freeTrial.id(),
-              freeTrial.accountId(),
-              freeTrial.expireAt()
+        return new FreeTrialInfo(
+              false,
+              freeTrial.expireAt(),
+              null
         );
 
     }
