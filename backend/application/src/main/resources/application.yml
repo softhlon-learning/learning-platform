@@ -39,8 +39,8 @@ spring:
   config:
     activate:
       on-profile: production
-login-redirect-success-uri: https://softhlon-learning.tech/home
-login-redirect-fail-uri: https://softhlon-learning.tech/sign-in
+login-redirect-success-uri: https://java-fullstack.tech/home
+login-redirect-fail-uri: https://java-fullstack.tech/sign-in
 google-client-id: 2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com
-update-password.base-url: "https://softhlon-learning.tech/update-password?token="
-service.base-url: "https://softhlon-learning.tech"
+update-password.base-url: "https://java-fullstack.tech/update-password?token="
+service.base-url: "https://java-fullstack.tech"

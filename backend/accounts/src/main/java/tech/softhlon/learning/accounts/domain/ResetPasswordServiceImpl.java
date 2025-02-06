@@ -43,7 +43,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
           If you didn't request this, please ignore this email for your account's security.
           
           Best regards,
-          Softhlon-Learning Team
+          Java Fullstack Academy Team
           """;
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
