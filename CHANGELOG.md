@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.47.13
+_release date: 2025-02-06_
+ * accounts: Set mail.host to java-fullstack.tech
+ * general: Testing google SPAM criteria
+
 ## 0.47.12
 _release date: 2025-02-06_
  * general: Finish and test rebranding
