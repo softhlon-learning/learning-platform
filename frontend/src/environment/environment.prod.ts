@@ -9,6 +9,6 @@
 
 export const environment = {
     production: true,
-    googleClientId: '2547423840-rdu8roke4tgser7dl4qo1bh628rdamp6.apps.googleusercontent.com',
-    loginUri: 'https://softhlon-learning.tech/api/v1/account/auth/google-sign-in'
+    googleClientId: '261285487242-kd1e2lhqdpfrph48o00ga0h21qrebh41.apps.googleusercontent.com',
+    loginUri: 'https://java-fullstack.tech/api/v1/account/auth/google-sign-in'
 }
