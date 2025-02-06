@@ -1,9 +1,16 @@
 # Learning Platform Changelog
 
-## 0.47.10
+## 0.47.12
+_release date: 2025-02-06_
+ * general: Finish and test rebranding
+
+## 0.47.11
 _release date: 2025-02-06_
  * application: Change softhlon-learning.tech urls to java-fullstack.tech
  * application: Update google-client-id for java-fullstack.tech
+
+## 0.47.10
+_release date: 2025-02-06_
  * frontend: Update google-client-id for java-fullstack.tech
 
 ## 0.47.9
