@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.47.10
+_release date: 2025-02-06_
+ * application: Change softhlon-learning.tech urls to java-fullstack.tech
+
 ## 0.47.9
 _release date: 2025-02-06_
  * freebsd: Swtich to javafullstack.tech certificates
