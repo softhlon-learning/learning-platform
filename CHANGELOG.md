@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.47.8
+_release date: 2025-02-06_
+ * general: Generate SSL certificate for java-fullstack.tech
+
 ## 0.47.7
 _release date: 2025-02-06_
- * general: Buy new domain: java-fullstack.tech
+ * general: Buy new domain java-fullstack.tech
 
 ## 0.47.6
 _release date: 2025-02-06_
