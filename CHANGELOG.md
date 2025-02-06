@@ -1,9 +1,13 @@
 # Learning Platform Changelog
 
+## 0.47.7
+_release date: 2025-02-06_
+ * general: Buy new domain: java-fullstack.tech
+
 ## 0.47.6
 _release date: 2025-02-06_
  * accounts: Update email subject for reset password (Account Recovery)
- * general: Created dedicated certificates for mail.softhlon-learning.tech
+ * general: Create dedicated certificates for mail.softhlon-learning.tech
 
 ## 0.47.5
 _release date: 2025-02-06_
