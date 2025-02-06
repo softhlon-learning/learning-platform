@@ -11,8 +11,7 @@ spring:
     hikari.maximum-pool-size: 10
   mail.host: mail.softhlon-learning.tech
   mail.port: 25
-  mail.smtp.starttls.enable: true
-  mail.smtp.starttls.required: true
+  mail.properties.mail.smtp.starttls.enable: true
   output.ansi.enabled: ALWAYS
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
