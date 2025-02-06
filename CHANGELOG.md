@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.47.9
+_release date: 2025-02-06_
+ * freebsd: Swtich to javafullstack.tech certificates
+ * frontend: Update page title (Java FullStack Academy)
+ 
 ## 0.47.8
 _release date: 2025-02-06_
  * general: Generate SSL certificate for java-fullstack.tech
