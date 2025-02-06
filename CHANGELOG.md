@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.47.1
+_release date: 2025-02-05_
+ * freebsd: Unlock outgoing SMTP port
+ * freebsd: Set SPF record in DNS
+
 ## 0.47.0
 _release date: 2025-02-05_
  * accounts: Add missing annotations
