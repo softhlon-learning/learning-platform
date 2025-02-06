@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.47.5
+_release date: 2025-02-06_
+ * accounts: Enable STARTTLS for mail client
+
 ## 0.47.4
 _release date: 2025-02-06_
  * freebsd: Finish set up DKIM authentication for mail server
