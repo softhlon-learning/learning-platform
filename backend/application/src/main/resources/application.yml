@@ -9,7 +9,7 @@ spring:
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
     hikari.maximum-pool-size: 10
-  mail.host: mail.softhlon-learning.tech
+  mail.host: java-fullstack.tech
   mail.port: 25
   mail.properties.mail.smtp.starttls.enable: true
   output.ansi.enabled: ALWAYS
