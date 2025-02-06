@@ -33,7 +33,7 @@ import java.util.UUID;
 class ResetPasswordServiceImpl implements ResetPasswordService {
 
     private static final String EMAIL_NOT_FOUND = "Email not found";
-    private static final String SUBJECT = "Reset Password Request";
+    private static final String SUBJECT = "Account Recovery";
     private static final String EMAIL_CONTENT = """
           Hello,
           
