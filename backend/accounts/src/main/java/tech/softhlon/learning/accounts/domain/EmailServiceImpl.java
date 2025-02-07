@@ -33,7 +33,7 @@ class EmailServiceImpl implements EmailService {
           String text) {
 
         var message = new SimpleMailMessage();
-        message.setFrom("Java FullStack Academy <noreply@java-fullstack.tech>");
+        message.setFrom("Java FullStack Academy <support@java-fullstack.tech>");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);

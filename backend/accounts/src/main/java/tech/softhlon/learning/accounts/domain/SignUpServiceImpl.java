@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
+import static tech.softhlon.learning.accounts.domain.EmailTemplates.ACTIVATE_ACCOUNT_TEMPLATE;
 import static tech.softhlon.learning.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -211,7 +212,7 @@ class SignUpServiceImpl implements SignUpService {
         emailService.sendMessage(
               email,
               SUBJECT,
-              RESET_PASSWORD_TEMPLATE.formatted(baseUrl + token)
+              ACTIVATE_ACCOUNT_TEMPLATE.formatted(baseUrl + token)
         );
 
     }
