@@ -15,6 +15,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  * Token generator utility.
  */
 public class TokenGenerator {
+
     private static final int LENGTH = 24;
     private static final boolean USE_LETTERS = true;
     private static final boolean USE_NUMBERS = true;
@@ -22,4 +23,5 @@ public class TokenGenerator {
     public static String token() {
         return RandomStringUtils.random(LENGTH, USE_LETTERS, USE_NUMBERS);
     }
+
 }
