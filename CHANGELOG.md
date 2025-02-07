@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.10
+_release date: 2025-02-07_
+ * accounts: Finish ActivateAccountServiceImpl implementation
+ * accounts: Implement ActivateAccountController
+
 ## 0.48.9
 _release date: 2025-02-07_
  * accounts: Add AccountsJpaRepository.updateIsActive method
