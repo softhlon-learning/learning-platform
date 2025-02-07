@@ -10,14 +10,20 @@ import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Failed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.InvalidTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.AccountToken;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenLoadFailed;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenLoaded;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenNotFound;
+import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.UpdateActiveFlagResult.ActiveFlagUpdateFailed;
+import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.UpdateActiveFlagResult.ActiveFlagUpdated;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ * Activate account service implementation.
+ */
 @Service
 @RequiredArgsConstructor
 class ActivateAccountServiceImpl implements ActivateAccountService {
@@ -26,16 +32,39 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
     private static final String EXPIRED_TOKEN = "Account activation token has expired";
 
     private final LoadAccountTokenRepository loadAccountTokenRepository;
+    private final UpdateAccountActiveFlagRepository updateAccountActiveFlagRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public Result execute(String token) {
+    public Result execute(
+          String token) {
 
         var result = loadAccountTokenRepository.execute(token);
-
         return switch (result) {
-            case TokenLoaded tokenLoaded -> new Succeeded();
+            case TokenLoaded(AccountToken accountToken) -> new Succeeded();
             case TokenNotFound() -> new InvalidTokenFailed("");
             case TokenLoadFailed(Throwable cause) -> new Failed(cause);
+        };
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Result activateAccount(
+          AccountToken accountToken) {
+
+        var result = updateAccountActiveFlagRepository.execute(
+              accountToken.accountId(),
+              true
+        );
+
+        return switch (result) {
+            case ActiveFlagUpdated() -> new Succeeded();
+            case ActiveFlagUpdateFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
