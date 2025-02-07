@@ -24,6 +24,7 @@ const DEFAULT_ERROR_MESSAGE = 'An error occurred during sign up.'
 })
 export class SignUpComponent implements OnInit {
     error: string | undefined;
+    success: boolean = false;
 
     signInForm = this.formBuilder.group({
         name: ['', Validators.required],
@@ -71,10 +72,12 @@ export class SignUpComponent implements OnInit {
      * @private
      */
     private handleSuccess() {
-        this.router.navigate(['/home'])
-            .then(() => {
-                window.location.reload();
-            });
+        this.success = true;
+        // console.log(this.success)
+        // this.router.navigate(['/home'])
+        //     .then(() => {
+        //         window.location.reload();
+        //     });
     }
 
     /**

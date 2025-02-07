@@ -96,3 +96,12 @@ button.cancel {
     text-align: center;
 }
 
+.activation-info {
+    text-align: center;
+}
+
+.activation-text {
+    padding-bottom: 25px;
+}
+
+/*  */

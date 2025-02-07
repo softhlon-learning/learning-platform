@@ -5,14 +5,14 @@
             <div class="title">
                 Sign Up
             </div>
-            <div class="info">
-            <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge
-                that you understand the <a href="#">Privacy Policy</a>.
-            </span>
+            <div *ngIf="success !== true" class="info">
+                <span class="info-text">By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge
+                    that you understand the <a href="#">Privacy Policy</a>.
+                </span>
             </div>
         </div>
 
-        <form (ngSubmit)="onSubmit()" [formGroup]="signInForm">
+        <form *ngIf="success !== true" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
             <div class="form">
                 <div class="name">
                     <input formControlName="name" placeholder="Name" type="text">
@@ -28,6 +28,16 @@
                 <div class="error">{{ error }}</div>
             </div>
         </form>
+
+        <div *ngIf="success === true" class="activation-info">
+            <div class="activation-text">
+                We've sent an activation link to your email address. Please check your mailbox, open the email from us,
+                and click on the activation link to complete your account setup. If you don't see the email,
+                please check your spam or junk folder.
+            </div>
+            <button class="cancel" routerLink="/home">Close & Go the main page</button>
+        </div>
+        <div></div>
 
     </div>
 </div>
