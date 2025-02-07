@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Failed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.InvalidTokenFailed;
+import tech.javafullstack.accounts.domain.ActivateAccountService.Result.ExpiredTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Succeeded;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.AccountToken;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenLoadFailed;
@@ -16,6 +17,8 @@ import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccount
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenNotFound;
 import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.UpdateActiveFlagResult.ActiveFlagUpdateFailed;
 import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.UpdateActiveFlagResult.ActiveFlagUpdated;
+
+import java.time.OffsetDateTime;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -43,8 +46,8 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
 
         var result = loadAccountTokenRepository.execute(token);
         return switch (result) {
-            case TokenLoaded(AccountToken accountToken) -> new Succeeded();
-            case TokenNotFound() -> new InvalidTokenFailed("");
+            case TokenLoaded(AccountToken accountToken) -> activateAccount(accountToken);
+            case TokenNotFound() -> new InvalidTokenFailed(INVALID_TOKEN);
             case TokenLoadFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -56,6 +59,10 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
 
     private Result activateAccount(
           AccountToken accountToken) {
+
+        if (accountToken.expirationTime().isBefore(OffsetDateTime.now())) {
+            return new ExpiredTokenFailed(EXPIRED_TOKEN);
+        }
 
         var result = updateAccountActiveFlagRepository.execute(
               accountToken.accountId(),
