@@ -25,7 +25,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "account_activation_tokens", schema = "_accounts")
-class AccountActivationTokenEntity {
+class AccountTokenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

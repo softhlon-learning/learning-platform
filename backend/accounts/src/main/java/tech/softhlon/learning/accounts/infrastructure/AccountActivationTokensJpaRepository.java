@@ -19,9 +19,9 @@ import java.util.UUID;
  * Account activation tokens JPA repository.
  */
 @Repository
-interface AccountActivationTokensJpaRepository extends CrudRepository<AccountActivationTokenEntity, UUID> {
+interface AccountActivationTokensJpaRepository extends CrudRepository<AccountTokenEntity, UUID> {
 
-    Optional<AccountActivationTokenEntity> findByToken(
+    Optional<AccountTokenEntity> findByToken(
           String token);
 
 }
