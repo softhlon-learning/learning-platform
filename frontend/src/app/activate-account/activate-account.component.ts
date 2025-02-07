@@ -39,7 +39,9 @@ export class ActivateAccountComponent implements OnInit {
     ngOnInit() {
         this.route.queryParamMap.subscribe(
             paramMap => {
+                console.log(paramMap)
                 if (paramMap.has(TOKEN_QUERY_PARAM)) {
+                    console.log(paramMap.get(TOKEN_QUERY_PARAM))
                     const token = paramMap.get(TOKEN_QUERY_PARAM)?.toString()
                     this.accountsService.activateAccount(token).subscribe({
                         next: () => this.handleSuccess(),
@@ -55,6 +57,7 @@ export class ActivateAccountComponent implements OnInit {
      * @private
      */
     private handleSuccess() {
+        console.log('Successfully activated account')
         this.success = true
         this.error = undefined
     }
@@ -64,6 +67,7 @@ export class ActivateAccountComponent implements OnInit {
      * @private
      */
     private handleError(error: any, defaultErrorMessage: string) {
+        console.error(error)
         this.error = error?.error?.message
             || defaultErrorMessage
 
