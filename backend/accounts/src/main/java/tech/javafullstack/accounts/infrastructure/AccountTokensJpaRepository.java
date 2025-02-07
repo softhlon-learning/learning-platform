@@ -29,7 +29,7 @@ interface AccountTokensJpaRepository extends CrudRepository<AccountTokenEntity, 
 
     @Query(value = """
           UPDATE _accounts.accounts 
-          SET is_active = :active WHERE account_id = :accountId
+          SET is_active = :active WHERE id = :accountId
           """,
           nativeQuery = true)
     @Modifying
