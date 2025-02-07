@@ -27,7 +27,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class CreateAccountTokenRepositoryAdapter implements CreateAccountTokenRepository {
 
-    private final AccountActivationTokensJpaRepository accountTokensJpaRepository;
+    private final AccountTokensJpaRepository accountTokensJpaRepository;
 
     /**
      * {@inheritDoc}
