@@ -63,7 +63,7 @@ class SignUpController {
         );
 
         return switch (result) {
-            case Succeeded(UUID id, String token) -> success(response, token);
+            case Succeeded(UUID id, _) -> successBody(id);
             case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
             case AccountIsDeletedFailed(String message) -> badRequestBody(httpRequest, message);
             case NamePolicyFailed(String message) -> badRequestBody(httpRequest, message);
@@ -91,19 +91,6 @@ class SignUpController {
 
         return status(HttpStatus.CREATED)
               .body(new Response(id));
-
-    }
-
-    private ResponseEntity<?> success(
-          HttpServletResponse response,
-          String token) {
-
-        authCookiesService.addAuthSucceededCookies(
-              response,
-              token
-        );
-
-        return successCreatedBody();
 
     }
 
