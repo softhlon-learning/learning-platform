@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.1
+_release date: 2025-02-07_
+ * frontend: Add app-footer on missing screens
+ * accounts: Add is_active column to accounts table
+ * accounts: Add isActive to account models
+
 ## 0.48.0
 _release date: 2025-02-07_
  * subscriptions: Fix folder names
