@@ -140,7 +140,8 @@ class SignUpServiceImpl implements SignUpService {
         var result = createAccountRepository.execute(PASSWORD,
               name,
               email,
-              encryptPassword(password)
+              encryptPassword(password),
+              false
         );
 
         return switch (result) {

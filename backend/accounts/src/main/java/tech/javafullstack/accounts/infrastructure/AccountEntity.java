@@ -32,7 +32,8 @@ class AccountEntity {
     private String type;
     private String name;
     private String email;
-    private boolean isDeleted;
     private String password;
+    private boolean isActive;
+    private boolean isDeleted;
 
 }

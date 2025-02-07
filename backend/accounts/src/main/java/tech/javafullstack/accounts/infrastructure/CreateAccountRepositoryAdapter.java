@@ -36,7 +36,8 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
           String type,
           String name,
           String email,
-          String password) {
+          String password,
+          boolean active) {
 
         try {
             var createdAccount = accountsRepo.save(
@@ -45,6 +46,7 @@ class CreateAccountRepositoryAdapter implements CreateAccountRepository {
                         .name(name)
                         .email(email)
                         .password(password)
+                        .isActive(active)
                         .build()
             );
 
