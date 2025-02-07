@@ -24,7 +24,8 @@ import static tech.javafullstack.accounts.domain.SignInService.Result.*;
 @RequiredArgsConstructor
 class SignInServiceImpl implements SignInService {
 
-    private static final String AUTH_ERORR_MESSAGE = "Authentication failed. Incorrect email or password";
+    private static final String INVALID_CREDENTIALS_MESSAGE = "Authentication failed. Incorrect email or password";
+    private static final String ACCOUNT_NOT_ACTIVE_MESSAGE = "Authentication failed. Account has not been activated yet";
     private final EmailValidationService emailValidationService;
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final JwtService jwtService;
@@ -49,7 +50,8 @@ class SignInServiceImpl implements SignInService {
 
         return switch (exists) {
             case AccountFound(Account account) -> authenticate(password, account);
-            case AccountNotFound(), AccountIsDeleted(), AccountIsNotActivated() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
+            case AccountIsNotActivated() -> new InvalidCredentialsFailed(ACCOUNT_NOT_ACTIVE_MESSAGE);
+            case AccountNotFound(), AccountIsDeleted() -> new InvalidCredentialsFailed(INVALID_CREDENTIALS_MESSAGE);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -85,7 +87,7 @@ class SignInServiceImpl implements SignInService {
 
         return matches
               ? new Succeeded(token(account))
-              : new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
+              : new InvalidCredentialsFailed(INVALID_CREDENTIALS_MESSAGE);
 
     }
 
