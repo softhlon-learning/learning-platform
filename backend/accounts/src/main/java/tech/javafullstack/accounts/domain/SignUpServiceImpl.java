@@ -53,7 +53,6 @@ class SignUpServiceImpl implements SignUpService {
     private final CreateAccountTokenRepository createAccountTokenRepository;
     private final ApplicationEventPublisher applicationEventPublisher;
     private final EmailService emailService;
-    private final JwtService jwtService;
     private final String baseUrl;
 
     public SignUpServiceImpl(
@@ -64,7 +63,6 @@ class SignUpServiceImpl implements SignUpService {
           CreateAccountTokenRepository createAccountTokenRepository,
           ApplicationEventPublisher applicationEventPublisher,
           EmailService emailService,
-          JwtService jwtService,
           @Value("${activate-account.base-url}") String baseUrl) {
 
         this.emailValidationService = emailValidationService;
@@ -74,7 +72,6 @@ class SignUpServiceImpl implements SignUpService {
         this.createAccountTokenRepository = createAccountTokenRepository;
         this.applicationEventPublisher = applicationEventPublisher;
         this.emailService = emailService;
-        this.jwtService = jwtService;
         this.baseUrl = baseUrl;
     }
 
@@ -175,7 +172,7 @@ class SignUpServiceImpl implements SignUpService {
 
         sendEmail(accountId, email, token);
         applicationEventPublisher.publishEvent(new AccountCreated(this, accountId));
-        return new Succeeded(accountId, authToken(accountId, email));
+        return new Succeeded(accountId);
 
     }
 
@@ -184,15 +181,6 @@ class SignUpServiceImpl implements SignUpService {
 
         var passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
-
-    }
-
-    private String authToken(UUID id, String email) {
-
-        return jwtService.generateToken(
-              id,
-              email
-        );
 
     }
 

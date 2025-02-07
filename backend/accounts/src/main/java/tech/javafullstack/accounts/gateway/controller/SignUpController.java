@@ -63,7 +63,7 @@ class SignUpController {
         );
 
         return switch (result) {
-            case Succeeded(UUID id, _) -> successBody(id);
+            case Succeeded(UUID id) -> successBody(id);
             case AccountAlreadyExistsFailed(String message) -> badRequestBody(httpRequest, message);
             case AccountIsDeletedFailed(String message) -> badRequestBody(httpRequest, message);
             case NamePolicyFailed(String message) -> badRequestBody(httpRequest, message);
