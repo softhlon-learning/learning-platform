@@ -20,7 +20,7 @@ class EmailTemplates {
              
           Once you click the link, your account will be activated, and you'll be all set to explore Java FullStack Academy.
           
-          Note: This link is valid for [number of days, e.g., 24 hours]. 
+          Note: This link is valid for 24 hours. 
           If you do not activate your account within this time, you may need to register again.
           
           If you encounter any issues or if you did not intend to sign up for Java FullStack Academy, 
