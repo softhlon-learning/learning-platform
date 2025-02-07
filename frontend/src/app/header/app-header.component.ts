@@ -40,7 +40,7 @@ export class AppHeaderComponent implements OnInit {
 
     ngOnInit(): void {
         if (!this.isAuthenticated()) {
-            this.initialized = true
+            return;
         }
 
         this.fetchFreeTrial(true)
