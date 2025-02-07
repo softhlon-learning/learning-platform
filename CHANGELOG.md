@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.47.19
+_release date: 2025-02-07_
+ * accounts: Fix ACTIVATE_ACCOUNT_TEMPLATE
+ * accounts: Rename package tech.softhlon.learning to tech.javafullstack
+ * accounts: Rename folders tech.softhlon.learning to tech.javafullstack 
+
 ## 0.47.18
 _release date: 2025-02-07_
  * accounts: Update reset password email subject
