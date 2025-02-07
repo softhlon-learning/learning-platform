@@ -16,31 +16,31 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Load password token repository interface.
+ * Load account token repository interface.
  */
 @OutboundPort
 @DomainRepository
 @FunctionalInterface
-public interface LoadPasswordTokenRepository {
+public interface LoadAccountTokenRepository {
 
     /**
-     * Load password token from repository.
-     * @param token Password token
-     * @return LoadPasswordTokenResult
+     * Load account activation token from repository.
+     * @param token Account activation token
+     * @return LoadAccountTokenResult
      */
-    LoadPasswordTokenResult execute(
+    LoadAccountTokenResult execute(
           String token);
 
     /**
-     * Load password token from repository result.
+     * Load account activation token from repository result.
      */
-    sealed interface LoadPasswordTokenResult {
-        record TokenLoaded(PasswordToken passwordToken) implements LoadPasswordTokenResult {}
-        record TokenNotFound() implements LoadPasswordTokenResult {}
-        record TokenLoadFailed(Throwable cause) implements LoadPasswordTokenResult {}
+    sealed interface LoadAccountTokenResult {
+        record TokenLoaded(AccountToken passwordToken) implements LoadAccountTokenResult {}
+        record TokenNotFound() implements LoadAccountTokenResult {}
+        record TokenLoadFailed(Throwable cause) implements LoadAccountTokenResult {}
     }
 
-    record PasswordToken(
+    record AccountToken(
           UUID id,
           UUID accountId,
           String token,
