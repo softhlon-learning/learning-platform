@@ -19,6 +19,7 @@ import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAcc
 import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
 import tech.javafullstack.accounts.domain.SignUpService.Result.*;
 import tech.javafullstack.common.event.AccountCreated;
+import tech.javafullstack.common.text.TokenGenerator;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -151,7 +152,7 @@ class SignUpServiceImpl implements SignUpService {
     private Result createAccountToken(
           UUID id,
           String email) {
-        var token = UUID.randomUUID().toString();
+        var token = TokenGenerator.token();
         var result = createAccountTokenRepository.execute(
               id,
               token,
