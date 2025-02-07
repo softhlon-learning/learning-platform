@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.6
+_release date: 2025-02-07_
+ * frontend: Do not check free trials if not authenticated
+ * frontend: Fix for app-header init
+ * frontend: Add activate-account.component
+
 ## 0.48.5
 _release date: 2025-02-07_
  * frontend: Display info about account activation link being sent
