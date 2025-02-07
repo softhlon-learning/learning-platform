@@ -15,6 +15,7 @@ import {ProfileComponent} from './profile/profile.component'
 import {UpdatePasswordComponent} from "./update-password/update-password.component"
 import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from './manage-subscription/manage-subscription.component'
+import { ActivateAccountComponent } from './activate-account/activate-account.component'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'sign-in', component: SignInComponent},
     {path: 'sign-up', component: SignUpComponent},
+    {path: 'activate-account', component: ActivateAccountComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},

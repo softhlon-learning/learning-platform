@@ -34,6 +34,7 @@ import {ManageSubscriptionComponent} from "./manage-subscription/manage-subscrip
 import {NgxSpinnerModule} from 'ngx-spinner'
 import {AppFooterComponent} from "./footer/app-footer.component";
 import {LockedLectureComponent} from "./locked-lecture/locked-lecture.component";
+import {ActivateAccountComponent} from "./activate-account/activate-account.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -60,7 +61,8 @@ import {LockedLectureComponent} from "./locked-lecture/locked-lecture.component"
         SubscribeComponent,
         ManageSubscriptionComponent,
         AppFooterComponent,
-        LockedLectureComponent
+        LockedLectureComponent,
+        ActivateAccountComponent
     ],
     imports: [
         BrowserModule,
