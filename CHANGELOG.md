@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.0
+_release date: 2025-02-07_
+ * subscriptions: Fix folder names
+ * backend: Update headers (to JAVA-FULLSTACK.TECH)
+ * frontend: Update headers (to JAVA-FULLSTACK.TECH)
+
 ## 0.47.19
 _release date: 2025-02-07_
  * accounts: Fix ACTIVATE_ACCOUNT_TEMPLATE
