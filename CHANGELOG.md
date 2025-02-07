@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.9
+_release date: 2025-02-07_
+ * accounts: Add AccountsJpaRepository.updateIsActive method
+ * accounts: Created UpdateAccountActiveFlagRepository interface
+ * accounts: Implement UpdateAccountActiveFlagRepositoryAdapter
+
 ## 0.48.8
 _release date: 2025-02-07_
  * accounts: Implement LoadAccountTokenRepositoryAdapter
