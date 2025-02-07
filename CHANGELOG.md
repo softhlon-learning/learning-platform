@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.4
+_release date: 2025-02-07_
+ * frontend: Improve error handling in sign-up.component
+ * application: Add send-emails.enabled parameter
+
 ## 0.48.3
 _release date: 2025-02-07_
  * accounts: Bug fix in LoadAccountByEmailRepositoryAdapter
