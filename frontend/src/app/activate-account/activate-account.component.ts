@@ -43,9 +43,7 @@ export class ActivateAccountComponent implements OnInit {
     ngOnInit() {
         this.route.queryParamMap.subscribe(
             paramMap => {
-                console.log(paramMap)
                 if (paramMap.has(TOKEN_QUERY_PARAM)) {
-                    console.log(paramMap.get(TOKEN_QUERY_PARAM))
                     const token = paramMap.get(TOKEN_QUERY_PARAM)?.toString()
                     this.accountsService.activateAccount(token).subscribe({
                         next: () => this.handleSuccess(),
@@ -54,11 +52,6 @@ export class ActivateAccountComponent implements OnInit {
                 }
             }
         )
-    }
-
-    goHome() {
-        this.router.navigate(['/home']).then(() => {
-        })
     }
 
     private isAuthenticated(): boolean {
@@ -72,6 +65,7 @@ export class ActivateAccountComponent implements OnInit {
     private handleSuccess() {
         this.success = true
         this.error = undefined
+        console.log(this.isAuthenticated())
         if (!this.isAuthenticated()) {
             window.location.reload()
         }
@@ -82,7 +76,6 @@ export class ActivateAccountComponent implements OnInit {
      * @private
      */
     private handleError(error: any, defaultErrorMessage: string) {
-        console.error(error)
         this.error = error?.error?.message
             || defaultErrorMessage
 

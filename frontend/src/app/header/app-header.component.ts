@@ -7,7 +7,7 @@
 import version from "../../../package.json"
 import {Component, OnInit} from '@angular/core'
 import {CookieService} from "ngx-cookie-service"
-import {Router} from "@angular/router"
+import {NavigationStart, Router} from "@angular/router"
 import {AccountsService} from '../service/accounts/accounts.service'
 import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service"
@@ -36,6 +36,11 @@ export class AppHeaderComponent implements OnInit {
         private accountsService: AccountsService,
         private subscriptionsService: SubscriptionsService,
         private cookieService: CookieService) {
+        this.router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                this.ngOnInit()
+            }
+        });
     }
 
     ngOnInit(): void {
