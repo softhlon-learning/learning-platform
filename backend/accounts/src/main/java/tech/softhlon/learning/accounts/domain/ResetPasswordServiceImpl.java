@@ -22,6 +22,8 @@ import tech.softhlon.learning.accounts.domain.ResetPasswordService.Result.Succee
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+import static tech.softhlon.learning.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -34,17 +36,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
     private static final String EMAIL_NOT_FOUND = "Email not found";
     private static final String SUBJECT = "Account Recovery";
-    private static final String EMAIL_CONTENT = """
-          Hello,
-          
-          We've received a request to reset your password. Please click the link below to set a new one:
-          %s
-          
-          If you didn't request this, please ignore this email for your account's security.
-          
-          Best regards,
-          Java Fullstack Academy Team
-          """;
+
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
     private final EmailValidationService emailValidationService;
@@ -138,7 +130,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
         emailService.sendMessage(
               account.email(),
               SUBJECT,
-              EMAIL_CONTENT.formatted(baseUrl + token)
+              RESET_PASSWORD_TEMPLATE.formatted(baseUrl + token)
         );
 
         return new Succeeded();
