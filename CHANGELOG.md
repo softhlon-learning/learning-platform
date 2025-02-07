@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.14
+_release date: 2025-02-07_
+ * frontend: Improved styling on activate-account
+ * frontend: Fix page refresh after activate-account
+
 ## 0.48.13
 _release date: 2025-02-07_
  * accounts: Return authToken in ActivateAccountService
