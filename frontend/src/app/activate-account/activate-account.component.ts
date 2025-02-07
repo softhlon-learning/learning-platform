@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core'
 import {environment} from "../../environment/environment"
 import {ActivatedRoute, Router} from "@angular/router";
 import {AccountsService} from "../service/accounts/accounts.service";
+import {AUTHENTICATED_COOKIE} from "../common/constants";
+import {CookieService} from "ngx-cookie-service";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -31,6 +33,7 @@ export class ActivateAccountComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
+        private cookieService: CookieService,
         private accountsService: AccountsService) {
     }
 
@@ -53,9 +56,13 @@ export class ActivateAccountComponent implements OnInit {
         )
     }
 
-    goHome () {
+    goHome() {
         this.router.navigate(['/home']).then(() => {
         })
+    }
+
+    private isAuthenticated(): boolean {
+        return this.cookieService.get(AUTHENTICATED_COOKIE) === 'true'
     }
 
     /**
@@ -65,7 +72,9 @@ export class ActivateAccountComponent implements OnInit {
     private handleSuccess() {
         this.success = true
         this.error = undefined
-        window.location.reload()
+        if (!this.isAuthenticated()) {
+            window.location.reload()
+        }
     }
 
     /**
