@@ -8,10 +8,14 @@ package tech.javafullstack.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tech.javafullstack.accounts.domain.ActivateAccountService.Result.ExpiredTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Failed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.InvalidTokenFailed;
-import tech.javafullstack.accounts.domain.ActivateAccountService.Result.ExpiredTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.Account;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.AccountToken;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenLoadFailed;
 import tech.javafullstack.accounts.domain.LoadAccountTokenRepository.LoadAccountTokenResult.TokenLoaded;
@@ -20,6 +24,7 @@ import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.Upda
 import tech.javafullstack.accounts.domain.UpdateAccountActiveFlagRepository.UpdateActiveFlagResult.ActiveFlagUpdated;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -38,6 +43,8 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
 
     private final LoadAccountTokenRepository loadAccountTokenRepository;
     private final UpdateAccountActiveFlagRepository updateAccountActiveFlagRepository;
+    private final LoadAccountRepository loadAccountRepository;
+    private final JwtService jwtService;
 
     /**
      * {@inheritDoc}
@@ -75,6 +82,27 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
             case ActiveFlagUpdated() -> new Succeeded();
             case ActiveFlagUpdateFailed(Throwable cause) -> new Failed(cause);
         };
+
+    }
+
+    private Result loadAcount(UUID accountId) {
+        var result = loadAccountRepository.execute(accountId);
+
+        return switch (result) {
+            case AccountLoaded(Account account) -> authToken(account);
+            case AccountNotFound() -> new Failed(null);
+            case AccountLoadFailed(Throwable cause) -> new Failed(cause);
+        };
+    }
+
+    private Result authToken(
+          Account account) {
+
+        var authToken = jwtService.generateToken(
+              account.id(),
+              account.email()
+        );
+        return new Succeeded(authToken);
 
     }
 

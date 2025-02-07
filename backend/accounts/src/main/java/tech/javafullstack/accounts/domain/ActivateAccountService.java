@@ -30,7 +30,7 @@ public interface ActivateAccountService {
      * Activate account result.
      */
     sealed interface Result {
-        record Succeeded() implements Result {}
+        record Succeeded(String authToken) implements Result {}
         record InvalidTokenFailed(String message) implements Result {}
         record ExpiredTokenFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}

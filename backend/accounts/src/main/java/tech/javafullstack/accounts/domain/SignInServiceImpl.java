@@ -86,12 +86,12 @@ class SignInServiceImpl implements SignInService {
         );
 
         return matches
-              ? new Succeeded(token(account))
+              ? new Succeeded(authToken(account))
               : new InvalidCredentialsFailed(INVALID_CREDENTIALS_MESSAGE);
 
     }
 
-    private String token(Account account) {
+    private String authToken(Account account) {
 
         return jwtService.generateToken(
               account.id(),

@@ -32,7 +32,7 @@ public interface SignInService {
      * Sign in with email and password result.
      */
     sealed interface Result {
-        record Succeeded(String token) implements Result {}
+        record Succeeded(String authToken) implements Result {}
         record EmailPolicyFailed(String message) implements Result {}
         record InvalidCredentialsFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
