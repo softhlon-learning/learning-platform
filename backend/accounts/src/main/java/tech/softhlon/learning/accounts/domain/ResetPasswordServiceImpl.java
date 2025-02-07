@@ -35,7 +35,7 @@ import static tech.softhlon.learning.accounts.domain.EmailTemplates.RESET_PASSWO
 class ResetPasswordServiceImpl implements ResetPasswordService {
 
     private static final String EMAIL_NOT_FOUND = "Email not found";
-    private static final String SUBJECT = "Account Recovery";
+    private static final String SUBJECT = "Recover Your Account in Java FullStack Academy";
 
     private final LoadAccountByEmailRepository loadAccountByEmailRepository;
     private final CreatePasswordTokenRepository createPasswordTokenRepository;
