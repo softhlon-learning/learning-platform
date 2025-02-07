@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.3
+_release date: 2025-02-07_
+ * accounts: Bug fix in LoadAccountByEmailRepositoryAdapter
+ * accounts: Add ACCOUNT_NOT_ACTIVE_MESSAGE on sign in
+ * freebsd: Add /active-account to allowed routes in Nginx
+
 ## 0.48.2
 _release date: 2025-02-07_
  * accounts: Do not set authentication cookies on successful PASSWORD sign up
