@@ -36,7 +36,7 @@ public interface SignUpService {
      * Sign up a new user result.
      */
     sealed interface Result {
-        record Succeeded(UUID id, String token) implements Result {}
+        record Succeeded(UUID id, String authToken) implements Result {}
         record AccountAlreadyExistsFailed(String message) implements Result {}
         record AccountIsDeletedFailed(String message) implements Result {}
         record NamePolicyFailed(String message) implements Result {}

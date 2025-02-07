@@ -5,7 +5,7 @@
 
 package tech.softhlon.learning.accounts.domain;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
+import static tech.softhlon.learning.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -33,7 +34,6 @@ import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
  * Sign up service implementation.
  */
 @Service
-@RequiredArgsConstructor
 class SignUpServiceImpl implements SignUpService {
     private static final String NAME_IS_BLANK = "Name is blank";
     private static final String EMAIL_IS_BLANK = "Email is blank";
@@ -44,13 +44,39 @@ class SignUpServiceImpl implements SignUpService {
           "Password should have 12 characters or more, at least " +
                 "one lower case letter, one upper case letter, and digit";
 
+    private static final String SUBJECT = "Activate Your Java FullStack Academy Account";
+
     private final EmailValidationService emailValidationService;
     private final PasswordValidationService passwordValidationService;
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
     private final CreateAccountTokenRepository createAccountTokenRepository;
     private final ApplicationEventPublisher applicationEventPublisher;
+    private final EmailService emailService;
     private final JwtService jwtService;
+    private final String baseUrl;
+
+    public SignUpServiceImpl(
+          EmailValidationService emailValidationService,
+          PasswordValidationService passwordValidationService,
+          CreateAccountRepository createAccountRepository,
+          CheckAccountByEmailRepository checkAccountByEmailRepository,
+          CreateAccountTokenRepository createAccountTokenRepository,
+          ApplicationEventPublisher applicationEventPublisher,
+          EmailService emailService,
+          JwtService jwtService,
+          @Value("${activate-account.base-url}") String baseUrl) {
+
+        this.emailValidationService = emailValidationService;
+        this.passwordValidationService = passwordValidationService;
+        this.createAccountRepository = createAccountRepository;
+        this.checkAccountByEmailRepository = checkAccountByEmailRepository;
+        this.createAccountTokenRepository = createAccountTokenRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
+        this.emailService = emailService;
+        this.jwtService = jwtService;
+        this.baseUrl = baseUrl;
+    }
 
     /**
      * {@inheritDoc}
@@ -118,32 +144,37 @@ class SignUpServiceImpl implements SignUpService {
         );
 
         return switch (result) {
-            case AccountPersisted(UUID id) -> createAccountTloken(id, email);
+            case AccountPersisted(UUID id) -> createAccountToken(id, email);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
 
-    private Result createAccountTloken(
+    private Result createAccountToken(
           UUID id,
           String email) {
         var token = UUID.randomUUID().toString();
         var result = createAccountTokenRepository.execute(
               id,
-              token, expirationTime()
+              token,
+              expirationTime()
         );
 
         return switch (result) {
-            case AccountTokenPersisted accountTokenPersisted -> publishEvent(id, email);
+            case AccountTokenPersisted accountTokenPersisted -> sendEmailAndPublishEvent(id, email, token);
             case AccountTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
 
-    private Succeeded publishEvent(UUID id, String email) {
+    private Succeeded sendEmailAndPublishEvent(
+          UUID accountId,
+          String email,
+          String token) {
 
-        applicationEventPublisher.publishEvent(new AccountCreated(this, id));
-        return new Succeeded(id, token(id, email));
+        sendEmail(accountId, email, token);
+        applicationEventPublisher.publishEvent(new AccountCreated(this, accountId));
+        return new Succeeded(accountId, authToken(accountId, email));
 
     }
 
@@ -155,7 +186,7 @@ class SignUpServiceImpl implements SignUpService {
 
     }
 
-    private String token(UUID id, String email) {
+    private String authToken(UUID id, String email) {
 
         return jwtService.generateToken(
               id,
@@ -169,6 +200,19 @@ class SignUpServiceImpl implements SignUpService {
         return OffsetDateTime
               .now()
               .plusDays(1);
+
+    }
+
+    private void sendEmail(
+          UUID accountId,
+          String email,
+          String token) {
+
+        emailService.sendMessage(
+              email,
+              SUBJECT,
+              RESET_PASSWORD_TEMPLATE.formatted(baseUrl + token)
+        );
 
     }
 }

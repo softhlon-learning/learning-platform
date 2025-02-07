@@ -23,6 +23,7 @@ jwt:
   secret: 75a839dab1e167e6e1a6dc273247dec588cabe62f96142704a802d673ac94ab7
   expiration: 86400
 update-password.base-url: "http://localhost/update-password?token="
+activate-account.base-url: "http://localhost/activate-account?token="
 logging.pattern.console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} | %clr(%-5level){green} | %X{account} | %msg%n"
 service.base-url: "http://localhost"
 stripe.api-key: "sk_test_51QmNzsIdZlPlV5wEyJEDGjierQfxyKkJVsuhjbvMMtxnjex89QWnOiRIkV8nwccigHjmX6Fqh0VCTSFnO0TwZJW500de6la5pX"
@@ -43,4 +44,5 @@ login-redirect-success-uri: https://java-fullstack.tech/home
 login-redirect-fail-uri: https://java-fullstack.tech/sign-in
 google-client-id: 261285487242-kd1e2lhqdpfrph48o00ga0h21qrebh41.apps.googleusercontent.com
 update-password.base-url: "https://java-fullstack.tech/update-password?token="
+activate-account.base-url: "http://java-fullstack.tech/activate-account?token="
 service.base-url: "https://java-fullstack.tech"
