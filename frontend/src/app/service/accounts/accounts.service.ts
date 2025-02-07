@@ -7,6 +7,7 @@ import {Injectable} from '@angular/core'
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {Observable} from 'rxjs'
 import {
+    ActivateAccountRequest,
     Profile,
     ResetPasswordRequest,
     SignInRequest,
@@ -21,6 +22,7 @@ import {
 
 const SIGN_IN_PATH = '/api/v1/account/auth/sign-in'
 const SIGN_UP_PATH = '/api/v1/account/sign-up'
+const ACTIVATE_ACCOUNT_PATH = '/api/v1/account/activate'
 const SIGN_OUT_PATH = '/api/v1/account/auth/sign-out'
 const DELETE_ACCOUNT_PATH = '/api/v1/account'
 const PROFILE_PATH = '/api/v1/account/profile'
@@ -77,6 +79,22 @@ export class AccountsService {
                 SIGN_UP_PATH,
                 signUpRequest,
                 HTTP_OPTIONS)
+            .pipe()
+    }
+
+    /**
+     * Sends POST /api/v1/account/activate request.
+     * @param token Reset pasword request token
+     * @param password User's new password
+     */
+    activateAccount(token?: string): Observable<ArrayBuffer> {
+        const activateAccountRequest =
+            new ActivateAccountRequest(token)
+
+        return this.http
+            .post<ArrayBuffer>(
+                ACTIVATE_ACCOUNT_PATH,
+                activateAccountRequest)
             .pipe()
     }
 
@@ -158,4 +176,5 @@ export class AccountsService {
                 updatePasswordRequest)
             .pipe()
     }
+
 }

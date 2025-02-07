@@ -71,6 +71,17 @@ export class UpdatePasswordRequest {
 }
 
 /**
+ * Activate account request body.
+ */
+export class ActivateAccountRequest {
+    token?: string
+
+    constructor(token?: string) {
+        this.token = token;
+    }
+}
+
+/**
  * Profile response model.
  */
 export class Profile {
