@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.7
+_release date: 2025-02-07_
+ * accounts: Add ActivateAccountService
+ * accounts: Add empty ActivateAccountServiceImpl
+ * accounts: Add LoadAccountTokenRepository
+
 ## 0.48.6
 _release date: 2025-02-07_
  * frontend: Do not check free trials if not authenticated
