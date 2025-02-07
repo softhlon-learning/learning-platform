@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.47.15
+_release date: 2025-02-07_
+ * accounts: Add EmailTemplates
+ * accounts: Create ACTIVATE_ACCOUNT_TEMPLATE
+ * accounts: Update EmailTemplates
+
 ## 0.47.14
 _release date: 2025-02-07_
  * accounts: Add _accounts.account_activation_tokens table
