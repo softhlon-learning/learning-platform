@@ -26,7 +26,14 @@ class EmailTemplates {
           If you encounter any issues or if you did not intend to sign up for Java FullStack Academy, 
           please reply to this email, and we will assist you promptly.
           
-          Welcome aboard!        
+          Welcome aboard!
+          
+          Best regards,
+          
+          Support Team
+          Java FullStack Academy
+          support@java-fullstack.tech
+          https://java-fullstack.tech
           """;
 
     static final String RESET_PASSWORD_TEMPLATE = """
@@ -38,7 +45,11 @@ class EmailTemplates {
           If you didn't request this, please ignore this email for your account's security.
           
           Best regards,
-          Java Fullstack Academy Team
+                              
+          Support Team
+          Java FullStack Academy
+          support@java-fullstack.tech
+          https://java-fullstack.tech
           """;
 
 }
