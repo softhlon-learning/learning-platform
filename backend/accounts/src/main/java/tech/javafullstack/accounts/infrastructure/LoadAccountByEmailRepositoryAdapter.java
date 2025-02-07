@@ -55,7 +55,7 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
           AccountEntity entity) {
 
         if (entity.isDeleted()) return new AccountIsDeleted();
-        if (entity.isActive()) return new AccountIsNotActivated();
+        if (!entity.isActive()) return new AccountIsNotActivated();
 
         return new AccountFound(toAccount(entity));
 
