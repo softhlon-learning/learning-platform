@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.13
+_release date: 2025-02-07_
+ * accounts: Return authToken in ActivateAccountService
+ * accounts: Save authentication cookies in ActivateAccountController
+
 ## 0.48.12
 _release date: 2025-02-07_
  * application: Add /api/v1/account/activate to permitted paths
