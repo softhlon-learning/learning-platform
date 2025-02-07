@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.47.16
+_release date: 2025-02-07_
+ * accounts: Create CreateAccountTokenRepository interface
+ * accounts: Implement CreateAccountTokenRepositoryAdapter
+
 ## 0.47.15
 _release date: 2025-02-07_
  * accounts: Add EmailTemplates
