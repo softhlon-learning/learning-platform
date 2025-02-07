@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.48.12
+_release date: 2025-02-07_
+ * application: Add /api/v1/account/activate to permitted paths
+ * accounts: Fix ActivateAccountServiceImpl
+ * accounts: Fix param names in AccountTokensJpaRepository
+ * accounts: Add missing @Transactional annotation
+ * accounts: Fix AccountTokensJpaRepository.updateIsActive update statement
+
 ## 0.48.11
 _release date: 2025-02-07_
  * frontend: Add activateAccount service
