@@ -15,4 +15,5 @@ module common {
 
     requires org.apache.tomcat.embed.core;
     requires org.slf4j;
+    requires org.apache.commons.lang3;
 }
