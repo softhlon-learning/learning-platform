@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.48.5
+_release date: 2025-02-07_
+ * frontend: Display info about account activation link being sent
+
 ## 0.48.4
 _release date: 2025-02-07_
  * frontend: Improve error handling in sign-up.component
