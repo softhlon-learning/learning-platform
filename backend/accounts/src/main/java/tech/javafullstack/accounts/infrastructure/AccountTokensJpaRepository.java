@@ -34,7 +34,7 @@ interface AccountTokensJpaRepository extends CrudRepository<AccountTokenEntity, 
           nativeQuery = true)
     @Modifying
     void updateIsActive(
-          @Param(":accountId") UUID accountId,
-          @Param(":active") boolean isActice);
+          @Param("accountId") UUID accountId,
+          @Param("active") boolean isActice);
 
 }
