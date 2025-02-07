@@ -5,7 +5,7 @@
 
 import {Component, OnInit} from '@angular/core'
 import {environment} from "../../environment/environment"
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AccountsService} from "../service/accounts/accounts.service";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -30,6 +30,7 @@ export class ActivateAccountComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private accountsService: AccountsService) {
     }
 
@@ -50,6 +51,12 @@ export class ActivateAccountComponent implements OnInit {
                 }
             }
         )
+    }
+
+    goHome () {
+        this.router.navigate(['/home']).then(() => {
+           // window.location.reload()
+        })
     }
 
     /**
