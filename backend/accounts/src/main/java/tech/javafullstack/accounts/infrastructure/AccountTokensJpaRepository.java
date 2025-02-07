@@ -5,7 +5,10 @@
 
 package tech.javafullstack.accounts.infrastructure;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -23,5 +26,15 @@ interface AccountTokensJpaRepository extends CrudRepository<AccountTokenEntity, 
 
     Optional<AccountTokenEntity> findByToken(
           String token);
+
+    @Query(value = """
+          UPDATE _accounts.accounts 
+          SET is_active = :active WHERE account_id = :accountId
+          """,
+          nativeQuery = true)
+    @Modifying
+    void updateIsActive(
+          @Param(":accountId") UUID accountId,
+          @Param(":active") boolean isActice);
 
 }

@@ -30,14 +30,4 @@ interface AccountsJpaRepository extends CrudRepository<AccountEntity, UUID> {
     boolean existsByEmail(
           String email);
 
-    @Query(value = """
-          UPDATE _accounts.accounts 
-          SET is_active = :active WHERE account_id = :accountId
-          """,
-          nativeQuery = true)
-    @Modifying
-    void updateIsActive(
-          @Param(":accountId") UUID accountId,
-          @Param(":active") boolean isActice);
-
 }

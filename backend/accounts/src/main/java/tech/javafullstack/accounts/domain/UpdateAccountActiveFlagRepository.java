@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 @InboundPort
 @FunctionalInterface
-interface UpdateAccountActiveFlagRepository {
+public interface UpdateAccountActiveFlagRepository {
 
     /**
      * Update account active flag in repository.
