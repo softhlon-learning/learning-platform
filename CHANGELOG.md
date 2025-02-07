@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.2
+_release date: 2025-02-07_
+ * accounts: Do not set authentication cookies on successful PASSWORD sign up
+ * accounts: Remove authToken from SignUp* classes/interfaces
+ * accounts: Add new AccountIsNoyActivated result and adjust related code accordingly
+
 ## 0.48.1
 _release date: 2025-02-07_
  * frontend: Add app-footer on missing screens
