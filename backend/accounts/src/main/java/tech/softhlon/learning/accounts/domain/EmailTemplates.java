@@ -12,7 +12,7 @@ package tech.softhlon.learning.accounts.domain;
 class EmailTemplates {
 
     static final String ACTIVATE_ACCOUNT_TEMPLATE = """
-          Dear %,
+          Dear User,
           
           Thank you for registering with Java FullStack Academy! We're excited to have you as part of our community. 
           To activate your account and start using our services, click on this activation link: 
