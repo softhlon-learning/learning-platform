@@ -135,9 +135,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
     private Result deleteToken(PasswordToken token) {
 
-        var result = deletePasswordTokenRepository.execute(
-              token.id());
-
+        var result = deletePasswordTokenRepository.execute(token.id());
         return switch (result) {
             case TokenDeleted tokenDeleted -> new Succeeded();
             case TokenDeletionFailed(Throwable cause) -> new Failed(cause);

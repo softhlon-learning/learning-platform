@@ -15,6 +15,7 @@ import tech.javafullstack.accounts.domain.ResetPasswordService.Result.EmailNotFo
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.Failed;
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.Succeeded;
+import tech.javafullstack.common.text.TokenGenerator;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -99,7 +100,7 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
     private Result resetPassword(
           Account account) {
 
-        var token = UUID.randomUUID().toString();
+        var token = TokenGenerator.token();
         var result = createPasswordTokenRepository.execute(
               account.id(),
               token,
