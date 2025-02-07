@@ -79,7 +79,7 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
         );
 
         return switch (result) {
-            case ActiveFlagUpdated() -> new Succeeded();
+            case ActiveFlagUpdated() -> loadAcount(accountToken.accountId());
             case ActiveFlagUpdateFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -93,6 +93,7 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
             case AccountNotFound() -> new Failed(null);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
         };
+
     }
 
     private Result authToken(
