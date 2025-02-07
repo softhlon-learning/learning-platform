@@ -8,6 +8,7 @@ CREATE TABLE _accounts.accounts (
     type VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     password VARCHAR NULL,
+    is_active BOOLEAN NOT NULL DEFAULT false,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,

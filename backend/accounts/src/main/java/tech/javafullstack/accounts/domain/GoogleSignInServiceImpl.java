@@ -115,7 +115,8 @@ class GoogleSignInServiceImpl implements GoogleSignInService {
               GOOGLE,
               name,
               email,
-              null
+              null,
+              true
         );
 
         return switch (result) {
