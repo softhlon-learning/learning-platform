@@ -55,7 +55,6 @@ export class ActivateAccountComponent implements OnInit {
 
     goHome () {
         this.router.navigate(['/home']).then(() => {
-           // window.location.reload()
         })
     }
 
@@ -64,9 +63,9 @@ export class ActivateAccountComponent implements OnInit {
      * @private
      */
     private handleSuccess() {
-        console.log('Successfully activated account')
         this.success = true
         this.error = undefined
+        window.location.reload()
     }
 
     /**
