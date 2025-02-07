@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.11
+_release date: 2025-02-07_
+ * frontend: Add activateAccount service
+ * frontend: Integrate activate-account.component with activateAccount service
+
 ## 0.48.10
 _release date: 2025-02-07_
  * accounts: Finish ActivateAccountServiceImpl implementation
