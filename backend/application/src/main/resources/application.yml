@@ -13,6 +13,7 @@ spring:
   mail.port: 25
   mail.properties.mail.smtp.starttls.enable: true
   output.ansi.enabled: ALWAYS
+send-emails.enabled: false
 logging.level.org.zalando.logbook.Logbook: DEBUG
 authentication.mocked: false
 authentication.mocked-id: 74d88fa1-cc2d-4bdb-bf64-a7335b1cdd04
@@ -40,6 +41,7 @@ spring:
   config:
     activate:
       on-profile: production
+send-emails.enabled: true
 login-redirect-success-uri: https://java-fullstack.tech/home
 login-redirect-fail-uri: https://java-fullstack.tech/sign-in
 google-client-id: 261285487242-kd1e2lhqdpfrph48o00ga0h21qrebh41.apps.googleusercontent.com
