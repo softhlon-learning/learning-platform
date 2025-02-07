@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.47.18
+_release date: 2025-02-07_
+ * accounts: Update reset password email subject
+ * accounts: Fix email template selection for account activation
+
 ## 0.47.17
 _release date: 2025-02-07_
  * accounts: Integrate SignUpServiceImpl with CreateAccountTokenRepository
