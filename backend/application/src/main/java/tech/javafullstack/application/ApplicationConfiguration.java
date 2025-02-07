@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Import;
 import tech.javafullstack.accounts.AccountsConfiguration;
 import tech.javafullstack.common.security.AuthenticationContext;
 import tech.javafullstack.courses.CoursesConfiguration;
-import tech.fullstack.subscriptions.SubscriptionsConfiguration;
+import tech.javafullstack.subscriptions.SubscriptionsConfiguration;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
