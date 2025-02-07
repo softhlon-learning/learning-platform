@@ -15,9 +15,12 @@ import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.Chec
 import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
 import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersisted;
+import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
 import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
 import tech.softhlon.learning.common.event.AccountCreated;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
@@ -45,6 +48,7 @@ class SignUpServiceImpl implements SignUpService {
     private final PasswordValidationService passwordValidationService;
     private final CreateAccountRepository createAccountRepository;
     private final CheckAccountByEmailRepository checkAccountByEmailRepository;
+    private final CreateAccountTokenRepository createAccountTokenRepository;
     private final ApplicationEventPublisher applicationEventPublisher;
     private final JwtService jwtService;
 
@@ -114,8 +118,24 @@ class SignUpServiceImpl implements SignUpService {
         );
 
         return switch (result) {
-            case AccountPersisted(UUID id) -> publishEvent(id, email);
+            case AccountPersisted(UUID id) -> createAccountTloken(id, email);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
+        };
+
+    }
+
+    private Result createAccountTloken(
+          UUID id,
+          String email) {
+        var token = UUID.randomUUID().toString();
+        var result = createAccountTokenRepository.execute(
+              id,
+              token, expirationTime()
+        );
+
+        return switch (result) {
+            case AccountTokenPersisted accountTokenPersisted -> publishEvent(id, email);
+            case AccountTokenPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
@@ -144,4 +164,11 @@ class SignUpServiceImpl implements SignUpService {
 
     }
 
+    private OffsetDateTime expirationTime() {
+
+        return OffsetDateTime
+              .now()
+              .plusDays(1);
+
+    }
 }
