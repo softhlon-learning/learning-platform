@@ -22,8 +22,8 @@ interface UpdateAccountActiveFlagRepository {
 
     /**
      * Update account active flag in repository.
-     * @param accountId
-     * @param isActive
+     * @param accountId Account Id
+     * @param isActive  True if account is active
      * @return UpdateActiveFlagResult
      */
     UpdateActiveFlagResult execute(
