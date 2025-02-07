@@ -37,4 +37,6 @@ interface AccountTokensJpaRepository extends CrudRepository<AccountTokenEntity, 
           @Param("accountId") UUID accountId,
           @Param("active") boolean isActice);
 
+    void deleteByAccountId(UUID accountId);
+
 }

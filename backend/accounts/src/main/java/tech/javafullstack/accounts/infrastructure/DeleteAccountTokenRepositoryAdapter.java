@@ -34,10 +34,10 @@ class DeleteAccountTokenRepositoryAdapter implements DeleteAccountTokenRepositor
      */
     @Override
     public DeleteAccountTokenResult execute(
-          UUID id) {
+          UUID accountId) {
 
         try {
-            accountTokensJpaRepository.deleteById(id);
+            accountTokensJpaRepository.deleteByAccountId(accountId);
             return new TokenDeleted();
         } catch (Throwable cause) {
             log.error("Error", cause);
