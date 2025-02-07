@@ -1,12 +1,19 @@
 # Learning Platform Changelog
 
+## 0.48.16
+_release date: 2025-02-07_
+ * accounts: Add DeleteAccountTokenRepository
+ * accounts: Implement DeleteAccountTokenRepositoryAdapter
+ * accounts: Integrate ActivateAccountServiceImpl with DeleteAccountTokenRepository
+ * accounts: Add AccountTokensJpaRepository.deleteByAccountId and use instead of deleteById
+
 ## 0.48.15
 _release date: 2025-02-07_
  * common: Add commons-lang3 dependency
  * common: Add TokenGenerator utility
  * accounts: Use TokenGenerator in ResetPasswordServiceImpl
 
-## 0.48.14
+## 0.48.14  
 _release date: 2025-02-07_
  * frontend: Improved styling on activate-account
  * frontend: Fix page refresh after activate-account
