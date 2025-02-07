@@ -38,6 +38,7 @@ import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 class ActivateAccountController {
 
     private final ActivateAccountService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
     /**
@@ -56,7 +57,7 @@ class ActivateAccountController {
 
         var result = service.execute(request.token());
         return switch (result) {
-            case Succeeded() -> successCreatedBody();
+            case Succeeded(String authToken) -> success(response, authToken);
             case ExpiredTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case InvalidTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
@@ -73,6 +74,22 @@ class ActivateAccountController {
                   [token: %s]"""
                   .formatted(token);
         }
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private ResponseEntity<?> success(
+          HttpServletResponse response,
+          String token) {
+
+        authCookiesService.addAuthSucceededCookies(
+              response,
+              token
+        );
+        return successOkBody();
 
     }
 
