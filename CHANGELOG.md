@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.48.15
+_release date: 2025-02-07_
+ * common: Add commons-lang3 dependency
+ * common: Add TokenGenerator utility
+ * accounts: Use TokenGenerator in ResetPasswordServiceImpl
+
 ## 0.48.14
 _release date: 2025-02-07_
  * frontend: Improved styling on activate-account
