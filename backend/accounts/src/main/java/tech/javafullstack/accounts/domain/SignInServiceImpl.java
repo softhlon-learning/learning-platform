@@ -49,7 +49,7 @@ class SignInServiceImpl implements SignInService {
 
         return switch (exists) {
             case AccountFound(Account account) -> authenticate(password, account);
-            case AccountNotFound(), AccountIsDeleted() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
+            case AccountNotFound(), AccountIsDeleted(), AccountIsNotActivated() -> new InvalidCredentialsFailed(AUTH_ERORR_MESSAGE);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
 

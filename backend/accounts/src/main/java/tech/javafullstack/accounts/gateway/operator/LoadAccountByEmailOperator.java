@@ -9,10 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository;
 import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.Account;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
 import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
 import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
 import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
@@ -42,7 +39,7 @@ public class LoadAccountByEmailOperator {
         var result = loadAccountByEmailRepository.execute(email);
         return switch (result) {
             case AccountFound(Account account) -> new AccountLoaded(accountView(account));
-            case AccountIsDeleted(), AccountNotFound() -> new AccountNotLoaded();
+            case AccountIsNotActivated(), AccountIsDeleted(), AccountNotFound() -> new AccountNotLoaded();
             case LoadAccountFailed(Throwable cause) -> new AccountLoadFailed(cause);
         };
 

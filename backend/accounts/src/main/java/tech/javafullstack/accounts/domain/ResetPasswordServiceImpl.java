@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersisted;
 import tech.javafullstack.accounts.domain.CreatePasswordTokenRepository.CreatePasswordTokenResult.PasswordTokenPersistenceFailed;
 import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.Account;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.EmailNotFoundFailed;
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.EmailPolicyFailed;
 import tech.javafullstack.accounts.domain.ResetPasswordService.Result.Failed;
@@ -75,7 +72,8 @@ class ResetPasswordServiceImpl implements ResetPasswordService {
 
         return switch (result) {
             case AccountFound(Account account) -> resetPassword(account);
-            case AccountIsDeleted(), AccountNotFound() -> new EmailNotFoundFailed(EMAIL_NOT_FOUND);
+            case AccountIsDeleted(), AccountIsNotActivated(), AccountNotFound() ->
+                  new EmailNotFoundFailed(EMAIL_NOT_FOUND);
             case LoadAccountFailed(Throwable cause) -> new Failed(cause);
         };
 

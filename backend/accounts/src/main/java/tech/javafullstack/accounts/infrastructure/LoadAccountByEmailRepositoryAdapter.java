@@ -9,10 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
-import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
 import tech.javafullstack.common.hexagonal.PersistenceAdapter;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -39,6 +36,7 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
 
         try {
             var entity = accountsRepo.findByEmail(email);
+
             return entity.isPresent()
                   ? existingAccount(entity.get())
                   : new AccountNotFound();
@@ -56,9 +54,10 @@ class LoadAccountByEmailRepositoryAdapter implements LoadAccountByEmailRepositor
     private LoadAccountByEmailResult existingAccount(
           AccountEntity entity) {
 
-        return entity.isDeleted()
-              ? new AccountIsDeleted()
-              : new AccountFound(toAccount(entity));
+        if (entity.isDeleted()) return new AccountIsDeleted();
+        if (entity.isActive()) return new AccountIsNotActivated();
+
+        return new AccountFound(toAccount(entity));
 
     }
 
