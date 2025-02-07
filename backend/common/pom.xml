@@ -9,4 +9,16 @@
 
     <artifactId>common</artifactId>
     <name>Learning Platform :: Common</name>
+
+    <properties>
+        <common-lang3-version>3.17.0</common-lang3-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${common-lang3-version}</version>
+        </dependency>
+    </dependencies>
 </project>
