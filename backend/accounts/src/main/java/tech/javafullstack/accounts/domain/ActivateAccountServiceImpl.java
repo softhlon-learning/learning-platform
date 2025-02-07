@@ -12,6 +12,8 @@ import tech.javafullstack.accounts.domain.ActivateAccountService.Result.ExpiredT
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Failed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.InvalidTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeleted;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeletionFailed;
 import tech.javafullstack.accounts.domain.LoadAccountRepository.Account;
 import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
 import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
@@ -44,6 +46,7 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
     private final LoadAccountTokenRepository loadAccountTokenRepository;
     private final UpdateAccountActiveFlagRepository updateAccountActiveFlagRepository;
     private final LoadAccountRepository loadAccountRepository;
+    private final DeleteAccountTokenRepository deleteAccountTokenRepository;
     private final JwtService jwtService;
 
     /**
@@ -89,9 +92,20 @@ class ActivateAccountServiceImpl implements ActivateAccountService {
         var result = loadAccountRepository.execute(accountId);
 
         return switch (result) {
-            case AccountLoaded(Account account) -> authToken(account);
+            case AccountLoaded(Account account) -> deleteToken(account);
             case AccountNotFound() -> new Failed(null);
             case AccountLoadFailed(Throwable cause) -> new Failed(cause);
+        };
+
+    }
+
+    private Result deleteToken(
+          Account account) {
+
+        var result = deleteAccountTokenRepository.execute(account.id());
+        return switch (result) {
+            case TokenDeleted tokenDeleted -> authToken(account);
+            case TokenDeletionFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
