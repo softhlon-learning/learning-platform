@@ -46,6 +46,7 @@ class SecurityConfig {
                           "/api/v1/account/auth/**",
                           "/api/v1/account/sign-up",
                           "/api/v1/account/reset-password",
+                          "/api/v1/account/activate",
                           "/api/v1/account/update-password",
                           "/api/v1/course",
                           "/api/v1/subscription/checkout-completed-event",
