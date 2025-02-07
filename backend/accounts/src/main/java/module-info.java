@@ -29,4 +29,5 @@ module accounts {
     requires com.google.api.client.json.gson;
     requires com.google.api.client.auth;
     requires org.checkerframework.checker.qual;
+    requires spring.tx;
 }

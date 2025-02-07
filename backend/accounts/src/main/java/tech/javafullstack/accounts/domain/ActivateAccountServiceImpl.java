@@ -7,6 +7,7 @@ package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.Failed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.InvalidTokenFailed;
 import tech.javafullstack.accounts.domain.ActivateAccountService.Result.ExpiredTokenFailed;
@@ -28,6 +29,7 @@ import java.time.OffsetDateTime;
  * Activate account service implementation.
  */
 @Service
+@Transactional
 @RequiredArgsConstructor
 class ActivateAccountServiceImpl implements ActivateAccountService {
 
