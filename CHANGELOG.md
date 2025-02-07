@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.48.8
+_release date: 2025-02-07_
+ * accounts: Implement LoadAccountTokenRepositoryAdapter
+ * accounts: Implement partially ActivateAccountServiceImpl
+
 ## 0.48.7
 _release date: 2025-02-07_
  * accounts: Add ActivateAccountService
