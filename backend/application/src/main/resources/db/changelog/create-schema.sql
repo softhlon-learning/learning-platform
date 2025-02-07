@@ -38,6 +38,20 @@ CREATE TABLE _accounts.reset_password_tokens (
 
 CREATE INDEX reset_password_tokens__token_index ON _accounts.reset_password_tokens (token);
 
+CREATE TABLE _accounts.account_activation_tokens (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid,
+    token VARCHAR NOT NULL,
+    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_account_activation_tokens__accounts
+         FOREIGN KEY (account_id)
+         REFERENCES _accounts.accounts (id)
+);
+
+CREATE INDEX account_activation_tokens__token_index ON _accounts.reset_password_tokens (token);
+
 -- _courses schema
 
 CREATE SCHEMA _courses;
