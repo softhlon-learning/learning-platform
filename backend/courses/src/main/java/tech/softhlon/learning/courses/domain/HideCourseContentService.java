@@ -3,13 +3,13 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.ContentService.Chapter;
-import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
-import tech.softhlon.learning.courses.domain.ContentService.Lecture;
+import tech.javafullstack.courses.domain.ContentService.Chapter;
+import tech.javafullstack.courses.domain.ContentService.CourseContent;
+import tech.javafullstack.courses.domain.ContentService.Lecture;
 
 import java.util.ArrayList;
 import java.util.List;

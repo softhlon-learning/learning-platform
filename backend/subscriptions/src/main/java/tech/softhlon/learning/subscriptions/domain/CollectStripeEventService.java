@@ -3,13 +3,13 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
-import tech.softhlon.learning.common.hexagonal.InboundPort;
+import tech.javafullstack.common.hexagonal.InboundPort;
 
 /**
  * Collect Stripe event service interface.

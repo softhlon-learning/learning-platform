@@ -1,4 +1,4 @@
-package tech.softhlon.learning.courses.domain;// ---------------------------------------------------------------------------------------------------------------------
+package tech.javafullstack.courses.domain;// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------

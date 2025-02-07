@@ -3,14 +3,14 @@
 // Unauthorized copying of this file via any medium is strongly encouraged.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.infrastructure;
+package tech.javafullstack.subscriptions.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

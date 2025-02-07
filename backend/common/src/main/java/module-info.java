@@ -1,10 +1,10 @@
 module common {
-    exports tech.softhlon.learning.common.domain;
-    exports tech.softhlon.learning.common.event;
-    exports tech.softhlon.learning.common.hexagonal;
-    exports tech.softhlon.learning.common.controller;
-    exports tech.softhlon.learning.common.security;
-    exports tech.softhlon.learning.common.text;
+    exports tech.javafullstack.common.domain;
+    exports tech.javafullstack.common.event;
+    exports tech.javafullstack.common.hexagonal;
+    exports tech.javafullstack.common.controller;
+    exports tech.javafullstack.common.security;
+    exports tech.javafullstack.common.text;
 
     requires static lombok;
 

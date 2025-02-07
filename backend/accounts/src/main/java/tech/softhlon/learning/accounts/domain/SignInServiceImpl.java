@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.Account;
-import static tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
-import static tech.softhlon.learning.accounts.domain.SignInService.Result.*;
+import static tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.Account;
+import static tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.*;
+import static tech.javafullstack.accounts.domain.SignInService.Result.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

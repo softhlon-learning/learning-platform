@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway.operator;
+package tech.javafullstack.courses.gateway.operator;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import tech.softhlon.learning.courses.domain.UploadCourseService;
-import tech.softhlon.learning.courses.domain.UploadCourseService.Request;
+import tech.javafullstack.courses.domain.UploadCourseService;
+import tech.javafullstack.courses.domain.UploadCourseService.Request;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

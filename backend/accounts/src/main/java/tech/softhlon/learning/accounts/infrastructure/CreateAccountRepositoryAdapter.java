@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.javafullstack.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.javafullstack.accounts.domain.CreateAccountRepository;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import tech.javafullstack.common.hexagonal.PersistenceAdapter;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

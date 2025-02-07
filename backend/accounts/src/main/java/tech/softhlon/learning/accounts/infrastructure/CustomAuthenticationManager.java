@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.javafullstack.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
-import tech.softhlon.learning.accounts.domain.JwtService;
-import tech.softhlon.learning.common.security.AuthenticationToken;
+import tech.javafullstack.accounts.domain.JwtService;
+import tech.javafullstack.common.security.AuthenticationToken;
 
 import java.util.List;
 

@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.infrastructure;
+package tech.javafullstack.subscriptions.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
 
 import java.util.UUID;
 

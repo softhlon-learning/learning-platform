@@ -3,22 +3,22 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
-import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.DeleteAccountService.Result.Succeeded;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountRequest;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
+import tech.javafullstack.accounts.domain.DeleteAccountService.Result.AccountIsAlreadyDeletedFailed;
+import tech.javafullstack.accounts.domain.DeleteAccountService.Result.AccountNotFoundFailed;
+import tech.javafullstack.accounts.domain.DeleteAccountService.Result.Failed;
+import tech.javafullstack.accounts.domain.DeleteAccountService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.Account;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountRequest;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
 
 import java.util.UUID;
 

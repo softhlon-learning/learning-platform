@@ -3,9 +3,9 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
-import tech.softhlon.learning.common.hexagonal.InboundPort;
+import tech.javafullstack.common.hexagonal.InboundPort;
 
 import java.util.UUID;
 

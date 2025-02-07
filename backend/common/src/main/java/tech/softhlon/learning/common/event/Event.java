@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.common.event;
+package tech.javafullstack.common.event;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

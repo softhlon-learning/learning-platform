@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -12,14 +12,14 @@ import com.stripe.param.billingportal.SessionCreateParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
+import tech.javafullstack.subscriptions.domain.RedirectToCustomerPortalService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.RedirectToCustomerPortalService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.RedirectToCustomerPortalService.Result.UnknownCustomer;
 
 import java.util.UUID;
 
-import static tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.*;
+import static tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

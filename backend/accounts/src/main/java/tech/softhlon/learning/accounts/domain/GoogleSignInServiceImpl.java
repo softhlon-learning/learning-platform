@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import com.google.api.client.auth.openidconnect.IdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
@@ -13,22 +13,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
-import tech.softhlon.learning.common.event.AccountCreated;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.Failed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.Succeeded;
+import tech.javafullstack.common.event.AccountCreated;
 
 import java.util.Collections;
 import java.util.UUID;
 
-import static tech.softhlon.learning.accounts.domain.AccountType.GOOGLE;
+import static tech.javafullstack.accounts.domain.AccountType.GOOGLE;
 
 // --------------------------------------------------------------------------------------------------------------------
 // Implementation

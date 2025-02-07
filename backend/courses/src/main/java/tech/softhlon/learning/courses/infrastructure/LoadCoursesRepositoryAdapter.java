@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.infrastructure;
+package tech.javafullstack.courses.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
-import tech.softhlon.learning.courses.domain.LoadCoursesRepository;
-import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
-import tech.softhlon.learning.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
+import tech.javafullstack.common.hexagonal.PersistenceAdapter;
+import tech.javafullstack.courses.domain.LoadCoursesRepository;
+import tech.javafullstack.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoadFailed;
+import tech.javafullstack.courses.domain.LoadCoursesRepository.LoadCoursesResult.CoursesLoaded;
 
 import java.util.stream.StreamSupport;
 

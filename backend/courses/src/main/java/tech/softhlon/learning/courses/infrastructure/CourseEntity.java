@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.infrastructure;
+package tech.javafullstack.courses.infrastructure;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

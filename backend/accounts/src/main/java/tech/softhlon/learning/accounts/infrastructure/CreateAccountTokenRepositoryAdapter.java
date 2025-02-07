@@ -3,14 +3,14 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.javafullstack.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository;
-import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersisted;
-import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
+import tech.javafullstack.accounts.domain.CreateAccountTokenRepository;
+import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersisted;
+import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

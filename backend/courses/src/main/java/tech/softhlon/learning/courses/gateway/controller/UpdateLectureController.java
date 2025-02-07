@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway.controller;
+package tech.javafullstack.courses.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.domain.UpdateLectureService;
-import tech.softhlon.learning.courses.domain.UpdateLectureService.Request;
-import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.Failed;
-import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.LectureNotFoundFailed;
-import tech.softhlon.learning.courses.domain.UpdateLectureService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.common.security.AuthenticationContext;
+import tech.javafullstack.courses.domain.UpdateLectureService;
+import tech.javafullstack.courses.domain.UpdateLectureService.Request;
+import tech.javafullstack.courses.domain.UpdateLectureService.Result.Failed;
+import tech.javafullstack.courses.domain.UpdateLectureService.Result.LectureNotFoundFailed;
+import tech.javafullstack.courses.domain.UpdateLectureService.Result.Succeeded;
 
 import java.util.UUID;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-import static tech.softhlon.learning.courses.gateway.controller.RestResources.UPDATE_LECTURE;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
+import static tech.javafullstack.common.text.IdPrinter.printShort;
+import static tech.javafullstack.courses.gateway.controller.RestResources.UPDATE_LECTURE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,29 +3,29 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator;
-import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.AccountView;
-import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
-import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
-import tech.softhlon.learning.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersistenceFailed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
+import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator;
+import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.AccountView;
+import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoadFailed;
+import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountLoaded;
+import tech.javafullstack.accounts.gateway.operator.LoadAccountByEmailOperator.LoadAccountResult.AccountNotLoaded;
+import tech.javafullstack.subscriptions.domain.LoadCustomerRepository.LoadCustomerResult.CustomerLoaded;
+import tech.javafullstack.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersisted;
+import tech.javafullstack.subscriptions.domain.PersistCustomerRepository.PersistCustomerResult.CustomerPersistenceFailed;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
 
 import java.util.UUID;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.email;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.customerId;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.email;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

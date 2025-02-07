@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.common.domain;
+package tech.javafullstack.common.domain;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

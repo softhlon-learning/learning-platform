@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway.controller;
+package tech.javafullstack.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -12,18 +12,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.FetchProfileService;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.ProfileView;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.ProfileNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Succeeded;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.javafullstack.accounts.domain.FetchProfileService;
+import tech.javafullstack.accounts.domain.FetchProfileService.ProfileView;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.Failed;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.ProfileNotFoundFailed;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.common.security.AuthenticationContext;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.accounts.gateway.controller.RestResources.PROFILE;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.badRequestBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.javafullstack.accounts.gateway.controller.RestResources.PROFILE;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.badRequestBody;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

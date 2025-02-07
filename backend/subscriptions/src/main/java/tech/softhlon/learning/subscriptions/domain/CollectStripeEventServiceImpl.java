@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.google.gson.Gson;
 import com.stripe.model.Event;
@@ -11,10 +11,10 @@ import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersistenceFailed;
+import tech.javafullstack.subscriptions.domain.CollectStripeEventService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersisted;
+import tech.javafullstack.subscriptions.domain.PersistEventLogRepository.PersistEventLogResult.EventLogPersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

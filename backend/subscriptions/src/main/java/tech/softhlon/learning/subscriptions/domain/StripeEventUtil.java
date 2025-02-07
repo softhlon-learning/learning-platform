@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;

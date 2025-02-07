@@ -3,19 +3,19 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CheckCourseFailed;
-import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseExists;
-import tech.softhlon.learning.courses.domain.CheckCourseRepository.CheckCourseResult.CourseNotFound;
-import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
-import tech.softhlon.learning.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Failed;
-import tech.softhlon.learning.courses.domain.EnrollCourseService.Result.Succeeded;
+import tech.javafullstack.courses.domain.CheckCourseRepository.CheckCourseResult.CheckCourseFailed;
+import tech.javafullstack.courses.domain.CheckCourseRepository.CheckCourseResult.CourseExists;
+import tech.javafullstack.courses.domain.CheckCourseRepository.CheckCourseResult.CourseNotFound;
+import tech.javafullstack.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollementPersistenceFailed;
+import tech.javafullstack.courses.domain.CreateEnrollmentRepository.CreateEnrollmentResult.EnrollmentPersisted;
+import tech.javafullstack.courses.domain.EnrollCourseService.Result.CourseNotFoundFailed;
+import tech.javafullstack.courses.domain.EnrollCourseService.Result.Failed;
+import tech.javafullstack.courses.domain.EnrollCourseService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

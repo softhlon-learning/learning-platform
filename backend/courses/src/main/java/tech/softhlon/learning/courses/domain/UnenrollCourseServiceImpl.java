@@ -3,20 +3,20 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.CheckEnrollmentFailed;
-import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentExists;
-import tech.softhlon.learning.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentNotFound;
-import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
-import tech.softhlon.learning.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
-import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
-import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Failed;
-import tech.softhlon.learning.courses.domain.UnenrollCourseService.Result.Succeeded;
+import tech.javafullstack.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.CheckEnrollmentFailed;
+import tech.javafullstack.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentExists;
+import tech.javafullstack.courses.domain.CheckEnrollmentRepository.CheckEnrollmentResult.EnrollmentNotFound;
+import tech.javafullstack.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollementDeletionFailed;
+import tech.javafullstack.courses.domain.DeleteEnrollmentRepository.DeleteEnrollmentResult.EnrollmentDeleted;
+import tech.javafullstack.courses.domain.UnenrollCourseService.Result.EnrollmentNotFoundFailed;
+import tech.javafullstack.courses.domain.UnenrollCourseService.Result.Failed;
+import tech.javafullstack.courses.domain.UnenrollCourseService.Result.Succeeded;
 
 import java.util.UUID;
 

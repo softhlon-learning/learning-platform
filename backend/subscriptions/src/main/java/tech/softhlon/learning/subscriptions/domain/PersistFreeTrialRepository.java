@@ -3,10 +3,10 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
-import tech.softhlon.learning.common.domain.DomainRepository;
-import tech.softhlon.learning.common.hexagonal.OutboundPort;
+import tech.javafullstack.common.domain.DomainRepository;
+import tech.javafullstack.common.hexagonal.OutboundPort;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

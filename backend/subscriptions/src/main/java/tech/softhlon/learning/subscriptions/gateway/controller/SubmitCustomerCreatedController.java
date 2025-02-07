@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway.controller;
+package tech.javafullstack.subscriptions.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -13,16 +13,16 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.AccountNotFound;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.IncorrectEventType;
+import tech.javafullstack.subscriptions.domain.SubmitCustomerCreatedService.Result.Succeeded;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
-import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
-import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_CUSTOMER_CREATED;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
+import static tech.javafullstack.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
+import static tech.javafullstack.subscriptions.gateway.controller.RestResources.SUBMIT_CUSTOMER_CREATED;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

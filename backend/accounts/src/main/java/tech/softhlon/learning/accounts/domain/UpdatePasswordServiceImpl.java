@@ -3,26 +3,26 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
-import tech.softhlon.learning.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoadFailed;
-import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoaded;
-import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenNotFound;
-import tech.softhlon.learning.accounts.domain.LoadPasswordTokenRepository.PasswordToken;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountRequest;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
-import tech.softhlon.learning.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.UpdatePasswordService.Result.*;
+import tech.javafullstack.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
+import tech.javafullstack.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.Account;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoadFailed;
+import tech.javafullstack.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenLoaded;
+import tech.javafullstack.accounts.domain.LoadPasswordTokenRepository.LoadPasswordTokenResult.TokenNotFound;
+import tech.javafullstack.accounts.domain.LoadPasswordTokenRepository.PasswordToken;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountRequest;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountNotFoundInDatabase;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersisted;
+import tech.javafullstack.accounts.domain.PersistAccountRepository.PersistAccountResult.AccountPersistenceFailed;
+import tech.javafullstack.accounts.domain.UpdatePasswordService.Result.*;
 
 import java.time.OffsetDateTime;
 

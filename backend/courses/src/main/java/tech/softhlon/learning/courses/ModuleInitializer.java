@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses;
+package tech.javafullstack.courses;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import tech.softhlon.learning.courses.gateway.operator.CreateCoursesOperator;
+import tech.javafullstack.courses.gateway.operator.CreateCoursesOperator;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

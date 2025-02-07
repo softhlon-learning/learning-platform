@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway.controller;
+package tech.javafullstack.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,15 +14,15 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.AccountNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.UpdateProfileService.Result.Succeeded;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
+import tech.javafullstack.accounts.domain.UpdateProfileService;
+import tech.javafullstack.accounts.domain.UpdateProfileService.Result.AccountNotFoundFailed;
+import tech.javafullstack.accounts.domain.UpdateProfileService.Result.Failed;
+import tech.javafullstack.accounts.domain.UpdateProfileService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.common.security.AuthenticationContext;
 
-import static tech.softhlon.learning.accounts.gateway.controller.RestResources.PROFILE;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.javafullstack.accounts.gateway.controller.RestResources.PROFILE;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,18 +3,18 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.CheckTokenFailed;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenNotFound;
-import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
-import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.NotAuthorized;
-import tech.softhlon.learning.accounts.domain.SignOutService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.CheckTokenRepository.CheckTokenResult.CheckTokenFailed;
+import tech.javafullstack.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
+import tech.javafullstack.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenNotFound;
+import tech.javafullstack.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
+import tech.javafullstack.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
+import tech.javafullstack.accounts.domain.SignOutService.Result.Failed;
+import tech.javafullstack.accounts.domain.SignOutService.Result.NotAuthorized;
+import tech.javafullstack.accounts.domain.SignOutService.Result.Succeeded;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;

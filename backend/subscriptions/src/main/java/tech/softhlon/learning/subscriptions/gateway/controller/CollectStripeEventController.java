@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.gateway.controller;
+package tech.javafullstack.subscriptions.gateway.controller;
 
 import com.stripe.exception.SignatureVerificationException;
 import com.stripe.net.Webhook;
@@ -15,15 +15,15 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.subscriptions.domain.CollectStripeEventService;
+import tech.javafullstack.subscriptions.domain.CollectStripeEventService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.CollectStripeEventService.Result.Succeeded;
 
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.successCreatedBody;
-import static tech.softhlon.learning.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
-import static tech.softhlon.learning.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.successCreatedBody;
+import static tech.javafullstack.subscriptions.gateway.controller.ControllerConstants.STRIPE_SIGNATURE;
+import static tech.javafullstack.subscriptions.gateway.controller.RestResources.SUBMIT_SUBSCRIPTION_GENERIC;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

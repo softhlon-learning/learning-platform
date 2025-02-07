@@ -3,17 +3,17 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.javafullstack.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
-import tech.softhlon.learning.common.hexagonal.PersistenceAdapter;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountFound;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountIsDeleted;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.LoadAccountByEmailRepository.LoadAccountByEmailResult.LoadAccountFailed;
+import tech.javafullstack.common.hexagonal.PersistenceAdapter;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses;
+package tech.javafullstack.courses;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,5 +20,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan
 @EnableJpaRepositories
 @Configuration(proxyBeanMethods = false)
-@ComponentScan("tech.softhlon.learning.courses")
+@ComponentScan("tech.javafullstack.courses")
 public class CoursesConfiguration {}

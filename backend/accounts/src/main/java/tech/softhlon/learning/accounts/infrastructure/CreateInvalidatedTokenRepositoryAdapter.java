@@ -3,15 +3,15 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.infrastructure;
+package tech.javafullstack.accounts.infrastructure;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository;
+import tech.javafullstack.accounts.domain.CreateInvalidatedTokenRepository;
 
-import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
-import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
+import static tech.javafullstack.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersisted;
+import static tech.javafullstack.accounts.domain.CreateInvalidatedTokenRepository.CreateInvalidatedTokenResult.InvalidatedTokenPersistenceFailed;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -22,7 +22,7 @@ import static tech.softhlon.learning.accounts.domain.CreateInvalidatedTokenRepos
  */
 @Slf4j
 @Service
-@tech.softhlon.learning.common.hexagonal.PersistenceAdapter
+@tech.javafullstack.common.hexagonal.PersistenceAdapter
 @RequiredArgsConstructor
 class CreateInvalidatedTokenRepositoryAdapter implements CreateInvalidatedTokenRepository {
 

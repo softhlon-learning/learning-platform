@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway.controller;
+package tech.javafullstack.accounts.gateway.controller;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,11 +3,11 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
-import tech.softhlon.learning.common.domain.DomainRepository;
-import tech.softhlon.learning.common.hexagonal.InboundPort;
-import tech.softhlon.learning.common.hexagonal.OutboundPort;
+import tech.javafullstack.common.domain.DomainRepository;
+import tech.javafullstack.common.hexagonal.InboundPort;
+import tech.javafullstack.common.hexagonal.OutboundPort;
 
 import java.util.UUID;
 

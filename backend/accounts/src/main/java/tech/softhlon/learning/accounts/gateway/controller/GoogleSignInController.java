@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway.controller;
+package tech.javafullstack.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,16 +14,16 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
-import tech.softhlon.learning.accounts.domain.GoogleSignInService.Result.Succeeded;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.accounts.domain.GoogleSignInService;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.AccountIsDeletedFailed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.Failed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.InvalidCredentialsFailed;
+import tech.javafullstack.accounts.domain.GoogleSignInService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
 
 import java.util.Map;
 
-import static tech.softhlon.learning.accounts.gateway.controller.RestResources.GOOGLE_SIGN_IN;
+import static tech.javafullstack.accounts.gateway.controller.RestResources.GOOGLE_SIGN_IN;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

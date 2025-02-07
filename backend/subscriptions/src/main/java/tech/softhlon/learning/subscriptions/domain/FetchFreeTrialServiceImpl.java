@@ -3,17 +3,17 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.FetchFreeTrialService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
-import tech.softhlon.learning.subscriptions.domain.FetchFreeTrialService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.FreeTrial;
-import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
+import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
+import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.FreeTrial;
+import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoadFailed;
+import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
+import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
 
 import java.time.Duration;
 import java.time.OffsetDateTime;

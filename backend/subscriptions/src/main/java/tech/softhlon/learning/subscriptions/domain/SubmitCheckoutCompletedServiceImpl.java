@@ -3,27 +3,27 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.LoadCheckoutRepository.CheckoutSession;
+import tech.javafullstack.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoadFailed;
+import tech.javafullstack.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutLoaded;
+import tech.javafullstack.subscriptions.domain.LoadCheckoutRepository.LoadCheckoutResult.CheckoutNotFoundInDatabase;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+import tech.javafullstack.subscriptions.domain.SubmitCheckoutCompletedService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.SubmitCheckoutCompletedService.Result.IncorrectEventType;
+import tech.javafullstack.subscriptions.domain.SubmitCheckoutCompletedService.Result.Succeeded;
 
 import java.time.OffsetDateTime;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.customerId;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.sessionId;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.customerId;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.sessionId;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

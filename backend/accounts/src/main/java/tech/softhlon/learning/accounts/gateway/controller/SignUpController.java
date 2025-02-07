@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.gateway.controller;
+package tech.javafullstack.accounts.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,15 +15,15 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.accounts.domain.SignUpService;
-import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.accounts.domain.SignUpService;
+import tech.javafullstack.accounts.domain.SignUpService.Result.*;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
 
 import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.accounts.gateway.controller.RestResources.SIGN_UP;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.*;
+import static tech.javafullstack.accounts.gateway.controller.RestResources.SIGN_UP;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

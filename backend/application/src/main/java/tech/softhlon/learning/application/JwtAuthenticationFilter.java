@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.application;
+package tech.javafullstack.application;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -16,10 +16,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository;
-import tech.softhlon.learning.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
-import tech.softhlon.learning.accounts.domain.JwtService;
-import tech.softhlon.learning.common.security.AuthenticationToken;
+import tech.javafullstack.accounts.domain.CheckTokenRepository;
+import tech.javafullstack.accounts.domain.CheckTokenRepository.CheckTokenResult.TokenExists;
+import tech.javafullstack.accounts.domain.JwtService;
+import tech.javafullstack.common.security.AuthenticationToken;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;

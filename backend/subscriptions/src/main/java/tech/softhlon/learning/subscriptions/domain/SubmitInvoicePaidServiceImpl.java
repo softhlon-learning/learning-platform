@@ -3,22 +3,22 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
-import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceRequest;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersisted;
+import tech.javafullstack.subscriptions.domain.PersistInvoiceRepository.PersistInvoiceResult.InvoicePersistenceFailed;
+import tech.javafullstack.subscriptions.domain.SubmitInvoicePaidService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.SubmitInvoicePaidService.Result.IncorrectEventType;
+import tech.javafullstack.subscriptions.domain.SubmitInvoicePaidService.Result.Succeeded;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.invoiceId;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.status;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.invoiceId;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.status;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

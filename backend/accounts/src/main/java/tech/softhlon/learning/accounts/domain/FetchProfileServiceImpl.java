@@ -3,17 +3,17 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Failed;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.ProfileNotFoundFailed;
-import tech.softhlon.learning.accounts.domain.FetchProfileService.Result.Succeeded;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.Account;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
-import tech.softhlon.learning.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.Failed;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.ProfileNotFoundFailed;
+import tech.javafullstack.accounts.domain.FetchProfileService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.Account;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoadFailed;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountLoaded;
+import tech.javafullstack.accounts.domain.LoadAccountRepository.LoadAccountResult.AccountNotFound;
 
 import java.util.UUID;
 

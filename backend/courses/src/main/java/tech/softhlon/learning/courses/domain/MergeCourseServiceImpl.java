@@ -3,23 +3,23 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.ContentService.Chapter;
-import tech.softhlon.learning.courses.domain.ContentService.CourseContent;
-import tech.softhlon.learning.courses.domain.ContentService.Lecture;
-import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.Enrollment;
-import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
-import tech.softhlon.learning.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
-import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
-import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
-import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
-import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentNotPresentFoundFailed;
-import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
-import tech.softhlon.learning.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
+import tech.javafullstack.courses.domain.ContentService.Chapter;
+import tech.javafullstack.courses.domain.ContentService.CourseContent;
+import tech.javafullstack.courses.domain.ContentService.Lecture;
+import tech.javafullstack.courses.domain.LoadEnrollmentsRepository.Enrollment;
+import tech.javafullstack.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentLoadFailed;
+import tech.javafullstack.courses.domain.LoadEnrollmentsRepository.ListEnrollmentsResult.EnrollmentsLoaded;
+import tech.javafullstack.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
+import tech.javafullstack.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+import tech.javafullstack.courses.domain.PersistEnrollmentRepository.PersistEnrollmentRequest;
+import tech.javafullstack.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentNotPresentFoundFailed;
+import tech.javafullstack.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersisted;
+import tech.javafullstack.courses.domain.PersistEnrollmentRepository.PersistEnrollmentResult.EnrollmentPersistenceFailed;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -2,7 +2,7 @@
 // Copyright (C) SOFTHLON-LEARNING.TECH - All Rights Reserved
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package tech.softhlon.learning.common.controller;
+package tech.javafullstack.common.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Builder;
@@ -15,7 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.ResponseField.*;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.ResponseField.*;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation

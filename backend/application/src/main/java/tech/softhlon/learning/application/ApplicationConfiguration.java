@@ -3,16 +3,16 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.application;
+package tech.javafullstack.application;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import tech.softhlon.learning.accounts.AccountsConfiguration;
-import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.CoursesConfiguration;
-import tech.softhlon.learning.subscriptions.SubscriptionsConfiguration;
+import tech.javafullstack.accounts.AccountsConfiguration;
+import tech.javafullstack.common.security.AuthenticationContext;
+import tech.javafullstack.courses.CoursesConfiguration;
+import tech.javafullstack.subscriptions.SubscriptionsConfiguration;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

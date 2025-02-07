@@ -3,30 +3,30 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.net.Webhook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionNotFound;
-import tech.softhlon.learning.subscriptions.domain.LoadSubscriptionRepository.Subscription;
-import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersistenceFailed;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectEventType;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectSubscription;
-import tech.softhlon.learning.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoadFailed;
+import tech.javafullstack.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionLoaded;
+import tech.javafullstack.subscriptions.domain.LoadSubscriptionRepository.LoadSubscriptionResult.SubscriptionNotFound;
+import tech.javafullstack.subscriptions.domain.LoadSubscriptionRepository.Subscription;
+import tech.javafullstack.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionRequest;
+import tech.javafullstack.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersisted;
+import tech.javafullstack.subscriptions.domain.PersistSubscriptionRepository.PersistSubscriptionResult.SubscriptionPersistenceFailed;
+import tech.javafullstack.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectEventType;
+import tech.javafullstack.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.IncorrectSubscription;
+import tech.javafullstack.subscriptions.domain.SubmitSubscriptionUpdatedService.Result.Succeeded;
 
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.StripeEventObject;
-import static tech.softhlon.learning.subscriptions.domain.StripeEventUtil.stripeObject;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.StripeEventObject;
+import static tech.javafullstack.subscriptions.domain.StripeEventUtil.stripeObject;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,19 +3,19 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.domain;
+package tech.javafullstack.courses.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
-import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
-import tech.softhlon.learning.courses.domain.MergeCourseService.MergeCourseReuqest;
-import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseRequest;
-import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
-import tech.softhlon.learning.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
-import tech.softhlon.learning.courses.domain.UploadCourseService.Result.Failed;
-import tech.softhlon.learning.courses.domain.UploadCourseService.Result.Succeeded;
+import tech.javafullstack.courses.domain.MergeCourseService.MergeCourseResult.CourseMergeFailed;
+import tech.javafullstack.courses.domain.MergeCourseService.MergeCourseResult.CourseMerged;
+import tech.javafullstack.courses.domain.MergeCourseService.MergeCourseReuqest;
+import tech.javafullstack.courses.domain.PersistCourseRepository.PersistCourseRequest;
+import tech.javafullstack.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersisted;
+import tech.javafullstack.courses.domain.PersistCourseRepository.PersistCourseResult.CoursePersistenceFailed;
+import tech.javafullstack.courses.domain.UploadCourseService.Result.Failed;
+import tech.javafullstack.courses.domain.UploadCourseService.Result.Succeeded;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.subscriptions.domain;
+package tech.javafullstack.subscriptions.domain;
 
 import com.stripe.Stripe;
 import com.stripe.model.checkout.Session;
@@ -11,16 +11,16 @@ import com.stripe.param.checkout.SessionCreateParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Failed;
-import tech.softhlon.learning.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
-import tech.softhlon.learning.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
-import tech.softhlon.learning.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
+import tech.javafullstack.subscriptions.domain.InitializeCheckoutService.Result.Failed;
+import tech.javafullstack.subscriptions.domain.InitializeCheckoutService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.Customer;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoadFailed;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerLoaded;
+import tech.javafullstack.subscriptions.domain.LoadCustomerByAccountRepository.LoadCustomerResult.CustomerNotFound;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionRequest;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersisted;
+import tech.javafullstack.subscriptions.domain.PersistCheckoutRepository.PersistCheckoutSessionResult.CheckoutSessionPersistenceFailed;
 
 import java.util.UUID;
 

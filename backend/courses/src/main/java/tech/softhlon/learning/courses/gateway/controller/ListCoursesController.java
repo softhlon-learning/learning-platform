@@ -3,7 +3,7 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.courses.gateway.controller;
+package tech.javafullstack.courses.gateway.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,20 +13,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tech.softhlon.learning.common.hexagonal.RestApiAdapter;
-import tech.softhlon.learning.common.security.AuthenticationContext;
-import tech.softhlon.learning.courses.domain.ListCoursesService;
-import tech.softhlon.learning.courses.domain.ListCoursesService.CourseView;
-import tech.softhlon.learning.courses.domain.ListCoursesService.CoursesView;
-import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Failed;
-import tech.softhlon.learning.courses.domain.ListCoursesService.Result.Succeeded;
+import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.common.security.AuthenticationContext;
+import tech.javafullstack.courses.domain.ListCoursesService;
+import tech.javafullstack.courses.domain.ListCoursesService.CourseView;
+import tech.javafullstack.courses.domain.ListCoursesService.CoursesView;
+import tech.javafullstack.courses.domain.ListCoursesService.Result.Failed;
+import tech.javafullstack.courses.domain.ListCoursesService.Result.Succeeded;
 
 import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.softhlon.learning.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.softhlon.learning.common.text.IdPrinter.printShort;
-import static tech.softhlon.learning.courses.gateway.controller.RestResources.LIST_COURSES;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
+import static tech.javafullstack.common.text.IdPrinter.printShort;
+import static tech.javafullstack.courses.gateway.controller.RestResources.LIST_COURSES;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

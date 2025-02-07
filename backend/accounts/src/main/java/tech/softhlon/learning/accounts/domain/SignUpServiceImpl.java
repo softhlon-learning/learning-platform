@@ -3,29 +3,29 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-package tech.softhlon.learning.accounts.domain;
+package tech.javafullstack.accounts.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
-import tech.softhlon.learning.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
-import tech.softhlon.learning.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersisted;
-import tech.softhlon.learning.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
-import tech.softhlon.learning.accounts.domain.SignUpService.Result.*;
-import tech.softhlon.learning.common.event.AccountCreated;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountExists;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountIsDeleted;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.AccountNotFound;
+import tech.javafullstack.accounts.domain.CheckAccountByEmailRepository.CheckAccountByEmailResult.CheckAccountFailed;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersisted;
+import tech.javafullstack.accounts.domain.CreateAccountRepository.CreateAccountResult.AccountPersistenceFailed;
+import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersisted;
+import tech.javafullstack.accounts.domain.CreateAccountTokenRepository.CreateAccountTokenResult.AccountTokenPersistenceFailed;
+import tech.javafullstack.accounts.domain.SignUpService.Result.*;
+import tech.javafullstack.common.event.AccountCreated;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import static tech.softhlon.learning.accounts.domain.AccountType.PASSWORD;
-import static tech.softhlon.learning.accounts.domain.EmailTemplates.ACTIVATE_ACCOUNT_TEMPLATE;
-import static tech.softhlon.learning.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
+import static tech.javafullstack.accounts.domain.AccountType.PASSWORD;
+import static tech.javafullstack.accounts.domain.EmailTemplates.ACTIVATE_ACCOUNT_TEMPLATE;
+import static tech.javafullstack.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
