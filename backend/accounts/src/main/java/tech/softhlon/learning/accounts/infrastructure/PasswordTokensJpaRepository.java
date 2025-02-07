@@ -16,7 +16,7 @@ import java.util.UUID;
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
- * Password tokents JPA repository.
+ * Password tokens JPA repository.
  */
 @Repository
 interface PasswordTokensJpaRepository extends CrudRepository<PasswordTokenEntity, UUID> {
