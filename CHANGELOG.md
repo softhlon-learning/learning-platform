@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.48.17
+_release date: 2025-02-08_
+ * freebsd: DKIM setup for java-fullstack.tech domain
+
 ## 0.48.16
 _release date: 2025-02-07_
  * accounts: Add DeleteAccountTokenRepository
