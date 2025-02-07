@@ -8,9 +8,10 @@ package tech.javafullstack.accounts.infrastructure;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import tech.javafullstack.accounts.domain.DeletePasswordTokenRepository;
-import tech.javafullstack.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeleted;
-import tech.javafullstack.accounts.domain.DeletePasswordTokenRepository.DeletePasswordTokenResult.TokenDeletionFailed;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeleted;
+import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeletionFailed;
 
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ import java.util.UUID;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class DeleteAccountTokenRepositoryAdapter implements DeletePasswordTokenRepository {
+class DeleteAccountTokenRepositoryAdapter implements DeleteAccountTokenRepository {
 
     private final AccountTokensJpaRepository accountTokensJpaRepository;
 
@@ -32,7 +33,7 @@ class DeleteAccountTokenRepositoryAdapter implements DeletePasswordTokenReposito
      * {@inheritDoc}
      */
     @Override
-    public DeletePasswordTokenResult execute(
+    public DeleteAccountTokenResult execute(
           UUID id) {
 
         try {
