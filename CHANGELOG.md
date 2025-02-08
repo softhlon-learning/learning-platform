@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.49.1
+_release date: 2025-02-08_
+ * accounts: Extend UpdatePasswordService.Succeeded to carry authToken
+ * accounts: Store authentication cookies in UpdatePasswordController
+
 ## 0.49.0
 _release date: 2025-02-08_
  * freebsd: Switch to ZSH
