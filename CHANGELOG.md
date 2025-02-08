@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.12
+_release date: 2025-02-08_
+ * freebsd: Try another method to install system on backup machine
+
 ## 0.49.11
 _release date: 2025-02-08_
  * frontend: Reformatting
