@@ -25,11 +25,11 @@ const FREE_TRIAL_REFRESH_DELAY = 60 * 1000;
     standalone: false
 })
 export class AppHeaderComponent implements OnInit {
-    protected readonly version = version.version
     freeTrialTimeLeft?: string
     freeTrialExpired = false
     stopRefresh = false
     initialized?: boolean
+    protected readonly version = version.version
 
     constructor(
         private router: Router,
@@ -53,31 +53,6 @@ export class AppHeaderComponent implements OnInit {
         setInterval(() => {
             this.fetchFreeTrial()
         }, FREE_TRIAL_REFRESH_DELAY)
-    }
-
-    /**
-     * Fetch free trial info from service.
-     * @param init Init flag
-     * @private
-     */
-    private fetchFreeTrial(init: boolean = false) {
-        if (this.stopRefresh) {
-            return
-        }
-        this.subscriptionsService.fetchFreeTrial().subscribe(
-            freeTrialInfo => {
-                this.initialized = true
-                if (freeTrialInfo.expired === false || init) {
-                    this.freeTrialTimeLeft = freeTrialInfo.timeLeft
-                    this.freeTrialExpired = freeTrialInfo.expired
-                }
-
-                if (freeTrialInfo.expired === true && !init) {
-                    this.stopRefresh = true
-                    window.location.reload()
-                }
-            }
-        );
     }
 
     /**
@@ -124,6 +99,31 @@ export class AppHeaderComponent implements OnInit {
      */
     isSignInUpPage() {
         return this.router.url === '/sign-in' || this.router.url === '/sign-up'
+    }
+
+    /**
+     * Fetch free trial info from service.
+     * @param init Init flag
+     * @private
+     */
+    private fetchFreeTrial(init: boolean = false) {
+        if (this.stopRefresh) {
+            return
+        }
+        this.subscriptionsService.fetchFreeTrial().subscribe(
+            freeTrialInfo => {
+                this.initialized = true
+                if (freeTrialInfo.expired === false || init) {
+                    this.freeTrialTimeLeft = freeTrialInfo.timeLeft
+                    this.freeTrialExpired = freeTrialInfo.expired
+                }
+
+                if (freeTrialInfo.expired === true && !init) {
+                    this.stopRefresh = true
+                    window.location.reload()
+                }
+            }
+        );
     }
 
     /**

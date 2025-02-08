@@ -17,7 +17,7 @@
                 </div>
                 <button *ngIf="!accountDeleted" class="submit" type="submit">Save</button>
                 <button class="cancel" routerLink="/home">Close</button>
-                <button *ngIf="!accountDeleted" (click)="this.deleteAccount()" class="delete">Delete Account</button>
+                <button (click)="this.deleteAccount()" *ngIf="!accountDeleted" class="delete">Delete Account</button>
                 <div class="feedback">
                     <div *ngIf="error" class="error">{{ error }}</div>
                     <div *ngIf="success" class="success">{{ success }}</div>

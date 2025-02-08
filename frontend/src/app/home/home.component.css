@@ -35,17 +35,17 @@
 
 .courses button.selected {
     background-color: var(--main);
-    color:  var(--white);
+    color: var(--white);
 }
 
 .courses button.selected:active {
     background-color: var(--main);
-    color:  var(--white);
+    color: var(--white);
 }
 
 .courses .badge {
     display: inline-block;
-    color:  var(--white);
+    color: var(--white);
     background-color: var(--main);
     line-height: 3em;
     margin-right: .8em;
@@ -55,7 +55,7 @@
 
 .courses .enrolled {
     border: 1px;
-    color:  var(--white);
+    color: var(--white);
     background-color: var(--main);
     border-radius: 10px 10px 10px 10px;
     padding-top: 0.3em;

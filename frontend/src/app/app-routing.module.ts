@@ -15,7 +15,7 @@ import {ProfileComponent} from './profile/profile.component'
 import {UpdatePasswordComponent} from "./update-password/update-password.component"
 import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from './manage-subscription/manage-subscription.component'
-import { ActivateAccountComponent } from './activate-account/activate-account.component'
+import {ActivateAccountComponent} from './activate-account/activate-account.component'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

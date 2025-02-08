@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <form *ngIf="success !== true" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
+        <form (ngSubmit)="onSubmit()" *ngIf="success !== true" [formGroup]="signInForm">
             <div class="form">
                 <div class="name">
                     <input formControlName="name" placeholder="Name" type="text">

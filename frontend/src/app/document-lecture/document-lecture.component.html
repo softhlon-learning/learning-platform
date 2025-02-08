@@ -2,15 +2,15 @@
     <iframe (load)="hideSpinner()"
             [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
             frameborder="0"
-            width="1070" height="600"
-            id="document-frame"
-            loading="lazy">
+            height="600" id="document-frame"
+            loading="lazy"
+            width="1070">
     </iframe>
     <ngx-spinner
+            [fullScreen]="false"
             bdColor="rgba(255,255,255,1)"
-            size="large"
             color="black"
-            [fullScreen] = "false"
+            size="large"
             type="ball-scale-multiple">
     </ngx-spinner>
     <course-navigation

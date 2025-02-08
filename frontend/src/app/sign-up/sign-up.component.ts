@@ -5,7 +5,7 @@
 
 import {Component, OnInit} from '@angular/core'
 import {environment} from "../../environment/environment"
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {Router} from "@angular/router"
 import {AccountsService} from "../service/accounts/accounts.service"
 
@@ -38,7 +38,8 @@ export class SignUpComponent implements OnInit {
         private formBuilder: FormBuilder,
         private accountsService: AccountsService,
         private router: Router
-    ) {}
+    ) {
+    }
 
     /**
      * Initialize page.
@@ -59,7 +60,7 @@ export class SignUpComponent implements OnInit {
             return;
         }
 
-        const { name, email, password } = this.signInForm.value;
+        const {name, email, password} = this.signInForm.value;
         // @ts-ignore
         this.accountsService.signUp(name, email, password).subscribe({
             next: () => this.handleSuccess(),

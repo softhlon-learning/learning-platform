@@ -27,6 +27,7 @@ export class DocumentLectureComponent implements OnInit {
 
     @Input()
     coursePath: string = ''
+    protected readonly alert = alert;
 
     constructor(
         private spinner: NgxSpinnerService,) {
@@ -49,6 +50,4 @@ export class DocumentLectureComponent implements OnInit {
     hideSpinner() {
         this.spinner.hide()
     }
-
-    protected readonly alert = alert;
 }

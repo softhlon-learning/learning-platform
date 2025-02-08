@@ -6,7 +6,7 @@
 import {Component, OnInit} from '@angular/core'
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service";
 import {CheckoutSessionResponse} from "../service/subscriptions/subscriptions.model";
-import { NgxSpinnerService } from 'ngx-spinner';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

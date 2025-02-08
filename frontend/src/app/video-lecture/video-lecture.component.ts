@@ -7,7 +7,7 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core'
 import {CourseNavigation} from "../course-navigation/course-navigation"
 import {CourseDetailsComponent} from "../course-details/course-details.component"
 import {NgxSpinnerService} from "ngx-spinner";
-import {ActivatedRoute, NavigationStart, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

@@ -67,6 +67,151 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     /**
+     * Update lecture navigation state and persist current lecture selection in the service.
+     * @param lecture
+     */
+    selectAndPersistLecture(lecture?: Lecture) {
+        this.selectLecture(lecture, false, true)
+    }
+
+    /**
+     * Move to the next lecture handler.
+     */
+    moveToNextLecture(): CourseNavigation {
+        if (this.navigation.nextLecture != null) {
+            const nextLecture = this.navigation.nextLecture
+            this.selectScrollToAndPersistLecture(nextLecture)
+        } else {
+            const currentLecture = this.selectedLecture()
+            this.selectScrollToAndPersistLecture(currentLecture)
+        }
+
+        return this.navigation
+    }
+
+    /**
+     * Move to the previous lecture handler.
+     */
+    moveToPreviousLecture(): CourseNavigation {
+        if (this.navigation.previousLecture != null) {
+            const previousLecture = this.navigation.previousLecture
+            this.selectScrollToAndPersistLecture(previousLecture)
+        } else {
+            const currentLecture = this.selectedLecture()
+            this.selectScrollToAndPersistLecture(currentLecture)
+        }
+
+        return this.navigation
+    }
+
+    /**
+     * Mark lecture as Viewed.
+     */
+    markLectureAsViewed(): void {
+        this.markLectureViewedFlag(true)
+    }
+
+    /**
+     * Mark lecture as Viewed.
+     */
+    markLectureAsNotViewed(): void {
+        this.markLectureViewedFlag(false)
+    }
+
+    /**
+     * Switch lecture to Viewed in it's not, and vice-versa.
+     */
+    switchLectureViewedFlag(): void {
+        let lecture: Lecture | null = this.selectedLecture()
+        if (lecture != null && lecture.id != null) {
+            lecture.processed = !lecture.processed
+            this.selectAndPersistLecture(lecture)
+        }
+    }
+
+    /**
+     * Dynamically calculate current learning propress for given course.
+     */
+    calculateCourseProgress(): number {
+        let allLecturesCount: number = 0
+        let processedChaptersCount: number = 0
+        if (this.courseContent != null) {
+            for (let chapter of this.courseContent.chapters)
+                for (let lecture of chapter.lectures) {
+                    allLecturesCount++
+                    if (lecture.processed) processedChaptersCount++
+                }
+            return Math.round(processedChaptersCount / allLecturesCount * 100)
+        } else {
+            return 0
+        }
+    }
+
+    /**
+     * Move to the previous application page.
+     */
+    moveBack() {
+        this.router.navigate(['/course/' + this.course.code])
+    }
+
+    /**
+     * Move to application /home page.
+     */
+    moveToHome() {
+        this.router.navigate(['/home'])
+    }
+
+    /**
+     * Return lecture display mode (preview, locked, unlocked)
+     * @param lecture Lecture to operate on
+     */
+    displayMode(lecture: Lecture): string {
+        const locked = (this.cookieService.get(SUBSCRIPTION_COOKIE) === 'not_subscribed')
+
+        if (locked && lecture.preview) {
+            return PREVIEW
+        }
+
+        if (locked && !lecture.preview) {
+            return LOCKED
+        }
+
+        return UNLOCKED
+    }
+
+    /**
+     * Start playing video lecture.
+     */
+    playVideo() {
+        let video = document.querySelector('video')
+        if (video) {
+            if (video.paused) {
+                video.play()
+            } else {
+                video.pause()
+            }
+        }
+    }
+
+    isVideoPaused() {
+        let video = document.querySelector('video')
+        return video && video.paused
+    }
+
+    isVideoPlaying() {
+        let video = document.querySelector('video')
+        return video && !video.paused
+    }
+
+    /**
+     * Return class for selected lecture.
+     * @param lecture Lecture to operate on
+     */
+    getLectureClass(lecture: Lecture): string {
+        return lecture.selected ? 'selected' : ''
+    }
+
+    /**
      * Fetch latest course from service (service cache).
      * @private
      */
@@ -102,14 +247,6 @@ export class CourseDetailsComponent implements OnInit {
      */
     private selectScrollToAndPersistLecture(lecture?: Lecture) {
         this.selectLecture(lecture, true, true)
-    }
-
-    /**
-     * Update lecture navigation state and persist current lecture selection in the service.
-     * @param lecture
-     */
-    selectAndPersistLecture(lecture?: Lecture) {
-        this.selectLecture(lecture, false, true)
     }
 
     /**
@@ -197,50 +334,6 @@ export class CourseDetailsComponent implements OnInit {
     }
 
     /**
-     * Move to the next lecture handler.
-     */
-    moveToNextLecture(): CourseNavigation {
-        if (this.navigation.nextLecture != null) {
-            const nextLecture = this.navigation.nextLecture
-            this.selectScrollToAndPersistLecture(nextLecture)
-        } else {
-            const currentLecture = this.selectedLecture()
-            this.selectScrollToAndPersistLecture(currentLecture)
-        }
-
-        return this.navigation
-    }
-
-    /**
-     * Move to the previous lecture handler.
-     */
-    moveToPreviousLecture(): CourseNavigation {
-        if (this.navigation.previousLecture != null) {
-            const previousLecture = this.navigation.previousLecture
-            this.selectScrollToAndPersistLecture(previousLecture)
-        } else {
-            const currentLecture = this.selectedLecture()
-            this.selectScrollToAndPersistLecture(currentLecture)
-        }
-
-        return this.navigation
-    }
-
-    /**
-     * Mark lecture as Viewed.
-     */
-    markLectureAsViewed(): void {
-        this.markLectureViewedFlag(true)
-    }
-
-    /**
-     * Mark lecture as Viewed.
-     */
-    markLectureAsNotViewed(): void {
-        this.markLectureViewedFlag(false)
-    }
-
-    /**
      * mark lecture as Viewed/Not Viewed.
      * @param viewed Viewed/Not Viewed switch
      * @private
@@ -251,35 +344,6 @@ export class CourseDetailsComponent implements OnInit {
         if (lecture != null && lecture.id != null) {
             lecture.processed = viewed
             this.persisteLectureState(lecture as Lecture)
-        }
-    }
-
-    /**
-     * Switch lecture to Viewed in it's not, and vice-versa.
-     */
-    switchLectureViewedFlag(): void {
-        let lecture: Lecture | null = this.selectedLecture()
-        if (lecture != null && lecture.id != null) {
-            lecture.processed = !lecture.processed
-            this.selectAndPersistLecture(lecture)
-        }
-    }
-
-    /**
-     * Dynamically calculate current learning propress for given course.
-     */
-    calculateCourseProgress(): number {
-        let allLecturesCount: number = 0
-        let processedChaptersCount: number = 0
-        if (this.courseContent != null) {
-            for (let chapter of this.courseContent.chapters)
-                for (let lecture of chapter.lectures) {
-                    allLecturesCount++
-                    if (lecture.processed) processedChaptersCount++
-                }
-            return Math.round(processedChaptersCount / allLecturesCount * 100)
-        } else {
-            return 0
         }
     }
 
@@ -318,70 +382,6 @@ export class CourseDetailsComponent implements OnInit {
                 this.course.id || '',
                 lecture?.id || '',
                 lecture?.processed || false)
-    }
-
-    /**
-     * Move to the previous application page.
-     */
-    moveBack() {
-        this.router.navigate(['/course/' + this.course.code])
-    }
-
-    /**
-     * Move to application /home page.
-     */
-    moveToHome() {
-        this.router.navigate(['/home'])
-    }
-
-    /**
-     * Return lecture display mode (preview, locked, unlocked)
-     * @param lecture Lecture to operate on
-     */
-    displayMode(lecture: Lecture): string {
-        const locked = (this.cookieService.get(SUBSCRIPTION_COOKIE) === 'not_subscribed')
-
-        if (locked && lecture.preview) {
-            return PREVIEW
-        }
-
-        if (locked && !lecture.preview) {
-            return LOCKED
-        }
-
-        return UNLOCKED
-    }
-
-    /**
-     * Start playing video lecture.
-     */
-    playVideo() {
-        let video = document.querySelector('video')
-        if (video) {
-            if (video.paused) {
-                video.play()
-            } else {
-                video.pause()
-            }
-        }
-    }
-
-    isVideoPaused() {
-        let video = document.querySelector('video')
-        return video && video.paused
-    }
-
-    isVideoPlaying() {
-        let video = document.querySelector('video')
-        return video && !video.paused
-    }
-
-    /**
-     * Return class for selected lecture.
-     * @param lecture Lecture to operate on
-     */
-    getLectureClass(lecture: Lecture): string {
-        return lecture.selected ? 'selected' : ''
     }
 
     /**
