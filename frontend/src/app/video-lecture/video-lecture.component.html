@@ -1,5 +1,5 @@
 <div class="video-container">
-    <video #video (ended)="this.progress?.markLectureAsViewed()"
+    <video #video (loadstart)="this.showSpinner()"  (loadeddata)="this.hideSpinner()" (ended)="this.progress?.markLectureAsViewed()"
            height="600"
            width="1066"
            id="{{navigationItems.currentLecture.id}}"
@@ -8,8 +8,14 @@
 
         <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
-
     </video>
+    <ngx-spinner
+            bdColor="rgba(255,255,255,1)"
+            size="large"
+            color="black"
+            [fullScreen] = "false"
+            type="ball-scale-multiple">
+    </ngx-spinner>
     <course-navigation
             [navigationItems]="navigationItems"
             [progress]="this.progress">

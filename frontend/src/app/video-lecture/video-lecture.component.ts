@@ -6,6 +6,8 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core'
 import {CourseNavigation} from "../course-navigation/course-navigation"
 import {CourseDetailsComponent} from "../course-details/course-details.component"
+import {NgxSpinnerService} from "ngx-spinner";
+import {ActivatedRoute, NavigationStart, Router} from "@angular/router";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -29,7 +31,9 @@ export class VideoLectureComponent implements OnInit {
     @Input()
     coursePath?: string
 
-    constructor() {
+    constructor(
+        private spinner: NgxSpinnerService,
+        private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
@@ -41,4 +45,19 @@ export class VideoLectureComponent implements OnInit {
             this.video.nativeElement.load()
         }
     }
+
+    /**
+     * Show spinner when video is loading.
+     */
+    showSpinner() {
+        this.spinner.show()
+    }
+
+    /**
+     * Hide spinner when video is loaded.
+     */
+    hideSpinner() {
+        this.spinner.hide()
+    }
+
 }
