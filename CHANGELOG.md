@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.49.11
+_release date: 2025-02-08_
+ * frontend: Reformatting
+ * backend: Reformatting
+
 ## 0.49.10
 _release date: 2025-02-08_
  * freebsd: Solving issues with PXE/slow boot - part 2
