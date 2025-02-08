@@ -17,8 +17,8 @@ import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.FreeTrial
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoadFailed;
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
-import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.ActiveFreeTrial;
+import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 
@@ -74,15 +74,15 @@ public class CheckSubscriptionOperator {
 
         var result = loadFreeTrialRepository.execute(accountId);
         return switch (result) {
-            case FreeTrialLoaded(FreeTrial freeTrial) when isActive(freeTrial)-> new ActiveFreeTrial();
-            case FreeTrialLoaded(FreeTrial freeTrial) when !isActive(freeTrial)-> new NotSubscribed();
+            case FreeTrialLoaded(FreeTrial freeTrial) when isActive(freeTrial) -> new ActiveFreeTrial();
+            case FreeTrialLoaded(FreeTrial freeTrial) when !isActive(freeTrial) -> new NotSubscribed();
             case FreeTrialNotFound(), FreeTrialLoadFailed(_) -> new NotSubscribed();
             default -> throw new IllegalStateException("Unexpected value: " + result);
         };
 
     }
 
-    private boolean isActive (FreeTrial freeTrial) {
+    private boolean isActive(FreeTrial freeTrial) {
         return freeTrial.expireAt().isAfter(OffsetDateTime.now());
     }
 

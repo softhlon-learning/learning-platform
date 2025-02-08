@@ -17,7 +17,7 @@ class EmailTemplates {
           Thank you for registering with Java FullStack Academy! We're excited to have you as part of our community. 
           To activate your account and start using our services, click on this activation link: 
           %s
-             
+          
           Once you click the link, your account will be activated, and you'll be all set to explore Java FullStack Academy.
           
           Note: This link is valid for 24 hours. 
@@ -45,7 +45,7 @@ class EmailTemplates {
           If you didn't request this, please ignore this email for your account's security.
           
           Best regards,
-                              
+          
           Support Team
           Java FullStack Academy
           support@java-fullstack.tech

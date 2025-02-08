@@ -18,7 +18,6 @@ import tech.javafullstack.accounts.domain.ResetPasswordService.Result.Succeeded;
 import tech.javafullstack.common.text.TokenGenerator;
 
 import java.time.OffsetDateTime;
-import java.util.UUID;
 
 import static tech.javafullstack.accounts.domain.EmailTemplates.RESET_PASSWORD_TEMPLATE;
 

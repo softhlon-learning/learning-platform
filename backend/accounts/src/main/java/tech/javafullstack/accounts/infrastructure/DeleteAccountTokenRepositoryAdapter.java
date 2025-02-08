@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository;
-import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository;
 import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeleted;
 import tech.javafullstack.accounts.domain.DeleteAccountTokenRepository.DeleteAccountTokenResult.TokenDeletionFailed;
 

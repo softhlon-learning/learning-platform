@@ -5,8 +5,6 @@
 
 package tech.javafullstack.common.event;
 
-import lombok.Builder;
-import lombok.Generated;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

@@ -19,8 +19,8 @@ import tech.javafullstack.courses.domain.LoadEnrollmentRepository.LoadEnrollment
 import tech.javafullstack.courses.domain.LoadEnrollmentRepository.LoadEnrollmentResult.EnrollmentNotFoundInDatabase;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionRequest;
-import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.ActiveFreeTrial;
+import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.CheckSubsriptionFailed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.NotSubscribed;
 import tech.javafullstack.subscriptions.gateway.operator.CheckSubscriptionOperator.CheckSusbcriptionResult.Subscribed;
 

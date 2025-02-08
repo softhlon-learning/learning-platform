@@ -23,7 +23,8 @@ import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.javafullstack.accounts.gateway.controller.RestResources.SIGN_UP;
-import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.badRequestBody;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
