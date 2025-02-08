@@ -48,6 +48,7 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
     private final PersistAccountRepository persistAccountRepository;
     private final DeletePasswordTokenRepository deletePasswordTokenRepository;
     private final PasswordValidationService passwordValidationService;
+    private final JwtService jwtService;
 
     /**
      * {@inheritDoc}
@@ -126,18 +127,18 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
         );
 
         return switch (result) {
-            case AccountPersisted(_) -> deleteToken(token);
+            case AccountPersisted(_) -> deleteToken(account);
             case AccountNotFoundInDatabase() -> new InvalidTokenFailed(INVALID_TOKEN);
             case AccountPersistenceFailed(Throwable cause) -> new Failed(cause);
         };
 
     }
 
-    private Result deleteToken(PasswordToken token) {
+    private Result deleteToken(Account account) {
 
-        var result = deletePasswordTokenRepository.execute(token.id());
+        var result = deletePasswordTokenRepository.execute(account.id());
         return switch (result) {
-            case TokenDeleted tokenDeleted -> new Succeeded();
+            case TokenDeleted tokenDeleted -> new Succeeded(authToken(account));
             case TokenDeletionFailed(Throwable cause) -> new Failed(cause);
         };
 
@@ -148,6 +149,15 @@ class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
         var passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
+
+    }
+
+    private String authToken(Account account) {
+
+        return jwtService.generateToken(
+              account.id(),
+              account.email()
+        );
 
     }
 }

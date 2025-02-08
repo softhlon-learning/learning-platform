@@ -32,7 +32,7 @@ public interface UpdatePasswordService {
      * Update user's password result.
      */
     sealed interface Result {
-        record Succeeded() implements Result {}
+        record Succeeded(String authToken) implements Result {}
         record PasswordPolicyFailed(String message) implements Result {}
         record InvalidTokenFailed(String message) implements Result {}
         record ExpiredTokenFailed(String message) implements Result {}

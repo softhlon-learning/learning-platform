@@ -57,7 +57,7 @@ class UpdatePasswordController {
         );
 
         return switch (result) {
-            case Succeeded succeeded -> successCreatedBody();
+            case Succeeded(_) -> successCreatedBody();
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case ExpiredTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case InvalidTokenFailed(String message) -> badRequestBody(httpRequest, message);
