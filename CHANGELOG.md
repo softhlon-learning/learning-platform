@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.2
+_release date: 2025-02-08_
+ * general: Analysing performance issue with S3 buckets
+
 ## 0.49.1
 _release date: 2025-02-08_
  * accounts: Extend UpdatePasswordService.Succeeded to carry authToken
