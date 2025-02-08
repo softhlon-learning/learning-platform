@@ -1,16 +1,28 @@
 <div class="main">
     <div class="container">
 
-        <div class="top">
+        <div *ngIf="success" class="top">
             <div class="title">
                 Account Activated
             </div>
         </div>
-        <div class="activation-info">
+        <div *ngIf="error" class="top">
+            <div class="title">
+                Account Not Activated
+            </div>
+        </div>
+        <div *ngIf="success" class="activation-info">
             <div class="activation-text">
                 We're pleased to inform you that your account has been successfully activated!
             </div>
             <button class="cancel" routerLink="/home">Close & Go the main page</button>
+        </div>
+        <div *ngIf="error" class="activation-info">
+            <div class="error">
+                Please check the link again or request a new activation email. Your account has not yet been activated.
+                If you continue to experience issues, feel free to reach out to our support team for assistance.
+            </div>
+            <div></div>
         </div>
         <div></div>
     </div>

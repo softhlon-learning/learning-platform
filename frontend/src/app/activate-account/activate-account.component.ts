@@ -16,7 +16,6 @@ import {CookieService} from "ngx-cookie-service";
 
 const TOKEN_QUERY_PARAM = 'token'
 const DEFAULT_ERROR_MESSAGE = 'An unexpected error occurred'
-const HIDE_ERROR_DELAY = 2000
 
 @Component({
     selector: 'activate-account',
@@ -78,10 +77,6 @@ export class ActivateAccountComponent implements OnInit {
     private handleError(error: any, defaultErrorMessage: string) {
         this.error = error?.error?.message
             || defaultErrorMessage
-
-        setTimeout(
-            () => this.error = undefined,
-            HIDE_ERROR_DELAY)
     }
 
 }
