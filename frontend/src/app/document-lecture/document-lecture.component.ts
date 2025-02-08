@@ -6,6 +6,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 import {CourseNavigation} from "../course-navigation/course-navigation"
 import {CourseDetailsComponent} from "../course-details/course-details.component"
+import {NgxSpinnerService} from "ngx-spinner";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -27,9 +28,27 @@ export class DocumentLectureComponent implements OnInit {
     @Input()
     coursePath: string = ''
 
-    constructor() {
+    constructor(
+        private spinner: NgxSpinnerService,) {
     }
 
     ngOnInit(): void {
+        this.showSpinner()
     }
+
+    /**
+     * Show spinner when video is loading.
+     */
+    showSpinner() {
+        this.spinner.show()
+    }
+
+    /**
+     * Hide spinner when video is loaded.
+     */
+    hideSpinner() {
+        this.spinner.hide()
+    }
+
+    protected readonly alert = alert;
 }

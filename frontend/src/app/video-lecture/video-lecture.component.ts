@@ -59,5 +59,4 @@ export class VideoLectureComponent implements OnInit {
     hideSpinner() {
         this.spinner.hide()
     }
-
 }
