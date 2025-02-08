@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.0
+_release date: 2025-02-08_
+ * freebsd: Switch to ZSH
+
 ## 0.48.19
 _release date: 2025-02-08_
  * freebsd: Add and configure dedicated support mailbox
