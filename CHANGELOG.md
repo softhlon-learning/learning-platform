@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.4
+_release date: 2025-02-08_
+ * frontend: Add spinner for loading documents
+
 ## 0.49.3
 _release date: 2025-02-08_
  * frontend: Add spinner for loading video
