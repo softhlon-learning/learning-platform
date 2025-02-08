@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.8
+_release date: 2025-02-08_
+* freebsd: Install system on backup server
+
 ## 0.49.7
 _release date: 2025-02-08_
  * freebsd: IP Failover setup
