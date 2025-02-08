@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.5
+_release date: 2025-02-08_
+ * general: Testing spinners
+
 ## 0.49.4
 _release date: 2025-02-08_
  * frontend: Add spinner for loading documents
