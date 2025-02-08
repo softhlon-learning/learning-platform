@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.10
+_release date: 2025-02-08_
+ * freebsd: Solving issues with PXE/slow boot - part 2
+
 ## 0.49.9
 _release date: 2025-02-08_
  * freebsd: Solving issues with PXE/slow boot - part 1
