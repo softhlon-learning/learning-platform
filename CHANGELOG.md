@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.48.18
+_release date: 2025-02-08_
+ * frontend: Error handling for activate-account page
+
 ## 0.48.17
 _release date: 2025-02-08_
  * freebsd: DKIM setup for java-fullstack.tech domain
