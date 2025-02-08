@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.49.13
+_release date: 2025-02-08_
+ * freebsd: Try another method to install system on backup machine - part 2
+
 ## 0.49.12
 _release date: 2025-02-08_
- * freebsd: Try another method to install system on backup machine
+ * freebsd: Try another method to install system on backup machine - part 1
 
 ## 0.49.11
 _release date: 2025-02-08_
