@@ -35,6 +35,7 @@ import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 class UpdatePasswordController {
 
     private final UpdatePasswordService service;
+    private final AuthCookiesService authCookiesService;
     private final HttpServletRequest httpRequest;
 
     /**
@@ -57,7 +58,7 @@ class UpdatePasswordController {
         );
 
         return switch (result) {
-            case Succeeded(_) -> successCreatedBody();
+            case Succeeded(String authToken) -> success(response, authToken);
             case PasswordPolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case ExpiredTokenFailed(String message) -> badRequestBody(httpRequest, message);
             case InvalidTokenFailed(String message) -> badRequestBody(httpRequest, message);
@@ -76,6 +77,23 @@ class UpdatePasswordController {
                   [token: %s, password: ************]"""
                   .formatted(token);
         }
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private ResponseEntity<?> success(
+          HttpServletResponse response,
+          String token) {
+
+        authCookiesService.addAuthSucceededCookies(
+              response,
+              token
+        );
+
+        return successOkBody();
 
     }
 
