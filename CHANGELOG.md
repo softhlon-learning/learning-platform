@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.49.7
+_release date: 2025-02-08_
+ * freebsd: IP Failover setup
+
 ## 0.49.6
 _release date: 2025-02-08_
  * general: Order backup server
