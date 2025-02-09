@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.50.8
+_release date: 2025-02-09_
+ * general: Update upgrade script
+ * general: Update README.md
+ * general: First application start on backup server
+
 ## 0.50.7
 _release date: 2025-02-09_
  * general: Document postfix configuration
