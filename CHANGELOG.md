@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.2
+_release date: 2025-02-09_
+ * general: Update SSL certificates
+
 ## 0.50.1
 _release date: 2025-02-09_
  * freebsd: Abandon VLAN setup, for now
