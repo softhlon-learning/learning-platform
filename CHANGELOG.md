@@ -1,16 +1,21 @@
 # Learning Platform Changelog
 
+## 0.50.6
+_release date: 2025-02-09_
+ * system: Install starting scripts on sthe backup server
+ * changelo: Replace freebsd with system in changelog
+
 ## 0.50.5
 _release date: 2025-02-09_
  * general: Update starting scripts
 
 ## 0.50.4
 _release date: 2025-02-09_
-* freebsd: Continue with backup server setup
+* system: Continue with backup server setup
 
 ## 0.50.3
 _release date: 2025-02-09_
- * freebsd: Copy SSL certificates to backup machine
+ * system: Copy SSL certificates to backup machine
  * general: Update nginx.conf
  * general: Update README.md
 
@@ -20,48 +25,48 @@ _release date: 2025-02-09_
 
 ## 0.50.1
 _release date: 2025-02-09_
- * freebsd: Abandon VLAN setup, for now
+ * system: Abandon VLAN setup, for now
 
 ## 0.50.0
 _release date: 2025-02-09_
  * general: Update README.md
- * freebsd: Continue with backup server setup 
+ * system: Continue with backup server setup 
 
 ## 0.49.19
 _release date: 2025-02-09_
  * system: Update rDNS
- * freebsd: Continue backup server installation
+ * system: Continue backup server installation
 
 ## 0.49.18
 _release date: 2025-02-09_
- * freebsd: Update install instructions in README.md - part 3
+ * system: Update install instructions in README.md - part 3
  * system: Update java-fullstack.tech zone
 
 ## 0.49.17
 _release date: 2025-02-09_
- * freebsd: Update install instructions in README.md - part 2
- * freebsd: Document ~/.zshrc
+ * system: Update install instructions in README.md - part 2
+ * system: Document ~/.zshrc
 
 ## 0.49.16
 _release date: 2025-02-09_
- * freebsd: Document /etc/crontab (UEFI boot improvement)
- * freebsd: Update install instructions in README.md
+ * system: Document /etc/crontab (UEFI boot improvement)
+ * system: Update install instructions in README.md
 
 ## 0.49.15
 _release date: 2025-02-09_
- * freebsd: Solve issue with UEFI/PXE/slow boot 
+ * system: Solve issue with UEFI/PXE/slow boot 
 
 ## 0.49.14
 _release date: 2025-02-08_
- * freebsd: Try another method to install system on backup machine - part 3
+ * system: Try another method to install system on backup machine - part 3
 
 ## 0.49.13
 _release date: 2025-02-08_
- * freebsd: Try another method to install system on backup machine - part 2
+ * system: Try another method to install system on backup machine - part 2
 
 ## 0.49.12
 _release date: 2025-02-08_
- * freebsd: Try another method to install system on backup machine - part 1
+ * system: Try another method to install system on backup machine - part 1
 
 ## 0.49.11
 _release date: 2025-02-08_
@@ -70,19 +75,19 @@ _release date: 2025-02-08_
 
 ## 0.49.10
 _release date: 2025-02-08_
- * freebsd: Solving issues with PXE/slow boot - part 2
+ * system: Solving issues with PXE/slow boot - part 2
 
 ## 0.49.9
 _release date: 2025-02-08_
- * freebsd: Solving issues with PXE/slow boot - part 1
+ * system: Solving issues with PXE/slow boot - part 1
 
 ## 0.49.8
 _release date: 2025-02-08_
- * freebsd: Install system on backup server
+ * system: Install system on backup server
 
 ## 0.49.7
 _release date: 2025-02-08_
- * freebsd: IP Failover setup
+ * system: IP Failover setup
 
 ## 0.49.6
 _release date: 2025-02-08_
@@ -111,11 +116,11 @@ _release date: 2025-02-08_
 
 ## 0.49.0
 _release date: 2025-02-08_
- * freebsd: Switch to ZSH
+ * system: Switch to ZSH
 
 ## 0.48.19
 _release date: 2025-02-08_
- * freebsd: Add and configure dedicated support mailbox
+ * system: Add and configure dedicated support mailbox
 
 ## 0.48.18
 _release date: 2025-02-08_
@@ -123,7 +128,7 @@ _release date: 2025-02-08_
 
 ## 0.48.17
 _release date: 2025-02-08_
- * freebsd: DKIM setup for java-fullstack.tech domain
+ * system: DKIM setup for java-fullstack.tech domain
 
 ## 0.48.16
 _release date: 2025-02-07_
@@ -202,7 +207,7 @@ _release date: 2025-02-07_
 _release date: 2025-02-07_
  * accounts: Bug fix in LoadAccountByEmailRepositoryAdapter
  * accounts: Add ACCOUNT_NOT_ACTIVE_MESSAGE on sign in
- * freebsd: Add /active-account to allowed routes in Nginx
+ * system: Add /active-account to allowed routes in Nginx
 
 ## 0.48.2
 _release date: 2025-02-07_
@@ -274,7 +279,7 @@ _release date: 2025-02-06_
 
 ## 0.47.9
 _release date: 2025-02-06_
- * freebsd: Swtich to javafullstack.tech certificates
+ * system: Swtich to javafullstack.tech certificates
  * frontend: Update page title (Java FullStack Academy)
  
 ## 0.47.8
@@ -296,20 +301,20 @@ _release date: 2025-02-06_
 
 ## 0.47.4
 _release date: 2025-02-06_
- * freebsd: Finish set up DKIM authentication for mail server
+ * system: Finish set up DKIM authentication for mail server
 
 ## 0.47.3
 _release date: 2025-02-06_
- * freebsd: Setting up DKIM authentication for mail server
+ * system: Setting up DKIM authentication for mail server
 
 ## 0.47.2
 _release date: 2025-02-06_
- * freebsd: Solve SPF gmail issue
+ * system: Solve SPF gmail issue
 
 ## 0.47.1
 _release date: 2025-02-06_
- * freebsd: Unlock outgoing SMTP port
- * freebsd: Set SPF record in DNS
+ * system: Unlock outgoing SMTP port
+ * system: Set SPF record in DNS
 
 ## 0.47.0
 _release date: 2025-02-05_
@@ -438,13 +443,13 @@ _release date: 2025-02-04_
 
 ## 0.45.16
 _release date: 2025-02-04_
- * freebsd: Update /usr/loca/etc/rc.d/frontend to log output
+ * system: Update /usr/loca/etc/rc.d/frontend to log output
  * general: Free trial design
 
 ## 0.45.15
 _release date: 2025-02-04_
- * freebsd: Add nginx.log to ~/.screenrc
- * freebsd: Add frontend.log to ~/.screenrc
+ * system: Add nginx.log to ~/.screenrc
+ * system: Add frontend.log to ~/.screenrc
 
 ## 0.45.14
 _release date: 2025-02-04_
@@ -1866,7 +1871,7 @@ _release date: 2025-01-22_
 ## 0.23.3
 _release date: 2025-01-22_
  * Solved issue with read-only mailboxes
- * Subscribed to few freebsd mailing lists
+ * Subscribed to few system mailing lists
 
 ## 0.23.2
 _release date: 2025-01-22_
