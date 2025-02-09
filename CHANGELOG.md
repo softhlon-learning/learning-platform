@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.50.0
+_release date: 2025-02-09_
+ * general: Update README.md
+ * freebsd: Continue with backup server setup 
+
 ## 0.49.19
 _release date: 2025-02-09_
  * system: Update rDNS
