@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.5
+_release date: 2025-02-09_
+ * general: Update starting scripts
+
 ## 0.50.4
 _release date: 2025-02-09_
 * freebsd: Continue with backup server setup
