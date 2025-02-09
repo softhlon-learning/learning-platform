@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.12
+_release date: 2025-02-09_
+ * system: Testing Secondary MX
+
 ## 0.50.11
 _release date: 2025-02-09_
  * system: Secondary MX setup on squid
