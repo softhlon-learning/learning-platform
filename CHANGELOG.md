@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.13
+_release date: 2025-02-10_
+ * general: Decision to replace squid server with better one (more compatible with FreeBSD)
+
 ## 0.50.12
 _release date: 2025-02-09_
  * system: Testing Secondary MX
