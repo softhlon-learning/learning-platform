@@ -33,6 +33,7 @@
 # cd /usr/ports/www/node22 && make install
 # cd /usr/ports/www/npm-node22 && make install
 # npm install -y -g @angular/cli
+# /usr/ports/mail/postfix && make install
 # cd /usr/ports/databases/postgresql17-server && make install
 # sysrc postgresql_enable=yes
 # service postgresql initdb
