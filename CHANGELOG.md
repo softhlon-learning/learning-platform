@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.50.3
+_release date: 2025-02-09_
+ * freebsd: Copy SSL certificates to backup machine
+ * general: Update nginx.conf
+ * general: Update README.md
+
 ## 0.50.2
 _release date: 2025-02-09_
  * general: Update SSL certificates
