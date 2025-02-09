@@ -4,6 +4,15 @@
  * https://community.hetzner.com/tutorials/freebsd-openzfs-via-linux-rescue
 ## Server Setup
 ```
+# adduser (admin, wheel, no passwd auth)
+# add ssh public key for admin
+    mkdir ~/.ssh
+    touch ~/.ssh/authorized_keys
+    vi ~/.ssh/authorized_keys
+    chmod -R 700 ~/.ssh
+# pkg install sudo
+    vi /usr/local/etc/sudoers
+    %wheel ALL=(ALL:ALL) NOPASSWD: ALL    
 # pkg install git
 # git clone --depth 1 https://git.FreeBSD.org/ports.git /usr/ports
 # cd /usr/ports && make index
