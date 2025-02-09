@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.9
+_release date: 2025-02-09_
+ * system: IP Failover tests
+
 ## 0.50.8
 _release date: 2025-02-09_
  * general: Update upgrade script
