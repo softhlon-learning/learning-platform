@@ -16,8 +16,9 @@
 # pkg install git
 # git clone --depth 1 https://git.FreeBSD.org/ports.git /usr/ports
 # cd /usr/ports && make index
-# cd /usr/ports/security/sudo && make install
 # cd /usr/ports/shels/zsh && make install
+# cd /usr/ports/shels/ohmyzsh && make install
+# chsh -s /usr/local/bin/zsh
 # cd /usr/ports/devel/maven && make install
 # cd /usr/ports/javq/openjdk23 && make install
 # cd /usr/ports/devel/gh && make install
