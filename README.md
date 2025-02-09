@@ -42,6 +42,14 @@
 # CREATE DATABASE learning
 # ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
 # adduser platform
+# touch /var/log/backend.log
+# chown platform /var/log/backend.log
+# touch /var/log/frontend.log
+# chown platform /var/log/frontend.log
+# mkdir /var/run/backend
+# chown platform /var/run/backend
+# mkdir /var/run/frontend        
+# chown platform /var/run/frontend 
 # vim /usr/local/etc/nginx/nginx.conf
 # vim /usr/local/etc/rc.d/backend
 # vim /usr/local/etc/rc.d/frontend
