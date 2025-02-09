@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.4
+_release date: 2025-02-09_
+* freebsd: Continue with backup server setup
+
 ## 0.50.3
 _release date: 2025-02-09_
  * freebsd: Copy SSL certificates to backup machine
