@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.49.16
+_release date: 2025-02-09_
+ * freebsd: Document /etc/crontab (UEFI boot improvement)
+ * freebsd: Update install instructions in README.md
+
 ## 0.49.15
 _release date: 2025-02-09_
  * freebsd: Solve issue with UEFI/PXE/slow boot 
