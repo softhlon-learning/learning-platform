@@ -27,6 +27,7 @@
 # gh auth login --hostname github.com
 # gh repo clone softhlon-learning/learning-platform
 # cd /usr/ports/www/nginx && make install
+# copy SSL certificates to /home/admin/certs
 # sudo sysrc nginx_enable=yes
 # sudo service nginx start
 # cd /usr/ports/www/node22 && make install
