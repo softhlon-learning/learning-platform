@@ -1,9 +1,13 @@
 # Learning Platform Changelog
 
+## 0.50.7
+_release date: 2025-02-09_
+ * general: Document postfix configuration
+
 ## 0.50.6
 _release date: 2025-02-09_
  * system: Install starting scripts on sthe backup server
- * changelo: Replace freebsd with system in changelog
+ * changelog: Replace freebsd with system in changelog
 
 ## 0.50.5
 _release date: 2025-02-09_
