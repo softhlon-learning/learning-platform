@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.11
+_release date: 2025-02-09_
+ * system: Secondary MX setup on squid
+
 ## 0.50.10
 _release date: 2025-02-09_
  * system: IP Failover tests - part 2
