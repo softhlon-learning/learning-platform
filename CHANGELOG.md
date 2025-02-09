@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.10
+_release date: 2025-02-09_
+ * system: IP Failover tests - part 2
+
 ## 0.50.9
 _release date: 2025-02-09_
  * system: IP Failover tests
