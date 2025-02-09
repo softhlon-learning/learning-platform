@@ -19,6 +19,7 @@
 # cd /usr/ports/shels/zsh && make install
 # cd /usr/ports/shels/ohmyzsh && make install
 # chsh -s /usr/local/bin/zsh
+# cd /usr/ports/editors/vim && make install
 # cd /usr/ports/devel/maven && make install
 # cd /usr/ports/java/openjdk23 && make install
 # cd /usr/ports/sysutils/htop && make install
