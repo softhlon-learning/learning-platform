@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.49.17
+_release date: 2025-02-09_
+ * freebsd: Update install instructions in README.md - part 2
+ * freebsd: Document ~/.zshrc
+
 ## 0.49.16
 _release date: 2025-02-09_
  * freebsd: Document /etc/crontab (UEFI boot improvement)
