@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.49.18
+_release date: 2025-02-09_
+ * freebsd: Update install instructions in README.md - part 3
+ * system: Update java-fullstack.tech zone
+
 ## 0.49.17
 _release date: 2025-02-09_
  * freebsd: Update install instructions in README.md - part 2
