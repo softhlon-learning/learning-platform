@@ -19,8 +19,8 @@
 # cd /usr/ports/shels/zsh && make install
 # cd /usr/ports/shels/ohmyzsh && make install
 # chsh -s /usr/local/bin/zsh
+# cd /usr/ports/java/openjdk23 && make install
 # cd /usr/ports/devel/maven && make install
-# cd /usr/ports/javq/openjdk23 && make install
 # cd /usr/ports/devel/gh && make install
 # gh auth login --hostname github.com
 # gh repo clone softhlon-learning/learning-platform
