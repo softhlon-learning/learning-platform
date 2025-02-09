@@ -1,0 +1,2 @@
+# Speed up UEFI boot
+@reboot root:wheel /usr/sbin/efibootmgr -n -b x
