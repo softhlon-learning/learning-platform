@@ -7,12 +7,12 @@
  
 name=backend
 rcvar=backend_enable
-backend_user=learning
+backend_user=platform
 backend_chdir="/home/admin/learning-platform/backend"
  
 pidfile="/var/run/backend/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -o /var/log/backend.log -p ${pidfile} /usr/local/bin/java -Xms4g -Xmx4g -jar /home/admin/learning-platform/backend/application/backend.jar --spring.profiles.active=production"
+command_args="-f -o /var/log/backend.log -p ${pidfile} /usr/local/bin/java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5555 -Xms4g -Xmx4g -jar /home/admin/learning-platform/backend/application/backend.jar --spring.profiles.active=production"
 
 stop_cmd="stop"
 status_cmd="status"

@@ -4,7 +4,7 @@
  * https://community.hetzner.com/tutorials/freebsd-openzfs-via-linux-rescue
 ## Server Setup
 ```
-# adduser (admin, wheel, no passwd auth)
+# adduser admin (wheel, no passwd auth)
 # add ssh public key for admin
     mkdir ~/.ssh
     touch ~/.ssh/authorized_keys
@@ -40,6 +40,7 @@
 # sudo -i -u postgres
 # CREATE DATABASE learning
 # ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';
+# adduser platform
 # vim /usr/local/etc/nginx/nginx.conf
 # vim /usr/local/etc/rc.d/backend
 # vim /usr/local/etc/rc.d/frontend

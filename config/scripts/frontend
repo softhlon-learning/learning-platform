@@ -10,11 +10,11 @@ export PATH=/bin:/usr/bin:/usr/local/bin
 name=frontend
 rcvar=frontend_enable
 frontend_chdir="/home/admin/learning-platform/frontend"
-frontend_user=learning
+frontend_user=platform
 
 pidfile="/var/run/frontend/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/local/bin/yarn run start"
+command_args="-f -o /var/log/frontend.log -p ${pidfile} /usr/local/bin/yarn run start"
 
 stop_cmd="stop"
 status_cmd="status"
@@ -22,8 +22,8 @@ status_cmd="status"
 stop () {
         if [ -e ${pidfile} ]; then
                 echo Stopping ${name}
-		            kill -9 `cat ${pidfile}`
-		            killall -9 node
+		kill -9 `cat ${pidfile}`
+		killall -9 node
         else
                 echo ${name} is not running.
         fi
