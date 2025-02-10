@@ -10,6 +10,7 @@
     touch ~/.ssh/authorized_keys
     vi ~/.ssh/authorized_keys
     chmod -R 700 ~/.ssh
+# vi /etc/resolv.conf    
 # pkg install sudo
     vi /usr/local/etc/sudoers
     %wheel ALL=(ALL:ALL) NOPASSWD: ALL    
