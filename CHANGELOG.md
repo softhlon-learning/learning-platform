@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.50.14
+_release date: 2025-02-10_
+ * general: Document /etc/resolv.conf
+ * general: Update README.md
+
 ## 0.50.13
 _release date: 2025-02-10_
  * general: Decision to replace squid server with better one (more compatible with FreeBSD)
