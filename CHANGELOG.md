@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.15
+_release date: 2025-02-10_
+ * general: Update nginx.conf
+
 ## 0.50.14
 _release date: 2025-02-10_
  * general: Document /etc/resolv.conf
