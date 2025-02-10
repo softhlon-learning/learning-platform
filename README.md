@@ -17,8 +17,8 @@
 # pkg install git
 # git clone --depth 1 https://git.FreeBSD.org/ports.git /usr/ports
 # cd /usr/ports && make index
-# cd /usr/ports/shels/zsh && make install
-# cd /usr/ports/shels/ohmyzsh && make install
+# cd /usr/ports/shells/zsh && make install
+# cd /usr/ports/shells/ohmyzsh && make install
 # chsh -s /usr/local/bin/zsh
 # cd /usr/ports/editors/vim && make install
 # cd /usr/ports/devel/maven && make install
@@ -34,6 +34,7 @@
 # cd /usr/ports/www/node22 && make install
 # cd /usr/ports/www/npm-node22 && make install
 # npm install -y -g @angular/cli
+# npm install -g yarn      
 # /usr/ports/mail/postfix && make install
 # cd /usr/ports/databases/postgresql17-server && make install
 # sysrc postgresql_enable=yes
@@ -54,5 +55,5 @@
 # vim /usr/local/etc/nginx/nginx.conf
 # vim /usr/local/etc/rc.d/backend
 # vim /usr/local/etc/rc.d/frontend
-# vim /home/admin/upgrade
+# vim /home/admin/scripts/upgrade
 ```
