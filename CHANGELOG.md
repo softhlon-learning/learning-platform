@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.50.16
+_release date: 2025-02-10_
+ * general: Document pf.conf  
+ * system: Set up postgres master-slave
+
 ## 0.50.15
 _release date: 2025-02-10_
  * general: Update nginx.conf
