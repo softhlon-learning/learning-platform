@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.50.17
+_release date: 2025-02-11_
+ * system: Testing postgres master-slave setup
+ * system: Preparing strategy for disaster recovery
+
 ## 0.50.16
 _release date: 2025-02-10_
  * general: Document pf.conf  
