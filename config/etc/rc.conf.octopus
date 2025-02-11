@@ -1,0 +1,27 @@
+hostname="octopus"
+
+ifconfig_igb0="inet 135.181.217.225/32"
+ipv4_addrs_igb0="135.181.217.225/32 95.216.30.25/32"
+ifconfig_igb0_ipv6="inet6 2a01:4f9:3a:3a6e::2"
+
+gateway_if="igb0"
+gateway_ip4="135.181.217.193"
+static_routes="gateway default"
+route_gateway="-host $gateway_ip4 -interface $gateway_if"
+route_default="default $gateway_ip4"
+ipv6_defaultrouter="fe80::1%igb0"
+
+cloned_interfaces="vlan0"
+ifconfig_vlan0="inet 10.0.0.1/24 vlan 4000 vlandev igb0"
+
+sshd_enable="yes"
+postgresql_enable="yes"
+nginx_enable="yes"
+backend_enable="yes"
+frontend_enable="yes"
+postfix_enable="yes"
+sendmail_enable="none"
+pf_enable="yes"
+pflog_enable="yes"
+sshguard_enable="yes"
+milteropendkim_enable="yes"
