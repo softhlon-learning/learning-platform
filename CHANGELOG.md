@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.50.19
+_release date: 2025-02-11_
+ * system: Swtich from UEFI boot to regular one (on both servers)
+
 ## 0.50.18
 _release date: 2025-02-11_
  * system: Exploring FreeBSd jails
