@@ -27,3 +27,15 @@ sudo sysrc postfix_enable=yes
 sudo sysrc postgresql_enable=yes
 sudo sysrc backend_enable=yes
 sudo sysrc frontend_enable=yes
+
+# postfix
+newaliases
+
+# postgresql
+service postgresql initdb
+service postgresql start
+su - postgres
+psql -c "CREATE DATABASE learning;"
+psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';"
+exit
+
