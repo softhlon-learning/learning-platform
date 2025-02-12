@@ -1,5 +1,13 @@
 # Learning Platform Changelog
 
+## 0.51.8
+_release date: 2025-02-12_
+ * system: Reorganize scripts
+
+## 0.51.7
+_release date: 2025-02-12_
+ * system: Update scripts
+
 ## 0.51.6
 _release date: 2025-02-12_
  * system: Testing first draft fo install.sh
