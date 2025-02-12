@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "Install common packages"
-
 # system packages
 pkg install -y vim
 pkg install -y htop
@@ -57,14 +55,15 @@ mkdir /home
 # user platform
 pw adduser platform -d /home/platform -s /bin/sh -c "Learning Platform" -m -w no
 # user admin
-pw adduser admin -d /home/platform -s /usr/local/bin/zsh -c "Admin" -m -w no
+pw adduser admin -d /home/admin -s /usr/local/bin/zsh -c "Admin" -m -w no
+pw group mod wheel -m admin
 
 # backend
 touch /var/log/backend.log
 chown platform /var/log/backend.log
 mkdir /var/run/backend
 chown platform /var/run/backend
-cp /root/platform/config/sctips/backend /usr/local/etc/rc.d/
+cp /root/platform/config/scripts/backend /usr/local/etc/rc.d/
 chmod +x -R /usr/local/etc/rc.d/backend
 
 # frontend
@@ -72,11 +71,11 @@ touch /var/log/frontend.log
 chown platform /var/log/frontend.log
 mkdir /var/run/frontend
 chown platform /var/run/frontend
-cp /root/platform/config/sctips/frontend /usr/local/etc/rc.d/
+cp /root/platform/config/scripts/frontend /usr/local/etc/rc.d/
 chmod +x -R /usr/local/etc/rc.d/frontend
 
 # upgrade
 mkdir /home/admin/scripts
-cp /root/platform/config/sctips/upgrade /home/admin/scripts
-chown admin:admin -r /home/admin/scripts/
+cp /root/platform/config/scripts/upgrade /home/admin/scripts
+chown -R admin:admin /home/admin/scripts
 chmod +x /home/admin/scripts/upgrade

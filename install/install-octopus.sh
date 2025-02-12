@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo "Install <octopus> server start."
-chmod +x /root/platform/install/common/packages.sh
+chmod +x /root/platform/install/common.sh
 /root/platform/install/common.sh
 echo "Install <octopus> server stop."
