@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
-## 0.51.1
+## 0.51.2
 _release date: 2025-02-12_
  * system: Add INSTALL.md
+
+## 0.51.1
+_release date: 2025-02-12_
+ * system: Add base system steps to INSTALL.md
 
 ## 0.51.0
 _release date: 2025-02-12_
