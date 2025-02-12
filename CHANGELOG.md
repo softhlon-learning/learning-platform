@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.6
+_release date: 2025-02-12_
+ * system: Testing first draft fo install.sh
+
 ## 0.51.5
 _release date: 2025-02-12_
  * system: Update rc.conf files
