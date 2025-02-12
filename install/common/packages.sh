@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Install common packages"
+
 # system packages
 pkg install -y vim
 pkg install -y htop
