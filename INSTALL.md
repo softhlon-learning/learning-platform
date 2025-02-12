@@ -11,14 +11,14 @@
  * Cleanup if needed
    * ``lsblk`` (to double check disk names)
    * ``cfdisk /dev/nvme0n1`` (delete all partitions)
-   * ``cfdisk /dev/nvme0n1`` (delete all partitions)
+   * ``cfdisk /dev/nvme1n1`` (delete all partitions)
    * ``mkfs -t ext4 /dev/nvme0n1`` (just to erase zpool info)
-   * ``mkfs -t ext4 /dev/nvme0n1`` (just to erase zpool info)
+   * ``mkfs -t ext4 /dev/nvme1n1`` (just to erase zpool info)
  * Run QEMU and set VNC password
    * ```
      qemu-system-x86_64 -net nic -net user,hostfwd=tcp::1022-:22 -m 2048M -enable-kvm \
      -cpu host,+nx -M pc -smp 2 -vga std -k en-us \
-     -cdrom ./mfsbsd-14.0-RELEASE-amd64.iso \
+     -cdrom ./mfsbsd-14.1-RELEASE-amd64.iso \
      -device virtio-scsi-pci,id=scsi0 \
      -drive file=/dev/nvme0n1,if=none,format=raw,discard=unmap,aio=native,cache=none,id=n0 \
      -device scsi-hd,drive=n0,bus=scsi0.0 \
