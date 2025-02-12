@@ -34,8 +34,13 @@ newaliases
 # postgresql
 service postgresql initdb
 service postgresql start
-su - postgres
-psql -c "CREATE DATABASE learning;"
-psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';"
-exit
 
+# create database
+su - postgres -c 'psql -c "CREATE DATABASE learning;"'
+rm -fr /tmp/alter-user.sh
+
+# set user's password
+echo "psql -c \"ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';\"" >> /tmp/alter-user.sh
+chmod o+x /tmp/alter-user.sh
+su - postgres -c '/tmp/alter-user.sh'
+rm -fr /tmp/alter-us.sh
