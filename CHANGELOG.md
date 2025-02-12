@@ -1,7 +1,11 @@
 # Learning Platform Changelog
 
+## 0.51.0
+_release date: 2025-02-12_
+ * system: Create system install scripts backbone
+
 ## 0.50.19
-_release date: 2025-02-11_
+_release date: 2025-02-12_
  * system: Swtich from UEFI boot to regular one (on both servers)
 
 ## 0.50.18
