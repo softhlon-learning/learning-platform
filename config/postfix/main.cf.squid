@@ -1,0 +1,55 @@
+compatibility_level = 3.9
+queue_directory = /var/spool/postfix
+command_directory = /usr/local/sbin
+daemon_directory = /usr/local/libexec/postfix
+data_directory = /var/db/postfix
+mail_owner = postfix
+
+myhostname = squid.java-fullstack.tech
+mydomain = java-fullstack.tech
+myorigin = $mydomain
+mydestination = $myhostname
+
+unknown_local_recipient_reject_code = 550
+mynetworks_style = host
+debug_peer_level = 2
+debugger_command =
+    PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+    ddd $daemon_directory/$process_name $process_id & sleep 5
+
+sendmail_path = /usr/local/sbin/sendmail
+newaliases_path = /usr/local/bin/newaliases
+mailq_path = /usr/local/bin/mailq
+setgid_group = maildrop
+html_directory = /usr/local/share/doc/postfix
+manpage_directory = /usr/local/share/man
+sample_directory = /usr/local/etc/postfix
+readme_directory = /usr/local/share/doc/postfix
+inet_protocols = all
+smtp_tls_CApath = /etc/ssl/certs
+shlib_directory = /usr/local/lib/postfix
+meta_directory = /usr/local/libexec/postfix
+
+smtpd_recipient_restrictions = 
+    reject_invalid_hostname,
+    permit_mynetworks,
+    reject_rbl_client zen.spamhaus.org,
+    reject_rbl_client bl.spamcop.net,
+    reject_rbl_client dnsbl.sorbs.net,
+    reject_rbl_client cbl.abuseat.org,
+    reject_rbl_client b.barracudacentral.org,
+    reject_rbl_client dnsbl-1.uceprotect.net,
+    reject_unauth_pipelining,
+    reject_unauth_destination,
+    permit
+
+#smtpd_milters = inet:127.0.0.1:8891
+#non_smtpd_milters = $smtpd_milters
+#milter_default_action = accept
+
+smtpd_tls_cert_file = /home/admin/certs/java-fullstack_tech.crt
+smtpd_tls_key_file = /home/admin/certs/java-fullstack_tech.key
+smtpd_tls_security_level = encrypt
+smtp_tls_security_level = encrypt
+
+relay_domains = $mydomain, softhlon-learning.tech
