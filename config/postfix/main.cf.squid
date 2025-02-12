@@ -47,8 +47,8 @@ smtpd_recipient_restrictions =
 #non_smtpd_milters = $smtpd_milters
 #milter_default_action = accept
 
-smtpd_tls_cert_file = /home/admin/certs/java-fullstack_tech.crt
-smtpd_tls_key_file = /home/admin/certs/java-fullstack_tech.key
+smtpd_tls_cert_file = /var/certs/java-fullstack_tech.crt
+smtpd_tls_key_file = /var/certs/java-fullstack_tech.key
 smtpd_tls_security_level = encrypt
 smtp_tls_security_level = encrypt
 
