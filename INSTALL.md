@@ -65,16 +65,7 @@
    * ``gh auth login --hostname github.com``
    * ``gh repo clone softhlon-learning/learning-platform /root/platform``
  * Run installation script
-   * ``chmod +x /root/platform/install/$server/install.sh``
    * ``/root/platform/install/$server/install.sh``
  * Update passwords
    * ``passwsd admin``
    * ``passwd platform``
-
-   
-
-   
-   
-
-
-
