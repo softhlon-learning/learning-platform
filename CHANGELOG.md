@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.9
+_release date: 2025-02-12_
+ * system: Improve install scripts
+
 ## 0.51.8
 _release date: 2025-02-12_
  * system: Reorganize scripts
