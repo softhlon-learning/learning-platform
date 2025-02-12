@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.4
+_release date: 2025-02-12_
+ * system: Create packages.sh
+
 ## 0.51.3
 _release date: 2025-02-12_
  * system: Add 'Install rest of FreeBSD components and configure all' section to INSTALL.md
