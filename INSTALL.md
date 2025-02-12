@@ -1,6 +1,6 @@
 # System Intallation
 
-## Install FreeBSD base system
+## Install FreeBSD base system (on Linux rescue instance)
  * Enable Rescue (Linux with auth key) mode in Hetzner console
  * Restart server
  * SSH to rescue server (ssh root@server)
@@ -51,6 +51,25 @@
    * ``umount /mnt``
  * Reboot rescue system
 
+## Install rest of FreeBSD components and configure all
+ * Update to the latest system version (fron 14.1 to 14.2-RELEASE)
+   * ``freebsd-update fetch``
+   * ``freebsd-update install``
+   * ``reboot``
+   * ``freebsd-update install``
+   * ``freebsd-update upgrade -r 14.2-RELEASE``
+   * ``freebsd-update install``
+ * Install gh and git tools
+   * ``pkg install -y gh && pkg install -y git``
+ * Authenticate in GitHub and clone repo
+   * ``gh auth login --hostname github.com``
+   * ``gh repo clone softhlon-learning/learning-platform /root/platform``
+ * Run installation script
+   * ``chmod +x /root/platform/install/$server/install.sh``
+   * ``/root/platform/install/$server/install.sh``
+ * Update passwords
+   * ``passwsd admin``
+   * ``passwd platform``
 
    
 
