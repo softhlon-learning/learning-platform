@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.51.5
+_release date: 2025-02-12_
+ * system: Update rc.conf files
+ * system: Update INSTALL.md
+
 ## 0.51.4
 _release date: 2025-02-12_
  * system: Create packages.sh
