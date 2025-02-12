@@ -34,7 +34,7 @@
 # cd /usr/ports/www/node22 && make install
 # cd /usr/ports/www/npm-node22 && make install
 # npm install -y -g @angular/cli
-# npm install -g yarn      
+# npm install -g yarn
 # /usr/ports/mail/postfix && make install
 # newaliases
 # sysrc postfix_enable=yes
@@ -64,4 +64,5 @@
 # chmod +x /home/admin/scripts/upgrade
 # gh auth login --hostname github.com
 # gh repo clone softhlon-learning/learning-platform
+# sysrc pf_enable=yes
 ```
