@@ -79,3 +79,13 @@ mkdir /home/admin/scripts
 cp /root/platform/config/scripts/upgrade /home/admin/scripts
 chown -R admin:admin /home/admin/scripts
 chmod +x /home/admin/scripts/upgrade
+
+# gh authentication
+cp -r /root/.config /home/admin/
+chown -R admin:admin /home/admin/.config
+
+# sudoers
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers
+
+# zsh
+cp /root/platform/config/.zshrc /home/admin/
