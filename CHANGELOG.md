@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.1
+_release date: 2025-02-12_
+ * system: Add INSTALL.md
+
 ## 0.51.0
 _release date: 2025-02-12_
  * system: Create system install scripts backbone
