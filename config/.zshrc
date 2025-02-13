@@ -104,4 +104,4 @@ alias lpkg="pkg query '%t %n-%v' | sort -r | perl -pe 's/(\d+)/localtime(\$1)/e'
 alias ksa="screen -ls | grep '(Attached)' | awk 'sys {screen -S \$1 -X quit}'"
 alias ksd="screen -ls | grep '(Detached)' | awk 'sys {screen -S \$1 -X quit}'"
 alias master='/home/admin/scripts/make_master.sh'
-alias mslave='/home/admin/scripts/make_slave.sh'
+alias slave='/home/admin/scripts/make_slave.sh'

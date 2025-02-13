@@ -48,10 +48,7 @@ su - postgres -c 'psql -c "CREATE DATABASE learning;"'
 rm -fr /tmp/alter-user.sh
 
 # postgresql - set user's password
-echo "psql -c \"ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';\"" >> /tmp/alter-user.sh
-chmod o+x /tmp/alter-user.sh
-su - postgres -c '/tmp/alter-user.sh'
-rm -fr /tmp/alter-user.sh
+sudo -u postgres psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';"
 
 mkdir /home
 # user platform

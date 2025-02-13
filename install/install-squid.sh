@@ -31,6 +31,9 @@ cp /tmp/postgresql.conf /var/db/postgres/data17/
 cp /tmp/pg_hba.conf /var/db/postgres/data17/
 chown -R postgres:postgres /var/db/postgres/data17
 
+rm -fr /tmp/postgresql.conf
+rm -fr /tmp/pg_hba.conf
+
 # restart service
 service postgresql start
 
