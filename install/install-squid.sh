@@ -34,4 +34,14 @@ chown -R postgres:postgres /var/db/postgres/data17
 # restart service
 service postgresql start
 
+# ssh private key
+cp /root/platform/config/.ssh/id_rsa /home/admin/.ssh/
+chown -R admin:admin /home/admin/.ssh/
+chmod -R 700 /home/admin/.ssh/
+
+# make master/slave
+cp /root/platform/config/scripts/make_master.sh /home/admin/scripts
+cp /root/platform/config/scripts/make_slave.sh /home/admin/scripts
+chmod -R +x /home/admin/scripts
+
 echo "Install squid server stop."

@@ -27,5 +27,8 @@ echo "listen_addresses = 'localhost,10.0.0.1'" >> /var/db/postgres/data17/postgr
 # restart service
 service postgresql restart
 
+# ssh key
+cp
+
 # stop
 echo "Install octopus server stop."
