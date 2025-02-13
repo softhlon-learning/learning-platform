@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.1
+_release date: 2025-02-13_
+ * system: Finish testing master-slave testing
+
 ## 0.52.0
 _release date: 2025-02-13_
  * system: Fix newaliases call
