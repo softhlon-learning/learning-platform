@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.14
+_release date: 2025-02-13_
+ * system: Testing squid install
+
 ## 0.51.13
 _release date: 2025-02-13_
  * system: Fix common.sh script
