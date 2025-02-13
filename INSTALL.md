@@ -1,4 +1,4 @@
-# System Intallation
+# System Installation
 
 ## Install FreeBSD base system (on Linux rescue instance)
  * Enable Rescue (Linux with auth key) mode in Hetzner console
@@ -55,9 +55,9 @@
  * Update to the latest system version (fron 14.1 to 14.2-RELEASE)
    * ``freebsd-update fetch``
    * ``freebsd-update install``
-   * ``reboot``
-   * ``freebsd-update install``
    * ``freebsd-update upgrade -r 14.2-RELEASE``
+   * ``freebsd-update install``
+   * ``reboot``
    * ``freebsd-update install``
  * Install gh and git tools
    * ``pkg install -y gh && pkg install -y git``
