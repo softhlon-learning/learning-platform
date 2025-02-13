@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.19
+_release date: 2025-02-13_
+ * system: Fix install-squid.sh
+
 ## 0.51.18
 _release date: 2025-02-13_
  * system: Postgres slave replication setup
