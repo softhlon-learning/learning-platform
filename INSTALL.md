@@ -53,8 +53,6 @@
 
 ## Install rest of FreeBSD components and configure all
  * Update to the latest system version (fron 14.1 to 14.2-RELEASE)
-   * ``freebsd-update fetch``
-   * ``freebsd-update install``
    * ``freebsd-update upgrade -r 14.2-RELEASE``
    * ``freebsd-update install``
    * ``reboot``
