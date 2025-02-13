@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.51.10
+_release date: 2025-02-12_
+ * system: Improve octopus install script
+ * system: Improve common install script
+ * system: Add .ssh/authorized_keys
+
 ## 0.51.9
 _release date: 2025-02-12_
  * system: Improve install scripts

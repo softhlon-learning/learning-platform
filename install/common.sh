@@ -34,9 +34,6 @@ cp -r /root/platform/config/certs/* /var/certs
 cp -r /root/platform/config/nginx/nginx.conf /usr/local/etc//nginx/nginx.conf
 service nginx start
 
-# postfix
-newaliases
-
 # postgresql
 service postgresql initdb
 service postgresql start
@@ -89,3 +86,13 @@ echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers
 
 # zsh
 cp /root/platform/config/.zshrc /home/admin/
+
+# .ssh/authorized_keys
+mkdir /home/admin/.ssh
+cp /root/platform/config/.ssh/authorized_keys /home/admin/.ssh/
+chown -R admin:admin /home/admin/.ssh/
+chmod -R 600 /home/admin/.ssh/
+
+# pf
+cp /root/platform/config/etc/pf.conf /etc/
+sudo service pf start
