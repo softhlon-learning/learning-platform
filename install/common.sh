@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# timezone
+tzsetup Europe/Warsaw
+
 # system packages
 pkg install -y vim
 pkg install -y htop
