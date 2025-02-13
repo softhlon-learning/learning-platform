@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.5
+_release date: 2025-02-13_
+ * system: Small installation improvements
+
 ## 0.52.4
 _release date: 2025-02-13_
  * system: Update .ssh/authorized_keys
