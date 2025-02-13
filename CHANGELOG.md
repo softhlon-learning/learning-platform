@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.52.2
+_release date: 2025-02-13_
+ * system: Add make_master.sh script
+ * system: Add make_slave.sh script
+
 ## 0.52.1
 _release date: 2025-02-13_
  * system: Finish testing master-slave testing
