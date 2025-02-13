@@ -6,7 +6,7 @@
 
     <groupId>tech.javafullstack</groupId>
     <artifactId>backend</artifactId>
-    <version>0.51.17-SNAPSHOT</version>
+    <version>0.51.18-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Learning Platform</name>

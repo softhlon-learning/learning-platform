@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.51.17
+_release date: 2025-02-13_
+ * general: Remove README.md
+ * system: Improve upgrade information
+
 ## 0.51.16
 _release date: 2025-02-13_
  * system: Test postgres master replica
@@ -19,7 +24,7 @@ _release date: 2025-02-13_
 ## 0.51.12
 _release date: 2025-02-13_
  * system: Fix common.sh script
- *  system: Prepare install-squid.sh script
+ * system: Prepare install-squid.sh script
 
 ## 0.51.11
 _release date: 2025-02-13_
