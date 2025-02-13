@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.4
+_release date: 2025-02-13_
+ * system: Update .ssh/authorized_keys
+ * system: Add .ssh/id_rsa
+ * system: Update make_slave.sh
+
 ## 0.52.3
 _release date: 2025-02-13_
  * system: Testing master/slave swtich 
