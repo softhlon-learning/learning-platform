@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.16
+_release date: 2025-02-13_
+ * system: Test postgres master replica
+
 ## 0.51.15
 _release date: 2025-02-13_
  * system: Add postgres master setup
