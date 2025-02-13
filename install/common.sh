@@ -46,7 +46,7 @@ rm -fr /tmp/alter-user.sh
 echo "psql -c \"ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF£>8J2r_';\"" >> /tmp/alter-user.sh
 chmod o+x /tmp/alter-user.sh
 su - postgres -c '/tmp/alter-user.sh'
-rm -fr /tmp/alter-us.sh
+rm -fr /tmp/alter-user.sh
 
 mkdir /home
 # user platform
