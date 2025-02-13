@@ -61,7 +61,7 @@ chown platform /var/log/backend.log
 mkdir /var/run/backend
 chown platform /var/run/backend
 cp /root/platform/config/scripts/backend /usr/local/etc/rc.d/
-chmod +x -R /usr/local/etc/rc.d/backend
+chmod -R +x /usr/local/etc/rc.d/backend
 
 # frontend
 touch /var/log/frontend.log
@@ -69,7 +69,7 @@ chown platform /var/log/frontend.log
 mkdir /var/run/frontend
 chown platform /var/run/frontend
 cp /root/platform/config/scripts/frontend /usr/local/etc/rc.d/
-chmod +x -R /usr/local/etc/rc.d/frontend
+chmod -R +x /usr/local/etc/rc.d/frontend
 
 # upgrade
 mkdir /home/admin/scripts
