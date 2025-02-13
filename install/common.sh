@@ -78,7 +78,7 @@ chmod -R +x /usr/local/etc/rc.d/frontend
 
 # upgrade
 mkdir /home/admin/scripts
-cp /root/platform/config/scripts/upgrade /home/admin/scripts
+cp /root/platform/config/scripts/upgrade.sh /home/admin/scripts
 chown -R admin:admin /home/admin/scripts
 chmod +x /home/admin/scripts/upgrade.sh
 
