@@ -6,6 +6,8 @@ tzsetup Europe/Warsaw
 # system packages
 pkg install -y vim
 pkg install -y htop
+pkg install -y nmap
+pkg install -y mutt
 pkg install -y sudo
 pkg install -y zsh
 pkg install -y ohmyzsh
