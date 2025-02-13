@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.6
+_release date: 2025-02-13_
+ * system: Copy nginx pages
+
 ## 0.52.5
 _release date: 2025-02-13_
  * system: Small installation improvements
