@@ -5,7 +5,7 @@ sudo -u postgres pg_dump -c learning > /tmp/learning.dump
 
 # restore master from slave
 scp /tmp/learning.dump admin@10.0.0.1:
-ssh admin@10.0.0.1 -t 'sudo -u postgres psql -d learning < /home/admin/learning.dump'
+ssh admin@10.0.0.1 -t 'sudo -u postgres psql -d learning < /home/admin/learning.dump  &> /dev/null'
 
 # continue on slave
 sudo service postgresql stop

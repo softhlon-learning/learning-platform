@@ -77,7 +77,7 @@ chmod -R +x /usr/local/etc/rc.d/frontend
 mkdir /home/admin/scripts
 cp /root/platform/config/scripts/upgrade /home/admin/scripts
 chown -R admin:admin /home/admin/scripts
-chmod +x /home/admin/scripts/upgrade
+chmod +x /home/admin/scripts/upgrade.sh
 
 # gh authentication
 cp -r /root/.config /home/admin/

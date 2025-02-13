@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[white]%}%m%{$fg[green]%}@%n %T %{$fg[cyan]%}%8~%{$reset_color%}|$ '
 alias h=history
 alias vi=vim
-alias up='/home/admin/scripts/upgrade'
+alias up='/home/admin/scripts/upgrade.sh'
 alias sock='sockstat -46l'
 alias lpkg="pkg query '%t %n-%v' | sort -r | perl -pe 's/(\d+)/localtime(\$1)/e'"
 alias ksa="screen -ls | grep '(Attached)' | awk 'sys {screen -S \$1 -X quit}'"
