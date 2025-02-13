@@ -9,8 +9,8 @@ chmod +x /root/platform/install/common.sh
 
 # postfix
 cp /root/platform/config/postfix/main.cf.octopus /usr/local/etc/postfix/main.cf
-service postfix start
 newaliases
+service postfix start
 
 # postgres replication user
 echo "psql -c \"CREATE ROLE replication REPLICATION LOGIN PASSWORD '@z9X}r6hF£>8J2r_';\"" >> /tmp/replication-user.sh
