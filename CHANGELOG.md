@@ -2,7 +2,7 @@
 
 ## 0.52.3
 _release date: 2025-02-13_
- * system: Testing master/slave swtich
+ * system: Testing master/slave swtich 
 
 ## 0.52.2
 _release date: 2025-02-13_
