@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.15
+_release date: 2025-02-13_
+ * system: Add postgres master setup
+
 ## 0.51.14
 _release date: 2025-02-13_
  * system: Testing squid install
