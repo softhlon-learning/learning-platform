@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.18
+_release date: 2025-02-13_
+ * system: Postgres slave replication setup
+
 ## 0.51.17
 _release date: 2025-02-13_
  * general: Remove README.md
