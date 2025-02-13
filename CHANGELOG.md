@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.52.0
+_release date: 2025-02-13_
+ * system: Fix newaliases call
+ * system: Fix postgres home directory
+
 ## 0.51.19
 _release date: 2025-02-13_
  * system: Fix install-squid.sh
