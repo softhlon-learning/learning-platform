@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.51.12
+_release date: 2025-02-13_
+ * 
+
 ## 0.51.11
 _release date: 2025-02-13_
  * system: Testing octopus install
