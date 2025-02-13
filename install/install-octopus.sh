@@ -9,7 +9,7 @@ chmod +x /root/platform/install/common.sh
 
 # postfix
 cp /root/platform/config/postfix/main.cf.octopus /usr/local/etc/postfix/main.cf
-newaliases
+sudo newaliases
 service postfix start
 
 # postgres replication user
