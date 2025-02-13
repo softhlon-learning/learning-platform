@@ -36,7 +36,10 @@ mkdir /var/certs
 cp -r /root/platform/config/certs/* /var/certs
 
 # nginx
+mkdir /home/admin/nginx
 cp -r /root/platform/config/nginx/nginx.conf /usr/local/etc//nginx/nginx.conf
+cp -r /root/platform/config/nginx/page* /home/admin/nginx
+chmod o+rx -R /home/admin/nginx
 service nginx start
 
 # postgresql
