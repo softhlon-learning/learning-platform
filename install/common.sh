@@ -91,8 +91,8 @@ cp /root/platform/config/.zshrc /home/admin/
 mkdir /home/admin/.ssh
 cp /root/platform/config/.ssh/authorized_keys /home/admin/.ssh/
 chown -R admin:admin /home/admin/.ssh/
-chmod -R 600 /home/admin/.ssh/
+chmod -R 700 /home/admin/.ssh/
 
 # pf
 cp /root/platform/config/etc/pf.conf /etc/
-sudo service pf start
+#sudo service pf start

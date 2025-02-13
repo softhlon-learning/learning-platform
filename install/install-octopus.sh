@@ -9,6 +9,6 @@ chmod +x /root/platform/install/common.sh
 # postfix
 newaliases
 cp /root/platform/config/postfix/main.cf.octopus /usr/local/etc/postfix/main.cf
-service postgresql start
+service postfix start
 
 echo "Install <octopus> server stop."
