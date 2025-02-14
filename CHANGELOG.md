@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.7
+_release date: 2025-02-13_
+ * system: Add mailer.conf
+
 ## 0.52.6
 _release date: 2025-02-13_
  * system: Copy nginx pages
