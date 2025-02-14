@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.52.16
+_release date: 2025-02-14_
+ * frontend: Add policy.component
+ * frontend: Reformatting
+
 ## 0.52.15
 _release date: 2025-02-14_
  * frontend: Add about.component
