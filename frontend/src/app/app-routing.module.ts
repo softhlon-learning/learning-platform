@@ -18,7 +18,7 @@ import {ManageSubscriptionComponent} from './manage-subscription/manage-subscrip
 import {ActivateAccountComponent} from './activate-account/activate-account.component'
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
-import { UserAgreementComponent } from './user-agreement/user-agreement.component'
+import {UserAgreementComponent} from './user-agreement/user-agreement.component'
 import {PolicyComponent} from "./policy/policy.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
