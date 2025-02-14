@@ -28,7 +28,7 @@ const routes: Routes = [
     {path: 'sign-up', component: SignUpComponent},
     {path: 'activate-account', component: ActivateAccountComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'avout', component: AboutComponent},
+    {path: 'about', component: AboutComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},
