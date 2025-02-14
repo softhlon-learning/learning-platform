@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.52.10
+_release date: 2025-02-14_
+ * scripts: Add .muttrc
+ * scripts: Improved replication user creation
+
 ## 0.52.9
 _release date: 2025-02-14_
  * scripts: Add opendkim setup
