@@ -58,9 +58,13 @@ sudo -u postgres psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD '@z9X}r6hF
 mkdir /home
 # user platform
 pw adduser platform -d /home/platform -s /bin/sh -c "Learning Platform" -m -w no
+
 # user admin
 pw adduser admin -d /home/admin -s /usr/local/bin/zsh -c "Admin" -m -w no
 pw group mod wheel -m admin
+
+# user support
+pw adduser support -d /home/support -s /bin/sh -c "Support Team" -m -w no
 
 # backend
 touch /var/log/backend.log
