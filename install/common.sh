@@ -94,6 +94,9 @@ echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers
 # zsh
 cp /root/platform/config/.zshrc /home/admin/
 
+# muttrc
+cp /root/platform/config/.muttrc /home/admin/
+
 # .ssh/authorized_keys
 mkdir /home/admin/.ssh
 cp /root/platform/config/.ssh/authorized_keys /home/admin/.ssh/
@@ -115,3 +118,4 @@ cp /root/platform/config/etc/mail/opendkim.conf /usr/local/etc/mail/
 chown -R mailnull:mailnull /usr/local/etc/mail/keys/java-fullstack.tech
 chmod 550 /usr/local/etc/mail/keys/java-fullstack.tech
 chmod 600 /usr/local/etc/mail/keys/java-fullstack.tech/*
+
