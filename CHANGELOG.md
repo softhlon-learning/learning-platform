@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.13
+_release date: 2025-02-14_
+ * scripts: Update pf.conf blocking rules
+ * scripts: Add support user
+ * scripts: Reorder create users commands
+
 ## 0.52.12
 _release date: 2025-02-14_
  * scripts: Another round of testing installation scripts
