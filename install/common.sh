@@ -17,6 +17,7 @@ pkg install -y nginx
 pkg install -y node22
 pkg install -y npm-node22
 pkg install -y postfix
+pkg install -y opendkim
 pkg install -y postgresql17-server
 
 # npm packages
@@ -29,6 +30,7 @@ sysrc postfix_enable=yes
 sysrc postgresql_enable=yes
 sysrc backend_enable=yes
 sysrc frontend_enable=yes
+sysrc milteropendkim_enable=yes
 sysrc pf_enable=yes
 
 # certificates
@@ -104,3 +106,12 @@ cp /root/platform/config/etc/pf.conf /etc/
 
 # mailer
 cp /root/platform/config/etc/mail/mailer.conf /etc/mail/mailer.conf
+
+# opendkim
+pw groupmod mailnull -m postfix
+mkdir /usr/local/etc/mail/keys
+cp -r /root/platform/config/etc/mail/keys/* /usr/local/etc/mail/keys/
+cp /root/platform/config/etc/mail/opendkim.conf /usr/local/etc/mail/
+chown -R mailnull:mailnull /usr/local/etc/mail/keys/java-fullstack.tech
+chmod -R 600 /usr/local/etc/mail/keys/java-fullstack.tech
+
