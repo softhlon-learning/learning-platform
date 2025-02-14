@@ -13,10 +13,7 @@ sudo newaliases
 service postfix start
 
 # postgres replication user
-echo "psql -c \"CREATE ROLE replication REPLICATION LOGIN PASSWORD '@z9X}r6hF£>8J2r_';\"" >> /tmp/replication-user.sh
-chmod o+x /tmp/replication-user.sh
-su - postgres -c '/tmp/replication-user.sh'
-rm -fr /tmp/replication-user.sh
+sudo -u postgres -c psql -c "CREATE ROLE replication REPLICATION LOGIN PASSWORD '@z9X}r6hF£>8J2r_'";
 
 # pg_hba.conf update
 echo "host    replication     replication     10.0.0.2/32   md5" >> /var/db/postgres/data17/pg_hba.conf
