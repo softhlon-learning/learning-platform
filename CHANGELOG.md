@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.9
+_release date: 2025-02-14_
+ * scripts: Add opendkim setup
+
 ## 0.52.8
 _release date: 2025-02-14_
  * system: DKIM and DMARC POC on octopus
