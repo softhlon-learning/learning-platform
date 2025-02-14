@@ -119,3 +119,4 @@ chown -R mailnull:mailnull /usr/local/etc/mail/keys/java-fullstack.tech
 chmod 550 /usr/local/etc/mail/keys/java-fullstack.tech
 chmod 600 /usr/local/etc/mail/keys/java-fullstack.tech/*
 
+service milter-opendkim start
