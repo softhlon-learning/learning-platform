@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.14
+_release date: 2025-02-14_
+ * system: Testing latest changes
+
 ## 0.52.13
 _release date: 2025-02-14_
  * scripts: Update pf.conf blocking rules
