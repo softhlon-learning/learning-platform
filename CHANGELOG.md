@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.12
+_release date: 2025-02-14_
+ * scripts: Another round of testing installation scripts
+
 ## 0.52.11
 _release date: 2025-02-14_
  * scripts: Add: service milter-opendkim start
