@@ -101,3 +101,6 @@ chmod -R 700 /home/admin/.ssh/
 # pf
 cp /root/platform/config/etc/pf.conf /etc/
 #sudo service pf start
+
+# mailer
+cp /root/platform/config/etc/mail/mailer.conf /etc/mail/mailer.conf
