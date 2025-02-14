@@ -38,6 +38,7 @@ import {ActivateAccountComponent} from "./activate-account/activate-account.comp
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import { UserAgreementComponent } from './user-agreement/user-agreement.component'
+import {PolicyComponent} from "./policy/policy.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -68,7 +69,8 @@ import { UserAgreementComponent } from './user-agreement/user-agreement.componen
         ActivateAccountComponent,
         AboutComponent,
         ContactComponent,
-        UserAgreementComponent
+        UserAgreementComponent,
+        PolicyComponent
     ],
     imports: [
         BrowserModule,

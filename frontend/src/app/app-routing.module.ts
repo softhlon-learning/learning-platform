@@ -19,6 +19,7 @@ import {ActivateAccountComponent} from './activate-account/activate-account.comp
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import { UserAgreementComponent } from './user-agreement/user-agreement.component'
+import {PolicyComponent} from "./policy/policy.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -33,6 +34,7 @@ const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'user-agreement', component: UserAgreementComponent},
+    {path: 'policy', component: PolicyComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},
