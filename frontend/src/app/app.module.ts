@@ -36,6 +36,7 @@ import {AppFooterComponent} from "./footer/app-footer.component";
 import {LockedLectureComponent} from "./locked-lecture/locked-lecture.component";
 import {ActivateAccountComponent} from "./activate-account/activate-account.component";
 import {AboutComponent} from "./about/about.component";
+import {ContactComponent} from "./contact/contact.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -64,7 +65,8 @@ import {AboutComponent} from "./about/about.component";
         AppFooterComponent,
         LockedLectureComponent,
         ActivateAccountComponent,
-        AboutComponent
+        AboutComponent,
+        ContactComponent
     ],
     imports: [
         BrowserModule,

@@ -17,6 +17,7 @@ import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from './manage-subscription/manage-subscription.component'
 import {ActivateAccountComponent} from './activate-account/activate-account.component'
 import {AboutComponent} from "./about/about.component";
+import {ContactComponent} from "./contact/contact.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -29,6 +30,7 @@ const routes: Routes = [
     {path: 'activate-account', component: ActivateAccountComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'about', component: AboutComponent},
+    {path: 'contact', component: ContactComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},
