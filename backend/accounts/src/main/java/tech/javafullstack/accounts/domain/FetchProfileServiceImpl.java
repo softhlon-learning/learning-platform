@@ -28,7 +28,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class FetchProfileServiceImpl implements FetchProfileService {
 
-    private static final String PROFILE_NOT_FOUND = "Profile not fould";
+    private static final String PROFILE_NOT_FOUND = "Profile not found";
     private final LoadAccountRepository loadAccountRepository;
 
     /**
