@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.52.8
+_release date: 2025-02-14_
+ * system: DKIM and DMARC POC on octopus
+
 ## 0.52.7
 _release date: 2025-02-13_
  * system: Add mailer.conf
