@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.52.11
+_release date: 2025-02-14_
+ * scripts: Add: service milter-opendkim start
+ * scripts: Fix incorrect sudo command syntax
+
 ## 0.52.10
 _release date: 2025-02-14_
  * scripts: Add .muttrc
