@@ -41,7 +41,7 @@ cp -r /root/platform/config/certs/* /var/certs
 mkdir /home/admin/nginx
 cp -r /root/platform/config/nginx/nginx.conf /usr/local/etc//nginx/nginx.conf
 cp -r /root/platform/config/nginx/page* /home/admin/nginx
-chmod o+rx -R /home/admin/nginx
+chmod -R o+rx /home/admin/nginx
 service nginx start
 
 # postgresql
@@ -113,5 +113,5 @@ mkdir /usr/local/etc/mail/keys
 cp -r /root/platform/config/etc/mail/keys/* /usr/local/etc/mail/keys/
 cp /root/platform/config/etc/mail/opendkim.conf /usr/local/etc/mail/
 chown -R mailnull:mailnull /usr/local/etc/mail/keys/java-fullstack.tech
-chmod -R 600 /usr/local/etc/mail/keys/java-fullstack.tech
-
+chmod 550 /usr/local/etc/mail/keys/java-fullstack.tech
+chmod 600 /usr/local/etc/mail/keys/java-fullstack.tech/*
