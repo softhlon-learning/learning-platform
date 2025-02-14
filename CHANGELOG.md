@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.17
+_release date: 2025-02-15_
+ * account: Fixed typo in PROFILE_NOT_FOUND
+ * scripts: Update location path pattern for nginx
+ * general: Prepare draft of user agreement doc
+
 ## 0.52.16
 _release date: 2025-02-14_
  * frontend: Add policy.component
