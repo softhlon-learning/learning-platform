@@ -18,6 +18,7 @@ import {ManageSubscriptionComponent} from './manage-subscription/manage-subscrip
 import {ActivateAccountComponent} from './activate-account/activate-account.component'
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
+import { UserAgreementComponent } from './user-agreement/user-agreement.component'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -31,6 +32,7 @@ const routes: Routes = [
     {path: 'profile', component: ProfileComponent},
     {path: 'about', component: AboutComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'user-agreement', component: UserAgreementComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},

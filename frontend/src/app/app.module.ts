@@ -37,6 +37,7 @@ import {LockedLectureComponent} from "./locked-lecture/locked-lecture.component"
 import {ActivateAccountComponent} from "./activate-account/activate-account.component";
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
+import { UserAgreementComponent } from './user-agreement/user-agreement.component'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -66,7 +67,8 @@ import {ContactComponent} from "./contact/contact.component";
         LockedLectureComponent,
         ActivateAccountComponent,
         AboutComponent,
-        ContactComponent
+        ContactComponent,
+        UserAgreementComponent
     ],
     imports: [
         BrowserModule,
