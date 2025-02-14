@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.15
+_release date: 2025-02-14_
+ * frontend: Add about.component
+ * frontend: Add contact.component
+ * frontend: Add user-agreement.component
+
 ## 0.52.14
 _release date: 2025-02-14_
  * system: Testing latest changes
