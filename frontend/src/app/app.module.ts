@@ -35,6 +35,7 @@ import {NgxSpinnerModule} from 'ngx-spinner'
 import {AppFooterComponent} from "./footer/app-footer.component";
 import {LockedLectureComponent} from "./locked-lecture/locked-lecture.component";
 import {ActivateAccountComponent} from "./activate-account/activate-account.component";
+import {AboutComponent} from "./about/about.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -62,7 +63,8 @@ import {ActivateAccountComponent} from "./activate-account/activate-account.comp
         ManageSubscriptionComponent,
         AppFooterComponent,
         LockedLectureComponent,
-        ActivateAccountComponent
+        ActivateAccountComponent,
+        AboutComponent
     ],
     imports: [
         BrowserModule,

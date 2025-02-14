@@ -16,6 +16,7 @@ import {UpdatePasswordComponent} from "./update-password/update-password.compone
 import {SubscribeComponent} from "./subscribe/subscribe.component";
 import {ManageSubscriptionComponent} from './manage-subscription/manage-subscription.component'
 import {ActivateAccountComponent} from './activate-account/activate-account.component'
+import {AboutComponent} from "./about/about.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path: 'sign-up', component: SignUpComponent},
     {path: 'activate-account', component: ActivateAccountComponent},
     {path: 'profile', component: ProfileComponent},
+    {path: 'avout', component: AboutComponent},
     {path: 'subscribe', component: SubscribeComponent},
     {path: 'manage-subscription', component: ManageSubscriptionComponent},
     {path: 'reset-password', component: ResetPasswordComponent},
