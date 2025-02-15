@@ -42,6 +42,7 @@
     display: flex;
     padding: 5px;
     height: 50px;
+    font-style: italic;
 }
 
 .info-text {
@@ -64,6 +65,7 @@ span a {
 
 input {
     border: none;
+    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
     color: var(--main);
