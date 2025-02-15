@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.11
+_release date: 2025-02-16_
+ * frontend: Add ngx-cookieconsent package
+
 ## 0.53.10
 _release date: 2025-02-15_
  * frontend: Update --enrolled color (blue shade)
