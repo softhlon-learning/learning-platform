@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.1
+_release date: 2025-02-15_
+ * frontend: Add buttons to user-agreement page 
+
 ## 0.53.0
 _release date: 2025-02-15_
  * frontend: Rename policy to privacy-policy
