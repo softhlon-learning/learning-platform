@@ -4,8 +4,6 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 import {Component, Input, OnInit} from '@angular/core'
-import {CourseNavigation} from "../course-navigation/course-navigation"
-import {CourseDetailsComponent} from "../course-details/course-details.component"
 import {NgxSpinnerService} from "ngx-spinner";
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -19,6 +17,7 @@ import {NgxSpinnerService} from "ngx-spinner";
     standalone: false
 })
 export class DocumentGenericComponent implements OnInit {
+    spinnerShown = false;
     @Input()
     documentPath: string = ''
     protected readonly alert = alert;
@@ -32,16 +31,22 @@ export class DocumentGenericComponent implements OnInit {
     }
 
     /**
-     * Show spinner when video is loading.
+     * Show spinner when document is loading.
      */
     showSpinner() {
         this.spinner.show()
     }
 
     /**
-     * Hide spinner when video is loaded.
+     * Hide or show spinner.
      */
-    hideSpinner() {
-        this.spinner.hide()
+    switchSpinner() {
+        if (this.spinnerShown === true) {
+            this.spinner.hide()
+            this.spinnerShown = false;
+        } else {
+            this.spinnerShown = true;
+            this.spinner.show();
+        }
     }
 }

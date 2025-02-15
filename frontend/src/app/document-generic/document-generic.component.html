@@ -4,8 +4,16 @@
     </div>
     <div>
         <embed [src]="'https://java-fullstack-docs.hel1.your-objectstorage.com/' + documentPath | safe"
+               (load)="switchSpinner()"
                type="text/html"
                width="1000px"
                height="780px">
     </div>
 </span>
+<ngx-spinner
+        [fullScreen]="false"
+        bdColor="rgba(255,255,255,1)"
+        color="black"
+        size="large"
+        type="ball-scale-multiple">
+</ngx-spinner>
