@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.9
+_release date: 2025-02-15_
+ * frontend: Add key press support for document-generic.component
+
 ## 0.53.8
 _release date: 2025-02-15_
  * frontend: Add spinner for document loading
