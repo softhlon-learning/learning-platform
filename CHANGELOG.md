@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.8
+_release date: 2025-02-15_
+ * frontend: Add spinner for document loading
+
 ## 0.53.7
 _release date: 2025-02-15_
  * general: Add target=_blank to internal links (user-agreement.html)
