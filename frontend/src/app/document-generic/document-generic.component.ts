@@ -13,7 +13,7 @@ import {NgxSpinnerService} from "ngx-spinner";
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Component({
-    selector: 'document-lecture',
+    selector: 'document-generic',
     templateUrl: './document-generic.component.html',
     styleUrls: ['./document-generic.component.css'],
     standalone: false
