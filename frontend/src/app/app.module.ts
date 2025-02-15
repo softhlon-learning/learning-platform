@@ -40,6 +40,8 @@ import {ContactComponent} from "./contact/contact.component";
 import {UserAgreementComponent} from './user-agreement/user-agreement.component'
 import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
 import {DocumentGenericComponent} from "./document-generic/document-generic.component";
+import {NgcCookieConsentModule} from 'ngx-cookieconsent'
+import {cookieConfig} from './cookie-consent/cookie-consent'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -79,7 +81,8 @@ import {DocumentGenericComponent} from "./document-generic/document-generic.comp
         AppRoutingModule,
         ReactiveFormsModule,
         NgxStripeModule.forRoot(),
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        NgcCookieConsentModule.forRoot(cookieConfig)
     ],
     providers: [
         AccountsService,
