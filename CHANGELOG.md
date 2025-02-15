@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.18
+_release date: 2025-02-15_
+ * general: Create java-fullstack-docs bucket
+ * general: Upload user-agreement.html to bucket
+ * general: Display user-agreement.html
+
 ## 0.52.17
 _release date: 2025-02-15_
  * account: Fixed typo in PROFILE_NOT_FOUND
