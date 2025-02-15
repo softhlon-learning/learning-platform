@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.4
+_release date: 2025-02-15_
+ * frontend: Integrate user-agreement with document-generic
+ * frontend: Integrate privacy-policy with document-generic
+
 ## 0.53.3
 _release date: 2025-02-15_
  * frontend: Add document-generic.component
