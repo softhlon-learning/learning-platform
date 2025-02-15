@@ -38,7 +38,7 @@ import {ActivateAccountComponent} from "./activate-account/activate-account.comp
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {UserAgreementComponent} from './user-agreement/user-agreement.component'
-import {PolicyComponent} from "./policy/policy.component";
+import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -70,7 +70,7 @@ import {PolicyComponent} from "./policy/policy.component";
         AboutComponent,
         ContactComponent,
         UserAgreementComponent,
-        PolicyComponent
+        PrivacyPolicyComponent
     ],
     imports: [
         BrowserModule,

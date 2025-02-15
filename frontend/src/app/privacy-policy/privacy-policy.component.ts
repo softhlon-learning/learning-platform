@@ -10,12 +10,12 @@ import {Component, OnInit} from '@angular/core'
 // ---------------------------------------------------------------------------------------------------------------------
 
 @Component({
-    selector: 'policy',
-    templateUrl: './policy.component.html',
-    styleUrls: ['./policy.component.css'],
+    selector: 'privacy-policy',
+    templateUrl: './privacy-policy.component.html',
+    styleUrls: ['./privacy-policy.component.css'],
     standalone: false
 })
-export class PolicyComponent implements OnInit {
+export class PrivacyPolicyComponent implements OnInit {
     constructor() {
     }
 
