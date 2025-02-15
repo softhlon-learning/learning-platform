@@ -99,7 +99,6 @@ export class ProfileComponent implements OnInit {
      */
     private handleSaveProfileSuccess() {
         this.error = undefined
-        this.accountDeleted = true
         this.success = 'Profile successfully saved'
     }
 
