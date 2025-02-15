@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.6
+_release date: 2025-02-15_
+ * general: Created about.html
+ * general: Integrate about.component with document-generic
+
 ## 0.53.5
 _release date: 2025-02-15_
  * general: Document user-agreement.html and privacy-policy.html
