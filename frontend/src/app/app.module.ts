@@ -39,6 +39,7 @@ import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {UserAgreementComponent} from './user-agreement/user-agreement.component'
 import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
+import {DocumentGenericComponent} from "./document-generic/document-generic.component";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -70,7 +71,8 @@ import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component"
         AboutComponent,
         ContactComponent,
         UserAgreementComponent,
-        PrivacyPolicyComponent
+        PrivacyPolicyComponent,
+        DocumentGenericComponent
     ],
     imports: [
         BrowserModule,

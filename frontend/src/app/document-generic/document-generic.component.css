@@ -1,0 +1,17 @@
+* {
+    overflow: clip;
+}
+
+button {
+    width: 14em;
+}
+
+div {
+    text-align: center;
+    width: 1066px;
+}
+
+div div {
+    display: flex;
+    justify-content: space-between;
+}
