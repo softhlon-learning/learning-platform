@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.52.19
+_release date: 2025-02-15_
+ * scripts: Create user report
+ * frontend: Adjust display width for user agreement
+ * general: Improve  user agreement styling
+
 ## 0.52.18
 _release date: 2025-02-15_
  * general: Create java-fullstack-docs bucket
