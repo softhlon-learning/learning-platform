@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.2
+_release date: 2025-02-15_
+ * frontend: Updated app title (Java Fullstack Academy)
+ * general: Prepare draft of user agreement doc
+
 ## 0.53.1
 _release date: 2025-02-15_
  * frontend: Add buttons to user-agreement page 
