@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.10
+_release date: 2025-02-15_
+ * frontend: Update --enrolled color (blue shade)
+ * frontend: Improve profile styling
+
 ## 0.53.9
 _release date: 2025-02-15_
  * frontend: Add key press support for document-generic.component
