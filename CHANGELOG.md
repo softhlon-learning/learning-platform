@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.0
+_release date: 2025-02-15_
+ * frontend: Rename policy to privacy-policy
+ * scripts: Update location path pattern for nginx (privacy-policy)
+
 ## 0.52.19
 _release date: 2025-02-15_
  * scripts: Create user report
