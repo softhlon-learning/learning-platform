@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.7
+_release date: 2025-02-15_
+ * general: Add target=_blank to internal links (user-agreement.html)
+
 ## 0.53.6
 _release date: 2025-02-15_
  * general: Created about.html
