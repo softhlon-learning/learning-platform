@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.5
+_release date: 2025-02-15_
+ * general: Document user-agreement.html and privacy-policy.html
+ * general: Update user-agreement.html
+
 ## 0.53.4
 _release date: 2025-02-15_
  * frontend: Integrate user-agreement with document-generic
