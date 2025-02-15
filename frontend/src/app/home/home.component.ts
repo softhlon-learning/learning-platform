@@ -21,7 +21,7 @@ import {GO_BACK_APTH_COOKIE, REDIRECT_COOKIE} from "../common/constants";
     standalone: false
 })
 export class HomeComponent implements OnInit {
-    title = 'Java/Fullstack Developer Academy'
+    title = 'Java Fullstack Academy'
     courses?: Course[]
 
     constructor(
