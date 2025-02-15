@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.3
+_release date: 2025-02-15_
+ * frontend: Add document-generic.component
+
 ## 0.53.2
 _release date: 2025-02-15_
  * frontend: Updated app title (Java Fullstack Academy)
