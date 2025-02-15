@@ -3,8 +3,10 @@
 // Unauthorized copying of this file via any medium is strictly prohibited.
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {Component, Input, OnInit} from '@angular/core'
+import {Component, HostListener, Input, OnInit} from '@angular/core'
 import {NgxSpinnerService} from "ngx-spinner";
+import {Router} from "@angular/router";
+import { KeyboardInputCourseToc } from './keyboard-input';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -23,11 +25,22 @@ export class DocumentGenericComponent implements OnInit {
     protected readonly alert = alert;
 
     constructor(
-        private spinner: NgxSpinnerService,) {
+        private keyboardInputToc: KeyboardInputCourseToc,
+        private router: Router,
+        private spinner: NgxSpinnerService) {
     }
 
     ngOnInit(): void {
         this.showSpinner()
+    }
+
+    /**
+     * Pressed key events handler.
+     * @param event Pressed key event
+     */
+    @HostListener('window:keydown', ['$event'])
+    keyboardInput(event: any) {
+        this.keyboardInputToc.keyboardInput(this, event)
     }
 
     /**
@@ -48,5 +61,12 @@ export class DocumentGenericComponent implements OnInit {
             this.spinnerShown = true;
             this.spinner.show();
         }
+    }
+
+    /**
+     * Move to /home page.
+     */
+    moveToHome() {
+        this.router.navigate(['/home'])
     }
 }
