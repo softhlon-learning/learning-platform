@@ -20,11 +20,4 @@ import java.util.UUID;
  */
 @Repository
 interface ContactMessagesJpaRepository extends CrudRepository<ContactMessageEntity, UUID> {
-
-    Optional<AccountEntity> findByEmail(
-          String email);
-
-    boolean existsByEmail(
-          String email);
-
 }
