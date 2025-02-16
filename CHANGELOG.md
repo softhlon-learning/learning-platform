@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.14
+_release date: 2025-02-16_
+ * scripts: Set proxy_buffers for nginx
+
 ## 0.53.13
 _release date: 2025-02-16_
  * frontend: Configure cookie domain (for consent) via environment
