@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.16
+_release date: 2025-02-16_
+ * frontend: Adjust view height for document
+ * frontend: Adjust sign-in styling
+
 ## 0.53.15
 _release date: 2025-02-16_
  * frontend: Improve document height view
