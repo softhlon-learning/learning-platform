@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.12
+_release date: 2025-02-16_
+ * frontend: Experimental configuration for cookie consent
+ * frontend: Tune cookie consent
+
 ## 0.53.11
 _release date: 2025-02-16_
  * frontend: Add ngx-cookieconsent package
