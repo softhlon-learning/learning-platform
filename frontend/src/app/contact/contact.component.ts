@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
     error: string | undefined
     contactForm = this.formBuilder.group({
         subject: '',
+        email: '',
         message: ''
     })
 
