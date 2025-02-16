@@ -53,6 +53,17 @@ CREATE TABLE _accounts.account_activation_tokens (
 
 CREATE INDEX account_activation_tokens__token_index ON _accounts.reset_password_tokens (token);
 
+CREATE TABLE _accounts.contact_messages (
+    id uuid DEFAULT gen_random_uuid(),
+    account_id uuid,
+    subject VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    message VARCHAR NOT NULL,
+    expire_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
 -- _courses schema
 
 CREATE SCHEMA _courses;
