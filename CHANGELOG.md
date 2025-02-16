@@ -1,8 +1,9 @@
 # Learning Platform Changelog
 
-## 0.54.0
+## 0.54.1
 _release date: 2025-02-16_
- *
+ * accounts: Implement PersistContactMessageRepositoryAdapter
+ * accounts: Add AddContactMessageService
 
 ## 0.54.0
 _release date: 2025-02-16_
