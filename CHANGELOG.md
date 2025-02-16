@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.19
+_release date: 2025-02-16_
+ * frontend: Add contact form
+ * accounts: Create _accounts.contact_messages table
+
 ## 0.53.18
 _release date: 2025-02-16_
  * frontend: Adjust update-password styling and add Home button
