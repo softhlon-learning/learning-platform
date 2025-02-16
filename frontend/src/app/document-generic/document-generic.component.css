@@ -15,3 +15,7 @@ div div {
     display: flex;
     justify-content: space-between;
 }
+
+.document {
+    height: 85vh;
+}
