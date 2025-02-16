@@ -172,3 +172,15 @@ a {
     cursor: pointer;
     text-decoration: none;
 }
+
+.cc-window {
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.cc-bottom {
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+}
