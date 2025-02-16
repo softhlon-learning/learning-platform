@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.53.15
+_release date: 2025-02-16_
+ * frontend: Improve document height view
+ * general: Clean up document styles
+
 ## 0.53.14
 _release date: 2025-02-16_
  * scripts: Set proxy_buffers for nginx
