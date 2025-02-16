@@ -1,10 +1,11 @@
 import {NgcCookieConsentConfig} from "ngx-cookieconsent";
+import {environment} from "../../environment/environment"
 
 export const cookieConfig:NgcCookieConsentConfig = {
     "cookie": {
-        "domain": "localhost",
+        "domain": environment.cookieDomain
     },
-    "position": "bottom",
+    "position": "bottom-right",
     "theme": "classic",
     "palette": {
         "popup": {
