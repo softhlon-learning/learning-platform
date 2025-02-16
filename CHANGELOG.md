@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.53.13
+_release date: 2025-02-16_
+ * frontend: Configure cookie domain (for consent) via environment
+
 ## 0.53.12
 _release date: 2025-02-16_
  * frontend: Experimental configuration for cookie consent
