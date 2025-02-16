@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.0
+_release date: 2025-02-16_
+ * accounts: Add ContactMessagesJpaRepository and entity
+ * accounts: Create PersistContactMessageRepository
+
 ## 0.53.19
 _release date: 2025-02-16_
  * frontend: Add contact form
