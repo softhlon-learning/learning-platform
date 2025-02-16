@@ -2,7 +2,7 @@ import {NgcCookieConsentConfig} from "ngx-cookieconsent";
 
 export const cookieConfig:NgcCookieConsentConfig = {
     "cookie": {
-        "domain": "java-fullstack.tech"
+        "domain": "localhost",
     },
     "position": "bottom",
     "theme": "classic",
