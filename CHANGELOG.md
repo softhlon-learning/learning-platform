@@ -1,9 +1,14 @@
 # Learning Platform Changelog
 
+## 0.53.17
+_release date: 2025-02-16_
+ * frontend: Adjust sign-up styling and add Home button
+ * frontend: Adjust reset-password styling and add Home button
+
 ## 0.53.16
 _release date: 2025-02-16_
  * frontend: Adjust view height for document
- * frontend: Adjust sign-in styling
+ * frontend: Adjust sign-in styling and add Home button
 
 ## 0.53.15
 _release date: 2025-02-16_
