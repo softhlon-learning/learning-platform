@@ -2,6 +2,10 @@
 
 ## 0.54.0
 _release date: 2025-02-16_
+ *
+
+## 0.54.0
+_release date: 2025-02-16_
  * accounts: Add ContactMessagesJpaRepository and entity
  * accounts: Create PersistContactMessageRepository
 
