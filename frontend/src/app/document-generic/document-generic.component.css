@@ -35,14 +35,14 @@ div div {
 
 @media only screen and (min-width: 1000px) {
     .document {
-        width: 700px;
+        width: 900px;
         height: 82vh;
     }
 }
 
 @media only screen and (min-width: 1500px) {
     .document {
-        width: 1000px;
+        width: 1300px;
         height: 82vh;
     }
 }
