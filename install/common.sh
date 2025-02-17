@@ -19,6 +19,7 @@ pkg install -y npm-node22
 pkg install -y postfix
 pkg install -y opendkim
 pkg install -y postgresql17-server
+pkg install -y openssh-portable
 
 # npm packages
 npm install -y -g @angular/cli

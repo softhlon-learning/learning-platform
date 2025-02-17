@@ -14,4 +14,6 @@ cloned_interfaces="vlan0"
 ifconfig_vlan0="inet 10.0.0.2/24 vlan 4000 vlandev igb0"
 
 zfs_enable="yes"
-sshd_enable="yes"
+syslogd_flags="-ss"
+sshd_enable="no"
+openssh_enable="yes"
