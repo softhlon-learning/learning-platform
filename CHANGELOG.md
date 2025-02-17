@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.54.13
+_release date: 2025-02-17_
+ * frontend: Add top and bottom margins for footer
+ * frontend: Adjust document-generic width
+ * frontend: Fix document-generic width
+
 ## 0.54.12
 _release date: 2025-02-17_
  * frontend: Remove css zoom instructions
