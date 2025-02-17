@@ -126,6 +126,8 @@ export class ProfileComponent implements OnInit {
     private handleDeleteAccountSuccess() {
         this.error = undefined
         this.success = 'Account has been deleted'
+        this.accountDeleted = true;
+        this.accountToBeDeleted = false;
     }
 
     /**
