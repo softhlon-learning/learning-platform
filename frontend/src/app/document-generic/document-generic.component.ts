@@ -12,6 +12,8 @@ import { KeyboardInputCourseToc } from './keyboard-input';
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
 
+const HIDE_ERROR_DELAY = 1500
+
 @Component({
     selector: 'document-generic',
     templateUrl: './document-generic.component.html',
@@ -47,20 +49,11 @@ export class DocumentGenericComponent implements OnInit {
      * Show spinner when document is loading.
      */
     showSpinner() {
-        this.spinner.show()
-    }
 
-    /**
-     * Hide or show spinner.
-     */
-    switchSpinner() {
-        if (this.spinnerShown === true) {
+        this.spinner.show()
+        setTimeout(() => {
             this.spinner.hide()
-            this.spinnerShown = false;
-        } else {
-            this.spinnerShown = true;
-            this.spinner.show();
-        }
+        }, HIDE_ERROR_DELAY)
     }
 
     /**
