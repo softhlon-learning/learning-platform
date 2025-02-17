@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.54.7
+_release date: 2025-02-17_
+ * accounts: Validate POST /account/contact-message input data
+
 ## 0.54.6
 _release date: 2025-02-17_
  * system: Testing new system parameters
