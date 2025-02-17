@@ -93,3 +93,18 @@ export class Profile {
         this.email = email
     }
 }
+
+/**
+ * Add contact message request body.
+ */
+export class AddContactMessageRequest {
+    subject: string
+    email: string
+    message: string
+
+    constructor(subject: string, email: string, message: string) {
+        this.subject = subject
+        this.email = email
+        this.message = message
+    }
+}
