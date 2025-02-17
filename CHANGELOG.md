@@ -1,8 +1,15 @@
 # Learning Platform Changelog
 
+## 0.54.3
+_release date: 2025-02-16_
+ * frontend: Add AddContactMessageRequest model
+ * frontend: Add sendContactMessage service method
+ * application: Add /account/contact-message to permitted paths
+
 ## 0.54.2
 _release date: 2025-02-16_
- * 
+ * accounts: Implement AddContactMessageServiceImpl
+ * accounts: Implement AddContactMessageController
 
 ## 0.54.1
 _release date: 2025-02-16_
