@@ -1,8 +1,13 @@
 # Learning Platform Changelog
 
+## 0.54.10
+_release date: 2025-02-17_
+ * frontend: Fix spinner show/hide in document-generic
+
 ## 0.54.9
 _release date: 2025-02-17_
- * 
+ * frontend: Improve delete confirmation form
+ * frontend: Add delete account confirmation
 
 ## 0.54.8
 _release date: 2025-02-17_
