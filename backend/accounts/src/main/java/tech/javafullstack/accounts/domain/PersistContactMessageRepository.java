@@ -39,6 +39,7 @@ public interface PersistContactMessageRepository {
     }
 
     record PersistContactMessageRequest(
+          UUID accountId,
           String subject,
           String email,
           String message) {}

@@ -53,6 +53,7 @@ class PersistContactMessageRepositoryAdapter implements PersistContactMessageRep
           PersistContactMessageRequest request) {
 
         return ContactMessageEntity.builder()
+              .accountId(request.accountId())
               .subject(request.subject())
               .email(request.email())
               .message(request.message())

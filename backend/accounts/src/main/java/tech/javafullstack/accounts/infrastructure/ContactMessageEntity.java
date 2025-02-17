@@ -29,6 +29,7 @@ class ContactMessageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private UUID accountId;
     private String subject;
     private String email;
     private String message;

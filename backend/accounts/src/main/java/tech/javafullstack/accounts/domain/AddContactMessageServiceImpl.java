@@ -37,18 +37,19 @@ class AddContactMessageServiceImpl implements AddContactMessageService {
      */
     @Override
     public Result execute(
-          Request contacMessage) {
+          Request request) {
 
-        var validationResult = validateInput(contacMessage);
+        var validationResult = validateInput(request);
 
         if (validationResult != null)
             return validationResult;
 
         var result = persistContactMessageRepository.execute(
               new PersistContactMessageRequest(
-                    contacMessage.subject(),
-                    contacMessage.email(),
-                    contacMessage.message())
+                    request.accountId(),
+                    request.subject(),
+                    request.email(),
+                    request.message())
         );
 
         return switch (result) {

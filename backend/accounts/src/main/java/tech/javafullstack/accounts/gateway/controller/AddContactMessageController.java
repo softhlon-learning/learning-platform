@@ -20,6 +20,7 @@ import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Failed
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.MessagePolicyFailed;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Succeeded;
 import tech.javafullstack.common.hexagonal.RestApiAdapter;
+import tech.javafullstack.common.security.AuthenticationContext;
 
 import static tech.javafullstack.accounts.gateway.controller.RestResources.ADD_CONTACT_MESSAGE;
 import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
@@ -38,6 +39,7 @@ import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 class AddContactMessageController {
 
     private final AddContactMessageService service;
+    private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
 
     /**
@@ -54,7 +56,13 @@ class AddContactMessageController {
         log.info("controller | request / Activate account, {}",
               request);
 
-        var result = service.execute(new Request(request.subject(), request.email(), request.message()));
+        var result = service.execute(
+              new Request(
+                    authContext.accountId(),
+                    request.subject(),
+                    request.email(),
+                    request.message()));
+
         return switch (result) {
             case Succeeded() -> successOkBody();
             case MessagePolicyFailed(String message) -> badRequestBody(httpRequest, message);

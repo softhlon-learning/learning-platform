@@ -7,6 +7,8 @@ package tech.javafullstack.accounts.domain;
 
 import tech.javafullstack.common.hexagonal.InboundPort;
 
+import java.util.UUID;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
 // ---------------------------------------------------------------------------------------------------------------------
@@ -36,6 +38,7 @@ public interface AddContactMessageService {
     }
 
     record Request(
+          UUID accountId,
           String subject,
           String email,
           String message) {
