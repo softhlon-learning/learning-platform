@@ -1,7 +1,12 @@
 # Learning Platform Changelog
 
+## 0.54.4
+_release date: 2025-02-17_
+ * frontend: Integrate contact form with service
+ * frontend: Add send email info text
+
 ## 0.54.3
-_release date: 2025-02-16_
+_release date: 2025-02-17_
  * frontend: Add AddContactMessageRequest model
  * frontend: Add sendContactMessage service method
  * application: Add /account/contact-message to permitted paths
