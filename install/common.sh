@@ -34,6 +34,9 @@ sysrc frontend_enable=yes
 sysrc milteropendkim_enable=yes
 sysrc pf_enable=yes
 
+# sysctl.conf
+cp /root/platform/config/etc/sysctl.conf /etc/sysctl.conf
+
 # certificates
 mkdir /var/certs
 cp -r /root/platform/config/certs/* /var/certs
