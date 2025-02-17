@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.15
+_release date: 2025-02-17_
+ * frontend: Fix broken justification on toc and details
+ * frontend: Little tweak for home grid
+
 ## 0.54.14
 _release date: 2025-02-17_
  * frontend: Tune home grid setup
