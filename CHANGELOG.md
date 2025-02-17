@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.54.5
+_release date: 2025-02-17_
+ * scripts: Add sysctl.conf
+ * scripts: Security updated in rc.conf files
+ * scripts: Replace original sysctl.conf on installation
+
 ## 0.54.4
 _release date: 2025-02-17_
  * frontend: Integrate contact form with service
