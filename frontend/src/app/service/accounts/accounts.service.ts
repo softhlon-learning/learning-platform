@@ -10,6 +10,7 @@ import {
     ActivateAccountRequest,
     Profile,
     ResetPasswordRequest,
+    SendContactMessageRequest,
     SignInRequest,
     SignUpRequest,
     UpdatePasswordRequest,
@@ -28,6 +29,7 @@ const DELETE_ACCOUNT_PATH = '/api/v1/account'
 const PROFILE_PATH = '/api/v1/account/profile'
 const RESET_ACCOUNT_PATH = '/api/v1/account/reset-password'
 const UPDATE_PASSWORD_ACCOUNT_PATH = '/api/v1/account/update-password'
+const SEND_CONTACT_MESSAGE_PATH = '/api/v1/account/contact-message'
 
 const HTTP_OPTIONS = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -174,6 +176,26 @@ export class AccountsService {
             .post<ArrayBuffer>(
                 UPDATE_PASSWORD_ACCOUNT_PATH,
                 updatePasswordRequest)
+            .pipe()
+    }
+
+    /**
+     * Sends POST /api/v1/account/contact-message.
+     * @param subject Message Subject
+     * @param email Contact email
+     * @param message Message text
+     */
+    sendContactMessage(subject: string, email: string, message: string): Observable<ArrayBuffer> {
+        const sendContactMessageRequest =
+            new SendContactMessageRequest(
+                subject,
+                email,
+                message);
+
+        return this.http
+            .post<ArrayBuffer>(
+                SEND_CONTACT_MESSAGE_PATH,
+                sendContactMessageRequest)
             .pipe()
     }
 

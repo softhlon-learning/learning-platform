@@ -97,7 +97,7 @@ export class Profile {
 /**
  * Add contact message request body.
  */
-export class AddContactMessageRequest {
+export class SendContactMessageRequest {
     subject: string
     email: string
     message: string
