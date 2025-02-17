@@ -16,7 +16,33 @@ div div {
     justify-content: space-between;
 }
 
-.document {
-    width: 90hh;
-    height: 82vh;
+.main {
+    display: flex; justify-content: center; flex-direction: column;
+    text-align: center;
+}
+
+.document-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 500px) {
+    .document {
+        width: 500px;
+        height: 82vh;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .document {
+        width: 700px;
+        height: 82vh;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .document {
+        width: 1000px;
+        height: 82vh;
+    }
 }
