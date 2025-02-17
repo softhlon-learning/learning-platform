@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.6
+_release date: 2025-02-17_
+ * system: Testing new system parameters
+ * scripts: Remove incompatible parameter from sysctl.conf
+
 ## 0.54.5
 _release date: 2025-02-17_
  * scripts: Add sysctl.conf
