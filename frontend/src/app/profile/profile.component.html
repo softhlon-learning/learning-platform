@@ -12,14 +12,26 @@
             </div>
         </div>
         <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
-            <div class="form">
+            <div *ngIf="accountToBeDeleted == false" class="form">
                 <div *ngIf="!accountDeleted">
                     <div class="name">
                         <input formControlName="name" placeholder="Name" type="text">
                     </div>
                 </div>
                 <button *ngIf="!accountDeleted" class="submit" type="submit">Save</button>
-                <button (click)="this.deleteAccount()" *ngIf="!accountDeleted" class="delete">Delete Account</button>
+                <button (click)="deleteAccount()" *ngIf="!accountDeleted" class="delete">Delete Account</button>
+                <div class="feedback">
+                    <div *ngIf="error" class="error">{{ error }}</div>
+                    <div *ngIf="success" class="success">{{ success }}</div>
+                </div>
+            </div>
+            <div *ngIf="accountToBeDeleted == true" class="form">
+                <div style="text-align: center; margin-bottom: 50px">Are you sure you want to delete your account? This
+                    operation is irreversible
+                </div>
+                <button class="cancel" (click)="doNotDeleteAccount()">No, do not delete</button>
+                <button (click)="confirmDeleteAccount()" *ngIf="!accountDeleted" class="delete">Yes, delete account
+                </button>
                 <div class="feedback">
                     <div *ngIf="error" class="error">{{ error }}</div>
                     <div *ngIf="success" class="success">{{ success }}</div>

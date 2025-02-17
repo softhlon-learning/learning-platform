@@ -83,6 +83,7 @@ button.submit {
 }
 
 button.delete {
+    background-color: var(--delete);
     margin: 0.2rem;
     width: 340px;
     border: 1px var(--darkgrey) dashed;
@@ -92,6 +93,10 @@ button.cancel {
     margin: 0.2rem;
     width: 340px;
     border: 1px var(--darkgrey) dashed;
+}
+
+button.delete:hover {
+    background-color: var(--error);
 }
 
 .form {

@@ -28,7 +28,9 @@ export class ProfileComponent implements OnInit {
     error: string | undefined
     success: string | undefined
     accountDeleted: boolean = false
+    accountToBeDeleted: boolean = false
     profile?: Profile
+
     profileForm = this.formBuilder.group({
         name: ''
     })
@@ -75,6 +77,21 @@ export class ProfileComponent implements OnInit {
      * Delete account.
      */
     deleteAccount(): void {
+        this.accountToBeDeleted = true;
+    }
+
+    /**
+     * Delete account.
+     */
+    doNotDeleteAccount(): void {
+        this.accountToBeDeleted = false;
+        this.router.navigate(['/profile'])
+    }
+
+    /**
+     * Delete account.
+     */
+    confirmDeleteAccount(): void {
         this.accountsService.deleteAccount().subscribe({
             next: () => this.handleDeleteAccountSuccess(),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
