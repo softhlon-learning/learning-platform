@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.54.11
+_release date: 2025-02-17_
+ * frontend: Replace embed with iframe (document-generic)
+
 ## 0.54.10
 _release date: 2025-02-17_
  * frontend: Fix spinner show/hide in document-generic
