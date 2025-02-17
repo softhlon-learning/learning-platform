@@ -1,10 +1,15 @@
 /* coursesComponent's private CSS styles */
 
-.grid-container {
-    display: grid;
-}
 
-@media only screen and (min-width: 800px) {
+
+@media only screen and (min-width: 700px) {
+    .grid-container {
+        margin-left: 20px;
+        display: grid;
+        grid-template-columns: 2fr;
+        gap: 0px;
+        width: 200px;
+    }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
     .item3 {grid-area: 2 / span 1;}
@@ -15,7 +20,14 @@
     .item8 {grid-area: 4 / span 1;}
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
+    .grid-container {
+        margin-left: 0px;
+        display: grid;
+        grid-template-columns: 2fr;
+        gap: 0px;
+        width: 100%;
+    }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
     .item3 {grid-area: 1 / span 1;}
@@ -27,6 +39,13 @@
 }
 
 @media only screen and (min-width: 1500px) {
+    .grid-container {
+        margin-left: 0px;
+        display: grid;
+        grid-template-columns: 2fr;
+        gap: 0px;
+        width: 100%;
+    }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
     .item3 {grid-area: 1 / span 1;}

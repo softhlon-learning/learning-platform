@@ -63,6 +63,11 @@ body {
     overflow-y: scroll;
 }
 
+.main {
+    display: flex; justify-content: center; flex-direction: column;
+    text-align: center;
+}
+
 button {
     border: none;
     border-radius: 8px;

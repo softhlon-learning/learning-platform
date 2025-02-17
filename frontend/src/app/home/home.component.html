@@ -1,37 +1,14 @@
-<h1>{{ title }}</h1>
-<div *ngIf="courses" class="grid-container">
-
-    <div class="item1">
-        <course-tile [course]="courses[0]"></course-tile>
+<span class="main">
+    <h1>{{ title }}</h1>
+    <div *ngIf="courses" class="grid-container">
+        <course-tile class="item1" [course]="courses[0]"></course-tile>
+        <course-tile class="item2" [course]="courses[1]"></course-tile>
+        <course-tile class="item3" [course]="courses[2]"></course-tile>
+        <course-tile class="item4" [course]="courses[3]"></course-tile>
+        <course-tile class="item5" [course]="courses[4]"></course-tile>
+        <course-tile class="item6" [course]="courses[5]"></course-tile>
+        <course-tile class="item7" [course]="courses[6]"></course-tile>
+        <course-tile class="item8" [course]="courses[7]"></course-tile>
     </div>
-
-    <div class="item2">
-        <course-tile [course]="courses[1]"></course-tile>
-    </div>
-
-    <div class="item3">
-        <course-tile [course]="courses[2]"></course-tile>
-    </div>
-
-    <div class="item4">
-        <course-tile [course]="courses[3]"></course-tile>
-    </div>
-
-    <div class="item5">
-        <course-tile [course]="courses[4]"></course-tile>
-    </div>
-
-    <div class="item6">
-        <course-tile [course]="courses[5]"></course-tile>
-    </div>
-
-    <div class="item7">
-        <course-tile [course]="courses[6]"></course-tile>
-    </div>
-
-    <div class="item8">
-        <course-tile [course]="courses[7]"></course-tile>
-    </div>
-
-</div>
+</span>
 <app-footer></app-footer>

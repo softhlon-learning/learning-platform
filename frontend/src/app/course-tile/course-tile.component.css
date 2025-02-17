@@ -3,7 +3,6 @@ button.course-box-item {
     height: 300px;
     width: 300px;
     border-radius: 10px;
-    margin: 10px;
     font-size: 30px;
     font-weight: bold;
     border: 1px var(--darkgrey) dashed;
@@ -23,7 +22,6 @@ button:hover.course-box-item {
     height: 300px;
     width: 300px;
     border-radius: 10px;
-    margin: 10px;
     font-size: 30px;
     font-weight: bold;
     border: 1px var(--darkgrey) dashed;
