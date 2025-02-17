@@ -51,8 +51,8 @@ export class ContactComponent implements OnInit {
             return
         }
 
-        const {subject = '', message = ''} = this.contactForm.value
-        this.accountsService.resetPassword(subject || '').subscribe({
+        const {subject = '', email = '', message = ''} = this.contactForm.value
+        this.accountsService.sendContactMessage(subject || '', email || '', message || '').subscribe({
             next: () => this.handleSuccess(),
             error: (error) => this.handleError(error, DEFAULT_ERROR_MESSAGE),
         })

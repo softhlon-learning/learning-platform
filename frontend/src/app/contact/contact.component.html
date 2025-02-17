@@ -11,13 +11,13 @@
         <form (ngSubmit)="onSubmit()" *ngIf="!this.success" [formGroup]="contactForm">
             <div class="form">
                 <div class="subject">
-                    <input contactForm="subject" placeholder="Subject" type="text">
+                    <input formControlName="subject" placeholder="Subject" type="text">
                 </div>
                 <div class="email">
-                    <input contactForm="email" placeholder="Your email" type="text">
+                    <input formControlName="email" placeholder="Your email" type="text">
                 </div>
                 <div class="message">
-                    <textarea contactForm="message" multiple maxlength="400"></textarea>
+                    <textarea formControlName="message" multiple maxlength="400"></textarea>
                 </div>
                 <button class="submit" type="submit">Submit</button>
                 <div class="error">{{ error }}</div>
