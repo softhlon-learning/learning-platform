@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.8
+_release date: 2025-02-17_
+ * accounts: Persist account id with contact message (if possible)
+ * accounts: Rename AddContactMessage* to SendContactMessage*
+
 ## 0.54.7
 _release date: 2025-02-17_
  * accounts: Validate POST /account/contact-message input data
