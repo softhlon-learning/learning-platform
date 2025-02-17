@@ -49,7 +49,6 @@ export class DocumentGenericComponent implements OnInit {
      * Show spinner when document is loading.
      */
     showSpinner() {
-
         this.spinner.show()
         setTimeout(() => {
             this.spinner.hide()
