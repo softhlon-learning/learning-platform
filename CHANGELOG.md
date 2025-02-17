@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.54.16
+_release date: 2025-02-18_
+ * frontend: Update document-generic width for iPad
+ * frontend: Increase gap for course tiles
+ * frontend: Update styling for document-generic and footer
+
 ## 0.54.15
 _release date: 2025-02-17_
  * frontend: Fix broken justification on toc and details
