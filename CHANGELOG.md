@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.54.12
+_release date: 2025-02-17_
+ * frontend: Remove css zoom instructions
+ * frontend: Add experimental grid layout on home screen
+ * frontend: Remove absolute positioning for footer
+
 ## 0.54.11
 _release date: 2025-02-17_
  * frontend: Replace embed with iframe (document-generic)
