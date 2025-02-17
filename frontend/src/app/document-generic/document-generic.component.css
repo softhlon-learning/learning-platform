@@ -26,9 +26,16 @@ div div {
     justify-content: center;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
     .document {
         width: 500px;
+        height: 82vh;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .document {
+        width: 700px;
         height: 82vh;
     }
 }
