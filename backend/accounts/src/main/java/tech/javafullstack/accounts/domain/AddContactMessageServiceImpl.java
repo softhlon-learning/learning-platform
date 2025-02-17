@@ -12,6 +12,7 @@ package tech.javafullstack.accounts.domain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Failed;
+import tech.javafullstack.accounts.domain.AddContactMessageService.Result.MessagePolicyFailed;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Succeeded;
 import tech.javafullstack.accounts.domain.PersistContactMessageRepository.PersistContactMessageRequest;
 import tech.javafullstack.accounts.domain.PersistContactMessageRepository.PersistContactMessageResult.ContactMessagePersisted;
@@ -23,6 +24,12 @@ import tech.javafullstack.accounts.domain.PersistContactMessageRepository.Persis
 @Service
 @RequiredArgsConstructor
 class AddContactMessageServiceImpl implements AddContactMessageService {
+    private static final String SUBJECT_IS_BLANK = "Subject is blank";
+    private static final String EMAIL_IS_BLANK = "Email is blank";
+    private static final String MESSAGE_IS_BLANK = "Message is blank";
+    private static final String EMAIL_INVALID_FORMAT = "Email is not in right format";
+
+    private final EmailValidationService emailValidationService;
     private final PersistContactMessageRepository persistContactMessageRepository;
 
     /**
@@ -31,6 +38,11 @@ class AddContactMessageServiceImpl implements AddContactMessageService {
     @Override
     public Result execute(
           Request contacMessage) {
+
+        var validationResult = validateInput(contacMessage);
+
+        if (validationResult != null)
+            return validationResult;
 
         var result = persistContactMessageRepository.execute(
               new PersistContactMessageRequest(
@@ -43,6 +55,32 @@ class AddContactMessageServiceImpl implements AddContactMessageService {
             case ContactMessagePersisted(_) -> new Succeeded();
             case ContactMessagePersistenceFailed(Throwable cause) -> new Failed(cause);
         };
+
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // Private Section
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private Result validateInput(
+          Request contactMessage) {
+
+        if (contactMessage.email() == null || contactMessage.email().isBlank()) {
+            return new MessagePolicyFailed(EMAIL_IS_BLANK);
+        }
+
+        if (!emailValidationService.isEmailValid(contactMessage.email()))
+            return new MessagePolicyFailed(EMAIL_INVALID_FORMAT);
+
+        if (contactMessage.subject() == null || contactMessage.subject().isBlank()) {
+            return new MessagePolicyFailed(SUBJECT_IS_BLANK);
+        }
+
+        if (contactMessage.message() == null || contactMessage.message().isBlank()) {
+            return new MessagePolicyFailed(MESSAGE_IS_BLANK);
+        }
+
+        return null;
 
     }
 

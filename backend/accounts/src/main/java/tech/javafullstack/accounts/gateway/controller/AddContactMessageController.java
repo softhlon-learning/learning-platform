@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.javafullstack.accounts.domain.AddContactMessageService;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Request;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Failed;
+import tech.javafullstack.accounts.domain.AddContactMessageService.Result.MessagePolicyFailed;
 import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Succeeded;
 import tech.javafullstack.common.hexagonal.RestApiAdapter;
 
 import static tech.javafullstack.accounts.gateway.controller.RestResources.ADD_CONTACT_MESSAGE;
-import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.javafullstack.common.controller.ResponseBodyHelper.successOkBody;
+import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -57,6 +57,7 @@ class AddContactMessageController {
         var result = service.execute(new Request(request.subject(), request.email(), request.message()));
         return switch (result) {
             case Succeeded() -> successOkBody();
+            case MessagePolicyFailed(String message) -> badRequestBody(httpRequest, message);
             case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
         };
 

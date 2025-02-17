@@ -31,6 +31,7 @@ public interface AddContactMessageService {
      */
     sealed interface Result {
         record Succeeded() implements Result {}
+        record MessagePolicyFailed(String message) implements Result {}
         record Failed(Throwable cause) implements Result {}
     }
 
