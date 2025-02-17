@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.54.14
+_release date: 2025-02-17_
+ * frontend: Tune home grid setup
+
 ## 0.54.13
 _release date: 2025-02-17_
  * frontend: Add top and bottom margins for footer
