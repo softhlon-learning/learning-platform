@@ -14,11 +14,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import tech.javafullstack.accounts.domain.AddContactMessageService;
-import tech.javafullstack.accounts.domain.AddContactMessageService.Request;
-import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Failed;
-import tech.javafullstack.accounts.domain.AddContactMessageService.Result.MessagePolicyFailed;
-import tech.javafullstack.accounts.domain.AddContactMessageService.Result.Succeeded;
+import tech.javafullstack.accounts.domain.SendContactMessageService;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Request;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Failed;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.MessagePolicyFailed;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Succeeded;
 import tech.javafullstack.common.hexagonal.RestApiAdapter;
 import tech.javafullstack.common.security.AuthenticationContext;
 
@@ -36,15 +36,15 @@ import static tech.javafullstack.common.controller.ResponseBodyHelper.*;
 @RestApiAdapter
 @RestController
 @RequiredArgsConstructor
-class AddContactMessageController {
+class SendContactMessageController {
 
-    private final AddContactMessageService service;
+    private final SendContactMessageService service;
     private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
 
     /**
      * POST /api/v1/account/contact-message endpoint.
-     * @param request  ContactMEssage
+     * @param request  ContactMessage
      * @param response ActivateAccount
      * @return ResponseEntity<?>
      */

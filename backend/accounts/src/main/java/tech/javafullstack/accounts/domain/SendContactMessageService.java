@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 @InboundPort
 @FunctionalInterface
-public interface AddContactMessageService {
+public interface SendContactMessageService {
 
     /**
      * Add contact message.
