@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.13
+ * content: Add java/introduction/prerequisites lecture
+ * content: Updated java course (ai-and-programming.mov)
+
 ## 0.55.12
  * content: Created content folder with samples of 2 java lectures
 
