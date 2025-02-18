@@ -12,6 +12,18 @@ div div {
     justify-content: space-between;
 }
 
+@media only screen {
+    div {
+        text-align: center;
+        width: 775px;
+    }
+
+    .document-frame {
+        width: 800px;
+        height: 420px;
+    }
+}
+
 @media only screen and (min-width: 1000px) {
     div {
         text-align: center;
