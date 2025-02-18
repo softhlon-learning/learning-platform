@@ -33,6 +33,8 @@ sysrc backend_enable=yes
 sysrc frontend_enable=yes
 sysrc milteropendkim_enable=yes
 sysrc pf_enable=yes
+sysrc sshd_enable=no
+sysrc openssh_enable=yes
 
 # sysctl.conf
 cp /root/platform/config/etc/sysctl.conf /etc/sysctl.conf
