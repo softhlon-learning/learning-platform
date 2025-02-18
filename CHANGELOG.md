@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.0
+_release date: 2025-02-18_
+ * frontend: Adjust details page view on different screens - part 2
+
 ## 0.54.19
 _release date: 2025-02-18_
  * frontend: Adjust details page view on different screens
