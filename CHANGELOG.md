@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.6
+_release date: 2025-02-18_
+ * frontend: Improve responsive for iPad (horizontal)
+ * frontend: Decrease bottom margin for navigation bar buttons on details page
+
 ## 0.55.5
 _release date: 2025-02-18_
  * frontend: Fix document-lecture responsive height
