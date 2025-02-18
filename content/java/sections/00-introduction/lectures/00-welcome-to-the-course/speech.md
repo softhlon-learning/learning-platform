@@ -9,12 +9,15 @@ For beginners, we'll start with the basics:
 
 For those with some programming experience, we'll move into more advanced topics:
 
-* Object-Oriented Programming (OOP): Deepening your understanding of classes, objects, inheritance, polymorphism, and encapsulation.
+* Object-Oriented Programming : Deepening your understanding of classes, objects, inheritance, polymorphism, and encapsulation.
 * Exception Handling: Learning how to manage errors gracefully in your code.
 * Java Collections Framework: Exploring data structures like Lists, Sets, and Maps.
 * Concurrency: including advanced synchronization techniques, virtuals threads, etc ...
-* Data-Oriented Programming (with records, switch expressions and pattern matching) 
-* Generics, Streams, Java I/O, Modularization
+* Records and pattern matching 
+* Generics 
+* Streams
+* Java I/O
+* Modularization
 * and many, many more
 
 * We'll also cover practical aspects like:

@@ -12,6 +12,11 @@ chapters:
         type: Watch
         preview: true
         time: 1m57s
+      - name: Programming Skills and AI
+        id: ai-and-programming.mov
+        type: Watch
+        preview: false
+        time: 2m14s
       - name: Prerequisites
         id: no-video-yet.mov?v2
         type: Watch
