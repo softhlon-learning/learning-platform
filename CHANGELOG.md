@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.4
+_release date: 2025-02-18_
+ * frontend: Improve contact details view for iPad (horizontal)
+ * frontend: Improve contact details view for iPad (horizontal) - part 2
+
 ## 0.55.3
 _release date: 2025-02-18_
  * frontend: Testing responsiveness on iPad
