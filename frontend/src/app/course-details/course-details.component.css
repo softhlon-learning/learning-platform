@@ -101,6 +101,46 @@ ul {
 
     .course-content-list {
         display: none;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
+        width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    div button {
+        width: 12em;
+    }
+
+    .course-content-list {
+        display: none;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
+        width: 950px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    div button {
+        width: 12em;
+    }
+
+    .course-content-list {
+        display: none;
         height: 45em;
         padding-inline-start: 5px;
         width: 412px;
