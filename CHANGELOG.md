@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.10
+_release date: 2025-02-18_
+ * system: Retest squid installtion
+ * 
 ## 0.55.9
 _release date: 2025-02-18_
  * scripts: Add contact user
