@@ -3,6 +3,8 @@
 ## 0.55.9
 _release date: 2025-02-18_
  * scripts: Add contact user
+ * scripts: Update sshd/openssh enable/disable setup
+ * system: Retest octopus installtion
 
 ## 0.55.8
 _release date: 2025-02-18_
