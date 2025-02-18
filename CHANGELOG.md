@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.18
+_release date: 2025-02-18_
+ * frontend: Adjust column count for different screens (toc page)
+ * frontend: Adjust navigation button width for different screens
+
 ## 0.54.17
 _release date: 2025-02-18_
  * frontend: Increase gap for course tiles (one more time)
