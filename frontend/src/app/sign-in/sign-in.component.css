@@ -15,11 +15,10 @@
 }
 
 .container {
-    margin-top: 25px;
     padding: 10px;
     display: flex;
     width: 460px;
-    height: 460px;
+    height: 475px;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
     justify-content: center;
@@ -34,7 +33,7 @@
     font-family: 'Courier', sans-serif;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 25px;
     font-size: 24px;
 }
 
