@@ -1,9 +1,14 @@
 # Learning Platform Changelog
 
+## 0.55.11
+_release date: 2025-02-18_
+ * system: Update 404 and 504 html pages
+ * content: Preliminary analysis how to approach to create course content
+
 ## 0.55.10
 _release date: 2025-02-18_
  * system: Retest squid installtion
- * 
+
 ## 0.55.9
 _release date: 2025-02-18_
  * scripts: Add contact user
