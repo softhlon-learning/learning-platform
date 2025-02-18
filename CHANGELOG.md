@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.55.7
+_release date: 2025-02-18_
+ * frontend: Decrease top margin for footer
+ * frontend: Adjust margins and remove cancel buttons from side forms
+ * application: Update url schemas (http -> https)
+
 ## 0.55.6
 _release date: 2025-02-18_
  * frontend: Improve responsive for iPad (horizontal)
