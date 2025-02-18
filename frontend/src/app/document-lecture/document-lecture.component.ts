@@ -34,7 +34,7 @@ export class DocumentLectureComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.showSpinner()
+        //this.showSpinner()
     }
 
     /**

@@ -6,12 +6,56 @@ button {
     width: 14em;
 }
 
-div {
-    text-align: center;
-    width: 1066px;
-}
 
 div div {
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (min-width: 1000px) {
+    div {
+        text-align: center;
+        width: 900px;
+    }
+
+    .document-frame {
+        width: 900px;
+        height: 550px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    div {
+        text-align: center;
+        width: 1000px;
+    }
+
+    .document-frame {
+        width: 1066px;
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    div {
+        text-align: center;
+        width: 900px;
+    }
+
+    .document-frame {
+        width: 900px;
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    div {
+        text-align: center;
+        width: 1066px;
+    }
+
+    .document-frame {
+        width: 1066px;
+        height: 600px;
+    }
 }

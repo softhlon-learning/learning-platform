@@ -1,10 +1,11 @@
 <div *ngIf="navigationItems.currentLecture" style="position: relative">
     <iframe (load)="hideSpinner()"
-            [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
-            frameborder="0"
-            height="600" id="document-frame"
-            loading="lazy"
-            width="1070">
+           [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
+           id="document-frame"
+           class="document-frame"
+           type="text/html"
+           frameborder="0"
+           loading="lazy">
     </iframe>
     <ngx-spinner
             [fullScreen]="false"
