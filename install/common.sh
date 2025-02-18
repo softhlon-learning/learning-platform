@@ -56,6 +56,9 @@ pw adduser support -d /home/support -s /bin/sh -c "Support Team" -m -w no
 # user report
 pw adduser report -d /home/report -s /bin/sh -c "DMARC Report" -m -w no
 
+# user contact
+pw adduser contact -d /home/contact -s /bin/sh -c "Contact" -m -w no
+
 # nginx
 mkdir -p /home/admin/nginx
 cp -r /root/platform/config/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
