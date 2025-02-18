@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.15
+_release date: 2025-02-18_
+ * content: Added java/introduction/course-content lecture (first draft)
+
 ## 0.55.14
 _release date: 2025-02-18_
  * content: Updated java course (prerequisites.mov)
