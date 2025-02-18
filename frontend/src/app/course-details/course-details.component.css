@@ -7,6 +7,10 @@
     text-align: left;
 }
 
+div.navigation-bar button {
+   margin-bottom: 5px;
+}
+
 div {
     flex: 1;
     display: flex;
