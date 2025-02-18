@@ -26,7 +26,7 @@
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1150px) {
     .course-content-list ul {
         column-count: 3;
         column-rule: dashed 1px var(--light);
