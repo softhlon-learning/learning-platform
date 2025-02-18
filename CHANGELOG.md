@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.2
+_release date: 2025-02-18_
+ * frontend: Improve document-lecture responsiveness
+ * frontend: Improve displaying content item list
+
 ## 0.55.1
 _release date: 2025-02-18_
  * frontend: Make document-lecture responsive
