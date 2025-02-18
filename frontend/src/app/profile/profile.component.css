@@ -112,5 +112,6 @@ button.delete:hover {
 }
 
 .error {
+    height: 30px;
     color: var(--error);
 }
