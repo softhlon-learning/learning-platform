@@ -15,8 +15,6 @@
    Set aside a few hours per week. Programming requires practice, so regular study is key. We'll have a mix of lectures, coding exercises, and perhaps some projects.
 * Curiosity and Patience:
    Programming can be challenging, especially at the start. A willingness to learn, ask questions, and not get discouraged by initial hurdles is crucial.
-* Note-Taking Materials:
-   Keep a notebook or use digital note-taking for jotting down concepts, code snippets, or questions. Learning to code often involves a lot of writing and reviewing.
 * Basic English Proficiency:
    Our course material is in English, so you'll need to understand and communicate in basic English. Don't worry if it's not your first language; we'll keep things as clear and simple as possible.
    There you have it! These prerequisites are pretty straightforward, but they're essential to make sure you get the most out of the course. We're here to support you through each step, from installation to writing your first Java program. See you in class!"
