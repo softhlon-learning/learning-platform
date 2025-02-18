@@ -102,9 +102,9 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 2 / span 1;
-        height: 45em;
+        height: 15em;
         padding-inline-start: 5px;
-        width: 100%;
+        width: 98%;
     }
 
     div.course-item {
@@ -126,9 +126,9 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 2 / span 1;
-        height: 45em;
+        height: 15em;
         padding-inline-start: 5px;
-        width: 100%;
+        width: 98%;
     }
 
     div.course-item {
@@ -150,9 +150,9 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 2 / span 1;
-        height: 45em;
+        height: 15em;
         padding-inline-start: 5px;
-        width: 100%;
+        width: 98%;
     }
 
     div.course-item {
@@ -174,9 +174,9 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 2 / span 1;
-        height: 45em;
+        height: 15em;
         padding-inline-start: 5px;
-        width: 100%;
+        width: 98%;
     }
 
     div.course-item {
