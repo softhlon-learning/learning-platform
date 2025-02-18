@@ -839,7 +839,7 @@ chapters:
   - name: Generics
     lectures:
       - name: Generics Overview
-        id: no-video-yet.mov?v771
+        id: generics-overview.mov
         type: Watch
         preview: false
         time: 2m5s
