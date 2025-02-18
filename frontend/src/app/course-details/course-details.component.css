@@ -15,19 +15,10 @@ div {
 }
 
 div.course-content {
-    justify-content: flex-start;
+    display: grid;
     background-color: var(--very-light);
     border-radius: 5px;
     border: 1px dashed var(--gray);
-}
-
-div.course-item {
-    margin-top: 1em;
-    margin-right: 1em;
-    background-color: white;
-    height: 45em;
-    font-family: Verdana, sans-serif;
-    width: 1066px;
 }
 
 div button {
@@ -49,11 +40,6 @@ li li {
     overflow: hidden;
 }
 
-.course-content-list {
-    height: 45em;
-    padding-inline-start: 5px;
-    width: 412px;
-}
 
 .selected {
     color: var(--light);
@@ -108,15 +94,73 @@ ul {
     width: 120px;
 }
 
-
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
     div button {
         width: 12em;
     }
+
+    .course-content-list {
+        display: none;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 412px;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
+        width: 1066px;
+    }
 }
 
-@media only screen and (min-width: 1150px) {
+@media only screen and (min-width: 1400px) {
+    div button {
+        width: 12em;
+    }
+
+    .course-content-list {
+        display: block;
+        grid-area: 1 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 412px;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
+        width: 900px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
     div button {
         width: 14em;
+    }
+
+    .course-content-list {
+        display: block;
+        grid-area: 1 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 412px;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
+        width: 1066px;
     }
 }

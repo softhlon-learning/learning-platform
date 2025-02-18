@@ -1,11 +1,11 @@
 <div class="video-container">
     <video #video (ended)="this.progress?.markLectureAsViewed()" (loadeddata)="this.hideSpinner()"
            (loadstart)="this.showSpinner()"
-           height="600"
+           height="100%"
            id="{{navigationItems.currentLecture.id}}"
            onmouseout="this.removeAttribute('controls')"
            onmouseover="this.setAttribute('controls','controls')"
-           width="1066">
+           width="100%">
 
         <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
