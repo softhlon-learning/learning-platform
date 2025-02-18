@@ -110,6 +110,26 @@ ul {
         background-color: white;
         height: 45em;
         font-family: Verdana, sans-serif;
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    div button {
+        width: 12em;
+    }
+
+    .course-content-list {
+        display: none;
+    }
+
+    div.course-item {
+        grid-area: 1 / span 1;
+        margin-top: 1em;
+        margin-right: 1em;
+        background-color: white;
+        height: 45em;
+        font-family: Verdana, sans-serif;
         width: 800px;
     }
 }
