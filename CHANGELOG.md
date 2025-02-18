@@ -1,5 +1,8 @@
 # Learning Platform Changelog
 
+## 0.55.12
+ * content: Created content folder with samples of 2 java lectures
+
 ## 0.55.11
 _release date: 2025-02-18_
  * system: Update 404 and 504 html pages
