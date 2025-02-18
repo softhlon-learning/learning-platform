@@ -39,12 +39,12 @@ div div {
 @media only screen and (min-width: 1150px) {
     div {
         text-align: center;
-        width: 700px;
+        width: 620px;
     }
 
     .document-frame {
-        width: 700px;
-        height: 23em;
+        width: 620px;
+        height: 22em;
     }
 }
 
