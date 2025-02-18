@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.3
+_release date: 2025-02-18_
+ * frontend: Testing responsiveness on iPad
+ * frontend: Decrease height of content item list
+
 ## 0.55.2
 _release date: 2025-02-18_
  * frontend: Improve document-lecture responsiveness
