@@ -94,13 +94,17 @@ ul {
     width: 120px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen {
     div button {
         width: 12em;
     }
 
     .course-content-list {
-        display: none;
+        display: block;
+        grid-area: 2 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 100%;
     }
 
     div.course-item {
@@ -120,7 +124,11 @@ ul {
     }
 
     .course-content-list {
-        display: none;
+        display: block;
+        grid-area: 2 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 100%;
     }
 
     div.course-item {
@@ -140,7 +148,11 @@ ul {
     }
 
     .course-content-list {
-        display: none;
+        display: block;
+        grid-area: 2 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 100%;
     }
 
     div.course-item {
@@ -160,7 +172,11 @@ ul {
     }
 
     .course-content-list {
-        display: none;
+        display: block;
+        grid-area: 2 / span 1;
+        height: 45em;
+        padding-inline-start: 5px;
+        width: 100%;
     }
 
     div.course-item {
