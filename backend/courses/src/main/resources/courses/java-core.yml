@@ -138,7 +138,7 @@ chapters:
         type: Watch
         preview: false
         time: 2m5s
-      - name: Envrinment Variables
+      - name: Envrironment Variables
         id: no-video-yet.mov?v635
         type: Watch
         preview: false
@@ -153,7 +153,7 @@ chapters:
         type: Watch
         preview: false
         time: 2m5s
-      - name: Instrocution to Build Automation
+      - name: Instrodution to Build Automation
         id: no-video-yet.mov?v638
         type: Watch
         preview: false
@@ -315,7 +315,7 @@ chapters:
         type: Watch
         preview: false
         time: 2m5s
-      - name: Supper Keyword
+      - name: Super Keyword
         id: no-video-yet.mov?v670
         type: Watch
         preview: false
