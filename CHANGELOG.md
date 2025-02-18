@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.8
+_release date: 2025-02-18_
+ * general: Regression tests
+ * frontend: Increase height of error container
+
 ## 0.55.7
 _release date: 2025-02-18_
  * frontend: Decrease top margin for footer
