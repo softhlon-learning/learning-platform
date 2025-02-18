@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.16
+_release date: 2025-02-18_
+ * content: Update course-content.html
+
 ## 0.55.15
 _release date: 2025-02-18_
  * content: Added java/introduction/course-content lecture (first draft)
