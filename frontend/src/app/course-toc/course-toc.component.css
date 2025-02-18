@@ -17,11 +17,22 @@
     margin-top: 15px;
 }
 
-.course-content-list ul {
-    column-count: 3;
-    column-rule: dashed 1px var(--light);
-    list-style-type: none;
-    padding-inline-start: 5px;
+@media only screen and (min-width: 1000px) {
+    .course-content-list ul {
+        column-count: 2;
+        column-rule: dashed 1px var(--light);
+        list-style-type: none;
+        padding-inline-start: 5px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .course-content-list ul {
+        column-count: 3;
+        column-rule: dashed 1px var(--light);
+        list-style-type: none;
+        padding-inline-start: 5px;
+    }
 }
 
 .course-content-list li li {
