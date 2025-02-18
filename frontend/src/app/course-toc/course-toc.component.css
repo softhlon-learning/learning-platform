@@ -18,6 +18,10 @@
 }
 
 @media only screen and (min-width: 800px) {
+    div button {
+        width: 12em;
+    }
+
     .course-content-list ul {
         column-count: 2;
         column-rule: dashed 1px var(--light);
@@ -27,6 +31,10 @@
 }
 
 @media only screen and (min-width: 1150px) {
+    div button {
+        width: 14em;
+    }
+
     .course-content-list ul {
         column-count: 3;
         column-rule: dashed 1px var(--light);
@@ -50,9 +58,7 @@ div {
     justify-content: center;
 }
 
-div button {
-    width: 14em;
-}
+
 
 .chapter {
     display: flex;

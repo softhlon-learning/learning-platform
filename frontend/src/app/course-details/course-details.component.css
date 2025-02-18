@@ -107,3 +107,16 @@ ul {
 .details-header-block {
     width: 120px;
 }
+
+
+@media only screen and (min-width: 800px) {
+    div button {
+        width: 12em;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    div button {
+        width: 14em;
+    }
+}
