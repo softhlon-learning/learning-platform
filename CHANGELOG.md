@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.54.17
+_release date: 2025-02-18_
+ * frontend: Increase gap for course tiles (one more time)
+ * frontend: Decrease height of side forms
+
 ## 0.54.16
 _release date: 2025-02-18_
  * frontend: Update document-generic width for iPad
