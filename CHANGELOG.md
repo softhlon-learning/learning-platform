@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.55.5
+_release date: 2025-02-18_
+ * frontend: Fix document-lecture responsive height
+ * frontend: Improve responsive height for iPad (horizontal)
+
 ## 0.55.4
 _release date: 2025-02-18_
  * frontend: Improve contact details view for iPad (horizontal)
