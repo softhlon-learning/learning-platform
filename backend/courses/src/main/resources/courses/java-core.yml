@@ -21,9 +21,9 @@ chapters:
         id: prerequisites.mov
         type: Watch
         preview: false
-        time: 2m14s
-      - name: Course Structure
-        id: no-document-yet.html?v1
+        time: 2m13s
+      - name: Course Content
+        id: course-content.html
         type: Read
         preview: false
   - name: Getting Started
