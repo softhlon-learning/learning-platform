@@ -108,9 +108,9 @@ ul {
         margin-top: 1em;
         margin-right: 1em;
         background-color: white;
-        height: 45em;
+        height: 35em;
         font-family: Verdana, sans-serif;
-        width: 700px;
+        width: 750px;
     }
 }
 
@@ -128,7 +128,7 @@ ul {
         margin-top: 1em;
         margin-right: 1em;
         background-color: white;
-        height: 45em;
+        height: 35em;
         font-family: Verdana, sans-serif;
         width: 800px;
     }
@@ -148,7 +148,7 @@ ul {
         margin-top: 1em;
         margin-right: 1em;
         background-color: white;
-        height: 45em;
+        height: 42em;
         font-family: Verdana, sans-serif;
         width: 950px;
     }
@@ -161,9 +161,6 @@ ul {
 
     .course-content-list {
         display: none;
-        height: 45em;
-        padding-inline-start: 5px;
-        width: 412px;
     }
 
     div.course-item {
@@ -185,7 +182,7 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 1 / span 1;
-        height: 45em;
+        height: 40em;
         padding-inline-start: 5px;
         width: 412px;
     }
