@@ -174,7 +174,7 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 1 / span 1;
-        height: 42em;
+        height: 34em;
         padding-inline-start: 5px;
         width: 412px;
     }
