@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.55.19
+_release date: 2025-02-19_
+ * content: Upload packages.mov
+
 ## 0.55.18
 _release date: 2025-02-19_
-* content: Upload basic-program-structure.mov
+ * content: Upload basic-program-structure.mov
 
 ## 0.55.17
 _release date: 2025-02-18_
