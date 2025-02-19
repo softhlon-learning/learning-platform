@@ -656,7 +656,7 @@ chapters:
   - name: Functional Programming
     lectures:
       - name: Functional Programming Introduction
-        id: no-video-yet.mov?v735
+        id: functional-programming-introduction.mov
         type: Watch
         preview: false
         time: 2m5s
