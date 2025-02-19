@@ -905,10 +905,10 @@ chapters:
   - name: Records and Pattern Matching
     lectures:
       - name: Records Overview
-        id: no-video-yet.mov?v784
+        id: records-overview.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 2m50s
       - name: Canonical Constructor
         id: no-video-yet.mov?v785
         type: Watch

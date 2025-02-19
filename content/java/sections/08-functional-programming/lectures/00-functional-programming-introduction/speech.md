@@ -162,7 +162,7 @@ However, be cautious with recursion in Java due to stack overflow risks for larg
 -------------------
 -------------------
 
-Java 8 introduced lambda expressions, which are essentially anonymous functions. They allow us to write concise and readable code for functional interfaces.
+Java 8 introduced lambda expressions, method references and Streams API, which are essentially anonymous functions. They allow us to write concise and readable code for functional interfaces.
 
 -------------------
 
