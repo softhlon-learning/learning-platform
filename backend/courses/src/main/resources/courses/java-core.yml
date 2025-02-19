@@ -122,7 +122,7 @@ chapters:
         id: packages.mov
         type: Watch
         preview: false
-        time: 3m36s
+        time: 4m46s
       - name: Main Function
         id: no-video-yet.mov?v632
         type: Watch
