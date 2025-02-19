@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.0
+_release date: 2025-02-19_
+ * content: Upload new version of packages.mov
+
 ## 0.55.19
 _release date: 2025-02-19_
  * content: Upload packages.mov

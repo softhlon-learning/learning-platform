@@ -148,4 +148,4 @@ Avoid using wildcard imports in production code to explicitly show dependencies.
 -------------------
 -------------------
 
-Packages are integral to Java's design for managing code complexity and enhancing code organization, reusability, and security. In this course section we will take a closer look at them
+Packages are integral to Java's design for managing code complexity and enhancing code organization, reusability, and security. Let's move on to the next topics.
