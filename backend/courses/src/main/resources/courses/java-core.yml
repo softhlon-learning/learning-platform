@@ -1280,7 +1280,7 @@ chapters:
         id: interrupting-threads.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 4m31s
       - name: Joining Thread
         id: no-video-yet.mov?v856
         type: Watch
