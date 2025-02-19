@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.55.18
+_release date: 2025-02-19_
+* content: Upload basic-program-structure.mov
+
 ## 0.55.17
 _release date: 2025-02-18_
  * content: Upload generics-overview.mov
