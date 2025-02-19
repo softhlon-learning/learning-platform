@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.2
+_release date: 2025-02-19_
+ * content: Upload records-overview.mov
+
 ## 0.56.1
 _release date: 2025-02-19_
  * content: Upload functional-programming-introduction.mov
