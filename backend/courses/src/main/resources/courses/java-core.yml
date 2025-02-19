@@ -114,10 +114,10 @@ chapters:
   - name: Language Fundamentals
     lectures:
       - name: Basic Program Structure
-        id: no-video-yet.mov?v630
+        id: basic-program-structure.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 2m30s
       - name: Packages
         id: no-video-yet.mov?v631
         type: Watch

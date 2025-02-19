@@ -2,7 +2,7 @@ Generics in Java allow you to create classes, interfaces, and methods that can w
 
 
 Type Safety at Compile Time:
-    With generics, you can spot type mismatches before your code even runs. For instance, if you're making a list meant strictly for strings, generics will enforce this rule, ensuring only String objects get in. This heads off any ClassCastException surprises during runtime.
+    With generics, you can spot type mismatches before your code even runs. For instance, if you're making a list meant strictly for strings, generics will enforce this rule, ensuring only String objects get in. This heads off any Class Cast Exception surprises during runtime.
    Imagine you're building a container that only holds apples. With generics, if you try to put an orange in there, the compiler stops you right away, keeping your code error-free before it even runs.
 
 
@@ -42,4 +42,5 @@ Type Erasure:
  
 
  To sum up: Generics are your friend in Java. They prevent type-related errors, make your code clearer by specifying what should go where, and let you reuse your code in ways you couldn't before, making development smoother and your code more reliable.
-    We'll explore each of these concepts in more detail during our upcoming lectures.
+ 
+We will explore each of these concepts in more detail during our upcoming lectures.
