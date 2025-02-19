@@ -1276,8 +1276,8 @@ chapters:
         type: Watch
         preview: false
         time: 4m56s
-      - name: Interupting Thread
-        id: no-video-yet.mov?v855
+      - name: Interupting Threads
+        id: interrupting-threads.mov
         type: Watch
         preview: false
         time: 2m5s
