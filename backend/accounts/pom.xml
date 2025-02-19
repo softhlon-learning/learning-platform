@@ -4,7 +4,7 @@
     <parent>
         <groupId>tech.javafullstack</groupId>
         <artifactId>backend</artifactId>
-        <version>0.56.3-SNAPSHOT</version>
+        <version>0.56.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>accounts</artifactId>
