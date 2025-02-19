@@ -1272,10 +1272,10 @@ chapters:
   - name: Concurrency
     lectures:
       - name: Threads
-        id: no-video-yet.mov?v854
+        id: threads.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 4m56s
       - name: Interupting Thread
         id: no-video-yet.mov?v855
         type: Watch
