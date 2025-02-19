@@ -119,10 +119,10 @@ chapters:
         preview: false
         time: 2m30s
       - name: Packages
-        id: no-video-yet.mov?v631
+        id: packages.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 3m36s
       - name: Main Function
         id: no-video-yet.mov?v632
         type: Watch
