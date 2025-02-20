@@ -1552,10 +1552,10 @@ chapters:
   - name: Networking
     lectures:
       - name: Networking Overview
-        id: no-video-yet.mov?v908
+        id: networking-overview.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 4m20s
       - name: Creating URL
         id: no-video-yet.mov?v909
         type: Watch
