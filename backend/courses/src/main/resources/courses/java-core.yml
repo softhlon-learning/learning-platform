@@ -1743,10 +1743,10 @@ chapters:
   - name: Foreign Memory API
     lectures:
       - name: Foreign Function & Memory (FFM) API
-        id: no-video-yet.mov?v944
+        id: foreign-function-memory-api.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 5m0s
       - name: FFM Architecture Overview
         id: no-video-yet.mov?v945
         type: Watch
