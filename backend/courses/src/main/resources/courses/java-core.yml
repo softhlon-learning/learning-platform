@@ -1282,7 +1282,7 @@ chapters:
         preview: false
         time: 4m31s
       - name: Joining Threads
-        id: joining-threads
+        id: joining-threads.mov
         type: Watch
         preview: false
         time: 4m33s
