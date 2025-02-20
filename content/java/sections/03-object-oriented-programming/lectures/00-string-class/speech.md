@@ -23,7 +23,7 @@ Now, some key String methods. length() tells you how many characters—'Java' ha
 -------------------
 -------------------
 
-More methods: equals() checks if two strings match content-wise—spaces matter, so ' Hello ' isn’t 'Hello'. trim() fixes that by cutting edge spaces, making them equal. toLowerCase() and toUpperCase() switch the case—here, ' Hello ' becomes ' HELLO '. These are super handy for cleaning up or comparing user input, where extras like spaces can sneaky in.
+More methods: equals() checks if two strings match content-wise—spaces matter, so ' Hello ' isn’t 'Hello'. trim() fixes that by cutting edge spaces, making them equal. toLowerCase() and toUpperCase() switch the case—here. These are super handy for cleaning up or comparing user input, where extras like spaces can sneaky in.
 
 -------------------
 -------------------
