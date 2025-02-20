@@ -609,10 +609,10 @@ chapters:
   - name: Error Handling
     lectures:
       - name: Error Handling Overview
-        id: no-video-yet.mov?v726
+        id: error-handling-overview.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 3m53s
       - name: Catching Exceptions
         id: no-video-yet.mov?v727
         type: Watch
