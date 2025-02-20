@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.12
+_release date: 2025-02-20_
+ * content: Upload java-enhancement-proposals.mov
+
 ## 0.56.11
 _release date: 2025-02-20_
  * content: Upload error-handling-overview.mov
