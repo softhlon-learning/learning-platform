@@ -1285,7 +1285,7 @@ chapters:
         id: joining-threads
         type: Watch
         preview: false
-        time: 2m5s
+        time: 4m33s
       - name: Thread Safety
         id: no-video-yet.mov?v857
         type: Watch
