@@ -1953,16 +1953,11 @@ chapters:
         preview: false
   - name: Preview and Incubator Features
     lectures:
-      - name: Java Development Process
-        id: no-video-yet.mov?v985
+      - name: Java Enhancement Proposals
+        id: java-enhancement-proposals.mov
         type: Watch
         preview: false
-        time: 2m5s
-      - name: Java Enhancemt Proposals
-        id: no-video-yet.mov?v986
-        type: Watch
-        preview: false
-        time: 2m5s
+        time: 2m28s
       - name: Preview Features
         id: no-video-yet.mov?v987
         type: Watch
