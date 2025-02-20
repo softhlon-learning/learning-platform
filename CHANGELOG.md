@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.9
+_release date: 2025-02-20_
+* content: Upload foreign-memory-api.mov
+
 ## 0.56.8
 _release date: 2025-02-20_
 * content: Upload class-and-objects.mov
