@@ -460,10 +460,10 @@ chapters:
   - name: Strings and Text Blocks
     lectures:
       - name: String Class
-        id: no-video-yet.mov?v697
+        id: string-class.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 6m22s
       - name: Manipulating Characters in String
         id: no-video-yet.mov?v698
         type: Watch
