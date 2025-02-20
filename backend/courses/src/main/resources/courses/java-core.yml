@@ -226,10 +226,10 @@ chapters:
   - name: Object-Oriented Programming
     lectures:
       - name: Classes and Objects
-        id: no-video-yet.mov?v652
+        id: classes-and-objects.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 4m10s
       - name: Abstraction
         id: no-video-yet.mov?v653
         type: Watch
