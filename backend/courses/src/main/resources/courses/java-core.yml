@@ -1281,8 +1281,8 @@ chapters:
         type: Watch
         preview: false
         time: 4m31s
-      - name: Joining Thread
-        id: no-video-yet.mov?v856
+      - name: Joining Threads
+        id: joining-threads
         type: Watch
         preview: false
         time: 2m5s
