@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.5
+_release date: 2025-02-19_
+* content: Upload joining-threads.mov
+
 ## 0.56.4
 _release date: 2025-02-19_
 * content: Upload interrupting-threads.mov
