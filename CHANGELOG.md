@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.11
+_release date: 2025-02-20_
+ * content: Upload error-handling-overview.mov
+
 ## 0.56.10
 _release date: 2025-02-20_
  * content: Upload string-class.mov
