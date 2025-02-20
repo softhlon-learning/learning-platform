@@ -1,11 +1,15 @@
 # Learning Platform Changelog
 
+## 0.56.7
+_release date: 2025-02-20_
+ * content: Upload creating-url.mov
+
 ## 0.56.6
-_release date: 2025-02-19_
+_release date: 2025-02-20_
  * content: Upload networking-overview.mov
 
 ## 0.56.5
-_release date: 2025-02-19_
+_release date: 2025-02-20_
  * content: Upload joining-threads.mov
 
 ## 0.56.4
