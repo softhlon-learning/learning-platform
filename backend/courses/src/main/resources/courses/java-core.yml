@@ -738,10 +738,10 @@ chapters:
   - name: Streams
     lectures:
       - name: Introduction to Stream API
-        id: no-video-yet.mov?v751
+        id: introduction-to-streams.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 5m17s
       - name: Stream Interface
         id: no-video-yet.mov?v752
         type: Watch
