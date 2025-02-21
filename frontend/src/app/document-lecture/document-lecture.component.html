@@ -1,11 +1,11 @@
-<div *ngIf="navigationItems.currentLecture" style="position: relative">
+<div *ngIf="navigationItems.currentLecture">
     <iframe (load)="hideSpinner()"
-           [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
-           id="document-frame"
-           class="document-frame"
-           type="text/html"
-           frameborder="0"
-           loading="lazy">
+            [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
+            id="document-frame"
+            class="document-frame"
+            type="text/html"
+            frameborder="0"
+            loading="lazy">
     </iframe>
     <ngx-spinner
             [fullScreen]="false"
@@ -14,6 +14,8 @@
             size="large"
             type="ball-scale-multiple">
     </ngx-spinner>
+</div>
+<div>
     <course-navigation
             [navigationItems]="navigationItems"
             [progress]="this.progress"/>
