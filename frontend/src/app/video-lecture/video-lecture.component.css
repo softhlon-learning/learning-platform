@@ -2,9 +2,62 @@
     overflow: clip;
 }
 
-.video-container {
-    flex: 1;
-    align-items: stretch;
-    flex-direction: row;
-    position: relative;
+@media only screen {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 415px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 445px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 545px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 350px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .video-container {
+        flex: 1;
+        align-items: stretch;
+        flex-direction: row;
+        position: relative;
+        height: 600px;
+    }
 }
