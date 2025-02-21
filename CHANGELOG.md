@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.56.18
+_release date: 2025-02-21_
+ * frontend: Improve responsiveness of document-lecture component
+ * frontend: Improve spinner and navigation bar positioning
+
 ## 0.56.17
 _release date: 2025-02-21_
  * frontend: Improve spinner and navigation bar positioning
