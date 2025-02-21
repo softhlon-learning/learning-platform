@@ -7,8 +7,12 @@
            onmouseout="this.removeAttribute('controls')"
            onmouseover="this.setAttribute('controls','controls')">
 
-        <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"
+        <!--        <source src="https://{{coursePath}}.hel1.your-objectstorage.com/{{navigationItems.currentLecture.id}}"-->
+        <!--                type="video/mp4">-->
+
+        <source src="https://java-fullstack.tech/static/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
+
     </video>
     <ngx-spinner
             [fullScreen]="false"
