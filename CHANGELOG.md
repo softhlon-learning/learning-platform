@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.14
+_release date: 2025-02-21_
+ * frontend: Replace S3 with local server as a source of video files.
+
 ## 0.56.13
 _release date: 2025-02-20_
  * content: Upload introduction-to-streams.mov
