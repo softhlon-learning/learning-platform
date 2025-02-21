@@ -51,7 +51,9 @@ export class AppHeaderComponent implements OnInit {
 
         this.fetchFreeTrial(true)
         setInterval(() => {
-            this.fetchFreeTrial()
+            if (!this.isAuthenticated()) {
+                this.fetchFreeTrial()
+            }
         }, FREE_TRIAL_REFRESH_DELAY)
     }
 
