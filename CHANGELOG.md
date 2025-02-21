@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.16
+_release date: 2025-02-21_
+ * frontend: Improve video spinner
+
 ## 0.56.15
 _release date: 2025-02-21_
  * content: Upload all content on octopus
