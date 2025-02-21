@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.19
+_release date: 2025-02-21_
+ * frontend: Fix responsiveness of document-lecture component
+
 ## 0.56.18
 _release date: 2025-02-21_
  * frontend: Improve responsiveness of document-lecture component
