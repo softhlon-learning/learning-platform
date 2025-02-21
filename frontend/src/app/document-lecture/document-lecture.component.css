@@ -15,11 +15,11 @@ div div {
 @media only screen {
     div {
         text-align: center;
-        width: 800px;
+        width: 750px;
     }
 
     .document-frame {
-        width: 800px;
+        width: 750px;
         height: 441px;
     }
 }
