@@ -9,16 +9,18 @@
 
         <source src="https://java-fullstack.tech/static/{{coursePath}}/{{navigationItems.currentLecture.id}}"
                 type="video/mp4">
+        <ngx-spinner
+                [fullScreen]="false"
+                bdColor="rgba(255,255,255,1)"
+                color="black"
+                size="large"
+                type="ball-scale-multiple">
+        </ngx-spinner>
     </video>
-    <ngx-spinner
-            [fullScreen]="false"
-            bdColor="rgba(255,255,255,1)"
-            color="black"
-            size="large"
-            type="ball-scale-multiple">
-    </ngx-spinner>
-    <course-navigation
-            [navigationItems]="navigationItems"
-            [progress]="this.progress">
-    </course-navigation>
+    <div>
+        <course-navigation
+                [navigationItems]="navigationItems"
+                [progress]="this.progress">
+        </course-navigation>
+    </div>
 </div>
