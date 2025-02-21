@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.56.15
+_release date: 2025-02-21_
+ * content: Upload all content on octopus
+
 ## 0.56.14
 _release date: 2025-02-21_
  * frontend: Replace S3 with local server as a source of video files.
