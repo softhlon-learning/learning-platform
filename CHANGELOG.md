@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.3
+_release date: 2025-02-22_
+ * scripts: Update pf.conf (altq setup)
+
 ## 0.57.2
 _release date: 2025-02-22_
  * scripts: Update nginx.conf (/static and limit_rate)
