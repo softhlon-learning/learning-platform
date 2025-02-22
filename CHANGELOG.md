@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.4
+_release date: 2025-02-22_
+ * frontend: Update positioning (height) for document-lecture
+
 ## 0.57.3
 _release date: 2025-02-22_
  * scripts: Update pf.conf (altq setup)
