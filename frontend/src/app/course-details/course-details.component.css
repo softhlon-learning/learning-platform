@@ -202,7 +202,7 @@ ul {
     .course-content-list {
         display: block;
         grid-area: 1 / span 1;
-        height: 45em;
+        height: 37em;
         padding-inline-start: 5px;
         width: 412px;
     }
@@ -212,7 +212,7 @@ ul {
         margin-top: 1em;
         margin-right: 1em;
         background-color: white;
-        height: 45em;
+        height: 37em;
         font-family: Verdana, sans-serif;
         width: 900px;
     }
