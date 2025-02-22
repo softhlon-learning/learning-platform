@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.57.0
+_release date: 2025-02-21_
+ * frontend: Update responsiveness for locked-lecture
+ * frontend: Improve spinner and navigation bar positioning
+
 ## 0.56.19
 _release date: 2025-02-21_
  * frontend: Fix responsiveness of document-lecture component
