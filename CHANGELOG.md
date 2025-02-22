@@ -1,7 +1,11 @@
 # Learning Platform Changelog
 
+## 0.57.1
+_release date: 2025-02-22_
+ * system: Estimate system load for static files
+
 ## 0.57.0
-_release date: 2025-02-21_
+_release date: 2025-02-22_
  * frontend: Update responsiveness for locked-lecture
  * frontend: Improve spinner and navigation bar positioning
 
