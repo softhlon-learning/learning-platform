@@ -1,7 +1,7 @@
 # Learning Platform Changelog
 
 ## 0.57.5
-_release date: 2025-02-22_
+_release date: 2025-02-23_
  * content: Add introduction-to-java speech
  * content: Analyse and choose audio edit tool
 
