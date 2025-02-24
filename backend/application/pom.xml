@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>application</artifactId>
-    <name>Learning Platform :: Application</name>
+    <name>Java Full-Stack Academy :: Application</name>
 
     <dependencies>
         <dependency>

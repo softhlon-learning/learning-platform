@@ -9,7 +9,7 @@
     <version>0.57.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Learning Platform</name>
+    <name>Java Full-Stack Academy</name>
 
     <modules>
         <module>application</module>

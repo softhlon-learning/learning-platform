@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>common</artifactId>
-    <name>Learning Platform :: Common</name>
+    <name>Java Full-Stack Academy :: Common</name>
 
     <dependencies>
         <dependency>

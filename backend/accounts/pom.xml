@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>accounts</artifactId>
-    <name>Learning Platform :: Accounts</name>
+    <name>Java Full-Stack Academy :: Accounts</name>
 
     <properties>
         <google-api-client-version>2.7.1</google-api-client-version>
