@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.6
+_release date: 2025-02-24_
+ * backend: Rename 'Learning Platform' to 'java Full-Stack Academy'
+
 ## 0.57.5
 _release date: 2025-02-23_
  * content: Add introduction-to-java speech
