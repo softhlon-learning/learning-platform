@@ -73,3 +73,5 @@ mkdir -p /var/www/static/architecture-course
 wget -N https://hel1.your-objectstorage.com/api-design-course/no-document-yet.html -P  /var/www/static/api-design-course/
 wget -N https://hel1.your-objectstorage.com/api-design-course/no-video-yet.mov -P  /var/www/static/api-design-course/
 wget -N https://hel1.your-objectstorage.com/api-design-course/welcome.mov -P  /var/www/static/api-design-course/
+
+chown -R www:www /var/www/static
