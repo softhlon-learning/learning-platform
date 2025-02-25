@@ -3,9 +3,12 @@
 # start
 echo "Install octopus server start."
 chmod +x /root/platform/install/common.sh
+chmod +x /root/platform/install/s3-content-sync.sh
 
 # common/shared stuff
 /root/platform/install/common.sh
+# sync with S3 buckets
+/root/platform/install/s3-content-sync.sh
 
 # postfix
 cp /root/platform/config/postfix/main.cf.octopus /usr/local/etc/postfix/main.cf

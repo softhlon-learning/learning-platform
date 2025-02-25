@@ -20,6 +20,7 @@ pkg install -y postfix
 pkg install -y opendkim
 pkg install -y postgresql17-server
 pkg install -y openssh-portable
+pkg install -y wget
 
 # npm packages
 npm install -y -g @angular/cli
