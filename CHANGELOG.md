@@ -1,5 +1,11 @@
 # Learning Platform Changelog
 
+## 0.58.3
+_release date: 2025-02-26_
+ * scripts: Update owner for s3-content-sync.sh
+ * backend: Update Spring Boot banner
+ * scripts: Fix s3-content-sync.sh
+
 ## 0.58.2
 _release date: 2025-02-26_
  * scripts: Prepare s3-content-sync.sh script
