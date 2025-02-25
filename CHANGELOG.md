@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.8
+_release date: 2025-02-25_
+* frontend: One more fix duplicated fetchFreeTrial calls
+
 ## 0.57.7
 _release date: 2025-02-25_
  * frontend: Fix duplicated fetchFreeTrial calls
