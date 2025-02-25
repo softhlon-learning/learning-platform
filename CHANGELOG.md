@@ -1,7 +1,11 @@
 # Learning Platform Changelog
 
+## 0.58.2
+_release date: 2025-02-26_
+ * scripts: Prepare s3-content-sync.sh script
+
 ## 0.58.1
-_release date: 2025-02-25_
+_release date: 2025-02-26_
  * system: S3 buckets cleanup
 
 ## 0.58.0
