@@ -44,14 +44,15 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        if (!this.isAuthenticated()) {
-            this.initialized = true
+        if (!this.isAuthenticated() || this.isSubscribed() || this.initialized === true) {
             return;
         }
 
+        console.log("ngInit call")
         this.fetchFreeTrial(true)
         setInterval(() => {
-            if (!this.isAuthenticated()) {
+            if (this.isAuthenticated() && !this.isSubscribed()) {
+                console.log("interval call")
                 this.fetchFreeTrial()
             }
         }, FREE_TRIAL_REFRESH_DELAY)
@@ -109,12 +110,12 @@ export class AppHeaderComponent implements OnInit {
      * @private
      */
     private fetchFreeTrial(init: boolean = false) {
+        this.initialized = true
         if (this.stopRefresh) {
             return
         }
         this.subscriptionsService.fetchFreeTrial().subscribe(
             freeTrialInfo => {
-                this.initialized = true
                 if (freeTrialInfo.expired === false || init) {
                     this.freeTrialTimeLeft = freeTrialInfo.timeLeft
                     this.freeTrialExpired = freeTrialInfo.expired
