@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.14
+_release date: 2025-02-25_
+ * frontend: Adjust height for quiz video-lecture components for iPad
+
 ## 0.57.13
 _release date: 2025-02-25_
  * frontend: Adjust height for quiz video-lecture components
