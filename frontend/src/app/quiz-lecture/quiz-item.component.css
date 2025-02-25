@@ -13,6 +13,17 @@ button {
 @media only screen {
     .quiz-content {
         display: flex;
+        width: 750px;
+        height: 415px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 850px){
+    .quiz-content {
+        display: flex;
         width: 800px;
         height: 445px;
         background-color: var(--very-light);
