@@ -4,7 +4,7 @@
         display: grid;
         grid-template-columns: 2fr;
         gap: 10px;
-        width: 200px;
+        width: 720px;
     }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
@@ -22,7 +22,7 @@
         display: grid;
         grid-template-columns: 2fr;
         gap: 10px;
-        width: 100%;
+        width: 1080px;
     }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
@@ -36,11 +36,11 @@
 
 @media only screen and (min-width: 1500px) {
     .grid-container {
-        margin-left: 0px;
         display: grid;
         grid-template-columns: 2fr;
         gap: 10px;
-        width: 100%;
+        width: 1440px;
+        text-align: center;
     }
     .item1 {grid-area: 1 / span 1;}
     .item2 {grid-area: 1 / span 1;}
@@ -52,11 +52,7 @@
     .item8 {grid-area: 2 / span 1;}
 }
 
-.courses {
-    list-style-type: none;
-    padding: 0;
-    width: 820px;
-}
+
 
 .courses li {
     display: flex;
