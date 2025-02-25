@@ -6,16 +6,63 @@
     background-color: var(--white);
 }
 
-.quiz-content {
-    display: flex;
-    width: 1066px;
-    height: 604px;
-    background-color: var(--very-light);
-    justify-content: center;
-    align-items: center;
-}
 
 button {
     background-color: var(--warm);
     width: 16em;
+}
+
+@media only screen {
+    .quiz-content {
+        display: flex;
+        width: 800px;
+        height: 440px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .quiz-content {
+        display: flex;
+        width: 950px;
+        height: 555px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .quiz-content {
+        display: flex;
+        width: 620px;
+        height: 346px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .quiz-content {
+        display: flex;
+        width: 900px;
+        height: 475px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .quiz-content {
+        display: flex;
+        width: 1066px;
+        height: 604px;
+        background-color: var(--very-light);
+        justify-content: center;
+        align-items: center;
+    }
 }
