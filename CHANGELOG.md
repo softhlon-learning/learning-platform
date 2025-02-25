@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.0
+_release date: 2025-02-25_
+ * frontend: Update color for header and footer links
+
 ## 0.57.19
 _release date: 2025-02-25_
  * system: Document custom kernel options
