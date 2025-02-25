@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.7
+_release date: 2025-02-25_
+ * frontend: Fix duplicated fetchFreeTrial calls
+
 ## 0.57.6
 _release date: 2025-02-24_
  * backend: Rename 'Learning Platform' to 'java Full-Stack Academy'
