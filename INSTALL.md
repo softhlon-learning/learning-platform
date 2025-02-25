@@ -59,6 +59,17 @@
    * ``freebsd-update install``
  * Install gh and git tools
    * ``pkg install -y gh && pkg install -y git``
+ * Build and install custom kernel
+   * ``mkdir ~/kernels``
+   * _ git clone -o freebsd -b releng/xy.z https://git.FreeBSD.org/src.git /usr/src
+   * ``cd /usr/src/sys/amd64/conf``
+   * ``cp /usr/src/sys/amd64/conf/GENERIC ~/kernels/SOFTHLON``
+   * ``ln -s ~/kernels/SOFTHLON``
+   * Add additional options to kernel (look at ``config/kernel/SOFTHLON``)
+   * ``cd /usr/src``
+   * ``make -j16 buildkernel KERNCONF=SOFTHLON ``
+   * ``make installkernel KERNCONF=SOFTHLON ``
+   * ``reboot``
  * Authenticate in GitHub and clone repo
    * ``gh auth login --hostname github.com``
    * ``gh repo clone softhlon-learning/learning-platform /root/platform``
