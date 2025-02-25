@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.10
+_release date: 2025-02-25_
+ * backend: Upgrade to Spring Boot 3.4.3
+
 ## 0.57.9
 _release date: 2025-02-25_
  * frontend: Improve refresh of fetchFreeTrial calls
