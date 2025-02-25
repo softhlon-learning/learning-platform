@@ -5,14 +5,38 @@
         gap: 10px;
         width: 720px;
     }
-    .item1 {grid-area: 1 / span 1;}
-    .item2 {grid-area: 1 / span 1;}
-    .item3 {grid-area: 2 / span 1;}
-    .item4 {grid-area: 2 / span 1;}
-    .item5 {grid-area: 3 / span 1;}
-    .item6 {grid-area: 3 / span 1;}
-    .item7 {grid-area: 4 / span 1;}
-    .item8 {grid-area: 4 / span 1;}
+
+    .item1 {
+        grid-area: 1 / span 1;
+    }
+
+    .item2 {
+        grid-area: 1 / span 1;
+    }
+
+    .item3 {
+        grid-area: 2 / span 1;
+    }
+
+    .item4 {
+        grid-area: 2 / span 1;
+    }
+
+    .item5 {
+        grid-area: 3 / span 1;
+    }
+
+    .item6 {
+        grid-area: 3 / span 1;
+    }
+
+    .item7 {
+        grid-area: 4 / span 1;
+    }
+
+    .item8 {
+        grid-area: 4 / span 1;
+    }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -22,14 +46,38 @@
         gap: 10px;
         width: 1080px;
     }
-    .item1 {grid-area: 1 / span 1;}
-    .item2 {grid-area: 1 / span 1;}
-    .item3 {grid-area: 1 / span 1;}
-    .item4 {grid-area: 2 / span 1;}
-    .item5 {grid-area: 2 / span 1;}
-    .item6 {grid-area: 2 / span 1;}
-    .item7 {grid-area: 3 / span 1;}
-    .item8 {grid-area: 3 / span 1;}
+
+    .item1 {
+        grid-area: 1 / span 1;
+    }
+
+    .item2 {
+        grid-area: 1 / span 1;
+    }
+
+    .item3 {
+        grid-area: 1 / span 1;
+    }
+
+    .item4 {
+        grid-area: 2 / span 1;
+    }
+
+    .item5 {
+        grid-area: 2 / span 1;
+    }
+
+    .item6 {
+        grid-area: 2 / span 1;
+    }
+
+    .item7 {
+        grid-area: 3 / span 1;
+    }
+
+    .item8 {
+        grid-area: 3 / span 1;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -40,16 +88,39 @@
         width: 1440px;
         text-align: center;
     }
-    .item1 {grid-area: 1 / span 1;}
-    .item2 {grid-area: 1 / span 1;}
-    .item3 {grid-area: 1 / span 1;}
-    .item4 {grid-area: 1 / span 1;}
-    .item5 {grid-area: 2 / span 1;}
-    .item6 {grid-area: 2 / span 1;}
-    .item7 {grid-area: 2 / span 1;}
-    .item8 {grid-area: 2 / span 1;}
-}
 
+    .item1 {
+        grid-area: 1 / span 1;
+    }
+
+    .item2 {
+        grid-area: 1 / span 1;
+    }
+
+    .item3 {
+        grid-area: 1 / span 1;
+    }
+
+    .item4 {
+        grid-area: 1 / span 1;
+    }
+
+    .item5 {
+        grid-area: 2 / span 1;
+    }
+
+    .item6 {
+        grid-area: 2 / span 1;
+    }
+
+    .item7 {
+        grid-area: 2 / span 1;
+    }
+
+    .item8 {
+        grid-area: 2 / span 1;
+    }
+}
 
 
 .courses li {

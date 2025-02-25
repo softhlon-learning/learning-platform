@@ -37,7 +37,7 @@
       </li>
     </ul>
 
-    <div id="course-item" class="course-item">
+    <div class="course-item" id="course-item">
       <video-lecture
               *ngIf="navigation.currentLecture.type == 'Watch' && (this.displayMode(navigation.currentLecture) !== 'locked')"
               [coursePath]="course.code + '-course'"

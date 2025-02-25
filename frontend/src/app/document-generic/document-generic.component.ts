@@ -6,7 +6,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core'
 import {NgxSpinnerService} from "ngx-spinner";
 import {Router} from "@angular/router";
-import { KeyboardInputCourseToc } from './keyboard-input';
+import {KeyboardInputCourseToc} from './keyboard-input';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Implementation

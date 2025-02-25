@@ -3,12 +3,14 @@
 }
 
 .main {
-    display: flex; justify-content: left; flex-direction: column;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
     text-align: left;
 }
 
 div.navigation-bar button {
-   margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 div {

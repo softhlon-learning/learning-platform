@@ -1,11 +1,11 @@
 <div *ngIf="navigationItems.currentLecture">
     <iframe (load)="hideSpinner()"
             [src]="'https://java-fullstack.tech/static/' + coursePath + '/' + navigationItems.currentLecture.id | safe"
-            id="document-frame"
             class="document-frame"
-            type="text/html"
             frameborder="0"
-            loading="lazy">
+            id="document-frame"
+            loading="lazy"
+            type="text/html">
     </iframe>
     <ngx-spinner
             [fullScreen]="false"
