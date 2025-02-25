@@ -44,7 +44,11 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        if (!this.isAuthenticated() || this.isSubscribed() || this.initialized === true) {
+        if (this.initialized) {
+            return;
+        }
+        if (!this.isAuthenticated() || this.isSubscribed()) {
+            this.initialized = true
             return;
         }
 
