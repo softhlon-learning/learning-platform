@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.16
+_release date: 2025-02-25_
+ * frontend: Redirect document-generic.component to main server (from S3)
+
 ## 0.57.15
 _release date: 2025-02-25_
  * frontend: Adjust height for document-lecture.component for higher resolutions
