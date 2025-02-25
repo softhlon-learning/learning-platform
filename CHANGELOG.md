@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.15
+_release date: 2025-02-25_
+ * frontend: Adjust height for document-lecture.component for higher resolutions
+
 ## 0.57.14
 _release date: 2025-02-25_
  * frontend: Adjust height for quiz video-lecture components for iPad
