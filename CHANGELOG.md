@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.11  
+_release date: 2025-02-25_
+ * frontend: Upgrade Angular version
+
 ## 0.57.10
 _release date: 2025-02-25_
  * backend: Upgrade to Spring Boot 3.4.3
