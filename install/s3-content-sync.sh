@@ -28,21 +28,15 @@ wget -N https://hel1.your-objectstorage.com/java-course/welcome.mov -P  /var/www
 
 # angular-course bucket
 mkdir -p /var/www/static/angular-course
-wget -N https://hel1.your-objectstorage.com/angular-course/no-document-yet.html -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/angular-course/no-video-yet.mov -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/angular-course/welcome.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/angular-course/no-document-yet.html -P  /var/www/static/angular-course/
+wget -N https://hel1.your-objectstorage.com/angular-course/no-video-yet.mov -P  /var/www/static/angular-course/
+wget -N https://hel1.your-objectstorage.com/angular-course/welcome.mov -P  /var/www/static/angular-course/
 
 # spring-course bucket
 mkdir -p /var/www/static/spring-course
-wget -N https://hel1.your-objectstorage.com/spring-course/no-document-yet.html -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/spring-course/no-video-yet.mov -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/spring-course/welcome.mov -P  /var/www/static/java-course/
-
-# spring-course bucket
-mkdir -p /var/www/static/spring-course
-wget -N https://hel1.your-objectstorage.com/spring-course/no-document-yet.html -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/spring-course/no-video-yet.mov -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/spring-course/welcome.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/spring-course/no-document-yet.html -P  /var/www/static/spring-course/
+wget -N https://hel1.your-objectstorage.com/spring-course/no-video-yet.mov -P  /var/www/static/spring-course/
+wget -N https://hel1.your-objectstorage.com/spring-course/welcome.mov -P  /var/www/static/spring-course/
 
 # microservices-course bucket
 mkdir -p /var/www/static/microservices-course
