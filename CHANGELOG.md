@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.57.19
+_release date: 2025-02-25_
+ * system: Document custom kernel options
+ * system: Update INSTALL.md for custom kernel instructions
+
 ## 0.57.18
 _release date: 2025-02-25_
  * frontend: Improve course tile positioning on iPad
