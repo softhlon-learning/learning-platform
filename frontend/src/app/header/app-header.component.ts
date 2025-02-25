@@ -7,7 +7,7 @@
 import version from "../../../package.json"
 import {Component, OnInit} from '@angular/core'
 import {CookieService} from "ngx-cookie-service"
-import {NavigationStart, Router} from "@angular/router"
+import {ActivatedRoute, NavigationStart, Router} from "@angular/router"
 import {AccountsService} from '../service/accounts/accounts.service'
 import {AUTHENTICATED_COOKIE, SUBSCRIPTION_COOKIE} from "../common/constants";
 import {SubscriptionsService} from "../service/subscriptions/subscriptions.service"
@@ -33,6 +33,7 @@ export class AppHeaderComponent implements OnInit {
 
     constructor(
         private router: Router,
+        private route: ActivatedRoute,
         private accountsService: AccountsService,
         private subscriptionsService: SubscriptionsService,
         private cookieService: CookieService) {
@@ -44,22 +45,31 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        if (this.initialized) {
-            return;
-        }
-        if (!this.isAuthenticated() || this.isSubscribed()) {
-            this.initialized = true
-            return;
-        }
+        this.route.queryParamMap.subscribe(item => {
+                if (item.has("stopRefresh")) {
+                    this.stopRefresh = item.get("stopRefresh")?.toString() === 'true';
+                }
 
-        console.log("ngInit call")
-        this.fetchFreeTrial(true)
-        setInterval(() => {
-            if (this.isAuthenticated() && !this.isSubscribed()) {
-                console.log("interval call")
-                this.fetchFreeTrial()
+                console.log('c: ' + this.stopRefresh)
+
+                if (this.initialized) {
+                    return;
+                }
+                if (!this.isAuthenticated() || this.isSubscribed()) {
+                    this.initialized = true
+                    return;
+                }
+
+                console.log("ngInit call")
+                this.fetchFreeTrial(true)
+                setInterval(() => {
+                    if (this.isAuthenticated() && !this.isSubscribed()) {
+                        console.log("interval call")
+                        this.fetchFreeTrial()
+                    }
+                }, FREE_TRIAL_REFRESH_DELAY)
             }
-        }, FREE_TRIAL_REFRESH_DELAY)
+        )
     }
 
     /**
@@ -126,8 +136,12 @@ export class AppHeaderComponent implements OnInit {
                 }
 
                 if (freeTrialInfo.expired === true && !init) {
-                    this.stopRefresh = true
-                    window.location.reload()
+                    this.router.navigate(
+                        ['/home'],
+                        {queryParams: {stopRefresh: true}})
+                        .then(() => {
+                            window.location.reload()
+                        })
                 }
             }
         );
