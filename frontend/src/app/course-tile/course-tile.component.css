@@ -1,7 +1,7 @@
 button.course-box-item {
     background-color: var(--steel);
-    height: 300px;
-    width: 300px;
+    height: 320px;
+    width: 320px;
     border-radius: 10px;
     font-size: 30px;
     font-weight: bold;
@@ -19,8 +19,8 @@ button:hover.course-box-item {
 
 .enrolled-item {
     background-color: var(--enrolled);
-    height: 300px;
-    width: 300px;
+    height: 320px;
+    width: 320px;
     border-radius: 10px;
     font-size: 30px;
     font-weight: bold;
