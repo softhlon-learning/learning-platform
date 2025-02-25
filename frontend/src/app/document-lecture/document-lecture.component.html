@@ -1,6 +1,6 @@
 <div *ngIf="navigationItems.currentLecture">
     <iframe (load)="hideSpinner()"
-            [src]="'https://' + coursePath +'.hel1.your-objectstorage.com/' + navigationItems.currentLecture.id | safe"
+            [src]="'https://java-fullstack.tech/static/' + coursePath + '/' + navigationItems.currentLecture.id | safe"
             id="document-frame"
             class="document-frame"
             type="text/html"
