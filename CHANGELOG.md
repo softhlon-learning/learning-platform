@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.1
+_release date: 2025-02-25_
+ * system: S3 buckets cleanup
+
 ## 0.58.0
 _release date: 2025-02-25_
  * frontend: Update color for header and footer links
