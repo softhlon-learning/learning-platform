@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.18
+_release date: 2025-02-25_
+ * frontend: Improve course tile positioning on iPad
+
 ## 0.57.17
 _release date: 2025-02-25_
  * frontend: Redirect document-lecture.component to main server (from S3)
