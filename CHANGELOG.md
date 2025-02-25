@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.57.12
+_release date: 2025-02-25_
+ * frontend: Adjust height for quiz-item.component
+
 ## 0.57.11  
 _release date: 2025-02-25_
  * frontend: Upgrade Angular version
