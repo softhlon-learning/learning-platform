@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# java-fullstack-docs bucket
+mkdir -p /var/www/static/docs
+wget -N https://hel1.your-objectstorage.com/java-fullstack-docs/about.html -P  /var/www/static/docs/
+wget -N https://hel1.your-objectstorage.com/java-fullstack-docs/privacy-policy.html -P  /var/www/static/docs/
+wget -N https://hel1.your-objectstorage.com/java-fullstack-docs/user-agreement.html -P  /var/www/static/docs/
+
 # java-course bucket
 mkdir -p /var/www/static/java-course
 wget -N https://hel1.your-objectstorage.com/java-course/ai-and-programming.mov -P  /var/www/static/java-course/
