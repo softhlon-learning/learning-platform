@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.4
+_release date: 2025-02-26_
+ * scripts: Update s3-content-sync.sh (java-fullstack-docs bucket)
+
 ## 0.58.3
 _release date: 2025-02-26_
  * scripts: Update owner for s3-content-sync.sh
