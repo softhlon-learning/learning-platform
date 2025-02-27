@@ -5,6 +5,8 @@
 
 package tech.javafullstack.subscriptions.gateway.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -50,22 +52,27 @@ class FetchSubscriptionController {
     private static final LoadFreeTrialRepository.FreeTrial freeTrial =
           new LoadFreeTrialRepository.FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
 
+    ObjectMapper mapper = new ObjectMapper();
+
     /**
      * GET /api/v1/subscription ednpoint.
      * @param payload Stripe event payload
      * @return ResponseEntity<?>
      */
     @GetMapping(FETCH_FREE_TRIAL)
-    ResponseEntity<?> fetchSubscription() {
+    ResponseEntity<?> fetchSubscription() throws JsonProcessingException {
 
         log.info("controller | request / Fetch subscription");
 
         var accountId = authContext.accountId();
         var result = freeTrial(freeTrial);
 
+
+        String jsonResult = mapper.writeValueAsString(freeTrial(freeTrial));
+
         if (true) {
             return status(HttpStatus.OK)
-                  .body(gson.toJson(freeTrial(freeTrial), FreeTrialInfo.class));
+                  .body(jsonResult);
         } else {
             return null;
         }
