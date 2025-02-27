@@ -71,14 +71,14 @@ class FetchSubscriptionController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<String> successBody(
+    private ResponseEntity<FreeTrialInfo> successBody(
           FreeTrialInfo freeTrialInfo) throws JsonProcessingException {
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        mapper.registerModule(new JavaTimeModule());
+//        ObjectMapper mapper = new ObjectMapper();
+//        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+//        mapper.registerModule(new JavaTimeModule());
 
         return status(HttpStatus.OK)
-              .body(mapper.writeValueAsString(freeTrialInfo));
+              .body(freeTrialInfo);
     }
 }
