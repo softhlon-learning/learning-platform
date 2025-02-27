@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.58.7
+_release date: 2025-02-27_
+ * subscriptions: Refactor objectMapper usage in FetchSubscriptionController
+ * application: Update configuration
+
 ## 0.58.6
 _release date: 2025-02-27_
  * backend: POC of performance issues improvements
