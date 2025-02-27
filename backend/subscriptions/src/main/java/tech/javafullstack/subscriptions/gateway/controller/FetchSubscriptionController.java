@@ -5,9 +5,11 @@
 
 package tech.javafullstack.subscriptions.gateway.controller;
 
+import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +18,6 @@ import tech.javafullstack.common.hexagonal.RestApiAdapter;
 import tech.javafullstack.common.security.AuthenticationContext;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.FreeTrialInfo;
-import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Failed;
-import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
-import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Succeeded;
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository;
 
 import java.time.Duration;
@@ -26,8 +25,6 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.status;
-import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
-import static tech.javafullstack.common.controller.ResponseBodyHelper.notFoundBody;
 import static tech.javafullstack.subscriptions.gateway.controller.RestResources.FETCH_FREE_TRIAL;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -42,6 +39,9 @@ import static tech.javafullstack.subscriptions.gateway.controller.RestResources.
 @RestController
 @RequiredArgsConstructor
 class FetchSubscriptionController {
+
+    @Autowired
+    private Gson gson;
 
     private final FetchFreeTrialService service;
     private final HttpServletRequest httpRequest;
@@ -65,7 +65,7 @@ class FetchSubscriptionController {
 
         if (true) {
             return status(HttpStatus.OK)
-                  .body(freeTrial(freeTrial));
+                  .body(gson.toJson(freeTrial(freeTrial), FreeTrialInfo.class));
         } else {
             return null;
         }
