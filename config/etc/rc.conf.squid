@@ -13,6 +13,8 @@ ipv6_defaultrouter="fe80::1%igb0"
 cloned_interfaces="vlan0"
 ifconfig_vlan0="inet 10.0.0.2/24 vlan 4000 vlandev igb0"
 
+clear_tmp_enable="yes"
+
 zfs_enable="yes"
 syslogd_flags="-ss"
 sshd_enable="yes"

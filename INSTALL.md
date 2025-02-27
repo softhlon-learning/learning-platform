@@ -61,7 +61,7 @@
    * ``pkg install -y gh && pkg install -y git``
  * Build and install custom kernel
    * ``mkdir ~/kernels``
-   * _ git clone -o freebsd -b releng/xy.z https://git.FreeBSD.org/src.git /usr/src
+   * ``git clone -o freebsd -b releng/xy.z https://git.FreeBSD.org/src.git /usr/src``
    * ``cd /usr/src/sys/amd64/conf``
    * ``cp /usr/src/sys/amd64/conf/GENERIC ~/kernels/SOFTHLON``
    * ``ln -s ~/kernels/SOFTHLON``
