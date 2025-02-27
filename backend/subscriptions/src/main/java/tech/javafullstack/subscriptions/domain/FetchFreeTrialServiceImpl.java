@@ -45,7 +45,7 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
           UUID accountId) {
 
         if (true) {
-            new Succeeded(freeTrial(freeTrial));
+            return new Succeeded(freeTrial(freeTrial));
         }
 
 //        var result = loadFreeTrialRepository.execute(accountId);
