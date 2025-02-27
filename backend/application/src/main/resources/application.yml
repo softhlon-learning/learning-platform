@@ -1,5 +1,5 @@
 server:
-  address: localhost
+  address: 10.0.0.1
   tomcat.max-threads: 50
   tomcat.max-connections: 50
 spring:
