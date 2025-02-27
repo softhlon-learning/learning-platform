@@ -6,7 +6,6 @@
 package tech.javafullstack.subscriptions.domain;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Failed;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
@@ -27,18 +26,12 @@ import java.util.UUID;
 /**
  * Fetch profile service implementation.
  */
-@Slf4j
 @Service
+@RequiredArgsConstructor
 class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
-    //private final LoadFreeTrialRepository loadFreeTrialRepository;
 
-//    public FetchFreeTrialServiceImpl(
-//          LoadFreeTrialRepository loadFreeTrialRepository) {
-//        this.loadFreeTrialRepository = loadFreeTrialRepository;
-//    }
+    private final LoadFreeTrialRepository loadFreeTrialRepository;
 
-    private static final FreeTrial freeTrial =
-          new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
     /**
      * {@inheritDoc}
      */
@@ -46,18 +39,13 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     public Result execute(
           UUID accountId) {
 
-        log.info("{}", this);
-        if (true) {
-            return new Succeeded(freeTrial(freeTrial));
-        }
+        var result = loadFreeTrialRepository.execute(accountId);
+        return switch (result) {
+            case FreeTrialLoaded(FreeTrial freeTrial) -> new Succeeded(freeTrial(freeTrial));
+            case FreeTrialNotFound() -> new FreeTrialNotFoundFailed();
+            case FreeTrialLoadFailed(Throwable cause) -> new Failed(cause);
+        };
 
-//        var result = loadFreeTrialRepository.execute(accountId);
-//        return switch (result) {
-//            case FreeTrialLoaded(FreeTrial freeTrial) -> new Succeeded(freeTrial(freeTrial));
-//            case FreeTrialNotFound() -> new FreeTrialNotFoundFailed();
-//            case FreeTrialLoadFailed(Throwable cause) -> new Failed(cause);
-//        };
-        return null;
     }
 
     // -----------------------------------------------------------------------------------------------------------------

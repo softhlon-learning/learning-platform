@@ -13,7 +13,6 @@ import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeT
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialLoaded;
 import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository.LoadFreeTrialResult.FreeTrialNotFound;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -27,7 +26,6 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 class LoadFreeTrialRepositoryAdapter implements LoadFreeTrialRepository {
-
     private final FreeTrialsJpaRepository freeTrialsJpaRepository;
 
     /**
