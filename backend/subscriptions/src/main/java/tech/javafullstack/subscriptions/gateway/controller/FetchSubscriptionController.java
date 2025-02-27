@@ -76,4 +76,5 @@ class FetchSubscriptionController {
         return status(HttpStatus.OK)
               .body(objectMapper.writeValueAsString(freeTrialInfo));
     }
+
 }
