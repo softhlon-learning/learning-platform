@@ -31,13 +31,18 @@ import java.util.UUID;
 class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
 
     private final LoadFreeTrialRepository loadFreeTrialRepository;
-
+    private static final FreeTrial freeTrial =
+          new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
     /**
      * {@inheritDoc}
      */
     @Override
     public Result execute(
           UUID accountId) {
+
+        if (true) {
+            new Succeeded(freeTrial(freeTrial));
+        }
 
         var result = loadFreeTrialRepository.execute(accountId);
         return switch (result) {
