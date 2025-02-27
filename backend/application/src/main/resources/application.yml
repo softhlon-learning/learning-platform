@@ -8,7 +8,7 @@ spring:
     url: jdbc:postgresql://localhost/learning
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
-    hikari.maximum-pool-size: 50
+    hikari.maximum-pool-size: 500
   mail.host: java-fullstack.tech
   mail.port: 25
   mail.properties.mail.smtp.starttls.enable: true
