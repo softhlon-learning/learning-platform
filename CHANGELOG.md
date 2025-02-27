@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.6
+_release date: 2025-02-27_
+ * backend: POC of performance issues improvements
+
 ## 0.58.5
 _release date: 2025-02-27_
  * scripts: Add clear_tmp_enable="yes" to rc.conf files
