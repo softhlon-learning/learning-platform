@@ -29,6 +29,9 @@ import java.util.UUID;
 class LoadFreeTrialRepositoryAdapter implements LoadFreeTrialRepository {
     private final FreeTrialsJpaRepository freeTrialsJpaRepository;
 
+    private static final FreeTrial freeTrial =
+          new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
+
     /**
      * {@inheritDoc}
      */
@@ -38,9 +41,7 @@ class LoadFreeTrialRepositoryAdapter implements LoadFreeTrialRepository {
 
         try {
             if (true) {
-                return new FreeTrialLoaded(
-                      new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now())
-                );
+                return new FreeTrialLoaded(freeTrial);
             }
 
             var entity = freeTrialsJpaRepository.findByAccountId(accountId);
