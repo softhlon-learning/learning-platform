@@ -19,7 +19,7 @@ module courses {
     requires org.yaml.snakeyaml;
     requires org.slf4j;
     requires com.google.gson;
-    requires org.apache.tomcat.embed.core;
+    requires jakarta.servlet;
     requires org.checkerframework.checker.qual;
     requires spring.data.jpa;
     requires spring.boot.autoconfigure;

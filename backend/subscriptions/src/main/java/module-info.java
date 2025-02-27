@@ -15,7 +15,7 @@ module subscriptions {
     requires com.google.gson;
     requires jakarta.persistence;
     requires org.slf4j;
-    requires org.apache.tomcat.embed.core;
+    requires jakarta.servlet;
     requires org.checkerframework.checker.qual;
     requires stripe.java;
     requires spring.boot.autoconfigure;

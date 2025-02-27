@@ -22,7 +22,7 @@ module accounts {
     requires jjwt.api;
     requires jakarta.persistence;
     requires com.fasterxml.jackson.annotation;
-    requires org.apache.tomcat.embed.core;
+    requires jakarta.servlet;
     requires org.slf4j;
     requires google.api.client;
     requires com.google.api.client;
@@ -30,4 +30,5 @@ module accounts {
     requires com.google.api.client.auth;
     requires org.checkerframework.checker.qual;
     requires spring.tx;
+    requires jakarta.annotation;
 }

@@ -13,7 +13,7 @@ module common {
     requires spring.security.core;
     requires spring.beans;
 
-    requires org.apache.tomcat.embed.core;
     requires org.slf4j;
     requires org.apache.commons.lang3;
+    requires jakarta.servlet;
 }
