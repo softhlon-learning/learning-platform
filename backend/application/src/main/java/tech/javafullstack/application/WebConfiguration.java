@@ -38,14 +38,4 @@ class WebConfiguration implements WebMvcConfigurer {
 
     }
 
-    @Bean
-    @Primary
-    ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        mapper.registerModule(new JavaTimeModule());
-
-        return mapper;
-    }
-
 }

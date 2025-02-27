@@ -5,10 +5,11 @@
 
 package tech.javafullstack.subscriptions;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -23,4 +24,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration(proxyBeanMethods = false)
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan("tech.javafullstack.subscriptions")
-public class SubscriptionsConfiguration {}
+public class SubscriptionsConfiguration {
+    @Bean
+    @Primary
+    ObjectMapper objectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        mapper.registerModule(new JavaTimeModule());
+
+        return mapper;
+    }
+}
