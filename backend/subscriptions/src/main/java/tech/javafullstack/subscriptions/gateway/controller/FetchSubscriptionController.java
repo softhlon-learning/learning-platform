@@ -64,7 +64,10 @@ class FetchSubscriptionController {
         var result = freeTrial(freeTrial);
 
         if (true) {
-            return successBody(result);
+            return status(HttpStatus.OK)
+                  .body("""
+                        {"expired":true,"expireAt":"2025-02-27T21:12:58.162820948+01:00","timeLeft":null}
+                        """);
         } else {
             return null;
         }
