@@ -55,11 +55,16 @@ class FetchSubscriptionController {
         var accountId = authContext.accountId();
         var result = service.execute(accountId);
 
-        return switch (result) {
-            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
-            case FreeTrialNotFoundFailed() -> notFoundBody();
-            case Succeeded(FreeTrialInfo freeTrialInfo) -> successBody(freeTrialInfo);
-        };
+        return status(HttpStatus.OK)
+              .body("""
+                    {"expired":true,"expireAt":"2025-02-27T01:42:08.835725Z","timeLeft":null}
+                    """);
+
+//        return switch (result) {
+//            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
+//            case FreeTrialNotFoundFailed() -> notFoundBody();
+//            case Succeeded(FreeTrialInfo freeTrialInfo) -> successBody(freeTrialInfo);
+//        };
 
     }
 
