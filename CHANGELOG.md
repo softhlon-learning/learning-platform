@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.58.5
+_release date: 2025-02-27_
+ * scripts: Add clear_tmp_enable="yes" to rc.conf files
+ * scripts: Remove blacklist check from main.cf
+
 ## 0.58.4
 _release date: 2025-02-26_
  * scripts: Update s3-content-sync.sh (java-fullstack-docs bucket)
