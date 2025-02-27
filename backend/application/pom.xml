@@ -16,6 +16,10 @@
             <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>tech.javafullstack</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>
