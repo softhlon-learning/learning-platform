@@ -28,12 +28,12 @@ import java.util.UUID;
  */
 @Service
 class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
-    private final LoadFreeTrialRepository loadFreeTrialRepository;
+    //private final LoadFreeTrialRepository loadFreeTrialRepository;
 
-    public FetchFreeTrialServiceImpl(
-          LoadFreeTrialRepository loadFreeTrialRepository) {
-        this.loadFreeTrialRepository = loadFreeTrialRepository;
-    }
+//    public FetchFreeTrialServiceImpl(
+//          LoadFreeTrialRepository loadFreeTrialRepository) {
+//        this.loadFreeTrialRepository = loadFreeTrialRepository;
+//    }
 
     private static final FreeTrial freeTrial =
           new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
@@ -48,13 +48,13 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
             new Succeeded(freeTrial(freeTrial));
         }
 
-        var result = loadFreeTrialRepository.execute(accountId);
-        return switch (result) {
-            case FreeTrialLoaded(FreeTrial freeTrial) -> new Succeeded(freeTrial(freeTrial));
-            case FreeTrialNotFound() -> new FreeTrialNotFoundFailed();
-            case FreeTrialLoadFailed(Throwable cause) -> new Failed(cause);
-        };
-
+//        var result = loadFreeTrialRepository.execute(accountId);
+//        return switch (result) {
+//            case FreeTrialLoaded(FreeTrial freeTrial) -> new Succeeded(freeTrial(freeTrial));
+//            case FreeTrialNotFound() -> new FreeTrialNotFoundFailed();
+//            case FreeTrialLoadFailed(Throwable cause) -> new Failed(cause);
+//        };
+        return null;
     }
 
     // -----------------------------------------------------------------------------------------------------------------
