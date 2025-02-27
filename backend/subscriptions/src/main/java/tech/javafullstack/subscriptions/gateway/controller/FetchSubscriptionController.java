@@ -19,6 +19,11 @@ import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.FreeTrialIn
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Failed;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Succeeded;
+import tech.javafullstack.subscriptions.domain.LoadFreeTrialRepository;
+
+import java.time.Duration;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;
@@ -42,6 +47,9 @@ class FetchSubscriptionController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
 
+    private static final LoadFreeTrialRepository.FreeTrial freeTrial =
+          new LoadFreeTrialRepository.FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
+
     /**
      * GET /api/v1/subscription ednpoint.
      * @param payload Stripe event payload
@@ -53,13 +61,19 @@ class FetchSubscriptionController {
         log.info("controller | request / Fetch subscription");
 
         var accountId = authContext.accountId();
-        var result = service.execute(accountId);
+        var result = freeTrial(freeTrial);
 
-        return switch (result) {
-            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
-            case FreeTrialNotFoundFailed() -> notFoundBody();
-            case Succeeded(FreeTrialInfo freeTrialInfo) -> successBody(freeTrialInfo);
-        };
+        if (true) {
+            return successBody(result);
+        } else {
+            return null;
+        }
+
+//        return switch (result) {
+//            case Failed(Throwable cause) -> internalServerBody(httpRequest, cause);
+//            case FreeTrialNotFoundFailed() -> notFoundBody();
+//            case Succeeded(FreeTrialInfo freeTrialInfo) -> successBody(freeTrialInfo);
+//        };
 
     }
 
@@ -74,4 +88,66 @@ class FetchSubscriptionController {
               .body(freeTrialInfo);
 
     }
+
+    private FreeTrialInfo freeTrial(
+          LoadFreeTrialRepository.FreeTrial freeTrial) {
+
+        Duration duration = Duration.between(
+              OffsetDateTime.now(),
+              freeTrial.expireAt());
+
+        return new FreeTrialInfo(
+              duration.isNegative()
+                    ? true
+                    : false,
+              freeTrial.expireAt(),
+              timeLeftString(duration)
+        );
+
+    }
+
+    private String timeLeftString(Duration duration) {
+        if (duration.isNegative()) {
+            return null; // Or handle negative durations as needed
+        }
+
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60; // Get remaining minutes after hours
+
+        StringBuilder timeLeft = new StringBuilder();
+
+        // Handle hours
+        switch ((int) hours) {
+            case 0:
+                // Only show hours if non-zero
+                break;
+            case 1:
+                timeLeft.append("1 hour ");
+                break;
+            default:
+                if (hours > 1) {
+                    timeLeft.append(hours).append(" hours ");
+                }
+        }
+
+        // Handle minutes
+        switch ((int) minutes) {
+            case 0:
+                // Only show minutes if non-zero and hours is zero
+                if (hours == 0) {
+                    timeLeft.append("any moment");
+                }
+                break;
+            case 1:
+                timeLeft.append("1 minute");
+                break;
+            default:
+                if (minutes > 1) {
+                    timeLeft.append(minutes).append(" minutes");
+                }
+        }
+
+        return timeLeft.toString().trim();
+    }
+
 }
