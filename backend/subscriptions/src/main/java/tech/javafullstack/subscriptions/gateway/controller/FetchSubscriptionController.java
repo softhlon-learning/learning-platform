@@ -7,8 +7,6 @@ package tech.javafullstack.subscriptions.gateway.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,6 +43,7 @@ class FetchSubscriptionController {
     private final FetchFreeTrialService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
+    private final ObjectMapper objectMapper;
 
     /**
      * GET /api/v1/subscription ednpoint.
@@ -71,14 +70,10 @@ class FetchSubscriptionController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<FreeTrialInfo> successBody(
+    private ResponseEntity<String> successBody(
           FreeTrialInfo freeTrialInfo) throws JsonProcessingException {
 
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-//        mapper.registerModule(new JavaTimeModule());
-
         return status(HttpStatus.OK)
-              .body(freeTrialInfo);
+              .body(objectMapper.writeValueAsString(freeTrialInfo));
     }
 }
