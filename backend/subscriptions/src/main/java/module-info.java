@@ -19,5 +19,6 @@ module subscriptions {
     requires org.checkerframework.checker.qual;
     requires stripe.java;
     requires spring.boot.autoconfigure;
+    requires com.fasterxml.jackson.datatype.jsr310;
     requires com.fasterxml.jackson.databind;
 }
