@@ -27,10 +27,14 @@ import java.util.UUID;
  * Fetch profile service implementation.
  */
 @Service
-@RequiredArgsConstructor
 class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
-
     private final LoadFreeTrialRepository loadFreeTrialRepository;
+
+    public FetchFreeTrialServiceImpl(
+          LoadFreeTrialRepository loadFreeTrialRepository) {
+        this.loadFreeTrialRepository = loadFreeTrialRepository;
+    }
+
     private static final FreeTrial freeTrial =
           new FreeTrial(UUID.randomUUID(), UUID.randomUUID(), OffsetDateTime.now());
     /**
