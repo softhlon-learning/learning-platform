@@ -6,6 +6,7 @@
 package tech.javafullstack.subscriptions.domain;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.Failed;
 import tech.javafullstack.subscriptions.domain.FetchFreeTrialService.Result.FreeTrialNotFoundFailed;
@@ -26,6 +27,7 @@ import java.util.UUID;
 /**
  * Fetch profile service implementation.
  */
+@Slf4j
 @Service
 class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     //private final LoadFreeTrialRepository loadFreeTrialRepository;
@@ -44,6 +46,7 @@ class FetchFreeTrialServiceImpl implements FetchFreeTrialService {
     public Result execute(
           UUID accountId) {
 
+        log.info("{}", this);
         if (true) {
             return new Succeeded(freeTrial(freeTrial));
         }
