@@ -1,14 +1,14 @@
 server:
-  address: localhost
-  tomcat.max-threads: 500
-  tomcat.max-connections: 500
+  address: 10.0.0.1
+  tomcat.max-threads: 50
+  tomcat.max-connections: 50
 spring:
   threads.virtual.enabled: true
   datasource:
     url: jdbc:postgresql://localhost/learning
     username: postgres
     password: "@z9X}r6hF£>8J2r_"
-    hikari.maximum-pool-size: 10
+    hikari.maximum-pool-size: 20
   mail.host: java-fullstack.tech
   mail.port: 25
   mail.properties.mail.smtp.starttls.enable: true
