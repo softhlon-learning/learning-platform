@@ -11,12 +11,12 @@ package tech.javafullstack.accounts.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Failed;
-import tech.javafullstack.accounts.domain.SendContactMessageService.Result.MessagePolicyFailed;
-import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Succeeded;
 import tech.javafullstack.accounts.domain.PersistContactMessageRepository.PersistContactMessageRequest;
 import tech.javafullstack.accounts.domain.PersistContactMessageRepository.PersistContactMessageResult.ContactMessagePersisted;
 import tech.javafullstack.accounts.domain.PersistContactMessageRepository.PersistContactMessageResult.ContactMessagePersistenceFailed;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Failed;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.MessagePolicyFailed;
+import tech.javafullstack.accounts.domain.SendContactMessageService.Result.Succeeded;
 
 /**
  * Add contact message service implementation.

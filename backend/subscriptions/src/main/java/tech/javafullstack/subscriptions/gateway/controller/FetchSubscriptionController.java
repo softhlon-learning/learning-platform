@@ -70,7 +70,7 @@ class FetchSubscriptionController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<String> successBody(
+    private ResponseEntity<?> successBody(
           FreeTrialInfo freeTrialInfo) throws JsonProcessingException {
 
         return status(HttpStatus.OK)

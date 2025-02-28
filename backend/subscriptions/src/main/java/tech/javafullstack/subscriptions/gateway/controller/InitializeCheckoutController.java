@@ -77,12 +77,12 @@ class InitializeCheckoutController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<String> successBody(
+    private ResponseEntity<?> successBody(
           String redirectUrl) throws JsonProcessingException {
 
-        var response = new CreateCheckoutResponse(redirectUrl);
+        var response = mapper.writeValueAsString(new CreateCheckoutResponse(redirectUrl));
         return status(HttpStatus.OK)
-              .body(mapper.writeValueAsString(response));
+              .body(response);
 
     }
 

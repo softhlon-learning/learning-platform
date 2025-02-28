@@ -18,12 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.javafullstack.common.hexagonal.RestApiAdapter;
 import tech.javafullstack.common.security.AuthenticationContext;
 import tech.javafullstack.courses.domain.ListCoursesService;
-import tech.javafullstack.courses.domain.ListCoursesService.CourseView;
 import tech.javafullstack.courses.domain.ListCoursesService.CoursesView;
 import tech.javafullstack.courses.domain.ListCoursesService.Result.Failed;
 import tech.javafullstack.courses.domain.ListCoursesService.Result.Succeeded;
-
-import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
 import static tech.javafullstack.common.controller.ResponseBodyHelper.internalServerBody;

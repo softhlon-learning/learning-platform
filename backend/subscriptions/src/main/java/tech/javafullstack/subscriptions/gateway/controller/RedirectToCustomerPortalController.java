@@ -75,9 +75,9 @@ class RedirectToCustomerPortalController {
     private ResponseEntity<String> successBody(
           String redirectUrl) throws JsonProcessingException {
 
-        var response = new CreateCheckoutResponse(redirectUrl);
+        var response = mapper.writeValueAsString(new CreateCheckoutResponse(redirectUrl));
         return status(HttpStatus.OK)
-              .body(mapper.writeValueAsString(response));
+              .body(response);
 
     }
 
