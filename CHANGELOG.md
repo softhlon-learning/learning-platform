@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.58.10
+_release date: 2025-02-28_
+ * courses: Integrate controllers with objectMapper
+ * backend: Reformatting
+
 ## 0.58.9
 _release date: 2025-02-28_
  * application: Move objectMapper() to application module

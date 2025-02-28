@@ -6,7 +6,7 @@
 
     <groupId>tech.javafullstack</groupId>
     <artifactId>backend</artifactId>
-    <version>0.58.10-SNAPSHOT</version>
+    <version>0.58.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Java Full-Stack Academy</name>
