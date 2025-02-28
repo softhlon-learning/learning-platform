@@ -5,6 +5,8 @@
 
 package tech.javafullstack.courses.gateway.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -45,6 +47,7 @@ class ListCoursesController {
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
     private final SubscriptionCookiesService subscriptionCookiesService;
+    private final ObjectMapper mapper;
 
     /**
      * GET /api/v1/course endpoint.
@@ -53,7 +56,7 @@ class ListCoursesController {
      */
     @GetMapping(LIST_COURSES)
     ResponseEntity<?> listCourses(
-          HttpServletResponse response) {
+          HttpServletResponse response) throws JsonProcessingException {
 
         var accountId = authContext.accountId();
         log.info("controller | request / List courseList",
@@ -71,9 +74,9 @@ class ListCoursesController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<List<CourseView>> successBody(
+    private ResponseEntity<?> successBody(
           CoursesView courses,
-          HttpServletResponse response) {
+          HttpServletResponse response) throws JsonProcessingException {
 
         subscriptionCookiesService.addSubscriptionCookie(
               response,
@@ -85,8 +88,9 @@ class ListCoursesController {
               )
         );
 
+        var courseList = mapper.writeValueAsString(courses.courseList());
         return status(HttpStatus.OK)
-              .body(courses.courseList());
+              .body(courseList);
 
     }
 
