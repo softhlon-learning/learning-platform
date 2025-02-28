@@ -5,6 +5,8 @@
 
 package tech.javafullstack.subscriptions.gateway.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +43,7 @@ class InitializeCheckoutController {
     private final InitializeCheckoutService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
+    private final ObjectMapper mapper;
 
     /**
      * POST /api/v1/subscription/checkout-session endpoint.
@@ -51,7 +54,7 @@ class InitializeCheckoutController {
     @PostMapping(CHECKOUT_SESSION)
     ResponseEntity<?> checkoutSession(
           @Validated @RequestBody CreateCheckoutRequest request,
-          HttpServletResponse response) {
+          HttpServletResponse response) throws JsonProcessingException {
 
         log.info("controller | request / Create Stripe checkout session");
 
@@ -74,11 +77,12 @@ class InitializeCheckoutController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<CreateCheckoutResponse> successBody(
-          String redirectUrl) {
+    private ResponseEntity<String> successBody(
+          String redirectUrl) throws JsonProcessingException {
 
+        var response = new CreateCheckoutResponse(redirectUrl);
         return status(HttpStatus.OK)
-              .body(new CreateCheckoutResponse(redirectUrl));
+              .body(mapper.writeValueAsString(response));
 
     }
 

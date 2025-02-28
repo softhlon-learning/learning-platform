@@ -43,7 +43,7 @@ class FetchSubscriptionController {
     private final FetchFreeTrialService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper mapper;
 
     /**
      * GET /api/v1/subscription ednpoint.
@@ -74,7 +74,8 @@ class FetchSubscriptionController {
           FreeTrialInfo freeTrialInfo) throws JsonProcessingException {
 
         return status(HttpStatus.OK)
-              .body(objectMapper.writeValueAsString(freeTrialInfo));
+              .body(mapper.writeValueAsString(freeTrialInfo));
+
     }
 
 }

@@ -5,6 +5,8 @@
 
 package tech.javafullstack.subscriptions.gateway.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +43,7 @@ class RedirectToCustomerPortalController {
     private final RedirectToCustomerPortalService service;
     private final HttpServletRequest httpRequest;
     private final AuthenticationContext authContext;
+    private final ObjectMapper mapper;
 
     /**
      * GET /api/v1/subscription/customer_portal endpoint.
@@ -49,7 +52,7 @@ class RedirectToCustomerPortalController {
      */
     @GetMapping(CUSTOMER_PORTAL)
     ResponseEntity<?> redirectToStripePortal(
-          HttpServletResponse response) {
+          HttpServletResponse response) throws JsonProcessingException {
 
         log.info("controller | request / Redirect to Stripe customer portal");
         var accountId = authContext.accountId();
@@ -69,11 +72,12 @@ class RedirectToCustomerPortalController {
     // Private Section
     // -----------------------------------------------------------------------------------------------------------------
 
-    private ResponseEntity<CreateCheckoutResponse> successBody(
-          String redirectUrl) {
+    private ResponseEntity<String> successBody(
+          String redirectUrl) throws JsonProcessingException {
 
+        var response = new CreateCheckoutResponse(redirectUrl);
         return status(HttpStatus.OK)
-              .body(new CreateCheckoutResponse(redirectUrl));
+              .body(mapper.writeValueAsString(response));
 
     }
 
