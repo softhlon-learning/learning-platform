@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.11
+_release date: 2025-02-28_
+ * application: Config cleanup
+
 ## 0.58.10
 _release date: 2025-02-28_
  * courses: Integrate controllers with objectMapper
