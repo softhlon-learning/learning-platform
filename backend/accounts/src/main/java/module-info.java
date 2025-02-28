@@ -21,7 +21,6 @@ module accounts {
     requires java.xml.bind;
     requires jjwt.api;
     requires jakarta.persistence;
-    requires com.fasterxml.jackson.annotation;
     requires jakarta.servlet;
     requires org.slf4j;
     requires google.api.client;
@@ -31,4 +30,5 @@ module accounts {
     requires org.checkerframework.checker.qual;
     requires spring.tx;
     requires jakarta.annotation;
+    requires com.fasterxml.jackson.databind;
 }

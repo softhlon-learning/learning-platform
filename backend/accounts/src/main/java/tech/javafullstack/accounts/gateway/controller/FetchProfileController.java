@@ -5,6 +5,8 @@
 
 package tech.javafullstack.accounts.gateway.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,13 +43,14 @@ class FetchProfileController {
     private final FetchProfileService service;
     private final AuthenticationContext authContext;
     private final HttpServletRequest httpRequest;
+    private final ObjectMapper mapper;
 
     /**
      * GET /api/v1/account/profile endpoint.
      * @return ResponseEntity<?>
      */
     @GetMapping(PROFILE)
-    ResponseEntity<?> getProfile() {
+    ResponseEntity<?> getProfile() throws JsonProcessingException {
 
         log.info("controller | request / Fetch profile");
 
@@ -71,10 +74,11 @@ class FetchProfileController {
     // -----------------------------------------------------------------------------------------------------------------
 
     private ResponseEntity<?> successBody(
-          FetchProfileService.ProfileView profileView) {
+          FetchProfileService.ProfileView profileView) throws JsonProcessingException {
 
+        var profile = mapper.writeValueAsString(profile(profileView));
         return status(HttpStatus.OK)
-              .body(profile(profileView));
+              .body(profile);
 
     }
 
