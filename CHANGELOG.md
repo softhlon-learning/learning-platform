@@ -1,5 +1,10 @@
 # Learning Platform Changelog
 
+## 0.58.9
+_release date: 2025-02-28_
+ * application: Move objectMapper() to application module
+ * accounts: Integrate controllers with objectMapper
+
 ## 0.58.8
 _release date: 2025-02-28_
  * subscriptions: Integrate ObjectMapper witch controllers
