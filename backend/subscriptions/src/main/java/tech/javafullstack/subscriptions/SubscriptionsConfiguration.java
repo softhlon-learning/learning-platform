@@ -25,13 +25,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan("tech.javafullstack.subscriptions")
 public class SubscriptionsConfiguration {
-    @Bean
-    @Primary
-    ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        mapper.registerModule(new JavaTimeModule());
-
-        return mapper;
-    }
 }
