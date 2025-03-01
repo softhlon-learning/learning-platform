@@ -29,7 +29,7 @@ wget -N https://hel1.your-objectstorage.com/java-course/no-video-yet.mov -P  /va
 wget -N https://hel1.your-objectstorage.com/java-course/packages.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/prerequisites.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/records-overview.mov -P  /var/www/static/java-course/
-wget -N https://hel1.your-objectstorage.com/java-course/static-nested-class.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/java-course/static-nested-classes.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/string-class.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/threads.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/welcome.mov -P  /var/www/static/java-course/
