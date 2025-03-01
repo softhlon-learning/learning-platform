@@ -18,6 +18,10 @@ mvn clean install
 cp application/target/backend.jar application/backend.jar
 mvn clean
 
+# sunc S3 content
+sudo chmod +x /home/admin/learning-platform/install/s3-content-sync.sh
+sudo /home/admin/learning-platform/install/s3-content-sync.sh
+
 # start backend service
 sudo service backend start
 
