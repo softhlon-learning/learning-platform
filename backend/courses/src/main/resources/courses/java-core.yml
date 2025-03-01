@@ -366,10 +366,10 @@ chapters:
         preview: false
         time: 3m7s
       - name: Local Classes
-        id: no-video-yet.mov?v679
+        id: local-classes.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 2m58s
       - name: Anonymous Classes
         id: no-video-yet.mov?v680
         type: Watch
