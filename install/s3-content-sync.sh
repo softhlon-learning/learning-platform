@@ -17,6 +17,7 @@ wget -N https://hel1.your-objectstorage.com/java-course/error-handling-overview.
 wget -N https://hel1.your-objectstorage.com/java-course/foreign-function-memory-api.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/functional-programming-introduction.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/generics-overview.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/java-course/inner-classes.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/interrupting-threads.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/introduction-to-streams.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/java-enhancement-proposals.mov -P  /var/www/static/java-course/

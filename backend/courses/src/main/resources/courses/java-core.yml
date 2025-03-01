@@ -361,10 +361,10 @@ chapters:
         preview: false
         time: 1m16s
       - name: Inner Classes
-        id: no-video-yet.mov?v678
+        id: inner-classes.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 3m7s
       - name: Local Classes
         id: no-video-yet.mov?v679
         type: Watch
