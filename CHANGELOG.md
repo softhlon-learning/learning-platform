@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.17
+_release date: 2025-03-01_
+ * content: Enrich videos with nice iconography (experimental)
+
 ## 0.58.16
 _release date: 2025-03-01_
 * content: Upload java/local-classes.mov
