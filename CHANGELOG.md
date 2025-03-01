@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.12
+_release date: 2025-03-01_
+ * content: Cleanup
+
 ## 0.58.11
 _release date: 2025-02-28_
  * application: Config cleanup
