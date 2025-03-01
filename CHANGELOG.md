@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.16
+_release date: 2025-03-01_
+* content: Upload java/local-classes.mov
+
 ## 0.58.15
 _release date: 2025-03-01_
 * content: Upload java/inner-classes.mov
