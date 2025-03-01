@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.13
+_release date: 2025-03-01_
+ * scripts: Sync S3 content on upgrade
+
 ## 0.58.12
 _release date: 2025-03-01_
  * content: Cleanup
