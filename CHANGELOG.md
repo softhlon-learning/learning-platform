@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.58.14
+_release date: 2025-03-01_
+ * content: Upload java/static-nested-classes.mov
+
 ## 0.58.13
 _release date: 2025-03-01_
  * scripts: Sync S3 content on upgrade
