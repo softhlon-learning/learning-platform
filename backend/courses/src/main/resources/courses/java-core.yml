@@ -354,7 +354,7 @@ chapters:
         id: nested-classes.mov
         type: Watch
         preview: false
-        time: 1m30s
+        time: 3m25s
       - name: Static Nested Class
         id: static-nested-classes.mov
         type: Watch
