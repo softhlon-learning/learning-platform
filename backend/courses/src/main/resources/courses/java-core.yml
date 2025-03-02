@@ -371,10 +371,10 @@ chapters:
         preview: false
         time: 2m58s
       - name: Anonymous Classes
-        id: no-video-yet.mov?v680
+        id: anonymous-classes.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 2m56s
       - name: Best Practices for Nested Classes
         id: no-video-yet.mov?v681
         type: Watch
