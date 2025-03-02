@@ -9,6 +9,7 @@ wget -N https://hel1.your-objectstorage.com/java-fullstack-docs/user-agreement.h
 # java-course bucket
 mkdir -p /var/www/static/java-course
 wget -N https://hel1.your-objectstorage.com/java-course/ai-and-programming.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/java-course/anonymous-classes.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/basic-program-structure.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/classes-and-objects.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/course-content.html -P  /var/www/static/java-course/
