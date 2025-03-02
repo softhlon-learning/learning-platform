@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.58.19
+_release date: 2025-03-02_
+ * content: Upload new java/static-nested-classes.mov
+
 ## 0.58.18
 _release date: 2025-03-02_
-* content: Upload new java/nested-classes.mov
+ * content: Upload new java/nested-classes.mov
 
 ## 0.58.17
 _release date: 2025-03-01_
@@ -10,11 +14,11 @@ _release date: 2025-03-01_
 
 ## 0.58.16
 _release date: 2025-03-01_
-* content: Upload java/local-classes.mov
+ * content: Upload java/local-classes.mov
 
 ## 0.58.15
 _release date: 2025-03-01_
-* content: Upload java/inner-classes.mov
+ * content: Upload java/inner-classes.mov
 
 ## 0.58.14
 _release date: 2025-03-01_
