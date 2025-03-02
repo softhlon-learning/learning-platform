@@ -1,5 +1,9 @@
 # Learning Platform Changelog
 
+## 0.59.0
+_release date: 2025-03-02_
+ * content: Upload java/anonymous-classes.mov
+
 ## 0.58.19
 _release date: 2025-03-02_
  * content: Upload new java/static-nested-classes.mov
