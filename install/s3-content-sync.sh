@@ -26,6 +26,7 @@ wget -N https://hel1.your-objectstorage.com/java-course/java-on-mac.html -P  /va
 wget -N https://hel1.your-objectstorage.com/java-course/joining-threads.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/local-classes.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/nested-classes.mov -P  /var/www/static/java-course/
+wget -N https://hel1.your-objectstorage.com/java-course/nested-classes-live-coding.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/networking-overview.mov -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/no-document-yet.html -P  /var/www/static/java-course/
 wget -N https://hel1.your-objectstorage.com/java-course/no-video-yet.mov -P  /var/www/static/java-course/

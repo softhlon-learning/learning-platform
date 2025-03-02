@@ -375,11 +375,11 @@ chapters:
         type: Watch
         preview: false
         time: 2m56s
-      - name: Best Practices for Nested Classes
-        id: no-video-yet.mov?v681
+      - name: Live Coding
+        id: nested-classes-live-coding.mov
         type: Watch
         preview: false
-        time: 2m5s
+        time: 17m6s
       - name: Modelling Application Domain
         id: no-video-yet.mov?v682
         type: Watch
