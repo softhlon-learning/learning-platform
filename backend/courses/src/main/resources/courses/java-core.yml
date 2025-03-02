@@ -359,7 +359,7 @@ chapters:
         id: static-nested-classes.mov
         type: Watch
         preview: false
-        time: 1m16s
+        time: 3m01s
       - name: Inner Classes
         id: inner-classes.mov
         type: Watch
