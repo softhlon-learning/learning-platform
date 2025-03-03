@@ -1,8 +1,12 @@
 # Learning Platform Changelog
 
+## 0.59.2
+_release date: 2025-03-03_
+ * content: Analyse how to improve live-coding sessions
+
 ## 0.59.1
 _release date: 2025-03-02_
-* content: Upload java/nested-classes-live-coding.mov
+ * content: Upload java/nested-classes-live-coding.mov
 
 ## 0.59.0
 _release date: 2025-03-02_
