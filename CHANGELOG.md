@@ -1,4 +1,4 @@
-# Learning Platform Changelog
+# Java Full-Stack Academy Changelog
 
 ## 0.59.2
 _release date: 2025-03-03_
