@@ -1,5 +1,9 @@
 # Java Full-Stack Academy Changelog
 
+## 0.59.3
+_release date: 2025-03-05_
+ * oontent: Testiong improvements on live-coding sessions
+ 
 ## 0.59.2
 _release date: 2025-03-03_
  * content: Analyse how to improve live-coding sessions
