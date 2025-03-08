@@ -6,8 +6,10 @@
 package tech.javafullstack.accounts.infrastructure;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
@@ -21,6 +23,8 @@ import java.util.UUID;
 @Entity
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "invalidated_tokens", schema = "_accounts")
 class InvalidatedTokenEntity {
 

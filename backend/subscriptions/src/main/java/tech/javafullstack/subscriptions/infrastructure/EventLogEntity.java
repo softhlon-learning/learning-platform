@@ -6,9 +6,7 @@
 package tech.javafullstack.subscriptions.infrastructure;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -23,6 +21,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "events_log", schema = "_subscriptions")
 public class EventLogEntity {
 
